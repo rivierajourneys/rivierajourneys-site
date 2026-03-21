@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riviera Journeys – Private Day Tours & Full Day · Privates from Cannes | French & Italian Riviera</title>
+<meta name="description" content="Private day tours, shore excursions and transfers along the French and Italian Riviera from Cannes. Eze, Monaco, Antibes, Sanremo. Premium Mercedes V-Class. The Riviera for people who actually want to be there.">
+<meta name="keywords" content="private tours Cannes, shore excursions French Riviera, day tours Cannes Monaco, private driver Cannes, Riviera tours, Côte d'Azur private tours, Cannes transfers airport">
+<meta property="og:title" content="Riviera Journeys – Private Tours from Cannes">
+<meta property="og:description" content="The connoisseur's guide to the French and Italian Riviera. Private day tours, shore excursions, and transfers in a premium Mercedes V-Class.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rivierajourneys.fr">
+<link rel="canonical" href="https://rivierajourneys.fr">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────────── */
+:root {
+  --bone:    #FDFAF6;
+  --bone2:   #F7F3ED;
+  --parch:   #EAE3D7;
+  --sand:    #C4AA82;
+  --stone:   #8C8880;
+  --slate:   #3D3D38;
+  --warm:    #1C1C1A;
+  --terra:   #A86543;
+  --deep:    #2B2B27;
+  --serif:   'Cormorant Garamond', Georgia, serif;
+  --sc:      'Cormorant SC', Georgia, serif;
+  --sans:    'Jost', sans-serif;
+  --ease:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --slow:    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─────────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--bone);
+  color: var(--warm);
+  overflow-x: hidden;
+  cursor: none;
+}
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+::selection { background: var(--sand); color: var(--warm); }
+
+/* ─────────────────────────────────────────────
+   CUSTOM CURSOR
+───────────────────────────────────────────── */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--warm);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width .3s var(--slow), height .3s var(--slow), background .3s;
+  mix-blend-mode: multiply;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: .5px solid var(--warm);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width .5s var(--slow), height .5s var(--slow), border-color .3s;
+  opacity: .5;
+}
+.cursor.hover { width: 6px; height: 6px; }
+.cursor-ring.hover { width: 56px; height: 56px; opacity: .2; }
+
+/* ─────────────────────────────────────────────
+   SCROLL ANIMATION SYSTEM
+───────────────────────────────────────────── */
+.reveal {
+  transition: opacity .9s var(--slow), transform .9s var(--slow);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  transition: opacity .9s var(--slow), transform .9s var(--slow);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  transition: opacity .9s var(--slow), transform .9s var(--slow);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale {
+  transition: opacity 1s var(--slow), transform 1s var(--slow);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Stagger delays */
+.d1 { transition-delay: .1s; }
+.d2 { transition-delay: .2s; }
+.d3 { transition-delay: .3s; }
+.d4 { transition-delay: .4s; }
+.d5 { transition-delay: .5s; }
+.d6 { transition-delay: .6s; }
+
+/* ─────────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 48px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background .5s var(--ease), border-color .5s;
+  border-bottom: .5px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(253,250,246,.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--parch);
+}
+.nav-logo {
+  font-family: var(--sc);
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: .14em;
+  color: var(--bone);
+  transition: color .5s;
+}
+.nav.scrolled .nav-logo { color: var(--warm); }
+.nav-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(253,250,246,.75);
+  transition: color .3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: .5px;
+  background: var(--sand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.nav-links a:hover { color: rgba(253,250,246,1); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav.scrolled .nav-links a { color: var(--stone); }
+.nav.scrolled .nav-links a:hover { color: var(--warm); }
+.nav-cta {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--sand) !important;
+  border: .5px solid rgba(196,170,130,.6);
+  padding: 8px 20px;
+  transition: background .3s, color .3s, border-color .3s !important;
+}
+.nav-cta:hover {
+  background: var(--terra) !important;
+  border-color: var(--terra) !important;
+  color: var(--bone) !important;
+}
+.nav-cta::after { display: none !important; }
+.nav.scrolled .nav-cta { color: var(--terra) !important; border-color: rgba(168,101,67,.4) !important; }
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background: var(--deep);
+  overflow: hidden;
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  transition: transform 8s var(--ease);
+  filter: brightness(.75);
+}
+.hero-photo img.loaded { transform: scale(1); }
+.hero-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #2B2B27 0%, #3D3D38 40%, #4A4540 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.placeholder-text {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(196,170,130,.5);
+}
+.placeholder-icon {
+  width: 56px; height: 56px;
+  border: .5px solid rgba(196,170,130,.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.placeholder-icon svg { width: 22px; height: 22px; stroke: rgba(196,170,130,.4); fill: none; }
+
+/* Grain overlay */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 2;
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,28,26,.88) 0%, rgba(28,28,26,.3) 40%, transparent 70%);
+  z-index: 3;
+}
+.hero-content {
+  position: relative;
+  z-index: 4;
+  padding: 0 72px 80px;
+  max-width: 900px;
+}
+.hero-overline {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp .8s var(--slow) .4s forwards;
+}
+.hero-overline::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: .5px;
+  background: var(--sand);
+}
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 74px);
+  font-weight: 300;
+  line-height: 1.07;
+  color: var(--bone);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp .9s var(--slow) .55s forwards;
+}
+.hero-h1 em { font-style: italic; color: rgba(247,243,237,.7); }
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(247,243,237,.65);
+  max-width: 480px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp .9s var(--slow) .7s forwards;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  animation: fadeUp .9s var(--slow) .85s forwards;
+}
+.btn-primary {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--warm);
+  background: var(--bone);
+  padding: 16px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: color .4s;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--terra);
+  transform: translateX(-101%);
+  transition: transform .5s var(--slow);
+}
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary:hover { color: var(--bone); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-primary .arrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  transition: transform .3s var(--ease);
+}
+.btn-primary:hover .arrow { transform: translateX(6px); }
+
+.btn-ghost {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(247,243,237,.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: color .3s, gap .3s;
+}
+.btn-ghost:hover { color: var(--bone); gap: 16px; }
+.btn-ghost svg { transition: transform .3s var(--ease); }
+.btn-ghost:hover svg { transform: translateX(4px); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  right: 72px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeIn 1s var(--slow) 1.4s forwards;
+}
+.hero-scroll span {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(196,170,130,.6);
+  writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: .5px;
+  height: 48px;
+  background: rgba(196,170,130,.3);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0; right: 0;
+  height: 100%;
+  background: var(--sand);
+  animation: scrollLine 2s var(--ease) 1.5s infinite;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(28px); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+  from { opacity: 0; }
+}
+@keyframes scrollLine {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+/* Photo credit */
+.hero-photo-credit {
+  position: absolute;
+  bottom: 28px;
+  left: 72px;
+  z-index: 4;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .12em;
+  color: rgba(196,170,130,.5);
+  opacity: 0;
+  animation: fadeIn 1s var(--slow) 1.6s forwards;
+}
+
+/* ─────────────────────────────────────────────
+   TICKER / SERVICES BAR
+───────────────────────────────────────────── */
+.ticker-bar {
+  background: var(--warm);
+  border-bottom: .5px solid rgba(196,170,130,.15);
+  overflow: hidden;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: flex;
+  gap: 0;
+  animation: ticker 30s linear infinite;
+  white-space: nowrap;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 40px;
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(196,170,130,.7);
+}
+.ticker-dot {
+  width: 3px; height: 3px;
+  background: rgba(196,170,130,.4);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─────────────────────────────────────────────
+   INTRO / EDITORIAL STATEMENT
+───────────────────────────────────────────── */
+.intro {
+  padding: 112px 72px 96px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+  border-bottom: .5px solid var(--parch);
+}
+.intro-label {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+.section-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: .5px;
+  background: var(--sand);
+}
+.intro-issue {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .14em;
+  color: var(--stone);
+  line-height: 1.8;
+}
+.intro-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.intro-h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--warm);
+  margin-bottom: 32px;
+}
+.intro-h2 em { font-style: italic; }
+.intro-rule {
+  width: 40px;
+  height: .5px;
+  background: var(--sand);
+  margin-bottom: 28px;
+}
+.intro-text {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--slate);
+  max-width: 620px;
+  margin-bottom: 40px;
+  column-count: 2;
+  column-gap: 48px;
+}
+.intro-link {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--warm);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: .5px solid var(--parch);
+  padding-bottom: 4px;
+  transition: border-color .3s, gap .3s;
+}
+.intro-link:hover { border-color: var(--sand); gap: 20px; }
+
+/* ─────────────────────────────────────────────
+   FEATURED TOURS
+───────────────────────────────────────────── */
+.tours {
+  padding: 96px 0 0;
+  border-bottom: .5px solid var(--parch);
+}
+.tours-header {
+  padding: 0 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+}
+.tours-header-left { display: flex; flex-direction: column; gap: 16px; }
+.tours-h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 300;
+  color: var(--warm);
+  line-height: 1.1;
+}
+.tours-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1px;
+  background: var(--parch);
+}
+.tour-card {
+  background: var(--bone);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tour-card:first-child {
+  grid-row: 1 / 3;
+}
+.tour-card-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep);
+}
+.tour-card:first-child .tour-card-photo { height: 520px; }
+.tour-card:not(:first-child) .tour-card-photo { height: 280px; }
+.tour-card-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--slow), filter .8s;
+  filter: brightness(.85);
+}
+.tour-card:hover .tour-card-photo img {
+  transform: scale(1.05);
+  filter: brightness(.75);
+}
+.tour-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.tour-card:first-child .tour-photo-placeholder { background: linear-gradient(150deg, #2B2B27, #3D3D38); }
+.tour-card:nth-child(2) .tour-photo-placeholder { background: linear-gradient(150deg, #3a3530, #4a453e); }
+.tour-card:nth-child(3) .tour-photo-placeholder { background: linear-gradient(150deg, #323028, #3d3a30); }
+.tour-card:nth-child(4) .tour-photo-placeholder { background: linear-gradient(150deg, #2e2d2a, #3a3835); }
+.tour-card:nth-child(5) .tour-photo-placeholder { background: linear-gradient(150deg, #333028, #403d33); }
+.ph-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(196,170,130,.45);
+  text-align: center;
+}
+.ph-frame {
+  width: 48px; height: 48px;
+  border: .5px solid rgba(196,170,130,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ph-frame svg { width: 20px; height: 20px; stroke: rgba(196,170,130,.35); fill: none; }
+.tour-card-tag {
+  position: absolute;
+  top: 20px; left: 20px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--sand);
+  background: rgba(28,28,26,.7);
+  padding: 5px 12px;
+  z-index: 2;
+}
+.tour-card-body {
+  padding: 24px 24px 28px;
+  border-top: .5px solid var(--parch);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tour-card:first-child .tour-card-body { padding: 28px 32px 36px; }
+.tour-card-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  color: var(--warm);
+  line-height: 1.25;
+}
+.tour-card:first-child .tour-card-title { font-size: 26px; }
+.tour-card:not(:first-child) .tour-card-title { font-size: 19px; }
+.tour-card-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.6;
+}
+.tour-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: .5px solid var(--parch);
+}
+.tour-card-price {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--warm);
+}
+.tour-card:not(:first-child) .tour-card-price { font-size: 18px; }
+.tour-card-price-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--stone);
+}
+.tour-card-arrow {
+  width: 36px; height: 36px;
+  border: .5px solid var(--parch);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s, border-color .3s;
+  flex-shrink: 0;
+}
+.tour-card:hover .tour-card-arrow {
+  background: var(--terra);
+  border-color: var(--terra);
+}
+.tour-card:hover .tour-card-arrow svg { stroke: var(--bone); }
+.tour-card-arrow svg { width: 14px; height: 14px; stroke: var(--stone); fill: none; transition: stroke .3s; }
+
+/* Progress bar on hover */
+.tour-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--terra);
+  transition: width .6s var(--slow);
+}
+.tour-card:hover::after { width: 100%; }
+
+.tours-footer {
+  padding: 40px 72px;
+  display: flex;
+  justify-content: center;
+  border-top: .5px solid var(--parch);
+}
+
+/* ─────────────────────────────────────────────
+   SERVICES / TRANSFERS
+───────────────────────────────────────────── */
+.services {
+  padding: 96px 72px;
+  border-bottom: .5px solid var(--parch);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--parch);
+  margin-top: 56px;
+}
+.service-card {
+  background: var(--bone2);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background .4s;
+}
+.service-card:hover { background: var(--warm); }
+.service-number {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 300;
+  color: var(--parch);
+  line-height: 1;
+  margin-bottom: 24px;
+  transition: color .4s;
+}
+.service-card:hover .service-number { color: rgba(196,170,130,.2); }
+.service-icon {
+  width: 44px; height: 44px;
+  margin-bottom: 20px;
+}
+.service-icon svg { width: 100%; height: 100%; stroke: var(--sand); fill: none; stroke-width: 1; transition: stroke .4s; }
+.service-card:hover .service-icon svg { stroke: rgba(196,170,130,.6); }
+.service-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--warm);
+  margin-bottom: 12px;
+  transition: color .4s;
+}
+.service-card:hover .service-title { color: var(--bone); }
+.service-desc {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.8;
+  transition: color .4s;
+}
+.service-card:hover .service-desc { color: rgba(196,170,130,.65); }
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sand);
+  transition: gap .3s;
+}
+.service-link svg { width: 14px; height: 14px; stroke: var(--sand); fill: none; transition: transform .3s var(--ease); }
+.service-card:hover .service-link { gap: 14px; }
+.service-card:hover .service-link svg { transform: translateX(4px); }
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px;
+  height: 0;
+  background: var(--terra);
+  transition: height .5s var(--slow);
+}
+.service-card:hover::before { height: 100%; }
+
+/* ─────────────────────────────────────────────
+   FULL-BLEED EDITORIAL PHOTO
+───────────────────────────────────────────── */
+.editorial-photo {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+.editorial-photo-inner {
+  position: absolute;
+  inset: 0;
+  background: var(--deep);
+}
+.ep-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1C1C1A 0%, #2B2B27 50%, #3D3D38 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.ep-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(28,28,26,.85) 0%, rgba(28,28,26,.3) 50%, transparent 100%);
+  z-index: 2;
+}
+.ep-content {
+  position: absolute;
+  left: 72px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  max-width: 500px;
+}
+.ep-overline {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ep-overline::before { content: ''; display: block; width: 28px; height: .5px; background: var(--sand); }
+.ep-h2 {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.5vw, 52px);
+  font-weight: 300;
+  line-height: 1.12;
+  color: var(--bone);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.ep-body {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(247,243,237,.65);
+  margin-bottom: 36px;
+}
+.ep-stat-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 36px;
+  padding-top: 28px;
+  border-top: .5px solid rgba(196,170,130,.2);
+}
+.ep-stat-num {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--bone);
+  line-height: 1;
+  display: block;
+}
+.ep-stat-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: block;
+  margin-top: 4px;
+}
+
+/* Parallax wrapper */
+.editorial-photo .ep-parallax {
+  position: absolute;
+  inset: -15%;
+  will-change: transform;
+}
+
+/* ─────────────────────────────────────────────
+   EDITORIAL / ROADBOOK
+───────────────────────────────────────────── */
+.editorial {
+  padding: 96px 72px;
+  border-bottom: .5px solid var(--parch);
+}
+.editorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr;
+  gap: 1px;
+  background: var(--parch);
+}
+.article-card {
+  background: var(--bone);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background .3s;
+}
+.article-card:first-child { background: var(--warm); }
+.article-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep);
+}
+.article-card:first-child .article-photo { height: 360px; }
+.article-card:not(:first-child) .article-photo { height: 200px; }
+.article-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--slow);
+}
+.article-card:hover .article-photo img { transform: scale(1.05); }
+.art-ph-1 { background: linear-gradient(150deg, #2e2c28, #3e3a32); }
+.art-ph-2 { background: linear-gradient(150deg, #302e2a, #403c34); }
+.art-ph-3 { background: linear-gradient(150deg, #2c2b28, #3a3830); }
+.article-category {
+  position: absolute;
+  bottom: 16px; left: 20px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--sand);
+  z-index: 2;
+}
+.article-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.article-card:first-child .article-body { padding: 28px 32px 32px; }
+.article-date {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: .1em;
+  color: var(--sand);
+  text-transform: uppercase;
+}
+.article-card:first-child .article-date { color: rgba(196,170,130,.7); }
+.article-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  color: var(--warm);
+  line-height: 1.25;
+}
+.article-card:first-child .article-title { font-size: 26px; color: var(--bone); }
+.article-card:not(:first-child) .article-title { font-size: 18px; }
+.article-excerpt {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.75;
+}
+.article-card:first-child .article-excerpt { color: rgba(196,170,130,.65); font-size: 13.5px; }
+.article-footer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: .5px solid rgba(196,170,130,.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.article-card:not(:first-child) .article-footer { border-top-color: var(--parch); }
+.read-more {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap .3s;
+}
+.article-card:not(:first-child) .read-more { color: var(--stone); }
+.read-more svg { width: 12px; height: 12px; stroke: currentColor; fill: none; }
+.article-card:hover .read-more { gap: 14px; }
+.read-time {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  color: rgba(196,170,130,.5);
+}
+.article-card:not(:first-child) .read-time { color: var(--stone); opacity: .6; }
+
+/* ─────────────────────────────────────────────
+   TESTIMONIAL / SOCIAL PROOF
+───────────────────────────────────────────── */
+.testimonials {
+  background: var(--warm);
+  padding: 96px 72px;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: var(--sc);
+  font-size: 180px;
+  font-weight: 300;
+  color: rgba(196,170,130,.04);
+  letter-spacing: .1em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.testimonials-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.testi-left { display: flex; flex-direction: column; gap: 24px; }
+.testi-overline {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testi-overline::before { content: ''; display: block; width: 24px; height: .5px; background: var(--sand); }
+.testi-h3 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--bone);
+}
+.testi-stars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.testi-stars span {
+  font-size: 14px;
+  color: var(--sand);
+}
+.testi-rating {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--bone);
+  line-height: 1;
+}
+.testi-platform {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .1em;
+  color: rgba(196,170,130,.5);
+}
+.testi-center {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.testi-quote-icon {
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 300;
+  color: rgba(196,170,130,.25);
+  line-height: .6;
+  align-self: flex-start;
+}
+.testi-quote {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--bone2);
+  text-align: center;
+}
+.testi-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.testi-author-name {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--sand);
+}
+.testi-author-origin {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(196,170,130,.5);
+}
+.testi-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+.testi-btn {
+  width: 44px; height: 44px;
+  border: .5px solid rgba(196,170,130,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .3s, border-color .3s;
+}
+.testi-btn:hover { background: rgba(196,170,130,.1); border-color: rgba(196,170,130,.5); }
+.testi-btn svg { width: 16px; height: 16px; stroke: rgba(196,170,130,.6); fill: none; }
+.testi-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.testi-dot {
+  width: .5px; height: 24px;
+  background: rgba(196,170,130,.25);
+  transition: background .3s, height .3s var(--ease);
+}
+.testi-dot.active { height: 40px; background: var(--sand); }
+
+/* ─────────────────────────────────────────────
+   RIVIERA MAP / DESTINATIONS
+───────────────────────────────────────────── */
+.destinations {
+  padding: 96px 72px;
+  border-bottom: .5px solid var(--parch);
+}
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--parch);
+  margin-top: 56px;
+}
+.dest-card {
+  background: var(--bone2);
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background .4s;
+}
+.dest-card:hover { background: var(--warm); }
+.dest-number {
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--sand);
+  display: block;
+  margin-bottom: 12px;
+}
+.dest-name {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--warm);
+  margin-bottom: 6px;
+  transition: color .4s;
+}
+.dest-card:hover .dest-name { color: var(--bone); }
+.dest-country {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color .4s;
+}
+.dest-card:hover .dest-country { color: var(--sand); }
+.dest-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 1px;
+  background: var(--terra);
+  transition: left .4s var(--slow), right .4s var(--slow);
+}
+.dest-card:hover::after { left: 0; right: 0; }
+
+/* ─────────────────────────────────────────────
+   NEWSLETTER / EDITORIAL SIGNUP
+───────────────────────────────────────────── */
+.newsletter {
+  padding: 96px 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: center;
+  border-bottom: .5px solid var(--parch);
+  background: var(--bone2);
+}
+.nl-left { display: flex; flex-direction: column; gap: 20px; }
+.nl-h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--warm);
+}
+.nl-body {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.8;
+}
+.nl-meta {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .1em;
+  color: var(--stone);
+  opacity: .7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nl-meta::before { content: ''; display: block; width: 16px; height: .5px; background: var(--sand); }
+.nl-right { display: flex; flex-direction: column; gap: 16px; }
+.nl-form { display: flex; flex-direction: column; gap: 0; }
+.nl-input-wrap { position: relative; }
+.nl-input {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--warm);
+  background: transparent;
+  border: none;
+  border-bottom: .5px solid var(--parch);
+  padding: 16px 0;
+  outline: none;
+  transition: border-color .3s;
+}
+.nl-input::placeholder { color: var(--stone); }
+.nl-input:focus { border-bottom-color: var(--sand); }
+.nl-input-line {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: .5px;
+  width: 0;
+  background: var(--terra);
+  transition: width .4s var(--slow);
+}
+.nl-input:focus + .nl-input-line { width: 100%; }
+.nl-submit {
+  margin-top: 32px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--bone);
+  background: var(--warm);
+  border: none;
+  padding: 16px 40px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color .4s;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  align-self: flex-start;
+}
+.nl-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--terra);
+  transform: translateX(-101%);
+  transition: transform .5s var(--slow);
+}
+.nl-submit:hover::before { transform: translateX(0); }
+.nl-submit span, .nl-submit svg { position: relative; z-index: 1; }
+.nl-submit svg { width: 14px; height: 14px; stroke: currentColor; fill: none; transition: transform .3s var(--ease); }
+.nl-submit:hover svg { transform: translateX(6px); }
+.nl-promise {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--stone);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────
+   INSTAGRAM STRIP
+───────────────────────────────────────────── */
+.instagram {
+  padding: 72px 0;
+  border-bottom: .5px solid var(--parch);
+  overflow: hidden;
+}
+.instagram-header {
+  padding: 0 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.instagram-h3 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--warm);
+}
+.instagram-handle {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .1em;
+  color: var(--stone);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color .3s, gap .3s;
+}
+.instagram-handle:hover { color: var(--warm); gap: 14px; }
+.instagram-handle svg { width: 14px; height: 14px; stroke: var(--stone); fill: none; }
+.ig-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+}
+.ig-post {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.ig-ph-1 { background: linear-gradient(135deg, #2B2B27, #3D3D38); }
+.ig-ph-2 { background: linear-gradient(135deg, #3a3530, #4a453e); }
+.ig-ph-3 { background: linear-gradient(135deg, #252522, #35352e); }
+.ig-ph-4 { background: linear-gradient(135deg, #A86543, #8b5236); }
+.ig-ph-5 { background: linear-gradient(135deg, #3D3D38, #2B2B27); }
+.ig-ph-6 { background: linear-gradient(135deg, #4a453e, #3a3530); }
+.ig-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28,28,26,.7);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: opacity .4s;
+}
+.ig-post:hover .ig-overlay { opacity: 1; }
+.ig-overlay-caption {
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bone2);
+  text-align: center;
+  padding: 0 12px;
+  line-height: 1.4;
+}
+.ig-overlay-place {
+  font-family: var(--sans);
+  font-size: 8.5px;
+  font-weight: 300;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+.ig-ph-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ig-ph-text span {
+  font-family: var(--serif);
+  font-size: 10px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(196,170,130,.35);
+  text-align: center;
+  padding: 8px;
+}
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+footer {
+  background: var(--warm);
+  padding: 72px 72px 48px;
+  border-top: .5px solid rgba(196,170,130,.1);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 20px; }
+.footer-logo {
+  font-family: var(--sc);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: .14em;
+  color: var(--bone2);
+}
+.footer-rule {
+  width: 32px; height: .5px;
+  background: var(--sand);
+}
+.footer-tagline {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(247,243,237,.55);
+  line-height: 1.5;
+}
+.footer-desc {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(196,170,130,.5);
+  line-height: 1.8;
+  max-width: 280px;
+}
+.footer-col-title {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: .5px solid rgba(196,170,130,.15);
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(247,243,237,.45);
+  letter-spacing: .04em;
+  transition: color .3s, padding-left .3s;
+  display: block;
+}
+.footer-links a:hover { color: rgba(247,243,237,.8); padding-left: 6px; }
+.footer-contact {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(247,243,237,.45);
+  line-height: 1.9;
+}
+.footer-contact a { color: rgba(196,170,130,.6); transition: color .3s; }
+.footer-contact a:hover { color: var(--sand); }
+.footer-bottom {
+  border-top: .5px solid rgba(196,170,130,.1);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(196,170,130,.3);
+  letter-spacing: .06em;
+}
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+.footer-legal a {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(196,170,130,.3);
+  letter-spacing: .06em;
+  transition: color .3s;
+}
+.footer-legal a:hover { color: rgba(196,170,130,.6); }
+
+/* ─────────────────────────────────────────────
+   PROGRESS BAR
+───────────────────────────────────────────── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 1px;
+  background: var(--terra);
+  z-index: 200;
+  transition: width .1s linear;
+  transform-origin: left;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nav { padding: 0 32px; }
+  .intro { padding: 80px 40px; grid-template-columns: 1fr; gap: 40px; }
+  .intro-text { column-count: 1; }
+  .tours-header, .editorial, .services, .destinations, .newsletter, .editorial-photo .ep-content { padding-left: 40px; padding-right: 40px; }
+  .testimonials { padding: 72px 40px; }
+  .testimonials-inner { grid-template-columns: 1fr; gap: 40px; }
+  .testi-nav { flex-direction: row; }
+  .tours-grid { grid-template-columns: 1fr 1fr; }
+  .tour-card:first-child { grid-column: 1 / -1; grid-row: 1; }
+  .tour-card:first-child .tour-card-photo { height: 380px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .dest-grid { grid-template-columns: repeat(3, 1fr); }
+  .newsletter { grid-template-columns: 1fr; gap: 48px; padding: 72px 40px; }
+  .instagram-header { padding: 0 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  footer { padding: 56px 40px 40px; }
+  .hero-content { padding: 0 40px 64px; }
+  .hero-scroll { right: 40px; }
+  .hero-photo-credit { left: 40px; }
+  .ep-content { left: 40px; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero-content { padding: 0 24px 56px; }
+  .intro { padding: 64px 24px; }
+  .tours-header { padding: 0 24px; }
+  .tours-h2 { font-size: 26px; }
+  .tours-grid { grid-template-columns: 1fr; }
+  .tour-card:first-child { grid-column: 1; }
+  .editorial { padding: 64px 24px; }
+  .editorial-grid { grid-template-columns: 1fr; }
+  .services { padding: 64px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .ep-content { left: 24px; max-width: 85vw; }
+  .ep-stat-row { display: none; }
+  .testimonials { padding: 64px 24px; }
+  .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .destinations { padding: 64px 24px; }
+  .newsletter { padding: 64px 24px; }
+  .ig-strip { grid-template-columns: repeat(3, 1fr); }
+  .instagram-header { padding: 0 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  footer { padding: 48px 24px 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .cursor, .cursor-ring { display: none; }
+  body { cursor: auto; }
+}
+
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;z-index:300}
+.burger-line{display:block;height:1px;background:var(--bone);transition:transform .45s cubic-bezier(0.16,1,0.3,1),opacity .3s,background .4s;transform-origin:center}
+.burger-line:nth-child(1){width:26px}.burger-line:nth-child(2){width:18px}.burger-line:nth-child(3){width:22px}
+.nav.scrolled .burger-line{background:var(--warm)}
+.nav-burger.open .burger-line:nth-child(1){transform:translateY(7px) rotate(45deg);width:26px;background:var(--bone)!important}
+.nav-burger.open .burger-line:nth-child(2){opacity:0}
+.nav-burger.open .burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:26px;background:var(--bone)!important}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:250;background:var(--warm);flex-direction:column;justify-content:center;padding:80px 48px 48px;opacity:0;transition:opacity .4s}
+.mobile-menu.open{display:flex;opacity:1}
+.mobile-nav{list-style:none;display:flex;flex-direction:column;gap:0}
+.mobile-nav li{border-bottom:.5px solid rgba(196,170,130,.12)}
+.mobile-nav a{font-family:var(--sans);font-size:clamp(20px,5vw,30px);font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);display:block;padding:16px 0;transition:color .3s,padding-left .3s}
+.mobile-nav a:hover{color:var(--sand);padding-left:8px}
+.mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s}
+.mobile-menu-cta:hover{background:var(--terra)}
+.mobile-menu-logo{position:absolute;top:28px;left:48px;font-family:'Cormorant SC',Georgia,serif;font-size:14px;font-weight:300;letter-spacing:.14em;color:var(--sand)}
+.mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(196,170,130,.3);color:var(--sand);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
+.mobile-menu-close:hover{background:rgba(196,170,130,.1)}
+@media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
+</style>
+</head>
+<body>
+
+<!-- ── PROGRESS BAR ── -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ── CURSOR ── -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Riviera Journeys home">Riviera Journeys</a>
+  <ul class="nav-links">
+    <li><a href="/tours">Tours</a></li>
+    <li><a href="/shore-excursions">Full Day · Privates</a></li>
+    <li><a href="/multi-day">Multi-Day</a></li>
+    <li><a href="/transfers">Transfers</a></li>
+    <li><a href="/editorial">Roadbook</a></li>
+    <li><a href="/book" class="nav-cta">Book a Tour</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" id="mobileClose">&#10005;</button>
+  <div class="mobile-menu-logo">Riviera Journeys</div>
+  <ul class="mobile-nav">
+    <li><a href="/tours">Tours</a></li>
+    <li><a href="/shore-excursions">Shore Excursions</a></li>
+    <li><a href="/multi-day">Multi-Day</a></li>
+    <li><a href="/transfers">Transfers</a></li>
+    <li><a href="/editorial">The Roadbook</a></li>
+  </ul>
+  <a href="/book" class="mobile-menu-cta">Book a Tour</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-photo" id="heroPhoto">
+    <!-- PHOTO PLACEHOLDER: Replace src with your hero photograph -->
+    <!-- Recommended: Wide landscape, golden hour, preferably the Grande Corniche or Cap Ferrat coastline -->
+    <!-- Ideal dimensions: 2400 × 1600px minimum, 16:10 ratio -->
+    <div class="hero-photo-placeholder" id="heroPlaceholder">
+      <div class="placeholder-icon">
+        <svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/><path d="M2 12h2M20 12h2M12 2v2M12 20v2"/></svg>
+      </div>
+      <span class="placeholder-text">Hero photograph — Grande Corniche or Cap Ferrat coastline</span>
+      <span class="placeholder-text" style="opacity:.4">2400 × 1600px — Available light — No filters</span>
+    </div>
+  </div>
+  <div class="hero-grain"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="hero-overline">Private Tours from Cannes</div>
+    <h1 class="hero-h1">The Riviera,<br><em>properly experienced.</em></h1>
+    <p class="hero-sub">Private tours from Cannes. Driven by someone who knows the road.</p>
+    <div class="hero-actions">
+      <a href="/tours" class="btn-primary">
+        <span>Explore Tours</span>
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/editorial" class="btn-ghost">
+        Read the Roadbook
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-photo-credit" aria-hidden="true">Photograph by André Tonnelier · Villefranche · July 2025</div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <!-- Doubled for seamless loop -->
+    <span class="ticker-item">Day Tours from Cannes<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Full Day · Privates for Cruise Guests<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Monaco · Eze · Antibes · Menton<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Cinque Terre · Sanremo · Portofino<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Premium Mercedes V-Class<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Airport Transfers Nice Côte d'Azur<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Private · No Hidden Costs<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Day Tours from Cannes<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Full Day · Privates for Cruise Guests<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Monaco · Eze · Antibes · Menton<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Cinque Terre · Sanremo · Portofino<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Premium Mercedes V-Class<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Airport Transfers Nice Côte d'Azur<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Private · No Hidden Costs<span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<section class="intro" aria-label="About Riviera Journeys">
+  <div class="intro-label reveal-left">
+    <span class="section-label">About</span>
+    <div class="intro-issue">
+      <strong style="display:block;color:var(--warm);font-weight:400;margin-bottom:4px">Riviera Journeys</strong>
+      Based in Cannes<br>
+      French & Italian Riviera<br>
+      rivierajourneys.fr
+    </div>
+  </div>
+  <div class="intro-body">
+    <h2 class="intro-h2 reveal d1">
+      Not a guided tour.<br>
+      <em>An introduction to a place</em><br>
+      worth understanding.
+    </h2>
+    <div class="intro-rule reveal d2"></div>
+    <p class="intro-text reveal d3">
+      The French and Italian Riviera has been visited by millions and genuinely understood by very few. Most people arrive, photograph the postcard, and leave with a collection of images that look exactly like everyone else's. We do something different: we show you the Riviera as it is actually lived — the roads that don't appear on tour maps, the villages that reward patience, the light at a particular hour on a particular stretch of coastline that no organised excursion will get you to on time.
+      <br><br>
+      Riviera Journeys is a private touring service based in Cannes. We run day tours, multi-day itineraries, and shore excursions for cruise guests across the French and Italian Riviera, and airport and port transfers — all in a premium Mercedes V-Class. The difference is not the vehicle. It is the knowledge of place that comes from living here.
+    </p>
+    <a href="/about" class="intro-link reveal d4">
+      The philosophy behind Riviera Journeys
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── FEATURED TOURS ── -->
+<section class="tours" aria-label="Tours and excursions">
+  <div class="tours-header">
+    <div class="tours-header-left">
+      <span class="section-label reveal">Our Tours</span>
+      <h2 class="tours-h2 reveal d1">Private full-day tours from Cannes.<br>The road, driven correctly.</h2>
+    </div>
+    <a href="/tours" class="intro-link reveal d2">
+      View all tours
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="tours-grid">
+    <!-- FEATURED TOUR 1 — Large card -->
+    <article class="tour-card reveal-scale">
+      <div class="tour-card-photo">
+        <!-- PHOTO PLACEHOLDER: Eze village at golden hour, looking out over the sea -->
+        <!-- Recommended: Portrait crop 800×520px, available light -->
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Eze village<br>golden hour photograph</span>
+        </div>
+        <span class="tour-card-tag">Featured · Full Day</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Eze, Monaco & the Grande Corniche</h3>
+        <p class="tour-card-meta">The classic Riviera route, done at the right pace. Nice old town before the crowds, the medieval village of Eze at the hour it deserves, the Grande Corniche, and Monaco with enough time to find the part that isn't on the postcard.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private · Up to 7 guests</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOUR 2 -->
+    <article class="tour-card reveal d1">
+      <div class="tour-card-photo">
+        <!-- PHOTO PLACEHOLDER: Antibes old town or Cap d'Antibes coastline -->
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Antibes<br>Cap d'Antibes coastline</span>
+        </div>
+        <span class="tour-card-tag">Full Day · Private</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Antibes & the Cap</h3>
+        <p class="tour-card-meta">Cannes beyond the Croisette, the ramparts of Antibes and the Cap — Picasso's city, properly — then the afternoon light in Saint-Paul-de-Vence, where the lanes hold their quiet.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOUR 3 -->
+    <article class="tour-card reveal d2">
+      <div class="tour-card-photo">
+        <!-- PHOTO PLACEHOLDER: Sanremo old town or harbour, Italian Riviera -->
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Sanremo<br>Italian Riviera harbour</span>
+        </div>
+        <span class="tour-card-tag">Full Day · France &amp; Italy</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Sanremo & the Italian Border</h3>
+        <p class="tour-card-meta">Menton — lemon trees, Belle Époque gardens, the last French city — then Italy: Sanremo's old town, the flower market, a different tempo. The return along the coast is the best part.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOUR 4 -->
+    <article class="tour-card reveal d1">
+      <div class="tour-card-photo">
+        <!-- PHOTO PLACEHOLDER: Saint-Paul-de-Vence or Mougins village -->
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Mougins or<br>Saint-Paul-de-Vence</span>
+        </div>
+        <span class="tour-card-tag">Cultural · Full Day</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Grasse, Gourdon &amp; the Arrière-Pays</h3>
+        <p class="tour-card-meta">Twenty minutes inland, the coast disappears and the real Provence begins. Grasse — world capital of perfume — then Gourdon above the gorge, and Tourrettes-sur-Loup where the violets grow in the streets.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOUR 5 -->
+    <article class="tour-card reveal d2">
+      <div class="tour-card-photo">
+        <!-- PHOTO PLACEHOLDER: Cinque Terre coast from the sea or Portofino -->
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Cinque Terre<br>or Portofino</span>
+        </div>
+        <span class="tour-card-tag">Multi-Day · France &amp; Italy</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Cannes to Florence via Genova &amp; Cinque Terre</h3>
+        <p class="tour-card-meta">A few days east along the coast: Genova's medieval streets, overnight in Cinque Terre with a proper evening, then Florence. The trip that people talk about for years.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">Price on enquiry</span>
+            <span class="tour-card-price-label" style="display:block">from 7 days · Fully private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="tours-footer">
+    <a href="/tours" class="btn-primary">
+      <span>All Tours & Excursions</span>
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" aria-label="Our services">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0">
+    <div>
+      <span class="section-label reveal">What We Offer</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">Three ways to feel<br>the Riviera properly.</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal d1">
+      <div class="service-number">01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 44 44" stroke-width="1"><circle cx="22" cy="22" r="18"/><path d="M22 4 A18 18 0 0 1 40 22"/><circle cx="22" cy="22" r="2" fill="var(--sand)"/></svg>
+      </div>
+      <h3 class="service-title">Day Tours & Full Day · Privates</h3>
+      <p class="service-desc">Half-day and full-day private tours from Cannes across the French and Italian Riviera. Designed around your schedule — whether you have a ship in port or simply a free afternoon. Monaco, Eze, Antibes, Sanremo, and beyond.</p>
+      <a href="/tours" class="service-link">
+        Explore tours
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="service-card reveal d2">
+      <div class="service-number">02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 44 44" stroke-width="1"><path d="M4 34 C14 34 14 10 22 10 C30 10 30 34 40 34"/><circle cx="22" cy="10" r="2" fill="var(--sand)"/></svg>
+      </div>
+      <h3 class="service-title">Multi-Day Itineraries</h3>
+      <p class="service-desc">Several days moving through the Riviera from France into Italy — or further. Cannes to Florence via Genova &amp; Cinque Terre. The coast road to Portofino. Overnight in a city worth sleeping in. The itinerary built around what you actually want to see, not what a group tour has time for.</p>
+      <a href="/multi-day" class="service-link">
+        Plan a journey
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="service-card reveal d3">
+      <div class="service-number">03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="6" y="20" width="32" height="14" rx="2"/><path d="M14 20V14a8 8 0 0 1 16 0v6"/><circle cx="22" cy="27" r="2" fill="var(--sand)"/></svg>
+      </div>
+      <h3 class="service-title">Transfers</h3>
+      <p class="service-desc">Nice Côte d'Azur Airport, Cannes port, Monaco, Saint-Tropez, and anywhere on the Riviera worth going to. Mercedes V-Class. On time. Conversation optional. This is the simplest thing we do, and it is done flawlessly.</p>
+      <a href="/transfers" class="service-link">
+        Book a transfer
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDITORIAL PHOTO ── -->
+<div class="editorial-photo" aria-hidden="true">
+  <div class="editorial-photo-inner ep-parallax" id="epParallax">
+    <!-- PHOTO PLACEHOLDER: Full-width dramatic landscape — sea view from a high road, ideally Corniche -->
+    <!-- Recommended: 2400×1600px, landscape orientation, minimal processing -->
+    <div class="ep-placeholder">
+      <span class="placeholder-text">Full-width editorial photograph</span>
+      <span class="placeholder-text" style="opacity:.4">Corniche road or Cap Ferrat sea view · 2400×1600px</span>
+    </div>
+  </div>
+  <div class="ep-vignette"></div>
+  <div class="ep-content">
+    <div class="ep-overline">Transfers</div>
+    <h2 class="ep-h2">"On time, always.<br>Conversation optional."</h2>
+    <p class="ep-body">A Mercedes V-Class. Seven comfortable seats. Air conditioning that works. Enough space for luggage, for silence, for a family that has been travelling since 4am. We do not promise an experience. We promise a reliable, well-organised, private transfer with someone who knows the roads.</p>
+    <div class="ep-stat-row">
+      <div>
+        <span class="ep-stat-num">7</span>
+        <span class="ep-stat-label">Passenger capacity</span>
+      </div>
+      <div>
+        <span class="ep-stat-num">100+</span>
+        <span class="ep-stat-label">Routes covered</span>
+      </div>
+      <div>
+        <span class="ep-stat-num">€ 120</span>
+        <span class="ep-stat-label">Starting price</span>
+      </div>
+    </div>
+    <a href="/book" class="btn-primary">
+      <span>Book Your Transfer</span>
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ── EDITORIAL / ROADBOOK ── -->
+<section class="editorial" aria-label="Editorial — The Roadbook">
+  <div class="editorial-header">
+    <div>
+      <span class="section-label reveal">The Roadbook</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">Writing about the Riviera<br>as it is actually lived.</h2>
+    </div>
+    <a href="/editorial" class="intro-link reveal d2">
+      All articles
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="editorial-grid">
+    <!-- FEATURED ARTICLE — Large card (dark) -->
+    <article class="article-card reveal-scale">
+      <div class="article-photo art-ph-1">
+        <!-- PHOTO PLACEHOLDER: Street/architectural detail from Eze or Menton, editorial style -->
+        <!-- Portrait crop preferred for this large card -->
+        <div class="tour-photo-placeholder" style="height:360px">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Editorial photograph<br>architectural detail or street</span>
+        </div>
+        <span class="article-category">Roads & Routes</span>
+      </div>
+      <div class="article-body">
+        <span class="article-date">Feature · 8 min read</span>
+        <h3 class="article-title">The Road from Nice to Menton Was Designed, It Seems, for Late September</h3>
+        <p class="article-excerpt">The Grande Corniche sticks close to the coast at this point — not because it has to, but because it seems unwilling to leave. We drove it in both directions on a Tuesday in early autumn to find out which was better. The answer is neither obvious nor definitive.</p>
+        <div class="article-footer">
+          <a href="/editorial/grande-corniche" class="read-more">
+            Read the story
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="read-time">8 min</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 2 -->
+    <article class="article-card reveal d1">
+      <div class="article-photo art-ph-2">
+        <!-- PHOTO PLACEHOLDER: Monaco harbour or port, close detail or wide shot -->
+        <div class="tour-photo-placeholder" style="height:200px">
+          <div class="ph-frame" style="width:36px;height:36px"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Monaco harbour</span>
+        </div>
+        <span class="article-category">Places</span>
+      </div>
+      <div class="article-body">
+        <span class="article-date">Essay · 5 min read</span>
+        <h3 class="article-title">Monaco: What Everyone Misses, and the Forty Minutes That Fix It</h3>
+        <p class="article-excerpt">Most shore excursions spend forty minutes in Monaco and tell you everything there is to say. That forty minutes, used correctly, can actually change your impression of the place.</p>
+        <div class="article-footer">
+          <a href="/editorial/monaco" class="read-more">
+            Read
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="read-time">5 min</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 3 -->
+    <article class="article-card reveal d2">
+      <div class="article-photo art-ph-3">
+        <!-- PHOTO PLACEHOLDER: Provençal market, fresh produce, informal documentary style -->
+        <div class="tour-photo-placeholder" style="height:200px">
+          <div class="ph-frame" style="width:36px;height:36px"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Provençal market<br>documentary photograph</span>
+        </div>
+        <span class="article-category">Local Knowledge</span>
+      </div>
+      <div class="article-body">
+        <span class="article-date">Guide · 4 min read</span>
+        <h3 class="article-title">Which Market, Which Day, Which Village — A Practical Guide</h3>
+        <p class="article-excerpt">The Riviera has a market every morning somewhere nearby. Most of them are worth going to. A few of them are worth building a day around. Here is the list.</p>
+        <div class="article-footer">
+          <a href="/editorial/markets" class="read-more">
+            Read
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="read-time">4 min</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials" aria-label="Client testimonials">
+  <div class="testimonials-bg-text" aria-hidden="true">RJ</div>
+  <div class="testimonials-inner">
+    <div class="testi-left">
+      <span class="testi-overline reveal">Reviews</span>
+      <h2 class="testi-h3 reveal d1">What our<br>clients say.</h2>
+      <div class="reveal d2">
+        <span class="testi-rating">5.0</span>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testi-platform">Based on 48 reviews · Google & TripAdvisor</div>
+      </div>
+    </div>
+    <div class="testi-center reveal d2">
+      <div class="testi-quote-icon" aria-hidden="true">"</div>
+      <blockquote class="testi-quote" id="testiQuote">
+        "We were six, with a ship departing at 5pm. By 9:15 we were in Eze. By 1pm we were in Monaco. By 3:30 we were back with time for a coffee. It was, frankly, a masterclass in knowing exactly what to do with five hours."
+      </blockquote>
+      <div class="testi-author">
+        <span class="testi-author-name" id="testiName">James &amp; Catherine R.</span>
+        <span class="testi-author-origin" id="testiOrigin">London, United Kingdom · Shore excursion from Cannes</span>
+      </div>
+    </div>
+    <div class="testi-nav">
+      <div class="testi-dots" aria-hidden="true">
+        <div class="testi-dot active" data-idx="0"></div>
+        <div class="testi-dot" data-idx="1"></div>
+        <div class="testi-dot" data-idx="2"></div>
+        <div class="testi-dot" data-idx="3"></div>
+      </div>
+      <button class="testi-btn" id="testiPrev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="testi-btn" id="testiNext" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── DESTINATIONS ── -->
+<section class="destinations" aria-label="Destinations">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <div>
+      <span class="section-label reveal">Destinations</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">From Cannes,<br>the Riviera unfolds.</h2>
+    </div>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card reveal d1">
+      <span class="dest-number">01</span>
+      <div class="dest-name">Monaco</div>
+      <div class="dest-country">France · 45 min</div>
+    </div>
+    <div class="dest-card reveal d2">
+      <span class="dest-number">02</span>
+      <div class="dest-name">Eze</div>
+      <div class="dest-country">France · 40 min</div>
+    </div>
+    <div class="dest-card reveal d3">
+      <span class="dest-number">03</span>
+      <div class="dest-name">Antibes</div>
+      <div class="dest-country">France · 20 min</div>
+    </div>
+    <div class="dest-card reveal d2">
+      <span class="dest-number">04</span>
+      <div class="dest-name">Menton</div>
+      <div class="dest-country">France · 55 min</div>
+    </div>
+    <div class="dest-card reveal d3">
+      <span class="dest-number">05</span>
+      <div class="dest-name">Sanremo</div>
+      <div class="dest-country">Italy · 1h 45min</div>
+    </div>
+    <div class="dest-card reveal d1">
+      <span class="dest-number">06</span>
+      <div class="dest-name">Nice</div>
+      <div class="dest-country">France · 35 min</div>
+    </div>
+    <div class="dest-card reveal d2">
+      <span class="dest-number">07</span>
+      <div class="dest-name">Mougins</div>
+      <div class="dest-country">France · 20 min</div>
+    </div>
+    <div class="dest-card reveal d3">
+      <span class="dest-number">08</span>
+      <div class="dest-name">Portofino</div>
+      <div class="dest-country">Italy · 2h 30min</div>
+    </div>
+    <div class="dest-card reveal d1">
+      <span class="dest-number">09</span>
+      <div class="dest-name">Saint-Paul</div>
+      <div class="dest-country">France · 30 min</div>
+    </div>
+    <div class="dest-card reveal d2">
+      <span class="dest-number">10</span>
+      <div class="dest-name">Grasse</div>
+      <div class="dest-country">France · 25 min</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter" aria-label="Newsletter signup">
+  <div class="nl-left">
+    <span class="section-label reveal">The Roadbook Newsletter</span>
+    <h2 class="nl-h2 reveal d1">The Riviera, once<br>a month. Worth reading.</h2>
+    <p class="nl-body reveal d2">We write about the places, roads and people that do not appear in travel supplements. New routes, overlooked villages, the best time of year to visit somewhere you thought you knew. Irregular enough to feel considered rather than scheduled.</p>
+    <div class="nl-meta reveal d3">No advertising. No partners. Unsubscribe anytime.</div>
+  </div>
+  <div class="nl-right reveal d2">
+    <div style="font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--stone);margin-bottom:28px;padding-bottom:20px;border-bottom:.5px solid var(--parch)">
+      "For people who want to understand a place, not simply visit it."
+    </div>
+    <form class="nl-form" onsubmit="return false;">
+      <div class="nl-input-wrap" style="margin-bottom:24px">
+        <input type="text" class="nl-input" placeholder="First name" autocomplete="given-name">
+        <div class="nl-input-line"></div>
+      </div>
+      <div class="nl-input-wrap">
+        <input type="email" class="nl-input" placeholder="Email address" autocomplete="email">
+        <div class="nl-input-line"></div>
+      </div>
+      <button type="submit" class="nl-submit">
+        <span>Subscribe to the Roadbook</span>
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </form>
+    <p class="nl-promise">We do not share email addresses. You can expect one or two letters per month — no more. The first issue will arrive within the week.</p>
+  </div>
+</section>
+
+<!-- ── INSTAGRAM ── -->
+<section class="instagram" aria-label="Instagram feed">
+  <div class="instagram-header">
+    <h3 class="instagram-h3 reveal">From the field.</h3>
+    <a href="https://instagram.com/rivierajourneys" class="instagram-handle reveal d1" target="_blank" rel="noopener">
+      @rivierajourneys
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="ig-strip">
+    <!-- INSTAGRAM PLACEHOLDERS: Replace with actual Instagram post photos -->
+    <!-- Each cell should be a square photograph: 600×600px minimum -->
+    <div class="ig-post ig-ph-1 reveal">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"The light at Antibes, 07:40."</span>
+        <span class="ig-overlay-place">Antibes · France</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-2 reveal d1">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"Eze. Twelve centuries. One excellent aperitif."</span>
+        <span class="ig-overlay-place">Eze · France</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-3 reveal d2">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"The corniche road refuses to leave the coast."</span>
+        <span class="ig-overlay-place">Grande Corniche</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-4 reveal d3">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"Sanremo. Two hours from Cannes, another country."</span>
+        <span class="ig-overlay-place">Sanremo · Italy</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-5 reveal d2">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"The market at Mougins is worth the detour."</span>
+        <span class="ig-overlay-place">Mougins · France</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-6 reveal d3">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"Monaco at seven in the morning. Before the yachts."</span>
+        <span class="ig-overlay-place">Monaco</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Riviera Journeys</div>
+      <div class="footer-rule"></div>
+      <div class="footer-tagline">Know Where You Are.</div>
+      <p class="footer-desc">Private day tours, shore excursions, multi-day itineraries and transfers along the French and Italian Riviera from Cannes. In a premium Mercedes V-Class. Since 2024.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="/tours">Day Tours</a></li>
+        <li><a href="/shore-excursions">Full Day · Privates</a></li>
+        <li><a href="/multi-day">Multi-Day Journeys</a></li>
+        <li><a href="/transfers">Airport Transfers</a></li>
+        <li><a href="/book">Book a Tour</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Destinations</div>
+      <ul class="footer-links">
+        <li><a href="/destinations/monaco">Monaco</a></li>
+        <li><a href="/destinations/eze">Eze & the Corniche</a></li>
+        <li><a href="/destinations/antibes">Antibes</a></li>
+        <li><a href="/destinations/sanremo">Sanremo, Italy</a></li>
+        <li><a href="/destinations/cinque-terre">Cinque Terre</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact">
+        <a href="/cdn-cgi/l/email-protection#167e737a7a7956647f607f7364777c79636478736f65387064"><span class="__cf_email__" data-cfemail="2048454c4c4f60524956494552414a4f55524e4559530e4652">[email&#160;protected]</span></a><br>
+        <a href="tel:+33669962272">+33 66 99 6 22 72</a><br><br>
+        Based in Cannes,<br>
+        Alpes-Maritimes, France<br><br>
+        <a href="https://instagram.com/rivierajourneys" target="_blank">@rivierajourneys</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Riviera Journeys · André Tonnelier · rivierajourneys.fr</span>
+    <div class="footer-legal">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─────────────────────────────────────────────
+     JAVASCRIPT
+───────────────────────────────────────────── -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── CURSOR ──────────────────────────────────
+(function(){
+  const c = document.getElementById('cursor');
+  const r = document.getElementById('cursorRing');
+  if (!c || !r) return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+  function animate(){
+    c.style.left = mx+'px'; c.style.top = my+'px';
+    rx += (mx-rx)*.25; ry += (my-ry)*.25;
+    r.style.left = rx+'px'; r.style.top = ry+'px';
+    requestAnimationFrame(animate);
+  }
+  animate();
+  document.querySelectorAll('a,button,.tour-card,.article-card,.dest-card,.service-card,.testi-btn').forEach(el => {
+    el.addEventListener('mouseenter', () => { c.classList.add('hover'); r.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { c.classList.remove('hover'); r.classList.remove('hover'); });
+  });
+})();
+
+// ── NAV SCROLL ──────────────────────────────
+(function(){
+  const nav = document.getElementById('mainNav');
+  const pb = document.getElementById('progressBar');
+  function onScroll(){
+    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    if(pb) pb.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
+
+// ── SCROLL REVEAL ───────────────────────────
+(function(){
+  const els = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+  // Set initial hidden state via JS only (not CSS) so content is visible if JS fails
+  els.forEach(el => {
+    el.style.opacity = '0';
+    if(el.classList.contains('reveal')) el.style.transform = 'translateY(32px)';
+    if(el.classList.contains('reveal-left')) el.style.transform = 'translateX(-32px)';
+    if(el.classList.contains('reveal-right')) el.style.transform = 'translateX(32px)';
+    if(el.classList.contains('reveal-scale')) el.style.transform = 'scale(.96)';
+  });
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        e.target.style.opacity = '';
+        e.target.style.transform = '';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+  els.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if(r.top < window.innerHeight){ 
+      el.style.opacity = ''; el.style.transform = '';
+    } else {
+      obs.observe(el);
+    }
+  });
+})();
+
+// ── PARALLAX ────────────────────────────────
+(function(){
+  const el = document.getElementById('epParallax');
+  if(!el) return;
+  function update(){
+    const rect = el.parentElement.getBoundingClientRect();
+    const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    const y = (progress - .5) * -60;
+    el.style.transform = 'translateY('+y+'px)';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+
+// ── TESTIMONIALS ────────────────────────────
+(function(){
+  const quotes = [
+    {
+      q: "We were six, with a ship departing at 5pm. By 9:15 we were in Eze. By 1pm we were in Monaco. By 3:30 we were back with time for a coffee. It was, frankly, a masterclass in knowing exactly what to do with five hours.",
+      name: "James & Catherine R.",
+      origin: "London, United Kingdom · Shore excursion from Cannes"
+    },
+    {
+      q: "The transfer from Nice airport was waiting when we landed, thirty minutes early, without being told. The hotel we wanted was fifteen minutes from the airport. We have used Riviera Journeys for everything since.",
+      name: "M. & S. Hoffmann",
+      origin: "Zürich, Switzerland · Airport transfer & day tours"
+    },
+    {
+      q: "We asked to go somewhere that wasn't in the guidebook. An hour later we were in a village I cannot find on a map, eating something extraordinary. That is the difference.",
+      name: "Patrick F.",
+      origin: "New York, United States · Multi-day tour"
+    },
+    {
+      q: "I have organised private tours on four continents. The Riviera Journeys approach — understated, knowledgeable, unhurried — is exactly what this part of the world deserves. We return every year.",
+      name: "Sir A. & Lady T.",
+      origin: "Edinburgh, Scotland · Annual Riviera itinerary"
+    }
+  ];
+  let idx = 0;
+  const qEl = document.getElementById('testiQuote');
+  const nEl = document.getElementById('testiName');
+  const oEl = document.getElementById('testiOrigin');
+  const dots = document.querySelectorAll('.testi-dot');
+
+  function setQuote(i){
+    idx = (i + quotes.length) % quotes.length;
+    [qEl,nEl,oEl].forEach(el => { el.style.opacity='0'; el.style.transform='translateY(8px)'; });
+    setTimeout(()=>{
+      qEl.textContent = '"'+quotes[idx].q+'"';
+      nEl.textContent = quotes[idx].name;
+      oEl.textContent = quotes[idx].origin;
+      [qEl,nEl,oEl].forEach(el => { el.style.transition='opacity .5s, transform .5s'; el.style.opacity='1'; el.style.transform='translateY(0)'; });
+      dots.forEach((d,i) => d.classList.toggle('active', i===idx));
+    }, 300);
+  }
+
+  [qEl,nEl,oEl].forEach(el => { el.style.transition='opacity .5s, transform .5s'; });
+  document.getElementById('testiNext').addEventListener('click', () => setQuote(idx+1));
+  document.getElementById('testiPrev').addEventListener('click', () => setQuote(idx-1));
+  dots.forEach((d,i) => d.addEventListener('click', () => setQuote(i)));
+  setInterval(() => setQuote(idx+1), 7000);
+})();
+
+// ── STRUCTURED DATA (JSON-LD) ────────────────
+(function(){
+  const ld = {
+    "@context":"https://schema.org",
+    "@type":"TouristInformationCenter",
+    "name":"Riviera Journeys",
+    "url":"https://rivierajourneys.fr",
+    "description":"Private day tours, shore excursions and transfers along the French and Italian Riviera from Cannes in a premium Mercedes V-Class.",
+    "address":{"@type":"PostalAddress","addressLocality":"Cannes","addressRegion":"Alpes-Maritimes","addressCountry":"FR"},
+    "telephone":"+33669962272",
+    "email":"hello@rivierajourneys.fr",
+    "priceRange":"€€€",
+    "touristType":"Culture, History, Scenic",
+    "sameAs":["https://instagram.com/rivierajourneys"]
+  };
+  const s = document.createElement('script');
+  s.type='application/ld+json';
+  s.text = JSON.stringify(ld);
+  document.head.appendChild(s);
+})();
+
+(function(){
+  var b=document.getElementById('navBurger'),m=document.getElementById('mobileMenu'),x=document.getElementById('mobileClose');
+  if(!b||!m)return;
+  var open=false;
+  function toggle(){
+    open=!open;
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open);
+    m.setAttribute('aria-hidden',!open);
+    if(open){m.style.display='flex';setTimeout(function(){m.style.opacity='1';},10);document.body.style.overflow='hidden';}
+    else{m.style.opacity='0';setTimeout(function(){m.style.display='none';},400);document.body.style.overflow='';}
+  }
+  b.addEventListener('click',toggle);
+  if(x)x.addEventListener('click',function(){if(open)toggle();});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(open)toggle();});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle();});
+})();
+</script>
+
+</body>
+</html>
