@@ -242,10 +242,6 @@ a { text-decoration: none; color: inherit; }
 .placeholder-icon svg { width: 22px; height: 22px; stroke: rgba(196,170,130,.4); fill: none; }
 
 /* Grain overlay */
-/* Guard: hide placeholder spans if they escape hero-photo */
-.hero > span, .hero > .placeholder-text { display: none !important; }
-/* Guard: prevent leaked placeholder spans from affecting layout */
-.hero > span { display: none !important; }
 .hero-grain {
   position: absolute;
   inset: 0;
@@ -261,12 +257,10 @@ a { text-decoration: none; color: inherit; }
   z-index: 3;
 }
 .hero-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 4;
   padding: 0 72px 80px;
+  max-width: 900px;
 }
 .hero-overline {
   font-family: var(--sans);
