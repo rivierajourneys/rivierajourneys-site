@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riviera Journeys – Private Day Tours & Full Day · Privates from Cannes | French & Italian Riviera</title>
+<title>Riviera Journeys – Private Day Tours & Shore Excursions from Cannes | French & Italian Riviera</title>
 <meta name="description" content="Private day tours, shore excursions and transfers along the French and Italian Riviera from Cannes. Eze, Monaco, Antibes, Sanremo. Premium Mercedes V-Class. The Riviera for people who actually want to be there.">
 <meta name="keywords" content="private tours Cannes, shore excursions French Riviera, day tours Cannes Monaco, private driver Cannes, Riviera tours, Côte d'Azur private tours, Cannes transfers airport">
-<meta property="og:title" content="Riviera Journeys – Private Tours from Cannes">
+<meta property="og:title" content="Riviera Journeys – The Riviera, properly experienced">
 <meta property="og:description" content="The connoisseur's guide to the French and Italian Riviera. Private day tours, shore excursions, and transfers in a premium Mercedes V-Class.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rivierajourneys.fr">
@@ -676,10 +676,10 @@ a { text-decoration: none; color: inherit; }
 .tour-card:not(:first-child) .tour-card-title { font-size: 19px; }
 .tour-card-meta {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 300;
   color: var(--stone);
-  line-height: 1.6;
+  line-height: 1.8;
 }
 .tour-card-footer {
   display: flex;
@@ -1643,6 +1643,24 @@ footer {
 .mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(196,170,130,.3);color:var(--sand);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
 .mobile-menu-close:hover{background:rgba(196,170,130,.1)}
 @media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
+
+/* ── FAQ ── */
+.faq-section { padding: 96px 72px; border-bottom: .5px solid var(--parch); background: var(--bone2); }
+.faq-section-h2 { font-family: var(--serif); font-size: clamp(28px,3vw,44px); font-weight: 300; color: var(--warm); line-height: 1.1; margin-top: 16px; margin-bottom: 56px; }
+.faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--parch); }
+.faq-item { background: var(--bone); overflow: hidden; }
+.faq-question { display: flex; align-items: center; justify-content: space-between; padding: 24px 32px; cursor: pointer; gap: 24px; transition: background .2s; }
+.faq-question:hover { background: var(--bone2); }
+.faq-q-text { font-family: var(--serif); font-size: 20px; font-weight: 300; color: var(--warm); line-height: 1.25; }
+.faq-icon { width: 28px; height: 28px; flex-shrink: 0; border: .5px solid var(--parch); display: flex; align-items: center; justify-content: center; transition: transform .4s var(--slow), border-color .3s; }
+.faq-icon svg { width: 12px; height: 12px; stroke: var(--stone); fill: none; transition: stroke .3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--sand); }
+.faq-item.open .faq-icon svg { stroke: var(--sand); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s var(--slow); }
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer-inner { padding: 0 32px 28px; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--slate); line-height: 1.85; border-top: .5px solid var(--parch); padding-top: 20px; }
+@media(max-width:1024px){ .faq-section { padding: 72px 40px; } }
+@media(max-width:768px){ .faq-section { padding: 64px 24px; } .faq-q-text { font-size: 17px; } .faq-question { padding: 20px 24px; } .faq-answer-inner { padding: 0 24px 24px; padding-top: 16px; } }
 </style>
 </head>
 <body>
@@ -1659,7 +1677,7 @@ footer {
   <a href="/" class="nav-logo" aria-label="Riviera Journeys home">Riviera Journeys</a>
   <ul class="nav-links">
     <li><a href="/tours">Tours</a></li>
-    <li><a href="/shore-excursions">Full Day · Privates</a></li>
+    <li><a href="/shore-excursions">Shore Excursions</a></li>
     <li><a href="/multi-day">Multi-Day</a></li>
     <li><a href="/transfers">Transfers</a></li>
     <li><a href="/editorial">Roadbook</a></li>
@@ -1676,7 +1694,7 @@ footer {
     <li><a href="/shore-excursions">Shore Excursions</a></li>
     <li><a href="/multi-day">Multi-Day</a></li>
     <li><a href="/transfers">Transfers</a></li>
-    <li><a href="/editorial">The Roadbook</a></li>
+    <li><a href="/editorial">Roadbook</a></li>
   </ul>
   <a href="/book" class="mobile-menu-cta">Book a Tour</a>
 </div>
@@ -1698,9 +1716,9 @@ footer {
   <div class="hero-grain"></div>
   <div class="hero-vignette"></div>
   <div class="hero-content">
-    <div class="hero-overline">Private Tours from Cannes</div>
-    <h1 class="hero-h1">The Riviera,<br><em>properly experienced.</em></h1>
-    <p class="hero-sub">Private tours from Cannes. Driven by someone who knows the road.</p>
+    <div class="hero-overline">The Riviera, properly experienced</div>
+    <h1 class="hero-h1">Private Day Tours from Cannes —<br><em>French &amp; Italian Riviera</em></h1>
+    <p class="hero-sub">Private day tours, shore excursions and transfers along the French and Italian Riviera. In a Mercedes V-Class. Driven by someone who actually lives here.</p>
     <div class="hero-actions">
       <a href="/tours" class="btn-primary">
         <span>Explore Tours</span>
@@ -1712,7 +1730,7 @@ footer {
       </a>
     </div>
   </div>
-  <div class="hero-photo-credit" aria-hidden="true">Photograph by André Tonnelier · Villefranche · July 2025</div>
+  <div class="hero-photo-credit" aria-hidden="true">Photograph by Riviera Journeys · Villefranche · July 2025</div>
   <div class="hero-scroll" aria-hidden="true">
     <span>Scroll</span>
     <div class="scroll-line"></div>
@@ -1724,14 +1742,14 @@ footer {
   <div class="ticker-track">
     <!-- Doubled for seamless loop -->
     <span class="ticker-item">Day Tours from Cannes<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Full Day · Privates for Cruise Guests<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Shore Excursions for Cruise Guests<span class="ticker-dot"></span></span>
     <span class="ticker-item">Monaco · Eze · Antibes · Menton<span class="ticker-dot"></span></span>
     <span class="ticker-item">Cinque Terre · Sanremo · Portofino<span class="ticker-dot"></span></span>
     <span class="ticker-item">Premium Mercedes V-Class<span class="ticker-dot"></span></span>
     <span class="ticker-item">Airport Transfers Nice Côte d'Azur<span class="ticker-dot"></span></span>
     <span class="ticker-item">Private · No Hidden Costs<span class="ticker-dot"></span></span>
     <span class="ticker-item">Day Tours from Cannes<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Full Day · Privates for Cruise Guests<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Shore Excursions for Cruise Guests<span class="ticker-dot"></span></span>
     <span class="ticker-item">Monaco · Eze · Antibes · Menton<span class="ticker-dot"></span></span>
     <span class="ticker-item">Cinque Terre · Sanremo · Portofino<span class="ticker-dot"></span></span>
     <span class="ticker-item">Premium Mercedes V-Class<span class="ticker-dot"></span></span>
@@ -1796,7 +1814,7 @@ footer {
         <span class="tour-card-tag">Featured · Full Day</span>
       </div>
       <div class="tour-card-body">
-        <h3 class="tour-card-title">Eze, Monaco & the Grande Corniche</h3>
+        <h3 class="tour-card-title">Nice, Eze, Monaco & the Corniche</h3>
         <p class="tour-card-meta">The classic Riviera route, done at the right pace. Nice old town before the crowds, the medieval village of Eze at the hour it deserves, the Grande Corniche, and Monaco with enough time to find the part that isn't on the postcard.</p>
         <div class="tour-card-footer">
           <div>
@@ -1818,10 +1836,10 @@ footer {
           <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
           <span class="ph-label">Antibes<br>Cap d'Antibes coastline</span>
         </div>
-        <span class="tour-card-tag">Full Day · Private</span>
+        <span class="tour-card-tag">Shore Excursions</span>
       </div>
       <div class="tour-card-body">
-        <h3 class="tour-card-title">Antibes & the Cap</h3>
+        <h3 class="tour-card-title">Cannes, Antibes & Saint-Paul-de-Vence</h3>
         <p class="tour-card-meta">Cannes beyond the Croisette, the ramparts of Antibes and the Cap — Picasso's city, properly — then the afternoon light in Saint-Paul-de-Vence, where the lanes hold their quiet.</p>
         <div class="tour-card-footer">
           <div>
@@ -1846,7 +1864,7 @@ footer {
         <span class="tour-card-tag">Full Day · France &amp; Italy</span>
       </div>
       <div class="tour-card-body">
-        <h3 class="tour-card-title">Sanremo & the Italian Border</h3>
+        <h3 class="tour-card-title">Menton, Sanremo & the Italian Border</h3>
         <p class="tour-card-meta">Menton — lemon trees, Belle Époque gardens, the last French city — then Italy: Sanremo's old town, the flower market, a different tempo. The return along the coast is the best part.</p>
         <div class="tour-card-footer">
           <div>
@@ -1933,7 +1951,7 @@ footer {
       <div class="service-icon">
         <svg viewBox="0 0 44 44" stroke-width="1"><circle cx="22" cy="22" r="18"/><path d="M22 4 A18 18 0 0 1 40 22"/><circle cx="22" cy="22" r="2" fill="var(--sand)"/></svg>
       </div>
-      <h3 class="service-title">Day Tours & Full Day · Privates</h3>
+      <h3 class="service-title">Day Tours & Shore Excursions</h3>
       <p class="service-desc">Half-day and full-day private tours from Cannes across the French and Italian Riviera. Designed around your schedule — whether you have a ship in port or simply a free afternoon. Monaco, Eze, Antibes, Sanremo, and beyond.</p>
       <a href="/tours" class="service-link">
         Explore tours
@@ -2196,6 +2214,74 @@ footer {
   </div>
 </section>
 
+
+<!-- ── FAQ ── -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <span class="section-label reveal">Before You Book</span>
+  <h2 class="faq-section-h2 reveal d1">Questions &amp; answers.</h2>
+  <div class="faq-list">
+    <div class="faq-answer"><p class="faq-answer-inner">Our full-day private tours are priced at €800 per vehicle — not per person — for up to seven guests. Transfers from Nice Côte d'Azur Airport begin at €120. Shore excursions from Villefranche start from €240. There are no hidden costs: fuel, parking, and waiting time are included.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">May we adjust the itinerary to suit our own interests?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">Entirely. Every route we offer is a suggestion, not a schedule. If you would prefer to spend longer in Eze and skip Monaco, or to find a particular village in the arrière-pays, or simply to follow the Corniche until the light is right — we adjust accordingly. Please mention your preferences when booking and we shall design the day around them.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How long is a full-day tour, precisely?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">A full day typically runs seven to eight hours from departure to return. We collect you at your hotel, port, or agreed meeting point at 09:00–09:30 and return you by late afternoon — before the roads acquire their evening character. The precise schedule is agreed when booking and can accommodate early cruise departures or late hotel check-outs.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Our party numbers more than seven — can you accommodate us?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">The Mercedes V-Class seats seven passengers comfortably. For larger parties, we arrange two vehicles travelling together on the same route — your group remains together throughout the day. The price per vehicle is identical. Please let us know the size of your party when enquiring.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What is the best shore excursion from Villefranche?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">Nice, Eze and Monaco together make the most complete day ashore — Nice old town in the morning, the village of Eze at the right hour, then Monaco with time for the quarter above the port rather than merely the Casino forecourt. The route is adjusted to your ship's departure time, so you are back at the tender pier comfortably before she weighs anchor.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Is it possible to be collected from Nice airport and taken directly to Cannes?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">Yes — airport transfers are among our most frequently requested services. We meet you in the arrivals hall with a name board, assist with luggage, and have you in Cannes within forty minutes under normal conditions. The rate is fixed regardless of traffic or flight delays. Transfers to Monaco, Antibes, and elsewhere on the Riviera are equally available.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Do you conduct tours in languages other than English?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">Our tours are conducted in English, Russian and French. If your party includes guests who would be more comfortable in French or Russian, we are entirely at ease switching between the two throughout the day.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How far in advance ought one to book?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">We recommend booking at least a week ahead, particularly between May and September when the Riviera is at its most sought-after. That said, we do our best to accommodate last-minute requests — if the date is available, the tour will happen. Contact us directly by email or WhatsApp and we will respond within two hours.</p></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ── NEWSLETTER ── -->
 <section class="newsletter" aria-label="Newsletter signup">
   <div class="nl-left">
@@ -2296,7 +2382,7 @@ footer {
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
         <li><a href="/tours">Day Tours</a></li>
-        <li><a href="/shore-excursions">Full Day · Privates</a></li>
+        <li><a href="/shore-excursions">Shore Excursions</a></li>
         <li><a href="/multi-day">Multi-Day Journeys</a></li>
         <li><a href="/transfers">Airport Transfers</a></li>
         <li><a href="/book">Book a Tour</a></li>
@@ -2324,7 +2410,7 @@ footer {
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 Riviera Journeys · André Tonnelier · rivierajourneys.fr</span>
+    <span class="footer-copy">© 2025 Riviera Journeys · rivierajourneys.fr</span>
     <div class="footer-legal">
       <a href="/privacy">Privacy Policy</a>
       <a href="/terms">Terms of Service</a>
@@ -2500,6 +2586,32 @@ footer {
   if(x)x.addEventListener('click',function(){if(open)toggle();});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(open)toggle();});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle();});
+})();
+
+// ── FAQ ─────────────────────────────────────────────
+function toggleFaq(el){
+  var item = el.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+  if(!wasOpen) item.classList.add('open');
+}
+
+// ── FAQ SCHEMA ───────────────────────────────────────
+(function(){
+  var faq = {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How much does a private day tour from Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"Full-day private tours are €800 per vehicle for up to 7 guests. Transfers from Nice airport from €120. Shore excursions from Villefranche from €240. All inclusive of fuel, parking and waiting time."}},
+      {"@type":"Question","name":"Can we change the itinerary?","acceptedAnswer":{"@type":"Answer","text":"Entirely. Every route is a suggestion. We adjust to your interests — longer in Eze, a particular village, or simply following the Corniche until the light is right."}},
+      {"@type":"Question","name":"How long is a full day tour from Cannes?","acceptedAnswer":{"@type":"Answer","text":"Seven to eight hours. Departure at 09:00–09:30, return by late afternoon. Schedule agreed at booking."}},
+      {"@type":"Question","name":"We are more than 7 people — can you accommodate us?","acceptedAnswer":{"@type":"Answer","text":"Yes. For parties over 7 we arrange two vehicles on the same route. The price per person remains identical."}},
+      {"@type":"Question","name":"What is the best shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"For a half day: Eze and Monaco. For a full day: Nice in the morning, Eze and Monaco in the afternoon. We guarantee return to the tender pier before departure."}},
+      {"@type":"Question","name":"Can I get a private transfer from Nice airport to Cannes?","acceptedAnswer":{"@type":"Answer","text":"Yes. We meet you in arrivals with a name board. Cannes in 40 minutes. Fixed rate regardless of traffic or flight delays."}}
+    ]
+  };
+  var s=document.createElement('script');s.type='application/ld+json';s.text=JSON.stringify(faq);
+  document.head.appendChild(s);
 })();
 </script>
 
