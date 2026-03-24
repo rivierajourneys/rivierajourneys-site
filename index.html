@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riviera Journeys – Private Day Tours & Shore Excursions from Cannes | French & Italian Riviera</title>
-<meta name="description" content="Private day tours, shore excursions and transfers along the French and Italian Riviera from Cannes. Eze, Monaco, Antibes, Sanremo. Premium Mercedes V-Class. The Riviera for people who actually want to be there.">
-<meta name="keywords" content="private tours Cannes, shore excursions French Riviera, day tours Cannes Monaco, private driver Cannes, Riviera tours, Côte d'Azur private tours, Cannes transfers airport">
+<title>Riviera Journeys – Private Tours, Transfers & Experiences from Cannes | French Riviera</title>
+<meta name="description" content="Private day tours, shore excursions, transfers, photography experiences and off-season gastronomy tours from Cannes. French & Italian Riviera. Corporate retreats. Slow travel consulting. Mercedes V-Class.">
+<meta name="keywords" content="private tours Cannes, shore excursions French Riviera, transfers Nice airport Cannes, corporate retreats French Riviera, off season Riviera, truffle tour Cannes, photography tours French Riviera, slow travel Riviera">
 <meta property="og:title" content="Riviera Journeys – The Riviera, properly experienced">
 <meta property="og:description" content="The connoisseur's guide to the French and Italian Riviera. Private day tours, shore excursions, and transfers in a premium Mercedes V-Class.">
 <meta property="og:type" content="website">
@@ -124,6 +124,7 @@ a { text-decoration: none; color: inherit; }
   transition: background .5s var(--ease), border-color .5s;
   border-bottom: .5px solid transparent;
 }
+
 .nav.scrolled {
   background: rgba(253,250,246,.96);
   backdrop-filter: blur(12px);
@@ -141,47 +142,258 @@ a { text-decoration: none; color: inherit; }
 .nav.scrolled .nav-logo { color: var(--warm); }
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 0;
   align-items: center;
   list-style: none;
 }
-.nav-links a {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(253,250,246,.75);
-  transition: color .3s;
-  position: relative;
+.nav-links > li {
+  position: static;
 }
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -3px; left: 0; right: 0;
-  height: .5px;
-  background: var(--sand);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .4s var(--ease);
-}
-.nav-links a:hover { color: rgba(253,250,246,1); }
-.nav-links a:hover::after { transform: scaleX(1); }
-.nav.scrolled .nav-links a { color: var(--stone); }
-.nav.scrolled .nav-links a:hover { color: var(--warm); }
-.nav-cta {
+.nav-links > li > a {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(253,250,246,.85);
+  transition: color .35s;
+  display: block;
+  padding: 0 18px;
+  height: 68px;
+  line-height: 68px;
+  white-space: nowrap;
+  position: relative;
+}
+/* Underline — animates immediately on hover, before mega panel opens */
+.nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: 26px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .28s ease;
+}
+.nav-links > li:hover > a::after,
+.nav-links > li.mega-open > a::after { transform: scaleX(1); }
+.nav-links > li > a.nav-cta::after { display: none; }
+.nav-links > li:hover > a,
+.nav-links > li.mega-open > a { color: #fff; }
+.nav.scrolled .nav-links > li > a { color: var(--stone); }
+.nav.scrolled .nav-links > li:hover > a,
+.nav.scrolled .nav-links > li.mega-open > a { color: var(--warm); }
+
+/* ═══════════════════════════════════════
+   MEGA MENU — Ralph Lauren style
+   Full-width white panel
+═══════════════════════════════════════ */
+.mega-panel {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #e8e3dc;
+  border-bottom: 1px solid #e8e3dc;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity .42s cubic-bezier(0.16,1,0.3,1), transform .42s cubic-bezier(0.16,1,0.3,1);
+  box-shadow: 0 16px 64px rgba(28,28,26,.06);
+}
+.nav-links > li.mega-open .mega-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+/* Nav bar turns white when mega menu is open */
+.nav.mega-active {
+  background: #fff !important;
+  border-bottom-color: #e8e3dc !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.nav.mega-active .nav-logo { color: var(--warm) !important; }
+.nav.mega-active .nav-links > li > a { color: rgba(28,28,26,.55) !important; }
+.nav.mega-active .nav-links > li.mega-open > a,
+.nav.mega-active .nav-links > li > a:hover { color: var(--warm) !important; }
+.nav.mega-active .nav-cta span { color: var(--terra) !important; }
+.nav.mega-active .burger-line { background: var(--warm) !important; }
+/* Inner layout */
+.mega-inner {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 64px 44px;
+  gap: 0;
+  min-height: 320px;
+}
+/* Left column — subcategory links */
+.mega-nav-col {
+  width: 220px;
+  flex-shrink: 0;
+  border-right: 1px solid #e8e3dc;
+  padding-right: 32px;
+  margin-right: 40px;
+}
+.mega-nav-col-title {
+  font-family: var(--sc);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: #8C8880;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: .5px solid #e8e3dc;
+}
+.mega-sub-link {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 300;
+  letter-spacing: .08em;
+  color: #1C1C1A;
+  padding: 8px 0;
+  border-bottom: .5px solid rgba(232,227,220,.5);
+  cursor: pointer;
+  transition: padding-left .3s ease, color .3s ease;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+}
+.mega-sub-link:last-child { border-bottom: none; }
+.mega-sub-link:hover,
+.mega-sub-link.active { color: var(--terra); padding-left: 5px; }
+.mega-sub-link.active { font-weight: 400; }
+
+/* Second sub-level title (e.g. "By boat") */
+.mega-sub-section-title {
+  font-family: var(--sc);
+  font-size: 8px;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--sand) !important;
-  border: .5px solid rgba(196,170,130,.6);
-  padding: 8px 20px;
-  transition: background .3s, color .3s, border-color .3s !important;
+  color: #8C8880;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  display: block;
 }
+
+/* Right area — cards */
+.mega-cards-area {
+  flex: 1;
+  overflow: hidden;
+}
+.mega-cards-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e8e3dc;
+}
+.mega-cards-header-title {
+  font-family: var(--sc);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: #1C1C1A;
+}
+.mega-cards-pane {
+  display: none;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.mega-cards-pane.active { display: flex; }
+.mega-card {
+  width: 180px;
+  cursor: pointer;
+  transition: opacity .2s;
+  text-decoration: none;
+}
+.mega-card:hover { opacity: .78; }
+.mega-card-img {
+  width: 180px;
+  height: 220px;
+  background: #EAE3D7;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+.mega-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.mega-card-img-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg,#EAE3D7,#C4AA82 120%);
+  display: flex; align-items: flex-end; padding: 10px;
+}
+.mega-card-img-placeholder span {
+  font-family: var(--sc);
+  font-size: 8px;
+  letter-spacing: .16em;
+  color: rgba(28,28,26,.45);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.mega-card-name {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: #1C1C1A;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.mega-card-detail {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: #8C8880;
+  letter-spacing: .04em;
+}
+
+/* Featured card (wider) */
+.mega-card.featured .mega-card-img {
+  width: 240px;
+  height: 300px;
+}
+.mega-card.featured { width: 240px; }
+
+.nav-cta {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sand) !important;
+  border: .5px solid rgba(196,170,130,.55);
+  padding: 11px 28px !important;
+  height: auto !important;
+  line-height: normal !important;
+  transition: background .45s cubic-bezier(0.16,1,0.3,1), color .45s, border-color .45s !important;
+  margin-left: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--terra);
+  transform: translateX(-101%);
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
+  z-index: 0;
+}
+.nav-cta span { position: relative; z-index: 1; }
+.nav-cta:hover::before { transform: translateX(0); }
 .nav-cta:hover {
-  background: var(--terra) !important;
   border-color: var(--terra) !important;
   color: var(--bone) !important;
 }
@@ -209,7 +421,7 @@ a { text-decoration: none; color: inherit; }
   width: 100%; height: 100%;
   object-fit: cover;
   transform: scale(1.06);
-  transition: transform 8s var(--ease);
+  transition: transform 12s cubic-bezier(0.16,1,0.3,1);
   filter: brightness(.75);
 }
 .hero-photo img.loaded { transform: scale(1); }
@@ -242,6 +454,10 @@ a { text-decoration: none; color: inherit; }
 .placeholder-icon svg { width: 22px; height: 22px; stroke: rgba(196,170,130,.4); fill: none; }
 
 /* Grain overlay */
+/* Guard: hide placeholder spans if they escape hero-photo */
+.hero > span, .hero > .placeholder-text { display: none !important; }
+/* Guard: prevent leaked placeholder spans from affecting layout */
+.hero > span { display: none !important; }
 .hero-grain {
   position: absolute;
   inset: 0;
@@ -257,10 +473,12 @@ a { text-decoration: none; color: inherit; }
   z-index: 3;
 }
 .hero-content {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 4;
   padding: 0 72px 80px;
-  max-width: 900px;
 }
 .hero-overline {
   font-family: var(--sans);
@@ -334,7 +552,7 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   background: var(--terra);
   transform: translateX(-101%);
-  transition: transform .5s var(--slow);
+  transition: transform .6s cubic-bezier(0.16,1,0.3,1);
 }
 .btn-primary:hover::before { transform: translateX(0); }
 .btn-primary:hover { color: var(--bone); }
@@ -343,10 +561,60 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   z-index: 1;
   display: inline-flex;
-  transition: transform .3s var(--ease);
+  transition: transform .45s var(--ease);
 }
 .btn-primary:hover .arrow { transform: translateX(6px); }
 
+.btn-sand {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--warm);
+  background: var(--sand);
+  padding: 16px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: color .45s;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 12px;
+  text-decoration: none;
+  width: auto;
+}
+.btn-sand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--terra);
+  transform: translateX(-101%);
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
+}
+.btn-sand:hover::before { transform: translateX(0); }
+.btn-sand:hover { color: var(--bone); }
+.btn-sand span { position: relative; z-index: 1; }
+.btn-sand .arrow { position: relative; z-index: 1; transition: transform .45s var(--ease); }
+.btn-sand:hover .arrow { transform: translateX(4px); }
+.section-text-link {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--warm);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: .5px solid var(--parch);
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: border-color .4s, gap .4s, color .3s;
+}
+.section-text-link:hover { border-bottom-color: var(--warm); gap: 18px; color: var(--terra); }
+.section-text-link svg { transition: transform .45s var(--ease); }
+.section-text-link:hover svg { transform: translateX(4px); }
 .btn-ghost {
   font-family: var(--sans);
   font-size: 10px;
@@ -360,7 +628,7 @@ a { text-decoration: none; color: inherit; }
   transition: color .3s, gap .3s;
 }
 .btn-ghost:hover { color: var(--bone); gap: 16px; }
-.btn-ghost svg { transition: transform .3s var(--ease); }
+.btn-ghost svg { transition: transform .45s var(--ease); }
 .btn-ghost:hover svg { transform: translateX(4px); }
 
 .hero-scroll {
@@ -806,7 +1074,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--sand);
   transition: gap .3s;
 }
-.service-link svg { width: 14px; height: 14px; stroke: var(--sand); fill: none; transition: transform .3s var(--ease); }
+.service-link svg { width: 14px; height: 14px; stroke: var(--sand); fill: none; transition: transform .45s var(--ease); }
 .service-card:hover .service-link { gap: 14px; }
 .service-card:hover .service-link svg { transform: translateX(4px); }
 .service-card::before {
@@ -1341,7 +1609,7 @@ a { text-decoration: none; color: inherit; }
 }
 .nl-submit:hover::before { transform: translateX(0); }
 .nl-submit span, .nl-submit svg { position: relative; z-index: 1; }
-.nl-submit svg { width: 14px; height: 14px; stroke: currentColor; fill: none; transition: transform .3s var(--ease); }
+.nl-submit svg { width: 14px; height: 14px; stroke: currentColor; fill: none; transition: transform .45s var(--ease); }
 .nl-submit:hover svg { transform: translateX(6px); }
 .nl-promise {
   font-family: var(--sans);
@@ -1635,14 +1903,77 @@ footer {
 .mobile-menu.open{display:flex;opacity:1}
 .mobile-nav{list-style:none;display:flex;flex-direction:column;gap:0}
 .mobile-nav li{border-bottom:.5px solid rgba(196,170,130,.12)}
-.mobile-nav a{font-family:var(--sans);font-size:clamp(20px,5vw,30px);font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);display:block;padding:16px 0;transition:color .3s,padding-left .3s}
+.mobile-nav a{font-family:var(--sans);font-size:clamp(22px,5.5vw,32px);font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);display:block;padding:16px 0;transition:color .3s,padding-left .3s}
 .mobile-nav a:hover{color:var(--sand);padding-left:8px}
 .mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s}
 .mobile-menu-cta:hover{background:var(--terra)}
 .mobile-menu-logo{position:absolute;top:28px;left:48px;font-family:'Cormorant SC',Georgia,serif;font-size:14px;font-weight:300;letter-spacing:.14em;color:var(--sand)}
 .mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(196,170,130,.3);color:var(--sand);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
 .mobile-menu-close:hover{background:rgba(196,170,130,.1)}
+/* Mobile accordion */
+.mob-parent { border-bottom: .5px solid rgba(196,170,130,.12); }
+.mob-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: clamp(20px,5vw,28px);
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--bone);
+  padding: 14px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color .3s;
+}
+.mob-toggle:hover { color: var(--sand); }
+.mob-arrow {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--sand);
+  transition: transform .3s;
+  line-height: 1;
+}
+.mob-parent.open .mob-arrow { transform: rotate(45deg); }
+.mob-sub {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s cubic-bezier(0.16,1,0.3,1);
+  padding-left: 4px;
+}
+.mob-parent.open .mob-sub { max-height: 600px; }
+.mob-sub li a {
+  display: block;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: rgba(247,243,237,.7);
+  padding: 8px 0;
+  border-bottom: .5px solid rgba(196,170,130,.06);
+  transition: color .2s, padding-left .2s;
+}
+.mob-sub li:last-child a { border-bottom: none; padding-bottom: 14px; }
+.mob-sub li a:hover { color: var(--sand); padding-left: 6px; }
 @media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
+/* ── MOBILE TYPOGRAPHY FIX ── */
+@media(max-width:480px){
+  .hero-h1 { font-size: clamp(30px,8vw,46px) !important; }
+  .hero-sub { font-size: 14px !important; line-height: 1.7 !important; }
+  .section-label { font-size: 10px !important; letter-spacing: .2em !important; }
+  .service-title { font-size: 18px !important; font-weight: 400 !important; }
+  .service-desc { font-size: 14px !important; line-height: 1.75 !important; color: var(--slate) !important; }
+  .service-link { font-size: 11px !important; }
+  .tour-name { font-size: 16px !important; font-weight: 500 !important; color: var(--warm) !important; }
+  .tour-desc { font-size: 13px !important; line-height: 1.7 !important; }
+  .tour-detail { font-size: 11px !important; }
+  h2 { font-size: clamp(24px,6vw,36px) !important; }
+}
 
 /* ── FAQ ── */
 .faq-section { padding: 96px 72px; border-bottom: .5px solid var(--parch); background: var(--bone2); }
@@ -1675,13 +2006,470 @@ footer {
 <!-- ── NAVIGATION ── -->
 <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="Riviera Journeys home">Riviera Journeys</a>
-  <ul class="nav-links">
-    <li><a href="/tours">Tours</a></li>
-    <li><a href="/shore-excursions">Shore Excursions</a></li>
-    <li><a href="/multi-day">Multi-Day</a></li>
-    <li><a href="/transfers">Transfers</a></li>
-    <li><a href="/editorial">Roadbook</a></li>
-    <li><a href="/book" class="nav-cta">Book a Tour</a></li>
+  <ul class="nav-links" id="mainNavLinks">
+
+    <!-- ─── TOURS ─── -->
+    <li>
+      <a href="/tours">Tours</a>
+      <div class="mega-panel" id="mega-tours">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Tours</div>
+            <button class="mega-sub-link active" data-pane="cannes" data-mega="tours">Day tours from Cannes</button>
+            <button class="mega-sub-link" data-pane="nice" data-mega="tours">Day tours from Nice</button>
+            <span class="mega-sub-section-title">By sea</span>
+            <button class="mega-sub-link" data-pane="boat" data-mega="tours">Boat trips</button>
+            <span class="mega-sub-section-title">Season</span>
+            <button class="mega-sub-link" data-pane="offseason" data-mega="tours">Off-season Riviera</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-tours">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Day Tours from Cannes</span></div>
+            <!-- Cannes -->
+            <div class="mega-cards-pane active" id="pane-tours-cannes">
+              <a class="mega-card" href="/tours/cannes/nice-eze-monaco">
+                <div class="mega-card-img"><img src="/photos/eze-village-french-riviera-corniche-private-day-tour.avif" alt="Eze village French Riviera — private day tour from Cannes" loading="lazy"></div>
+                <div class="mega-card-name">Nice · Eze · Monaco</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/cannes/grasse-gourdon">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Grasse · Gourdon</span></div></div>
+                <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/cannes/cannes-antibes-stpaul">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Antibes · Saint-Paul</span></div></div>
+                <div class="mega-card-name">Cannes · Antibes · Saint-Paul</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/cannes/provence-rose-wine">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Provence Rosé</span></div></div>
+                <div class="mega-card-name">Provence rosé wine tour</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/cannes/menton-sanremo">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Menton · Sanremo</span></div></div>
+                <div class="mega-card-name">Menton · Sanremo · Dolceacqua</div>
+                <div class="mega-card-detail">Full day · France & Italy · €800</div>
+              </a>
+            </div>
+            <!-- Nice -->
+            <div class="mega-cards-pane" id="pane-tours-nice">
+              <a class="mega-card" href="/tours/nice/eze-monaco-menton">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Eze · Monaco · Menton</span></div></div>
+                <div class="mega-card-name">Eze · Monaco · Menton</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/nice/cannes-antibes-stpaul">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes · Antibes</span></div></div>
+                <div class="mega-card-name">Cannes · Antibes · Saint-Paul</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/nice/grasse-gourdon">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Grasse · Gourdon</span></div></div>
+                <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/nice/provence-rose-wine">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Provence Rosé</span></div></div>
+                <div class="mega-card-name">Provence rosé wine tour</div>
+                <div class="mega-card-detail">Full day · €800</div>
+              </a>
+              <a class="mega-card" href="/tours/nice/menton-sanremo">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Menton · Sanremo</span></div></div>
+                <div class="mega-card-name">Menton · Sanremo · Dolceacqua</div>
+                <div class="mega-card-detail">Full day · France & Italy · €800</div>
+              </a>
+            </div>
+            <!-- Boat -->
+            <div class="mega-cards-pane" id="pane-tours-boat">
+              <a class="mega-card" href="/tours/boat/lerins-islands">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Îles de Lérins</span></div></div>
+                <div class="mega-card-name">Îles de Lérins</div>
+                <div class="mega-card-detail">Half day · from €380</div>
+              </a>
+              <a class="mega-card" href="/tours/boat/saint-tropez">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Saint-Tropez by Sea</span></div></div>
+                <div class="mega-card-name">Saint-Tropez by sea</div>
+                <div class="mega-card-detail">Full day · from €600</div>
+              </a>
+              <a class="mega-card" href="/tours/boat/monaco">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Monaco by Sea</span></div></div>
+                <div class="mega-card-name">Monaco by sea</div>
+                <div class="mega-card-detail">Half day · from €380</div>
+              </a>
+              <a class="mega-card" href="/tours/boat/esterel">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Esterel Calanques</span></div></div>
+                <div class="mega-card-name">Esterel calanques</div>
+                <div class="mega-card-detail">Half day · from €340</div>
+              </a>
+            </div>
+            <!-- Off-season -->
+            <div class="mega-cards-pane" id="pane-tours-offseason">
+              <a class="mega-card featured" href="/tours/off-season/gastronomy">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Gastronomy & Truffles</span></div></div>
+                <div class="mega-card-name">Gastronomy & truffles</div>
+                <div class="mega-card-detail">November – March · Full day</div>
+              </a>
+              <a class="mega-card featured" href="/tours/off-season/snow-sea">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Snow & Sea Day</span></div></div>
+                <div class="mega-card-name">Snow & sea day</div>
+                <div class="mega-card-detail">Ski Isola 2000 + coast · Full day</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- ─── SHORE EXCURSIONS ─── -->
+    <li>
+      <a href="/shore-excursions">Shore Excursions</a>
+      <div class="mega-panel" id="mega-shore">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Shore Excursions</div>
+            <button class="mega-sub-link active" data-pane="cannes" data-mega="shore">From Cannes</button>
+            <button class="mega-sub-link" data-pane="villefranche" data-mega="shore">From Villefranche</button>
+            <a class="mega-sub-link" href="/villefranche-cruise-schedule" style="display:block;margin-top:16px;color:var(--terra)">Cruise schedule →</a>
+          </div>
+          <div class="mega-cards-area" id="cards-area-shore">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">From Cannes</span></div>
+            <!-- From Cannes -->
+            <div class="mega-cards-pane active" id="pane-shore-cannes">
+              <a class="mega-card" href="/shore-excursions/cannes/nice-eze-monaco">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice · Eze · Monaco</span></div></div>
+                <div class="mega-card-name">Nice · Eze · Monaco</div>
+                <div class="mega-card-detail">5–6 hrs · €380</div>
+              </a>
+              <a class="mega-card" href="/shore-excursions/cannes/cannes-antibes-stpaul">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes · Antibes · Saint-Paul</span></div></div>
+                <div class="mega-card-name">Cannes · Antibes · Saint-Paul</div>
+                <div class="mega-card-detail">5–6 hrs · €380</div>
+              </a>
+              <a class="mega-card" href="/shore-excursions/cannes/grasse-gourdon">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Grasse · Gourdon</span></div></div>
+                <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
+                <div class="mega-card-detail">5–6 hrs · €380</div>
+              </a>
+            </div>
+            <!-- From Villefranche -->
+            <div class="mega-cards-pane" id="pane-shore-villefranche">
+              <a class="mega-card" href="/shore-excursions/villefranche/nice-eze-monaco">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice · Eze · Monaco</span></div></div>
+                <div class="mega-card-name">Nice · Eze · Monaco</div>
+                <div class="mega-card-detail">5–6 hrs · €380</div>
+              </a>
+              <a class="mega-card" href="/shore-excursions/villefranche/cannes-antibes-stpaul">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes · Antibes · Saint-Paul</span></div></div>
+                <div class="mega-card-name">Cannes · Antibes · Saint-Paul</div>
+                <div class="mega-card-detail">5–6 hrs · €380</div>
+              </a>
+              <a class="mega-card" href="/shore-excursions/villefranche/grasse-gourdon">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Grasse · Gourdon</span></div></div>
+                <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
+                <div class="mega-card-detail">5–6 hrs · €380</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- ─── MULTI-DAY ─── -->
+    <li>
+      <a href="/multi-day">Multi-Day</a>
+      <div class="mega-panel" id="mega-multiday">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Multi-Day Journeys</div>
+            <button class="mega-sub-link active" data-pane="france" data-mega="multiday">Through France</button>
+            <button class="mega-sub-link" data-pane="italy" data-mega="multiday">Through Italy</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-multiday">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Through France</span></div>
+            <!-- France -->
+            <div class="mega-cards-pane active" id="pane-multiday-france">
+              <a class="mega-card" href="/multi-day/france/provence-avignon-valensole">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Provence · Avignon · Valensole</span></div></div>
+                <div class="mega-card-name">Cannes · Aix · Avignon · Valensole</div>
+                <div class="mega-card-detail">3–5 days · Lavender & Provence</div>
+              </a>
+              <a class="mega-card" href="/multi-day/france/cannes-avignon-lyon">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Avignon · Lyon</span></div></div>
+                <div class="mega-card-name">Cannes · Avignon · Lyon</div>
+                <div class="mega-card-detail">5–7 days · Price on enquiry</div>
+              </a>
+              <a class="mega-card" href="/multi-day/france/cannes-lyon-paris">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Lyon · Paris</span></div></div>
+                <div class="mega-card-name">Cannes · Lyon · Paris</div>
+                <div class="mega-card-detail">7–10 days · Price on enquiry</div>
+              </a>
+              <a class="mega-card" href="/multi-day/france/custom">
+                <div class="mega-card-img" style="background:#EAE3D7"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Custom Route<br>Bordeaux · Strasbourg</span></div></div>
+                <div class="mega-card-name">Custom journey</div>
+                <div class="mega-card-detail">Any duration · Price on enquiry</div>
+              </a>
+            </div>
+            <!-- Italy -->
+            <div class="mega-cards-pane" id="pane-multiday-italy">
+              <a class="mega-card" href="/multi-day/italy/cannes-genova-portofino">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Genova · Portofino</span></div></div>
+                <div class="mega-card-name">Cannes · Genova · Portofino</div>
+                <div class="mega-card-detail">3–5 days · Price on enquiry</div>
+              </a>
+              <a class="mega-card" href="/multi-day/italy/cannes-cinque-terre-florence">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cinque Terre · Florence</span></div></div>
+                <div class="mega-card-name">Cannes · Cinque Terre · Florence</div>
+                <div class="mega-card-detail">5–7 days · Price on enquiry</div>
+              </a>
+              <a class="mega-card" href="/multi-day/italy/cannes-genova-milano">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Genova · Milano</span></div></div>
+                <div class="mega-card-name">Cannes · Genova · Milano</div>
+                <div class="mega-card-detail">3–5 days · Price on enquiry</div>
+              </a>
+              <a class="mega-card" href="/multi-day/italy/custom">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Custom Route<br>Florence · Dolomites</span></div></div>
+                <div class="mega-card-name">Custom journey</div>
+                <div class="mega-card-detail">Any duration · Price on enquiry</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- ─── TRANSFERS ─── -->
+    <li>
+      <a href="/transfers">Transfers</a>
+      <div class="mega-panel" id="mega-transfers">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Transfers</div>
+            <button class="mega-sub-link active" data-pane="airport" data-mega="transfers">Nice Côte d'Azur Airport</button>
+            <button class="mega-sub-link" data-pane="chauffeur" data-mega="transfers">Private chauffeur</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-transfers">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Nice Côte d'Azur Airport</span></div>
+            <!-- Airport -->
+            <div class="mega-cards-pane active" id="pane-transfers-airport">
+              <a class="mega-card" href="/transfers/nice-airport-cannes">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice → Cannes</span></div></div>
+                <div class="mega-card-name">Nice → Cannes</div>
+                <div class="mega-card-detail">45 min · from €150</div>
+              </a>
+              <a class="mega-card" href="/transfers/nice-airport-monaco">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice → Monaco</span></div></div>
+                <div class="mega-card-name">Nice → Monaco</div>
+                <div class="mega-card-detail">30 min · from €180</div>
+              </a>
+              <a class="mega-card" href="/transfers/nice-airport-antibes">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice → Antibes</span></div></div>
+                <div class="mega-card-name">Nice → Antibes</div>
+                <div class="mega-card-detail">35 min · from €140</div>
+              </a>
+              <a class="mega-card" href="/transfers/nice-airport-saint-tropez">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice → Saint-Tropez</span></div></div>
+                <div class="mega-card-name">Nice → Saint-Tropez</div>
+                <div class="mega-card-detail">60 min · from €290</div>
+              </a>
+              <a class="mega-card" href="/transfers">
+                <div class="mega-card-img" style="background:#1C1C1A"><div class="mega-card-img-placeholder" style="background:none;align-items:center;justify-content:center"><span style="color:rgba(196,170,130,.6);text-align:center">All routes<br>& prices</span></div></div>
+                <div class="mega-card-name">More transfers</div>
+                <div class="mega-card-detail">View all routes →</div>
+              </a>
+            </div>
+            <!-- Chauffeur -->
+            <div class="mega-cards-pane" id="pane-transfers-chauffeur">
+              <a class="mega-card" href="/corporate/mipim-transfers">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>MIPIM</span></div></div>
+                <div class="mega-card-name">MIPIM week</div>
+                <div class="mega-card-detail">March · Cannes · Group rates</div>
+              </a>
+              <a class="mega-card" href="/corporate/lions">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes Lions</span></div></div>
+                <div class="mega-card-name">Cannes Lions week</div>
+                <div class="mega-card-detail">June · Cannes · Group rates</div>
+              </a>
+              <a class="mega-card" href="/corporate/iltm">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>ILTM</span></div></div>
+                <div class="mega-card-name">ILTM week</div>
+                <div class="mega-card-detail">December · Cannes · Group rates</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- ─── CORPORATE ─── -->
+    <li>
+      <a href="/corporate">Corporate</a>
+      <div class="mega-panel" id="mega-corporate">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Corporate</div>
+            <button class="mega-sub-link active" data-pane="events" data-mega="corporate">Events</button>
+            <button class="mega-sub-link" data-pane="services" data-mega="corporate">Services</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-corporate">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Events</span></div>
+            <!-- Events -->
+            <div class="mega-cards-pane active" id="pane-corporate-events">
+              <a class="mega-card" href="/corporate/festival">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Festival de Cannes</span></div></div>
+                <div class="mega-card-name">Cannes Film Festival</div>
+                <div class="mega-card-detail">May · Cannes</div>
+              </a>
+              <a class="mega-card" href="/corporate/mipim-transfers">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>MIPIM</span></div></div>
+                <div class="mega-card-name">MIPIM</div>
+                <div class="mega-card-detail">March · Real estate congress</div>
+              </a>
+              <a class="mega-card" href="/corporate/lions">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes Lions</span></div></div>
+                <div class="mega-card-name">Cannes Lions</div>
+                <div class="mega-card-detail">June · Advertising festival</div>
+              </a>
+              <a class="mega-card" href="/corporate/iltm">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>ILTM</span></div></div>
+                <div class="mega-card-name">ILTM</div>
+                <div class="mega-card-detail">December · Luxury travel market</div>
+              </a>
+            </div>
+            <!-- Services -->
+            <div class="mega-cards-pane" id="pane-corporate-services">
+              <a class="mega-card featured" href="/corporate/retreats">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Executive<br>Retreats</span></div></div>
+                <div class="mega-card-name">Executive retreats</div>
+                <div class="mega-card-detail">Venue, programme, transfers</div>
+              </a>
+              <a class="mega-card featured" href="/corporate/partner-experiences">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Partner<br>Experiences</span></div></div>
+                <div class="mega-card-name">Partner experiences</div>
+                <div class="mega-card-detail">While you're in meetings</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- ─── ROADBOOK ─── -->
+    <li>
+      <a href="/editorial">Roadbook</a>
+      <div class="mega-panel" id="mega-roadbook">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">The Roadbook</div>
+            <button class="mega-sub-link active" data-pane="destinations" data-mega="roadbook">Destinations</button>
+            <button class="mega-sub-link" data-pane="outdoor" data-mega="roadbook">Outdoor</button>
+            <button class="mega-sub-link" data-pane="gastronomy" data-mega="roadbook">Gastronomy</button>
+            <button class="mega-sub-link" data-pane="art" data-mega="roadbook">Art</button>
+            <button class="mega-sub-link" data-pane="history" data-mega="roadbook">History</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-roadbook">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Destinations</span></div>
+            <!-- Destinations -->
+            <div class="mega-cards-pane active" id="pane-roadbook-destinations">
+              <a class="mega-card" href="/editorial/cannes">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes</span></div></div>
+                <div class="mega-card-name">Cannes</div>
+                <div class="mega-card-detail">Beyond the Croisette</div>
+              </a>
+              <a class="mega-card" href="/editorial/monaco">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Monaco</span></div></div>
+                <div class="mega-card-name">Monaco</div>
+                <div class="mega-card-detail">The principality properly</div>
+              </a>
+              <a class="mega-card" href="/editorial/nice">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice</span></div></div>
+                <div class="mega-card-name">Nice</div>
+                <div class="mega-card-detail">From Vieux-Nice to the hills</div>
+              </a>
+              <a class="mega-card" href="/editorial/saint-tropez">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Saint-Tropez</span></div></div>
+                <div class="mega-card-name">Saint-Tropez</div>
+                <div class="mega-card-detail">What remains when the yachts leave</div>
+              </a>
+            </div>
+            <!-- Outdoor -->
+            <div class="mega-cards-pane" id="pane-roadbook-outdoor">
+              <a class="mega-card" href="/editorial/hiking">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Hiking</span></div></div>
+                <div class="mega-card-name">Hiking</div>
+                <div class="mega-card-detail">Routes worth the climb</div>
+              </a>
+              <a class="mega-card" href="/editorial/sup">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>SUP</span></div></div>
+                <div class="mega-card-name">SUP</div>
+                <div class="mega-card-detail">On the water at dawn</div>
+              </a>
+              <a class="mega-card" href="/editorial/flying">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Flying</span></div></div>
+                <div class="mega-card-name">Flying</div>
+                <div class="mega-card-detail">The Riviera from above</div>
+              </a>
+            </div>
+            <!-- Gastronomy -->
+            <div class="mega-cards-pane" id="pane-roadbook-gastronomy">
+              <a class="mega-card" href="/editorial/restaurants">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Restaurants</span></div></div>
+                <div class="mega-card-name">Restaurants</div>
+                <div class="mega-card-detail">Where to eat, when</div>
+              </a>
+              <a class="mega-card" href="/editorial/wine">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Wine</span></div></div>
+                <div class="mega-card-name">Wine</div>
+                <div class="mega-card-detail">Rosé, and what else</div>
+              </a>
+              <a class="mega-card" href="/editorial/markets">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Markets</span></div></div>
+                <div class="mega-card-name">Markets & eating local</div>
+                <div class="mega-card-detail">Morning rituals</div>
+              </a>
+            </div>
+            <!-- Art -->
+            <div class="mega-cards-pane" id="pane-roadbook-art">
+              <a class="mega-card" href="/editorial/belle-epoque">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Belle Époque</span></div></div>
+                <div class="mega-card-name">Belle Époque</div>
+                <div class="mega-card-detail">Architecture & golden age</div>
+              </a>
+              <a class="mega-card" href="/editorial/galleries">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Galleries</span></div></div>
+                <div class="mega-card-name">Galleries</div>
+                <div class="mega-card-detail">What's showing now</div>
+              </a>
+              <a class="mega-card" href="/editorial/looking-at-art">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Looking at Art</span></div></div>
+                <div class="mega-card-name">What to look for in a painting</div>
+                <div class="mega-card-detail">Artists, works, details</div>
+              </a>
+              <a class="mega-card" href="/editorial/museums">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Museums</span></div></div>
+                <div class="mega-card-name">Museums</div>
+                <div class="mega-card-detail">Fondation Maeght & beyond</div>
+              </a>
+            </div>
+            <!-- History -->
+            <div class="mega-cards-pane" id="pane-roadbook-history">
+              <a class="mega-card" href="/editorial/what-happened-here">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>What Happened Here</span></div></div>
+                <div class="mega-card-name">What happened here</div>
+                <div class="mega-card-detail">The stories behind the places</div>
+              </a>
+              <a class="mega-card" href="/editorial/personalities">
+                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Personalities</span></div></div>
+                <div class="mega-card-name">Personalities</div>
+                <div class="mega-card-detail">Who lived, worked and left here</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="/book" class="nav-cta"><span>Enquire</span></a></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
 </nav>
@@ -1689,12 +2477,61 @@ footer {
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <button class="mobile-menu-close" id="mobileClose">&#10005;</button>
   <div class="mobile-menu-logo">Riviera Journeys</div>
-  <ul class="mobile-nav">
-    <li><a href="/tours">Tours</a></li>
-    <li><a href="/shore-excursions">Shore Excursions</a></li>
-    <li><a href="/multi-day">Multi-Day</a></li>
-    <li><a href="/transfers">Transfers</a></li>
-    <li><a href="/editorial">Roadbook</a></li>
+  <ul class="mobile-nav" id="mobileNav">
+    <li class="mob-parent">
+      <button class="mob-toggle">Tours <span class="mob-arrow">+</span></button>
+      <ul class="mob-sub">
+        <li><a href="/tours/cannes/nice-eze-monaco">Nice · Eze · Monaco</a></li>
+        <li><a href="/tours/cannes/grasse-gourdon">Grasse · Gourdon · Tourrettes</a></li>
+        <li><a href="/tours/cannes/menton-sanremo">Menton · Sanremo · Dolceacqua</a></li>
+        <li><a href="/tours/cannes/provence-rose-wine">Provence rosé wine</a></li>
+        <li><a href="/tours/nice/eze-monaco-menton">From Nice — Eze · Monaco</a></li>
+        <li><a href="/tours/boat/lerins-islands">Boat trips</a></li>
+        <li><a href="/tours/off-season/gastronomy">Off-season — Gastronomy</a></li>
+        <li><a href="/tours">All tours →</a></li>
+      </ul>
+    </li>
+    <li class="mob-parent">
+      <button class="mob-toggle">Shore Excursions <span class="mob-arrow">+</span></button>
+      <ul class="mob-sub">
+        <li><a href="/shore-excursions/villefranche/nice-eze-monaco">From Villefranche</a></li>
+        <li><a href="/shore-excursions/cannes/nice-eze-monaco">From Cannes</a></li>
+        <li><a href="/villefranche-cruise-schedule">Cruise schedule</a></li>
+      </ul>
+    </li>
+    <li class="mob-parent">
+      <button class="mob-toggle">Multi-Day <span class="mob-arrow">+</span></button>
+      <ul class="mob-sub">
+        <li><a href="/multi-day/france/provence-avignon-valensole">Through France</a></li>
+        <li><a href="/multi-day/italy/cannes-cinque-terre-florence">Through Italy</a></li>
+        <li><a href="/multi-day">All journeys →</a></li>
+      </ul>
+    </li>
+    <li class="mob-parent">
+      <button class="mob-toggle">Transfers <span class="mob-arrow">+</span></button>
+      <ul class="mob-sub">
+        <li><a href="/transfers/nice-airport-cannes">Nice → Cannes</a></li>
+        <li><a href="/transfers/nice-airport-monaco">Nice → Monaco</a></li>
+        <li><a href="/transfers">All transfers →</a></li>
+      </ul>
+    </li>
+    <li class="mob-parent">
+      <button class="mob-toggle">Corporate <span class="mob-arrow">+</span></button>
+      <ul class="mob-sub">
+        <li><a href="/corporate/mipim-transfers">MIPIM</a></li>
+        <li><a href="/corporate/festival">Film Festival</a></li>
+        <li><a href="/corporate/retreats">Executive retreats</a></li>
+      </ul>
+    </li>
+    <li class="mob-parent">
+      <button class="mob-toggle">Roadbook <span class="mob-arrow">+</span></button>
+      <ul class="mob-sub">
+        <li><a href="/editorial/cannes">Cannes</a></li>
+        <li><a href="/editorial/restaurants">Gastronomy</a></li>
+        <li><a href="/editorial/looking-at-art">Art</a></li>
+        <li><a href="/editorial">All articles →</a></li>
+      </ul>
+    </li>
   </ul>
   <a href="/book" class="mobile-menu-cta">Book a Tour</a>
 </div>
@@ -1705,13 +2542,16 @@ footer {
     <!-- PHOTO PLACEHOLDER: Replace src with your hero photograph -->
     <!-- Recommended: Wide landscape, golden hour, preferably the Grande Corniche or Cap Ferrat coastline -->
     <!-- Ideal dimensions: 2400 × 1600px minimum, 16:10 ratio -->
- <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Aerial view of Villefranche-sur-Mer bay, French Riviera — deep blue Mediterranean, 
-terracotta rooftops and a cruise ship at anchor, starting point for private shore excursions"
+    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" loading="eager" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
+    <div class="hero-photo-placeholder" id="heroFallback" style="display:none">
+      <span class="placeholder-text">Villefranche-sur-Mer · July 2025</span>
+    </div>
+  </div>
   <div class="hero-grain"></div>
   <div class="hero-vignette"></div>
   <div class="hero-content">
     <div class="hero-overline">The Riviera, properly experienced</div>
-    <h1 class="hero-h1">Private Day Tours<br> from Cannes —<br><em>French &amp; Italian Riviera</em></h1>
+    <h1 class="hero-h1">Private Day Tours from Cannes —<br><em>French &amp; Italian Riviera</em></h1>
     <p class="hero-sub">Private day tours, shore excursions and transfers along the French and Italian Riviera. In a Mercedes V-Class. Driven by someone who actually lives here.</p>
     <div class="hero-actions">
       <a href="/tours" class="btn-primary">
@@ -1801,8 +2641,10 @@ terracotta rooftops and a cruise ship at anchor, starting point for private shor
       <div class="tour-card-photo">
         <!-- PHOTO PLACEHOLDER: Eze village at golden hour, looking out over the sea -->
         <!-- Recommended: Portrait crop 800×520px, available light -->
-       <img src="/photos/eze-village-french-riviera-corniche-private-day-tour.avif" alt="Eze perched village overlooking the Mediterranean on the Grande Corniche, 
-French Riviera — a highlight of private day tours from Cannes and Nice" loading="lazy">
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Eze village<br>golden hour photograph</span>
+        </div>
         <span class="tour-card-tag">Featured · Full Day</span>
       </div>
       <div class="tour-card-body">
@@ -1933,34 +2775,28 @@ French Riviera — a highlight of private day tours from Cannes and Nice" loadin
 <section class="services" aria-label="Our services">
   <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0">
     <div>
-      <span class="section-label reveal">What We Offer</span>
-      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">Three ways to feel<br>the Riviera properly.</h2>
+      <span class="section-label reveal">Our Services</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">Everything we offer.</h2>
     </div>
   </div>
-  <div class="services-grid">
+  <div class="services-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="service-card reveal d1">
       <div class="service-number">01</div>
       <div class="service-icon">
         <svg viewBox="0 0 44 44" stroke-width="1"><circle cx="22" cy="22" r="18"/><path d="M22 4 A18 18 0 0 1 40 22"/><circle cx="22" cy="22" r="2" fill="var(--sand)"/></svg>
       </div>
       <h3 class="service-title">Day Tours & Shore Excursions</h3>
-      <p class="service-desc">Half-day and full-day private tours from Cannes across the French and Italian Riviera. Designed around your schedule — whether you have a ship in port or simply a free afternoon. Monaco, Eze, Antibes, Sanremo, and beyond.</p>
-      <a href="/tours" class="service-link">
-        Explore tours
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <p class="service-desc">Private full-day tours from Cannes. Nice, Eze, Monaco, Antibes, Menton, Sanremo, Grasse. Shore excursions from Villefranche. Designed around your schedule — not a group tour's.</p>
+      <a href="/tours" class="service-link">Explore tours <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="service-card reveal d2">
       <div class="service-number">02</div>
       <div class="service-icon">
         <svg viewBox="0 0 44 44" stroke-width="1"><path d="M4 34 C14 34 14 10 22 10 C30 10 30 34 40 34"/><circle cx="22" cy="10" r="2" fill="var(--sand)"/></svg>
       </div>
-      <h3 class="service-title">Multi-Day Itineraries</h3>
-      <p class="service-desc">Several days moving through the Riviera from France into Italy — or further. Cannes to Florence via Genova &amp; Cinque Terre. The coast road to Portofino. Overnight in a city worth sleeping in. The itinerary built around what you actually want to see, not what a group tour has time for.</p>
-      <a href="/multi-day" class="service-link">
-        Plan a journey
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <h3 class="service-title">Multi-Day Journeys</h3>
+      <p class="service-desc">Several days east along the coast. Cannes to Florence via Genova and Cinque Terre. Overnight in cities worth sleeping in. The itinerary built around what you actually want to see.</p>
+      <a href="/multi-day" class="service-link">Plan a journey <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="service-card reveal d3">
       <div class="service-number">03</div>
@@ -1968,10 +2804,114 @@ French Riviera — a highlight of private day tours from Cannes and Nice" loadin
         <svg viewBox="0 0 44 44" stroke-width="1"><rect x="6" y="20" width="32" height="14" rx="2"/><path d="M14 20V14a8 8 0 0 1 16 0v6"/><circle cx="22" cy="27" r="2" fill="var(--sand)"/></svg>
       </div>
       <h3 class="service-title">Transfers</h3>
-      <p class="service-desc">Nice Côte d'Azur Airport, Cannes port, Monaco, Saint-Tropez, and anywhere on the Riviera worth going to. Mercedes V-Class. On time. Conversation optional. This is the simplest thing we do, and it is done flawlessly.</p>
-      <a href="/transfers" class="service-link">
-        Book a transfer
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <p class="service-desc">Nice Côte d'Azur Airport to Cannes, Monaco, Antibes, Saint-Tropez and anywhere on the Riviera worth going. Mercedes V-Class. On time, always. From €150.</p>
+      <a href="/transfers" class="service-link">Book a transfer <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="service-card reveal d1">
+      <div class="service-number">04</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="8" y="14" width="28" height="20" rx="3"/><circle cx="22" cy="24" r="6"/><circle cx="22" cy="24" r="3" fill="var(--sand)"/><rect x="17" y="10" width="10" height="5" rx="2"/></svg>
+      </div>
+      <h3 class="service-title">Off-Season & Experiences</h3>
+      <p class="service-desc">Truffle markets at dawn in the hills above Nice. Ski runs an hour from the coast. Winter gastronomy. Photography at first light. The Riviera that crowds never see.</p>
+      <a href="/tours/off-season/gastronomy" class="service-link">Discover off-season <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="service-card reveal d2">
+      <div class="service-number">05</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="6" y="12" width="32" height="22" rx="2"/><path d="M14 12V9a8 4 0 0 1 16 0v3"/><path d="M6 20h32"/></svg>
+      </div>
+      <h3 class="service-title">Corporate & Events</h3>
+      <p class="service-desc">Executive retreats, team events, VIP transfers for MIPIM, Festival de Cannes, Cannes Lions. We handle the logistics — from airport to boardroom to dinner table.</p>
+      <a href="/corporate" class="service-link">Plan your event <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="service-card reveal d3">
+      <div class="service-number">06</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 44 44" stroke-width="1"><circle cx="22" cy="16" r="6"/><path d="M8 38 C8 28 36 28 36 38"/><path d="M12 22h20M12 26h20"/></svg>
+      </div>
+      <h3 class="service-title">Slow Travel Consulting</h3>
+      <p class="service-desc">Two weeks on the Riviera, done properly. One 60-minute consultation — we design your stay: where to base yourself, what to do each day, what to avoid entirely.</p>
+      <a href="/slow-travel" class="service-link">Book a consultation <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── OFF-SEASON ── -->
+<section style="padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--bone2)" aria-label="Off-season Riviera experiences">
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start">
+    <div>
+      <span class="section-label reveal">Off-Season</span>
+      <div style="font-size:10px;font-weight:300;letter-spacing:.12em;color:var(--stone);line-height:1.9;margin-top:20px">
+        <strong style="display:block;color:var(--warm);font-weight:400;margin-bottom:4px">October — April</strong>
+        No crowds<br>
+        Different light<br>
+        The real Riviera
+      </div>
+    </div>
+    <div>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,42px);font-weight:300;line-height:1.15;color:var(--warm);margin-bottom:28px">The Riviera in winter<br><em style="font-style:italic;color:var(--stone)">is the one worth seeing.</em></h2>
+      <div style="width:40px;height:.5px;background:var(--sand);margin-bottom:24px"></div>
+      <p class="reveal d2" style="font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.85;color:var(--slate);max-width:600px;margin-bottom:40px">November through March, the Riviera empties of visitors and fills with everything else: truffle markets at dawn in the hills above Nice, the first almond blossoms in Menton, ski runs in the Alps an hour from the coast, gastronomy that the summer restaurants never have time for. The light is different. The conversations are better. The roads are yours.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--parch);margin-bottom:32px">
+        <div style="background:var(--bone);padding:20px 18px">
+          <div style="font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);margin-bottom:6px">Gastronomy</div>
+          <div style="font-size:11px;font-weight:300;color:var(--stone);line-height:1.65">Truffle markets · Olive oil harvest · Winter menus · Market mornings</div>
+        </div>
+        <div style="background:var(--bone);padding:20px 18px">
+          <div style="font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);margin-bottom:6px">Snow & Sea</div>
+          <div style="font-size:11px;font-weight:300;color:var(--stone);line-height:1.65">Ski Isola 2000 · Ski Valberg · Coast the same afternoon · One hour from Cannes</div>
+        </div>
+        <div style="background:var(--bone);padding:20px 18px">
+          <div style="font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);margin-bottom:6px">Art & Culture</div>
+          <div style="font-size:11px;font-weight:300;color:var(--stone);line-height:1.65">Fondation Maeght · Musée Picasso Antibes · Private gallery visits · Studio tours</div>
+        </div>
+      </div>
+      <a href="/experiences/off-season" class="btn-primary reveal d3">
+        <span>Explore Off-Season</span>
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CORPORATE ── -->
+<section style="padding:96px 72px;border-bottom:.5px solid var(--parch)" aria-label="Corporate retreats and events Cannes French Riviera">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px">
+    <div>
+      <span class="section-label reveal">Corporate & Events</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(26px,3vw,40px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">MIPIM, Festival de Cannes,<br>Cannes Lions. We know the week.</h2>
+    </div>
+    <a href="/corporate" class="section-text-link reveal d2">
+      Plan your event
+      <svg style="width:14px;height:14px;stroke:currentColor;fill:none;transition:transform .45s var(--ease)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--parch)">
+    <div style="background:var(--bone2);padding:36px 32px">
+      <div style="font-family:var(--serif);font-size:48px;font-weight:300;color:var(--parch);margin-bottom:16px;line-height:1">01</div>
+      <h3 style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm);margin-bottom:12px">Event Transfers</h3>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.75;margin-bottom:20px">VIP airport arrivals, hotel-to-venue, evening transfers. We handle dozens of delegates across a week so you handle none of it. Fixed rates, confirmed in advance.</p>
+      <a href="/corporate#transfers" style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        Learn more <svg style="width:12px;height:12px;stroke:currentColor;fill:none" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div style="background:var(--bone2);padding:36px 32px">
+      <div style="font-family:var(--serif);font-size:48px;font-weight:300;color:var(--parch);margin-bottom:16px;line-height:1">02</div>
+      <h3 style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm);margin-bottom:12px">Executive Retreats</h3>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.75;margin-bottom:20px">Off-site strategy sessions, team dinners, partner excursions. We suggest the venue, book the restaurant, organise the day. You focus on the conversations that matter.</p>
+      <a href="/corporate#retreats" style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        Learn more <svg style="width:12px;height:12px;stroke:currentColor;fill:none" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div style="background:var(--warm);padding:36px 32px">
+      <div style="font-family:var(--serif);font-size:48px;font-weight:300;color:rgba(196,170,130,.15);margin-bottom:16px;line-height:1">03</div>
+      <h3 style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--bone);margin-bottom:12px">Partner Experiences</h3>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(196,170,130,.6);line-height:1.75;margin-bottom:20px">While you are in meetings, your guests see the Riviera — properly. Private tours, coastal lunch, aperitif at the right hour. The kind of day they will mention for years.</p>
+      <a href="/corporate#experiences" style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        Learn more <svg style="width:12px;height:12px;stroke:currentColor;fill:none" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
@@ -2265,12 +3205,66 @@ French Riviera — a highlight of private day tours from Cannes and Nice" loadin
 
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Do you offer tours in winter and off-season?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">We do — and we would argue the Riviera is at its most interesting between October and April. The truffle markets open in November, the ski resorts above Nice are accessible by mid-December, and the light on the coast is exceptional all winter. Our off-season programme includes gastronomy days, snow and sea combinations, and cultural visits to places that are impossible to appreciate properly in summer.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">We are attending MIPIM — can you arrange transfers for our entire delegation?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">Yes, and this is something we do well. For MIPIM, Cannes Lions, the Festival, and ILTM, we coordinate arrival and departure transfers for groups of any size, working with our network of vetted VTC partners. Fixed rates are agreed in advance, all vehicles are premium Mercedes, and you receive a single point of contact for the entire week. We recommend confirming arrangements at least six weeks before the event.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">We have two weeks on the Riviera and do not know where to start. Can you help us plan the stay?</span>
+        <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
+      </div>
+      <div class="faq-answer"><p class="faq-answer-inner">This is precisely what our Slow Travel Consultation is for. In ninety minutes — by video or in person in Cannes — we design your stay from the ground up: where to base yourself and why, what to do on each day in what order, which places reward patience and which are better avoided, and where to eat without being steered toward the obvious. You leave with a personalised itinerary PDF. The consultation costs €250 and can be booked through the site.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
         <span class="faq-q-text">How far in advance ought one to book?</span>
         <div class="faq-icon"><svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></div>
       </div>
       <div class="faq-answer"><p class="faq-answer-inner">We recommend booking at least a week ahead, particularly between May and September when the Riviera is at its most sought-after. That said, we do our best to accommodate last-minute requests — if the date is available, the tour will happen. Contact us directly by email or WhatsApp and we will respond within two hours.</p></div>
     </div>
 
+  </div>
+</section>
+
+
+<!-- ── SLOW TRAVEL CONSULTING ── -->
+<section style="padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--warm)" aria-label="Slow travel consulting">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div>
+      <span style="font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px;margin-bottom:16px">
+        <span style="display:block;width:24px;height:.5px;background:var(--sand)"></span>
+        Slow Travel
+      </span>
+      <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,42px);font-weight:300;color:var(--bone);line-height:1.15;margin-bottom:20px">Two weeks on the Riviera.<br><em style="font-style:italic;color:rgba(247,243,237,.6)">Done properly.</em></h2>
+      <p style="font-family:var(--sans);font-size:14px;font-weight:300;color:rgba(196,170,130,.65);line-height:1.85;margin-bottom:32px">Most people plan a trip. A few plan a stay. If you are one of the latter — two weeks, a real base, time to understand a place rather than photograph it — then one conversation with someone who has lived here is worth more than any guidebook.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px;padding:24px 0;border-top:.5px solid rgba(196,170,130,.15);border-bottom:.5px solid rgba(196,170,130,.15)">
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— Where to base yourself and why</div>
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— What to do on each day, in what order</div>
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— What to avoid entirely</div>
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— Restaurants, markets, roads, timing — the version without the caveats</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px">
+        <span style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--bone)">€ 250</span>
+        <span style="font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--sand)">60-minute consultation · Video or in person</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+      <div style="font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:rgba(247,243,237,.55);line-height:1.6;padding-bottom:20px;border-bottom:.5px solid rgba(196,170,130,.12)">"We spent 16 days on the Riviera and genuinely felt like we lived there for a week. That is exactly what we wanted."</div>
+      <a href="/slow-travel" class="btn-sand reveal">
+        <span>Book a Consultation</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p style="font-family:var(--sans);font-size:11px;font-weight:300;color:rgba(196,170,130,.35);line-height:1.6">Personalized itinerary PDF sent within 48 hours of consultation.</p>
+    </div>
   </div>
 </section>
 
@@ -2548,7 +3542,7 @@ French Riviera — a highlight of private day tours from Cannes and Nice" loadin
     "@type":"TouristInformationCenter",
     "name":"Riviera Journeys",
     "url":"https://rivierajourneys.fr",
-    "description":"Private day tours, shore excursions and transfers along the French and Italian Riviera from Cannes in a premium Mercedes V-Class.",
+    "description":"Private day tours from Cannes and Nice, shore excursions from Villefranche and Cannes, multi-day journeys through France and Italy, airport transfers and corporate services on the French Riviera.",
     "address":{"@type":"PostalAddress","addressLocality":"Cannes","addressRegion":"Alpes-Maritimes","addressCountry":"FR"},
     "telephone":"+33669962272",
     "email":"hello@rivierajourneys.fr",
@@ -2560,6 +3554,104 @@ French Riviera — a highlight of private day tours from Cannes and Nice" loadin
   s.type='application/ld+json';
   s.text = JSON.stringify(ld);
   document.head.appendChild(s);
+})();
+
+// ═══════════════════════════════════════════════════════
+// MEGA MENU — Ralph Lauren style: delay open, instant underline
+// ═══════════════════════════════════════════════════════
+(function(){
+  var OPEN_DELAY  = 260;  // ms before panel appears (matches RL ~250ms)
+  var CLOSE_DELAY = 160;  // ms before panel hides (prevents flicker on gaps)
+  var nav = document.getElementById('mainNav');
+  var openTimer, closeTimer, currentLi;
+
+  function openMega(li) {
+    clearTimeout(closeTimer);
+    if(currentLi && currentLi !== li) {
+      // Switch instantly if already open elsewhere — no double delay
+      currentLi.classList.remove('mega-open');
+    }
+    currentLi = li;
+    clearTimeout(openTimer);
+    openTimer = setTimeout(function(){
+      li.classList.add('mega-open');
+      if(nav) nav.classList.add('mega-active');
+    }, currentLi === li ? OPEN_DELAY : 0);
+  }
+
+  function closeMega() {
+    clearTimeout(openTimer);
+    closeTimer = setTimeout(function(){
+      if(currentLi) currentLi.classList.remove('mega-open');
+      if(nav) nav.classList.remove('mega-active');
+      currentLi = null;
+    }, CLOSE_DELAY);
+  }
+
+  // Attach to each nav item that has a mega panel
+  document.querySelectorAll('.nav-links > li').forEach(function(li){
+    var panel = li.querySelector('.mega-panel');
+    if(!panel) return;
+
+    li.addEventListener('mouseenter', function(){ openMega(li); });
+    li.addEventListener('mouseleave', function(){
+      // Only close if not entering the panel itself
+      closeMega();
+    });
+
+    // Keep open when cursor moves into panel
+    panel.addEventListener('mouseenter', function(){ clearTimeout(closeTimer); });
+    panel.addEventListener('mouseleave', function(){ closeMega(); });
+  });
+
+  // Close on nav mouseleave (belt and suspenders)
+  if(nav) {
+    nav.addEventListener('mouseleave', function(){
+      clearTimeout(openTimer);
+      closeTimer = setTimeout(function(){
+        document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){
+          li.classList.remove('mega-open');
+        });
+        nav.classList.remove('mega-active');
+        currentLi = null;
+      }, CLOSE_DELAY);
+    });
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') {
+      clearTimeout(openTimer);
+      document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){
+        li.classList.remove('mega-open');
+      });
+      if(nav) nav.classList.remove('mega-active');
+      currentLi = null;
+    }
+  });
+
+  // ── Card pane switching on left-link hover ──
+  document.querySelectorAll('.mega-sub-link[data-pane]').forEach(function(btn){
+    btn.addEventListener('mouseenter', function(){
+      var mega = btn.getAttribute('data-mega');
+      var pane = btn.getAttribute('data-pane');
+      document.querySelectorAll('.mega-sub-link[data-mega="'+mega+'"]').forEach(function(b){
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      document.querySelectorAll('[id^="pane-'+mega+'-"]').forEach(function(p){
+        p.classList.remove('active');
+      });
+      var target = document.getElementById('pane-'+mega+'-'+pane);
+      if(target) target.classList.add('active');
+      // Update header title
+      var area = document.getElementById('cards-area-'+mega);
+      if(area){
+        var hdr = area.querySelector('.mega-cards-header-title');
+        if(hdr) hdr.textContent = btn.textContent.trim();
+      }
+    });
+  });
 })();
 
 (function(){
@@ -2578,6 +3670,17 @@ French Riviera — a highlight of private day tours from Cannes and Nice" loadin
   if(x)x.addEventListener('click',function(){if(open)toggle();});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(open)toggle();});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle();});
+
+  // Mobile accordion
+  m.querySelectorAll('.mob-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var li=btn.closest('.mob-parent');
+      var isOpen=li.classList.contains('open');
+      m.querySelectorAll('.mob-parent.open').forEach(function(el){el.classList.remove('open');});
+      if(!isOpen)li.classList.add('open');
+    });
+  });
 })();
 
 // ── FAQ ─────────────────────────────────────────────
