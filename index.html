@@ -1992,6 +1992,78 @@ footer {
 .faq-answer-inner { padding: 0 32px 28px; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--slate); line-height: 1.85; border-top: .5px solid var(--parch); padding-top: 20px; }
 @media(max-width:1024px){ .faq-section { padding: 72px 40px; } }
 @media(max-width:768px){ .faq-section { padding: 64px 24px; } .faq-q-text { font-size: 17px; } .faq-question { padding: 20px 24px; } .faq-answer-inner { padding: 0 24px 24px; padding-top: 16px; } }
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE FIXES — new sections with inline padding/grids
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Off-season */
+  section[aria-label="Off-season Riviera experiences"] {
+    padding: 64px 24px !important;
+  }
+  section[aria-label="Off-season Riviera experiences"] > div {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    background: transparent !important;
+  }
+  section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"] > div {
+    border-bottom: .5px solid var(--parch);
+  }
+  section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"] > div:last-child {
+    border-bottom: none;
+  }
+  /* Corporate */
+  section[aria-label^="Corporate retreats"] {
+    padding: 64px 24px !important;
+  }
+  section[aria-label^="Corporate retreats"] > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    margin-bottom: 32px !important;
+  }
+  section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    background: transparent !important;
+  }
+  section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"] > div {
+    border-bottom: .5px solid var(--parch);
+  }
+  section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"] > div:last-child {
+    border-bottom: none;
+  }
+  /* Slow travel */
+  section[aria-label="Slow travel consulting"] {
+    padding: 64px 24px !important;
+  }
+  section[aria-label="Slow travel consulting"] > div {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Prevent btn-primary overflow */
+  .btn-primary { padding: 14px 24px !important; }
+  .btn-sand    { padding: 14px 24px !important; }
+  /* Slow travel price row */
+  section[aria-label="Slow travel consulting"] div[style*="align-items:baseline"] {
+    flex-wrap: wrap !important;
+  }
+  /* Off-season detail boxes */
+  section[aria-label="Off-season Riviera experiences"] div[style*="padding:20px 18px"] {
+    padding: 16px !important;
+  }
+  /* Corporate inner cards */
+  section[aria-label^="Corporate retreats"] div[style*="padding:36px 32px"] {
+    padding: 24px 20px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -2027,7 +2099,7 @@ footer {
             <!-- Cannes -->
             <div class="mega-cards-pane active" id="pane-tours-cannes">
               <a class="mega-card" href="/tours/cannes/nice-eze-monaco">
-                <div class="mega-card-img"><img src="/photos/monaco-port-hercule-nice-eze-monaco-tour-french-riviera.avif" alt="Port Hercule in Monaco with yachts and Monte Carlo skyline, view from the harbour, Nice Èze Monaco private day tour on the French Riviera" loading="lazy"></div>
+                <div class="mega-card-img"><img src="/photos/eze-village-french-riviera-corniche-private-day-tour.avif" alt="Eze village French Riviera — private day tour from Cannes" loading="lazy"></div>
                 <div class="mega-card-name">Nice · Eze · Monaco</div>
                 <div class="mega-card-detail">Full day · €800</div>
               </a>
@@ -2641,7 +2713,10 @@ footer {
       <div class="tour-card-photo">
         <!-- PHOTO PLACEHOLDER: Eze village at golden hour, looking out over the sea -->
         <!-- Recommended: Portrait crop 800×520px, available light -->
-        <img src="photos/eze-village-french-riviera-corniche-private-day-tour.avif" alt="Èze medieval village overlooking the Mediterranean with yachts below, French Riviera coastal view, Nice Èze Monaco private day tour" loading="lazy">
+        <div class="tour-photo-placeholder">
+          <div class="ph-frame"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M6.343 6.343A8 8 0 1 0 17.657 17.657 8 8 0 0 0 6.343 6.343z"/></svg></div>
+          <span class="ph-label">Eze village<br>golden hour photograph</span>
+        </div>
         <span class="tour-card-tag">Featured · Full Day</span>
       </div>
       <div class="tour-card-body">
@@ -2919,7 +2994,10 @@ footer {
   <div class="editorial-photo-inner ep-parallax" id="epParallax">
     <!-- PHOTO PLACEHOLDER: Full-width dramatic landscape — sea view from a high road, ideally Corniche -->
     <!-- Recommended: 2400×1600px, landscape orientation, minimal processing -->
-    <img src="photos/mercedes-vclass-private-transfer-cannes-riviera.avif" alt="Mercedes V-Class luxury van for private airport transfer and chauffeur service on the French Riviera, spacious premium vehicle for Nice Cannes Monaco transfers" loading="eager">
+    <div class="ep-placeholder">
+      <span class="placeholder-text">Full-width editorial photograph</span>
+      <span class="placeholder-text" style="opacity:.4">Corniche road or Cap Ferrat sea view · 2400×1600px</span>
+    </div>
   </div>
   <div class="ep-vignette"></div>
   <div class="ep-content">
