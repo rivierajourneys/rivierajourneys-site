@@ -1852,7 +1852,7 @@ footer {
   .tours-grid { grid-template-columns: 1fr 1fr; }
   .tour-card:first-child { grid-column: 1 / -1; grid-row: 1; }
   .tour-card:first-child .tour-card-photo { height: 380px; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
   .dest-grid { grid-template-columns: repeat(3, 1fr); }
   .newsletter { grid-template-columns: 1fr; gap: 48px; padding: 72px 40px; }
   .instagram-header { padding: 0 40px; }
@@ -1876,7 +1876,63 @@ footer {
   .editorial { padding: 64px 24px; }
   .editorial-grid { grid-template-columns: 1fr; }
   .services { padding: 64px 24px; }
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: transparent;
+    margin-top: 36px;
+    border-top: .5px solid var(--parch);
+  }
+  .service-card {
+    padding: 22px 0;
+    background: transparent !important;
+    border-bottom: .5px solid var(--parch);
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 0;
+    align-items: center;
+  }
+  .service-card::before { display: none; }
+  .service-card:hover { background: transparent !important; }
+  .service-number { display: none; }
+  .service-icon { display: none; }
+  .service-title {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    color: var(--warm) !important;
+    margin-bottom: 0;
+    line-height: 1.25;
+    align-self: end;
+  }
+  .service-card:hover .service-title { color: var(--warm) !important; }
+  .service-desc {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 12px !important;
+    color: var(--stone) !important;
+    line-height: 1.6 !important;
+    margin-top: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .service-card:hover .service-desc { color: var(--stone) !important; }
+  .service-link {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: end;
+    margin-top: 0 !important;
+    gap: 0;
+  }
+  .service-link svg { stroke: var(--sand) !important; width: 16px; height: 16px; }
+  /* Hide text label, show only arrow */
+  .service-link > *:not(svg) { display: none; }
   .ep-content { left: 24px; max-width: 85vw; }
   .ep-stat-row { display: none; }
   .testimonials { padding: 64px 24px; }
@@ -1966,9 +2022,6 @@ footer {
   .hero-h1 { font-size: clamp(30px,8vw,46px) !important; }
   .hero-sub { font-size: 14px !important; line-height: 1.7 !important; }
   .section-label { font-size: 10px !important; letter-spacing: .2em !important; }
-  .service-title { font-size: 18px !important; font-weight: 400 !important; }
-  .service-desc { font-size: 14px !important; line-height: 1.75 !important; color: var(--slate) !important; }
-  .service-link { font-size: 11px !important; }
   .tour-name { font-size: 16px !important; font-weight: 500 !important; color: var(--warm) !important; }
   .tour-desc { font-size: 13px !important; line-height: 1.7 !important; }
   .tour-detail { font-size: 11px !important; }
@@ -2851,7 +2904,7 @@ footer {
       <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">Everything we offer.</h2>
     </div>
   </div>
-  <div class="services-grid" style="grid-template-columns:repeat(3,1fr)">
+  <div class="services-grid">
     <div class="service-card reveal d1">
       <div class="service-number">01</div>
       <div class="service-icon">
