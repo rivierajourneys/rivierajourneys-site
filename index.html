@@ -1929,10 +1929,13 @@ footer {
     justify-self: end;
     margin-top: 0 !important;
     gap: 0;
+    font-size: 0 !important;
+    line-height: 0;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
   }
-  .service-link svg { stroke: var(--sand) !important; width: 16px; height: 16px; }
-  /* Hide text label, show only arrow */
-  .service-link > *:not(svg) { display: none; }
+  .service-link svg { stroke: var(--sand) !important; width: 18px; height: 18px; flex-shrink: 0; }
   .ep-content { left: 24px; max-width: 85vw; }
   .ep-stat-row { display: none; }
   .testimonials { padding: 64px 24px; }
