@@ -311,15 +311,15 @@ a { text-decoration: none; color: inherit; }
 }
 .mega-cards-pane.active { display: flex; }
 .mega-card {
-  width: 180px;
+  width: 220px;
   cursor: pointer;
-  transition: opacity .2s;
+  transition: opacity .35s;
   text-decoration: none;
 }
-.mega-card:hover { opacity: .78; }
+.mega-card:hover { opacity: .72; }
 .mega-card-img {
-  width: 180px;
-  height: 220px;
+  width: 220px;
+  height: 280px;
   background: #EAE3D7;
   overflow: hidden;
   margin-bottom: 10px;
@@ -328,7 +328,9 @@ a { text-decoration: none; color: inherit; }
 .mega-card-img img {
   width: 100%; height: 100%;
   object-fit: cover;
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
 }
+.mega-card:hover .mega-card-img img { transform: scale(1.04); }
 .mega-card-img-placeholder {
   width: 100%; height: 100%;
   background: linear-gradient(160deg,#EAE3D7,#C4AA82 120%);
@@ -2169,17 +2171,10 @@ footer {
                 <div class="mega-card-name">Cannes · Antibes · Saint-Paul</div>
                 <div class="mega-card-detail">Full day · €800</div>
               </a>
-              <a class="mega-card" href="/tours/cannes/provence-rose-wine">
-                <div class="mega-card-img"><img src="photos/chateau-desclans-rose-wine-provence-vineyards-tour.avif" alt="Château d’Esclans rosé wine estate in Provence with vineyards and cellar, premium rosé tasting experience, Provence wine tour French Riviera" loading="lazy"></div>
-                <div class="mega-card-name">Provence rosé wine tour</div>
-                <div class="mega-card-detail">Full day · €800</div>
-              </a>
-              <a class="mega-card" href="/tours/cannes/menton-sanremo">
-                <div class="mega-card-img"><img src="photos/menton-archway-old-town-italian-riviera-tour-menton-sanremo-dolceacqua.avif" alt="Bright archway in Menton old town with colourful walls and Mediterranean light, French Italian Riviera atmosphere, Menton Sanremo Dolceacqua day tour" loading="lazy"></div>
-                <div class="mega-card-name">Menton · Sanremo · Dolceacqua</div>
-                <div class="mega-card-detail">Full day · France & Italy · €800</div>
-              </a>
-            </div>
+              
+              
+            
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Cannes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Nice -->
             <div class="mega-cards-pane" id="pane-tours-nice">
               <a class="mega-card" href="/tours/nice/eze-monaco-menton">
@@ -2197,17 +2192,12 @@ footer {
                 <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
                 <div class="mega-card-detail">Full day · €800</div>
               </a>
-              <a class="mega-card" href="/tours/nice/provence-rose-wine">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Provence Rosé</span></div></div>
-                <div class="mega-card-name">Provence rosé wine tour</div>
-                <div class="mega-card-detail">Full day · €800</div>
-              </a>
-              <a class="mega-card" href="/tours/nice/menton-sanremo">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Menton · Sanremo</span></div></div>
-                <div class="mega-card-name">Menton · Sanremo · Dolceacqua</div>
-                <div class="mega-card-detail">Full day · France & Italy · €800</div>
-              </a>
-            </div>
+              
+              
+            
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Nice<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Nice<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
             <!-- Boat -->
             <div class="mega-cards-pane" id="pane-tours-boat">
               <a class="mega-card" href="/tours/boat/lerins-islands">
@@ -2225,12 +2215,9 @@ footer {
                 <div class="mega-card-name">Monaco by sea</div>
                 <div class="mega-card-detail">Half day · from €380</div>
               </a>
-              <a class="mega-card" href="/tours/boat/esterel">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Esterel Calanques</span></div></div>
-                <div class="mega-card-name">Esterel calanques</div>
-                <div class="mega-card-detail">Half day · from €340</div>
-              </a>
-            </div>
+              
+            
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All boat trips<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Off-season -->
             <div class="mega-cards-pane" id="pane-tours-offseason">
               <a class="mega-card featured" href="/tours/off-season/gastronomy">
@@ -2243,7 +2230,9 @@ footer {
                 <div class="mega-card-name">Snow & sea day</div>
                 <div class="mega-card-detail">Ski Isola 2000 + coast · Full day</div>
               </a>
-            </div>
+            
+              <a href="/tours/off-season" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Off-season experiences<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
           </div>
         </div>
       </div>
@@ -2279,7 +2268,8 @@ footer {
                 <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
                 <div class="mega-card-detail">5–6 hrs · €380</div>
               </a>
-            </div>
+            
+              <a href="/shore-excursions" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All excursions from Cannes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- From Villefranche -->
             <div class="mega-cards-pane" id="pane-shore-villefranche">
               <a class="mega-card" href="/shore-excursions/villefranche/nice-eze-monaco">
@@ -2297,7 +2287,8 @@ footer {
                 <div class="mega-card-name">Grasse · Gourdon · Tourrettes</div>
                 <div class="mega-card-detail">5–6 hrs · €380</div>
               </a>
-            </div>
+            
+              <a href="/shore-excursions" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All from Villefranche<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
           </div>
         </div>
       </div>
@@ -2332,12 +2323,9 @@ footer {
                 <div class="mega-card-name">Cannes · Lyon · Paris</div>
                 <div class="mega-card-detail">7–10 days · Price on enquiry</div>
               </a>
-              <a class="mega-card" href="/multi-day/france/custom">
-                <div class="mega-card-img" style="background:#EAE3D7"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Custom Route<br>Bordeaux · Strasbourg</span></div></div>
-                <div class="mega-card-name">Custom journey</div>
-                <div class="mega-card-detail">Any duration · Price on enquiry</div>
-              </a>
-            </div>
+              
+            
+              <a href="/multi-day" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Custom journey →<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Italy -->
             <div class="mega-cards-pane" id="pane-multiday-italy">
               <a class="mega-card" href="/multi-day/italy/cannes-genova-portofino">
@@ -2355,12 +2343,9 @@ footer {
                 <div class="mega-card-name">Cannes · Genova · Milano</div>
                 <div class="mega-card-detail">3–5 days · Price on enquiry</div>
               </a>
-              <a class="mega-card" href="/multi-day/italy/custom">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Custom Route<br>Florence · Dolomites</span></div></div>
-                <div class="mega-card-name">Custom journey</div>
-                <div class="mega-card-detail">Any duration · Price on enquiry</div>
-              </a>
-            </div>
+              
+            
+              <a href="/multi-day" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Custom journey →<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
           </div>
         </div>
       </div>
@@ -2395,17 +2380,10 @@ footer {
                 <div class="mega-card-name">Nice → Antibes</div>
                 <div class="mega-card-detail">35 min · from €140</div>
               </a>
-              <a class="mega-card" href="/transfers/nice-airport-saint-tropez">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice → Saint-Tropez</span></div></div>
-                <div class="mega-card-name">Nice → Saint-Tropez</div>
-                <div class="mega-card-detail">60 min · from €290</div>
-              </a>
-              <a class="mega-card" href="/transfers">
-                <div class="mega-card-img" style="background:#1C1C1A"><div class="mega-card-img-placeholder" style="background:none;align-items:center;justify-content:center"><span style="color:rgba(196,170,130,.6);text-align:center">All routes<br>& prices</span></div></div>
-                <div class="mega-card-name">More transfers</div>
-                <div class="mega-card-detail">View all routes →</div>
-              </a>
-            </div>
+              
+              
+            
+              <a href="/transfers" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All routes & prices<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Chauffeur -->
             <div class="mega-cards-pane" id="pane-transfers-chauffeur">
               <a class="mega-card" href="/corporate/mipim-transfers">
@@ -2423,7 +2401,8 @@ footer {
                 <div class="mega-card-name">ILTM week</div>
                 <div class="mega-card-detail">December · Cannes · Group rates</div>
               </a>
-            </div>
+            
+              <a href="/corporate" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All corporate events<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
           </div>
         </div>
       </div>
@@ -2458,12 +2437,9 @@ footer {
                 <div class="mega-card-name">Cannes Lions</div>
                 <div class="mega-card-detail">June · Advertising festival</div>
               </a>
-              <a class="mega-card" href="/corporate/iltm">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>ILTM</span></div></div>
-                <div class="mega-card-name">ILTM</div>
-                <div class="mega-card-detail">December · Luxury travel market</div>
-              </a>
-            </div>
+              
+            
+              <a href="/corporate" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">ILTM & all events<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Services -->
             <div class="mega-cards-pane" id="pane-corporate-services">
               <a class="mega-card featured" href="/corporate/retreats">
@@ -2476,7 +2452,10 @@ footer {
                 <div class="mega-card-name">Partner experiences</div>
                 <div class="mega-card-detail">While you're in meetings</div>
               </a>
-            </div>
+            
+              <a href="/corporate" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Enquire<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="/corporate" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Enquire<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
           </div>
         </div>
       </div>
@@ -2514,12 +2493,9 @@ footer {
                 <div class="mega-card-name">Nice</div>
                 <div class="mega-card-detail">From Vieux-Nice to the hills</div>
               </a>
-              <a class="mega-card" href="/editorial/saint-tropez">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Saint-Tropez</span></div></div>
-                <div class="mega-card-name">Saint-Tropez</div>
-                <div class="mega-card-detail">What remains when the yachts leave</div>
-              </a>
-            </div>
+              
+            
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All destinations<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Outdoor -->
             <div class="mega-cards-pane" id="pane-roadbook-outdoor">
               <a class="mega-card" href="/editorial/hiking">
@@ -2537,7 +2513,8 @@ footer {
                 <div class="mega-card-name">Flying</div>
                 <div class="mega-card-detail">The Riviera from above</div>
               </a>
-            </div>
+            
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All outdoor<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Gastronomy -->
             <div class="mega-cards-pane" id="pane-roadbook-gastronomy">
               <a class="mega-card" href="/editorial/restaurants">
@@ -2555,7 +2532,8 @@ footer {
                 <div class="mega-card-name">Markets & eating local</div>
                 <div class="mega-card-detail">Morning rituals</div>
               </a>
-            </div>
+            
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All gastronomy<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- Art -->
             <div class="mega-cards-pane" id="pane-roadbook-art">
               <a class="mega-card" href="/editorial/belle-epoque">
@@ -2573,12 +2551,9 @@ footer {
                 <div class="mega-card-name">What to look for in a painting</div>
                 <div class="mega-card-detail">Artists, works, details</div>
               </a>
-              <a class="mega-card" href="/editorial/museums">
-                <div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Museums</span></div></div>
-                <div class="mega-card-name">Museums</div>
-                <div class="mega-card-detail">Fondation Maeght & beyond</div>
-              </a>
-            </div>
+              
+            
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All art<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
             <!-- History -->
             <div class="mega-cards-pane" id="pane-roadbook-history">
               <a class="mega-card" href="/editorial/what-happened-here">
@@ -2591,7 +2566,8 @@ footer {
                 <div class="mega-card-name">Personalities</div>
                 <div class="mega-card-detail">Who lived, worked and left here</div>
               </a>
-            </div>
+            
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All history<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
           </div>
         </div>
       </div>
