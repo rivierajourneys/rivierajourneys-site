@@ -39,7 +39,7 @@ a{text-decoration:none}
 .nav-links{display:flex;gap:0;align-items:center;list-style:none}
 .nav-links>li>a{font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(253,250,246,.85);transition:color .35s;display:block;padding:0 18px;height:68px;line-height:68px;white-space:nowrap;position:relative}
 .nav-links>li>a::after{content:'';position:absolute;bottom:26px;left:18px;right:18px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
-.nav-links>li:hover>a::after,.nav-links>li.mega-open>a::after{transform:scaleX(1)}
+.nav-links>li:hover>a::after,.nav-links>li.mega-open>a::after,.nav-links>li>a.nav-active::after{transform:scaleX(1)}
 .nav-links>li>a.nav-cta::after{display:none}
 .nav-links>li:hover>a,.nav-links>li.mega-open>a{color:#fff}
 .nav.scrolled .nav-links>li>a{color:var(--stone)}
@@ -146,7 +146,7 @@ a{text-decoration:none}
 .page-hero h1 em{font-style:italic}
 .page-hero p{font-size:15px;color:rgba(247,243,237,.7);line-height:1.85;max-width:520px;margin-bottom:36px}
 .page-hero-actions{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
-.page-hero-credit{position:absolute;bottom:20px;right:24px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.45);text-transform:uppercase}
+.page-hero-credit{position:absolute;bottom:28px;right:72px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5);text-transform:uppercase}
 @media(max-width:1024px){.page-hero-content{padding:0 40px 64px}}
 @media(max-width:768px){.page-hero{height:60vh;min-height:480px}.page-hero-content{padding:0 24px 56px}.page-hero-actions{flex-direction:column;align-items:flex-start;gap:20px}.page-hero-vignette{background:rgba(28,28,26,.6)}}
 
@@ -214,7 +214,7 @@ a{text-decoration:none}
 .vehicle-inner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--parch)}
 .vehicle-photo{position:relative;overflow:hidden;min-height:520px}
 .vehicle-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.vehicle-credit{position:absolute;bottom:16px;right:20px;font-size:9px;color:rgba(253,250,246,.5);letter-spacing:.1em;text-transform:uppercase}
+.vehicle-credit{position:absolute;bottom:28px;right:24px;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5);text-transform:uppercase}
 .vehicle-specs{background:var(--bone2);padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
 .vehicle-specs-label{margin-bottom:20px}
 .vehicle-specs-h2{font-family:var(--serif);font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--warm);line-height:1.2;margin-bottom:36px}
@@ -451,7 +451,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       </div>
     </li>
     <li>
-      <a href="/transfers" style="color:var(--warm)!important">Transfers</a>
+      <a href="/transfers" class="nav-active">Transfers</a>
       <div class="mega-panel" id="mega-transfers">
         <div class="mega-inner">
           <div class="mega-nav-col">
@@ -628,8 +628,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="routes-grid">
     <a href="/transfers/nice-airport-cannes" class="route-card">
       <div class="route-card-photo">
-        <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif"
-          alt="Cannes Carlton Hotel Croisette boulevard French Riviera — private transfer Nice Airport to Cannes" loading="lazy">
+        <img src="/photos/cannes-carlton-hotel-croisette-boulevard-french-riviera-tour-from-nice.avif"
+          alt="Cannes Carlton Hotel Croisette boulevard French Riviera — private transfer Nice Airport to Cannes" loading="eager">
         <span class="route-card-badge">Most requested</span>
       </div>
       <div class="route-card-body">
@@ -644,7 +644,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     </a>
     <a href="/transfers/nice-airport-monaco" class="route-card">
       <div class="route-card-photo">
-        <img src="/photos/monaco-prince-palace-sunset-le-rocher.avif"
+        <img src="/photos/monaco-bay-port-hercule-casino-hotel-de-paris-airport-transfer.avif"
           alt="Monaco bay Port Hercule Casino Hotel de Paris — private transfer Nice Airport to Monaco" loading="eager">
       </div>
       <div class="route-card-body">
@@ -741,7 +741,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px">
       <div>
         <span class="section-label">Pricing</span>
-        <h2 class="pricing-h2" style="margin-top:16px">Fixed rates.<br><em>Per vehicle.</em></h2>
+        <h2 style="font-family:var(--sc);font-size:clamp(32px,3.5vw,52px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px;margin-bottom:20px;letter-spacing:.04em">Fixed Rates.<br>Per Vehicle.</h2>
       </div>
       <p style="font-size:14px;color:var(--stone);max-width:420px;line-height:1.8">One price for the vehicle, not per person. Up to 7 passengers. Tolls included. Confirmed in writing before the journey.</p>
     </div>
@@ -950,7 +950,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="cta-bg" aria-hidden="true">Transfer</div>
   <div class="cta-inner">
     <div class="cta-overline">Book a transfer</div>
-    <h2 class="cta-h2">Nice Airport<br><em>to wherever.</em></h2>
+    <h2 class="cta-h2">Nice Côte d'Azur<br><em>to wherever.</em></h2>
     <p class="cta-body">Send your flight details and destination. We confirm within the hour.</p>
     <div class="cta-actions">
       <a href="/book?service=transfer" class="btn-bone">
