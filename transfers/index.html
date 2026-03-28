@@ -15,7 +15,7 @@
 {"@context":"https://schema.org","@type":"Service","name":"Private Airport Transfers — French and Italian Riviera","provider":{"@type":"LocalBusiness","name":"Riviera Journeys","address":{"@type":"PostalAddress","addressLocality":"Cannes","addressCountry":"FR"},"telephone":"+33669962272"},"areaServed":["French Riviera","Italian Riviera","Provence"],"description":"Private transfers from Nice Côte d'Azur Airport to Cannes, Monaco, Antibes and Saint-Tropez. From Cannes to the Italian Riviera, Milan, Provence. Mercedes V-Class, up to 7 passengers. Fixed price.","offers":[{"@type":"Offer","name":"Nice Airport to Cannes","price":"140","priceCurrency":"EUR"},{"@type":"Offer","name":"Nice Airport to Monaco","price":"150","priceCurrency":"EUR"},{"@type":"Offer","name":"Nice Airport to Saint-Tropez","price":"390","priceCurrency":"EUR"},{"@type":"Offer","name":"Cannes to Monaco","price":"240","priceCurrency":"EUR"},{"@type":"Offer","name":"Cannes to Milan","price":"1350","priceCurrency":"EUR"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity"{"@type":"Question","name":"How much does a private transfer from Nice Airport to Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"A private Mercedes V-Class transfer from Nice NCE to Cannes costs from €140 per vehicle for up to 7 passengers. This is a fixed price including tolls and airport parking."}},{"@type":"Question","name":"Is a private transfer more expensive than a taxi from Nice Airport?","acceptedAnswer":{"@type":"Answer","text":"A private transfer is a different service from a taxi. The vehicle is a Mercedes V-Class for up to 7 passengers. The price is confirmed in writing before the journey and does not change with traffic or time of day. For groups travelling together, for airport pickups where timing matters, and for journeys where the price needs to be known before departure, the two are not directly comparable."}},{"@type":"Question","name":"How long does the transfer from Nice Airport to Cannes take?","acceptedAnswer":{"@type":"Answer","text":"Approximately 45 minutes by the A8 motorway. In peak summer, allow 60–75 minutes. We plan pickup times accordingly."}},{"@type":"Question","name":"Do you monitor flight arrivals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every transfer includes real-time flight tracking. If your flight is delayed, the pickup time adjusts automatically."}},{"@type":"Question","name":"Can you transfer from Cannes to Nice Airport for a departure flight?","acceptedAnswer":{"@type":"Answer","text":"Yes. Departure transfers from Cannes, Monaco, Antibes and Saint-Tropez to Nice NCE are available at the same rates."}},{"@type":"Question","name":"Do you cover the Italian Riviera and Milan?","acceptedAnswer":{"@type":"Answer","text":"Yes. We cover intercity transfers to Sanremo, Portofino, and Milan from Cannes or Nice. Milan is 4–5 hours from Cannes and priced from €1,350 per vehicle. Sanremo and the Italian Riviera are available on enquiry."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a private transfer from Nice Airport to Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"A private Mercedes V-Class transfer from Nice NCE to Cannes costs from €140 per vehicle for up to 7 passengers. This is a fixed price including tolls and airport parking."}},{"@type":"Question","name":"Is a private transfer more expensive than a taxi from Nice Airport?","acceptedAnswer":{"@type":"Answer","text":"A private transfer is a different service from a taxi. The vehicle is a Mercedes V-Class for up to 7 passengers. The price is confirmed in writing before the journey and does not change with traffic or time of day. For groups travelling together, for airport pickups where timing matters, and for journeys where the price needs to be known before departure, the two are not directly comparable."}},{"@type":"Question","name":"How long does the transfer from Nice Airport to Cannes take?","acceptedAnswer":{"@type":"Answer","text":"Approximately 45 minutes by the A8 motorway. In peak summer, allow 60–75 minutes. We plan pickup times accordingly."}},{"@type":"Question","name":"Do you monitor flight arrivals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every transfer includes real-time flight tracking. If your flight is delayed, the pickup time adjusts automatically."}},{"@type":"Question","name":"Can you transfer from Cannes to Nice Airport for a departure flight?","acceptedAnswer":{"@type":"Answer","text":"Yes. Departure transfers from Cannes, Monaco, Antibes and Saint-Tropez to Nice NCE are available at the same rates."}},{"@type":"Question","name":"Do you cover the Italian Riviera and Milan?","acceptedAnswer":{"@type":"Answer","text":"Yes. We cover intercity transfers to Sanremo, Portofino, and Milan from Cannes or Nice. Milan is 4–5 hours from Cannes and priced from €1,350 per vehicle. Sanremo and the Italian Riviera are available on enquiry."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,7 +136,7 @@ a{text-decoration:none}
 /* PAGE HERO — photo full-bleed */
 .page-hero{position:relative;height:70vh;min-height:540px;overflow:hidden;display:flex;align-items:flex-end}
 .page-hero-img{position:absolute;inset:0;background:var(--deep)}
-.page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
 .page-hero-vignette{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,26,.82) 0%,rgba(28,28,26,.45) 55%,rgba(28,28,26,.15) 100%);z-index:2}
 .page-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");z-index:3;pointer-events:none;opacity:.4}
 .page-hero-content{position:relative;z-index:4;padding:0 72px 72px;max-width:660px}
@@ -573,7 +573,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 <div class="page-hero" aria-label="Private transfers hero">
   <div class="page-hero-img">
     <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif"
-      alt="Cannes bay with Carlton and Martinez hotels on La Croisette — private transfers French Riviera"
+      alt="Mercedes V-Class private transfer vehicle on the French Riviera — Riviera Journeys Nice Airport Cannes Monaco"
       loading="eager">
   </div>
   <div class="page-hero-vignette"></div>
@@ -581,7 +581,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="page-hero-content">
     <span class="page-hero-overline">Nice Côte d'Azur Airport · NCE</span>
     <h1>Private Transfers.<br><em>On time, always.</em></h1>
-    <p>From Nice Airport to Cannes, Monaco and Saint-Tropez. From Cannes to the Italian Riviera — Sanremo, Portofino — or north to Milan, Aix-en-Provence and Avignon. Mercedes V-Class, up to 7 passengers. Fixed price confirmed in advance.</p>
+    <p>From Nice Airport to Cannes, Monaco and Saint-Tropez. From Cannes: east along the Italian Riviera to Sanremo and Portofino; north to Milan; west to Aix-en-Provence and Avignon. Mercedes V-Class, up to 7 passengers. Fixed price confirmed in advance.</p>
     <div class="page-hero-actions">
       <a href="/book?service=transfer" class="btn-sand">
         <span>Enquire about a transfer</span>
@@ -628,8 +628,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="routes-grid">
     <a href="/transfers/nice-airport-cannes" class="route-card">
       <div class="route-card-photo">
-        <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif"
-          alt="Cannes bay La Croisette boulevard Carlton Hotel — private transfer Nice Airport to Cannes French Riviera" loading="eager">
+        <img src="/photos/cannes-carlton-hotel-croisette-boulevard-french-riviera-tour-from-nice.avif"
+          alt="Cannes Carlton Hotel Croisette boulevard French Riviera — private transfer Nice Airport to Cannes" loading="eager">
         <span class="route-card-badge">Most requested</span>
       </div>
       <div class="route-card-body">
@@ -644,8 +644,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     </a>
     <a href="/transfers/nice-airport-monaco" class="route-card">
       <div class="route-card-photo">
-        <img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif"
-          alt="Monaco Port Hercule superyachts Monte Carlo bay — private transfer Nice Airport to Monaco" loading="eager">
+        <img src="/photos/monaco-bay-port-hercule-casino-hotel-de-paris-airport-transfer.avif"
+          alt="Monaco bay Port Hercule Casino Hotel de Paris — private transfer Nice Airport to Monaco" loading="eager">
       </div>
       <div class="route-card-body">
         <div class="route-from">Nice NCE →</div>
@@ -659,8 +659,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     </a>
     <a href="/transfers/nice-airport-saint-tropez" class="route-card">
       <div class="route-card-photo">
-        <img src="/photos/saint-tropez-port-gendarme-de saint-tropez-french-riviera-boat-trip.avif"
-          alt="Saint-Tropez Vieux-Port Gendarmerie — private transfer Nice Airport to Saint-Tropez" loading="lazy">
+        <img src="/photos/saint-tropez-bay-old-yacht-waterfront-nice-airport-transfer.avif"
+          alt="Saint-Tropez bay old yacht waterfront — private transfer Nice Airport to Saint-Tropez" loading="lazy">
       </div>
       <div class="route-card-body">
         <div class="route-from">Nice NCE →</div>
@@ -716,8 +716,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   </div>
   <div class="vehicle-inner">
     <div class="vehicle-photo">
-      <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif"
-        alt="Mercedes V-Class private transfer vehicle French Riviera — Riviera Journeys airport transfers Nice Cannes Monaco"
+      <img src="/photos/mercedes-v-class-yacht-port-sunset-nice-airport-transfer.avif"
+        alt="Mercedes V-Class private transfer vehicle yacht port sunset French Riviera — Riviera Journeys airport transfers Nice Cannes Monaco"
         loading="lazy">
       <span class="vehicle-credit">Photograph by Riviera Journeys</span>
     </div>
