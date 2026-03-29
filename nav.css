@@ -91,3 +91,5 @@
 .mob-sub li a:hover{color:var(--sand);padding-left:6px}
 .mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s;text-decoration:none}
 .mobile-menu-cta:hover{background:var(--terra)}
+/* Enquire button — override link padding reset */
+.nav-links>li>a.nav-cta{padding:11px 28px!important;height:auto!important;line-height:normal!important;margin-left:14px!important;font-size:10px!important}
