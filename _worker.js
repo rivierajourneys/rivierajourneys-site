@@ -1,4 +1,4 @@
-/ _worker.js — Riviera Journeys
+// _worker.js - Riviera Journeys
 // Edit NAV_HTML below to update nav on ALL pages. One commit = done.
 
 const NAV_HTML = `<nav class="nav scrolled" id="mainNav" role="navigation" aria-label="Main navigation">
@@ -234,7 +234,6 @@ const MOBILE_HTML = `<div class="mobile-menu" id="mobileMenu" aria-hidden="true"
 </div>`;
 
 const NAV_JS = `<script>
-// Remove old mobile menu if page already had one
 (function(){var o=document.getElementById("mobileMenu");if(o)o.remove();})();
 <\/script>
 ` + MOBILE_HTML + `
@@ -253,7 +252,6 @@ export default {
     const response = await env.ASSETS.fetch(request);
     const ct = response.headers.get("content-type") || "";
     if (!ct.includes("text/html")) return response;
-
     return new HTMLRewriter()
       .on("#mainNav", {
         element(el) { el.replace(NAV_HTML, { html: true }); }
