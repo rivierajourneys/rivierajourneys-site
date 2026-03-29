@@ -1,6 +1,5 @@
-// _worker.js — Riviera Journeys shared nav injection
-// Nav HTML is embedded directly — update here, all pages update on next deploy.
-// Split: NAV_HTML = <nav>...</nav>, MOBILE_HTML = <div class="mobile-menu">...</div>
+/ _worker.js — Riviera Journeys
+// Edit NAV_HTML below to update nav on ALL pages. One commit = done.
 
 const NAV_HTML = `<nav class="nav scrolled" id="mainNav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav-logo">Riviera Journeys</a>
@@ -234,35 +233,33 @@ const MOBILE_HTML = `<div class="mobile-menu" id="mobileMenu" aria-hidden="true"
   <a href="/book" class="mobile-menu-cta">Enquire</a>
 </div>`;
 
+const NAV_JS = `<script>
+// Remove old mobile menu if page already had one
+(function(){var o=document.getElementById("mobileMenu");if(o)o.remove();})();
+<\/script>
+` + MOBILE_HTML + `
+<script>
+if(!window._rjNav){window._rjNav=true;
+// MEGA MENU
+(function(){var OD=260,CD=160,nav=document.getElementById('mainNav'),ot,ct,cur;function open(li){clearTimeout(ct);if(cur&&cur!==li)cur.classList.remove('mega-open');cur=li;clearTimeout(ot);ot=setTimeout(function(){li.classList.add('mega-open');if(nav)nav.classList.add('mega-active')},cur===li?OD:0)}function close(){clearTimeout(ot);ct=setTimeout(function(){if(cur)cur.classList.remove('mega-open');if(nav)nav.classList.remove('mega-active');cur=null},CD)}document.querySelectorAll('.nav-links>li').forEach(function(li){var p=li.querySelector('.mega-panel');if(!p)return;li.addEventListener('mouseenter',function(){open(li)});li.addEventListener('mouseleave',function(){close()});p.addEventListener('mouseenter',function(){clearTimeout(ct)});p.addEventListener('mouseleave',function(){close()})});if(nav){nav.addEventListener('mouseleave',function(){clearTimeout(ot);ct=setTimeout(function(){document.querySelectorAll('.nav-links>li.mega-open').forEach(function(l){l.classList.remove('mega-open')});nav.classList.remove('mega-active');cur=null},CD)})}document.addEventListener('keydown',function(e){if(e.key==='Escape'){clearTimeout(ot);document.querySelectorAll('.nav-links>li.mega-open').forEach(function(l){l.classList.remove('mega-open')});if(nav)nav.classList.remove('mega-active');cur=null}});document.querySelectorAll('.mega-sub-link[data-pane]').forEach(function(btn){btn.addEventListener('mouseenter',function(){var mega=btn.getAttribute('data-mega'),pane=btn.getAttribute('data-pane');document.querySelectorAll('.mega-sub-link[data-mega="'+mega+'"]').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('[id^="pane-'+mega+'-"]').forEach(function(p){p.classList.remove('active')});var t=document.getElementById('pane-'+mega+'-'+pane);if(t)t.classList.add('active');var a=document.getElementById('cards-area-'+mega);if(a){var h=a.querySelector('.mega-cards-header-title');if(h)h.textContent=btn.textContent.trim()}})})})();
+// MOBILE MENU
+(function(){var b=document.getElementById('navBurger'),m=document.getElementById('mobileMenu'),x=document.getElementById('mobileClose');if(!b||!m)return;var open=false;function toggle(){open=!open;b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);m.setAttribute('aria-hidden',!open);if(open){m.style.display='flex';setTimeout(function(){m.style.opacity='1'},10);document.body.style.overflow='hidden'}else{m.style.opacity='0';setTimeout(function(){m.style.display='none'},400);document.body.style.overflow=''}}b.addEventListener('click',toggle);if(x)x.addEventListener('click',toggle);document.querySelectorAll('.mob-toggle').forEach(function(btn){btn.addEventListener('click',function(){btn.closest('.mob-parent').classList.toggle('open')})})})();
+}
+<\/script>`;
+
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-
-    // Pass through all non-GET requests
-    if (request.method !== 'GET') {
-      return env.ASSETS.fetch(request);
-    }
-
-    // Fetch the page from static assets
+    if (request.method !== "GET") return env.ASSETS.fetch(request);
     const response = await env.ASSETS.fetch(request);
+    const ct = response.headers.get("content-type") || "";
+    if (!ct.includes("text/html")) return response;
 
-    // Only process HTML pages
-    const contentType = response.headers.get('content-type') || '';
-    if (!contentType.includes('text/html')) {
-      return response;
-    }
-
-    // Inject nav using HTMLRewriter
     return new HTMLRewriter()
-      .on('nav#mainNav', {
-        element(el) {
-          el.replace(NAV_HTML, { html: true });
-        }
+      .on("#mainNav", {
+        element(el) { el.replace(NAV_HTML, { html: true }); }
       })
-      .on('div#mobileMenu', {
-        element(el) {
-          el.replace(MOBILE_HTML, { html: true });
-        }
+      .on("body", {
+        element(el) { el.append(NAV_JS, { html: true }); }
       })
       .transform(response);
   }
