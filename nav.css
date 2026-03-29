@@ -12,7 +12,7 @@
 .nav-logo{font-family:var(--sc);font-size:17px;font-weight:300;letter-spacing:.14em;color:var(--bone)!important;transition:color .5s}
 .nav.scrolled .nav-logo{color:var(--warm)!important}
 .nav-links{display:flex!important;gap:0!important;align-items:center!important;list-style:none!important}
-.nav-links>li>a{font-family:var(--sans)!important;font-size:9px!important;font-weight:400!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:rgba(253,250,246,.85)!important;transition:color .35s!important;display:block!important;padding:0 18px!important;height:68px!important;line-height:68px!important;white-space:nowrap!important;position:relative!important}
+.nav-links>li>a{font-family:var(--sans)!important;font-size:10px!important;font-weight:400!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:rgba(253,250,246,.85)!important;transition:color .35s!important;display:block!important;padding:0 18px!important;height:68px!important;line-height:68px!important;white-space:nowrap!important;position:relative!important}
 .nav-links>li>a::after{content:'';position:absolute;bottom:26px;left:18px;right:18px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
 .nav-links>li:hover>a::after,.nav-links>li.mega-open>a::after,.nav-links>li>a.nav-active::after{transform:scaleX(1)}
 .nav-links>li>a.nav-cta::after{display:none!important}
