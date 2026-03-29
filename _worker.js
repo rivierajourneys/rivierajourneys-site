@@ -252,7 +252,7 @@ export default {
     const response = await env.ASSETS.fetch(request);
     const ct = response.headers.get("content-type") || "";
     if (!ct.includes("text/html")) return response;
-    return new HTMLRewriter()
+    const rewritten = new HTMLRewriter()
       .on("#mainNav", {
         element(el) { el.replace(NAV_HTML, { html: true }); }
       })
@@ -260,5 +260,8 @@ export default {
         element(el) { el.append(NAV_JS, { html: true }); }
       })
       .transform(response);
+    const final = new Response(rewritten.body, rewritten);
+    final.headers.set("Cache-Control", "no-store");
+    return final;
   }
 };
