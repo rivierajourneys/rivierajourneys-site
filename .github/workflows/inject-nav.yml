@@ -1,0 +1,58 @@
+name: Inject nav.js into HTML pages
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'nav.js'
+      - 'nav.css'
+      - '.github/**'
+
+jobs:
+  inject-nav:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[nav-inject]')"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inject nav.js into HTML pages
+        run: |
+          python3 << 'PYEOF'
+          import os, glob
+
+          SCRIPT_TAG = '<script src="/nav.js" defer></script>'
+          changed = []
+
+          for html_file in sorted(glob.glob('**/*.html', recursive=True)):
+              parts = html_file.split('/')
+              if any(p.startswith('.') for p in parts):
+                  continue
+              with open(html_file, 'r', encoding='utf-8', errors='ignore') as f:
+                  content = f.read()
+              if 'nav.js' in content:
+                  continue
+              if '</body>' in content:
+                  new_content = content.replace('</body>', SCRIPT_TAG + '\n</body>', 1)
+                  with open(html_file, 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+                  changed.append(html_file)
+                  print(f'Updated: {html_file}')
+
+          print(f'Total: {len(changed)} files updated')
+          PYEOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "[nav-inject] Add nav.js to HTML pages"
+            git push
+          fi
