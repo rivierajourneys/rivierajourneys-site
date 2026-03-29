@@ -1,6 +1,7 @@
 name = "rivierajourneys"
 compatibility_date = "2025-09-27"
 main = "_worker.js"
+workers_dev = true
 
 [assets]
 directory = "."
