@@ -6,7 +6,11 @@ on:
     paths-ignore:
       - 'nav.js'
       - 'nav.css'
+      - '_worker.js'
       - '.github/**'
+
+permissions:
+  contents: write
 
 jobs:
   inject-nav:
@@ -19,7 +23,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Inject nav.js into HTML pages
+      - name: Inject nav.js script tag into HTML pages
         run: |
           python3 << 'PYEOF'
           import os, glob
@@ -42,16 +46,16 @@ jobs:
                   changed.append(html_file)
                   print(f'Updated: {html_file}')
 
-          print(f'Total: {len(changed)} files updated')
+          print(f'Total updated: {len(changed)} files')
           PYEOF
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --staged --quiet; then
-            echo "No changes."
+            echo "No changes to commit."
           else
             git commit -m "[nav-inject] Add nav.js to HTML pages"
             git push
