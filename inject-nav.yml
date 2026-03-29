@@ -1,0 +1,69 @@
+name: Inject nav.js into HTML pages
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'nav.js'
+      - 'nav.css'
+      - '_worker.js'
+      - '.github/**'
+
+jobs:
+  inject-nav:
+    runs-on: ubuntu-latest
+    # Skip if the commit was made by this action (prevents infinite loop)
+    if: "!contains(github.event.head_commit.message, '[nav-inject]')"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inject nav.js script tag into HTML pages
+        run: |
+          python3 << 'PYEOF'
+          import os, glob
+
+          SCRIPT_TAG = '<script src="/nav.js" defer></script>'
+          changed = []
+
+          for html_file in sorted(glob.glob('**/*.html', recursive=True)):
+              # Skip hidden directories
+              parts = html_file.split('/')
+              if any(p.startswith('.') for p in parts):
+                  continue
+
+              with open(html_file, 'r', encoding='utf-8', errors='ignore') as f:
+                  content = f.read()
+
+              # Skip if already has nav.js
+              if 'nav.js' in content:
+                  continue
+
+              # Insert before </body>
+              if '</body>' in content:
+                  new_content = content.replace('</body>', SCRIPT_TAG + '\n</body>', 1)
+                  with open(html_file, 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+                  changed.append(html_file)
+                  print(f'Updated: {html_file}')
+
+          print(f'\nTotal updated: {len(changed)} files')
+          if changed:
+              with open(os.environ.get('GITHUB_OUTPUT', '/dev/null'), 'a') as f:
+                  f.write('changed=true\n')
+          PYEOF
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "[nav-inject] Add nav.js to HTML pages"
+            git push
+          fi
