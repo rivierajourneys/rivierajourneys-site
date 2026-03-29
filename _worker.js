@@ -1,60 +1,267 @@
 // _worker.js — Riviera Journeys shared nav injection
-// Fetches nav.html and replaces <nav id="mainNav"> + <div id="mobileMenu">
-// in every HTML response. Update nav.html → all pages update on next deploy.
+// Nav HTML is embedded directly — update here, all pages update on next deploy.
+// Split: NAV_HTML = <nav>...</nav>, MOBILE_HTML = <div class="mobile-menu">...</div>
+
+const NAV_HTML = `<nav class="nav scrolled" id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo">Riviera Journeys</a>
+  <ul class="nav-links" id="mainNavLinks">
+
+    <!-- TOURS -->
+    <li>
+      <a href="/tours">Tours</a>
+      <div class="mega-panel" id="mega-tours">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Tours</div>
+            <button class="mega-sub-link active" data-pane="cannes" data-mega="tours">Day tours from Cannes</button>
+            <button class="mega-sub-link" data-pane="nice" data-mega="tours">Day tours from Nice</button>
+            <span class="mega-sub-section-title">By sea</span>
+            <button class="mega-sub-link" data-pane="boat" data-mega="tours">Boat trips</button>
+            <span class="mega-sub-section-title">Season</span>
+            <button class="mega-sub-link" data-pane="offseason" data-mega="tours">Off-season Riviera</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-tours">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Day Tours from Cannes</span></div>
+            <div class="mega-cards-pane active" id="pane-tours-cannes">
+              <a class="mega-card" href="/tours/cannes/nice-eze-monaco"><div class="mega-card-img"><img src="/photos/monaco-monte-carlo-viewpoint-panorama-nice-eze-monaco-tour-french-riviera.avif" alt="Monte Carlo panorama — Nice Eze Monaco day tour" loading="lazy"></div><div class="mega-card-name">Nice · Eze · Monaco</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/tours/cannes/grasse-gourdon"><div class="mega-card-img"><img src="/photos/grasse-old-town-pink-umbrellas-gourdon-tourrettes-tour-french-riviera-vertical.avif" alt="Grasse old town — Grasse Gourdon day tour" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/tours/cannes/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/saint-paul-de-vence-bronze-reclining-woman-sculpture-cannes-antibes-tour-french-riviera.avif" alt="Saint-Paul-de-Vence — Cannes Antibes Saint-Paul day tour" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Cannes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-tours-nice">
+              <a class="mega-card" href="/tours/nice/eze-monaco-menton"><div class="mega-card-img"><img src="/photos/menton-main-square-basilica-sky-eze-monaco-menton-tour.avif" alt="Menton — Eze Monaco Menton tour from Nice" loading="lazy"></div><div class="mega-card-name">Eze · Monaco · Menton</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/tours/nice/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/cannes-carlton-hotel-croisette-boulevard-french-riviera-tour-from-nice.avif" alt="Cannes Carlton — tour from Nice" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/tours/nice/grasse-gourdon"><div class="mega-card-img"><img src="/photos/gourdon-eagle-sculpture-cannes-bay-valley-view-provence-tour-from-nice.avif" alt="Gourdon — Grasse Gourdon tour from Nice" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Nice<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-tours-boat">
+              <a class="mega-card" href="/tours/boat/lerins-islands"><div class="mega-card-img"><img src="/photos/cannes-old-port-fishing-boats-lerins-islands-boat-trip.avif" alt="Cannes old port — Îles de Lérins boat trip" loading="lazy"></div><div class="mega-card-name">Îles de Lérins</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/tours/boat/saint-tropez"><div class="mega-card-img"><img src="/photos/saint-tropez-port-gendarme-de saint-tropez-french-riviera-boat-trip.avif" alt="Saint-Tropez port — boat trip" loading="lazy"></div><div class="mega-card-name">Saint-Tropez by sea</div><div class="mega-card-detail">Full day · from €600</div></a>
+              <a class="mega-card" href="/tours/boat/monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif" alt="Monaco Port Hercule — boat trip" loading="lazy"></div><div class="mega-card-name">Monaco by sea</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All boat trips<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-tours-offseason">
+              <a class="mega-card featured" href="/tours/off-season/gastronomy"><div class="mega-card-img"><img src="/photos/scallops-saint-jacques-truffles-gastronomy-off-season-tour.avif" alt="Gastronomy and truffles — off-season tour" loading="lazy"></div><div class="mega-card-name">Gastronomy &amp; truffles</div><div class="mega-card-detail">November – March · Full day</div></a>
+              <a class="mega-card featured" href="/tours/off-season/snow-sea"><div class="mega-card-img"><img src="/photos/antibes-bay-snowy-alps-sea-view-off-season-tour.avif" alt="Antibes bay snowy Alps — snow sea off-season tour" loading="lazy"></div><div class="mega-card-name">Snow &amp; sea day</div><div class="mega-card-detail">Ski Isola 2000 + coast</div></a>
+              <a class="mega-card featured" href="/tours/off-season/art-architecture"><div class="mega-card-img"><img src="/photos/cannes-villa-rothschild-gardens-off-season-art-architecture-tour.avif" alt="Villa Rothschild — art architecture off-season tour" loading="lazy"></div><div class="mega-card-name">Art &amp; architecture</div><div class="mega-card-detail">Museums, ateliers · Off-season</div></a>
+              <a href="/tours/off-season" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Off-season experiences<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- SHORE EXCURSIONS -->
+    <li>
+      <a href="/shore-excursions">Shore Excursions</a>
+      <div class="mega-panel" id="mega-shore">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Shore Excursions</div>
+            <button class="mega-sub-link active" data-pane="cannes" data-mega="shore">From Cannes</button>
+            <button class="mega-sub-link" data-pane="villefranche" data-mega="shore">From Villefranche</button>
+            <a href="/villefranche-cruise-schedule" style="display:block;font-family:var(--sans);font-size:11px;color:var(--terra);margin-top:16px;letter-spacing:.06em;text-decoration:none">Cruise schedule →</a>
+          </div>
+          <div class="mega-cards-area" id="cards-area-shore">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">From Cannes</span></div>
+            <div class="mega-cards-pane active" id="pane-shore-cannes">
+              <a class="mega-card" href="/shore-excursions/cannes/nice-eze-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif" alt="Monaco — shore excursion from Cannes" loading="lazy"></div><div class="mega-card-name">Nice · Eze · Monaco</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/shore-excursions/cannes/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif" alt="Saint-Paul-de-Vence — shore excursion from Cannes" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/shore-excursions/cannes/grasse-gourdon"><div class="mega-card-img"><img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif" alt="Grasse — shore excursion from Cannes" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a href="/shore-excursions" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All from Cannes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-shore-villefranche">
+              <a class="mega-card" href="/shore-excursions/villefranche/nice-eze-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif" alt="Monaco — shore excursion from Villefranche" loading="lazy"></div><div class="mega-card-name">Nice · Eze · Monaco</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/shore-excursions/villefranche/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif" alt="Saint-Paul-de-Vence — shore excursion from Villefranche" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a class="mega-card" href="/shore-excursions/villefranche/grasse-gourdon"><div class="mega-card-img"><img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif" alt="Grasse — shore excursion from Villefranche" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
+              <a href="/shore-excursions" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All from Villefranche<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- MULTI-DAY -->
+    <li>
+      <a href="/multi-day">Multi-Day</a>
+      <div class="mega-panel" id="mega-multiday">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Multi-Day Journeys</div>
+            <button class="mega-sub-link active" data-pane="france" data-mega="multiday">Through France</button>
+            <button class="mega-sub-link" data-pane="italy" data-mega="multiday">Through Italy</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-multiday">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Through France</span></div>
+            <div class="mega-cards-pane active" id="pane-multiday-france">
+              <a class="mega-card" href="/multi-day/france/provence-avignon-valensole"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Provence · Avignon</span></div></div><div class="mega-card-name">Provence · Avignon · Valensole</div><div class="mega-card-detail">3–5 days · Lavender &amp; Provence</div></a>
+              <a class="mega-card" href="/multi-day/france/cannes-avignon-lyon"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Avignon · Lyon</span></div></div><div class="mega-card-name">Avignon · Lyon</div><div class="mega-card-detail">5–7 days · Price on enquiry</div></a>
+              <a class="mega-card" href="/multi-day/france/cannes-lyon-paris"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Lyon · Paris</span></div></div><div class="mega-card-name">Lyon · Paris</div><div class="mega-card-detail">7–10 days · Price on enquiry</div></a>
+              <a href="/multi-day" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Custom journey →<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-multiday-italy">
+              <a class="mega-card" href="/multi-day/italy/cannes-genova-portofino"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Genova · Portofino</span></div></div><div class="mega-card-name">Cannes · Genova · Portofino</div><div class="mega-card-detail">3–5 days · Price on enquiry</div></a>
+              <a class="mega-card" href="/multi-day/italy/cannes-cinque-terre-florence"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cinque Terre</span></div></div><div class="mega-card-name">Cannes · Cinque Terre · Florence</div><div class="mega-card-detail">5–7 days · Price on enquiry</div></a>
+              <a class="mega-card" href="/multi-day/italy/cannes-genova-milano"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Genova · Milano</span></div></div><div class="mega-card-name">Cannes · Genova · Milano</div><div class="mega-card-detail">3–5 days · Price on enquiry</div></a>
+              <a href="/multi-day" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Custom journey →<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- TRANSFERS -->
+    <li>
+      <a href="/transfers">Transfers</a>
+      <div class="mega-panel" id="mega-transfers">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Transfers</div>
+            <button class="mega-sub-link active" data-pane="airport" data-mega="transfers">Nice Côte d'Azur Airport</button>
+            <button class="mega-sub-link" data-pane="cannes" data-mega="transfers">From Cannes</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-transfers">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Nice Côte d'Azur Airport</span></div>
+            <div class="mega-cards-pane active" id="pane-transfers-airport">
+              <a class="mega-card" href="/transfers/nice-airport-cannes"><div class="mega-card-img"><img src="/photos/cannes-carlton-hotel-croisette-nice-airport-transfer.avif" alt="Cannes Carlton Hotel La Croisette — private transfer Nice Airport to Cannes" loading="lazy"></div><div class="mega-card-name">Nice → Cannes</div><div class="mega-card-detail">45 min · from €140</div></a>
+              <a class="mega-card" href="/transfers/nice-airport-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif" alt="Monaco Port Hercule — private transfer Nice Airport to Monaco" loading="lazy"></div><div class="mega-card-name">Nice → Monaco</div><div class="mega-card-detail">30 min · from €180</div></a>
+              <a class="mega-card" href="/transfers/nice-airport-saint-tropez"><div class="mega-card-img"><img src="/photos/saint-tropez-waterfront-harbour-nice-airport-transfer.avif" alt="Saint-Tropez waterfront harbour — private transfer Nice Airport to Saint-Tropez" loading="lazy"></div><div class="mega-card-name">Nice → Saint-Tropez</div><div class="mega-card-detail">90 min · from €390</div></a>
+              <a href="/transfers" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All routes &amp; prices<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-transfers-cannes">
+              <a class="mega-card" href="/transfers/cannes-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif" alt="Monaco — private transfer from Cannes" loading="lazy"></div><div class="mega-card-name">Cannes → Monaco</div><div class="mega-card-detail">60–75 min · from €240</div></a>
+              <a class="mega-card" href="/transfers/cannes-nice-airport"><div class="mega-card-img"><img src="/photos/cannes-carlton-hotel-croisette-nice-airport-transfer.avif" alt="Cannes Carlton Hotel Croisette — transfer to Nice Airport" loading="lazy"></div><div class="mega-card-name">Cannes → Nice Airport</div><div class="mega-card-detail">45 min · from €140</div></a>
+              <a class="mega-card" href="/transfers/cannes-saint-tropez"><div class="mega-card-img"><img src="/photos/saint-tropez-port-gendarme-de saint-tropez-french-riviera-boat-trip.avif" alt="Saint-Tropez — private transfer from Cannes" loading="lazy"></div><div class="mega-card-name">Cannes → Saint-Tropez</div><div class="mega-card-detail">90 min · from €310</div></a>
+              <a href="/transfers" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All routes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- CORPORATE -->
+    <li>
+      <a href="/corporate">Corporate</a>
+      <div class="mega-panel" id="mega-corporate">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">Corporate</div>
+            <button class="mega-sub-link active" data-pane="events" data-mega="corporate">Events</button>
+            <button class="mega-sub-link" data-pane="services" data-mega="corporate">Services</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-corporate">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Events</span></div>
+            <div class="mega-cards-pane active" id="pane-corporate-events">
+              <a class="mega-card" href="/corporate/festival"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Festival de Cannes</span></div></div><div class="mega-card-name">Cannes Film Festival</div><div class="mega-card-detail">May · Cannes</div></a>
+              <a class="mega-card" href="/corporate/mipim-transfers"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>MIPIM</span></div></div><div class="mega-card-name">MIPIM</div><div class="mega-card-detail">March · Real estate congress</div></a>
+              <a class="mega-card" href="/corporate/lions"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes Lions</span></div></div><div class="mega-card-name">Cannes Lions</div><div class="mega-card-detail">June · Advertising festival</div></a>
+              <a href="/corporate" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">ILTM &amp; all events<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-corporate-services">
+              <a class="mega-card featured" href="/corporate/retreats"><div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Executive Retreats</span></div></div><div class="mega-card-name">Executive retreats</div><div class="mega-card-detail">Venue, programme, transfers</div></a>
+              <a class="mega-card featured" href="/corporate/partner-experiences"><div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Partner Experiences</span></div></div><div class="mega-card-name">Partner experiences</div><div class="mega-card-detail">While you're in meetings</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- ROADBOOK -->
+    <li>
+      <a href="/editorial">Roadbook</a>
+      <div class="mega-panel" id="mega-roadbook">
+        <div class="mega-inner">
+          <div class="mega-nav-col">
+            <div class="mega-nav-col-title">The Roadbook</div>
+            <button class="mega-sub-link active" data-pane="destinations" data-mega="roadbook">Destinations</button>
+            <button class="mega-sub-link" data-pane="outdoor" data-mega="roadbook">Outdoor</button>
+            <button class="mega-sub-link" data-pane="gastronomy" data-mega="roadbook">Gastronomy</button>
+            <button class="mega-sub-link" data-pane="art" data-mega="roadbook">Art</button>
+            <button class="mega-sub-link" data-pane="history" data-mega="roadbook">History</button>
+          </div>
+          <div class="mega-cards-area" id="cards-area-roadbook">
+            <div class="mega-cards-header"><span class="mega-cards-header-title">Destinations</span></div>
+            <div class="mega-cards-pane active" id="pane-roadbook-destinations">
+              <a class="mega-card" href="/editorial/cannes"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes</span></div></div><div class="mega-card-name">Cannes</div><div class="mega-card-detail">Beyond the Croisette</div></a>
+              <a class="mega-card" href="/editorial/monaco"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Monaco</span></div></div><div class="mega-card-name">Monaco</div><div class="mega-card-detail">The principality properly</div></a>
+              <a class="mega-card" href="/editorial/nice"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice</span></div></div><div class="mega-card-name">Nice</div><div class="mega-card-detail">From Vieux-Nice to the hills</div></a>
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All destinations<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-roadbook-outdoor">
+              <a class="mega-card" href="/editorial/hiking"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Hiking</span></div></div><div class="mega-card-name">Hiking</div><div class="mega-card-detail">Routes worth the climb</div></a>
+              <a class="mega-card" href="/editorial/sup"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>SUP</span></div></div><div class="mega-card-name">SUP</div><div class="mega-card-detail">On the water at dawn</div></a>
+              <a class="mega-card" href="/editorial/flying"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Flying</span></div></div><div class="mega-card-name">Flying</div><div class="mega-card-detail">The Riviera from above</div></a>
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All outdoor<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-roadbook-gastronomy">
+              <a class="mega-card" href="/editorial/restaurants"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Restaurants</span></div></div><div class="mega-card-name">Restaurants</div><div class="mega-card-detail">Where to eat, when</div></a>
+              <a class="mega-card" href="/editorial/wine"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Wine</span></div></div><div class="mega-card-name">Wine</div><div class="mega-card-detail">Rosé, and what else</div></a>
+              <a class="mega-card" href="/editorial/markets"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Markets</span></div></div><div class="mega-card-name">Markets &amp; eating local</div><div class="mega-card-detail">Morning rituals</div></a>
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All gastronomy<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-roadbook-art">
+              <a class="mega-card" href="/editorial/belle-epoque"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Belle Époque</span></div></div><div class="mega-card-name">Belle Époque</div><div class="mega-card-detail">Architecture &amp; golden age</div></a>
+              <a class="mega-card" href="/editorial/galleries"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Galleries</span></div></div><div class="mega-card-name">Galleries</div><div class="mega-card-detail">What's showing now</div></a>
+              <a class="mega-card" href="/editorial/looking-at-art"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Looking at Art</span></div></div><div class="mega-card-name">What to look for in a painting</div><div class="mega-card-detail">Artists, works, details</div></a>
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All art<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="mega-cards-pane" id="pane-roadbook-history">
+              <a class="mega-card" href="/editorial/what-happened-here"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>What Happened Here</span></div></div><div class="mega-card-name">What happened here</div><div class="mega-card-detail">The stories behind the places</div></a>
+              <a class="mega-card" href="/editorial/personalities"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Personalities</span></div></div><div class="mega-card-name">Personalities</div><div class="mega-card-detail">Who lived, worked and left here</div></a>
+              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All history<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="/book" class="nav-cta"><span>Enquire</span></a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+</nav>`;
+
+const MOBILE_HTML = `<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" id="mobileClose">&#10005;</button>
+  <div class="mobile-menu-logo">Riviera Journeys</div>
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:0">
+    <li class="mob-parent"><button class="mob-toggle">Tours <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/tours">Day tours from Cannes</a></li><li><a href="/tours">Day tours from Nice</a></li><li><a href="/tours/boat/lerins-islands">Boat trips</a></li><li><a href="/tours/off-season">Off-season</a></li><li><a href="/tours">All tours →</a></li></ul></li>
+    <li class="mob-parent"><button class="mob-toggle">Shore Excursions <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/shore-excursions/villefranche/nice-eze-monaco">From Villefranche</a></li><li><a href="/shore-excursions/cannes/nice-eze-monaco">From Cannes</a></li><li><a href="/villefranche-cruise-schedule">Cruise schedule</a></li></ul></li>
+    <li class="mob-parent"><button class="mob-toggle">Multi-Day <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/multi-day/france/provence-avignon-valensole">Through France</a></li><li><a href="/multi-day/italy/cannes-cinque-terre-florence">Through Italy</a></li><li><a href="/multi-day">All journeys →</a></li></ul></li>
+    <li class="mob-parent"><button class="mob-toggle">Transfers <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/transfers/nice-airport-cannes">Nice → Cannes</a></li><li><a href="/transfers/nice-airport-monaco">Nice → Monaco</a></li><li><a href="/transfers/cannes-monaco">Cannes → Monaco</a></li><li><a href="/transfers/cannes-nice-airport">Cannes → Nice Airport</a></li><li><a href="/transfers">All transfers →</a></li></ul></li>
+    <li class="mob-parent"><button class="mob-toggle">Corporate <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/corporate/mipim-transfers">MIPIM</a></li><li><a href="/corporate/festival">Film Festival</a></li><li><a href="/corporate/retreats">Executive retreats</a></li></ul></li>
+    <li class="mob-parent"><button class="mob-toggle">Roadbook <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/editorial/cannes">Cannes</a></li><li><a href="/editorial/restaurants">Gastronomy</a></li><li><a href="/editorial/looking-at-art">Art</a></li><li><a href="/editorial">All articles →</a></li></ul></li>
+  </ul>
+  <a href="/book" class="mobile-menu-cta">Enquire</a>
+</div>`;
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Pass through all non-GET requests (POST, etc.)
+    // Pass through all non-GET requests
     if (request.method !== 'GET') {
       return env.ASSETS.fetch(request);
     }
 
-    // Fetch the actual page from static assets
+    // Fetch the page from static assets
     const response = await env.ASSETS.fetch(request);
 
-    // Only process HTML — pass images, CSS, JS, AVIF straight through
+    // Only process HTML pages
     const contentType = response.headers.get('content-type') || '';
     if (!contentType.includes('text/html')) {
       return response;
     }
 
-    // Don't process nav.html itself (avoid infinite loop)
-    if (url.pathname === '/nav.html') {
-      return response;
-    }
-
-    // Fetch nav fragment from static assets
-    let navHTML = '';
-    try {
-      const navUrl = new URL('/nav.html', url.origin);
-      const navRes = await env.ASSETS.fetch(new Request(navUrl.toString()));
-      navHTML = await navRes.text();
-    } catch (e) {
-      // If nav.html can't be fetched, return page unchanged
-      return response;
-    }
-
-    // Split nav fragment into two parts at the mobile-menu div boundary
-    const mobileIdx = navHTML.indexOf('<div class="mobile-menu"');
-    if (mobileIdx === -1) {
-      // nav.html not in expected format — return page unchanged
-      return response;
-    }
-    const navPart    = navHTML.substring(0, mobileIdx).trimEnd();
-    const mobilePart = navHTML.substring(mobileIdx).trim();
-
-    // Use HTMLRewriter to swap both elements in the page
+    // Inject nav using HTMLRewriter
     return new HTMLRewriter()
       .on('nav#mainNav', {
         element(el) {
-          el.replace(navPart, { html: true });
+          el.replace(NAV_HTML, { html: true });
         }
       })
       .on('div#mobileMenu', {
         element(el) {
-          el.replace(mobilePart, { html: true });
+          el.replace(MOBILE_HTML, { html: true });
         }
       })
       .transform(response);
