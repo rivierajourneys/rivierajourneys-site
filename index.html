@@ -22,6 +22,9 @@
 <meta name="twitter:image" content="https://rivierajourneys.fr/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif">
 <link rel="canonical" href="https://rivierajourneys.fr">
 
+<!-- LCP preload: hero image -->
+<link rel="preload" as="image" href="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" fetchpriority="high">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -2672,7 +2675,7 @@ footer {
     <!-- PHOTO PLACEHOLDER: Replace src with your hero photograph -->
     <!-- Recommended: Wide landscape, golden hour, preferably the Grande Corniche or Cap Ferrat coastline -->
     <!-- Ideal dimensions: 2400 × 1600px minimum, 16:10 ratio -->
-    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" loading="eager" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
+    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" loading="eager" fetchpriority="high" decoding="sync" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
     <div class="hero-photo-placeholder" id="heroFallback" style="display:none">
       <span class="placeholder-text">Villefranche-sur-Mer · July 2025</span>
     </div>
