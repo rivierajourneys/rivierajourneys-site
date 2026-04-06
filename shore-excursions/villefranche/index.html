@@ -507,6 +507,16 @@ a { text-decoration: none; color: inherit; }
 .btn-ghost svg { transition: transform .45s var(--ease); }
 .btn-ghost:hover svg { transform: translateX(4px); }
 
+
+/* ─────────────────────────────────────────────
+   TICKER
+───────────────────────────────────────────── */
+.ticker-bar{background:var(--warm);border-bottom:.5px solid rgba(196,170,130,.15);overflow:hidden;height:44px;display:flex;align-items:center}
+.ticker-track{display:flex;animation:ticker 32s linear infinite;white-space:nowrap}
+.ticker-item{display:inline-flex;align-items:center;gap:28px;padding:0 40px;font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.7)}
+.ticker-dot{width:3px;height:3px;background:rgba(196,170,130,.4);border-radius:50%;flex-shrink:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* ─────────────────────────────────────────────
    BREADCRUMB
 ───────────────────────────────────────────── */
@@ -1906,6 +1916,26 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- ── TICKER ── -->
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Villefranche-sur-Mer<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Private shore excursions<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Four routes · From €800<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Mercedes V-Class · Up to 7<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Back before the tender leaves<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Meet at Quai de l'Amiral Courbet<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Flight monitored · Fixed price<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Villefranche-sur-Mer<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Private shore excursions<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Four routes · From €800<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Mercedes V-Class · Up to 7<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Back before the tender leaves<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Meet at Quai de l'Amiral Courbet<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Flight monitored · Fixed price<span class="ticker-dot"></span></span>
+  </div>
+</div>
 
 <!-- ── BREADCRUMB ── -->
 <nav class="breadcrumb-bar" aria-label="Breadcrumb">
