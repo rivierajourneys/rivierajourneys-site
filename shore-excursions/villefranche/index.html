@@ -366,7 +366,7 @@ a { text-decoration: none; color: inherit; }
 ───────────────────────────────────────────── */
 .hero {
   position: relative;
-  height: 85vh;
+  height: 90vh;
   min-height: 580px;
   overflow: hidden;
   display: flex;
@@ -1039,8 +1039,13 @@ a { text-decoration: none; color: inherit; }
 .pricing-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   background: var(--bone);
 }
+.pricing-table col.col-route  { width: 42%; }
+.pricing-table col.col-dur    { width: 22%; }
+.pricing-table col.col-pax    { width: 18%; }
+.pricing-table col.col-price  { width: 18%; }
 .pricing-table thead tr {
   background: var(--deep);
 }
@@ -1073,6 +1078,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 400;
   color: var(--warm);
   font-family: var(--serif);
+  white-space: nowrap;
 }
 .pricing-table tbody tr:hover { background: var(--bone2); }
 .pricing-table tbody tr:last-child td { border-bottom: none; }
@@ -1386,9 +1392,9 @@ footer {
   .includes-grid { grid-template-columns: 1fr; }
   .cruise-callout { padding: 40px 24px; }
   .pricing-section { padding: 48px 24px; }
-  .pricing-table { font-size: 12px; }
-  .pricing-table td { padding: 14px 16px; font-size: 12px; }
-  .pricing-table th { padding: 12px 16px; }
+  .pricing-table { font-size: 11px; }
+  .pricing-table td { padding: 12px 14px; font-size: 11px; }
+  .pricing-table th { padding: 10px 14px; }
   .faq-section { padding: 48px 24px; }
   .related-section { padding: 48px 24px; }
   .related-grid { grid-template-columns: 1fr; }
@@ -1962,7 +1968,7 @@ footer {
       <div class="page-intro-label">Shore Excursions · Villefranche-sur-Mer</div>
       <h2 class="page-intro-h2">Your ship stops here.<br><em>We take it from there.</em></h2>
       <p class="page-intro-body">Villefranche-sur-Mer is one of the most frequently called ports on the Western Mediterranean cruise circuit. Ships anchor in the bay; tenders ferry guests ashore to the lower harbour. From there, the entire Riviera is within reach — if you have the right vehicle and someone who knows where to go.</p>
-      <p class="page-intro-body">We offer four private shore excursion routes from Villefranche, each designed around the specific geography of a ship day: meet time, tender schedule, shore time, and the precise moment you need to be back at the pier. Every route is a suggestion. Adjusted to your interests, your pace, and whether you'd rather spend an hour in Eze than twenty minutes.</p>
+      <p class="page-intro-body">We offer three private shore excursion routes from Villefranche, each designed around the specific geography of a ship day: meet time, tender schedule, shore time, and the precise moment you need to be back at the pier. Every route is a suggestion. Adjusted to your interests, your pace, and whether you'd rather spend an hour in Eze than twenty minutes.</p>
       <blockquote class="page-intro-note">The tender drops you in the lower harbour. We are waiting at the top of the ramp — name board, no fuss. Your day begins there.</blockquote>
     </div>
 
@@ -2230,12 +2236,17 @@ footer {
   <h2 class="pricing-h2 reveal d1">What You Pay</h2>
   <p class="pricing-sub reveal d2">Per vehicle. The number of guests in your party does not change the price.</p>
   <table class="pricing-table reveal d3" role="table">
+    <colgroup>
+      <col class="col-route">
+      <col class="col-dur">
+      <col class="col-pax">
+      <col class="col-price">
+    </colgroup>
     <thead>
       <tr>
         <th scope="col">Route</th>
         <th scope="col">Duration</th>
-        <th scope="col">Vehicle</th>
-        <th scope="col">Group Size</th>
+        <th scope="col">Group size</th>
         <th scope="col">Price</th>
       </tr>
     </thead>
@@ -2243,35 +2254,30 @@ footer {
       <tr>
         <td>Nice · Eze · Monaco</td>
         <td>From 5 hrs</td>
-        <td>Mercedes V-Class</td>
         <td>Up to 7</td>
         <td>€800</td>
       </tr>
       <tr>
         <td>Cannes · Antibes · Saint-Paul</td>
         <td>From 5 hrs</td>
-        <td>Mercedes V-Class</td>
         <td>Up to 7</td>
         <td>€800</td>
       </tr>
       <tr>
         <td>Grasse · Gourdon · Tourrettes</td>
         <td>From 5 hrs</td>
-        <td>Mercedes V-Class</td>
         <td>Up to 7</td>
         <td>€800</td>
       </tr>
       <tr>
         <td>Menton · Dolceacqua · Apricale</td>
         <td>From 5 hrs</td>
-        <td>Mercedes V-Class</td>
         <td>Up to 7</td>
         <td>€800</td>
       </tr>
       <tr>
         <td>Custom route</td>
         <td>Your itinerary</td>
-        <td>Mercedes V-Class</td>
         <td>Up to 7</td>
         <td>from €800</td>
       </tr>
