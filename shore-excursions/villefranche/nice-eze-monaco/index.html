@@ -226,9 +226,7 @@ img{display:block;max-width:100%;height:auto}
 .stop-photo{margin-top:28px;overflow:hidden;background:var(--deep)}
 .stop-photo img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;transition:transform .6s var(--slow)}
 .stop-photo:hover img{transform:scale(1.03)}
-.photo-cap{margin-top:7px;display:flex;justify-content:space-between;align-items:baseline}
-.cap-text{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--stone)}
-.cap-loc{font-family:var(--sc);font-size:7.5px;letter-spacing:.16em;color:var(--stone);opacity:.55}
+/* photo captions removed — captions on video only */
 
 /* Video placeholder */
 .stop-video{margin-top:20px;overflow:hidden;background:var(--deep);aspect-ratio:16/9;position:relative}
@@ -288,8 +286,12 @@ img{display:block;max-width:100%;height:auto}
 
 /* RELATED */
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.related-card{background:var(--bone2);border:.5px solid var(--parch);padding:20px;transition:border-color .3s,transform .3s;display:block}
+.related-card{background:var(--bone2);border:.5px solid var(--parch);transition:border-color .3s,transform .3s;display:block;overflow:hidden}
 .related-card:hover{border-color:var(--sand);transform:translateY(-2px)}
+.related-card-photo{aspect-ratio:3/2;overflow:hidden;background:var(--deep)}
+.related-card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--slow)}
+.related-card:hover .related-card-photo img{transform:scale(1.04)}
+.related-card-body{padding:16px 18px 20px}
 .related-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.18em;color:var(--sand);margin-bottom:8px}
 .related-name{font-family:var(--serif);font-size:17px;color:var(--warm);line-height:1.25;margin-bottom:6px}
 .related-detail{font-family:var(--sans);font-size:12px;color:var(--stone)}
@@ -503,10 +505,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"
                  alt="Nice old port and Promenade des Anglais &mdash; shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
-            <div class="photo-cap">
-              <span class="cap-text">Nice old port and Promenade des Anglais</span>
-              <span class="cap-loc">Nice &middot; Alpes-Maritimes</span>
-            </div>
+
           </div>
           <!-- VIDEO: /video/nice-cours-saleya-morning.mp4 -->
           <div class="stop-video">
@@ -558,10 +557,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <img src="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"
                  alt="Eze medieval village church with bay view &mdash; shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
-            <div class="photo-cap">
-              <span class="cap-text">Eze village church and the bay below</span>
-              <span class="cap-loc">Eze-Village &middot; 427 m</span>
-            </div>
+
           </div>
           <div class="stop-video">
             <!--<video muted autoplay loop playsinline preload="none" poster="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"><source src="/video/eze-village-panorama.mp4" type="video/mp4"></video>-->
@@ -589,10 +585,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"
                  alt="Monaco Port Hercule with Monte Carlo Casino &mdash; shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
-            <div class="photo-cap">
-              <span class="cap-text">Port Hercule, Monaco &mdash; Monte Carlo Casino behind</span>
-              <span class="cap-loc">Monaco &middot; Principaut&eacute; de Monaco</span>
-            </div>
+
           </div>
           <div class="stop-video">
             <!--<video muted autoplay loop playsinline preload="none" poster="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"><source src="/video/monaco-port-hercule.mp4" type="video/mp4"></video>-->
@@ -679,10 +672,49 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <div class="s-related reveal">
         <h2 class="section-h" style="margin-bottom:24px">Other routes from Villefranche</h2>
         <div class="related-grid">
-          <a href="/shore-excursions/villefranche/cannes-antibes-stpaul" class="related-card"><div class="related-lbl">Shore Excursion &middot; Villefranche</div><div class="related-name">Cannes &middot; Antibes &middot; Saint-Paul</div><div class="related-detail">West along the Riviera &middot; from 5 hrs &middot; &euro;800</div></a>
-          <a href="/shore-excursions/villefranche/grasse-gourdon" class="related-card"><div class="related-lbl">Shore Excursion &middot; Villefranche</div><div class="related-name">Grasse &middot; Gourdon &middot; Tourrettes</div><div class="related-detail">Into Provence &middot; from 5 hrs &middot; &euro;800</div></a>
-          <a href="/shore-excursions/cannes/nice-eze-monaco" class="related-card"><div class="related-lbl">Shore Excursion &middot; From Cannes</div><div class="related-name">Nice &middot; Eze &middot; Monaco</div><div class="related-detail">Same route from Cannes &middot; &euro;800</div></a>
-          <a href="/villefranche-cruise-schedule" class="related-card"><div class="related-lbl">Villefranche-sur-Mer</div><div class="related-name">2026 Cruise Schedule</div><div class="related-detail">Every ship, every date, tender times</div></a>
+          <a href="/shore-excursions/villefranche/cannes-antibes-stpaul" class="related-card">
+            <div class="related-card-photo">
+              <img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif"
+                   alt="Saint-Paul-de-Vence village — shore excursion from Villefranche" loading="lazy">
+            </div>
+            <div class="related-card-body">
+              <div class="related-lbl">Shore Excursion &middot; Villefranche</div>
+              <div class="related-name">Cannes &middot; Antibes &middot; Saint-Paul</div>
+              <div class="related-detail">West along the Riviera &middot; from 5 hrs &middot; &euro;800</div>
+            </div>
+          </a>
+          <a href="/shore-excursions/villefranche/grasse-gourdon" class="related-card">
+            <div class="related-card-photo">
+              <img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif"
+                   alt="Grasse old town — shore excursion from Villefranche" loading="lazy">
+            </div>
+            <div class="related-card-body">
+              <div class="related-lbl">Shore Excursion &middot; Villefranche</div>
+              <div class="related-name">Grasse &middot; Gourdon &middot; Tourrettes</div>
+              <div class="related-detail">Into Provence &middot; from 5 hrs &middot; &euro;800</div>
+            </div>
+          </a>
+          <a href="/shore-excursions/villefranche/menton-dolceacqua-apricale" class="related-card">
+            <div class="related-card-photo">
+              <img src="/photos/menton-old-town-colourful-houses-bay-view-shore-excursion-villefranche.avif"
+                   alt="Menton old town and bay — shore excursion from Villefranche" loading="lazy">
+            </div>
+            <div class="related-card-body">
+              <div class="related-lbl">Shore Excursion &middot; Villefranche</div>
+              <div class="related-name">Menton &middot; Dolceacqua &middot; Apricale</div>
+              <div class="related-detail">Italian border &middot; from 5 hrs &middot; &euro;800</div>
+            </div>
+          </a>
+          <a href="/villefranche-cruise-schedule" class="related-card">
+            <div class="related-card-photo" style="background:var(--deep);display:flex;align-items:center;justify-content:center;aspect-ratio:3/2">
+              <span style="font-family:var(--sc);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,170,130,.35)">2026 Schedule</span>
+            </div>
+            <div class="related-card-body">
+              <div class="related-lbl">Villefranche-sur-Mer</div>
+              <div class="related-name">2026 Cruise Schedule</div>
+              <div class="related-detail">Every ship, every date, tender times</div>
+            </div>
+          </a>
         </div>
       </div>
     </article>
