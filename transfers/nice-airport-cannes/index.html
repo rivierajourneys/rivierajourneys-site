@@ -323,7 +323,9 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .related-section{padding:80px 72px;border-bottom:.5px solid var(--parch)}
 .related-inner{max-width:1440px;margin:0 auto}
 .related-h2{font-family:var(--serif);font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px;margin-bottom:40px}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--parch)}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--parch)}
+@media(max-width:1200px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.related-grid{grid-template-columns:1fr}}
 .related-card{background:var(--bone);padding:32px;text-decoration:none;display:flex;flex-direction:column;transition:background .3s}
 .related-card:hover{background:var(--bone2)}
 .related-card-from{font-family:var(--sc);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:8px}
@@ -333,8 +335,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .related-card-price{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)}
 .related-card-link{font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:6px;transition:gap .3s}
 .related-card:hover .related-card-link{gap:10px}
-@media(max-width:1024px){.related-section{padding:64px 40px}.related-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.related-section{padding:48px 24px}.related-grid{grid-template-columns:1fr}}
+@media(max-width:1024px){.related-section{padding:64px 40px}}
+@media(max-width:768px){.related-section{padding:48px 24px}}
 
 /* ─── CTA ─── */
 .cta-section{padding:96px 72px;background:var(--warm);display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden}
@@ -788,7 +790,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <a href="/transfers/cannes-nice-airport" class="related-card">
         <div class="related-card-from">Cannes →</div>
         <div class="related-card-name">Nice Airport</div>
-        <div class="related-card-detail">Return leg at the same rate. We advise on departure timing — 90 minutes minimum, 2 hours in peak summer. Flight monitored.</div>
+        <div class="related-card-detail">Return leg at the same rate. We advise on departure timing — 90 minutes minimum, 2 hours in peak summer.</div>
         <div class="related-card-footer">
           <span class="related-card-price">€140</span>
           <span class="related-card-link">View <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -798,7 +800,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <a href="/transfers/cannes-monaco" class="related-card">
         <div class="related-card-from">Cannes →</div>
         <div class="related-card-name">Monaco</div>
-        <div class="related-card-detail">60–75 minutes east along the coast. Hôtel de Paris, Port Hercule, Heliport. Fixed price, return leg available.</div>
+        <div class="related-card-detail">60–75 minutes east along the coast. Hôtel de Paris, Port Hercule, Heliport. Return leg available.</div>
         <div class="related-card-footer">
           <span class="related-card-price">€240</span>
           <span class="related-card-link">View <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -811,6 +813,16 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="related-card-detail">90 minutes via A8 + D559. Vieux-Port, private villas, Ramatuelle and Gassin. Allow more in high summer.</div>
         <div class="related-card-footer">
           <span class="related-card-price">€310</span>
+          <span class="related-card-link">View <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/transfers/cannes-antibes" class="related-card">
+        <div class="related-card-from">Cannes →</div>
+        <div class="related-card-name">Antibes</div>
+        <div class="related-card-detail">20–25 minutes. Old town, Cap d'Antibes, Juan-les-Pins. The shortest transfer on the Riviera.</div>
+        <div class="related-card-footer">
+          <span class="related-card-price">€90</span>
           <span class="related-card-link">View <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
