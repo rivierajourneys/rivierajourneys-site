@@ -1,1 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Notice — Mentions Légales | Riviera Journeys</title>
+<meta name="description" content="Legal notice and company information for Riviera Journeys, the trading name of Andrey Bondarenko, registered private transport operator in France.">
+<link rel="canonical" href="https://rivierajourneys.fr/legal">
+<meta property="og:title" content="Legal Notice | Riviera Journeys">
+<meta property="og:description" content="Legal notice and company information for Riviera Journeys.">
+<meta property="og:image" content="https://rivierajourneys.fr/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif">
+<meta property="og:url" content="https://rivierajourneys.fr/legal">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Riviera Journeys">
+<meta name="robots" content="noindex, follow">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Cormorant+SC:wght@300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bone:   #FDFAF6;
+  --bone2:  #F7F3ED;
+  --parch:  #EAE3D7;
+  --sand:   #C4AA82;
+  --stone:  #8C8880;
+  --slate:  #3D3D38;
+  --warm:   #1C1C1A;
+  --terra:  #A86543;
+  --deep:   #2B2B27;
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sc:     'Cormorant SC', Georgia, serif;
+  --sans:   'Jost', sans-serif;
+  --ease:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --slow:   cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bone);
+  color: var(--slate);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  cursor: none;
+}
+a { text-decoration: none; color: var(--terra); transition: opacity .3s; }
+a:hover { opacity: .7; }
+
+/* CURSOR */
+.cursor {
+  position: fixed; width: 10px; height: 10px;
+  background: var(--warm); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+}
+.cursor-ring {
+  position: fixed; width: 36px; height: 36px;
+  border: .5px solid var(--warm); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: .5; transition: transform .35s var(--ease);
+}
+@media (max-width: 768px) {
+  .cursor, .cursor-ring { display: none; }
+  body { cursor: auto; }
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 1px; background: var(--terra);
+  z-index: 200; transition: width .1s linear;
+  transform-origin: left;
+}
+
+/* PAGE HEADER */
+.page-header {
+  border-bottom: .5px solid var(--parch);
+  padding: 120px 72px 64px;
+  max-width: 860px;
+}
+.page-header-overline {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.page-header-overline::before {
+  content: ''; display: block;
+  width: 24px; height: .5px; background: var(--sand);
+}
+.page-header h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 60px);
+  color: var(--warm);
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+.page-header h1 em { font-style: italic; }
+.page-header .subtitle {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--stone);
+  letter-spacing: .04em;
+}
+
+/* CONTENT */
+.legal-body {
+  padding: 64px 72px 96px;
+  max-width: 860px;
+}
+
+/* BRAND CALLOUT — the key block for Google */
+.brand-callout {
+  background: var(--bone2);
+  border-left: 2px solid var(--sand);
+  padding: 28px 32px;
+  margin-bottom: 56px;
+}
+.brand-callout p {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--warm);
+}
+.brand-callout strong {
+  font-weight: 400;
+}
+
+/* SECTIONS */
+.legal-section {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: .5px solid var(--parch);
+}
+.legal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.legal-section h2 {
+  font-family: var(--sc);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 24px;
+}
+
+/* TABLE */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.legal-table tr {
+  border-bottom: .5px solid var(--parch);
+}
+.legal-table tr:last-child {
+  border-bottom: none;
+}
+.legal-table td {
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 300;
+  vertical-align: top;
+}
+.legal-table td:first-child {
+  color: var(--stone);
+  width: 220px;
+  padding-right: 24px;
+  font-size: 13px;
+  letter-spacing: .03em;
+}
+.legal-table td:last-child {
+  color: var(--slate);
+}
+
+/* BODY TEXT */
+.legal-body p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.legal-body p:last-child { margin-bottom: 0; }
+
+/* FOOTER */
+footer {
+  background: var(--warm);
+  padding: 72px 72px 48px;
+  border-top: .5px solid rgba(196,170,130,.1);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 20px; }
+.footer-logo {
+  font-family: var(--sc);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: .14em;
+  color: var(--bone2);
+}
+.footer-rule { width: 32px; height: .5px; background: var(--sand); }
+.footer-tagline {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(247,243,237,.55);
+  line-height: 1.5;
+}
+.footer-desc {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(196,170,130,.5);
+  line-height: 1.8;
+  max-width: 280px;
+}
+.footer-col-title {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: .5px solid rgba(196,170,130,.15);
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(247,243,237,.45);
+  letter-spacing: .04em;
+  transition: color .3s, padding-left .3s;
+  display: block;
+}
+.footer-links a:hover { color: rgba(247,243,237,.8); padding-left: 6px; }
+.footer-bottom {
+  border-top: .5px solid rgba(196,170,130,.1);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(196,170,130,.3);
+  letter-spacing: .06em;
+}
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(196,170,130,.3);
+  letter-spacing: .06em;
+  transition: color .3s;
+}
+.footer-legal a:hover { color: rgba(196,170,130,.6); }
+
+@media (max-width: 768px) {
+  .page-header { padding: 100px 24px 48px; }
+  .legal-body { padding: 48px 24px 72px; }
+  .legal-table td:first-child { width: 140px; }
+  footer { padding: 56px 24px 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Riviera Journeys home">Riviera Journeys</a>
+</nav>
+
+<header class="page-header">
+  <span class="page-header-overline">Legal</span>
+  <h1>Legal Notice.<br><em>Mentions Légales.</em></h1>
+  <p class="subtitle">In accordance with French Law No. 2004-575 of 21 June 2004 (Loi pour la confiance dans l'économie numérique)</p>
+</header>
+
+<div class="legal-body">
+
+  <!-- KEY BLOCK: trading name declaration -->
+  <div class="brand-callout">
+    <p><strong>Riviera Journeys</strong> is the trading name and commercial brand under which <strong>Andrey Bondarenko</strong> (Entrepreneur individuel, SIREN 828 952 432) operates its private transport and tour services. All commercial activity conducted under the name Riviera Journeys, including this website at rivierajourneys.fr, is carried out by the same registered individual enterprise.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>1 · Publication &amp; Editorial Responsibility</h2>
+    <table class="legal-table">
+      <tr>
+        <td>Legal name</td>
+        <td>Andrey Bondarenko (Entrepreneur individuel)</td>
+      </tr>
+      <tr>
+        <td>Trading name</td>
+        <td>Riviera Journeys</td>
+      </tr>
+      <tr>
+        <td>Former trading name</td>
+        <td>Fine Journeys (operated 2021–2024)</td>
+      </tr>
+      <tr>
+        <td>SIREN</td>
+        <td>828 952 432</td>
+      </tr>
+      <tr>
+        <td>SIRET (principal)</td>
+        <td>828 952 432 00023</td>
+      </tr>
+      <tr>
+        <td>APE / NAF code</td>
+        <td>4932Z — Transports de voyageurs par taxis</td>
+      </tr>
+      <tr>
+        <td>Registered address</td>
+        <td>8 Chemin du Clos d'Entoures<br>06530 Spéracèdes, France</td>
+      </tr>
+      <tr>
+        <td>Telephone</td>
+        <td><a href="tel:+33669962272">+33 6 69 96 22 72</a></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><a href="mailto:hello@rivierajourneys.fr">hello@rivierajourneys.fr</a></td>
+      </tr>
+      <tr>
+        <td>Publication director</td>
+        <td>Andrey Bondarenko</td>
+      </tr>
+      <tr>
+        <td>Registration date</td>
+        <td>19 May 2021 (Registre National des Entreprises)</td>
+      </tr>
+      <tr>
+        <td>Activity start date</td>
+        <td>1 December 2024</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="legal-section">
+    <h2>2 · Brand Name</h2>
+    <p>The name <strong>Riviera Journeys</strong> is the current operating brand of this enterprise, adopted in 2024. It was previously operated under the name <strong>Fine Journeys</strong>. The underlying legal entity — Andrey Bondarenko, Entrepreneur individuel, SIREN 828 952 432 — has remained unchanged throughout.</p>
+    <p>All contracts, invoices, and official correspondence are issued in the name of the enterprise holder: Andrey Bondarenko, with SIREN 828 952 432.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>3 · Hosting</h2>
+    <table class="legal-table">
+      <tr>
+        <td>Host</td>
+        <td>Cloudflare, Inc.</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>101 Townsend Street, San Francisco, CA 94107, USA</td>
+      </tr>
+      <tr>
+        <td>Website</td>
+        <td><a href="https://www.cloudflare.com" target="_blank" rel="noopener">cloudflare.com</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="legal-section">
+    <h2>4 · Intellectual Property</h2>
+    <p>All content on this website — including text, photographs, graphic elements, and the Riviera Journeys brand identity — is the exclusive property of Andrey Bondarenko. Photographs credited to Riviera Journeys were taken by Andrey Bondarenko.</p>
+    <p>Any reproduction, distribution, or use of this content without express written permission is strictly prohibited under French and international intellectual property law.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>5 · Personal Data &amp; Privacy</h2>
+    <p>This website does not collect personal data beyond what is voluntarily submitted via the enquiry form. Data provided through the contact or booking form is used solely to respond to your enquiry and is never sold or shared with third parties.</p>
+    <p>In accordance with French law (Loi Informatique et Libertés) and EU Regulation 2016/679 (GDPR), you have the right to access, correct, and request deletion of your data. To exercise these rights, contact: <a href="mailto:hello@rivierajourneys.fr">hello@rivierajourneys.fr</a>.</p>
+    <p>The data controller has exercised their right to oppose the commercial use of their data (RGPD art. 21, R.123-320 Code de commerce).</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>6 · Cookies</h2>
+    <p>This website uses no advertising or tracking cookies. Session cookies may be used to maintain basic website functionality. No consent banner is displayed as no personal data is collected through cookies.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>7 · Applicable Law</h2>
+    <p>This website is governed by French law. Any disputes arising from use of this website shall be subject to the exclusive jurisdiction of the courts of France.</p>
+    <p>Last updated: April 2026.</p>
+  </div>
+
+</div>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Riviera Journeys</div>
+      <div class="footer-rule"></div>
+      <div class="footer-tagline">Know Where You Are.</div>
+      <p class="footer-desc">Private day tours, shore excursions, multi-day itineraries and transfers along the French and Italian Riviera from Cannes. In a premium Mercedes V-Class. Since 2024.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="/tours">Day Tours</a></li>
+        <li><a href="/shore-excursions">Shore Excursions</a></li>
+        <li><a href="/multi-day">Multi-Day Journeys</a></li>
+        <li><a href="/transfers">Airport Transfers</a></li>
+        <li><a href="/book">Book a Tour</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Transfers</div>
+      <ul class="footer-links">
+        <li><a href="/transfers/nice-airport-cannes">Nice → Cannes</a></li>
+        <li><a href="/transfers/nice-airport-monaco">Nice → Monaco</a></li>
+        <li><a href="/transfers/nice-airport-saint-tropez">Nice → Saint-Tropez</a></li>
+        <li><a href="/transfers/cannes-monaco">Cannes → Monaco</a></li>
+        <li><a href="/transfers/cannes-nice-airport">Cannes → Nice Airport</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="/book">Enquire</a></li>
+        <li><a href="https://wa.me/33669962272">WhatsApp</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/editorial">The Roadbook</a></li>
+        <li><a href="/slow-travel">Slow Travel Consulting</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025–2026 Riviera Journeys · Andrey Bondarenko · SIREN 828 952 432 · rivierajourneys.fr</span>
+    <div class="footer-legal">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/legal">Legal Notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('cursor'),r=document.getElementById('cursorRing');
+  if(!c||!r)return;
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+  (function loop(){
+    rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+    c.style.left=mx+'px';c.style.top=my+'px';
+    r.style.left=rx+'px';r.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+<script>
+(function(){
+  var pb=document.getElementById('progressBar');
+  if(!pb)return;
+  window.addEventListener('scroll',function(){
+    var pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+    pb.style.width=pct+'%';
+  },{passive:true});
+})();
+</script>
+<script src="/nav.js" defer></script>
+
+</body>
+</html>
