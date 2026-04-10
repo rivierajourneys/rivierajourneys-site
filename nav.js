@@ -51,6 +51,7 @@
 
     // MOBILE MENU
 (function(){var b=document.getElementById('navBurger'),m=document.getElementById('mobileMenu'),x=document.getElementById('mobileClose');if(!b||!m)return;var open=false;function toggle(){open=!open;b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);m.setAttribute('aria-hidden',!open);if(open){m.style.display='flex';setTimeout(function(){m.style.opacity='1'},10);document.body.style.overflow='hidden'}else{m.style.opacity='0';setTimeout(function(){m.style.display='none'},400);document.body.style.overflow=''}}b.addEventListener('click',toggle);if(x)x.addEventListener('click',toggle);document.querySelectorAll('.mob-toggle').forEach(function(btn){btn.addEventListener('click',function(){btn.closest('.mob-parent').classList.toggle('open')})})})();
+
     // ── FOOTER INJECTION ──────────────────────────────────────
     (function(){
       // Inject footer CSS
@@ -80,5 +81,4 @@
       }
     })();
 
-  }
 })();
