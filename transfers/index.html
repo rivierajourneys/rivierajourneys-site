@@ -3,1032 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private Transfers Nice Airport — Cannes, Monaco, Saint-Tropez | Riviera Journeys</title>
-<meta name="description" content="Private transfers from Nice Côte d'Azur Airport to Cannes, Monaco, Antibes and Saint-Tropez. Mercedes V-Class, up to 7 passengers. Fixed price, flight monitored. From €150.">
-<link rel="canonical" href="https://rivierajourneys.fr/transfers">
-<meta property="og:title" content="Private Transfers Nice Airport — Cannes, Monaco, Saint-Tropez | Riviera Journeys">
-<meta property="og:description" content="Private transfers from Nice NCE to Cannes, Monaco, Antibes, Saint-Tropez. Mercedes V-Class. Fixed price. From €150.">
-<meta property="og:image" content="https://rivierajourneys.fr/photos/mercedes-vclass-private-transfer-cannes-riviera.avif">
-<meta property="og:url" content="https://rivierajourneys.fr/transfers">
-<meta property="og:type" content="website">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Private Airport Transfers — French and Italian Riviera","provider":{"@type":"LocalBusiness","name":"Riviera Journeys","address":{"@type":"PostalAddress","addressLocality":"Cannes","addressCountry":"FR"},"telephone":"+33669962272"},"areaServed":["French Riviera","Italian Riviera","Provence"],"description":"Private transfers from Nice Côte d'Azur Airport to Cannes, Monaco, Antibes and Saint-Tropez. From Cannes to the Italian Riviera, Milan, Provence. Mercedes V-Class, up to 7 passengers. Fixed price.","offers":[{"@type":"Offer","name":"Nice Airport to Cannes","price":"140","priceCurrency":"EUR"},{"@type":"Offer","name":"Nice Airport to Monaco","price":"150","priceCurrency":"EUR"},{"@type":"Offer","name":"Nice Airport to Saint-Tropez","price":"390","priceCurrency":"EUR"},{"@type":"Offer","name":"Cannes to Monaco","price":"240","priceCurrency":"EUR"},{"@type":"Offer","name":"Cannes to Milan","price":"1350","priceCurrency":"EUR"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a private transfer from Nice Airport to Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"A private Mercedes V-Class transfer from Nice NCE to Cannes costs from €140 per vehicle for up to 7 passengers. This is a fixed price including tolls and airport parking."}},{"@type":"Question","name":"Is a private transfer more expensive than a taxi from Nice Airport?","acceptedAnswer":{"@type":"Answer","text":"A private transfer is a different service from a taxi. The vehicle is a Mercedes V-Class for up to 7 passengers. The price is confirmed in writing before the journey and does not change with traffic or time of day. For groups travelling together, for airport pickups where timing matters, and for journeys where the price needs to be known before departure, the two are not directly comparable."}},{"@type":"Question","name":"How long does the transfer from Nice Airport to Cannes take?","acceptedAnswer":{"@type":"Answer","text":"Approximately 45 minutes by the A8 motorway. In peak summer, allow 60–75 minutes. We plan pickup times accordingly."}},{"@type":"Question","name":"Do you monitor flight arrivals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every transfer includes real-time flight tracking. If your flight is delayed, the pickup time adjusts automatically."}},{"@type":"Question","name":"Can you transfer from Cannes to Nice Airport for a departure flight?","acceptedAnswer":{"@type":"Answer","text":"Yes. Departure transfers from Cannes, Monaco, Antibes and Saint-Tropez to Nice NCE are available at the same rates."}},{"@type":"Question","name":"Do you cover the Italian Riviera and Milan?","acceptedAnswer":{"@type":"Answer","text":"Yes. We cover intercity transfers to Sanremo, Portofino, and Milan from Cannes or Nice. Milan is 4–5 hours from Cannes and priced from €1,350 per vehicle. Sanremo and the Italian Riviera are available on enquiry."}}]}
-</script>
+<title>Book a Transfer | Riviera Journeys</title>
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Cormorant+SC:wght@300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bone:#FDFAF6;--bone2:#F7F3ED;--parch:#EAE3D7;--sand:#C4AA82;--stone:#8C8880;--slate:#3D3D38;--warm:#1C1C1A;--terra:#A86543;--deep:#2B2B27;--serif:'Cormorant Garamond',Georgia,serif;--sc:'Cormorant SC',Georgia,serif;--sans:'Jost',sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);--slow:cubic-bezier(0.16,1,0.3,1)}
+:root{
+  --sand:#C4AA82;--stone:#8C8880;--warm:#1C1C1A;
+  --terra:#A86543;--deep:#2B2B27;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sc:'Cormorant SC',Georgia,serif;
+  --sans:'Jost',sans-serif;
+  --slow:cubic-bezier(0.16,1,0.3,1);
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bone);color:var(--slate);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;cursor:none}
-a{text-decoration:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--warm);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:multiply}
-.cursor-ring{position:fixed;width:36px;height:36px;border:.5px solid var(--warm);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.5;transition:transform .35s var(--ease)}
-@media(max-width:768px){.cursor,.cursor-ring{display:none}body{cursor:auto}}
-.progress-bar{position:fixed;top:0;left:0;height:1px;background:var(--terra);z-index:200;transition:width .1s linear;transform-origin:left}
+html,body{min-height:100vh}
+body{
+  font-family:var(--sans);font-weight:300;
+  background:var(--deep);
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;padding:60px 40px 72px;
+}
+.card{width:100%;max-width:760px}
 
-/* NAV — exact from index.html */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:background .5s var(--ease),border-color .5s;border-bottom:.5px solid transparent}
-.nav.scrolled{background:rgba(253,250,246,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--parch)}
-.nav-logo{font-family:var(--sc);font-size:17px;font-weight:300;letter-spacing:.14em;color:var(--bone);transition:color .5s}
-.nav.scrolled .nav-logo{color:var(--warm)}
-.nav-links{display:flex;gap:0;align-items:center;list-style:none}
-.nav-links>li>a{font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(253,250,246,.85);transition:color .35s;display:block;padding:0 18px;height:68px;line-height:68px;white-space:nowrap;position:relative}
-.nav-links>li>a::after{content:'';position:absolute;bottom:26px;left:18px;right:18px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
-.nav-links>li:hover>a::after,.nav-links>li.mega-open>a::after,.nav-links>li>a.nav-active::after{transform:scaleX(1)}
-.nav-links>li>a.nav-cta::after{display:none}
-.nav-links>li:hover>a,.nav-links>li.mega-open>a{color:#fff}
-.nav.scrolled .nav-links>li>a{color:var(--stone)}
-.nav.scrolled .nav-links>li:hover>a,.nav.scrolled .nav-links>li.mega-open>a{color:var(--warm)}
-.mega-panel{position:fixed;top:68px;left:0;right:0;background:#fff;border-top:1px solid #e8e3dc;border-bottom:1px solid #e8e3dc;z-index:500;opacity:0;pointer-events:none;transform:translateY(-10px);transition:opacity .42s cubic-bezier(0.16,1,.3,1),transform .42s cubic-bezier(0.16,1,.3,1);box-shadow:0 16px 64px rgba(28,28,26,.06)}
-.nav-links>li.mega-open .mega-panel{opacity:1;pointer-events:auto;transform:translateY(0)}
-.nav.mega-active{background:#fff!important;border-bottom-color:#e8e3dc!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-.nav.mega-active .nav-logo{color:var(--warm)!important}
-.nav.mega-active .nav-links>li>a{color:rgba(28,28,26,.55)!important}
-.nav.mega-active .nav-links>li.mega-open>a,.nav.mega-active .nav-links>li>a:hover{color:var(--warm)!important}
-.nav.mega-active .nav-cta span{color:var(--terra)!important}
-.nav.mega-active .burger-line{background:var(--warm)!important}
-.mega-inner{display:flex;max-width:1440px;margin:0 auto;padding:40px 64px 44px;gap:0;min-height:320px}
-.mega-nav-col{width:220px;flex-shrink:0;border-right:1px solid #e8e3dc;padding-right:32px;margin-right:40px}
-.mega-nav-col-title{font-family:var(--sc);font-size:9px;font-weight:300;letter-spacing:.24em;text-transform:uppercase;color:#8C8880;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid #e8e3dc}
-.mega-sub-link{display:block;font-family:var(--sans);font-size:12.5px;font-weight:300;letter-spacing:.08em;color:#1C1C1A;padding:8px 0;border-bottom:.5px solid rgba(232,227,220,.5);cursor:pointer;transition:padding-left .3s,color .3s;background:none;border-left:none;border-right:none;border-top:none;width:100%;text-align:left}
-.mega-sub-link:last-child{border-bottom:none}
-.mega-sub-link:hover,.mega-sub-link.active{color:var(--terra);padding-left:5px}
-.mega-sub-link.active{font-weight:400}
-.mega-sub-section-title{font-family:var(--sc);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#8C8880;margin-top:18px;margin-bottom:6px;display:block}
-.mega-cards-area{flex:1;overflow:hidden}
-.mega-cards-header{margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #e8e3dc}
-.mega-cards-header-title{font-family:var(--sc);font-size:11px;font-weight:300;letter-spacing:.24em;text-transform:uppercase;color:#1C1C1A}
-.mega-cards-pane{display:none;gap:20px;flex-wrap:wrap}
-.mega-cards-pane.active{display:flex}
-.mega-card{width:220px;cursor:pointer;transition:opacity .35s;text-decoration:none}
-.mega-card:hover{opacity:.72}
-.mega-card-img{width:220px;height:280px;background:#EAE3D7;overflow:hidden;margin-bottom:10px}
-.mega-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(0.16,1,.3,1)}
-.mega-card:hover .mega-card-img img{transform:scale(1.04)}
-.mega-card-img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#EAE3D7,#C4AA82 120%);display:flex;align-items:flex-end;padding:10px}
-.mega-card-img-placeholder span{font-family:var(--sc);font-size:8px;letter-spacing:.16em;color:rgba(28,28,26,.45);text-transform:uppercase;line-height:1.5}
-.mega-card-name{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.1em;color:#1C1C1A;text-transform:uppercase;margin-bottom:3px}
-.mega-card-detail{font-family:var(--sans);font-size:10px;font-weight:300;color:#8C8880;letter-spacing:.04em}
-.mega-card.featured .mega-card-img{width:240px;height:300px}
-.mega-card.featured{width:240px}
-.nav-cta{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--sand)!important;border:.5px solid rgba(196,170,130,.55);padding:11px 28px!important;height:auto!important;line-height:normal!important;transition:background .45s cubic-bezier(0.16,1,.3,1),color .45s,border-color .45s!important;margin-left:14px;position:relative;overflow:hidden}
-.nav-cta::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s cubic-bezier(0.16,1,.3,1);z-index:0}
-.nav-cta span{position:relative;z-index:1}
-.nav-cta:hover::before{transform:translateX(0)}
-.nav-cta:hover{border-color:var(--terra)!important;color:var(--bone)!important}
-.nav-cta::after{display:none!important}
-.nav.scrolled .nav-cta{color:var(--terra)!important;border-color:rgba(168,101,67,.4)!important}
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;z-index:300}
-.burger-line{display:block;height:1px;background:var(--bone);transition:transform .45s var(--slow),opacity .3s,background .4s;transform-origin:center}
-.burger-line:nth-child(1){width:26px}.burger-line:nth-child(2){width:18px}.burger-line:nth-child(3){width:22px}
-.nav.scrolled .burger-line{background:var(--warm)}
-.nav-burger.open .burger-line:nth-child(1){transform:translateY(7px) rotate(45deg);width:26px;background:var(--bone)!important}
-.nav-burger.open .burger-line:nth-child(2){opacity:0}
-.nav-burger.open .burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:26px;background:var(--bone)!important}
-@media(max-width:768px){.nav{padding:0 24px}.nav-links{display:none!important}.nav-burger{display:flex}}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:250;background:var(--warm);flex-direction:column;justify-content:flex-start;padding:104px 48px 56px;opacity:0;transition:opacity .4s;overflow-y:auto}
-.mobile-menu.open{display:flex;opacity:1}
-.mobile-menu-logo{position:absolute;top:28px;left:48px;font-family:'Cormorant SC',Georgia,serif;font-size:14px;font-weight:300;letter-spacing:.14em;color:var(--sand)}
-.mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(196,170,130,.3);color:var(--sand);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
-.mobile-menu-close:hover{background:rgba(196,170,130,.1)}
-.mob-parent{border-bottom:.5px solid rgba(196,170,130,.12)}
-.mob-toggle{width:100%;background:none;border:none;text-align:left;font-family:var(--sans);font-size:clamp(18px,4.5vw,24px);font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);padding:12px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .3s}
-.mob-toggle:hover{color:var(--sand)}
-.mob-arrow{font-size:20px;font-weight:300;color:var(--sand);transition:transform .3s;line-height:1}
-.mob-parent.open .mob-arrow{transform:rotate(45deg)}
-.mob-sub{list-style:none;max-height:0;overflow:hidden;transition:max-height .4s var(--slow);padding-left:4px}
-.mob-parent.open .mob-sub{max-height:700px}
-.mob-sub li a{display:block;font-family:var(--sans);font-size:14px;font-weight:400;letter-spacing:.1em;color:rgba(247,243,237,.7);padding:8px 0;border-bottom:.5px solid rgba(196,170,130,.06);transition:color .2s,padding-left .2s}
-.mob-sub li:last-child a{border-bottom:none;padding-bottom:14px}
-.mob-sub li a:hover{color:var(--sand);padding-left:6px}
-.mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s}
-.mobile-menu-cta:hover{background:var(--terra)}
+/* ── HEADER ── */
+.card-header{padding-bottom:28px}
+.kicker{
+  font-family:var(--sc);font-size:8px;font-weight:300;
+  letter-spacing:.26em;text-transform:uppercase;
+  color:var(--sand);opacity:.55;
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.kicker::before{content:'';width:18px;height:.5px;background:var(--sand);display:block}
+.panel-h{
+  font-family:var(--serif);font-size:clamp(30px,4vw,42px);
+  font-weight:300;color:rgba(247,243,237,.9);line-height:1.06;
+  margin-bottom:10px;
+}
+.panel-h em{font-style:italic;color:rgba(247,243,237,.28)}
+.panel-sub{
+  font-family:var(--sans);font-size:12px;font-weight:300;
+  color:rgba(196,170,130,.4);line-height:1.75;
+}
+.divider{height:.5px;background:rgba(196,170,130,.14);margin:24px 0}
 
-/* BUTTONS — exact from index.html */
-.btn-primary{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--bone);padding:16px 36px;position:relative;overflow:hidden;transition:color .4s;display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-.btn-primary::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .6s var(--slow)}
-.btn-primary:hover::before{transform:translateX(0)}
-.btn-primary:hover{color:var(--bone)}
-.btn-primary span,.btn-primary .arrow{position:relative;z-index:1}
-.btn-primary .arrow{transition:transform .45s var(--ease)}
-.btn-primary:hover .arrow{transform:translateX(6px)}
-.btn-sand{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:16px 36px;position:relative;overflow:hidden;transition:color .45s;display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-.btn-sand::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}
-.btn-sand:hover::before{transform:translateX(0)}
-.btn-sand:hover{color:var(--bone)}
-.btn-sand span,.btn-sand .arrow{position:relative;z-index:1}
-.btn-sand .arrow{transition:transform .45s var(--ease)}
-.btn-sand:hover .arrow{transform:translateX(4px)}
-.section-text-link{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);display:inline-flex;align-items:center;gap:12px;border-bottom:.5px solid var(--parch);padding-bottom:4px;text-decoration:none;transition:border-color .4s,gap .4s,color .3s}
-.section-text-link:hover{border-bottom-color:var(--warm);gap:18px;color:var(--terra)}
-.section-text-link svg{transition:transform .45s var(--ease)}
-.section-text-link:hover svg{transform:translateX(4px)}
+/* ── FIELDS ── */
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.field:last-of-type{margin-bottom:0}
+.field label{
+  font-family:var(--sans);font-size:8px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(196,170,130,.5);
+}
+.opt{font-weight:300;opacity:.5;letter-spacing:.02em;text-transform:none;font-size:7.5px}
+.field input,.field select,.field textarea{
+  font-family:var(--sans);font-size:15px;font-weight:300;
+  color:rgba(247,243,237,.88);background:transparent;
+  border:none;border-bottom:1px solid rgba(196,170,130,.2);
+  padding:9px 0 8px;outline:none;
+  transition:border-color .25s;width:100%;
+  border-radius:0;-webkit-appearance:none;appearance:none;
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(196,170,130,.2)}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--sand)}
+.field input.error,.field select.error{border-bottom-color:var(--terra)}
+.field input[type="date"],.field input[type="time"]{color-scheme:dark;accent-color:var(--sand)}
+.field input[type="date"]::-webkit-calendar-picker-indicator,
+.field input[type="time"]::-webkit-calendar-picker-indicator{
+  opacity:.28;cursor:pointer;
+  filter:invert(68%) sepia(28%) saturate(400%) hue-rotate(5deg) brightness(.85);
+}
+.field select{
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C4AA82' stroke-width='.7' opacity='.45'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 2px center;padding-right:18px;
+}
+.field select option{background:#2B2B27;color:rgba(247,243,237,.88)}
+.field textarea{resize:none;height:54px;line-height:1.6;font-size:14px}
+.field-note{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(196,170,130,.35);margin-top:3px;line-height:1.5}
 
-/* SECTION LABEL */
-.section-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px}
-.section-label::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.row-2b{display:grid;grid-template-columns:2fr 120px;gap:28px;align-items:end}
+.row-3{display:grid;grid-template-columns:2fr 130px 100px;gap:20px;align-items:end}
 
-/* PAGE HERO — photo full-bleed */
-.page-hero{position:relative;height:85vh;min-height:650px;overflow:hidden;display:flex;align-items:flex-end}
-.page-hero-img{position:absolute;inset:0;background:var(--deep)}
-.page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
-.page-hero-vignette{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,26,.82) 0%,rgba(28,28,26,.45) 55%,rgba(28,28,26,.15) 100%);z-index:2}
-.page-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");z-index:3;pointer-events:none;opacity:.4}
-.page-hero-content{position:relative;z-index:4;padding:0 72px 72px;max-width:660px}
-.page-hero-overline{font-family:var(--sc);font-size:10px;font-weight:300;letter-spacing:.22em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
-.page-hero-overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
-.page-hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,72px);color:var(--bone);line-height:1.05;margin-bottom:24px}
-.page-hero h1 em{font-style:italic}
-.page-hero p{font-size:15px;color:rgba(247,243,237,.7);line-height:1.85;max-width:520px;margin-bottom:36px}
-.page-hero-actions{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
-.page-hero-credit{position:absolute;bottom:28px;right:72px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5)}
-@media(max-width:1024px){.page-hero-content{padding:0 40px 64px}}
-@media(max-width:768px){.page-hero{height:60vh;min-height:480px}.page-hero-content{padding:0 24px 56px}.page-hero-actions{flex-direction:column;align-items:flex-start;gap:20px}.page-hero-vignette{background:rgba(28,28,26,.6)}}
+/* ── CTA ── */
+.cta-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  margin-top:24px;padding-top:20px;
+  border-top:.5px solid rgba(196,170,130,.13);
+}
+.cta-note{
+  grid-column:1/-1;font-family:var(--sans);font-size:9px;font-weight:300;
+  color:rgba(196,170,130,.28);text-align:center;margin-top:6px;line-height:1.4;letter-spacing:.05em;
+}
+.btn-submit{
+  font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--warm);background:var(--sand);padding:15px 12px;border:none;cursor:pointer;
+  position:relative;overflow:hidden;transition:color .4s;
+  display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+}
+.btn-submit::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}
+.btn-submit:hover::before{transform:translateX(0)}
+.btn-submit:hover{color:rgba(247,243,237,.95)}
+.btn-submit span,.btn-submit svg{position:relative;z-index:1}
+.btn-submit svg{transition:transform .3s}
+.btn-submit:hover svg{transform:translateX(3px)}
+.btn-submit:disabled{opacity:.4;cursor:not-allowed}
+.btn-wa{
+  font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(247,243,237,.65);background:transparent;border:1px solid rgba(196,170,130,.3);
+  padding:15px 12px;cursor:pointer;position:relative;overflow:hidden;transition:color .3s,border-color .3s;
+  display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;width:100%;
+}
+.btn-wa::before{content:'';position:absolute;inset:0;background:rgba(196,170,130,.08);transform:translateX(-101%);transition:transform .5s var(--slow)}
+.btn-wa:hover::before{transform:translateX(0)}
+.btn-wa:hover{border-color:rgba(196,170,130,.55);color:rgba(247,243,237,.9)}
+.btn-wa span,.btn-wa svg{position:relative;z-index:1}
 
-/* TICKER */
-.ticker-bar{background:var(--warm);border-bottom:.5px solid rgba(196,170,130,.15);overflow:hidden;height:44px;display:flex;align-items:center}
-.ticker-track{display:flex;animation:ticker 28s linear infinite;white-space:nowrap}
-.ticker-item{display:inline-flex;align-items:center;gap:28px;padding:0 40px;font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.7)}
-.ticker-dot{width:3px;height:3px;background:rgba(196,170,130,.4);border-radius:50%;flex-shrink:0}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.success-state{
+  display:none;flex-direction:column;align-items:center;
+  justify-content:center;padding:56px 0;text-align:center;
+}
+.success-state h3{font-family:var(--serif);font-size:32px;font-weight:300;color:rgba(247,243,237,.88);margin-bottom:12px}
+.success-state p{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(196,170,130,.45);line-height:1.8}
 
-/* ROUTES GRID */
-.routes-section{padding:96px 72px;border-bottom:.5px solid var(--parch)}
-.routes-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
-.routes-h2{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1}
-.routes-h2 em{font-style:italic}
-.routes-intro{font-size:14px;color:var(--stone);max-width:380px;line-height:1.8}
-.routes-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1px;background:var(--parch)}
-.route-card{background:var(--bone);position:relative;overflow:hidden;cursor:pointer;transition:background .4s;text-decoration:none;display:block}
-.route-card:hover{background:var(--bone2)}
-.route-card-photo{position:relative;overflow:hidden;background:var(--deep)}
-.route-card:first-child .route-card-photo{height:380px}
-.route-card:not(:first-child) .route-card-photo{height:240px}
-.route-card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--slow),filter .8s;filter:brightness(.88)}
-.route-card:hover .route-card-photo img{transform:scale(1.05);filter:brightness(.78)}
-.route-card-badge{position:absolute;top:16px;left:16px;font-family:var(--sc);font-size:8px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--bone);background:var(--terra);padding:5px 10px;z-index:2}
-.route-card-body{padding:20px 22px 22px}
-.route-from{font-family:var(--sc);font-size:8px;font-weight:300;letter-spacing:.2em;color:var(--sand);text-transform:uppercase;margin-bottom:7px}
-.route-name{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm);line-height:1.1;margin-bottom:5px}
-.route-card:first-child .route-name{font-size:26px}
-.route-detail{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--stone);letter-spacing:.03em;margin-bottom:14px;line-height:1.6}
-.route-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:.5px solid var(--parch)}
-.route-price{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--warm)}
-.route-price-label{font-family:var(--sans);font-size:9px;font-weight:300;color:var(--stone)}
-.route-arrow{width:32px;height:32px;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s;flex-shrink:0}
-.route-card:hover .route-arrow{background:var(--terra);border-color:var(--terra)}
-.route-card:hover .route-arrow svg{stroke:var(--bone)}
-.route-arrow svg{width:12px;height:12px;stroke:var(--stone);fill:none;transition:stroke .3s}
-.route-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0;background:var(--terra);transition:width .6s var(--slow)}
-.route-card:hover::after{width:100%}
-@media(max-width:960px){.routes-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.routes-section{padding:64px 24px}.routes-grid{grid-template-columns:1fr}.routes-header{flex-direction:column;align-items:flex-start;gap:20px}}
-
-/* FROM CANNES */
-.cannes-section{padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--bone2)}
-.cannes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--parch)}
-.cannes-card{background:var(--bone2);padding:36px 32px;text-decoration:none;display:block;position:relative;overflow:hidden;transition:background .4s}
-.cannes-card:hover{background:var(--bone)}
-.cannes-card-from{font-family:var(--sc);font-size:8px;font-weight:300;letter-spacing:.2em;color:var(--sand);text-transform:uppercase;margin-bottom:14px}
-.cannes-card-name{font-family:var(--serif);font-size:26px;font-weight:300;color:var(--warm);margin-bottom:6px;line-height:1.1}
-.cannes-card-detail{font-size:12px;font-weight:300;color:var(--stone);margin-bottom:4px;line-height:1.6}
-.cannes-card-price{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm);margin-top:18px}
-.cannes-card-link{display:flex;align-items:center;gap:6px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-top:14px;transition:gap .3s}
-.cannes-card:hover .cannes-card-link{gap:10px}
-.cannes-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0;background:var(--terra);transition:width .6s var(--slow)}
-.cannes-card:hover::after{width:100%}
-@media(max-width:960px){.cannes-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.cannes-section{padding:64px 24px}}
-
-/* PRICING */
-.pricing-section{padding:96px 72px;border-bottom:.5px solid var(--parch)}
-@media(max-width:960px){.pricing-section{padding:64px 24px}}
-
-/* VEHICLE */
-.vehicle-section{padding:0;border-bottom:.5px solid var(--parch);background:var(--bone2)}
-.vehicle-inner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--parch)}
-.vehicle-photo{position:relative;overflow:hidden;min-height:520px}
-.vehicle-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.vehicle-credit{position:absolute;bottom:28px;right:24px;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5)}
-.vehicle-specs{background:var(--bone2);padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
-.vehicle-specs-label{margin-bottom:20px}
-.vehicle-specs-h2{font-family:var(--serif);font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--warm);line-height:1.2;margin-bottom:36px}
-.vehicle-specs-h2 em{font-style:italic}
-.spec-row{display:flex;padding:13px 0;border-bottom:.5px solid var(--parch)}
-.spec-row:last-child{border-bottom:none}
-.spec-key{font-family:var(--sc);font-size:8.5px;font-weight:300;letter-spacing:.16em;color:var(--sand);text-transform:uppercase;width:155px;flex-shrink:0;padding-top:2px}
-.spec-val{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--slate);line-height:1.7}
-@media(max-width:960px){.vehicle-inner{grid-template-columns:1fr}.vehicle-photo{min-height:320px}.vehicle-specs{padding:48px 32px}}
-
-/* TESTIMONIALS — exact from index.html */
-.testimonials{background:var(--warm);padding:96px 72px;position:relative;overflow:hidden}
-.testi-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--sc);font-size:180px;font-weight:300;color:rgba(196,170,130,.04);letter-spacing:.1em;white-space:nowrap;pointer-events:none;user-select:none}
-.testi-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 2fr 1fr;gap:64px;align-items:center}
-.testi-left{display:flex;flex-direction:column;gap:24px}
-.testi-overline{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:12px}
-.testi-overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
-.testi-h3{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1.15;color:var(--bone)}
-.testi-stars{display:flex;gap:4px}
-.testi-stars span{font-size:14px;color:var(--sand)}
-.testi-rating{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--bone);line-height:1}
-.testi-platform{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(196,170,130,.5)}
-.testi-center{display:flex;flex-direction:column;gap:24px;align-items:center}
-.testi-quote-icon{font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(196,170,130,.25);line-height:.6;align-self:flex-start}
-.testi-quote{font-family:var(--serif);font-size:clamp(17px,2vw,24px);font-weight:300;font-style:italic;line-height:1.55;color:var(--bone2);text-align:center}
-.testi-author{display:flex;flex-direction:column;align-items:center;gap:4px}
-.testi-author-name{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.1em;color:var(--sand)}
-.testi-author-origin{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(196,170,130,.5)}
-.testi-nav{display:flex;flex-direction:column;gap:16px;align-items:flex-end}
-.testi-btn{width:44px;height:44px;border:.5px solid rgba(196,170,130,.25);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s,border-color .3s;background:none}
-.testi-btn:hover{background:rgba(196,170,130,.1);border-color:rgba(196,170,130,.5)}
-.testi-btn svg{width:16px;height:16px;stroke:rgba(196,170,130,.6);fill:none}
-.testi-dots{display:flex;flex-direction:column;gap:8px}
-.testi-dot{width:.5px;height:24px;background:rgba(196,170,130,.25);transition:background .3s,height .3s var(--ease);cursor:pointer}
-.testi-dot.active{height:40px;background:var(--sand)}
-@media(max-width:960px){.testi-inner{grid-template-columns:1fr;gap:40px}.testi-nav{flex-direction:row;justify-content:center}}
-@media(max-width:768px){.testimonials{padding:64px 24px}}
-
-/* FAQ — exact from index.html */
-.faq-section{padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--bone2)}
-.faq-h2{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px;margin-bottom:56px}
-.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--parch)}
-.faq-item{background:var(--bone);overflow:hidden}
-.faq-question{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;cursor:pointer;gap:24px;transition:background .2s}
-.faq-question:hover{background:var(--bone2)}
-.faq-q-text{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--warm);line-height:1.25}
-.faq-icon{width:28px;height:28px;flex-shrink:0;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--slow),border-color .3s}
-.faq-icon svg{width:12px;height:12px;stroke:var(--stone);fill:none;transition:stroke .3s}
-.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--sand)}
-.faq-item.open .faq-icon svg{stroke:var(--sand)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .5s var(--slow)}
-.faq-item.open .faq-answer{max-height:320px}
-.faq-answer-inner{padding:0 32px 28px;font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate);line-height:1.85;border-top:.5px solid var(--parch);padding-top:20px}
-.faq-answer-inner a{color:var(--terra)}
-@media(max-width:1024px){.faq-section{padding:72px 40px}}
-@media(max-width:768px){.faq-section{padding:64px 24px}.faq-q-text{font-size:17px}.faq-question{padding:20px 24px}.faq-answer-inner{padding:0 24px 24px;padding-top:16px}}
-
-/* EDITORIAL */
-.editorial-section{padding:96px 72px;border-bottom:.5px solid var(--parch)}
-.editorial-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
-.editorial-h2{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1}
-.editorial-h2 em{font-style:italic}
-.editorial-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1px;background:var(--parch)}
-.art-card{background:var(--bone);position:relative;overflow:hidden;cursor:pointer;transition:background .3s;text-decoration:none;display:block}
-.art-card:first-child{background:var(--warm)}
-.art-photo{position:relative;overflow:hidden;background:var(--deep)}
-.art-card:first-child .art-photo{height:280px}
-.art-card:not(:first-child) .art-photo{height:170px}
-.art-ph{width:100%;height:100%;background:linear-gradient(150deg,#302e2a,#403c34);display:flex;align-items:center;justify-content:center}
-.art-ph span{font-family:var(--serif);font-style:italic;font-size:14px;color:rgba(196,170,130,.35)}
-.art-category{position:absolute;bottom:14px;left:18px;font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);z-index:2}
-.art-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px}
-.art-card:first-child .art-body{padding:24px 28px 28px}
-.art-date{font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.1em;color:var(--sand);text-transform:uppercase}
-.art-card:first-child .art-date{color:rgba(196,170,130,.7)}
-.art-title{font-family:var(--serif);font-weight:300;color:var(--warm);line-height:1.25;font-size:18px}
-.art-card:first-child .art-title{font-size:22px;color:var(--bone)}
-.art-excerpt{font-family:var(--sans);font-size:12.5px;font-weight:300;color:var(--stone);line-height:1.75}
-.art-card:first-child .art-excerpt{color:rgba(196,170,130,.65)}
-.art-footer{margin-top:10px;padding-top:10px;border-top:.5px solid var(--parch);display:flex;justify-content:space-between;align-items:center}
-.art-card:first-child .art-footer{border-top-color:rgba(196,170,130,.15)}
-.art-read-more{font-family:var(--sans);font-size:9.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:8px;transition:gap .3s}
-.art-card:not(:first-child) .art-read-more{color:var(--stone)}
-.art-card:hover .art-read-more{gap:14px}
-.art-read-more svg{width:12px;height:12px;stroke:currentColor;fill:none}
-@media(max-width:960px){.editorial-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.editorial-section{padding:64px 24px}.editorial-header{flex-direction:column;align-items:flex-start;gap:20px}}
-
-/* CTA */
-.cta-section{padding:96px 72px;background:var(--warm);display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden}
-.cta-bg{position:absolute;inset:0;font-family:var(--sc);font-size:180px;font-weight:300;color:rgba(196,170,130,.03);letter-spacing:.1em;white-space:nowrap;pointer-events:none;user-select:none;display:flex;align-items:center;justify-content:center}
-.cta-inner{position:relative;z-index:1;max-width:600px}
-.cta-overline{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px;margin-bottom:24px;justify-content:center}
-.cta-overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
-.cta-h2{font-family:var(--serif);font-size:clamp(32px,4vw,54px);font-weight:300;color:var(--bone);line-height:1.12;margin-bottom:20px}
-.cta-h2 em{font-style:italic}
-.cta-body{font-size:15px;color:rgba(196,170,130,.6);line-height:1.8;margin-bottom:48px}
-.cta-actions{display:flex;align-items:center;gap:32px;justify-content:center;flex-wrap:wrap}
-.btn-bone{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--bone);padding:16px 36px;position:relative;overflow:hidden;transition:color .4s;display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-.btn-bone::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .6s var(--slow)}
-.btn-bone:hover::before{transform:translateX(0)}
-.btn-bone:hover{color:var(--bone)}
-.btn-bone span,.btn-bone .arrow{position:relative;z-index:1}
-.btn-bone .arrow{transition:transform .45s var(--ease)}
-.btn-bone:hover .arrow{transform:translateX(6px)}
-.btn-outline{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,237,.7);display:inline-flex;align-items:center;gap:10px;transition:color .3s,gap .3s;text-decoration:none}
-.btn-outline:hover{color:var(--bone);gap:16px}
-@media(max-width:768px){.cta-section{padding:72px 24px}.cta-actions{flex-direction:column;align-items:center;gap:20px}}
-
-/* FOOTER */
-footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(196,170,130,.1)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:64px}
-.footer-brand{display:flex;flex-direction:column;gap:20px}
-.footer-logo{font-family:var(--sc);font-size:20px;font-weight:300;letter-spacing:.14em;color:var(--bone2);text-decoration:none;display:block}
-.footer-rule{width:32px;height:.5px;background:var(--sand)}
-.footer-tagline{font-family:var(--serif);font-size:17px;font-weight:300;font-style:italic;color:rgba(247,243,237,.55);line-height:1.5}
-.footer-desc{font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.5);line-height:1.8;max-width:280px}
-.footer-col-title{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;padding-bottom:12px;border-bottom:.5px solid rgba(196,170,130,.15)}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
-.footer-links a{font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(247,243,237,.45);letter-spacing:.04em;transition:color .3s,padding-left .3s;display:block;text-decoration:none}
-.footer-links a:hover{color:rgba(247,243,237,.8);padding-left:6px}
-.footer-bottom{border-top:.5px solid rgba(196,170,130,.1);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
-.footer-copy{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(196,170,130,.3);letter-spacing:.06em}
-@media(max-width:1024px){footer{padding:56px 40px 40px}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
-@media(max-width:768px){footer{padding:48px 24px 32px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:16px;align-items:flex-start}}
+@media(max-width:600px){
+  body{padding:44px 24px 56px}
+  .row-2,.row-3{grid-template-columns:1fr}
+  .cta-row{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<div class="progress-bar" id="progressBar"></div>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div class="card">
 
+  <div class="card-header">
+    <div class="kicker">Private Transfer · Riviera</div>
+    <h1 class="panel-h">From your door. <em>To theirs.</em></h1>
+    <p class="panel-sub">Hotel, villa or yacht — we collect from any address on the Riviera. Fixed price, confirmed before we move.</p>
+  </div>
 
-<!-- NAV -->
-<nav class="nav scrolled" id="mainNav" role="navigation" aria-label="Main navigation">
-  <a href="/" class="nav-logo">Riviera Journeys</a>
-  <ul class="nav-links" id="mainNavLinks">
-    <li>
-      <a href="/tours">Tours</a>
-      <div class="mega-panel" id="mega-tours">
-        <div class="mega-inner">
-          <div class="mega-nav-col">
-            <div class="mega-nav-col-title">Tours</div>
-            <button class="mega-sub-link active" data-pane="cannes" data-mega="tours">Day tours from Cannes</button>
-            <button class="mega-sub-link" data-pane="nice" data-mega="tours">Day tours from Nice</button>
-            <span class="mega-sub-section-title">By sea</span>
-            <button class="mega-sub-link" data-pane="boat" data-mega="tours">Boat trips</button>
-            <span class="mega-sub-section-title">Season</span>
-            <button class="mega-sub-link" data-pane="offseason" data-mega="tours">Off-season Riviera</button>
-          </div>
-          <div class="mega-cards-area" id="cards-area-tours">
-            <div class="mega-cards-header"><span class="mega-cards-header-title">Day Tours from Cannes</span></div>
-            <div class="mega-cards-pane active" id="pane-tours-cannes">
-              <a class="mega-card" href="/tours/cannes/nice-eze-monaco"><div class="mega-card-img"><img src="/photos/monaco-monte-carlo-viewpoint-panorama-nice-eze-monaco-tour-french-riviera.avif" alt="Monte Carlo panorama — Nice Eze Monaco day tour" loading="lazy"></div><div class="mega-card-name">Nice · Eze · Monaco</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/tours/cannes/grasse-gourdon"><div class="mega-card-img"><img src="/photos/grasse-old-town-pink-umbrellas-gourdon-tourrettes-tour-french-riviera-vertical.avif" alt="Grasse old town — Grasse Gourdon day tour" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/tours/cannes/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/saint-paul-de-vence-bronze-reclining-woman-sculpture-cannes-antibes-tour-french-riviera.avif" alt="Saint-Paul-de-Vence — Cannes Antibes Saint-Paul day tour" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Cannes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-tours-nice">
-              <a class="mega-card" href="/tours/nice/eze-monaco-menton"><div class="mega-card-img"><img src="/photos/menton-main-square-basilica-sky-eze-monaco-menton-tour.avif" alt="Menton — Eze Monaco Menton tour from Nice" loading="lazy"></div><div class="mega-card-name">Eze · Monaco · Menton</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/tours/nice/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/cannes-carlton-hotel-croisette-boulevard-french-riviera-tour-from-nice.avif" alt="Cannes Carlton — tour from Nice" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/tours/nice/grasse-gourdon"><div class="mega-card-img"><img src="/photos/gourdon-eagle-sculpture-cannes-bay-valley-view-provence-tour-from-nice.avif" alt="Gourdon — Grasse Gourdon tour from Nice" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All tours from Nice<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-tours-boat">
-              <a class="mega-card" href="/tours/boat/lerins-islands"><div class="mega-card-img"><img src="/photos/cannes-old-port-fishing-boats-lerins-islands-boat-trip.avif" alt="Cannes old port — Îles de Lérins boat trip" loading="lazy"></div><div class="mega-card-name">Îles de Lérins</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/tours/boat/saint-tropez"><div class="mega-card-img"><img src="/photos/saint-tropez-port-gendarme-de saint-tropez-french-riviera-boat-trip.avif" alt="Saint-Tropez port — boat trip" loading="lazy"></div><div class="mega-card-name">Saint-Tropez by sea</div><div class="mega-card-detail">Full day · from €600</div></a>
-              <a class="mega-card" href="/tours/boat/monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif" alt="Monaco Port Hercule — boat trip" loading="lazy"></div><div class="mega-card-name">Monaco by sea</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a href="/tours" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All boat trips<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-tours-offseason">
-              <a class="mega-card featured" href="/tours/off-season/gastronomy"><div class="mega-card-img"><img src="/photos/scallops-saint-jacques-truffles-gastronomy-off-season-tour.avif" alt="Gastronomy and truffles — off-season tour" loading="lazy"></div><div class="mega-card-name">Gastronomy &amp; truffles</div><div class="mega-card-detail">November – March · Full day</div></a>
-              <a class="mega-card featured" href="/tours/off-season/snow-sea"><div class="mega-card-img"><img src="/photos/antibes-bay-snowy-alps-sea-view-off-season-tour.avif" alt="Antibes bay snowy Alps — snow sea off-season tour" loading="lazy"></div><div class="mega-card-name">Snow &amp; sea day</div><div class="mega-card-detail">Ski Isola 2000 + coast</div></a>
-              <a class="mega-card featured" href="/tours/off-season/art-architecture"><div class="mega-card-img"><img src="/photos/cannes-villa-rothschild-gardens-off-season-art-architecture-tour.avif" alt="Villa Rothschild — art architecture off-season tour" loading="lazy"></div><div class="mega-card-name">Art &amp; architecture</div><div class="mega-card-detail">Museums, ateliers · Off-season</div></a>
-              <a href="/tours/off-season" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Off-season experiences<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <a href="/shore-excursions">Shore Excursions</a>
-      <div class="mega-panel" id="mega-shore">
-        <div class="mega-inner">
-          <div class="mega-nav-col">
-            <div class="mega-nav-col-title">Shore Excursions</div>
-            <button class="mega-sub-link active" data-pane="cannes" data-mega="shore">From Cannes</button>
-            <button class="mega-sub-link" data-pane="villefranche" data-mega="shore">From Villefranche</button>
-            <a href="/villefranche-cruise-schedule" style="display:block;font-family:var(--sans);font-size:11px;color:var(--terra);margin-top:16px;letter-spacing:.06em;text-decoration:none">Cruise schedule →</a>
-          </div>
-          <div class="mega-cards-area" id="cards-area-shore">
-            <div class="mega-cards-header"><span class="mega-cards-header-title">From Cannes</span></div>
-            <div class="mega-cards-pane active" id="pane-shore-cannes">
-              <a class="mega-card" href="/shore-excursions/cannes/nice-eze-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif" alt="Monaco — shore excursion from Cannes" loading="lazy"></div><div class="mega-card-name">Nice · Eze · Monaco</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/shore-excursions/cannes/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif" alt="Saint-Paul-de-Vence — shore excursion from Cannes" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/shore-excursions/cannes/grasse-gourdon"><div class="mega-card-img"><img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif" alt="Grasse — shore excursion from Cannes" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a href="/shore-excursions" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All from Cannes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-shore-villefranche">
-              <a class="mega-card" href="/shore-excursions/villefranche/nice-eze-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif" alt="Monaco — shore excursion from Villefranche" loading="lazy"></div><div class="mega-card-name">Nice · Eze · Monaco</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/shore-excursions/villefranche/cannes-antibes-stpaul"><div class="mega-card-img"><img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif" alt="Saint-Paul-de-Vence — shore excursion from Villefranche" loading="lazy"></div><div class="mega-card-name">Cannes · Antibes · Saint-Paul</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a class="mega-card" href="/shore-excursions/villefranche/grasse-gourdon"><div class="mega-card-img"><img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif" alt="Grasse — shore excursion from Villefranche" loading="lazy"></div><div class="mega-card-name">Grasse · Gourdon · Tourrettes</div><div class="mega-card-detail">Up to 7 pers. · €800</div></a>
-              <a href="/shore-excursions" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All from Villefranche<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <a href="/multi-day">Multi-Day</a>
-      <div class="mega-panel" id="mega-multiday">
-        <div class="mega-inner">
-          <div class="mega-nav-col">
-            <div class="mega-nav-col-title">Multi-Day Journeys</div>
-            <button class="mega-sub-link active" data-pane="france" data-mega="multiday">Through France</button>
-            <button class="mega-sub-link" data-pane="italy" data-mega="multiday">Through Italy</button>
-          </div>
-          <div class="mega-cards-area" id="cards-area-multiday">
-            <div class="mega-cards-header"><span class="mega-cards-header-title">Through France</span></div>
-            <div class="mega-cards-pane active" id="pane-multiday-france">
-              <a class="mega-card" href="/multi-day/france/provence-avignon-valensole"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Provence · Avignon</span></div></div><div class="mega-card-name">Provence · Avignon · Valensole</div><div class="mega-card-detail">3–5 days · Lavender &amp; Provence</div></a>
-              <a class="mega-card" href="/multi-day/france/cannes-avignon-lyon"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Avignon · Lyon</span></div></div><div class="mega-card-name">Avignon · Lyon</div><div class="mega-card-detail">5–7 days · Price on enquiry</div></a>
-              <a class="mega-card" href="/multi-day/france/cannes-lyon-paris"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Lyon · Paris</span></div></div><div class="mega-card-name">Lyon · Paris</div><div class="mega-card-detail">7–10 days · Price on enquiry</div></a>
-              <a href="/multi-day" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Custom journey →<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-multiday-italy">
-              <a class="mega-card" href="/multi-day/italy/cannes-genova-portofino"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Genova · Portofino</span></div></div><div class="mega-card-name">Cannes · Genova · Portofino</div><div class="mega-card-detail">3–5 days · Price on enquiry</div></a>
-              <a class="mega-card" href="/multi-day/italy/cannes-cinque-terre-florence"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cinque Terre</span></div></div><div class="mega-card-name">Cannes · Cinque Terre · Florence</div><div class="mega-card-detail">5–7 days · Price on enquiry</div></a>
-              <a class="mega-card" href="/multi-day/italy/cannes-genova-milano"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Genova · Milano</span></div></div><div class="mega-card-name">Cannes · Genova · Milano</div><div class="mega-card-detail">3–5 days · Price on enquiry</div></a>
-              <a href="/multi-day" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">Custom journey →<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <a href="/transfers" class="nav-active">Transfers</a>
-      <div class="mega-panel" id="mega-transfers">
-        <div class="mega-inner">
-          <div class="mega-nav-col">
-            <div class="mega-nav-col-title">Transfers</div>
-            <button class="mega-sub-link active" data-pane="airport" data-mega="transfers">Nice Côte d'Azur Airport</button>
-            <button class="mega-sub-link" data-pane="cannes" data-mega="transfers">From Cannes</button>
-          </div>
-          <div class="mega-cards-area" id="cards-area-transfers">
-            <div class="mega-cards-header"><span class="mega-cards-header-title">Nice Côte d'Azur Airport</span></div>
-            <div class="mega-cards-pane active" id="pane-transfers-airport">
-              <a class="mega-card" href="/transfers/nice-airport-cannes"><div class="mega-card-img"><img src="/photos/cannes-carlton-hotel-croisette-nice-airport-transfer.avif" alt="Cannes Carlton Hotel La Croisette — private transfer Nice Airport to Cannes" loading="lazy"></div><div class="mega-card-name">Nice → Cannes</div><div class="mega-card-detail">45 min · from €140</div></a>
-              <a class="mega-card" href="/transfers/nice-airport-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif" alt="Monaco Port Hercule — private transfer Nice Airport to Monaco" loading="lazy"></div><div class="mega-card-name">Nice → Monaco</div><div class="mega-card-detail">30 min · from €180</div></a>
-              <a class="mega-card" href="/transfers/nice-airport-saint-tropez"><div class="mega-card-img"><img src="/photos/saint-tropez-waterfront-harbour-nice-airport-transfer.avif" alt="Saint-Tropez waterfront harbour — private transfer Nice Airport to Saint-Tropez" loading="lazy"></div><div class="mega-card-name">Nice → Saint-Tropez</div><div class="mega-card-detail">90 min · from €390</div></a>
-              <a href="/transfers" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All routes &amp; prices<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-transfers-cannes">
-              <a class="mega-card" href="/transfers/cannes-monaco"><div class="mega-card-img"><img src="/photos/monaco-port-hercule-yachts-monte-carlo-bay-boat-trip.avif" alt="Monaco — private transfer from Cannes" loading="lazy"></div><div class="mega-card-name">Cannes → Monaco</div><div class="mega-card-detail">60–75 min · from €240</div></a>
-              <a class="mega-card" href="/transfers/cannes-nice-airport"><div class="mega-card-img"><img src="/photos/cannes-carlton-hotel-croisette-nice-airport-transfer.avif" alt="Cannes Carlton Hotel Croisette — transfer to Nice Airport" loading="lazy"></div><div class="mega-card-name">Cannes → Nice Airport</div><div class="mega-card-detail">45 min · from €140</div></a>
-              <a class="mega-card" href="/transfers/cannes-saint-tropez"><div class="mega-card-img"><img src="/photos/saint-tropez-port-gendarme-de saint-tropez-french-riviera-boat-trip.avif" alt="Saint-Tropez — private transfer from Cannes" loading="lazy"></div><div class="mega-card-name">Cannes → Saint-Tropez</div><div class="mega-card-detail">90 min · from €310</div></a>
-              <a href="/transfers" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All routes<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <a href="/corporate">Corporate</a>
-      <div class="mega-panel" id="mega-corporate">
-        <div class="mega-inner">
-          <div class="mega-nav-col">
-            <div class="mega-nav-col-title">Corporate</div>
-            <button class="mega-sub-link active" data-pane="events" data-mega="corporate">Events</button>
-            <button class="mega-sub-link" data-pane="services" data-mega="corporate">Services</button>
-          </div>
-          <div class="mega-cards-area" id="cards-area-corporate">
-            <div class="mega-cards-header"><span class="mega-cards-header-title">Events</span></div>
-            <div class="mega-cards-pane active" id="pane-corporate-events">
-              <a class="mega-card" href="/corporate/festival"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Festival de Cannes</span></div></div><div class="mega-card-name">Cannes Film Festival</div><div class="mega-card-detail">May · Cannes</div></a>
-              <a class="mega-card" href="/corporate/mipim-transfers"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>MIPIM</span></div></div><div class="mega-card-name">MIPIM</div><div class="mega-card-detail">March · Real estate congress</div></a>
-              <a class="mega-card" href="/corporate/lions"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes Lions</span></div></div><div class="mega-card-name">Cannes Lions</div><div class="mega-card-detail">June · Advertising festival</div></a>
-              <a href="/corporate" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">ILTM &amp; all events<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-corporate-services">
-              <a class="mega-card featured" href="/corporate/retreats"><div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Executive Retreats</span></div></div><div class="mega-card-name">Executive retreats</div><div class="mega-card-detail">Venue, programme, transfers</div></a>
-              <a class="mega-card featured" href="/corporate/partner-experiences"><div class="mega-card-img"><div class="mega-card-img-placeholder" style="align-items:center;justify-content:center"><span style="text-align:center">Partner Experiences</span></div></div><div class="mega-card-name">Partner experiences</div><div class="mega-card-detail">While you're in meetings</div></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <a href="/editorial">Roadbook</a>
-      <div class="mega-panel" id="mega-roadbook">
-        <div class="mega-inner">
-          <div class="mega-nav-col">
-            <div class="mega-nav-col-title">The Roadbook</div>
-            <button class="mega-sub-link active" data-pane="destinations" data-mega="roadbook">Destinations</button>
-            <button class="mega-sub-link" data-pane="outdoor" data-mega="roadbook">Outdoor</button>
-            <button class="mega-sub-link" data-pane="gastronomy" data-mega="roadbook">Gastronomy</button>
-            <button class="mega-sub-link" data-pane="art" data-mega="roadbook">Art</button>
-            <button class="mega-sub-link" data-pane="history" data-mega="roadbook">History</button>
-          </div>
-          <div class="mega-cards-area" id="cards-area-roadbook">
-            <div class="mega-cards-header"><span class="mega-cards-header-title">Destinations</span></div>
-            <div class="mega-cards-pane active" id="pane-roadbook-destinations">
-              <a class="mega-card" href="/editorial/cannes"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Cannes</span></div></div><div class="mega-card-name">Cannes</div><div class="mega-card-detail">Beyond the Croisette</div></a>
-              <a class="mega-card" href="/editorial/monaco"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Monaco</span></div></div><div class="mega-card-name">Monaco</div><div class="mega-card-detail">The principality properly</div></a>
-              <a class="mega-card" href="/editorial/nice"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Nice</span></div></div><div class="mega-card-name">Nice</div><div class="mega-card-detail">From Vieux-Nice to the hills</div></a>
-              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All destinations<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-roadbook-outdoor">
-              <a class="mega-card" href="/editorial/hiking"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Hiking</span></div></div><div class="mega-card-name">Hiking</div><div class="mega-card-detail">Routes worth the climb</div></a>
-              <a class="mega-card" href="/editorial/sup"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>SUP</span></div></div><div class="mega-card-name">SUP</div><div class="mega-card-detail">On the water at dawn</div></a>
-              <a class="mega-card" href="/editorial/flying"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Flying</span></div></div><div class="mega-card-name">Flying</div><div class="mega-card-detail">The Riviera from above</div></a>
-              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All outdoor<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-roadbook-gastronomy">
-              <a class="mega-card" href="/editorial/restaurants"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Restaurants</span></div></div><div class="mega-card-name">Restaurants</div><div class="mega-card-detail">Where to eat, when</div></a>
-              <a class="mega-card" href="/editorial/wine"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Wine</span></div></div><div class="mega-card-name">Wine</div><div class="mega-card-detail">Rosé, and what else</div></a>
-              <a class="mega-card" href="/editorial/markets"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Markets</span></div></div><div class="mega-card-name">Markets &amp; eating local</div><div class="mega-card-detail">Morning rituals</div></a>
-              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All gastronomy<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-roadbook-art">
-              <a class="mega-card" href="/editorial/belle-epoque"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Belle Époque</span></div></div><div class="mega-card-name">Belle Époque</div><div class="mega-card-detail">Architecture &amp; golden age</div></a>
-              <a class="mega-card" href="/editorial/galleries"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Galleries</span></div></div><div class="mega-card-name">Galleries</div><div class="mega-card-detail">What's showing now</div></a>
-              <a class="mega-card" href="/editorial/looking-at-art"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Looking at Art</span></div></div><div class="mega-card-name">What to look for in a painting</div><div class="mega-card-detail">Artists, works, details</div></a>
-              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All art<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="mega-cards-pane" id="pane-roadbook-history">
-              <a class="mega-card" href="/editorial/what-happened-here"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>What Happened Here</span></div></div><div class="mega-card-name">What happened here</div><div class="mega-card-detail">The stories behind the places</div></a>
-              <a class="mega-card" href="/editorial/personalities"><div class="mega-card-img"><div class="mega-card-img-placeholder"><span>Personalities</span></div></div><div class="mega-card-name">Personalities</div><div class="mega-card-detail">Who lived, worked and left here</div></a>
-              <a href="/editorial" style="align-self:flex-end;margin-top:8px;font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:gap .3s" onmouseenter="this.style.gap='10px'" onmouseleave="this.style.gap='6px'">All history<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li><a href="/book" class="nav-cta"><span>Enquire</span></a></li>
-  </ul>
-  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
-</nav>
+  <div class="divider"></div>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <button class="mobile-menu-close" id="mobileClose">&#10005;</button>
-  <div class="mobile-menu-logo">Riviera Journeys</div>
-  <ul style="list-style:none;display:flex;flex-direction:column;gap:0">
-    <li class="mob-parent"><button class="mob-toggle">Tours <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/tours">Day tours from Cannes</a></li><li><a href="/tours">Day tours from Nice</a></li><li><a href="/tours/boat/lerins-islands">Boat trips</a></li><li><a href="/tours/off-season">Off-season</a></li><li><a href="/tours">All tours →</a></li></ul></li>
-    <li class="mob-parent"><button class="mob-toggle">Shore Excursions <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/shore-excursions/villefranche/nice-eze-monaco">From Villefranche</a></li><li><a href="/shore-excursions/cannes/nice-eze-monaco">From Cannes</a></li><li><a href="/villefranche-cruise-schedule">Cruise schedule</a></li></ul></li>
-    <li class="mob-parent"><button class="mob-toggle">Multi-Day <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/multi-day/france/provence-avignon-valensole">Through France</a></li><li><a href="/multi-day/italy/cannes-cinque-terre-florence">Through Italy</a></li><li><a href="/multi-day">All journeys →</a></li></ul></li>
-    <li class="mob-parent"><button class="mob-toggle">Transfers <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/transfers/nice-airport-cannes">Nice → Cannes</a></li><li><a href="/transfers/nice-airport-monaco">Nice → Monaco</a></li><li><a href="/transfers/cannes-monaco">Cannes → Monaco</a></li><li><a href="/transfers/cannes-nice-airport">Cannes → Nice Airport</a></li><li><a href="/transfers">All transfers →</a></li></ul></li>
-    <li class="mob-parent"><button class="mob-toggle">Corporate <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/corporate/mipim-transfers">MIPIM</a></li><li><a href="/corporate/festival">Film Festival</a></li><li><a href="/corporate/retreats">Executive retreats</a></li></ul></li>
-    <li class="mob-parent"><button class="mob-toggle">Roadbook <span class="mob-arrow">+</span></button><ul class="mob-sub"><li><a href="/editorial/cannes">Cannes</a></li><li><a href="/editorial/restaurants">Gastronomy</a></li><li><a href="/editorial/looking-at-art">Art</a></li><li><a href="/editorial">All articles →</a></li></ul></li>
-  </ul>
-  <a href="/book" class="mobile-menu-cta">Enquire</a>
+  <form id="form" action="https://formspree.io/f/REPLACE_ID" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Transfer Request — Riviera Journeys">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="row-2">
+      <div class="field" style="margin-bottom:0">
+        <label for="name">Your name *</label>
+        <input type="text" id="name" name="name" required placeholder="Jean Dupont" autocomplete="name">
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="phone">WhatsApp / phone *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+33 6 00 00 00 00" autocomplete="tel">
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:20px">
+      <label for="email">Email <span class="opt">(optional)</span></label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+    </div>
+
+    <!-- pickup address + date + time in one row -->
+    <div class="row-3">
+      <div class="field" style="margin-bottom:0">
+        <label for="pickup">Pickup address *</label>
+        <input type="text" id="pickup" name="pickup_address" required placeholder="Hotel, villa, yacht berth…" autocomplete="off">
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="date">Date *</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="time">Pickup time *</label>
+        <input type="time" id="time" name="pickup_time" required>
+      </div>
+    </div>
+
+    <div class="row-2b" style="margin-top:20px">
+      <div class="field" style="margin-bottom:0">
+        <label for="dropoff">Destination *</label>
+        <input type="text" id="dropoff" name="destination" required placeholder="Monaco, Saint-Tropez, Nice Airport…" autocomplete="off">
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="pax">Passengers *</label>
+        <select id="pax" name="passengers" required>
+          <option value="" disabled selected>Select</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option><option>6</option>
+          <option>7</option><option value="8+">8 or more</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:20px">
+      <label for="msg">Notes <span class="opt">(optional)</span></label>
+      <textarea id="msg" name="message" placeholder="Child seats, luggage, via stops — or flight number if heading to the airport."></textarea>
+      <span class="field-note">Transferring to the airport? Include your flight number so we can time departure precisely.</span>
+    </div>
+
+    <div class="cta-row">
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span>Request Transfer</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a href="https://wa.me/33669962272?text=Hello,%20I%27d%20like%20to%20book%20a%20private%20transfer." class="btn-wa" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span>WhatsApp Us</span>
+      </a>
+      <p class="cta-note">No deposit · payment on delivery · confirmed within a few hours</p>
+    </div>
+  </form>
+
+  <div class="success-state" id="success">
+    <h3>Request received.</h3>
+    <p>We will confirm by WhatsApp or email — usually within a few hours.<br><br>
+    Urgent? <a href="tel:+33669962272" style="color:var(--terra)">+33 6 69 96 22 72</a></p>
+  </div>
+
 </div>
-
-<!-- PAGE HERO -->
-<div class="page-hero" aria-label="Private transfers hero">
-  <div class="page-hero-img">
-    <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif"
-      alt="Mercedes V-Class private transfer vehicle on the French Riviera — Riviera Journeys Nice Airport Cannes Monaco"
-      loading="eager">
-  </div>
-  <div class="page-hero-vignette"></div>
-  <div class="page-hero-grain" aria-hidden="true"></div>
-  <div class="page-hero-content">
-    <span class="page-hero-overline">Nice Côte d'Azur Airport · NCE</span>
-    <h1>Private Transfers.<br><em>On time, always.</em></h1>
-    <p>From Nice Airport to Cannes, Monaco and Saint-Tropez. From Cannes: east along the Italian Riviera to Sanremo and Portofino; north to Milan; west to Aix-en-Provence and Avignon. Mercedes V-Class, up to 7 passengers. Fixed price confirmed in advance.</p>
-    <div class="page-hero-actions">
-      <a href="/book?service=transfer" class="btn-sand">
-        <span>Enquire about a transfer</span>
-        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="https://wa.me/33669962272?text=Hello,%20I'd%20like%20to%20book%20an%20airport%20transfer." style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,237,.7);display:inline-flex;align-items:center;gap:10px;transition:color .3s,gap .3s;text-decoration:none" onmouseover="this.style.color='var(--bone)';this.style.gap='16px'" onmouseout="this.style.color='rgba(247,243,237,.7)';this.style.gap='10px'">
-        WhatsApp us
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <span class="page-hero-credit">Photograph by Riviera Journeys · Cannes</span>
-</div>
-
-<!-- TICKER -->
-<div class="ticker-bar" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">Nice Airport → Cannes<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Nice Airport → Monaco<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Nice Airport → Saint-Tropez<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Cannes → Sanremo · Portofino<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Cannes → Milan · Aix · Avignon<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Mercedes V-Class · Up to 7<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Fixed price · Tolls included<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Nice Airport → Cannes<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Nice Airport → Monaco<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Nice Airport → Saint-Tropez<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Cannes → Sanremo · Portofino<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Cannes → Milan · Aix · Avignon<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Mercedes V-Class · Up to 7<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Fixed price · Tolls included<span class="ticker-dot"></span></span>
-  </div>
-</div>
-
-<!-- ROUTES FROM NICE AIRPORT -->
-<section class="routes-section" aria-label="Private transfers from Nice Airport">
-  <div class="routes-header">
-    <div>
-      <span class="section-label">From Nice Airport NCE</span>
-      <h2 class="routes-h2" style="margin-top:16px">Airport transfers.<br><em>All Riviera destinations.</em></h2>
-    </div>
-    <p class="routes-intro">Fixed price per vehicle, up to 7 passengers. Flight monitored. Return legs at the same rate.</p>
-  </div>
-  <div class="routes-grid">
-    <a href="/transfers/nice-airport-cannes" class="route-card">
-      <div class="route-card-photo">
-        <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif"
-          alt="Cannes bay Carlton and Martinez hotels La Croisette — private transfer Nice Airport to Cannes" loading="eager">
-        <span class="route-card-badge">Most requested</span>
-      </div>
-      <div class="route-card-body">
-        <div class="route-from">Nice NCE →</div>
-        <div class="route-name">Cannes</div>
-        <div class="route-detail">45 min · A8 motorway · La Croisette, Palais, all hotels</div>
-        <div class="route-card-footer">
-          <div><div class="route-price">€140</div><div class="route-price-label">per vehicle · up to 7</div></div>
-          <div class="route-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-      </div>
-    </a>
-    <a href="/transfers/nice-airport-monaco" class="route-card">
-      <div class="route-card-photo">
-        <img src="/photos/monaco-panorama-bay-monte-carlo-skyline-transfer.avif"
-          alt="Monaco panorama bay Monte Carlo skyline — private transfer Nice Airport to Monaco" loading="eager">
-      </div>
-      <div class="route-card-body">
-        <div class="route-from">Nice NCE →</div>
-        <div class="route-name">Monaco</div>
-        <div class="route-detail">30 min · Coastal route · Hotels, Heliport, Monte-Carlo</div>
-        <div class="route-card-footer">
-          <div><div class="route-price">€150</div><div class="route-price-label">per vehicle · up to 7</div></div>
-          <div class="route-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-      </div>
-    </a>
-    <a href="/transfers/nice-airport-saint-tropez" class="route-card">
-      <div class="route-card-photo">
-        <img src="/photos/saint-tropez-bay-old-yacht-waterfront-nice-airport-transfer.avif"
-          alt="Saint-Tropez bay old yacht waterfront — private transfer Nice Airport to Saint-Tropez" loading="lazy">
-      </div>
-      <div class="route-card-body">
-        <div class="route-from">Nice NCE →</div>
-        <div class="route-name">Saint-Tropez</div>
-        <div class="route-detail">90 min · A8 + D559 · Port, villas, Ramatuelle, Gassin</div>
-        <div class="route-card-footer">
-          <div><div class="route-price">€390</div><div class="route-price-label">per vehicle · up to 7</div></div>
-          <div class="route-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-      </div>
-    </a>
-  </div>
-  <p style="font-size:11px;color:var(--stone);margin-top:16px;line-height:1.7">Nice → Antibes from €130 · Nice → Menton from €160 · all routes on enquiry</p>
-</section>
-
-<!-- FROM CANNES -->
-<section class="cannes-section" aria-label="Private transfers from Cannes">
-  <span class="section-label" style="margin-bottom:16px">From Cannes</span>
-  <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px;margin-bottom:56px">City departures.<br><em>Door-to-door.</em></h2>
-  <div class="cannes-grid">
-    <a href="/transfers/cannes-monaco" class="cannes-card">
-      <div class="cannes-card-from">Cannes →</div>
-      <div class="cannes-card-name">Monaco</div>
-      <div class="cannes-card-detail">60–75 min · A8 east then coastal route</div>
-      <div class="cannes-card-detail">Hotels · Heliport · Monte-Carlo · Port Hercule</div>
-      <div class="cannes-card-price">from €240</div>
-      <span class="cannes-card-link">View transfer <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </a>
-    <a href="/transfers/cannes-saint-tropez" class="cannes-card">
-      <div class="cannes-card-from">Cannes →</div>
-      <div class="cannes-card-name">Saint-Tropez</div>
-      <div class="cannes-card-detail">90 min · A8 + D559 (summer: allow more)</div>
-      <div class="cannes-card-detail">Vieux-Port · Private villas · Ramatuelle</div>
-      <div class="cannes-card-price">from €310</div>
-      <span class="cannes-card-link">View transfer <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </a>
-    <a href="/transfers/cannes-milan" class="cannes-card">
-      <div class="cannes-card-from">Cannes →</div>
-      <div class="cannes-card-name">Milan</div>
-      <div class="cannes-card-detail">4–5 hr · A8 · Malpensa, Linate, city centre</div>
-      <div class="cannes-card-detail">Via Genova · Coastal or inland route</div>
-      <div class="cannes-card-price">from €1,350</div>
-      <span class="cannes-card-link">Enquire <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </a>
-  </div>
-  <p style="font-size:11px;color:var(--stone);margin-top:16px;line-height:1.7">Further destinations on enquiry: Florence (€1,800 · 5 hr) · Courchevel (€2,100 · 4 hr) · Sanremo / Portofino · Aix-en-Provence · Avignon</p>
-</section>
-
-<!-- VEHICLE -->
-<section style="padding:0;border-bottom:.5px solid var(--parch);background:var(--bone2)" aria-label="Mercedes V-Class transfer vehicle">
-  <div style="padding:56px 72px 20px">
-    <span class="section-label">The Vehicle</span>
-  </div>
-  <div class="vehicle-inner">
-    <div class="vehicle-photo">
-      <img src="/photos/mercedes-v-class-yacht-port-sunset-nice-airport-transfer.avif"
-        alt="Mercedes V-Class private transfer vehicle yacht port sunset French Riviera — Riviera Journeys airport transfers Nice Cannes Monaco"
-        loading="lazy">
-      <span class="vehicle-credit">Photograph by Riviera Journeys</span>
-    </div>
-    <div class="vehicle-specs">
-      <div class="vehicle-specs-label"><span class="section-label">Specifications</span></div>
-      <h2 class="vehicle-specs-h2">Mercedes V-Class.<br><em>The correct choice for a group.</em></h2>
-      <div class="spec-row"><span class="spec-key">Vehicle</span><span class="spec-val">Mercedes-Benz V-Class</span></div>
-      <div class="spec-row"><span class="spec-key">Passengers</span><span class="spec-val">Up to 7 adults</span></div>
-      <div class="spec-row"><span class="spec-key">Luggage</span><span class="spec-val">Full boot + overhead — adequate for 7 passengers with cases</span></div>
-      <div class="spec-row"><span class="spec-key">Climate</span><span class="spec-val">Full air conditioning · front and rear zones</span></div>
-      <div class="spec-row"><span class="spec-key">Child seats</span><span class="spec-val">Available on request · No additional charge</span></div>
-      <div class="spec-row"><span class="spec-key">Driver</span><span class="spec-val">Vetted professional · English-speaking<br>Familiar with all Riviera routes</span></div>
-      <div class="spec-row"><span class="spec-key">Booked by</span><span class="spec-val">Riviera Journeys · We coordinate and stand behind every transfer</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing-section" aria-label="Private transfer rates from Nice Airport and Cannes">
-  <div style="max-width:1440px;margin:0 auto">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px">
-      <div>
-        <span class="section-label">Pricing</span>
-        <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px;margin-bottom:20px">Fixed rates.<br><em>Per vehicle.</em></h2>
-      </div>
-      <p style="font-size:14px;color:var(--stone);max-width:420px;line-height:1.8">One price for the vehicle, not per person. Up to 7 passengers. Tolls included. Confirmed in writing before the journey.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--parch);border:.5px solid var(--parch)">
-      <!-- From Nice Airport -->
-      <div style="background:var(--bone);padding:40px 48px">
-        <div style="font-family:var(--sc);font-size:9px;font-weight:300;letter-spacing:.2em;color:var(--sand);text-transform:uppercase;margin-bottom:28px;padding-bottom:16px;border-bottom:.5px solid var(--parch)">From Nice Airport NCE</div>
-        <div style="display:flex;flex-direction:column;gap:0">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:.5px solid var(--parch)">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Cannes</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€140</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:.5px solid var(--parch)">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Monaco</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€150</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:.5px solid var(--parch)">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Antibes / Cap d'Antibes</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€130</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Saint-Tropez</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€390</span>
-          </div>
-        </div>
-      </div>
-      <!-- From Cannes -->
-      <div style="background:var(--bone2);padding:40px 48px">
-        <div style="font-family:var(--sc);font-size:9px;font-weight:300;letter-spacing:.2em;color:var(--sand);text-transform:uppercase;margin-bottom:28px;padding-bottom:16px;border-bottom:.5px solid var(--parch)">From Cannes</div>
-        <div style="display:flex;flex-direction:column;gap:0">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:.5px solid var(--parch)">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Monaco</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€240</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:.5px solid var(--parch)">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Saint-Tropez</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€310</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:.5px solid var(--parch)">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Milan</span>
-            <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)">€1,350</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0">
-            <span style="font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate)">Florence · Courchevel · further on enquiry</span>
-            <span style="font-family:var(--sans);font-size:11px;font-weight:300;color:var(--stone)">POE</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap;gap:16px">
-      <p style="font-size:11px;color:var(--stone);line-height:1.7">All prices per vehicle · up to 7 passengers · tolls included · return legs same rate · night surcharge 22:00–06:00</p>
-      <a href="/book?service=transfer" class="btn-primary">
-        <span>Request a transfer</span>
-        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" aria-label="Guest reviews">
-  <div class="testi-bg" aria-hidden="true">Transfers</div>
-  <div class="testi-inner">
-    <div class="testi-left">
-      <span class="testi-overline">Guest reviews</span>
-      <h3 class="testi-h3">What our guests say.</h3>
-      <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testi-rating">5.0</div>
-      <div class="testi-platform">Private reviews · Google</div>
-    </div>
-    <div class="testi-center">
-      <div class="testi-quote-icon">"</div>
-      <p class="testi-quote" id="testiQuote">"The transfer from Nice airport was waiting when we landed, thirty minutes early, without being told. The hotel was fifteen minutes away. We have used Riviera Journeys for everything since."</p>
-      <div class="testi-author">
-        <span class="testi-author-name" id="testiName">M. &amp; S. Hoffmann</span>
-        <span class="testi-author-origin" id="testiOrigin">Zürich, Switzerland · Airport transfer &amp; day tours</span>
-      </div>
-    </div>
-    <div class="testi-nav">
-      <button class="testi-btn" id="testiPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-      <div class="testi-dots">
-        <div class="testi-dot active"></div>
-        <div class="testi-dot"></div>
-        <div class="testi-dot"></div>
-        <div class="testi-dot"></div>
-      </div>
-      <button class="testi-btn" id="testiNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section" aria-label="Frequently asked questions about private transfers">
-  <span class="section-label">Questions</span>
-  <h2 class="faq-h2">The ones people <em>actually ask.</em></h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">How much does a private transfer from Nice Airport to Cannes cost?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">From €140 per vehicle to Cannes, €150 to Monaco, €390 to Saint-Tropez. All prices are fixed, per vehicle, for up to 7 passengers — tolls and airport parking included. A night surcharge applies from 22:00 to 06:00. The figure confirmed at booking is the figure paid at the door.</div></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Is a private transfer more expensive than a taxi from Nice Airport?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">A private transfer is a different service from a taxi. The vehicle is a Mercedes V-Class with space for 7 passengers and all their luggage. The driver is English-speaking and pre-booked. The price is confirmed in writing before the journey — it does not change with traffic, time of day, or the number of people in the vehicle. A taxi can be hailed in the moment; a private transfer is arranged in advance, with a named driver and a fixed figure. For groups travelling together, for airport pickups where timing matters, and for journeys where the price needs to be known before departure, the two are not really comparable.</div></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Do you monitor flight arrivals?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">Yes. Every airport transfer includes real-time flight tracking from the moment the flight departs. If it is delayed, the pickup time adjusts automatically. You do not need to call or message — the driver is already tracking the board. This is standard on all bookings, not an extra service.</div></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Can I book a return transfer from Cannes to Nice Airport?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">Yes. Return and departure transfers from Cannes, Monaco, Antibes, and Saint-Tropez to Nice NCE are available at the same rates. We recommend booking both directions together so the departure leg is confirmed before you arrive.</div></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">What is included in the transfer price?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">The Mercedes V-Class, up to 7 passengers, all luggage, motorway tolls, airport parking, and a professional English-speaking driver. Child seats on request at no charge. The figure quoted is the figure paid — no additions at the door, no waiting-time surcharge within reason.</div></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Do you cover the Cannes Film Festival, MIPIM, and Monaco Grand Prix?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">Yes. Standard rates apply during all events. Traffic during Film Festival, MIPIM, and Grand Prix week can be severe — pickup times are planned with this in mind. Availability is limited during these periods; book early. For corporate groups needing multiple vehicles across an event week, see our <a href="/corporate">Corporate &amp; Events</a> section.</div></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Do you cover the Italian Riviera, Milan and Provence?</span>
-        <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"/></svg></div>
-      </div>
-      <div class="faq-answer"><div class="faq-answer-inner">Yes. From Cannes or Nice we cover intercity transfers across the Italian Riviera — Sanremo, Bordighera, Portofino — and long-distance transfers to Milan (4–5 hr · from €1,350), Florence (5 hr · from €1,800), Aix-en-Provence, Avignon, and Courchevel (4 hr · from €2,100). All long-distance transfers are priced per vehicle for up to 7 passengers and arranged on enquiry.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- EDITORIAL -->
-<section class="editorial-section" aria-label="Transfer guides and Roadbook articles">
-  <div class="editorial-header">
-    <div>
-      <span class="section-label">The Roadbook</span>
-      <h2 class="editorial-h2" style="margin-top:16px">Before you arrive.<br><em>And how to get around.</em></h2>
-    </div>
-    <a href="/editorial" class="section-text-link">All articles<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-left:2px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  </div>
-  <div class="editorial-grid">
-    <a href="/editorial/getting-around-the-riviera" class="art-card">
-      <div class="art-photo">
-        <div class="art-ph" style="background:linear-gradient(150deg,#1C1C1A,#2B2B27)"><span>Getting around</span></div>
-        <span class="art-category">Transport · Guide</span>
-      </div>
-      <div class="art-body">
-        <span class="art-date">Coming soon</span>
-        <h3 class="art-title">Taxi, Uber or private transfer on the Riviera — what actually makes sense</h3>
-        <p class="art-excerpt">A comparison that does not assume you want the most expensive option. The train is often better than any of them. Here is when each one works, and when it does not.</p>
-        <div class="art-footer">
-          <span class="art-read-more">Read article<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-    <a href="/editorial/nice-airport-guide" class="art-card">
-      <div class="art-photo">
-        <div class="art-ph"><span>Nice Airport NCE</span></div>
-        <span class="art-category">Practical · Airport</span>
-      </div>
-      <div class="art-body">
-        <span class="art-date">Roadbook</span>
-        <h3 class="art-title" style="font-size:18px">Nice Airport: Terminal 1 vs Terminal 2 — what to expect on arrival</h3>
-        <p class="art-excerpt">The two terminals are a shuttle ride apart. Which one you land in matters for pickup. This is what you need to know before you land.</p>
-        <div class="art-footer" style="border-top-color:var(--parch)">
-          <span class="art-read-more" style="color:var(--stone)">Read article<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-    <a href="/editorial/nice-airport-cannes" class="art-card">
-      <div class="art-photo">
-        <div class="art-ph"><span>Nice to Cannes</span></div>
-        <span class="art-category">Transport · Practical</span>
-      </div>
-      <div class="art-body">
-        <span class="art-date">Roadbook</span>
-        <h3 class="art-title" style="font-size:18px">How to get from Nice Airport to Cannes: every option</h3>
-        <p class="art-excerpt">Train, bus, taxi, private transfer, helicopter. Times, prices, honest recommendations — including the bus that most people overlook.</p>
-        <div class="art-footer" style="border-top-color:var(--parch)">
-          <span class="art-read-more" style="color:var(--stone)">Read article<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" aria-label="Book a transfer">
-  <div class="cta-bg" aria-hidden="true">Transfer</div>
-  <div class="cta-inner">
-    <div class="cta-overline">Book a transfer</div>
-    <h2 class="cta-h2">Nice Côte d'Azur<br><em>to wherever.</em></h2>
-    <p class="cta-body">Send your flight details and destination. We confirm within the hour.</p>
-    <div class="cta-actions">
-      <a href="/book?service=transfer" class="btn-bone">
-        <span>Enquire now</span>
-        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="https://wa.me/33669962272?text=Hello,%20I'd%20like%20to%20book%20an%20airport%20transfer." class="btn-outline">
-        WhatsApp us
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="/" class="footer-logo">Riviera Journeys</a>
-      <div class="footer-rule"></div>
-      <p class="footer-tagline">"Know Where You Are."</p>
-      <p class="footer-desc">Private tours, shore excursions and transfers on the French and Italian Riviera. Based in Cannes. Mercedes V-Class.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Tours</div>
-      <ul class="footer-links">
-        <li><a href="/tours/cannes/nice-eze-monaco">Nice · Eze · Monaco</a></li>
-        <li><a href="/tours/cannes/cannes-antibes-stpaul">Cannes · Antibes · Saint-Paul</a></li>
-        <li><a href="/shore-excursions">Shore Excursions</a></li>
-        <li><a href="/tours/off-season/gastronomy">Off-season</a></li>
-        <li><a href="/tours">All tours</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Transfers</div>
-      <ul class="footer-links">
-        <li><a href="/transfers/nice-airport-cannes">Nice → Cannes</a></li>
-        <li><a href="/transfers/nice-airport-monaco">Nice → Monaco</a></li>
-        <li><a href="/transfers/nice-airport-saint-tropez">Nice → Saint-Tropez</a></li>
-        <li><a href="/transfers/cannes-monaco">Cannes → Monaco</a></li>
-        <li><a href="/transfers/cannes-nice-airport">Cannes → Nice Airport</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <ul class="footer-links">
-        <li><a href="/book">Enquire</a></li>
-        <li><a href="https://wa.me/33669962272">WhatsApp</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/editorial">The Roadbook</a></li>
-        <li><a href="/slow-travel">Slow Travel Consulting</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2025–2026 Riviera Journeys · Cannes, France · rivierajourneys.fr</span>
-  </div>
-</footer>
-
 <script>
-// CURSOR
-(function(){var c=document.getElementById('cursor'),r=document.getElementById('cursorRing');if(!c||!r)return;var mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;c.style.left=mx+'px';c.style.top=my+'px';r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(loop)})()})();
-
-// NAV SCROLL
-(function(){var nav=document.getElementById('mainNav'),pb=document.getElementById('progressBar');function onScroll(){var pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;nav.classList.toggle('scrolled',window.scrollY>60);if(pb)pb.style.width=pct+'%'}window.addEventListener('scroll',onScroll,{passive:true});nav.classList.add('scrolled')})();
-
-// MEGA MENU
-(function(){var OD=260,CD=160,nav=document.getElementById('mainNav'),ot,ct,cur;function open(li){clearTimeout(ct);if(cur&&cur!==li)cur.classList.remove('mega-open');cur=li;clearTimeout(ot);ot=setTimeout(function(){li.classList.add('mega-open');if(nav)nav.classList.add('mega-active')},cur===li?OD:0)}function close(){clearTimeout(ot);ct=setTimeout(function(){if(cur)cur.classList.remove('mega-open');if(nav)nav.classList.remove('mega-active');cur=null},CD)}document.querySelectorAll('.nav-links>li').forEach(function(li){var p=li.querySelector('.mega-panel');if(!p)return;li.addEventListener('mouseenter',function(){open(li)});li.addEventListener('mouseleave',function(){close()});p.addEventListener('mouseenter',function(){clearTimeout(ct)});p.addEventListener('mouseleave',function(){close()})});if(nav){nav.addEventListener('mouseleave',function(){clearTimeout(ot);ct=setTimeout(function(){document.querySelectorAll('.nav-links>li.mega-open').forEach(function(l){l.classList.remove('mega-open')});nav.classList.remove('mega-active');cur=null},CD)})}document.addEventListener('keydown',function(e){if(e.key==='Escape'){clearTimeout(ot);document.querySelectorAll('.nav-links>li.mega-open').forEach(function(l){l.classList.remove('mega-open')});if(nav)nav.classList.remove('mega-active');cur=null}});document.querySelectorAll('.mega-sub-link[data-pane]').forEach(function(btn){btn.addEventListener('mouseenter',function(){var mega=btn.getAttribute('data-mega'),pane=btn.getAttribute('data-pane');document.querySelectorAll('.mega-sub-link[data-mega="'+mega+'"]').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('[id^="pane-'+mega+'-"]').forEach(function(p){p.classList.remove('active')});var t=document.getElementById('pane-'+mega+'-'+pane);if(t)t.classList.add('active');var a=document.getElementById('cards-area-'+mega);if(a){var h=a.querySelector('.mega-cards-header-title');if(h)h.textContent=btn.textContent.trim()}})})})();
-
-// MOBILE MENU
-(function(){var b=document.getElementById('navBurger'),m=document.getElementById('mobileMenu'),x=document.getElementById('mobileClose');if(!b||!m)return;var open=false;function toggle(){open=!open;b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);m.setAttribute('aria-hidden',!open);if(open){m.style.display='flex';setTimeout(function(){m.style.opacity='1'},10);document.body.style.overflow='hidden'}else{m.style.opacity='0';setTimeout(function(){m.style.display='none'},400);document.body.style.overflow=''}}b.addEventListener('click',toggle);if(x)x.addEventListener('click',toggle);document.querySelectorAll('.mob-toggle').forEach(function(btn){btn.addEventListener('click',function(){btn.closest('.mob-parent').classList.toggle('open')})})})();
-
-// FAQ
-function toggleFaq(q){var item=q.closest('.faq-item'),isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open')});if(!isOpen)item.classList.add('open')}
-
-// TESTIMONIALS
-(function(){var quotes=[{q:"The transfer from Nice airport was waiting when we landed, thirty minutes early, without being told. The hotel was fifteen minutes away. We have used Riviera Journeys for everything since.",name:"M. & S. Hoffmann",origin:"Zürich, Switzerland · Airport transfer & day tours"},{q:"We were six. The car was comfortable for all of us and the luggage. The driver knew exactly which terminal to use at Nice and was already there when we came out. Exactly as advertised.",name:"David & Emma T.",origin:"London, United Kingdom · Nice Airport → Cannes transfer"},{q:"I have organised VIP travel on four continents. The Riviera Journeys approach — understated, precise, unhurried — is exactly what this part of the world deserves. The transfer worked perfectly.",name:"Sir A. & Lady T.",origin:"Edinburgh, Scotland · Monaco transfer & annual itinerary"},{q:"On time, quiet, in a good car. No negotiation at the door. A fixed price agreed in advance and exactly that paid at the end. This is all one wants from an airport transfer.",name:"Patrick F.",origin:"New York, United States · Nice Airport → Saint-Tropez"}];var idx=0,qEl=document.getElementById('testiQuote'),nEl=document.getElementById('testiName'),oEl=document.getElementById('testiOrigin'),dots=document.querySelectorAll('.testi-dot');function set(i){idx=(i+quotes.length)%quotes.length;[qEl,nEl,oEl].forEach(function(el){el.style.opacity='0';el.style.transform='translateY(8px)'});setTimeout(function(){qEl.textContent='"'+quotes[idx].q+'"';nEl.textContent=quotes[idx].name;oEl.textContent=quotes[idx].origin;[qEl,nEl,oEl].forEach(function(el){el.style.transition='opacity .5s,transform .5s';el.style.opacity='1';el.style.transform='translateY(0)'});dots.forEach(function(d,i){d.classList.toggle('active',i===idx)})},300)}document.getElementById('testiNext').addEventListener('click',function(){set(idx+1)});document.getElementById('testiPrev').addEventListener('click',function(){set(idx-1)});dots.forEach(function(d,i){d.addEventListener('click',function(){set(i)})});setInterval(function(){set(idx+1)},7000)})();
+var form=document.getElementById('form'),btn=document.getElementById('submitBtn');
+if(form){form.addEventListener('submit',function(e){e.preventDefault();var req=form.querySelectorAll('[required]'),ok=true;req.forEach(function(el){el.classList.remove('error');if(!el.value.trim()){el.classList.add('error');ok=false;}});if(!ok)return;btn.querySelector('span').textContent='Sending\u2026';btn.disabled=true;fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';document.getElementById('success').style.display='flex';}else{btn.querySelector('span').textContent='Request Transfer';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');}}).catch(function(){btn.querySelector('span').textContent='Request Transfer';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');});})}
 </script>
-<script src="/nav.js" defer></script>
 </body>
 </html>
