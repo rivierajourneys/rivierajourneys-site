@@ -193,22 +193,22 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .breadcrumb a:hover{color:var(--terra)}
 @media(max-width:768px){.breadcrumb-bar{padding:12px 24px;display:none}}
 
-/* ─── PAGE HERO ─── */
-.page-hero{position:relative;height:85vh;min-height:580px;overflow:hidden;display:flex;align-items:flex-end}
-.page-hero-img{position:absolute;inset:0;background:var(--deep)}
-.page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
-.page-hero-vignette{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,26,.85) 0%,rgba(28,28,26,.48) 55%,rgba(28,28,26,.15) 100%);z-index:2}
-.page-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");z-index:3;pointer-events:none;opacity:.4}
-.page-hero-content{position:relative;z-index:4;padding:0 72px 72px;max-width:760px}
-.page-hero-overline{font-family:var(--sc);font-size:10px;font-weight:300;letter-spacing:.22em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
-.page-hero-overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
-.page-hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.8vw,56px);color:var(--bone);line-height:1.06;margin-bottom:22px}
-.page-hero h1 em{font-style:italic}
-.page-hero p{font-size:15px;color:rgba(247,243,237,.7);line-height:1.85;max-width:520px;margin-bottom:36px}
-.page-hero-actions{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
-.page-hero-credit{position:absolute;bottom:28px;right:72px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5)}
-@media(max-width:1024px){.page-hero-content{padding:0 40px 64px}}
-@media(max-width:768px){.page-hero{height:78vh;min-height:520px}.page-hero-content{padding:0 24px 56px}.page-hero-actions{flex-direction:column;align-items:flex-start;gap:20px}.page-hero-vignette{background:rgba(28,28,26,.65)}}
+/* ─── PAGE  ─── */
+.page-{position:relative;height:85vh;min-height:580px;overflow:hidden;display:flex;align-items:flex-end}
+.page--img{position:absolute;inset:0;background:var(--deep)}
+.page--img img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+.page--vignette{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,26,.85) 0%,rgba(28,28,26,.48) 55%,rgba(28,28,26,.15) 100%);z-index:2}
+.page--grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");z-index:3;pointer-events:none;opacity:.4}
+.page--content{position:relative;z-index:4;padding:0 72px 72px;max-width:760px}
+.page--overline{font-family:var(--sc);font-size:10px;font-weight:300;letter-spacing:.22em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.page--overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
+.page- h1{font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.8vw,56px);color:var(--bone);line-height:1.06;margin-bottom:22px}
+.page- h1 em{font-style:italic}
+.page- p{font-size:15px;color:rgba(247,243,237,.7);line-height:1.85;max-width:520px;margin-bottom:36px}
+.page--actions{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.page--credit{position:absolute;bottom:28px;right:72px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5)}
+@media(max-width:1024px){.page--content{padding:0 40px 64px}}
+@media(max-width:768px){.page-{height:78vh;min-height:520px}.page--content{padding:0 24px 56px}.page--actions{flex-direction:column;align-items:flex-start;gap:20px}.page--vignette{background:rgba(28,28,26,.65)}}
 
 /* ─── TICKER ─── */
 .ticker-bar{background:var(--warm);border-bottom:.5px solid rgba(196,170,130,.15);overflow:hidden;height:44px;display:flex;align-items:center}
@@ -409,18 +409,18 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <a href="/book" class="mobile-menu-cta">Book a Transfer</a>
 </div>
 
-<!-- HERO -->
-<div class="page-hero" aria-label="Monaco → Saint-Tropez · Var hero">
-  <div class="page-hero-img">
-    <img src="/photos/saint-tropez-port-gendarme-de saint-tropez-french-riviera-boat-trip.avif" alt="Saint-Tropez Vieux-Port — private transfer from Monaco to Saint-Tropez" loading="eager">
+<!--  -->
+<div class="page-" aria-label="Monaco → Saint-Tropez · Var ">
+  <div class="page--img">
+    <img src="/photos/saint-tropez-port-colourful-waterfront-nice-airport-transfer-hero.avif" alt="Saint-Tropez Vieux-Port — private transfer from Monaco to Saint-Tropez" loading="eager">
   </div>
-  <div class="page-hero-vignette"></div>
-  <div class="page-hero-grain" aria-hidden="true"></div>
-  <div class="page-hero-content">
-    <div class="page-hero-overline">Monaco → Saint-Tropez · Var</div>
+  <div class="page--vignette"></div>
+  <div class="page--grain" aria-hidden="true"></div>
+  <div class="page--content">
+    <div class="page--overline">Monaco → Saint-Tropez · Var</div>
     <h1>Monaco to Saint-Tropez.<br><em>2 hours. Fixed price.</em></h1>
     <p>A private Mercedes V-Class from Monaco to the Vieux-Port, private villas, or Ramatuelle. Fixed price from €550. The longest transfer on the Riviera — and the most scenic.</p>
-    <div class="page-hero-actions">
+    <div class="page--actions">
       <a href="/book/transfer?service=transfer-monaco-saint-tropez" class="btn-sand">
         <span>Book this transfer</span>
         <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
