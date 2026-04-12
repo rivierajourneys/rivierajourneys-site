@@ -226,5 +226,6 @@ body{
 var form=document.getElementById('form'),btn=document.getElementById('submitBtn');
 if(form){form.addEventListener('submit',function(e){e.preventDefault();var req=form.querySelectorAll('[required]'),ok=true;req.forEach(function(el){el.classList.remove('error');if(!el.value.trim()){el.classList.add('error');ok=false;}});if(!ok)return;btn.querySelector('span').textContent='Sending\u2026';btn.disabled=true;fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';document.getElementById('success').style.display='flex';}else{btn.querySelector('span').textContent='Request Transfer';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');}}).catch(function(){btn.querySelector('span').textContent='Request Transfer';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');});})}
 </script>
+<script src="/nav.js" defer></script>
 </body>
 </html>
