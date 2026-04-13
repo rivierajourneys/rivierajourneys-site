@@ -7,7 +7,7 @@
 <meta name="description" content="Private shore excursion from Villefranche-sur-Mer: Nice old town, Eze village at 427 metres, Monaco Principality. Mercedes V-Class, up to 7 guests. Fixed price €800. Back before the tender.">
 <link rel="canonical" href="https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco">
 <meta property="og:title" content="Shore Excursion from Villefranche: Nice, Eze &amp; Monaco | Riviera Journeys">
-<meta property="og:description" content="Private shore excursion from Villefranche. Nice old town, Eze at 427 metres, Monaco. Mercedes V-Class. Fixed price €800 per vehicle.">
+<meta property="og:description" content="Private shore excursion from Villefranche-sur-Mer. Nice old town, Eze at 427 metres, Monaco. Mercedes V-Class. Fixed price €800 per vehicle.">
 <meta property="og:image" content="https://rivierajourneys.fr/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif">
 <meta property="og:url" content="https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco">
 <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristTrip",
 "name":"Shore Excursion from Villefranche: Nice, Eze and Monaco",
-"description":"Private shore excursion from Villefranche-sur-Mer: Nice old port, Moyenne Corniche, Eze at 427 metres, Monaco. From 5 hours. Fixed price 800 EUR.",
+"description":"Private shore excursion from Villefranche-sur-Mer: Nice old port, Moyenne Corniche, Eze at 427 metres, Monaco. From 4.5 hours. Fixed price 800 EUR.",
 "url":"https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco",
 "touristType":"Cruise passengers",
 "provider":{"@type":"LocalBusiness","name":"Riviera Journeys","url":"https://rivierajourneys.fr","telephone":"+33669962272"},
@@ -33,8 +33,8 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Where do you meet us in Villefranche?","acceptedAnswer":{"@type":"Answer","text":"At the top of the tender ramp on the lower harbour, Quai de l'Amiral Courbet. We are there with a name board before your tender docks."}},
-{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 5 hours. We plan the return from the moment you book and are always back before the tender departs."}},
+{"@type":"Question","name":"Where do you meet us in Villefranche?","acceptedAnswer":{"@type":"Answer","text":"At quai de l'Amiral Courbet in Villefranche-sur-Mer — the tender landing pier, in the village itself. We are there with a name board before your tender docks."}},
+{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 4.5 hours. Nice is only 6 kilometres west of Villefranche, about ten minutes by road. We plan the return from the moment you book and are always back before the tender departs."}},
 {"@type":"Question","name":"What is the price for a shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"800 EUR per vehicle, up to 7 passengers. Fixed price regardless of group size. Entrance fees and meals not included."}},
 {"@type":"Question","name":"Do you accompany guests in Eze village?","acceptedAnswer":{"@type":"Answer","text":"No. We drop you at the entrance and wait with the car. We recommend the Chevre d'Or terrace for coffee or champagne with the view."}},
 {"@type":"Question","name":"Which Corniche road do you take?","acceptedAnswer":{"@type":"Answer","text":"The Moyenne Corniche, the middle road, most direct to Eze and most spectacular, with two panoramic stops above the sea."}}
@@ -226,19 +226,32 @@ img{display:block;max-width:100%;height:auto}
 .stop-photo{margin-top:28px;overflow:hidden;background:var(--deep)}
 .stop-photo img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;transition:transform .6s var(--slow)}
 .stop-photo:hover img{transform:scale(1.03)}
-/* photo captions removed — captions on video only */
 
-/* Video placeholder */
-.stop-video{margin-top:20px;overflow:hidden;background:var(--deep);aspect-ratio:16/9;position:relative}
-.stop-video video{width:100%;height:100%;object-fit:cover;display:block}
-.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-.vid-ph-ico{width:50px;height:50px;border-radius:50%;border:.5px solid rgba(196,170,130,.3);display:flex;align-items:center;justify-content:center}
-.vid-ph-ico svg{width:16px;height:16px;fill:rgba(196,170,130,.5);stroke:none;margin-left:2px}
-.vid-ph-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.2em;color:rgba(196,170,130,.35)}
-.vid-ph-spec{font-family:var(--sans);font-size:9px;color:rgba(196,170,130,.2)}
-.vid-cap{margin-top:7px;display:flex;justify-content:space-between}
-.vid-cap-text{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--stone)}
-.vid-cap-note{font-family:var(--sc);font-size:7.5px;letter-spacing:.14em;color:var(--stone);opacity:.45}
+/* Vertical photo pair — replaces single horizontal within a stop */
+.stop-photo-pair{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden;background:var(--parch)}
+.stop-photo-pair-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep)}
+.stop-photo-pair-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
+.stop-photo-pair:hover .stop-photo-pair-item img{transform:scale(1.03)}
+@media(max-width:600px){.stop-photo-pair{grid-template-columns:1fr}.stop-photo-pair-item{aspect-ratio:4/3}}
+
+/* Horizontal video placeholder (16:9) */
+.stop-video-h{margin-top:28px;overflow:hidden;background:var(--deep);aspect-ratio:16/9;position:relative}
+.stop-video-h video{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Vertical media pair — photo + video side by side, 3:4 each */
+.stop-media-pair{margin-top:4px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--parch)}
+.stop-media-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep);position:relative}
+.stop-media-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
+.stop-media-pair:hover .stop-media-item img{transform:scale(1.03)}
+@media(max-width:600px){.stop-media-pair{grid-template-columns:1fr}}
+
+/* Video placeholder overlay — used in both .stop-video-h and .stop-media-item */
+.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px}
+.vid-ph-ico{width:46px;height:46px;border-radius:50%;border:.5px solid rgba(196,170,130,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vid-ph-ico svg{width:14px;height:14px;fill:rgba(196,170,130,.45);stroke:none;margin-left:2px}
+.vid-ph-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.2em;color:rgba(196,170,130,.3);text-align:center}
+.vid-ph-spec{font-family:var(--sans);font-size:9px;color:rgba(196,170,130,.18);text-align:center;line-height:1.5}
+.vid-cap{margin-top:6px;font-family:var(--serif);font-style:italic;font-size:12px;color:var(--stone)}
 
 /* SECTIONS */
 .s-includes,.s-pricing,.s-faq{margin-top:64px}
@@ -424,8 +437,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 <!-- HERO -->
 <section class="hero" aria-label="Shore excursion from Villefranche: Nice, Eze, Monaco">
   <div class="hero-photo">
-    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif"
-         alt="Bay of Villefranche-sur-Mer — shore excursion to Nice, Eze and Monaco"
+    <img src="/photos/villefranche-sur-mer-bay-morning-light-shore-excursion-nice-eze-monaco.avif"
+         alt="Villefranche-sur-Mer bay — departure point for the Nice, Eze and Monaco shore excursion"
          loading="eager" fetchpriority="high">
   </div>
   <div class="hero-v"></div>
@@ -437,12 +450,12 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <span class="hero-price">&#8364;800</span>
       <span class="hero-pill">per vehicle</span>
       <span class="hero-pill">up to 7 guests</span>
-      <span class="hero-pill">from 5 hours</span>
+      <span class="hero-pill">from 4.5 hours</span>
       <span class="hero-pill">back before the tender</span>
     </div>
     <div class="hero-acts">
-      <a href="/book?excursion=villefranche-nice-eze-monaco" class="btn-sand">
-        <span>Enquire Now</span>
+      <a href="/book-shore-excursion?excursion=villefranche-nice-eze-monaco" class="btn-sand">
+        <span>Book Your Excursion</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="https://wa.me/33669962272?text=Shore+excursion+Villefranche+Nice+Eze+Monaco" class="btn-ghost" target="_blank" rel="noopener">
@@ -458,18 +471,18 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="ticker-track">
     <span class="ticker-item">Villefranche-sur-Mer<span class="ticker-dot"></span></span>
     <span class="ticker-item">Nice &middot; Eze &middot; Monaco<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Shore excursion &middot; from 5 hrs<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Shore excursion &middot; from 4.5 hrs<span class="ticker-dot"></span></span>
     <span class="ticker-item">Mercedes V-Class &middot; Up to 7<span class="ticker-dot"></span></span>
     <span class="ticker-item">&#8364;800 per vehicle &middot; fixed price<span class="ticker-dot"></span></span>
     <span class="ticker-item">Back before the tender<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Meet at Quai de l&apos;Amiral Courbet<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Meet at quai de l'Amiral Courbet<span class="ticker-dot"></span></span>
     <span class="ticker-item">Villefranche-sur-Mer<span class="ticker-dot"></span></span>
     <span class="ticker-item">Nice &middot; Eze &middot; Monaco<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Shore excursion &middot; from 5 hrs<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Shore excursion &middot; from 4.5 hrs<span class="ticker-dot"></span></span>
     <span class="ticker-item">Mercedes V-Class &middot; Up to 7<span class="ticker-dot"></span></span>
     <span class="ticker-item">&#8364;800 per vehicle &middot; fixed price<span class="ticker-dot"></span></span>
     <span class="ticker-item">Back before the tender<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Meet at Quai de l&apos;Amiral Courbet<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Meet at quai de l&apos;Amiral Courbet<span class="ticker-dot"></span></span>
   </div>
 </div>
 
@@ -490,7 +503,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <!-- CONTENT -->
     <article class="content">
       <div class="section-lbl reveal">The Excursion</div>
-      <p class="intro reveal d1">Your ship anchors in the bay. A tender brings you ashore to the lower harbour. We are waiting at the top of the ramp &mdash; name board, Mercedes V-Class, no fuss. From Villefranche, the entire eastern Riviera is within reach: Nice in twenty minutes, Eze on the Corniche above it, Monaco at the end of the road. The most complete shore excursion on this coast, and the one we run most often.</p>
+      <p class="intro reveal d1">Your ship anchors in the bay. A tender brings you to quai de l'Amiral Courbet, in the village itself &mdash; one of the deepest natural harbours in the Mediterranean. We are there with a name board before your tender docks. Nice is six kilometres west, ten minutes by road. Eze is above you on the Corniche. Monaco is twenty minutes east. The compact geography of Villefranche is your advantage: less time in the car, more time at each stop.</p>
 
       <h2 class="stops-h reveal">The route.<br><em>Four stops, one day.</em></h2>
 
@@ -499,27 +512,32 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-n">01</div>
         <div class="stop-body">
           <div class="stop-name">Nice</div>
-          <div class="stop-time">~20 min from Villefranche &middot; 60&ndash;90 min ashore</div>
-          <p class="stop-desc">We drive west along the coast to Nice &mdash; 6 kilometres from Villefranche, about twenty minutes. First stop: the Vieux-Port and Cours Saleya, the flower and food market that runs every morning. The old town behind it: narrow lanes, baroque churches, the light that made the Impressionists stay. For a first visit, an hour is the minimum. If you have been before, forty-five minutes in the market and we leave before the coaches arrive.</p>
+          <div class="stop-time">~10 min from Villefranche &middot; 60&ndash;90 min ashore</div>
+          <p class="stop-desc">We drive west on the Corniche Inf&eacute;rieure — Nice is six kilometres, ten minutes.  First stop: the Vieux-Port and Cours Saleya, the flower and food market that runs every morning until noon. The old town behind it — narrow lanes, baroque churches, Italianate ochre facades, the light that made the Impressionists stay. For a first visit, an hour is the minimum. If you have been before, forty-five minutes in the market and we leave before the coaches arrive from the cruise terminal.</p>
           <div class="stop-photo">
             <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"
-                 alt="Nice old port and Promenade des Anglais &mdash; shore excursion from Villefranche"
+                 alt="Nice old port and Promenade des Anglais — shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
-
           </div>
-          <!-- VIDEO: /video/nice-cours-saleya-morning.mp4 -->
-          <div class="stop-video">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"><source src="/video/nice-cours-saleya-morning.mp4" type="video/mp4"></video>-->
-            <div class="vid-ph">
-              <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Nice &middot; Cours Saleya</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; market sounds &middot; morning &middot; /video/nice-cours-saleya-morning.mp4</span>
+          <div class="stop-media-pair">
+            <div class="stop-media-item">
+              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/nice-cours-saleya-market-morning-vertical-shore-excursion-villefranche.avif"><source src="/video/nice-cours-saleya-market-morning-vertical.mp4" type="video/mp4"></video>-->
+              <div class="vid-ph">
+                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+                <span class="vid-ph-lbl">Video &middot; Cours Saleya &middot; vertical</span>
+                <span class="vid-ph-spec">9:16 &middot; 10&ndash;15 sec &middot; market &middot; morning &middot; /video/nice-cours-saleya-market-morning-vertical.mp4</span>
+              </div>
+            </div>
+            <div class="stop-media-item">
+              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/nice-old-town-rue-pietonne-vertical-shore-excursion-villefranche.avif"><source src="/video/nice-old-town-rue-pietonne-vertical.mp4" type="video/mp4"></video>-->
+              <div class="vid-ph">
+                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+                <span class="vid-ph-lbl">Video &middot; Old Town &middot; vertical</span>
+                <span class="vid-ph-spec">9:16 &middot; 10&ndash;15 sec &middot; walking lane &middot; /video/nice-old-town-rue-pietonne-vertical.mp4</span>
+              </div>
             </div>
           </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">Cours Saleya market, Nice &mdash; early morning</span>
-            <span class="vid-cap-note">Placeholder</span>
-          </div>
+          <p class="vid-cap">Nice — Cours Saleya market &amp; the old town lanes</p>
         </div>
       </div>
 
@@ -529,19 +547,16 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Moyenne Corniche</div>
           <div class="stop-time">2 panoramic stops en route to Eze</div>
-          <p class="stop-desc">From Nice we take the Moyenne Corniche &mdash; the middle of the three coastal roads, from which Hitchcock filmed <em>To Catch a Thief</em>. The road climbs above the resort towns and the sea opens below you. We stop twice: once for the view back toward Nice and Cap Ferrat; once just before Eze where Monaco appears for the first time in the distance. These stops add twenty minutes and are not optional.</p>
-          <div class="stop-video" style="margin-top:24px">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/la-turbie-village-hills-mediterranean-view-grande-corniche-nice-menton.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>-->
+          <p class="stop-desc">From Nice we take the Moyenne Corniche — the middle of the three coastal roads, the one Hitchcock used in <em>To Catch a Thief</em>. The road climbs sharply above the coast and the sea opens below you. Because Villefranche itself sits at the foot of this ridge, you already know the scale before the first bend. We make two stops: once for the view back toward Nice and the Cap Ferrat peninsula; once just before Eze where Monaco appears in the distance for the first time, compressed against the sea. These stops add fifteen to twenty minutes and are not optional — they are part of why you came.</p>
+          <div class="stop-video-h">
+            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/moyenne-corniche-road-sea-view-nice-eze-shore-excursion-villefranche.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>-->
             <div class="vid-ph">
               <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Moyenne Corniche</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; in-car &middot; road + sea &middot; /video/moyenne-corniche-driving.mp4</span>
+              <span class="vid-ph-lbl">Video &middot; Moyenne Corniche &middot; horizontal</span>
+              <span class="vid-ph-spec">16:9 &middot; 10–15 sec &middot; in-car driving shot &middot; sea right &middot; /video/moyenne-corniche-driving.mp4</span>
             </div>
           </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">Moyenne Corniche &mdash; the road to Eze</span>
-            <span class="vid-cap-note">Placeholder</span>
-          </div>
+          <p class="vid-cap">Moyenne Corniche — the middle road to Eze</p>
         </div>
       </div>
 
@@ -551,25 +566,19 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Eze Village</div>
           <div class="stop-time">427 metres &middot; 60&ndash;75 min &middot; independently</div>
-          <p class="stop-desc">Eze is a medieval village built on a rock at 427 metres above the sea. Pedestrian from the gate &mdash; we leave you there and wait at the car park. At the top: the Jardin Exotique (&euro;7 entrance) with cacti and succulents around a ruined ch&acirc;teau, and a view of Cap Ferrat, Monaco, and on clear days the Italian coast as far as Bordighera.</p>
-          <div class="stop-tip"><strong>Our recommendation:</strong> Take the right lane at the gate and climb to the H&ocirc;tel Ch&egrave;vre d&apos;Or. Their terrace looks south over the sea &mdash; Cap Ferrat directly below, Monaco to the east. A coffee or a glass of champagne here, on a clear morning, is the best twenty minutes of the excursion.</div>
-          <div class="stop-photo">
-            <img src="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"
-                 alt="Eze medieval village church with bay view &mdash; shore excursion from Villefranche"
-                 loading="lazy" width="900" height="600">
-
-          </div>
-          <div class="stop-video">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"><source src="/video/eze-village-panorama.mp4" type="video/mp4"></video>-->
-            <div class="vid-ph">
-              <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Eze Village</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; static &middot; sea panorama &middot; wind &middot; /video/eze-village-panorama.mp4</span>
+          <p class="stop-desc">Eze is a medieval village built on a volcanic rock at 427 metres above the sea. Pedestrian from the gate — we leave you there and wait at the car park below. The lanes are steep, cobbled, and largely unchanged since the thirteenth century. At the top: the Jardin Exotique (€7) built around the ruins of a château, with cacti, succulents, and a view that takes in Cap Ferrat, Monaco, and on clear days the Italian coast as far as Bordighera. Sixty to seventy-five minutes here; not a minute wasted.</p>
+          <div class="stop-tip"><strong>Our recommendation:</strong> Take the right lane at the gate and climb to the Hôtel Chèvre d'Or. Their terrace looks south over the sea — Cap Ferrat directly below, Monaco to the east. A coffee or a glass of champagne on that terrace, on a clear morning, is the best twenty minutes of this excursion.</div>
+          <div class="stop-photo-pair">
+            <div class="stop-photo-pair-item">
+              <img src="/photos/eze-village-stone-lane-morning-light-shore-excursion-villefranche.avif"
+                   alt="Stone lane in Eze village — shore excursion from Villefranche"
+                   loading="lazy">
             </div>
-          </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">View from the summit, Eze &mdash; 427 metres</span>
-            <span class="vid-cap-note">Placeholder</span>
+            <div class="stop-photo-pair-item">
+              <img src="/photos/eze-village-panorama-cap-ferrat-sea-view-shore-excursion-villefranche.avif"
+                   alt="Panoramic view from Eze village over Cap Ferrat — shore excursion from Villefranche"
+                   loading="lazy">
+            </div>
           </div>
         </div>
       </div>
@@ -580,24 +589,26 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Monaco</div>
           <div class="stop-time">90&ndash;120 min &middot; Port Hercule &middot; Casino &middot; Le Rocher</div>
-          <p class="stop-desc">From Eze we descend to Monaco &mdash; the Principality, 2.02 square kilometres, ruled by the Grimaldi family since 1297. Port Hercule for the yachts. The Casino de Monte-Carlo gardens and the Belle &Eacute;poque fa&ccedil;ade. Then Le Rocher: the old town, the cathedral where Grace Kelly is buried, the view from the palace ramparts south over the sea. The return to Villefranche along the coast takes 25 minutes.</p>
+          <p class="stop-desc">From Eze we descend to Monaco — the Principality, 2.02 square kilometres, ruled by the Grimaldi family since 1297. Port Hercule for the yachts: super-yachts moored stern-to, the scale of the boats against the buildings. The Casino de Monte-Carlo gardens and the Belle Époque façade — you can walk past without going in and still understand what this place is about. Then Le Rocher, the old town on the rock: the cathedral where Grace Kelly is buried, the palace changing of the guard at 11:55 if your timing allows, the view from the ramparts south over the sea. The return to Villefranche takes approximately 20 minutes.</p>
           <div class="stop-photo">
             <img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"
-                 alt="Monaco Port Hercule with Monte Carlo Casino &mdash; shore excursion from Villefranche"
+                 alt="Monaco Port Hercule with Monte Carlo Casino — shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
-
           </div>
-          <div class="stop-video">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"><source src="/video/monaco-port-hercule.mp4" type="video/mp4"></video>-->
-            <div class="vid-ph">
-              <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Monaco &middot; Port Hercule</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; port &middot; yachts &middot; ambient &middot; /video/monaco-port-hercule.mp4</span>
+          <div class="stop-media-pair">
+            <div class="stop-media-item">
+              <img src="/photos/monaco-le-rocher-palace-ramparts-sea-view-shore-excursion-villefranche.avif"
+                   alt="Monaco Le Rocher palace ramparts with sea view — shore excursion from Villefranche"
+                   loading="lazy">
             </div>
-          </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">Port Hercule, Monaco &mdash; morning</span>
-            <span class="vid-cap-note">Placeholder</span>
+            <div class="stop-media-item">
+              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/monaco-port-hercule-yachts-vertical-shore-excursion-villefranche.avif"><source src="/video/monaco-port-hercule-vertical.mp4" type="video/mp4"></video>-->
+              <div class="vid-ph">
+                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+                <span class="vid-ph-lbl">Video &middot; Monaco &middot; vertical</span>
+                <span class="vid-ph-spec">9:16 &middot; 10–15 sec &middot; Port Hercule &middot; yachts &middot; /video/monaco-port-hercule-vertical.mp4</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -607,7 +618,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="mobile-cta-price">&#8364;800</div>
         <div class="mobile-cta-sub">Per vehicle &middot; up to 7 passengers</div>
         <div class="mobile-cta-btns">
-          <a href="/book?excursion=villefranche-nice-eze-monaco" class="btn-sand" style="justify-content:center"><span>Enquire about this excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="/book-shore-excursion?excursion=villefranche-nice-eze-monaco" class="btn-sand" style="justify-content:center"><span>Book Your Excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="https://wa.me/33669962272?text=Shore+excursion+Villefranche" style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);border:.5px solid rgba(168,101,67,.3);padding:12px" target="_blank" rel="noopener">WhatsApp us</a>
         </div>
       </div>
@@ -617,7 +628,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <h2 class="section-h">What&apos;s included</h2>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="incl-txt"><strong>Private Mercedes V-Class</strong> &mdash; full day, from the tender pier</div></div>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="incl-txt"><strong>English-speaking driver</strong> &mdash; local knowledge, no fixed commentary</div></div>
-        <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="incl-txt"><strong>Meet at the tender ramp</strong> &mdash; Quai de l&apos;Amiral Courbet, name board</div></div>
+        <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="incl-txt"><strong>Meet at quai de l'Amiral Courbet</strong> &mdash; tender landing, in the village</div></div>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="incl-txt"><strong>Return timed to your tender</strong> &mdash; we know your ship&apos;s schedule</div></div>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18"/></svg></div><div class="incl-txt"><strong>All tolls and parking</strong> &mdash; no extras added afterwards</div></div>
         <div class="not-incl">Not included: entrance fees (Jardin Exotique Eze &euro;7, Oceanographic Museum Monaco &euro;19), lunch, drinks at Ch&egrave;vre d&apos;Or, gratuities.</div>
@@ -629,7 +640,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <table class="pricing-table"><colgroup><col><col><col><col></colgroup>
           <thead><tr><th>Route</th><th>Duration</th><th>Group size</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Nice &middot; Eze &middot; Monaco</td><td>From 5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
+            <tr><td>Nice &middot; Eze &middot; Monaco</td><td>From 4.5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Eze &middot; Monaco only</td><td>From 3.5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Nice &middot; Eze only</td><td>From 3 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Custom itinerary</td><td>Your schedule</td><td>Up to 7</td><td>&#8364;800</td></tr>
@@ -644,11 +655,11 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="faq-rule"></div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Where exactly do you meet us in Villefranche?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">At the top of the tender ramp on the lower harbour &mdash; Quai de l&apos;Amiral Courbet. We will be there with a name board before your tender docks. You will see us immediately. If you have any difficulty, WhatsApp us: +33 6 69 96 22 72.</p></div>
+          <div class="faq-a"><p class="faq-ai">At quai de l'Amiral Courbet in Villefranche-sur-Mer &mdash; the tender landing pier, in the old village itself. We will be there with a name board before your tender docks. The quay is directly in front of the tender dock; the car is thirty seconds away. If you have any difficulty, WhatsApp us: +33 6 69 96 22 72.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">How long is the excursion, and will it fit my ship&apos;s schedule?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 6 to 7 hours. We can shorten to 5 hours if your ship has an early departure &mdash; usually by reducing time in Nice or Monaco. Eze is never cut short. Send us your ship name and departure time when you enquire.</p></div>
+          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 4.5 to 5.5 hours from Villefranche &mdash; Nice is only 6 kilometres, ten minutes each way. We can shorten the itinerary if your ship has an early departure, usually by reducing time in Nice or Monaco. Eze is never cut short. Send us your ship name and departure time when you enquire.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Do you accompany us inside Eze village?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
@@ -656,7 +667,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">What if the tender runs late or the ship changes its schedule?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">We wait. There is no extra charge for tender delays. We stay in WhatsApp contact throughout the day and adapt the itinerary accordingly. This is standard on the Villefranche circuit.</p></div>
+          <div class="faq-a"><p class="faq-ai">We wait. There is no extra charge for tender delays. We stay in WhatsApp contact throughout the day and adapt the itinerary accordingly if the shore window is reduced. Villefranche ships anchor in the bay; tender delays are standard and we have built this into our planning from the start.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Is Eze difficult to walk?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
@@ -664,7 +675,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Can we skip Nice and spend more time in Eze or Monaco?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">Yes, and we often suggest it for guests who have already visited Nice. Skipping Nice gives an extra hour in Eze and a more relaxed Monaco circuit. Mention it when you enquire.</p></div>
+          <div class="faq-a"><p class="faq-ai">Yes, and we often suggest it for guests who have already visited Nice. Skipping Nice gives an extra hour in Eze and a more relaxed Monaco circuit. From Villefranche, Eze is reachable via a direct road up the hill &mdash; fifteen minutes from the tender pier. Mention your preference when you enquire.</p></div>
         </div>
       </div>
 
@@ -691,18 +702,17 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <div class="related-card-body">
               <div class="related-lbl">Shore Excursion &middot; Villefranche</div>
               <div class="related-name">Grasse &middot; Gourdon &middot; Tourrettes</div>
-              <div class="related-detail">Into Provence &middot; from 5 hrs &middot; &euro;800</div>
+              <div class="related-detail">Into Provence &middot; from 4 hrs &middot; &euro;800</div>
             </div>
           </a>
-          <a href="/shore-excursions/villefranche/menton-dolceacqua-apricale" class="related-card">
-            <div class="related-card-photo">
-              <img src="/photos/menton-old-town-colourful-houses-bay-view-shore-excursion-villefranche.avif"
-                   alt="Menton old town and bay — shore excursion from Villefranche" loading="lazy">
+          <a href="/shore-excursions/villefranche/nice-eze-menton" class="related-card">
+            <div class="related-card-photo" style="background:linear-gradient(160deg,#C8A87A,#8B5E3C);display:flex;align-items:center;justify-content:center;aspect-ratio:3/2">
+              <span style="font-family:var(--sc);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,28,26,.35)">Provence</span>
             </div>
             <div class="related-card-body">
               <div class="related-lbl">Shore Excursion &middot; Villefranche</div>
-              <div class="related-name">Menton &middot; Dolceacqua &middot; Apricale</div>
-              <div class="related-detail">Italian border &middot; from 5 hrs &middot; &euro;800</div>
+              <div class="related-name">Eze &middot; Monaco &middot; Menton</div>
+              <div class="related-detail">East along the Riviera &middot; from 4 hrs &middot; &euro;800</div>
             </div>
           </a>
           <a href="/villefranche-cruise-schedule" class="related-card">
@@ -710,9 +720,9 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
               <span style="font-family:var(--sc);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,170,130,.35)">2026 Schedule</span>
             </div>
             <div class="related-card-body">
-              <div class="related-lbl">Villefranche-sur-Mer</div>
+              <div class="related-lbl">Villefranche</div>
               <div class="related-name">2026 Cruise Schedule</div>
-              <div class="related-detail">Every ship, every date, tender times</div>
+              <div class="related-detail">Every ship calling at Villefranche in 2026</div>
             </div>
           </a>
         </div>
@@ -732,8 +742,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <div class="bk-price-eg">2 guests = &euro;400 p.p. &nbsp;&middot;&nbsp; 4 guests = &euro;200 p.p.<br>7 guests = &euro;114 p.p.</div>
           </div>
           <div class="bk-facts">
-            <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val"><strong>Quai de l&apos;Amiral Courbet</strong> &mdash; top of tender ramp</div></div>
-            <div class="bk-fact"><div class="bk-fact-lbl">Duration</div><div class="bk-fact-val">From <strong>5 hours</strong> &mdash; adapted to your ship</div></div>
+            <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val"><strong>Quai de l'Amiral Courbet</strong> &mdash; tender landing, in the village</div></div>
+            <div class="bk-fact"><div class="bk-fact-lbl">Duration</div><div class="bk-fact-val">From <strong>4.5 hours</strong> &mdash; adapted to your ship</div></div>
             <div class="bk-fact"><div class="bk-fact-lbl">Vehicle</div><div class="bk-fact-val"><strong>Mercedes V-Class</strong> &middot; air-conditioned &middot; private</div></div>
             <div class="bk-fact"><div class="bk-fact-lbl">Group size</div><div class="bk-fact-val">Up to <strong>7 passengers</strong> per vehicle</div></div>
             <div class="bk-fact"><div class="bk-fact-lbl">Return</div><div class="bk-fact-val">Always <strong>before your tender</strong> departs</div></div>
@@ -757,8 +767,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <!-- FIXED: always visible buttons at bottom of sidebar -->
       <div class="sidebar-fixed">
         <div class="bk-ctas">
-          <a href="/book?excursion=villefranche-nice-eze-monaco" class="bk-btn-main">
-            <span>Enquire about this excursion</span>
+          <a href="/book-shore-excursion?excursion=villefranche-nice-eze-monaco" class="bk-btn-main">
+            <span>Reserve Your Place</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="https://wa.me/33669962272?text=Shore+excursion+Villefranche+Nice+Eze+Monaco" class="bk-btn-wa" target="_blank" rel="noopener">WhatsApp us</a>
@@ -777,9 +787,9 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="cta-inner">
     <div class="cta-ol">Book this excursion</div>
     <h2 class="cta-h">Nice. Eze.<br><em>Monaco.</em></h2>
-    <p class="cta-body">Send us your ship name and shore time. We confirm the itinerary within the hour and meet you at the tender pier.</p>
+    <p class="cta-body">Send us your ship name and shore time. We confirm the itinerary within the hour and meet you at the tender pier in Villefranche.</p>
     <div class="cta-btns">
-      <a href="/book?excursion=villefranche-nice-eze-monaco" class="btn-bone"><span>Enquire now</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="/book-shore-excursion?excursion=villefranche-nice-eze-monaco" class="btn-bone"><span>Book Your Excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="https://wa.me/33669962272?text=Shore+excursion+Villefranche" class="btn-ghost" target="_blank" rel="noopener">WhatsApp us<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
