@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shore Excursion from Villefranche: Nice, Eze & Monaco | Riviera Journeys</title>
+<title>Shore Excursion from Cannes: Nice, Eze & Monaco | Riviera Journeys</title>
 <meta name="description" content="Private shore excursion from Cannes: Nice old town, Eze village at 427 metres, Monaco Principality. Mercedes V-Class, up to 7 guests. Fixed price €800. Back before the tender.">
 <link rel="canonical" href="https://rivierajourneys.fr/shore-excursions/cannes/nice-eze-monaco">
-<meta property="og:title" content="Shore Excursion from Villefranche: Nice, Eze &amp; Monaco | Riviera Journeys">
+<meta property="og:title" content="Shore Excursion from Cannes: Nice, Eze &amp; Monaco | Riviera Journeys">
 <meta property="og:description" content="Private shore excursion from Cannes. Nice old town, Eze at 427 metres, Monaco. Mercedes V-Class. Fixed price €800 per vehicle.">
 <meta property="og:image" content="https://rivierajourneys.fr/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif">
 <meta property="og:url" content="https://rivierajourneys.fr/shore-excursions/cannes/nice-eze-monaco">
@@ -24,7 +24,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristTrip",
 "name":"Shore Excursion from Cannes: Nice, Eze and Monaco",
-"description":"Private shore excursion from Cannes: Nice old port, Moyenne Corniche, Eze at 427 metres, Monaco. From 6 hours. Fixed price 800 EUR. 132 km.",
+"description":"Private shore excursion from Cannes: Nice old port, Moyenne Corniche, Eze at 427 metres, Monaco. From 5 hours. Fixed price 800 EUR.",
 "url":"https://rivierajourneys.fr/shore-excursions/cannes/nice-eze-monaco",
 "touristType":"Cruise passengers",
 "provider":{"@type":"LocalBusiness","name":"Riviera Journeys","url":"https://rivierajourneys.fr","telephone":"+33669962272"},
@@ -34,8 +34,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Where do you meet us in Cannes?","acceptedAnswer":{"@type":"Answer","text":"At boulevard Jean Hibert, on the lower harbour in Cannes — the tender landing pier. We are there with a name board before your tender docks. Cannes ships anchor in the bay and use tenders to bring passengers ashore."}},
-{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 6 hours. The route from Cannes is 132 km round trip. We plan the return from the moment you book and are always back before the tender departs."}},
-{"@type":"Question","name":"What is the price for a shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"800 EUR per vehicle, up to 7 passengers. Fixed price regardless of group size. Entrance fees and meals not included."}},
+{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Cannes?","acceptedAnswer":{"@type":"Answer","text":"From 5 hours. Nice is about 30 kilometres from Cannes. We plan the return from the moment you book and are always back before the tender departs."}},
+{"@type":"Question","name":"What is the price for a shore excursion from Cannes?","acceptedAnswer":{"@type":"Answer","text":"800 EUR per vehicle, up to 7 passengers. Fixed price regardless of group size. Entrance fees and meals not included."}},
 {"@type":"Question","name":"Do you accompany guests in Eze village?","acceptedAnswer":{"@type":"Answer","text":"No. We drop you at the entrance and wait with the car. We recommend the Chevre d'Or terrace for coffee or champagne with the view."}},
 {"@type":"Question","name":"Which Corniche road do you take?","acceptedAnswer":{"@type":"Answer","text":"The Moyenne Corniche, the middle road, most direct to Eze and most spectacular, with two panoramic stops above the sea."}}
 ]}
@@ -226,19 +226,32 @@ img{display:block;max-width:100%;height:auto}
 .stop-photo{margin-top:28px;overflow:hidden;background:var(--deep)}
 .stop-photo img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;transition:transform .6s var(--slow)}
 .stop-photo:hover img{transform:scale(1.03)}
-/* photo captions removed — captions on video only */
 
-/* Video placeholder */
-.stop-video{margin-top:20px;overflow:hidden;background:var(--deep);aspect-ratio:16/9;position:relative}
-.stop-video video{width:100%;height:100%;object-fit:cover;display:block}
-.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-.vid-ph-ico{width:50px;height:50px;border-radius:50%;border:.5px solid rgba(196,170,130,.3);display:flex;align-items:center;justify-content:center}
-.vid-ph-ico svg{width:16px;height:16px;fill:rgba(196,170,130,.5);stroke:none;margin-left:2px}
-.vid-ph-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.2em;color:rgba(196,170,130,.35)}
-.vid-ph-spec{font-family:var(--sans);font-size:9px;color:rgba(196,170,130,.2)}
-.vid-cap{margin-top:7px;display:flex;justify-content:space-between}
-.vid-cap-text{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--stone)}
-.vid-cap-note{font-family:var(--sc);font-size:7.5px;letter-spacing:.14em;color:var(--stone);opacity:.45}
+/* Vertical photo pair — replaces single horizontal within a stop */
+.stop-photo-pair{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden;background:var(--parch)}
+.stop-photo-pair-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep)}
+.stop-photo-pair-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
+.stop-photo-pair:hover .stop-photo-pair-item img{transform:scale(1.03)}
+@media(max-width:600px){.stop-photo-pair{grid-template-columns:1fr}.stop-photo-pair-item{aspect-ratio:4/3}}
+
+/* Horizontal video placeholder (16:9) */
+.stop-video-h{margin-top:28px;overflow:hidden;background:var(--deep);aspect-ratio:16/9;position:relative}
+.stop-video-h video{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Vertical media pair — photo + video side by side, 3:4 each */
+.stop-media-pair{margin-top:4px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--parch)}
+.stop-media-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep);position:relative}
+.stop-media-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
+.stop-media-pair:hover .stop-media-item img{transform:scale(1.03)}
+@media(max-width:600px){.stop-media-pair{grid-template-columns:1fr}}
+
+/* Video placeholder overlay — used in both .stop-video-h and .stop-media-item */
+.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px}
+.vid-ph-ico{width:46px;height:46px;border-radius:50%;border:.5px solid rgba(196,170,130,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vid-ph-ico svg{width:14px;height:14px;fill:rgba(196,170,130,.45);stroke:none;margin-left:2px}
+.vid-ph-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.2em;color:rgba(196,170,130,.3);text-align:center}
+.vid-ph-spec{font-family:var(--sans);font-size:9px;color:rgba(196,170,130,.18);text-align:center;line-height:1.5}
+.vid-cap{margin-top:6px;font-family:var(--serif);font-style:italic;font-size:12px;color:var(--stone)}
 
 /* SECTIONS */
 .s-includes,.s-pricing,.s-faq{margin-top:64px}
@@ -402,7 +415,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <li><a href="/multi-day">Multi-Day</a></li>
     <li><a href="/corporate">Corporate</a></li>
     <li><a href="/editorial">Roadbook</a></li>
-    <li><a href="/book" class="nav-cta"><span></span></a></li>
+    <li><a href="/book" class="nav-cta"><span>Enquire</span></a></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
     <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
@@ -418,13 +431,13 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <div class="mob-item"><a href="/transfers">Transfers</a></div>
     <div class="mob-item"><a href="/editorial">Roadbook</a></div>
   </nav>
-  <a href="/book" class="mobile-menu-cta"> — &#8364;800</a>
+  <a href="/book" class="mobile-menu-cta">Enquire — &#8364;800</a>
 </div>
 
 <!-- HERO -->
-<section class="hero" aria-label="Shore excursion from Villefranche: Nice, Eze, Monaco">
+<section class="hero" aria-label="Shore excursion from Cannes: Nice, Eze, Monaco">
   <div class="hero-photo">
-    <img src="/photos/cannes-old-port-yachts-le-suquet-sunrise-shore-excursions-from-cannes.avif"
+    <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif"
          alt="Cannes bay and Croisette — departure point for the Nice, Eze and Monaco shore excursion"
          loading="eager" fetchpriority="high">
   </div>
@@ -441,8 +454,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <span class="hero-pill">back before the tender</span>
     </div>
     <div class="hero-acts">
-      <a href="/book?excursion=cannes-nice-eze-monaco" class="btn-sand">
-        <span> Now</span>
+      <a href="/book-shore-excursion?excursion=cannes-nice-eze-monaco" class="btn-sand">
+        <span>Book Your Excursion</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="https://wa.me/33669962272?text=Shore+excursion+Cannes+Nice+Eze+Monaco" class="btn-ghost" target="_blank" rel="noopener">
@@ -458,14 +471,14 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="ticker-track">
     <span class="ticker-item">Cannes<span class="ticker-dot"></span></span>
     <span class="ticker-item">Nice &middot; Eze &middot; Monaco<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Shore excursion &middot; from 6 hrs &middot; 132 km<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Shore excursion &middot; from 5 hrs<span class="ticker-dot"></span></span>
     <span class="ticker-item">Mercedes V-Class &middot; Up to 7<span class="ticker-dot"></span></span>
     <span class="ticker-item">&#8364;800 per vehicle &middot; fixed price<span class="ticker-dot"></span></span>
     <span class="ticker-item">Back before the tender<span class="ticker-dot"></span></span>
     <span class="ticker-item">Meet at boulevard Jean Hibert<span class="ticker-dot"></span></span>
     <span class="ticker-item">Cannes<span class="ticker-dot"></span></span>
     <span class="ticker-item">Nice &middot; Eze &middot; Monaco<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Shore excursion &middot; from 6 hrs &middot; 132 km<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Shore excursion &middot; from 5 hrs<span class="ticker-dot"></span></span>
     <span class="ticker-item">Mercedes V-Class &middot; Up to 7<span class="ticker-dot"></span></span>
     <span class="ticker-item">&#8364;800 per vehicle &middot; fixed price<span class="ticker-dot"></span></span>
     <span class="ticker-item">Back before the tender<span class="ticker-dot"></span></span>
@@ -490,7 +503,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <!-- CONTENT -->
     <article class="content">
       <div class="section-lbl reveal">The Excursion</div>
-      <p class="intro reveal d1">Your ship anchors in the bay. A tender brings you ashore to boulevard Jean Hibert on the lower harbour. We are waiting at the landing &mdash; name board, Mercedes V-Class, no fuss. From Cannes, the eastern Riviera opens in one direction: Nice in forty minutes, Eze on the Corniche above it, Monaco at the end of the road. 132 kilometres round trip. The most complete shore excursion from this port.</p>
+      <p class="intro reveal d1">Your ship anchors in the bay. A tender brings you ashore to boulevard Jean Hibert on the lower harbour. We are waiting at the landing &mdash; name board, Mercedes V-Class, no fuss. From Cannes, the eastern Riviera opens in one direction: Nice in thirty minutes, Eze on the Corniche above it, Monaco at the end of the road. The most complete shore excursion from this port.</p>
 
       <h2 class="stops-h reveal">The route.<br><em>Four stops, one day.</em></h2>
 
@@ -499,26 +512,12 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-n">01</div>
         <div class="stop-body">
           <div class="stop-name">Nice</div>
-          <div class="stop-time">~50 min from Cannes &middot; 60&ndash;90 min ashore</div>
-          <p class="stop-desc">We leave Cannes heading east on the A8 &mdash; Nice is about 30 kilometres, forty to fifty minutes depending on traffic. First stop: the Vieux-Port and Cours Saleya, the flower and food market that runs every morning. The old town behind it: narrow lanes, baroque churches, the light that made the Impressionists stay. For a first visit, an hour is the minimum. If you have been before, forty-five minutes in the market and we leave before the coaches arrive.</p>
+          <div class="stop-time">~30 min from Cannes &middot; 60&ndash;90 min ashore</div>
+          <p class="stop-desc">We leave Cannes heading east on the A8 — Nice is about 30 kilometres, thirty to thirty-five minutes depending on traffic. First stop: the Vieux-Port and Cours Saleya, the flower and food market that runs every morning until noon. The old town behind it — narrow lanes, baroque churches, Italianate ochre facades, the light that made the Impressionists stay. For a first visit, an hour is the minimum. If you have been before, forty-five minutes in the market and we leave before the coaches arrive from the cruise terminal.</p>
           <div class="stop-photo">
             <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"
-                 alt="Nice old port and Promenade des Anglais &mdash; shore excursion from Villefranche"
+                 alt="Nice old port and Promenade des Anglais — shore excursion from Cannes"
                  loading="lazy" width="900" height="600">
-
-          </div>
-          <!-- VIDEO: /video/nice-cours-saleya-morning.mp4 -->
-          <div class="stop-video">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"><source src="/video/nice-cours-saleya-morning.mp4" type="video/mp4"></video>-->
-            <div class="vid-ph">
-              <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Nice &middot; Cours Saleya</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; market sounds &middot; morning &middot; /video/nice-cours-saleya-morning.mp4</span>
-            </div>
-          </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">Cours Saleya market, Nice &mdash; early morning</span>
-            <span class="vid-cap-note">Placeholder</span>
           </div>
         </div>
       </div>
@@ -529,19 +528,16 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Moyenne Corniche</div>
           <div class="stop-time">2 panoramic stops en route to Eze</div>
-          <p class="stop-desc">From Nice we take the Moyenne Corniche &mdash; the middle of the three coastal roads, from which Hitchcock filmed <em>To Catch a Thief</em>. The road climbs above the resort towns and the sea opens below you. We stop twice: once for the view back toward Nice and Cap Ferrat; once just before Eze where Monaco appears for the first time in the distance. These stops add twenty minutes and are not optional.</p>
-          <div class="stop-video" style="margin-top:24px">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/la-turbie-village-hills-mediterranean-view-grande-corniche-nice-menton.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>-->
+          <p class="stop-desc">From Nice we take the Moyenne Corniche — the middle of the three coastal roads, the one Hitchcock used in <em>To Catch a Thief</em>. The road climbs through the hills above the resort towns and the sea opens below you. We make two stops: once for the view back toward Nice and the Cap Ferrat peninsula; once just before Eze where Monaco appears in the distance for the first time, compressed against the sea. These stops add fifteen to twenty minutes and are not optional — they are part of why you came.</p>
+          <div class="stop-video-h">
+            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/moyenne-corniche-road-sea-view-nice-eze-shore-excursion-cannes.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>-->
             <div class="vid-ph">
               <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Moyenne Corniche</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; in-car &middot; road + sea &middot; /video/moyenne-corniche-driving.mp4</span>
+              <span class="vid-ph-lbl">Video &middot; Moyenne Corniche &middot; horizontal</span>
+              <span class="vid-ph-spec">16:9 &middot; 10–15 sec &middot; in-car driving shot &middot; sea right &middot; /video/moyenne-corniche-driving.mp4</span>
             </div>
           </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">Moyenne Corniche &mdash; the road to Eze</span>
-            <span class="vid-cap-note">Placeholder</span>
-          </div>
+          <p class="vid-cap">Moyenne Corniche — the middle road to Eze</p>
         </div>
       </div>
 
@@ -551,25 +547,19 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Eze Village</div>
           <div class="stop-time">427 metres &middot; 60&ndash;75 min &middot; independently</div>
-          <p class="stop-desc">Eze is a medieval village built on a rock at 427 metres above the sea. Pedestrian from the gate &mdash; we leave you there and wait at the car park. At the top: the Jardin Exotique (&euro;7 entrance) with cacti and succulents around a ruined ch&acirc;teau, and a view of Cap Ferrat, Monaco, and on clear days the Italian coast as far as Bordighera.</p>
-          <div class="stop-tip"><strong>Our recommendation:</strong> Take the right lane at the gate and climb to the H&ocirc;tel Ch&egrave;vre d&apos;Or. Their terrace looks south over the sea &mdash; Cap Ferrat directly below, Monaco to the east. A coffee or a glass of champagne here, on a clear morning, is the best twenty minutes of the excursion.</div>
-          <div class="stop-photo">
-            <img src="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"
-                 alt="Eze medieval village church with bay view &mdash; shore excursion from Villefranche"
-                 loading="lazy" width="900" height="600">
-
-          </div>
-          <div class="stop-video">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"><source src="/video/eze-village-panorama.mp4" type="video/mp4"></video>-->
-            <div class="vid-ph">
-              <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Eze Village</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; static &middot; sea panorama &middot; wind &middot; /video/eze-village-panorama.mp4</span>
+          <p class="stop-desc">Eze is a medieval village built on a volcanic rock at 427 metres above the sea. Pedestrian from the gate — we leave you there and wait at the car park below. The lanes are steep, cobbled, and largely unchanged since the thirteenth century. At the top: the Jardin Exotique (€7) built around the ruins of a château, with cacti, succulents, and a view that takes in Cap Ferrat, Monaco, and on clear days the Italian coast as far as Bordighera. Sixty to seventy-five minutes here; not a minute wasted.</p>
+          <div class="stop-tip"><strong>Our recommendation:</strong> Take the right lane at the gate and climb to the Hôtel Chèvre d'Or. Their terrace looks south over the sea — Cap Ferrat directly below, Monaco to the east. A coffee or a glass of champagne on that terrace, on a clear morning, is the best twenty minutes of this excursion.</div>
+          <div class="stop-photo-pair">
+            <div class="stop-photo-pair-item">
+              <img src="/photos/eze-village-stone-lane-morning-light-shore-excursion-cannes.avif"
+                   alt="Stone lane in Eze village — shore excursion from Cannes"
+                   loading="lazy">
             </div>
-          </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">View from the summit, Eze &mdash; 427 metres</span>
-            <span class="vid-cap-note">Placeholder</span>
+            <div class="stop-photo-pair-item">
+              <img src="/photos/eze-village-panorama-cap-ferrat-sea-view-shore-excursion-cannes.avif"
+                   alt="Panoramic view from Eze village over Cap Ferrat — shore excursion from Cannes"
+                   loading="lazy">
+            </div>
           </div>
         </div>
       </div>
@@ -580,24 +570,26 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Monaco</div>
           <div class="stop-time">90&ndash;120 min &middot; Port Hercule &middot; Casino &middot; Le Rocher</div>
-          <p class="stop-desc">From Eze we descend to Monaco &mdash; the Principality, 2.02 square kilometres, ruled by the Grimaldi family since 1297. Port Hercule for the yachts. The Casino de Monte-Carlo gardens and the Belle &Eacute;poque fa&ccedil;ade. Then Le Rocher: the old town, the cathedral where Grace Kelly is buried, the view from the palace ramparts south over the sea. The return to Cannes by the A8 takes approximately 75 minutes.</p>
+          <p class="stop-desc">From Eze we descend to Monaco — the Principality, 2.02 square kilometres, ruled by the Grimaldi family since 1297. Port Hercule for the yachts: super-yachts moored stern-to, the scale of the boats against the buildings. The Casino de Monte-Carlo gardens and the Belle Époque façade — you can walk past without going in and still understand what this place is about. Then Le Rocher, the old town on the rock: the cathedral where Grace Kelly is buried, the palace changing of the guard at 11:55 if your timing allows, the view from the ramparts south over the sea. The return to Cannes by the A8 takes approximately 75 minutes.</p>
           <div class="stop-photo">
             <img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"
-                 alt="Monaco Port Hercule with Monte Carlo Casino &mdash; shore excursion from Villefranche"
+                 alt="Monaco Port Hercule with Monte Carlo Casino — shore excursion from Cannes"
                  loading="lazy" width="900" height="600">
-
           </div>
-          <div class="stop-video">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"><source src="/video/monaco-port-hercule.mp4" type="video/mp4"></video>-->
-            <div class="vid-ph">
-              <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-              <span class="vid-ph-lbl">Video &middot; Monaco &middot; Port Hercule</span>
-              <span class="vid-ph-spec">10&ndash;15 sec &middot; port &middot; yachts &middot; ambient &middot; /video/monaco-port-hercule.mp4</span>
+          <div class="stop-media-pair">
+            <div class="stop-media-item">
+              <img src="/photos/monaco-le-rocher-palace-ramparts-sea-view-shore-excursion-cannes.avif"
+                   alt="Monaco Le Rocher palace ramparts with sea view — shore excursion from Cannes"
+                   loading="lazy">
             </div>
-          </div>
-          <div class="vid-cap">
-            <span class="vid-cap-text">Port Hercule, Monaco &mdash; morning</span>
-            <span class="vid-cap-note">Placeholder</span>
+            <div class="stop-media-item">
+              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/monaco-port-hercule-yachts-vertical-shore-excursion-cannes.avif"><source src="/video/monaco-port-hercule-vertical.mp4" type="video/mp4"></video>-->
+              <div class="vid-ph">
+                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+                <span class="vid-ph-lbl">Video &middot; Monaco &middot; vertical</span>
+                <span class="vid-ph-spec">9:16 &middot; 10–15 sec &middot; Port Hercule &middot; yachts &middot; /video/monaco-port-hercule-vertical.mp4</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -607,7 +599,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="mobile-cta-price">&#8364;800</div>
         <div class="mobile-cta-sub">Per vehicle &middot; up to 7 passengers</div>
         <div class="mobile-cta-btns">
-          <a href="/book?excursion=cannes-nice-eze-monaco" class="btn-sand" style="justify-content:center"><span> now</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="/book-shore-excursion?excursion=cannes-nice-eze-monaco" class="btn-sand" style="justify-content:center"><span>Book Your Excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="https://wa.me/33669962272?text=Shore+excursion+Cannes" style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);border:.5px solid rgba(168,101,67,.3);padding:12px" target="_blank" rel="noopener">WhatsApp us</a>
         </div>
       </div>
@@ -627,9 +619,9 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <div class="s-pricing reveal">
         <h2 class="section-h">Pricing.<br><em>One price. Per vehicle.</em></h2>
         <table class="pricing-table"><colgroup><col><col><col><col></colgroup>
-          <thead><tr><th>Route</th><th></th><th>Group size</th><th>Price</th></tr></thead>
+          <thead><tr><th>Route</th><th>Duration</th><th>Group size</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Nice &middot; Eze &middot; Monaco</td><td>From 6 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
+            <tr><td>Nice &middot; Eze &middot; Monaco</td><td>From 5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Eze &middot; Monaco only</td><td>From 4.5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Nice &middot; Eze only</td><td>From 4 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Custom itinerary</td><td>Your schedule</td><td>Up to 7</td><td>&#8364;800</td></tr>
@@ -648,7 +640,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">How long is the excursion, and will it fit my ship&apos;s schedule?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 6 to 7 hours from Cannes &mdash; the drive to Nice is 50 minutes each way. We can shorten the itinerary if your ship has an early departure, usually by reducing time in Nice or Monaco. Eze is never cut short. Send us your ship name and departure time when you .</p></div>
+          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 5 to 6 hours from Cannes &mdash; Nice is about 30 kilometres, thirty minutes each way. We can shorten the itinerary if your ship has an early departure, usually by reducing time in Nice or Monaco. Eze is never cut short. Send us your ship name and departure time when you enquire.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Do you accompany us inside Eze village?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
@@ -656,7 +648,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">What if the tender runs late or the ship changes its schedule?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">We wait. There is no extra charge for tender delays. We stay in WhatsApp contact throughout the day and adapt the itinerary accordingly. This is standard on the Villefranche circuit.</p></div>
+          <div class="faq-a"><p class="faq-ai">We wait. There is no extra charge for tender delays. We stay in WhatsApp contact throughout the day and adapt the itinerary accordingly if the shore window is reduced. Cannes ships anchor in the bay; tender delays are standard and we have built this into our planning from the start.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Is Eze difficult to walk?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
@@ -664,7 +656,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Can we skip Nice and spend more time in Eze or Monaco?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">Yes, and we often suggest it for guests who have already visited Nice. Skipping Nice gives an extra hour in Eze and a more relaxed Monaco circuit. Mention it when you .</p></div>
+          <div class="faq-a"><p class="faq-ai">Yes, and we often suggest it for guests who have already visited Nice. Skipping Nice gives an extra hour in Eze and a more relaxed Monaco circuit. Mention it when you enquire.</p></div>
         </div>
       </div>
 
@@ -675,7 +667,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           <a href="/shore-excursions/cannes/cannes-antibes-stpaul" class="related-card">
             <div class="related-card-photo">
               <img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif"
-                   alt="Saint-Paul-de-Vence village — shore excursion from Villefranche" loading="lazy">
+                   alt="Saint-Paul-de-Vence village — shore excursion from Cannes" loading="lazy">
             </div>
             <div class="related-card-body">
               <div class="related-lbl">Shore Excursion &middot; Cannes</div>
@@ -686,7 +678,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           <a href="/shore-excursions/cannes/grasse-gourdon" class="related-card">
             <div class="related-card-photo">
               <img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif"
-                   alt="Grasse old town — shore excursion from Villefranche" loading="lazy">
+                   alt="Grasse old town — shore excursion from Cannes" loading="lazy">
             </div>
             <div class="related-card-body">
               <div class="related-lbl">Shore Excursion &middot; Cannes</div>
@@ -756,8 +748,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <!-- FIXED: always visible buttons at bottom of sidebar -->
       <div class="sidebar-fixed">
         <div class="bk-ctas">
-          <a href="/book?excursion=cannes-nice-eze-monaco" class="bk-btn-main">
-            <span>Enquire now</span>
+          <a href="/book-shore-excursion?excursion=cannes-nice-eze-monaco" class="bk-btn-main">
+            <span>Reserve Your Place</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="https://wa.me/33669962272?text=Shore+excursion+Cannes+Nice+Eze+Monaco" class="bk-btn-wa" target="_blank" rel="noopener">WhatsApp us</a>
@@ -778,7 +770,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <h2 class="cta-h">Nice. Eze.<br><em>Monaco.</em></h2>
     <p class="cta-body">Send us your ship name and shore time. We confirm the itinerary within the hour and meet you at the tender pier.</p>
     <div class="cta-btns">
-      <a href="/book?excursion=cannes-nice-eze-monaco" class="btn-bone"><span>Enquire now</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="/book-shore-excursion?excursion=cannes-nice-eze-monaco" class="btn-bone"><span>Book Your Excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="https://wa.me/33669962272?text=Shore+excursion+Cannes" class="btn-ghost" target="_blank" rel="noopener">WhatsApp us<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
