@@ -246,6 +246,35 @@ img{display:block;max-width:100%;height:auto}
 .stop-media-pair:hover .stop-media-item img{transform:scale(1.03)}
 @media(max-width:600px){.stop-media-pair{grid-template-columns:1fr}}
 
+/* ── VIDEO PLAY BUTTON ──────────────────────────────────────────────────── */
+.vid-play-btn{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;
+  border:.5px solid rgba(196,170,130,.55);
+  background:rgba(28,28,26,.38);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:2;
+  transition:opacity .4s var(--slow),background .3s,border-color .3s,transform .4s var(--slow);
+}
+.vid-play-btn:hover{
+  background:rgba(28,28,26,.62);
+  border-color:rgba(196,170,130,.9);
+  transform:translate(-50%,-50%) scale(1.08);
+}
+.vid-play-btn svg{
+  width:16px;height:16px;fill:var(--sand);
+  margin-left:3px; /* optical centre for triangle */
+  transition:fill .3s;
+}
+.vid-play-btn:hover svg{fill:#d4bc96}
+.vid-play-btn.is-playing{opacity:.35}
+.vid-play-btn.is-playing:hover{opacity:1}
+.vid-play-btn .icon-pause{display:none}
+.vid-play-btn.is-playing .icon-play{display:none}
+.vid-play-btn.is-playing .icon-pause{display:block}
+
 /* Video placeholder overlay — used in both .stop-video-h and .stop-media-item */
 .vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px}
 .vid-ph-ico{width:46px;height:46px;border-radius:50%;border:.5px solid rgba(196,170,130,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -572,7 +601,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           <div class="stop-time">2 panoramic stops en route to Eze</div>
           <p class="stop-desc">From Nice we take the Moyenne Corniche — the middle of the three coastal roads, the one Hitchcock used in <em>To Catch a Thief</em>. The road climbs through the hills above the resort towns and the sea opens below you. We make two stops: once for the view back toward Nice and the Cap Ferrat peninsula; once just before Eze where Monaco appears in the distance for the first time, compressed against the sea. These stops add fifteen to twenty minutes and are not optional — they are part of why you came.</p>
           <div class="stop-video-h">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/moyenne-corniche-road-sea-view-nice-eze-shore-excursion-cannes.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>-->
+            <!--<video muted loop playsinline preload="none" poster="/photos/moyenne-corniche-road-sea-view-nice-eze-shore-excursion-cannes.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>
+            <button class="vid-play-btn" aria-label="Play / pause video"><svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg><svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" rx="1"/><rect x="15" y="4" width="4" height="16" rx="1"/></svg></button>-->
             <div class="vid-ph">
               <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
               <span class="vid-ph-lbl">Video &middot; Moyenne Corniche &middot; horizontal</span>
@@ -625,10 +655,14 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
                    loading="lazy">
             </div>
             <div class="stop-media-item">
-              <video muted autoplay loop playsinline preload="none"
+              <video muted loop playsinline preload="none"
                      poster="/photos/monte-carlo-casino-hotel-de-paris-cafe-de-paris-place-du-casino.avif">
                 <source src="/video/monaco-le-rocher.mp4" type="video/mp4">
               </video>
+              <button class="vid-play-btn" aria-label="Play / pause video">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" rx="1"/><rect x="15" y="4" width="4" height="16" rx="1"/></svg>
+              </button>
             </div>
           </div>
         </div>
@@ -832,6 +866,25 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 (function(){var btn=document.getElementById('navBurger'),menu=document.getElementById('mobileMenu'),close=document.getElementById('mobileClose');if(!btn||!menu)return;var open=false;function toggle(){open=!open;btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);menu.setAttribute('aria-hidden',!open);if(open){menu.style.display='flex';setTimeout(function(){menu.style.opacity='1'},10);document.body.style.overflow='hidden';}else{menu.style.opacity='0';setTimeout(function(){menu.style.display='none'},400);document.body.style.overflow='';}}btn.addEventListener('click',toggle);if(close)close.addEventListener('click',toggle)})();
 function faq(q){var item=q.closest('.faq-item'),isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});if(!isOpen)item.classList.add('open');}
 (function(){if(!window.IntersectionObserver)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);})})();
+// ── VIDEO PLAY BUTTONS ──────────────────────────────────────────────────────
+(function(){
+  document.querySelectorAll('.vid-play-btn').forEach(function(btn){
+    var video = btn.parentElement.querySelector('video');
+    if(!video) return;
+    btn.addEventListener('click', function(){
+      if(video.paused){
+        video.play();
+        btn.classList.add('is-playing');
+      } else {
+        video.pause();
+        btn.classList.remove('is-playing');
+      }
+    });
+    video.addEventListener('ended', function(){
+      btn.classList.remove('is-playing');
+    });
+  });
+})();
 </script>
 <script src="/nav.js" defer></script>
 </body>
