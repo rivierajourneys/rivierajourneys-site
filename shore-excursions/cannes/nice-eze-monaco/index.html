@@ -242,6 +242,7 @@ img{display:block;max-width:100%;height:auto}
 .stop-media-pair{margin-top:4px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--parch)}
 .stop-media-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep);position:relative}
 .stop-media-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
+.stop-media-item video{width:100%;height:100%;object-fit:cover;display:block}
 .stop-media-pair:hover .stop-media-item img{transform:scale(1.03)}
 @media(max-width:600px){.stop-media-pair{grid-template-columns:1fr}}
 
@@ -623,12 +624,11 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
                    alt="View across Port Hercule toward Monte Carlo Casino and Monte Carlo skyline, Mediterranean setting, Nice Èze Monaco shore excursion"
                    loading="lazy">
             </div>
-           <div class="stop-media-item">
-  <video muted autoplay loop playsinline preload="none"
-         poster="/photos/monte-carlo-casino-hotel-de-paris-cafe-de-paris-place-du-casino.avif">
-    <source src="/video/monaco-le-rocher.mp4" type="video/mp4">
-  </video>
-</div>
+            <div class="stop-media-item">
+              <video muted autoplay loop playsinline preload="none"
+                     poster="/photos/monte-carlo-casino-hotel-de-paris-cafe-de-paris-place-du-casino.avif">
+                <source src="/video/monaco-le-rocher.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
         </div>
