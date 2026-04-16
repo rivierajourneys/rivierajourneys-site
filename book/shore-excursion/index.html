@@ -10,8 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Cormorant+SC:wght@300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bone:#FDFAF6;--parch:#EAE3D7;--sand:#C4AA82;
-  --stone:#8C8880;--warm:#1C1C1A;--terra:#A86543;
+  --bone:#FDFAF6;--bone2:#F7F3ED;--parch:#EAE3D7;
+  --sand:#C4AA82;--stone:#8C8880;--slate:#3D3D38;
+  --warm:#1C1C1A;--terra:#A86543;--deep:#2B2B27;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sc:'Cormorant SC',Georgia,serif;
   --sans:'Jost',sans-serif;
@@ -20,117 +21,182 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100vh}
 body{
-  font-family:var(--sans);font-weight:300;
+  font-family:var(--sans);font-weight:400;font-size:16px;
   background:var(--bone);
   display:flex;align-items:center;justify-content:center;
-  min-height:100vh;padding:60px 40px 72px;
+  min-height:100vh;padding:72px 40px 80px;
 }
-.card{width:100%;max-width:760px}
 
-.card-header{padding-bottom:28px}
-.kicker{
-  font-family:var(--sc);font-size:8px;font-weight:300;
-  letter-spacing:.26em;text-transform:uppercase;color:var(--sand);
-  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+/* CLOSE BUTTON */
+.close-btn{
+  position:fixed;top:28px;right:32px;
+  width:44px;height:44px;
+  border:.5px solid var(--parch);
+  background:var(--bone);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:border-color .3s,background .3s;
+  z-index:100;text-decoration:none;
 }
-.kicker::before{content:'';width:18px;height:.5px;background:var(--sand);display:block}
+.close-btn:hover{border-color:var(--sand);background:var(--bone2)}
+.close-btn svg{width:14px;height:14px;stroke:var(--stone);stroke-width:1.5;transition:stroke .3s;fill:none}
+.close-btn:hover svg{stroke:var(--warm)}
+
+/* CARD */
+.card{width:100%;max-width:780px}
+
+/* HEADER */
+.card-header{padding-bottom:32px}
+.kicker{
+  font-family:var(--sc);font-size:10.5px;font-weight:300;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--sand);
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.kicker::before{content:'';width:20px;height:.5px;background:var(--sand);display:block}
 .panel-h{
-  font-family:var(--serif);font-size:clamp(30px,4vw,42px);
-  font-weight:300;color:var(--warm);line-height:1.06;margin-bottom:10px;
+  font-family:var(--serif);font-size:clamp(28px,4vw,44px);
+  font-weight:300;color:var(--warm);line-height:1.06;margin-bottom:12px;
 }
 .panel-h em{font-style:italic;color:rgba(28,28,26,.28)}
-.panel-sub{font-family:var(--sans);font-size:12px;font-weight:300;color:var(--stone);line-height:1.75}
-.divider{height:.5px;background:var(--parch);margin:24px 0}
+.panel-sub{
+  font-family:var(--sans);font-size:15px;font-weight:400;
+  color:var(--stone);line-height:1.75;max-width:520px;
+}
+.divider{height:.5px;background:var(--parch);margin:28px 0}
 
-.field{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+/* SECTION LABEL */
+.form-section-lbl{
+  font-family:var(--sc);font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--sand);
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:24px;margin-top:36px;
+}
+.form-section-lbl::before{content:'';display:block;width:16px;height:.5px;background:var(--sand)}
+
+/* FIELDS */
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
 .field:last-of-type{margin-bottom:0}
 .field label{
-  font-family:var(--sans);font-size:8px;font-weight:500;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--stone);
+  font-family:var(--sans);font-size:9.5px;font-weight:400;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--stone);
 }
-.opt{font-weight:300;opacity:.55;letter-spacing:.02em;text-transform:none;font-size:7.5px}
+.opt{font-weight:300;opacity:.5;letter-spacing:.04em;text-transform:none;font-size:9px}
 .field input,.field select,.field textarea{
-  font-family:var(--sans);font-size:15px;font-weight:300;
+  font-family:var(--sans);font-size:16px;font-weight:400;
   color:var(--warm);background:transparent;
   border:none;border-bottom:1.5px solid var(--parch);
-  padding:9px 0 8px;outline:none;
+  padding:10px 0 9px;outline:none;
   transition:border-color .25s;width:100%;
   border-radius:0;-webkit-appearance:none;appearance:none;
 }
-.field input::placeholder,.field textarea::placeholder{color:#d8d1c6}
+.field input::placeholder,.field textarea::placeholder{color:rgba(140,136,128,.4);font-weight:300}
 .field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--sand)}
 .field input.error,.field select.error{border-bottom-color:var(--terra)}
 .field input[type="date"],.field input[type="time"]{color-scheme:light;accent-color:var(--sand)}
 .field input[type="date"]::-webkit-calendar-picker-indicator,
 .field input[type="time"]::-webkit-calendar-picker-indicator{
-  opacity:.35;cursor:pointer;
-  filter:invert(68%) sepia(28%) saturate(400%) hue-rotate(5deg) brightness(.85);
+  opacity:.3;cursor:pointer;
+  filter:invert(58%) sepia(18%) saturate(300%) hue-rotate(5deg) brightness(.9);
 }
 .field select{
   cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238C8880' stroke-width='.8'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 2px center;padding-right:18px;
+  background-repeat:no-repeat;background-position:right 4px center;padding-right:20px;
 }
 .field select option{background:var(--bone);color:var(--warm)}
-.field textarea{resize:none;height:54px;line-height:1.6;font-size:14px}
+.field textarea{resize:none;height:60px;line-height:1.7;font-size:15px}
 
-.row-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.row-3{display:grid;grid-template-columns:2fr 1fr 100px;gap:20px;align-items:end}
-.row-2b{display:grid;grid-template-columns:2fr 120px;gap:28px;align-items:end}
+/* GRID ROWS */
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.row-3{display:grid;grid-template-columns:2fr 1.2fr 110px;gap:24px;align-items:end}
+.row-2b{display:grid;grid-template-columns:1fr 130px;gap:32px;align-items:end}
 
+/* CTA ROW */
 .cta-row{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;
-  margin-top:24px;padding-top:20px;border-top:.5px solid var(--parch);
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  margin-top:32px;padding-top:28px;border-top:.5px solid var(--parch);
 }
 .cta-note{
-  grid-column:1/-1;font-family:var(--sans);font-size:9px;font-weight:300;
-  color:var(--stone);text-align:center;margin-top:6px;line-height:1.4;letter-spacing:.05em;opacity:.6;
+  grid-column:1/-1;
+  font-family:var(--sans);font-size:11px;font-weight:300;
+  color:var(--stone);text-align:center;margin-top:10px;
+  line-height:1.55;letter-spacing:.04em;opacity:.55;
 }
+
+/* BUTTONS */
 .btn-submit{
-  font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--warm);background:var(--sand);padding:15px 12px;border:none;cursor:pointer;
+  font-family:var(--sans);font-size:10px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--warm);background:var(--sand);
+  padding:16px 12px;border:none;cursor:pointer;
   position:relative;overflow:hidden;transition:color .4s;
-  display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
 }
 .btn-submit::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}
 .btn-submit:hover::before{transform:translateX(0)}
 .btn-submit:hover{color:var(--bone)}
 .btn-submit span,.btn-submit svg{position:relative;z-index:1}
-.btn-submit svg{transition:transform .3s}
+.btn-submit svg{transition:transform .3s;fill:none;stroke:currentColor;stroke-width:1.5}
 .btn-submit:hover svg{transform:translateX(3px)}
 .btn-submit:disabled{opacity:.4;cursor:not-allowed}
 .btn-wa{
-  font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--warm);background:transparent;border:1.5px solid var(--sand);
-  padding:15px 12px;cursor:pointer;position:relative;overflow:hidden;transition:color .3s;
-  display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;width:100%;
+  font-family:var(--sans);font-size:10px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--warm);background:transparent;
+  border:1.5px solid var(--sand);
+  padding:16px 12px;cursor:pointer;
+  position:relative;overflow:hidden;transition:color .3s;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  text-decoration:none;width:100%;
 }
 .btn-wa::before{content:'';position:absolute;inset:0;background:var(--sand);transform:translateX(-101%);transition:transform .5s var(--slow)}
 .btn-wa:hover::before{transform:translateX(0)}
 .btn-wa:hover{color:var(--warm)}
 .btn-wa span,.btn-wa svg{position:relative;z-index:1}
 
+/* SUCCESS STATE */
 .success-state{
   display:none;flex-direction:column;align-items:center;
-  justify-content:center;padding:56px 0;text-align:center;
+  justify-content:center;padding:72px 0;text-align:center;
 }
-.success-state h3{font-family:var(--serif);font-size:32px;font-weight:300;color:var(--warm);margin-bottom:12px}
-.success-state p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.8}
+.success-kicker{
+  font-family:var(--sc);font-size:10px;letter-spacing:.22em;
+  color:var(--sand);margin-bottom:20px;
+}
+.success-state h3{
+  font-family:var(--serif);font-size:36px;font-weight:300;
+  color:var(--warm);margin-bottom:14px;line-height:1.1;
+}
+.success-state p{
+  font-family:var(--sans);font-size:15px;font-weight:400;
+  color:var(--stone);line-height:1.8;max-width:400px;
+}
+.success-state a{color:var(--terra)}
 
 @media(max-width:600px){
-  body{padding:44px 24px 56px}
+  body{padding:56px 24px 64px}
+  .close-btn{top:16px;right:16px}
   .row-2,.row-3,.row-2b{grid-template-columns:1fr}
   .cta-row{grid-template-columns:1fr}
+  .panel-sub{font-size:14.5px}
+  .field input,.field select{font-size:17px;font-weight:400}
+  .field label{font-size:10px}
 }
 </style>
 </head>
 <body>
+
+<a href="javascript:history.back()" class="close-btn" aria-label="Close and return">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 6L6 18M6 6l12 12"/>
+  </svg>
+</a>
+
 <div class="card">
 
   <div class="card-header">
-    <div class="kicker">Shore Excursion · Private</div>
-    <h1 class="panel-h">Your ship is in port. <em>We are outside.</em></h1>
-    <p class="panel-sub">Private Mercedes V-Class, up to 7 passengers. Back before departure — we plan the day around your ship's schedule.</p>
+    <div class="kicker">Shore Excursion &middot; Private</div>
+    <h1 class="panel-h">Your ship is in port.<br><em>We are outside.</em></h1>
+    <p class="panel-sub">Private Mercedes V-Class, up to 7 passengers. We plan the day around your ship&rsquo;s schedule &mdash; departure time, tender, and return.</p>
   </div>
 
   <div class="divider"></div>
@@ -138,6 +204,8 @@ body{
   <form id="form" action="https://formspree.io/f/mjgpnaoz" method="POST" novalidate>
     <input type="hidden" name="_subject" value="Shore Excursion Request — Riviera Journeys">
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="form-section-lbl">Your details</div>
 
     <div class="field">
       <label for="name">Your name *</label>
@@ -155,8 +223,9 @@ body{
       </div>
     </div>
 
-    <!-- ship name · port of call · departure time -->
-    <div class="row-3" style="margin-top:20px">
+    <div class="form-section-lbl">Your ship</div>
+
+    <div class="row-3">
       <div class="field" style="margin-bottom:0">
         <label for="ship">Ship name *</label>
         <input type="text" id="ship" name="ship_name" required placeholder="e.g. MSC Bellissima" autocomplete="off">
@@ -175,7 +244,7 @@ body{
       </div>
     </div>
 
-    <div class="row-2b" style="margin-top:20px">
+    <div class="row-2b" style="margin-top:24px">
       <div class="field" style="margin-bottom:0">
         <label for="date">Date *</label>
         <input type="date" id="date" name="date" required>
@@ -183,7 +252,7 @@ body{
       <div class="field" style="margin-bottom:0">
         <label for="pax">Passengers *</label>
         <select id="pax" name="passengers" required>
-          <option value="" disabled selected>—</option>
+          <option value="" disabled selected>&mdash;</option>
           <option>1</option><option>2</option><option>3</option>
           <option>4</option><option>5</option><option>6</option>
           <option>7</option><option value="8+">8+</option>
@@ -191,53 +260,58 @@ body{
       </div>
     </div>
 
-    <div class="field" style="margin-top:20px">
-      <label for="route">Excursion *</label>
+    <div class="form-section-lbl">The excursion</div>
+
+    <div class="field">
+      <label for="route">Route *</label>
       <select id="route" name="excursion_route" required>
         <option value="" disabled selected>Select your excursion</option>
         <optgroup label="From Cannes">
-          <option value="cannes-nice-eze-monaco">Nice · Eze · Monaco</option>
-          <option value="cannes-antibes-stpaul">Cannes · Antibes · Saint-Paul-de-Vence</option>
-          <option value="cannes-grasse-gourdon">Grasse · Gourdon · Tourrettes-sur-Loup</option>
+          <option value="cannes-nice-eze-monaco">Nice &middot; Eze &middot; Monaco</option>
+          <option value="cannes-antibes-stpaul">Cannes &middot; Antibes &middot; Saint-Paul-de-Vence</option>
+          <option value="cannes-grasse-gourdon">Grasse &middot; Gourdon &middot; Tourrettes-sur-Loup</option>
           <option value="cannes-provence-wine">Provence Wine Tour</option>
         </optgroup>
         <optgroup label="From Villefranche">
-          <option value="villefranche-nice-eze-monaco">Nice · Eze · Monaco</option>
-          <option value="villefranche-antibes-stpaul">Cannes · Antibes · Saint-Paul-de-Vence</option>
-          <option value="villefranche-grasse-gourdon">Grasse · Gourdon · Tourrettes-sur-Loup</option>
-          <option value="villefranche-menton-dolceacqua">Menton · Dolceacqua · Apricale</option>
+          <option value="villefranche-nice-eze-monaco">Nice &middot; Eze &middot; Monaco</option>
+          <option value="villefranche-antibes-stpaul">Cannes &middot; Antibes &middot; Saint-Paul-de-Vence</option>
+          <option value="villefranche-grasse-gourdon">Grasse &middot; Gourdon &middot; Tourrettes-sur-Loup</option>
+          <option value="villefranche-menton-dolceacqua">Menton &middot; Dolceacqua &middot; Apricale</option>
         </optgroup>
       </select>
     </div>
+
     <div class="field">
       <label for="msg">Notes <span class="opt">(optional)</span></label>
-      <textarea id="msg" name="message" placeholder="Specific interests, mobility requirements, special requests…"></textarea>
+      <textarea id="msg" name="message" placeholder="Specific interests, mobility considerations, special requests&#8230;"></textarea>
     </div>
 
     <div class="cta-row">
       <button type="submit" class="btn-submit" id="submitBtn">
         <span>Request Excursion</span>
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="11" height="11" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
       <a href="https://wa.me/33669962272?text=Hello,%20I%27d%20like%20to%20book%20a%20shore%20excursion." class="btn-wa" target="_blank" rel="noopener">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="position:relative;z-index:1"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         <span>WhatsApp Us</span>
       </a>
-      <p class="cta-note">€800 per vehicle · up to 7 passengers · confirmed within a few hours</p>
+      <p class="cta-note">&euro;800 per vehicle &middot; up to 7 passengers &middot; confirmed within a few hours</p>
     </div>
   </form>
 
   <div class="success-state" id="success">
-    <h3>Request received.</h3>
-    <p>We will confirm your excursion by WhatsApp or email — usually within a few hours.<br><br>
-    Urgent? <a href="tel:+33669962272" style="color:var(--terra)">+33 6 69 96 22 72</a></p>
+    <div class="success-kicker">Request received</div>
+    <h3>We have your details.</h3>
+    <p>We will confirm your excursion by WhatsApp or email &mdash; usually within a few hours.<br><br>
+    Urgent? <a href="tel:+33669962272">+33 6 69 96 22 72</a></p>
   </div>
 
 </div>
 <script>
 var form=document.getElementById('form'),btn=document.getElementById('submitBtn');
 if(form){form.addEventListener('submit',function(e){e.preventDefault();var req=form.querySelectorAll('[required]'),ok=true;req.forEach(function(el){el.classList.remove('error');if(!el.value.trim()){el.classList.add('error');ok=false;}});if(!ok)return;btn.querySelector('span').textContent='Sending\u2026';btn.disabled=true;fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';document.getElementById('success').style.display='flex';}else{btn.querySelector('span').textContent='Request Excursion';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');}}).catch(function(){btn.querySelector('span').textContent='Request Excursion';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');});})}
+// Pre-select excursion from URL param
+(function(){var p=new URLSearchParams(window.location.search),e=p.get('excursion');if(!e)return;var s=document.getElementById('route');if(!s)return;for(var i=0;i<s.options.length;i++){if(s.options[i].value===e){s.selectedIndex=i;break;}}})();
 </script>
-<script src="/nav.js" defer></script>
 </body>
 </html>
