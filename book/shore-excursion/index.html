@@ -313,5 +313,6 @@ if(form){form.addEventListener('submit',function(e){e.preventDefault();var req=f
 // Pre-select excursion from URL param
 (function(){var p=new URLSearchParams(window.location.search),e=p.get('excursion');if(!e)return;var s=document.getElementById('route');if(!s)return;for(var i=0;i<s.options.length;i++){if(s.options[i].value===e){s.selectedIndex=i;break;}}})();
 </script>
+<script src="/nav.js" defer></script>
 </body>
 </html>
