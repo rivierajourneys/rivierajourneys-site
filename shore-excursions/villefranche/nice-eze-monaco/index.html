@@ -33,11 +33,11 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Where do you meet us in Villefranche?","acceptedAnswer":{"@type":"Answer","text":"At quai de l'Amiral Courbet in Villefranche-sur-Mer — the tender landing pier, in the village itself. We are there with a name board before your tender docks."}},
-{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 4.5 hours. Nice is only 6 kilometres west of Villefranche, about ten minutes by road. We plan the return from the moment you book and are always back before the tender departs."}},
+{"@type":"Question","name":"Where do you meet us in Villefranche?","acceptedAnswer":{"@type":"Answer","text":"At quai de l'Amiral Courbet in Villefranche-sur-Mer — the tender landing pier, in the village itself. We are there with a name board before your tender docks. Villefranche ships anchor in the bay; the tender lands you in the old village, thirty seconds from the car."}},
+{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 4.5 hours. Nice is only 6 kilometres west of Villefranche — about ten minutes by road. The compact geography means more time at each stop, less time in transit."}},
 {"@type":"Question","name":"What is the price for a shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"800 EUR per vehicle, up to 7 passengers. Fixed price regardless of group size. Entrance fees and meals not included."}},
 {"@type":"Question","name":"Do you accompany guests in Eze village?","acceptedAnswer":{"@type":"Answer","text":"No. We drop you at the entrance and wait with the car. We recommend the Chevre d'Or terrace for coffee or champagne with the view."}},
-{"@type":"Question","name":"Which Corniche road do you take?","acceptedAnswer":{"@type":"Answer","text":"The Moyenne Corniche, the middle road, most direct to Eze and most spectacular, with two panoramic stops above the sea."}}
+{"@type":"Question","name":"Which Corniche road do you take?","acceptedAnswer":{"@type":"Answer","text":"The Moyenne Corniche, departing east from Nice. Two stops: the belvedere above Mont Boron, then the panorama above Villefranche — the same harbour where your ship is anchored, seen from 400 metres above."}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,13 +102,13 @@ img{display:block;max-width:100%;height:auto}
 .hero-v{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.9) 0%,rgba(28,28,26,.38) 42%,transparent 100%)}
 .hero-g{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
 .hero-body{position:relative;z-index:4;padding:0 72px 80px;max-width:1424px;margin:0 auto;width:100%}
-.hero-kicker{font-family:var(--sc);font-size:10px;letter-spacing:.28em;color:var(--sand);display:flex;align-items:center;gap:16px;margin-bottom:20px;opacity:0;animation:fadeUp .7s var(--slow) .2s forwards}
+.hero-kicker{font-family:var(--sc);font-size:11px;letter-spacing:.26em;color:var(--sand);display:flex;align-items:center;gap:16px;margin-bottom:20px;opacity:0;animation:fadeUp .7s var(--slow) .2s forwards}
 .hero-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
 .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,5.5vw,82px);color:var(--bone);line-height:1.02;margin-bottom:22px;opacity:0;animation:fadeUp .8s var(--slow) .4s forwards}
 .hero h1 em{font-style:italic;color:rgba(247,243,237,.65)}
 .hero-meta{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap;margin-bottom:32px;opacity:0;animation:fadeUp .7s var(--slow) .6s forwards}
 .hero-price{font-family:var(--serif);font-size:28px;color:var(--bone)}
-.hero-pill{font-family:var(--sans);font-size:11px;color:rgba(247,243,237,.6);display:flex;align-items:center;gap:8px}
+.hero-pill{font-family:var(--sans);font-size:12.5px;font-weight:400;color:rgba(247,243,237,.6);display:flex;align-items:center;gap:8px}
 .hero-pill::before{content:'';display:block;width:3px;height:3px;border-radius:50%;background:rgba(196,170,130,.5)}
 .hero-acts{display:flex;align-items:center;gap:20px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s var(--slow) .8s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -118,14 +118,14 @@ img{display:block;max-width:100%;height:auto}
 .ticker-bar{background:var(--warm);border-bottom:.5px solid rgba(196,170,130,.15);overflow:hidden;height:44px;display:flex;align-items:center}
 .ticker-track{display:flex;animation:tick 36s linear infinite;white-space:nowrap}
 .ticker-track:hover{animation-play-state:paused}
-.ticker-item{display:inline-flex;align-items:center;gap:28px;padding:0 40px;font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.7)}
+.ticker-item{display:inline-flex;align-items:center;gap:28px;padding:0 40px;font-family:var(--sans);font-size:9.5px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.7)}
 .ticker-dot{width:3px;height:3px;background:rgba(196,170,130,.4);border-radius:50%;flex-shrink:0}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* BREADCRUMB */
 .bc-bar{background:var(--bone2);border-bottom:.5px solid var(--parch);padding:12px 72px}
 .bc-list{display:flex;align-items:center;gap:8px;list-style:none;flex-wrap:wrap}
-.bc-list li{font-family:var(--sans);font-size:10px;color:var(--stone);display:flex;align-items:center;gap:8px}
+.bc-list li{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--stone);display:flex;align-items:center;gap:8px}
 .bc-list li::after{content:'/';color:var(--parch)}
 .bc-list li:last-child::after{display:none}
 .bc-list li:last-child{color:var(--slate)}
@@ -202,25 +202,25 @@ img{display:block;max-width:100%;height:auto}
 }
 
 /* SECTION LABEL */
-.section-lbl{font-family:var(--sc);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.section-lbl{font-family:var(--sc);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:12px;margin-bottom:24px}
 .section-lbl::before{content:'';display:block;width:20px;height:.5px;background:var(--sand)}
 
 /* INTRO */
-.intro{font-family:var(--sans);font-size:14.5px;color:var(--slate);line-height:1.8;margin-bottom:48px;padding-bottom:48px;border-bottom:.5px solid var(--parch)}
+.intro{font-family:var(--sans);font-size:16.5px;font-weight:400;color:var(--slate);line-height:1.85;margin-bottom:48px;padding-bottom:48px;border-bottom:.5px solid var(--parch)}
 
 /* STOPS */
 .stops-h{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);font-weight:300;color:var(--warm);line-height:1.1;margin-bottom:40px}
 .stops-h em{font-style:italic}
 
-.stop{display:grid;grid-template-columns:36px 1fr;gap:0 20px;padding:44px 0;border-bottom:.5px solid var(--parch)}
+.stop{display:grid;grid-template-columns:44px 1fr;gap:0 20px;padding:44px 0;border-bottom:.5px solid var(--parch)}
 .stop:first-of-type{padding-top:0}
 .stop:last-of-type{border-bottom:none}
-.stop-n{font-family:var(--sc);font-size:9px;letter-spacing:.16em;color:var(--sand);padding-top:4px}
-.stop-name{font-family:var(--serif);font-size:22px;color:var(--warm);margin-bottom:8px}
-.stop-time{font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:18px}
-.stop-desc{font-family:var(--sans);font-size:14px;color:var(--slate);line-height:1.95}
-.stop-tip{margin-top:20px;padding:16px 20px;background:var(--parch);border-left:2px solid var(--sand);font-family:var(--sans);font-size:13px;color:var(--slate);line-height:1.8}
-.stop-tip strong{font-weight:400;color:var(--warm)}
+.stop-n{font-family:var(--sc);font-size:14px;letter-spacing:.1em;color:var(--sand);padding-top:5px}
+.stop-name{font-family:var(--serif);font-size:26px;font-weight:300;color:var(--warm);line-height:1.08;margin-bottom:10px}
+.stop-time{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:20px}
+.stop-desc{font-family:var(--sans);font-size:16px;font-weight:400;color:var(--slate);line-height:1.9}
+.stop-tip{margin-top:20px;padding:16px 20px;background:var(--parch);border-left:2px solid var(--sand);font-family:var(--sans);font-size:14.5px;font-weight:400;color:var(--slate);line-height:1.8}
+.stop-tip strong{font-weight:500;color:var(--warm)}
 
 /* Photos — width:100% clips to content column due to overflow:hidden on .content */
 .stop-photo{margin-top:28px;overflow:hidden;background:var(--deep)}
@@ -232,7 +232,7 @@ img{display:block;max-width:100%;height:auto}
 .stop-photo-pair-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep)}
 .stop-photo-pair-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
 .stop-photo-pair:hover .stop-photo-pair-item img{transform:scale(1.03)}
-@media(max-width:600px){.stop-photo-pair{grid-template-columns:1fr}.stop-photo-pair-item{aspect-ratio:4/3}}
+@media(max-width:600px){.stop-photo-pair{grid-template-columns:1fr 1fr}}
 
 /* Horizontal video placeholder (16:9) */
 .stop-video-h{margin-top:28px;overflow:hidden;background:var(--deep);aspect-ratio:16/9;position:relative}
@@ -242,8 +242,38 @@ img{display:block;max-width:100%;height:auto}
 .stop-media-pair{margin-top:4px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--parch)}
 .stop-media-item{overflow:hidden;aspect-ratio:3/4;background:var(--deep);position:relative}
 .stop-media-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--slow)}
+.stop-media-item video{width:100%;height:100%;object-fit:cover;display:block}
 .stop-media-pair:hover .stop-media-item img{transform:scale(1.03)}
 @media(max-width:600px){.stop-media-pair{grid-template-columns:1fr}}
+
+/* ── VIDEO PLAY BUTTON ──────────────────────────────────────────────────── */
+.vid-play-btn{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;
+  border:.5px solid rgba(196,170,130,.55);
+  background:rgba(28,28,26,.38);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:2;
+  transition:opacity .4s var(--slow),background .3s,border-color .3s,transform .4s var(--slow);
+}
+.vid-play-btn:hover{
+  background:rgba(28,28,26,.62);
+  border-color:rgba(196,170,130,.9);
+  transform:translate(-50%,-50%) scale(1.08);
+}
+.vid-play-btn svg{
+  width:16px;height:16px;fill:var(--sand);
+  margin-left:3px; /* optical centre for triangle */
+  transition:fill .3s;
+}
+.vid-play-btn:hover svg{fill:#d4bc96}
+.vid-play-btn.is-playing{opacity:.35}
+.vid-play-btn.is-playing:hover{opacity:1}
+.vid-play-btn .icon-pause{display:none}
+.vid-play-btn.is-playing .icon-play{display:none}
+.vid-play-btn.is-playing .icon-pause{display:block}
 
 /* Video placeholder overlay — used in both .stop-video-h and .stop-media-item */
 .vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px}
@@ -251,12 +281,12 @@ img{display:block;max-width:100%;height:auto}
 .vid-ph-ico svg{width:14px;height:14px;fill:rgba(196,170,130,.45);stroke:none;margin-left:2px}
 .vid-ph-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.2em;color:rgba(196,170,130,.3);text-align:center}
 .vid-ph-spec{font-family:var(--sans);font-size:9px;color:rgba(196,170,130,.18);text-align:center;line-height:1.5}
-.vid-cap{margin-top:6px;font-family:var(--serif);font-style:italic;font-size:12px;color:var(--stone)}
+.vid-cap{margin-top:8px;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--stone)}
 
 /* SECTIONS */
 .s-includes,.s-pricing,.s-faq{margin-top:64px}
 .s-related{margin-top:64px;padding-top:56px;border-top:.5px solid var(--parch)}
-.section-h{font-family:var(--serif);font-size:clamp(24px,2.5vw,34px);font-weight:300;color:var(--warm);margin-bottom:28px}
+.section-h{font-family:var(--serif);font-size:clamp(28px,2.5vw,36px);font-weight:300;color:var(--warm);margin-bottom:28px}
 .section-h em{font-style:italic}
 
 /* INCLUDES */
@@ -264,9 +294,9 @@ img{display:block;max-width:100%;height:auto}
 .incl-row:last-child{border-bottom:none}
 .incl-ico{width:28px;height:28px;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .incl-ico svg{width:12px;height:12px;stroke:var(--sand);fill:none;stroke-width:1.25}
-.incl-txt{font-family:var(--sans);font-size:13px;color:var(--slate);line-height:1.65}
-.incl-txt strong{font-weight:400;color:var(--warm)}
-.not-incl{margin:12px 0 0;padding:13px 16px;background:var(--bone2);border:.5px solid var(--parch);font-family:var(--sans);font-size:11.5px;color:var(--stone);line-height:1.7}
+.incl-txt{font-family:var(--sans);font-size:14.5px;font-weight:400;color:var(--slate);line-height:1.7}
+.incl-txt strong{font-weight:500;color:var(--warm)}
+.not-incl{margin:12px 0 0;padding:13px 16px;background:var(--bone2);border:.5px solid var(--parch);font-family:var(--sans);font-size:13px;font-weight:400;color:var(--stone);line-height:1.75}
 
 /* PRICING TABLE */
 .pricing-table{width:100%;border-collapse:collapse;table-layout:fixed}
@@ -276,26 +306,26 @@ img{display:block;max-width:100%;height:auto}
 .pricing-table colgroup col:nth-child(4){width:18%}
 .pricing-table thead tr{background:var(--deep)}
 .pricing-table th{font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);padding:13px 18px;text-align:left;border:none}
-.pricing-table td{font-family:var(--sans);font-size:13px;color:var(--slate);padding:14px 18px;border-bottom:.5px solid var(--parch);vertical-align:middle}
-.pricing-table td:first-child{font-weight:400;color:var(--warm)}
+.pricing-table td{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--slate);padding:14px 18px;border-bottom:.5px solid var(--parch);vertical-align:middle}
+.pricing-table td:first-child{font-weight:500;color:var(--warm)}
 .pricing-table td:last-child{font-family:var(--serif);font-size:17px;color:var(--warm);white-space:nowrap}
 .pricing-table tbody tr:hover{background:var(--bone2)}
 .pricing-table tbody tr:last-child td{border-bottom:none}
-.pricing-note{font-family:var(--sans);font-size:11.5px;color:var(--stone);line-height:1.7;margin-top:14px}
+.pricing-note{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--stone);line-height:1.75;margin-top:14px}
 
 /* FAQ */
 .faq-rule{width:28px;height:.5px;background:var(--sand);margin-bottom:28px}
 .faq-item{border-bottom:.5px solid var(--parch)}
 .faq-item:first-of-type{border-top:.5px solid var(--parch)}
 .faq-q{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 0;cursor:pointer;gap:20px;user-select:none}
-.faq-qt{font-family:var(--serif);font-size:19px;font-weight:300;color:var(--warm);line-height:1.3}
+.faq-qt{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--warm);line-height:1.3}
 .faq-ico{width:24px;height:24px;flex-shrink:0;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--slow),border-color .3s;margin-top:2px}
 .faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--sand)}
 .faq-ico svg{width:12px;height:12px;stroke:var(--stone);fill:none}
 .faq-item.open .faq-ico svg{stroke:var(--sand)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--slow)}
 .faq-item.open .faq-a{max-height:400px}
-.faq-ai{padding:4px 0 18px;font-family:var(--sans);font-size:14px;color:var(--slate);line-height:1.85}
+.faq-ai{padding:4px 0 18px;font-family:var(--sans);font-size:15.5px;font-weight:400;color:var(--slate);line-height:1.85}
 
 /* RELATED */
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -305,24 +335,24 @@ img{display:block;max-width:100%;height:auto}
 .related-card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--slow)}
 .related-card:hover .related-card-photo img{transform:scale(1.04)}
 .related-card-body{padding:16px 18px 20px}
-.related-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.18em;color:var(--sand);margin-bottom:8px}
-.related-name{font-family:var(--serif);font-size:17px;color:var(--warm);line-height:1.25;margin-bottom:6px}
-.related-detail{font-family:var(--sans);font-size:12px;color:var(--stone)}
+.related-lbl{font-family:var(--sc);font-size:9.5px;letter-spacing:.16em;color:var(--sand);margin-bottom:8px}
+.related-name{font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);line-height:1.2;margin-bottom:6px}
+.related-detail{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--stone)}
 @media(max-width:600px){.related-grid{grid-template-columns:1fr}}
 
 /* BOOKING SIDEBAR */
 .bk-card{background:var(--bone);border:.5px solid var(--parch)}
 .bk-price-hd{background:var(--deep);padding:26px 26px 22px}
-.bk-price-lbl{font-family:var(--sc);font-size:8px;letter-spacing:.2em;color:rgba(196,170,130,.55);margin-bottom:10px}
+.bk-price-lbl{font-family:var(--sc);font-size:9.5px;letter-spacing:.18em;color:rgba(196,170,130,.55);margin-bottom:10px}
 .bk-price-num{font-family:var(--serif);font-size:46px;color:var(--bone);line-height:1;font-weight:300}
-.bk-price-unit{font-family:var(--sans);font-size:11px;color:rgba(196,170,130,.5);margin-top:5px}
-.bk-price-eg{margin-top:14px;padding-top:14px;border-top:.5px solid rgba(196,170,130,.12);font-family:var(--sans);font-size:11px;color:rgba(196,170,130,.42);line-height:1.65}
+.bk-price-unit{font-family:var(--sans);font-size:12px;font-weight:400;color:rgba(196,170,130,.5);margin-top:6px}
+.bk-price-eg{margin-top:14px;padding-top:14px;border-top:.5px solid rgba(196,170,130,.12);font-family:var(--sans);font-size:12px;font-weight:400;color:rgba(196,170,130,.42);line-height:1.65}
 .bk-facts{padding:20px 26px;border-bottom:.5px solid var(--parch)}
 .bk-fact{padding:10px 0;border-bottom:.5px solid var(--parch)}
 .bk-fact:last-child{border-bottom:none}
-.bk-fact-lbl{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);margin-bottom:3px}
-.bk-fact-val{font-family:var(--sans);font-size:12.5px;color:var(--slate);line-height:1.5}
-.bk-fact-val strong{font-weight:400;color:var(--warm)}
+.bk-fact-lbl{font-family:var(--sans);font-size:9.5px;letter-spacing:.14em;font-weight:400;text-transform:uppercase;color:var(--sand);margin-bottom:4px}
+.bk-fact-val{font-family:var(--sans);font-size:13.5px;font-weight:400;color:var(--slate);line-height:1.55}
+.bk-fact-val strong{font-weight:500;color:var(--warm)}
 .bk-ctas{padding:20px 26px;display:flex;flex-direction:column;gap:10px}
 .bk-btn-main{display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:13px 16px;position:relative;overflow:hidden;transition:color .4s}
 .bk-btn-main::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}
@@ -331,13 +361,13 @@ img{display:block;max-width:100%;height:auto}
 .bk-btn-main span,.bk-btn-main svg{position:relative;z-index:1}
 .bk-btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);border:.5px solid rgba(168,101,67,.3);padding:11px 16px;transition:background .3s}
 .bk-btn-wa:hover{background:rgba(168,101,67,.07)}
-.bk-note{padding:0 26px 18px;font-family:var(--sans);font-size:11px;color:var(--stone);line-height:1.65;text-align:center}
+.bk-note{padding:0 26px 18px;font-family:var(--sans);font-size:12.5px;font-weight:400;color:var(--stone);line-height:1.65;text-align:center}
 .bk-stars{padding:14px 26px;border-top:.5px solid var(--parch);display:flex;align-items:center;gap:10px}
 .stars{display:flex;gap:3px}
 .stars svg{width:11px;height:11px;fill:var(--sand)}
-.bk-stars-txt{font-family:var(--sans);font-size:11px;color:var(--stone)}
+.bk-stars-txt{font-family:var(--sans);font-size:12.5px;font-weight:400;color:var(--stone)}
 .bk-stars-txt strong{font-weight:400;color:var(--warm)}
-.bk-cruise-link{margin-top:14px;font-family:var(--sans);font-size:11.5px;color:var(--stone);line-height:1.6}
+.bk-cruise-link{margin-top:14px;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--stone);line-height:1.65}
 .bk-cruise-link a{color:var(--terra);border-bottom:.5px solid rgba(168,101,67,.3);padding-bottom:1px}
 .bk-cruise-link a:hover{border-color:var(--terra)}
 
@@ -352,10 +382,10 @@ img{display:block;max-width:100%;height:auto}
 .cta-band{background:var(--warm);padding:96px 72px;text-align:center;position:relative;overflow:hidden}
 .cta-wm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--sc);font-size:160px;color:rgba(196,170,130,.025);pointer-events:none;user-select:none}
 .cta-inner{position:relative;z-index:1;max-width:540px;margin:0 auto}
-.cta-ol{font-family:var(--sc);font-size:9px;letter-spacing:.24em;color:var(--sand);margin-bottom:20px}
-.cta-h{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);color:var(--bone);line-height:1.1;margin-bottom:16px}
+.cta-ol{font-family:var(--sc);font-size:10.5px;letter-spacing:.22em;color:var(--sand);margin-bottom:20px}
+.cta-h{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--bone);line-height:1.1;margin-bottom:16px}
 .cta-h em{font-style:italic}
-.cta-body{font-size:14px;color:rgba(196,170,130,.52);line-height:1.8;margin-bottom:40px}
+.cta-body{font-family:var(--sans);font-size:15px;font-weight:300;color:rgba(196,170,130,.52);line-height:1.8;margin-bottom:40px}
 .cta-btns{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 @media(max-width:768px){.cta-band{padding:72px 24px}.cta-btns{flex-direction:column}}
 
@@ -363,11 +393,11 @@ img{display:block;max-width:100%;height:auto}
 footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(196,170,130,.1)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
 .footer-logo{font-family:var(--sc);font-size:20px;letter-spacing:.14em;color:var(--bone2);display:block;margin-bottom:14px}
-.footer-tagline{font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(247,243,237,.45);margin-bottom:10px}
-.footer-desc{font-family:var(--sans);font-size:12px;color:rgba(196,170,130,.4);line-height:1.8;max-width:240px}
-.footer-col-h{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(196,170,130,.15)}
+.footer-tagline{font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(247,243,237,.45);margin-bottom:10px}
+.footer-desc{font-family:var(--sans);font-size:13px;font-weight:400;color:rgba(196,170,130,.4);line-height:1.8;max-width:240px}
+.footer-col-h{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(196,170,130,.15)}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-links a{font-family:var(--sans);font-size:12px;color:rgba(247,243,237,.38);letter-spacing:.04em;transition:color .3s,padding-left .3s;display:block}
+.footer-links a{font-family:var(--sans);font-size:13px;font-weight:400;color:rgba(247,243,237,.38);letter-spacing:.04em;transition:color .3s,padding-left .3s;display:block}
 .footer-links a:hover{color:rgba(247,243,237,.7);padding-left:4px}
 .footer-bottom{border-top:.5px solid rgba(196,170,130,.1);padding-top:24px;font-family:var(--sans);font-size:10px;color:rgba(196,170,130,.28);letter-spacing:.06em}
 @media(max-width:1024px){footer{padding:56px 40px 40px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
@@ -396,6 +426,47 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 .btn-bone span,.btn-bone svg{position:relative;z-index:1}
 
 /* REVEAL */
+
+/* ── MOBILE TYPOGRAPHY ────────────────────────────────────────────────────
+   Weight is the primary lever on mobile — 300 becomes hairline at small sizes.
+─────────────────────────────────────────────────────────────────────────── */
+@media(max-width:768px){
+  body{font-size:17px;font-weight:400}
+  .hero-pill{font-size:12px}
+  .hero-meta{gap:8px 16px}
+  .intro{font-size:17px;font-weight:400;line-height:1.8}
+  .stop-name{font-size:28px}
+  .stop-time{font-size:12.5px;font-weight:400;letter-spacing:.08em}
+  .stop-desc{font-size:17px;font-weight:400;line-height:1.85}
+  .stop-tip{font-size:15.5px;font-weight:400;line-height:1.8;padding:18px 20px}
+  .stops-h{margin-bottom:32px}
+  .section-h{margin-bottom:22px}
+  .faq-qt{font-size:19px}
+  .faq-ai{font-size:16px;font-weight:400;line-height:1.85}
+  .incl-txt{font-size:15.5px;font-weight:400;line-height:1.7}
+  .not-incl{font-size:14px;font-weight:400;line-height:1.75}
+  .pricing-table td{font-size:14.5px;padding:13px 14px}
+  .pricing-table th{font-size:9px;padding:11px 14px}
+  .pricing-table td:last-child{font-size:18px}
+  .pricing-note{font-size:13.5px;font-weight:400}
+  .related-name{font-size:18px}
+  .related-detail{font-size:13.5px;font-weight:400}
+  .mobile-cta-sub{font-size:13px;font-weight:400}
+  .cta-body{font-size:15px;font-weight:300}
+  .bc-list li{font-size:11px}
+  .stop-n{font-size:13px;padding-top:3px}
+  .section-lbl{font-size:11px}
+  .related-lbl{font-size:10px}
+  .vid-cap{font-size:14.5px}
+}
+
+/* Mobile: collapse stop grid — eliminates 64px structural indent */
+@media(max-width:600px){
+  .stop{display:block;padding:36px 0}
+  .stop:first-of-type{padding-top:0}
+  .stop-n{margin-bottom:12px;padding-top:0}
+}
+
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--slow),transform .6s var(--slow)}
 .reveal.visible{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.18s}
@@ -437,8 +508,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 <!-- HERO -->
 <section class="hero" aria-label="Shore excursion from Villefranche: Nice, Eze, Monaco">
   <div class="hero-photo">
-    <img src="/photos/villefranche-sur-mer-bay-morning-light-shore-excursion-nice-eze-monaco.avif"
-         alt="Villefranche-sur-Mer bay — departure point for the Nice, Eze and Monaco shore excursion"
+    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif"
+         alt="Villefranche-sur-Mer bay and the Principauté — departure point for the Nice, Eze and Monaco shore excursion"
          loading="eager" fetchpriority="high">
   </div>
   <div class="hero-v"></div>
@@ -475,7 +546,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <span class="ticker-item">Mercedes V-Class &middot; Up to 7<span class="ticker-dot"></span></span>
     <span class="ticker-item">&#8364;800 per vehicle &middot; fixed price<span class="ticker-dot"></span></span>
     <span class="ticker-item">Back before the tender<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Meet at quai de l'Amiral Courbet<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Meet at quai de l&apos;Amiral Courbet<span class="ticker-dot"></span></span>
     <span class="ticker-item">Villefranche-sur-Mer<span class="ticker-dot"></span></span>
     <span class="ticker-item">Nice &middot; Eze &middot; Monaco<span class="ticker-dot"></span></span>
     <span class="ticker-item">Shore excursion &middot; from 4.5 hrs<span class="ticker-dot"></span></span>
@@ -503,7 +574,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     <!-- CONTENT -->
     <article class="content">
       <div class="section-lbl reveal">The Excursion</div>
-      <p class="intro reveal d1">Your ship anchors in the bay. A tender brings you to quai de l'Amiral Courbet, in the village itself &mdash; one of the deepest natural harbours in the Mediterranean. We are there with a name board before your tender docks. Nice is six kilometres west, ten minutes by road. Eze is above you on the Corniche. Monaco is twenty minutes east. The compact geography of Villefranche is your advantage: less time in the car, more time at each stop.</p>
+      <p class="intro reveal d1">Your ship anchors in the bay &mdash; one of the deepest natural harbours in the Mediterranean. A tender brings you to quai de l&apos;Amiral Courbet, in the old village itself. We are there with a name board before your tender docks. Nice is six kilometres west, ten minutes by road. The Moyenne Corniche climbs directly from above the village. Eze and Monaco are east. The compact geography of Villefranche works entirely in your favour: less time in transit, more time at each stop.</p>
 
       <h2 class="stops-h reveal">The route.<br><em>Four stops, one day.</em></h2>
 
@@ -513,31 +584,12 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Nice</div>
           <div class="stop-time">~10 min from Villefranche &middot; 60&ndash;90 min ashore</div>
-          <p class="stop-desc">We drive west on the Corniche Inf&eacute;rieure — Nice is six kilometres, ten minutes.  First stop: the Vieux-Port and Cours Saleya, the flower and food market that runs every morning until noon. The old town behind it — narrow lanes, baroque churches, Italianate ochre facades, the light that made the Impressionists stay. For a first visit, an hour is the minimum. If you have been before, forty-five minutes in the market and we leave before the coaches arrive from the cruise terminal.</p>
+          <p class="stop-desc">We drive west along the Corniche Inf&eacute;rieure — Nice is six kilometres, ten minutes at most. The road hugs the coast below the villas of Cap de Nice; the old port appears ahead as you round the last bend. Cours Saleya and the Vieux-Port, the flower and food market that runs every morning until noon. The old town behind it &mdash; narrow lanes, baroque churches, Italianate ochre facades, the light that made the Impressionists stay and return every winter. For a first visit, an hour here is the minimum. If you have been before, forty-five minutes in the market and we leave before the coaches arrive from the cruise port.</p>
           <div class="stop-photo">
             <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"
                  alt="Nice old port and Promenade des Anglais — shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
           </div>
-          <div class="stop-media-pair">
-            <div class="stop-media-item">
-              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/nice-cours-saleya-market-morning-vertical-shore-excursion-villefranche.avif"><source src="/video/nice-cours-saleya-market-morning-vertical.mp4" type="video/mp4"></video>-->
-              <div class="vid-ph">
-                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-                <span class="vid-ph-lbl">Video &middot; Cours Saleya &middot; vertical</span>
-                <span class="vid-ph-spec">9:16 &middot; 10&ndash;15 sec &middot; market &middot; morning &middot; /video/nice-cours-saleya-market-morning-vertical.mp4</span>
-              </div>
-            </div>
-            <div class="stop-media-item">
-              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/nice-old-town-rue-pietonne-vertical-shore-excursion-villefranche.avif"><source src="/video/nice-old-town-rue-pietonne-vertical.mp4" type="video/mp4"></video>-->
-              <div class="vid-ph">
-                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-                <span class="vid-ph-lbl">Video &middot; Old Town &middot; vertical</span>
-                <span class="vid-ph-spec">9:16 &middot; 10&ndash;15 sec &middot; walking lane &middot; /video/nice-old-town-rue-pietonne-vertical.mp4</span>
-              </div>
-            </div>
-          </div>
-          <p class="vid-cap">Nice — Cours Saleya market &amp; the old town lanes</p>
         </div>
       </div>
 
@@ -547,9 +599,10 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Moyenne Corniche</div>
           <div class="stop-time">2 panoramic stops en route to Eze</div>
-          <p class="stop-desc">From Nice we take the Moyenne Corniche — the middle of the three coastal roads, the one Hitchcock used in <em>To Catch a Thief</em>. The road climbs sharply above the coast and the sea opens below you. Because Villefranche itself sits at the foot of this ridge, you already know the scale before the first bend. We make two stops: once for the view back toward Nice and the Cap Ferrat peninsula; once just before Eze where Monaco appears in the distance for the first time, compressed against the sea. These stops add fifteen to twenty minutes and are not optional — they are part of why you came.</p>
+          <p class="stop-desc">From Nice we take the Moyenne Corniche — the middle of the three coastal roads, the one Hitchcock used in <em>To Catch a Thief</em>. The road climbs sharply out of Nice and within minutes the coast is below you. First stop: the belvedere above Mont Boron. The Belle &Eacute;poque villas cling to the hillside here, half-hidden in pine and cypress — the old money of Nice, largely unknown to visitors. The view is back over the old port and the Lympia basin, with the curve of the Baie des Anges to the west. The second stop is the one people remember: the panorama above Villefranche-sur-Mer. You are now looking down at the harbour where your ship is still anchored &mdash; that geometry, ship and village and medieval citadel from 400 metres above, fixes the geography of the morning in a way no map does. Cap Ferrat extends into the sea to the south. On clear mornings, Cap Martin and the Italian coast are visible beyond it. These two stops add fifteen to twenty minutes. They are not optional.</p>
           <div class="stop-video-h">
-            <!--<video muted autoplay loop playsinline preload="none" poster="/photos/moyenne-corniche-road-sea-view-nice-eze-shore-excursion-villefranche.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>-->
+            <!--<video muted loop playsinline preload="none" poster="/photos/moyenne-corniche-road-sea-view-nice-eze-shore-excursion-villefranche.avif"><source src="/video/moyenne-corniche-driving.mp4" type="video/mp4"></video>
+            <button class="vid-play-btn" aria-label="Play / pause video"><svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg><svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" rx="1"/><rect x="15" y="4" width="4" height="16" rx="1"/></svg></button>-->
             <div class="vid-ph">
               <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
               <span class="vid-ph-lbl">Video &middot; Moyenne Corniche &middot; horizontal</span>
@@ -570,12 +623,12 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           <div class="stop-tip"><strong>Our recommendation:</strong> Take the right lane at the gate and climb to the Hôtel Chèvre d'Or. Their terrace looks south over the sea — Cap Ferrat directly below, Monaco to the east. A coffee or a glass of champagne on that terrace, on a clear morning, is the best twenty minutes of this excursion.</div>
           <div class="stop-photo-pair">
             <div class="stop-photo-pair-item">
-              <img src="/photos/eze-village-stone-lane-morning-light-shore-excursion-villefranche.avif"
+              <img src="/photos/eze-village-yellow-church-sea-view-vertical-shore-excursion-nice-monaco.avif"
                    alt="Stone lane in Eze village — shore excursion from Villefranche"
                    loading="lazy">
             </div>
             <div class="stop-photo-pair-item">
-              <img src="/photos/eze-village-panorama-cap-ferrat-sea-view-shore-excursion-villefranche.avif"
+              <img src="/photos/eze-stone-street-chateau-chevre-dor-shore-excursion-nice-monaco.avif"
                    alt="Panoramic view from Eze village over Cap Ferrat — shore excursion from Villefranche"
                    loading="lazy">
             </div>
@@ -589,25 +642,27 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="stop-body">
           <div class="stop-name">Monaco</div>
           <div class="stop-time">90&ndash;120 min &middot; Port Hercule &middot; Casino &middot; Le Rocher</div>
-          <p class="stop-desc">From Eze we descend to Monaco — the Principality, 2.02 square kilometres, ruled by the Grimaldi family since 1297. Port Hercule for the yachts: super-yachts moored stern-to, the scale of the boats against the buildings. The Casino de Monte-Carlo gardens and the Belle Époque façade — you can walk past without going in and still understand what this place is about. Then Le Rocher, the old town on the rock: the cathedral where Grace Kelly is buried, the palace changing of the guard at 11:55 if your timing allows, the view from the ramparts south over the sea. The return to Villefranche takes approximately 20 minutes.</p>
+          <p class="stop-desc">From Eze we descend to Monaco — the Principality, 2.02 square kilometres, ruled by the Grimaldi family since 1297. Port Hercule for the yachts: super-yachts moored stern-to, the scale of the boats against the buildings. The Casino de Monte-Carlo gardens and the Belle Époque façade — you can walk past without going in and still understand what this place is about. Then Le Rocher, the old town on the rock: the cathedral where Grace Kelly is buried, the palace changing of the guard at 11:55 if your timing allows, the view from the ramparts south over the sea. The return to Villefranche is approximately 20 minutes — the A8 east, straight back along the coast.</p>
           <div class="stop-photo">
-            <img src="/photos/monaco-port-hercule-monte-carlo-casino-view-shore-excursion.avif"
-                 alt="Monaco Port Hercule with Monte Carlo Casino — shore excursion from Villefranche"
+            <img src="/photos/monte-carlo-casino-hotel-de-paris-cafe-de-paris-place-du-casino.avif"
+                 alt="Monte Carlo Casino with Hôtel de Paris Monte-Carlo and Café de Paris Monte-Carlo on Place du Casino — shore excursion from Villefranche"
                  loading="lazy" width="900" height="600">
           </div>
           <div class="stop-media-pair">
             <div class="stop-media-item">
-              <img src="/photos/monaco-le-rocher-palace-ramparts-sea-view-shore-excursion-villefranche.avif"
-                   alt="Monaco Le Rocher palace ramparts with sea view — shore excursion from Villefranche"
+              <img src="/photos/monte-carlo-casino-view-across-port-hercule-monaco.avif"
+                   alt="View across Port Hercule toward Monte Carlo Casino and Monte Carlo skyline — shore excursion from Villefranche"
                    loading="lazy">
             </div>
             <div class="stop-media-item">
-              <!--<video muted autoplay loop playsinline preload="none" poster="/photos/monaco-port-hercule-yachts-vertical-shore-excursion-villefranche.avif"><source src="/video/monaco-port-hercule-vertical.mp4" type="video/mp4"></video>-->
-              <div class="vid-ph">
-                <div class="vid-ph-ico"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-                <span class="vid-ph-lbl">Video &middot; Monaco &middot; vertical</span>
-                <span class="vid-ph-spec">9:16 &middot; 10–15 sec &middot; Port Hercule &middot; yachts &middot; /video/monaco-port-hercule-vertical.mp4</span>
-              </div>
+              <video muted loop playsinline preload="none"
+                     poster="/photos/monaco-cathedral-bell-tower-monaco-ville-shore-excursion-villefranche.avif">
+                <source src="/video/monaco-le-rocher.mp4" type="video/mp4">
+              </video>
+              <button class="vid-play-btn" aria-label="Play / pause video">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" rx="1"/><rect x="15" y="4" width="4" height="16" rx="1"/></svg>
+              </button>
             </div>
           </div>
         </div>
@@ -628,7 +683,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <h2 class="section-h">What&apos;s included</h2>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="incl-txt"><strong>Private Mercedes V-Class</strong> &mdash; full day, from the tender pier</div></div>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="incl-txt"><strong>English-speaking driver</strong> &mdash; local knowledge, no fixed commentary</div></div>
-        <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="incl-txt"><strong>Meet at quai de l'Amiral Courbet</strong> &mdash; tender landing, in the village</div></div>
+        <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="incl-txt"><strong>Meet at quai de l&apos;Amiral Courbet</strong> &mdash; tender landing, in the village</div></div>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="incl-txt"><strong>Return timed to your tender</strong> &mdash; we know your ship&apos;s schedule</div></div>
         <div class="incl-row"><div class="incl-ico"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18"/></svg></div><div class="incl-txt"><strong>All tolls and parking</strong> &mdash; no extras added afterwards</div></div>
         <div class="not-incl">Not included: entrance fees (Jardin Exotique Eze &euro;7, Oceanographic Museum Monaco &euro;19), lunch, drinks at Ch&egrave;vre d&apos;Or, gratuities.</div>
@@ -655,11 +710,11 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="faq-rule"></div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Where exactly do you meet us in Villefranche?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">At quai de l'Amiral Courbet in Villefranche-sur-Mer &mdash; the tender landing pier, in the old village itself. We will be there with a name board before your tender docks. The quay is directly in front of the tender dock; the car is thirty seconds away. If you have any difficulty, WhatsApp us: +33 6 69 96 22 72.</p></div>
+          <div class="faq-a"><p class="faq-ai">At quai de l&apos;Amiral Courbet in Villefranche-sur-Mer &mdash; the tender landing pier, in the old village itself. We will be there with a name board before your tender docks. The quay is directly in front of the tender dock; the car is thirty seconds away. If you have any difficulty, WhatsApp us: +33 6 69 96 22 72.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">How long is the excursion, and will it fit my ship&apos;s schedule?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 4.5 to 5.5 hours from Villefranche &mdash; Nice is only 6 kilometres, ten minutes each way. We can shorten the itinerary if your ship has an early departure, usually by reducing time in Nice or Monaco. Eze is never cut short. Send us your ship name and departure time when you enquire.</p></div>
+          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 4.5 to 5.5 hours from Villefranche &mdash; Nice is only 6 kilometres, ten minutes each way. The shorter transit means more time at each stop. We can trim the itinerary further if your ship has an early departure. Eze is never cut short.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Do you accompany us inside Eze village?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
@@ -675,7 +730,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Can we skip Nice and spend more time in Eze or Monaco?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">Yes, and we often suggest it for guests who have already visited Nice. Skipping Nice gives an extra hour in Eze and a more relaxed Monaco circuit. From Villefranche, Eze is reachable via a direct road up the hill &mdash; fifteen minutes from the tender pier. Mention your preference when you enquire.</p></div>
+          <div class="faq-a"><p class="faq-ai">Yes, and we often suggest it for guests who have already visited Nice. From Villefranche, skipping Nice saves twenty minutes of driving and gives a full extra hour in Eze. The day is better for it. Mention it when you enquire.</p></div>
         </div>
       </div>
 
@@ -685,7 +740,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <div class="related-grid">
           <a href="/shore-excursions/villefranche/cannes-antibes-stpaul" class="related-card">
             <div class="related-card-photo">
-              <img src="/photos/saint-paul-de-vence-village-valley-sea-view-shore-excursion.avif"
+              <img src="/photos/saint-paul-de-vence-sunset-valley-sea-view-shore-excursion-cannes-card.avif"
                    alt="Saint-Paul-de-Vence village — shore excursion from Villefranche" loading="lazy">
             </div>
             <div class="related-card-body">
@@ -696,7 +751,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           </a>
           <a href="/shore-excursions/villefranche/grasse-gourdon" class="related-card">
             <div class="related-card-photo">
-              <img src="/photos/grasse-old-town-street-pink-umbrellas-cruise-ship-excursion-provence.avif"
+              <img src="/photos/grasse-old-town-pink-umbrellas-perfume-capital-shore-excursion-cannes-card.avif"
                    alt="Grasse old town — shore excursion from Villefranche" loading="lazy">
             </div>
             <div class="related-card-body">
@@ -705,9 +760,10 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
               <div class="related-detail">Into Provence &middot; from 4 hrs &middot; &euro;800</div>
             </div>
           </a>
-          <a href="/shore-excursions/villefranche/nice-eze-menton" class="related-card">
-            <div class="related-card-photo" style="background:linear-gradient(160deg,#C8A87A,#8B5E3C);display:flex;align-items:center;justify-content:center;aspect-ratio:3/2">
-              <span style="font-family:var(--sc);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,28,26,.35)">Provence</span>
+          <a href="/shore-excursions/villefranche/eze-monaco-menton" class="related-card">
+            <div class="related-card-photo">
+              <img src="/photos/eze-medieval-village-church-bay-view-villefranche-shore-excursion.avif"
+                   alt="Eze medieval village overlooking the sea — shore excursion from Villefranche" loading="lazy">
             </div>
             <div class="related-card-body">
               <div class="related-lbl">Shore Excursion &middot; Villefranche</div>
@@ -716,8 +772,9 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             </div>
           </a>
           <a href="/villefranche-cruise-schedule" class="related-card">
-            <div class="related-card-photo" style="background:var(--deep);display:flex;align-items:center;justify-content:center;aspect-ratio:3/2">
-              <span style="font-family:var(--sc);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,170,130,.35)">2026 Schedule</span>
+            <div class="related-card-photo">
+              <img src="/photos/cruise-ships-cannes-villefranche-harbour-schedule.avif"
+                   alt="Cruise ships anchored off Cannes and in the bay of Villefranche-sur-Mer with tenders and coastal views, Mediterranean cruise traffic, 2026 schedule overview" loading="lazy">
             </div>
             <div class="related-card-body">
               <div class="related-lbl">Villefranche</div>
@@ -742,7 +799,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <div class="bk-price-eg">2 guests = &euro;400 p.p. &nbsp;&middot;&nbsp; 4 guests = &euro;200 p.p.<br>7 guests = &euro;114 p.p.</div>
           </div>
           <div class="bk-facts">
-            <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val"><strong>Quai de l'Amiral Courbet</strong> &mdash; tender landing, in the village</div></div>
+            <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val"><strong>Quai de l&apos;Amiral Courbet</strong> &mdash; tender landing, in the village</div></div>
             <div class="bk-fact"><div class="bk-fact-lbl">Duration</div><div class="bk-fact-val">From <strong>4.5 hours</strong> &mdash; adapted to your ship</div></div>
             <div class="bk-fact"><div class="bk-fact-lbl">Vehicle</div><div class="bk-fact-val"><strong>Mercedes V-Class</strong> &middot; air-conditioned &middot; private</div></div>
             <div class="bk-fact"><div class="bk-fact-lbl">Group size</div><div class="bk-fact-val">Up to <strong>7 passengers</strong> per vehicle</div></div>
@@ -787,7 +844,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="cta-inner">
     <div class="cta-ol">Book this excursion</div>
     <h2 class="cta-h">Nice. Eze.<br><em>Monaco.</em></h2>
-    <p class="cta-body">Send us your ship name and shore time. We confirm the itinerary within the hour and meet you at the tender pier in Villefranche.</p>
+    <p class="cta-body">Send us your ship name and shore time. We confirm the itinerary within the hour and meet you at quai de l&apos;Amiral Courbet.</p>
     <div class="cta-btns">
       <a href="/book-shore-excursion?excursion=villefranche-nice-eze-monaco" class="btn-bone"><span>Book Your Excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="https://wa.me/33669962272?text=Shore+excursion+Villefranche" class="btn-ghost" target="_blank" rel="noopener">WhatsApp us<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -811,6 +868,25 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 (function(){var btn=document.getElementById('navBurger'),menu=document.getElementById('mobileMenu'),close=document.getElementById('mobileClose');if(!btn||!menu)return;var open=false;function toggle(){open=!open;btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);menu.setAttribute('aria-hidden',!open);if(open){menu.style.display='flex';setTimeout(function(){menu.style.opacity='1'},10);document.body.style.overflow='hidden';}else{menu.style.opacity='0';setTimeout(function(){menu.style.display='none'},400);document.body.style.overflow='';}}btn.addEventListener('click',toggle);if(close)close.addEventListener('click',toggle)})();
 function faq(q){var item=q.closest('.faq-item'),isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});if(!isOpen)item.classList.add('open');}
 (function(){if(!window.IntersectionObserver)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);})})();
+// ── VIDEO PLAY BUTTONS ──────────────────────────────────────────────────────
+(function(){
+  document.querySelectorAll('.vid-play-btn').forEach(function(btn){
+    var video = btn.parentElement.querySelector('video');
+    if(!video) return;
+    btn.addEventListener('click', function(){
+      if(video.paused){
+        video.play();
+        btn.classList.add('is-playing');
+      } else {
+        video.pause();
+        btn.classList.remove('is-playing');
+      }
+    });
+    video.addEventListener('ended', function(){
+      btn.classList.remove('is-playing');
+    });
+  });
+})();
 </script>
 <script src="/nav.js" defer></script>
 </body>
