@@ -1669,8 +1669,13 @@ a { text-decoration: none; color: inherit; }
 /* ─────────────────────────────────────────────
    INSTAGRAM STRIP
 ───────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════
+   FROM THE FIELD — Photography strip
+   6 vertical 3:4 photos, editorial captions on hover
+═══════════════════════════════════════════════════════ */
 .instagram {
-  padding: 72px 0;
+  padding: 112px 0 96px;
+  background: var(--bone2);
   border-bottom: .5px solid var(--parch);
   overflow: hidden;
 }
@@ -1678,91 +1683,123 @@ a { text-decoration: none; color: inherit; }
   padding: 0 72px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+.instagram-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 .instagram-h3 {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: clamp(30px, 2.8vw, 40px);
   font-weight: 300;
+  line-height: 1.1;
   color: var(--warm);
+  letter-spacing: -.005em;
+}
+.instagram-h3 em {
+  font-style: italic;
+  color: var(--stone);
 }
 .instagram-handle {
   font-family: var(--sans);
   font-size: 11px;
-  font-weight: 300;
-  letter-spacing: .1em;
-  color: var(--stone);
-  display: flex;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--warm);
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  transition: color .3s, gap .3s;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: .5px solid var(--parch);
+  transition: letter-spacing .4s, border-color .3s, gap .3s;
+  flex-shrink: 0;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.instagram-handle:hover { color: var(--warm); gap: 14px; }
-.instagram-handle svg { width: 14px; height: 14px; stroke: var(--stone); fill: none; }
+.instagram-handle:hover { letter-spacing: .28em; border-bottom-color: var(--warm); gap: 14px; }
+.instagram-handle svg { width: 12px; height: 12px; stroke: currentColor; fill: none; transition: transform .4s; }
+.instagram-handle:hover svg { transform: translateX(4px); }
+
 .ig-strip {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2px;
+  padding: 0 72px;
 }
 .ig-post {
   aspect-ratio: 3/4;
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  margin: 0;
+  background: var(--parch);
 }
-.ig-ph-1 { background: linear-gradient(135deg, #2B2B27, #3D3D38); }
-.ig-ph-2 { background: linear-gradient(135deg, #3a3530, #4a453e); }
-.ig-ph-3 { background: linear-gradient(135deg, #252522, #35352e); }
-.ig-ph-4 { background: linear-gradient(135deg, #A86543, #8b5236); }
-.ig-ph-5 { background: linear-gradient(135deg, #3D3D38, #2B2B27); }
-.ig-ph-6 { background: linear-gradient(135deg, #4a453e, #3a3530); }
+.ig-post img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s var(--slow), filter .6s;
+}
+.ig-post:hover img { transform: scale(1.04); filter: brightness(.5); }
+
 .ig-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(28,28,26,.7);
+  background: linear-gradient(180deg, transparent 30%, rgba(28,28,26,.78) 100%);
   opacity: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: opacity .4s;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 24px 20px;
+  transition: opacity .45s var(--slow);
+  margin: 0;
 }
 .ig-post:hover .ig-overlay { opacity: 1; }
 .ig-overlay-caption {
   font-family: var(--serif);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   font-style: italic;
-  color: var(--bone2);
-  text-align: center;
-  padding: 0 12px;
-  line-height: 1.4;
+  color: var(--bone);
+  text-align: left;
+  line-height: 1.45;
+  letter-spacing: .003em;
 }
 .ig-overlay-place {
   font-family: var(--sans);
-  font-size: 8.5px;
-  font-weight: 300;
-  letter-spacing: .16em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--sand);
+  padding-top: 4px;
+  border-top: .5px solid rgba(196,170,130,.4);
+  align-self: stretch;
 }
-.ig-ph-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+@media (max-width: 1200px) {
+  .ig-strip { grid-template-columns: repeat(3, 1fr); }
+  .ig-post:nth-child(n+7) { display: none; }
 }
-.ig-ph-text span {
-  font-family: var(--serif);
-  font-size: 10px;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(196,170,130,.35);
-  text-align: center;
-  padding: 8px;
+@media (max-width: 1024px) {
+  .instagram { padding: 96px 0 72px; }
+  .instagram-header { padding: 0 40px; margin-bottom: 40px; }
+  .ig-strip { padding: 0 40px; }
+}
+@media (max-width: 768px) {
+  .instagram { padding: 72px 0 56px; }
+  .instagram-header { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+  .ig-strip { grid-template-columns: repeat(2, 1fr); padding: 0 24px; gap: 1px; }
+  .ig-overlay { opacity: 1; background: linear-gradient(180deg, transparent 50%, rgba(28,28,26,.8) 100%); padding: 16px 14px; }
+  .ig-overlay-caption { font-size: 12px; }
+  .ig-overlay-place { font-size: 9px; }
 }
 
 /* ─────────────────────────────────────────────
@@ -3880,59 +3917,67 @@ body::before {
 </section>
 
 <!-- ── INSTAGRAM ── -->
-<section class="instagram" aria-label="Instagram feed">
+<section class="instagram" aria-label="From the field — photography by André Bondarenko">
   <div class="instagram-header">
-    <h3 class="instagram-h3 reveal">From the field.</h3>
+    <div class="instagram-header-left">
+      <span class="ed-label reveal">From the field</span>
+      <h3 class="instagram-h3 reveal d1">Photographs <em>by André.</em></h3>
+    </div>
     <a href="https://instagram.com/rivierajourneys" class="instagram-handle reveal d1" target="_blank" rel="noopener">
       @rivierajourneys
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
   <div class="ig-strip">
-    <!-- INSTAGRAM PLACEHOLDERS: Replace with actual Instagram post photos -->
-    <!-- Each cell should be a square photograph: 600×600px minimum -->
-    <div class="ig-post ig-ph-1 reveal">
-      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
-      <div class="ig-overlay">
-        <span class="ig-overlay-caption">"The light at Antibes, 07:40."</span>
-        <span class="ig-overlay-place">Antibes · France</span>
-      </div>
-    </div>
-    <div class="ig-post ig-ph-2 reveal d1">
-      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
-      <div class="ig-overlay">
-        <span class="ig-overlay-caption">"Eze. Twelve centuries. One excellent aperitif."</span>
-        <span class="ig-overlay-place">Eze · France</span>
-      </div>
-    </div>
-    <div class="ig-post ig-ph-3 reveal d2">
-      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
-      <div class="ig-overlay">
-        <span class="ig-overlay-caption">"The corniche road refuses to leave the coast."</span>
-        <span class="ig-overlay-place">Grande Corniche</span>
-      </div>
-    </div>
-    <div class="ig-post ig-ph-4 reveal d3">
-      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
-      <div class="ig-overlay">
-        <span class="ig-overlay-caption">"Sanremo. Two hours from Cannes, another country."</span>
-        <span class="ig-overlay-place">Sanremo · Italy</span>
-      </div>
-    </div>
-    <div class="ig-post ig-ph-5 reveal d2">
-      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
-      <div class="ig-overlay">
-        <span class="ig-overlay-caption">"The market at Mougins is worth the detour."</span>
-        <span class="ig-overlay-place">Mougins · France</span>
-      </div>
-    </div>
-    <div class="ig-post ig-ph-6 reveal d3">
-      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
-      <div class="ig-overlay">
-        <span class="ig-overlay-caption">"Monaco at seven in the morning. Before the yachts."</span>
-        <span class="ig-overlay-place">Monaco</span>
-      </div>
-    </div>
+
+    <figure class="ig-post reveal">
+      <img src="/photos/cannes-villa-rothschild-ginkgo-winter-garden-french-riviera.avif" alt="Ginkgo tree in yellow leaves at Villa Rothschild winter garden — Cannes French Riviera" loading="lazy">
+      <figcaption class="ig-overlay">
+        <span class="ig-overlay-caption">"The ginkgo at Villa Rothschild turns in the first week of December. It holds for three days."</span>
+        <span class="ig-overlay-place">Cannes · December</span>
+      </figcaption>
+    </figure>
+
+    <figure class="ig-post reveal d1">
+      <img src="/photos/menton-main-square-basilica-walking-couple-french-riviera.avif" alt="Menton main square with Basilica Saint-Michel and walking couple in late afternoon light" loading="lazy">
+      <figcaption class="ig-overlay">
+        <span class="ig-overlay-caption">"Menton, just after four. The light holds like this for twenty minutes, give or take."</span>
+        <span class="ig-overlay-place">Menton · Late afternoon</span>
+      </figcaption>
+    </figure>
+
+    <figure class="ig-post reveal d2">
+      <img src="/photos/nice-promenade-des-anglais-bench-seaside-life-french-riviera.avif" alt="Lone figure on a bench under the Promenade des Anglais pergola with striped shadows and sea view — Nice French Riviera" loading="lazy">
+      <figcaption class="ig-overlay">
+        <span class="ig-overlay-caption">"A Tuesday on the Promenade. The regulars know which bench faces east."</span>
+        <span class="ig-overlay-place">Nice · Morning</span>
+      </figcaption>
+    </figure>
+
+    <figure class="ig-post reveal d3">
+      <img src="/photos/gourdon-village-courtyard-chapel-bell-tower-provence.avif" alt="Gourdon medieval village courtyard with chapel bell tower and stone steps — off-season Provence" loading="lazy">
+      <figcaption class="ig-overlay">
+        <span class="ig-overlay-caption">"Gourdon in March. Half the village closes for lunch. The other half closes for the winter."</span>
+        <span class="ig-overlay-place">Gourdon · Off-season</span>
+      </figcaption>
+    </figure>
+
+    <figure class="ig-post reveal d2">
+      <img src="/photos/monaco-fontvieille-harbour-rescue-fire-boat.avif" alt="Monaco Fontvieille harbour with a rescue fire boat seen from above through pine branches" loading="lazy">
+      <figcaption class="ig-overlay">
+        <span class="ig-overlay-caption">"Monaco has one fireboat. Most guests never see it. We photograph it every time."</span>
+        <span class="ig-overlay-place">Monaco · Fontvieille</span>
+      </figcaption>
+    </figure>
+
+    <figure class="ig-post reveal d3">
+      <img src="/photos/nice-saint-francois-de-paule-church-interior-cours-saleya.avif" alt="Interior of Saint-François-de-Paule church near cours Saleya with Baroque statue and altar — Nice old town" loading="lazy">
+      <figcaption class="ig-overlay">
+        <span class="ig-overlay-caption">"Nine minutes from the cours Saleya. The church is always open, and usually empty."</span>
+        <span class="ig-overlay-place">Nice · Cours Saleya</span>
+      </figcaption>
+    </figure>
+
   </div>
 </section>
 
