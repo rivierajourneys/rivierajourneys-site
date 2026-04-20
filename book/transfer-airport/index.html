@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Cormorant+SC:wght@300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bone:#FDFAF6;--parch:#EAE3D7;--sand:#A86543;
+  --bone:#FDFAF6;--parch:#EAE3D7;--sand:#C4AA82;
   --stone:#8C8880;--warm:#1C1C1A;--terra:#A86543;--deep:#2B2B27;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sc:'Cormorant SC',Georgia,serif;
@@ -32,10 +32,10 @@ body{
 .kicker{
   font-family:var(--sc);font-size:8px;font-weight:300;
   letter-spacing:.26em;text-transform:uppercase;
-  color:var(--terra);
+  color:var(--sand);
   display:flex;align-items:center;gap:10px;margin-bottom:16px;
 }
-.kicker::before{content:'';width:18px;height:.5px;background:var(--terra);display:block}
+.kicker::before{content:'';width:18px;height:.5px;background:var(--sand);display:block}
 .panel-h{
   font-family:var(--serif);font-size:clamp(30px,4vw,42px);
   font-weight:300;color:var(--warm);line-height:1.06;
@@ -65,9 +65,9 @@ body{
   border-radius:0;-webkit-appearance:none;appearance:none;
 }
 .field input::placeholder,.field textarea::placeholder{color:#d8d1c6}
-.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--terra)}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--sand)}
 .field input.error,.field select.error{border-bottom-color:var(--terra)}
-.field input[type="date"],.field input[type="time"]{color-scheme:light;accent-color:var(--terra)}
+.field input[type="date"],.field input[type="time"]{color-scheme:light;accent-color:var(--sand)}
 .field input[type="date"]::-webkit-calendar-picker-indicator,
 .field input[type="time"]::-webkit-calendar-picker-indicator{
   opacity:.35;cursor:pointer;
@@ -96,7 +96,7 @@ body{
 }
 .btn-submit{
   font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--warm);background:var(--terra);padding:15px 12px;border:none;cursor:pointer;
+  color:var(--warm);background:var(--sand);padding:15px 12px;border:none;cursor:pointer;
   position:relative;overflow:hidden;transition:color .4s;
   display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
 }
@@ -109,11 +109,11 @@ body{
 .btn-submit:disabled{opacity:.4;cursor:not-allowed}
 .btn-wa{
   font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--warm);background:transparent;border:1.5px solid var(--terra);
+  color:var(--warm);background:transparent;border:1.5px solid var(--sand);
   padding:15px 12px;cursor:pointer;position:relative;overflow:hidden;transition:color .3s;
   display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;width:100%;
 }
-.btn-wa::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}
+.btn-wa::before{content:'';position:absolute;inset:0;background:var(--sand);transform:translateX(-101%);transition:transform .5s var(--slow)}
 .btn-wa:hover::before{transform:translateX(0)}
 .btn-wa:hover{color:var(--warm)}
 .btn-wa span,.btn-wa svg{position:relative;z-index:1}

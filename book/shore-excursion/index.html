@@ -11,7 +11,7 @@
 <style>
 :root{
   --bone:#FDFAF6;--bone2:#F7F3ED;--parch:#EAE3D7;
-  --sand:#A86543;--stone:#8C8880;--slate:#3D3D38;
+  --sand:#C4AA82;--stone:#8C8880;--slate:#3D3D38;
   --warm:#1C1C1A;--terra:#A86543;--deep:#2B2B27;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sc:'Cormorant SC',Georgia,serif;
@@ -37,7 +37,7 @@ body{
   cursor:pointer;transition:border-color .3s,background .3s;
   z-index:100;text-decoration:none;
 }
-.close-btn:hover{border-color:var(--terra);background:var(--bone2)}
+.close-btn:hover{border-color:var(--sand);background:var(--bone2)}
 .close-btn svg{width:14px;height:14px;stroke:var(--stone);stroke-width:1.5;transition:stroke .3s;fill:none}
 .close-btn:hover svg{stroke:var(--warm)}
 
@@ -48,10 +48,10 @@ body{
 .card-header{padding-bottom:32px}
 .kicker{
   font-family:var(--sc);font-size:10.5px;font-weight:300;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--terra);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--sand);
   display:flex;align-items:center;gap:12px;margin-bottom:20px;
 }
-.kicker::before{content:'';width:20px;height:.5px;background:var(--terra);display:block}
+.kicker::before{content:'';width:20px;height:.5px;background:var(--sand);display:block}
 .panel-h{
   font-family:var(--serif);font-size:clamp(28px,4vw,44px);
   font-weight:300;color:var(--warm);line-height:1.06;margin-bottom:12px;
@@ -66,11 +66,11 @@ body{
 /* SECTION LABEL */
 .form-section-lbl{
   font-family:var(--sc);font-size:9px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--terra);
+  text-transform:uppercase;color:var(--sand);
   display:flex;align-items:center;gap:10px;
   margin-bottom:24px;margin-top:36px;
 }
-.form-section-lbl::before{content:'';display:block;width:16px;height:.5px;background:var(--terra)}
+.form-section-lbl::before{content:'';display:block;width:16px;height:.5px;background:var(--sand)}
 
 /* FIELDS */
 .field{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
@@ -89,9 +89,9 @@ body{
   border-radius:0;-webkit-appearance:none;appearance:none;
 }
 .field input::placeholder,.field textarea::placeholder{color:rgba(140,136,128,.4);font-weight:300}
-.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--terra)}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--sand)}
 .field input.error,.field select.error{border-bottom-color:var(--terra)}
-.field input[type="date"],.field input[type="time"]{color-scheme:light;accent-color:var(--terra)}
+.field input[type="date"],.field input[type="time"]{color-scheme:light;accent-color:var(--sand)}
 .field input[type="date"]::-webkit-calendar-picker-indicator,
 .field input[type="time"]::-webkit-calendar-picker-indicator{
   opacity:.3;cursor:pointer;
@@ -126,7 +126,7 @@ body{
 .btn-submit{
   font-family:var(--sans);font-size:10px;font-weight:500;
   letter-spacing:.2em;text-transform:uppercase;
-  color:var(--warm);background:var(--terra);
+  color:var(--warm);background:var(--sand);
   padding:16px 12px;border:none;cursor:pointer;
   position:relative;overflow:hidden;transition:color .4s;
   display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
@@ -142,13 +142,13 @@ body{
   font-family:var(--sans);font-size:10px;font-weight:500;
   letter-spacing:.2em;text-transform:uppercase;
   color:var(--warm);background:transparent;
-  border:1.5px solid var(--terra);
+  border:1.5px solid var(--sand);
   padding:16px 12px;cursor:pointer;
   position:relative;overflow:hidden;transition:color .3s;
   display:flex;align-items:center;justify-content:center;gap:9px;
   text-decoration:none;width:100%;
 }
-.btn-wa::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}
+.btn-wa::before{content:'';position:absolute;inset:0;background:var(--sand);transform:translateX(-101%);transition:transform .5s var(--slow)}
 .btn-wa:hover::before{transform:translateX(0)}
 .btn-wa:hover{color:var(--warm)}
 .btn-wa span,.btn-wa svg{position:relative;z-index:1}
@@ -160,7 +160,7 @@ body{
 }
 .success-kicker{
   font-family:var(--sc);font-size:10px;letter-spacing:.22em;
-  color:var(--terra);margin-bottom:20px;
+  color:var(--sand);margin-bottom:20px;
 }
 .success-state h3{
   font-family:var(--serif);font-size:36px;font-weight:300;
