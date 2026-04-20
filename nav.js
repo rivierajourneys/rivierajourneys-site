@@ -11,6 +11,14 @@
     link.href = '/nav.css';
     document.head.appendChild(link);
   }
+  // 1b. Inject analytics.js (GA4 + UTM tracking + conversion events)
+  if (!document.getElementById('rj-analytics')) {
+    var s = document.createElement('script');
+    s.id = 'rj-analytics';
+    s.src = '/analytics.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  }
 
   // 2. Skip pages that already have the full mega menu
   if (document.querySelector('.mega-panel') && window._rjNav) return;
