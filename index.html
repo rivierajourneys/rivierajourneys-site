@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
 /* ─────────────────────────────────────────────
@@ -42,6 +42,7 @@
   --deep:    #2B2B27;
   --serif:   'Cormorant Garamond', Georgia, serif;
   --sc:      'Cormorant SC', Georgia, serif;
+  --body:    'Newsreader', Georgia, serif;
   --sans:    'Jost', sans-serif;
   --ease:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --slow:    cubic-bezier(0.16, 1, 0.3, 1);
@@ -61,7 +62,7 @@ body {
 }
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 a { text-decoration: none; color: inherit; }
-::selection { background: var(--sand); color: var(--warm); }
+::selection { background: var(--terra); color: var(--warm); }
 
 /* ─────────────────────────────────────────────
    CUSTOM CURSOR
@@ -384,8 +385,8 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--sand) !important;
-  border: .5px solid rgba(196,170,130,.55);
+  color: var(--terra) !important;
+  border: .5px solid rgba(168,101,67,.55);
   padding: 11px 28px !important;
   height: auto !important;
   line-height: normal !important;
@@ -453,17 +454,17 @@ a { text-decoration: none; color: inherit; }
   font-weight: 300;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(196,170,130,.5);
+  color: rgba(168,101,67,.5);
 }
 .placeholder-icon {
   width: 56px; height: 56px;
-  border: .5px solid rgba(196,170,130,.25);
+  border: .5px solid rgba(168,101,67,.25);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.placeholder-icon svg { width: 22px; height: 22px; stroke: rgba(196,170,130,.4); fill: none; }
+.placeholder-icon svg { width: 22px; height: 22px; stroke: rgba(168,101,67,.4); fill: none; }
 
 /* Grain overlay */
 /* Guard: hide placeholder spans if they escape hero-photo */
@@ -498,7 +499,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 400;
   letter-spacing: .28em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -511,7 +512,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   width: 40px;
   height: .5px;
-  background: var(--sand);
+  background: var(--terra);
 }
 .hero-h1 {
   font-family: var(--serif);
@@ -584,7 +585,7 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--warm);
-  background: var(--sand);
+  background: var(--terra);
   padding: 16px 36px;
   position: relative;
   overflow: hidden;
@@ -661,13 +662,13 @@ a { text-decoration: none; color: inherit; }
   font-weight: 300;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(196,170,130,.6);
+  color: rgba(168,101,67,.6);
   writing-mode: vertical-rl;
 }
 .scroll-line {
   width: .5px;
   height: 48px;
-  background: rgba(196,170,130,.3);
+  background: rgba(168,101,67,.3);
   position: relative;
   overflow: hidden;
 }
@@ -677,7 +678,7 @@ a { text-decoration: none; color: inherit; }
   top: -100%;
   left: 0; right: 0;
   height: 100%;
-  background: var(--sand);
+  background: var(--terra);
   animation: scrollLine 2s var(--ease) 1.5s infinite;
 }
 
@@ -704,7 +705,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 9px;
   font-weight: 300;
   letter-spacing: .12em;
-  color: rgba(196,170,130,.5);
+  color: rgba(168,101,67,.5);
   opacity: 0;
   animation: fadeIn 1s var(--slow) 1.6s forwards;
 }
@@ -714,7 +715,7 @@ a { text-decoration: none; color: inherit; }
 ───────────────────────────────────────────── */
 .ticker-bar {
   background: var(--warm);
-  border-bottom: .5px solid rgba(196,170,130,.15);
+  border-bottom: .5px solid rgba(168,101,67,.15);
   overflow: hidden;
   height: 44px;
   display: flex;
@@ -736,11 +737,11 @@ a { text-decoration: none; color: inherit; }
   font-weight: 300;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(196,170,130,.7);
+  color: rgba(168,101,67,.7);
 }
 .ticker-dot {
   width: 3px; height: 3px;
-  background: rgba(196,170,130,.4);
+  background: rgba(168,101,67,.4);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -772,7 +773,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   display: flex;
   align-items: center;
   gap: 14px;
@@ -782,7 +783,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   width: 24px;
   height: .5px;
-  background: var(--sand);
+  background: var(--terra);
 }
 .intro-issue {
   font-family: var(--sans);
@@ -809,7 +810,7 @@ a { text-decoration: none; color: inherit; }
 .intro-rule {
   width: 40px;
   height: .5px;
-  background: var(--sand);
+  background: var(--terra);
   margin-bottom: 28px;
 }
 .intro-text {
@@ -837,7 +838,7 @@ a { text-decoration: none; color: inherit; }
   padding-bottom: 4px;
   transition: border-color .3s, gap .3s;
 }
-.intro-link:hover { border-color: var(--sand); gap: 20px; }
+.intro-link:hover { border-color: var(--terra); gap: 20px; }
 
 /* ─────────────────────────────────────────────
    FEATURED TOURS
@@ -948,17 +949,17 @@ a { text-decoration: none; color: inherit; }
   font-weight: 300;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(196,170,130,.45);
+  color: rgba(168,101,67,.45);
   text-align: center;
 }
 .ph-frame {
   width: 48px; height: 48px;
-  border: .5px solid rgba(196,170,130,.2);
+  border: .5px solid rgba(168,101,67,.2);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ph-frame svg { width: 20px; height: 20px; stroke: rgba(196,170,130,.35); fill: none; }
+.ph-frame svg { width: 20px; height: 20px; stroke: rgba(168,101,67,.35); fill: none; }
 .tour-card-tag {
   position: absolute;
   top: 20px; left: 20px;
@@ -967,7 +968,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   background: rgba(28,28,26,.7);
   padding: 5px 12px;
   z-index: 2;
@@ -1082,13 +1083,13 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 24px;
   transition: color .4s;
 }
-.service-card:hover .service-number { color: rgba(196,170,130,.2); }
+.service-card:hover .service-number { color: rgba(168,101,67,.2); }
 .service-icon {
   width: 44px; height: 44px;
   margin-bottom: 20px;
 }
-.service-icon svg { width: 100%; height: 100%; stroke: var(--sand); fill: none; stroke-width: 1; transition: stroke .4s; }
-.service-card:hover .service-icon svg { stroke: rgba(196,170,130,.6); }
+.service-icon svg { width: 100%; height: 100%; stroke: var(--terra); fill: none; stroke-width: 1; transition: stroke .4s; }
+.service-card:hover .service-icon svg { stroke: rgba(168,101,67,.6); }
 .service-title {
   font-family: var(--serif);
   font-size: 24px;
@@ -1106,7 +1107,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.8;
   transition: color .4s;
 }
-.service-card:hover .service-desc { color: rgba(196,170,130,.65); }
+.service-card:hover .service-desc { color: rgba(168,101,67,.65); }
 .service-link {
   display: inline-flex;
   align-items: center;
@@ -1117,10 +1118,10 @@ a { text-decoration: none; color: inherit; }
   font-weight: 400;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   transition: gap .3s;
 }
-.service-link svg { width: 14px; height: 14px; stroke: var(--sand); fill: none; transition: transform .45s var(--ease); }
+.service-link svg { width: 14px; height: 14px; stroke: var(--terra); fill: none; transition: transform .45s var(--ease); }
 .service-card:hover .service-link { gap: 14px; }
 .service-card:hover .service-link svg { transform: translateX(4px); }
 .service-card::before {
@@ -1178,13 +1179,13 @@ a { text-decoration: none; color: inherit; }
   font-weight: 400;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 14px;
 }
-.ep-overline::before { content: ''; display: block; width: 28px; height: .5px; background: var(--sand); }
+.ep-overline::before { content: ''; display: block; width: 28px; height: .5px; background: var(--terra); }
 .ep-h2 {
   font-family: var(--serif);
   font-size: clamp(30px, 3.5vw, 52px);
@@ -1207,7 +1208,7 @@ a { text-decoration: none; color: inherit; }
   gap: 40px;
   margin-bottom: 36px;
   padding-top: 28px;
-  border-top: .5px solid rgba(196,170,130,.2);
+  border-top: .5px solid rgba(168,101,67,.2);
 }
 .ep-stat-num {
   font-family: var(--serif);
@@ -1223,7 +1224,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 300;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   display: block;
   margin-top: 4px;
 }
@@ -1286,7 +1287,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   z-index: 2;
 }
 .article-body {
@@ -1301,10 +1302,10 @@ a { text-decoration: none; color: inherit; }
   font-size: 9.5px;
   font-weight: 300;
   letter-spacing: .1em;
-  color: var(--sand);
+  color: var(--terra);
   text-transform: uppercase;
 }
-.article-card:first-child .article-date { color: rgba(196,170,130,.7); }
+.article-card:first-child .article-date { color: rgba(168,101,67,.7); }
 .article-title {
   font-family: var(--serif);
   font-weight: 300;
@@ -1320,11 +1321,11 @@ a { text-decoration: none; color: inherit; }
   color: var(--stone);
   line-height: 1.75;
 }
-.article-card:first-child .article-excerpt { color: rgba(196,170,130,.65); font-size: 13.5px; }
+.article-card:first-child .article-excerpt { color: rgba(168,101,67,.65); font-size: 13.5px; }
 .article-footer {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: .5px solid rgba(196,170,130,.15);
+  border-top: .5px solid rgba(168,101,67,.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1336,7 +1337,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 400;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1349,7 +1350,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--sans);
   font-size: 9px;
   font-weight: 300;
-  color: rgba(196,170,130,.5);
+  color: rgba(168,101,67,.5);
 }
 .article-card:not(:first-child) .read-time { color: var(--stone); opacity: .6; }
 
@@ -1370,7 +1371,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--sc);
   font-size: 180px;
   font-weight: 300;
-  color: rgba(196,170,130,.04);
+  color: rgba(168,101,67,.04);
   letter-spacing: .1em;
   white-space: nowrap;
   pointer-events: none;
@@ -1391,12 +1392,12 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.testi-overline::before { content: ''; display: block; width: 24px; height: .5px; background: var(--sand); }
+.testi-overline::before { content: ''; display: block; width: 24px; height: .5px; background: var(--terra); }
 .testi-h3 {
   font-family: var(--serif);
   font-size: 36px;
@@ -1411,7 +1412,7 @@ a { text-decoration: none; color: inherit; }
 }
 .testi-stars span {
   font-size: 14px;
-  color: var(--sand);
+  color: var(--terra);
 }
 .testi-rating {
   font-family: var(--serif);
@@ -1425,7 +1426,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 10px;
   font-weight: 300;
   letter-spacing: .1em;
-  color: rgba(196,170,130,.5);
+  color: rgba(168,101,67,.5);
 }
 .testi-center {
   display: flex;
@@ -1437,7 +1438,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--serif);
   font-size: 80px;
   font-weight: 300;
-  color: rgba(196,170,130,.25);
+  color: rgba(168,101,67,.25);
   line-height: .6;
   align-self: flex-start;
 }
@@ -1461,13 +1462,13 @@ a { text-decoration: none; color: inherit; }
   font-size: 11px;
   font-weight: 400;
   letter-spacing: .1em;
-  color: var(--sand);
+  color: var(--terra);
 }
 .testi-author-origin {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 300;
-  color: rgba(196,170,130,.5);
+  color: rgba(168,101,67,.5);
 }
 .testi-nav {
   display: flex;
@@ -1477,15 +1478,15 @@ a { text-decoration: none; color: inherit; }
 }
 .testi-btn {
   width: 44px; height: 44px;
-  border: .5px solid rgba(196,170,130,.25);
+  border: .5px solid rgba(168,101,67,.25);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background .3s, border-color .3s;
 }
-.testi-btn:hover { background: rgba(196,170,130,.1); border-color: rgba(196,170,130,.5); }
-.testi-btn svg { width: 16px; height: 16px; stroke: rgba(196,170,130,.6); fill: none; }
+.testi-btn:hover { background: rgba(168,101,67,.1); border-color: rgba(168,101,67,.5); }
+.testi-btn svg { width: 16px; height: 16px; stroke: rgba(168,101,67,.6); fill: none; }
 .testi-dots {
   display: flex;
   flex-direction: column;
@@ -1493,10 +1494,10 @@ a { text-decoration: none; color: inherit; }
 }
 .testi-dot {
   width: .5px; height: 24px;
-  background: rgba(196,170,130,.25);
+  background: rgba(168,101,67,.25);
   transition: background .3s, height .3s var(--ease);
 }
-.testi-dot.active { height: 40px; background: var(--sand); }
+.testi-dot.active { height: 40px; background: var(--terra); }
 
 /* ─────────────────────────────────────────────
    RIVIERA MAP / DESTINATIONS
@@ -1526,7 +1527,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--serif);
   font-size: 11px;
   font-weight: 300;
-  color: var(--sand);
+  color: var(--terra);
   display: block;
   margin-bottom: 12px;
 }
@@ -1548,7 +1549,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--stone);
   transition: color .4s;
 }
-.dest-card:hover .dest-country { color: var(--sand); }
+.dest-card:hover .dest-country { color: var(--terra); }
 .dest-card::after {
   content: '';
   position: absolute;
@@ -1597,7 +1598,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   gap: 8px;
 }
-.nl-meta::before { content: ''; display: block; width: 16px; height: .5px; background: var(--sand); }
+.nl-meta::before { content: ''; display: block; width: 16px; height: .5px; background: var(--terra); }
 .nl-right { display: flex; flex-direction: column; gap: 16px; }
 .nl-form { display: flex; flex-direction: column; gap: 0; }
 .nl-input-wrap { position: relative; }
@@ -1615,7 +1616,7 @@ a { text-decoration: none; color: inherit; }
   transition: border-color .3s;
 }
 .nl-input::placeholder { color: var(--stone); }
-.nl-input:focus { border-bottom-color: var(--sand); }
+.nl-input:focus { border-bottom-color: var(--terra); }
 .nl-input-line {
   position: absolute;
   bottom: 0; left: 0;
@@ -1778,9 +1779,9 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   padding-top: 4px;
-  border-top: .5px solid rgba(196,170,130,.4);
+  border-top: .5px solid rgba(168,101,67,.4);
   align-self: stretch;
 }
 
@@ -1808,7 +1809,7 @@ a { text-decoration: none; color: inherit; }
 footer {
   background: var(--warm);
   padding: 72px 72px 48px;
-  border-top: .5px solid rgba(196,170,130,.1);
+  border-top: .5px solid rgba(168,101,67,.1);
 }
 .footer-grid {
   display: grid;
@@ -1826,7 +1827,7 @@ footer {
 }
 .footer-rule {
   width: 32px; height: .5px;
-  background: var(--sand);
+  background: var(--terra);
 }
 .footer-tagline {
   font-family: var(--serif);
@@ -1840,7 +1841,7 @@ footer {
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 300;
-  color: rgba(196,170,130,.5);
+  color: rgba(168,101,67,.5);
   line-height: 1.8;
   max-width: 280px;
 }
@@ -1850,10 +1851,10 @@ footer {
   font-weight: 500;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: .5px solid rgba(196,170,130,.15);
+  border-bottom: .5px solid rgba(168,101,67,.15);
 }
 .footer-links {
   list-style: none;
@@ -1878,10 +1879,10 @@ footer {
   color: rgba(247,243,237,.45);
   line-height: 1.9;
 }
-.footer-contact a { color: rgba(196,170,130,.6); transition: color .3s; }
-.footer-contact a:hover { color: var(--sand); }
+.footer-contact a { color: rgba(168,101,67,.6); transition: color .3s; }
+.footer-contact a:hover { color: var(--terra); }
 .footer-bottom {
-  border-top: .5px solid rgba(196,170,130,.1);
+  border-top: .5px solid rgba(168,101,67,.1);
   padding-top: 28px;
   display: flex;
   justify-content: space-between;
@@ -1891,7 +1892,7 @@ footer {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 300;
-  color: rgba(196,170,130,.3);
+  color: rgba(168,101,67,.3);
   letter-spacing: .06em;
 }
 .footer-legal {
@@ -1902,11 +1903,11 @@ footer {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 300;
-  color: rgba(196,170,130,.3);
+  color: rgba(168,101,67,.3);
   letter-spacing: .06em;
   transition: color .3s;
 }
-.footer-legal a:hover { color: rgba(196,170,130,.6); }
+.footer-legal a:hover { color: rgba(168,101,67,.6); }
 
 /* ─────────────────────────────────────────────
    PROGRESS BAR
@@ -2018,7 +2019,7 @@ footer {
     display: flex;
     align-items: center;
   }
-  .service-link svg { stroke: var(--sand) !important; width: 18px; height: 18px; flex-shrink: 0; }
+  .service-link svg { stroke: var(--terra) !important; width: 18px; height: 18px; flex-shrink: 0; }
   .ep-content { left: 24px; max-width: 85vw; }
   .ep-stat-row { display: none; }
   .testimonials { padding: 64px 24px; }
@@ -2044,16 +2045,16 @@ footer {
 .mobile-menu{display:none;position:fixed;inset:0;z-index:250;background:var(--warm);flex-direction:column;justify-content:flex-start;padding:104px 48px 56px;opacity:0;transition:opacity .4s;overflow-y:auto}
 .mobile-menu.open{display:flex;opacity:1}
 .mobile-nav{list-style:none;display:flex;flex-direction:column;gap:0}
-.mobile-nav li{border-bottom:.5px solid rgba(196,170,130,.12)}
+.mobile-nav li{border-bottom:.5px solid rgba(168,101,67,.12)}
 .mobile-nav a{font-family:var(--sans);font-size:clamp(22px,5.5vw,32px);font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);display:block;padding:16px 0;transition:color .3s,padding-left .3s}
-.mobile-nav a:hover{color:var(--sand);padding-left:8px}
-.mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s}
+.mobile-nav a:hover{color:var(--terra);padding-left:8px}
+.mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--terra);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s}
 .mobile-menu-cta:hover{background:var(--terra)}
-.mobile-menu-logo{position:absolute;top:28px;left:48px;font-family:'Cormorant SC',Georgia,serif;font-size:14px;font-weight:300;letter-spacing:.14em;color:var(--sand)}
-.mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(196,170,130,.3);color:var(--sand);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
-.mobile-menu-close:hover{background:rgba(196,170,130,.1)}
+.mobile-menu-logo{position:absolute;top:28px;left:48px;font-family:'Cormorant SC',Georgia,serif;font-size:14px;font-weight:300;letter-spacing:.14em;color:var(--terra)}
+.mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(168,101,67,.3);color:var(--terra);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
+.mobile-menu-close:hover{background:rgba(168,101,67,.1)}
 /* Mobile accordion */
-.mob-parent { border-bottom: .5px solid rgba(196,170,130,.12); }
+.mob-parent { border-bottom: .5px solid rgba(168,101,67,.12); }
 .mob-toggle {
   width: 100%;
   background: none;
@@ -2072,11 +2073,11 @@ footer {
   align-items: center;
   transition: color .3s;
 }
-.mob-toggle:hover { color: var(--sand); }
+.mob-toggle:hover { color: var(--terra); }
 .mob-arrow {
   font-size: 20px;
   font-weight: 300;
-  color: var(--sand);
+  color: var(--terra);
   transition: transform .3s;
   line-height: 1;
 }
@@ -2097,11 +2098,11 @@ footer {
   letter-spacing: .1em;
   color: rgba(247,243,237,.7);
   padding: 8px 0;
-  border-bottom: .5px solid rgba(196,170,130,.06);
+  border-bottom: .5px solid rgba(168,101,67,.06);
   transition: color .2s, padding-left .2s;
 }
 .mob-sub li:last-child a { border-bottom: none; padding-bottom: 14px; }
-.mob-sub li a:hover { color: var(--sand); padding-left: 6px; }
+.mob-sub li a:hover { color: var(--terra); padding-left: 6px; }
 .mob-sub-label {
   display: block;
   font-family: var(--sc);
@@ -2109,7 +2110,7 @@ footer {
   font-weight: 300;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--sand);
+  color: var(--terra);
   opacity: .35;
   padding: 14px 0 4px;
   border-bottom: none !important;
@@ -2139,8 +2140,8 @@ footer {
 .faq-q-text { font-family: var(--serif); font-size: 20px; font-weight: 300; color: var(--warm); line-height: 1.25; }
 .faq-icon { width: 28px; height: 28px; flex-shrink: 0; border: .5px solid var(--parch); display: flex; align-items: center; justify-content: center; transition: transform .4s var(--slow), border-color .3s; }
 .faq-icon svg { width: 12px; height: 12px; stroke: var(--stone); fill: none; transition: stroke .3s; }
-.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--sand); }
-.faq-item.open .faq-icon svg { stroke: var(--sand); }
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--terra); }
+.faq-item.open .faq-icon svg { stroke: var(--terra); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s var(--slow); }
 .faq-item.open .faq-answer { max-height: 300px; }
 .faq-answer-inner { padding: 0 32px 28px; font-family: var(--sans); font-size: 15.5px; font-weight: 400; color: var(--slate); line-height: 1.9; border-top: .5px solid var(--parch); padding-top: 22px; }
@@ -2824,9 +2825,9 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════════════
-   SLOWCOACH — Editorial sub-brand section
+   THE ROADBOOK — Editorial section
    Paper feel. Warm bone background. Subtle grain.
-   No terracotta. Magazine masthead.
+   Magazine masthead.
 ═══════════════════════════════════════════════════════ */
 .slowcoach {
   position: relative;
@@ -3164,11 +3165,11 @@ body::before {
     <p class="hero-sub">Private day tours, shore excursions and transfers from Cannes. In a Mercedes V-Class, driven by someone who lives here. For travellers who prefer one considered day to a dozen listed sights.</p>
     <div class="hero-actions">
       <a href="/tours" class="btn-primary">
-        <span>Explore the Tours</span>
+        <span>View the Tours</span>
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#slowcoach" class="btn-ghost">
-        Read Slowcoach
+      <a href="/editorial" class="btn-ghost">
+        Read the Roadbook
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -3222,7 +3223,7 @@ body::before {
     <p class="intro-text reveal d3">
       The French and Italian Riviera has been visited by millions and genuinely understood by very few. Most people arrive, photograph the postcard, and leave with a collection of images that look exactly like everyone else's. We do something different: we show you the Riviera as it is actually lived — the roads that do not appear on tour maps, the villages that reward patience, the light at a particular hour on a particular stretch of coastline that no scheduled excursion will get you to on time.
       <br><br>
-      Riviera Journeys is a private touring service based in Cannes. Day tours, multi-day itineraries, shore excursions for cruise guests and airport transfers — all in a premium Mercedes V-Class, up to seven passengers. The difference is not the vehicle. It is the knowledge of place that comes from living here. Alongside the touring, we publish <em>Slowcoach</em> — essays, a monthly letter and a one-to-one consultation for travellers planning a proper fortnight on the coast.
+      Riviera Journeys is a private touring service based in Cannes. Day tours, multi-day itineraries, shore excursions for cruise guests and airport transfers — all in a premium Mercedes V-Class, up to seven passengers. The difference is not the vehicle. It is the knowledge of place that comes from living here.
     </p>
     <a href="/about" class="intro-link reveal d4">
       The philosophy behind Riviera Journeys
@@ -3373,7 +3374,7 @@ body::before {
     <div class="service-card reveal d1">
       <div class="service-number">01</div>
       <div class="service-icon">
-        <svg viewBox="0 0 44 44" stroke-width="1"><circle cx="22" cy="22" r="18"/><path d="M22 4 A18 18 0 0 1 40 22"/><circle cx="22" cy="22" r="2" fill="var(--sand)"/></svg>
+        <svg viewBox="0 0 44 44" stroke-width="1"><circle cx="22" cy="22" r="18"/><path d="M22 4 A18 18 0 0 1 40 22"/><circle cx="22" cy="22" r="2" fill="var(--terra)"/></svg>
       </div>
       <h3 class="service-title">Day Tours & Shore Excursions</h3>
       <p class="service-desc">Private full-day tours from Cannes. Nice, Eze, Monaco, Antibes, Menton, Sanremo, Grasse. Shore excursions from Villefranche. Designed around your schedule — not a group tour's.</p>
@@ -3382,7 +3383,7 @@ body::before {
     <div class="service-card reveal d2">
       <div class="service-number">02</div>
       <div class="service-icon">
-        <svg viewBox="0 0 44 44" stroke-width="1"><path d="M4 34 C14 34 14 10 22 10 C30 10 30 34 40 34"/><circle cx="22" cy="10" r="2" fill="var(--sand)"/></svg>
+        <svg viewBox="0 0 44 44" stroke-width="1"><path d="M4 34 C14 34 14 10 22 10 C30 10 30 34 40 34"/><circle cx="22" cy="10" r="2" fill="var(--terra)"/></svg>
       </div>
       <h3 class="service-title">Multi-Day Journeys</h3>
       <p class="service-desc">Several days east along the coast. Cannes to Florence via Genova and Cinque Terre. Overnight in cities worth sleeping in. The itinerary built around what you actually want to see.</p>
@@ -3391,7 +3392,7 @@ body::before {
     <div class="service-card reveal d3">
       <div class="service-number">03</div>
       <div class="service-icon">
-        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="6" y="20" width="32" height="14" rx="2"/><path d="M14 20V14a8 8 0 0 1 16 0v6"/><circle cx="22" cy="27" r="2" fill="var(--sand)"/></svg>
+        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="6" y="20" width="32" height="14" rx="2"/><path d="M14 20V14a8 8 0 0 1 16 0v6"/><circle cx="22" cy="27" r="2" fill="var(--terra)"/></svg>
       </div>
       <h3 class="service-title">Transfers</h3>
       <p class="service-desc">Nice Côte d'Azur Airport to Cannes, Monaco, Antibes, Saint-Tropez and anywhere on the Riviera worth going. Mercedes V-Class. On time, always. From €150.</p>
@@ -3400,7 +3401,7 @@ body::before {
     <div class="service-card reveal d1">
       <div class="service-number">04</div>
       <div class="service-icon">
-        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="8" y="14" width="28" height="20" rx="3"/><circle cx="22" cy="24" r="6"/><circle cx="22" cy="24" r="3" fill="var(--sand)"/><rect x="17" y="10" width="10" height="5" rx="2"/></svg>
+        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="8" y="14" width="28" height="20" rx="3"/><circle cx="22" cy="24" r="6"/><circle cx="22" cy="24" r="3" fill="var(--terra)"/><rect x="17" y="10" width="10" height="5" rx="2"/></svg>
       </div>
       <h3 class="service-title">Off-Season & Experiences</h3>
       <p class="service-desc">Truffle markets at dawn in the hills above Nice. Ski runs an hour from the coast. Winter gastronomy. Photography at first light. The Riviera that crowds never see.</p>
@@ -3736,10 +3737,10 @@ body::before {
 
 
 <!-- ═══════════════════════════════════════════════════════
-     SLOWCOACH — Editorial sub-brand of Riviera Journeys
-     The considered voice. No terracotta. No hurry.
+     THE ROADBOOK — Editorial of Riviera Journeys
+     The considered voice.
 ═══════════════════════════════════════════════════════ -->
-<section class="slowcoach" id="slowcoach" aria-label="Slowcoach — the editorial of Riviera Journeys">
+<section class="slowcoach" id="roadbook" aria-label="The Roadbook — editorial of Riviera Journeys">
   <div class="sc-grain" aria-hidden="true"></div>
 
   <!-- MASTHEAD -->
@@ -3749,13 +3750,13 @@ body::before {
       <span>An editorial of Riviera Journeys</span>
       <span class="sc-publisher-rule"></span>
     </div>
-    <h2 class="sc-wordmark">Slowcoach</h2>
+    <h2 class="sc-wordmark">The Roadbook</h2>
     <div class="sc-issue">Issue No. 07 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Written from Cannes</div>
   </header>
 
   <!-- LEDE -->
   <div class="sc-lede-wrap reveal">
-    <p class="sc-lede">The Riviera rewards those who read about it <em>before</em> they arrive. Slowcoach is the written side of Riviera Journeys — essays, practical guides, a monthly letter, and a one-to-one consultation. For travellers who prefer to understand a place rather than simply visit it.</p>
+    <p class="sc-lede">The Riviera rewards those who read about it <em>before</em> they arrive. The Roadbook is the written side of Riviera Journeys — essays, practical guides, a monthly letter, and a one-to-one consultation. For travellers who prefer to understand a place rather than simply visit it.</p>
   </div>
 
   <!-- 3 ARTICLES -->
@@ -3852,14 +3853,14 @@ body::before {
 
 
 <!-- ── SLOW TRAVEL CONSULTING ── -->
-<section style="padding:128px 72px;border-bottom:.5px solid var(--parch);background:var(--bone);position:relative;overflow:hidden" aria-label="Slowcoach — The Consultation">
+<section style="padding:128px 72px;border-bottom:.5px solid var(--parch);background:var(--bone);position:relative;overflow:hidden" aria-label="The Consultation">
 <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .11  0 0 0 0 .11  0 0 0 0 .1  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p2)'/%3E%3C/svg%3E&quot;);background-size:220px;mix-blend-mode:multiply;pointer-events:none;z-index:1"></div>
 <div style="position:relative;z-index:2">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
     <div>
       <span style="font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:14px;margin-bottom:18px">
         <span style="display:block;width:24px;height:.5px;background:var(--stone)"></span>
-        Slowcoach &nbsp;·&nbsp; The Consultation
+        The Consultation
       </span>
       <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,42px);font-weight:300;color:var(--warm);line-height:1.15;margin-bottom:24px">A fortnight on the Riviera,<br><em style="font-style:italic;color:var(--stone)">done properly.</em></h2>
       <p style="font-family:var(--sans);font-size:16px;font-weight:400;color:var(--slate);line-height:1.85;margin-bottom:36px">Most people plan a trip. A few plan a stay. If you are one of the latter — two weeks, a real base, time to understand a place rather than photograph it — then one conversation with someone who has lived here is worth more than any guidebook.</p>
@@ -3886,17 +3887,17 @@ body::before {
 </div>
 </section>
 
-<!-- ── THE SLOWCOACH LETTER ── -->
-<section class="newsletter" id="letter" aria-label="The Slowcoach Letter — newsletter signup">
+<!-- ── THE LETTER ── -->
+<section class="newsletter" id="letter" aria-label="The Letter — newsletter signup">
   <div class="nl-left">
-    <span class="section-label reveal">Slowcoach &nbsp;·&nbsp; The Letter</span>
+    <span class="section-label reveal">The Letter</span>
     <h2 class="nl-h2 reveal d1">A letter from Cannes,<br><em>once a month.</em></h2>
     <p class="nl-body reveal d2">Places, roads and people that do not appear in travel supplements. New routes, overlooked villages, the best time of year to visit somewhere you thought you knew. One considered letter a month — no advertising, no partners, no filler. About twelve hundred words and a photograph or two.</p>
     <div class="nl-meta reveal d3">No advertising. No partners. Unsubscribe anytime.</div>
   </div>
   <div class="nl-right reveal d2">
     <div style="font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--stone);margin-bottom:28px;padding-bottom:20px;border-bottom:.5px solid var(--parch)">
-      "The kind of letter one actually looks forward to opening."<br><span style="font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-style:normal;display:block;margin-top:14px">Subscriber · London</span>
+      "The kind of letter one actually looks forward to opening."<br><span style="font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-style:normal;display:block;margin-top:14px">Subscriber · London</span>
     </div>
     <form class="nl-form" onsubmit="return false;">
       <div class="nl-input-wrap" style="margin-bottom:24px">
