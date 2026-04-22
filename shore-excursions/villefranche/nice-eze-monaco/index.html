@@ -136,7 +136,7 @@ img{display:block;max-width:100%;height:auto}
 to{transform:translateX(-50%)}}
 
 /* BREADCRUMB — inline, no background bar */
-.bc-bar{padding:64px 96px 40px !important;background:#F8F3ED;position:relative;z-index:5}
+.bc-bar{padding:64px 96px 40px !important;background:transparent}
 .bc-list{display:flex;align-items:center;gap:6px;list-style:none;flex-wrap:wrap}
 .bc-list li{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:6px}
 .bc-list li::after{content:'·';color:var(--sand);opacity:.5}
@@ -162,7 +162,7 @@ to{transform:translateX(-50%)}}
    Content ends exactly at sidebar's left edge (border position).
    Content's padding-right:56px creates internal breathing room BEFORE that edge.
 ════════════════════════════════════════ */
-.page-outer{max-width:1360px;margin:0 auto;padding:0 96px;position:relative;z-index:5}
+.page-outer{max-width:1360px;margin:0 auto;padding:0 96px}
 .cols{display:flex;flex-direction:row;align-items:flex-start;gap:64px}
 
 .content{
@@ -367,7 +367,7 @@ to{transform:translateX(-50%)}}
 @media(max-width:1100px){.mobile-cta{display:block}.sidebar .bk-price-hd{display:none}}
 
 /* CTA BAND */
-.cta-band{background:var(--warm);padding:96px 72px;text-align:center;position:relative;overflow:hidden;z-index:5}
+.cta-band{background:var(--warm);padding:96px 72px;text-align:center;position:relative;overflow:hidden}
 .cta-wm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--sc);font-size:160px;color:rgba(196,170,130,.025);pointer-events:none;user-select:none}
 .cta-inner{position:relative;z-index:1;max-width:540px;margin:0 auto}
 .cta-ol{font-family:var(--sc);font-size:10.5px;letter-spacing:.22em;color:var(--sand);margin-bottom:20px}
@@ -378,7 +378,7 @@ to{transform:translateX(-50%)}}
 @media(max-width:768px){.cta-band{padding:72px 24px}.cta-btns{flex-direction:column}}
 
 /* FOOTER */
-footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(196,170,130,.1);position:relative;z-index:5}
+footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(196,170,130,.1)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
 .footer-logo{font-family:var(--sc);font-size:20px;letter-spacing:.14em;color:var(--bone2);display:block;margin-bottom:14px}
 .footer-tagline{font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(247,243,237,.45);margin-bottom:10px}
@@ -537,7 +537,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 
 <!-- MAIN 2-COLUMN LAYOUT -->
 <!-- BREADCRUMB — outside page-outer, indent 72px (< content 96px) = nav register -->
-<nav class="bc-bar" aria-label="Breadcrumb">
+<nav class="bc-bar" aria-label="Breadcrumb" style="padding:64px 96px 40px;background:transparent;display:block">
   <ol class="bc-list">
     <li><a href="/">Home</a></li>
     <li><a href="/shore-excursions">Shore Excursions</a></li>
