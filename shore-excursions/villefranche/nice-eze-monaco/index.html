@@ -105,19 +105,19 @@ img{display:block;max-width:100%;height:auto}
 @media(max-width:900px){.nav{padding:0 24px}.nav-links{display:none!important}.nav-burger{display:flex}}
 
 /* HERO */
-.hero{position:relative;height:130vh;min-height:640px;overflow:hidden}
-.hero-photo{position:absolute;inset:0;background:var(--deep)}
+.hero{position:relative;height:130vh;min-height:640px;overflow:hidden;clip-path:inset(0)}
+.hero-photo{position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--deep)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.18);will-change:transform}
-.hero-v{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.88) 0%,rgba(28,28,26,.32) 55%,transparent 100%)}
-.hero-g{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
+.hero-v{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.88) 0%,rgba(28,28,26,.32) 55%,transparent 100%)}
+.hero-g{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
 /* Title anchored at first-viewport fold; actions hidden below */
 .hero-title-block,
 .hero-actions-block{position:absolute;left:0;right:0;z-index:4;padding:0 96px}
 .hero-title-block{bottom:35vh}
 .hero-actions-block{bottom:0;padding-bottom:64px}
 .hero-inner{width:100%}
-.hero-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px;margin-bottom:28px;opacity:0;animation:fadeUp .7s var(--slow) .2s forwards}
-.hero-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
+.hero-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:14px;margin-bottom:28px;opacity:0;animation:fadeUp .7s var(--slow) .2s forwards}
+.hero-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--terra)}
 .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,72px);letter-spacing:-.02em;color:rgba(247,243,237,.55);line-height:1.08;margin-bottom:0;opacity:0;animation:fadeUp .8s var(--slow) .4s forwards}
 .hero h1 .h1-sub{display:block;margin-bottom:4px}
 .hero h1 em{font-style:italic;color:#fff}
@@ -136,7 +136,7 @@ img{display:block;max-width:100%;height:auto}
 to{transform:translateX(-50%)}}
 
 /* BREADCRUMB — inline, no background bar */
-.bc-bar{padding:64px 96px 40px !important;background:transparent}
+.bc-bar{padding:64px 96px 40px !important;background:#F8F3ED;position:relative;z-index:5}
 .bc-list{display:flex;align-items:center;gap:6px;list-style:none;flex-wrap:wrap}
 .bc-list li{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:6px}
 .bc-list li::after{content:'·';color:var(--sand);opacity:.5}
@@ -162,7 +162,7 @@ to{transform:translateX(-50%)}}
    Content ends exactly at sidebar's left edge (border position).
    Content's padding-right:56px creates internal breathing room BEFORE that edge.
 ════════════════════════════════════════ */
-.page-outer{max-width:1360px;margin:0 auto;padding:0 96px}
+.page-outer{max-width:1360px;margin:0 auto;padding:0 96px;position:relative;z-index:5}
 .cols{display:flex;flex-direction:row;align-items:flex-start;gap:64px}
 
 .content{
@@ -367,7 +367,7 @@ to{transform:translateX(-50%)}}
 @media(max-width:1100px){.mobile-cta{display:block}.sidebar .bk-price-hd{display:none}}
 
 /* CTA BAND */
-.cta-band{background:var(--warm);padding:96px 72px;text-align:center;position:relative;overflow:hidden}
+.cta-band{background:var(--warm);padding:96px 72px;text-align:center;position:relative;overflow:hidden;z-index:5}
 .cta-wm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--sc);font-size:160px;color:rgba(196,170,130,.025);pointer-events:none;user-select:none}
 .cta-inner{position:relative;z-index:1;max-width:540px;margin:0 auto}
 .cta-ol{font-family:var(--sc);font-size:10.5px;letter-spacing:.22em;color:var(--sand);margin-bottom:20px}
@@ -378,7 +378,7 @@ to{transform:translateX(-50%)}}
 @media(max-width:768px){.cta-band{padding:72px 24px}.cta-btns{flex-direction:column}}
 
 /* FOOTER */
-footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(196,170,130,.1)}
+footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(196,170,130,.1);position:relative;z-index:5}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
 .footer-logo{font-family:var(--sc);font-size:20px;letter-spacing:.14em;color:var(--bone2);display:block;margin-bottom:14px}
 .footer-tagline{font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(247,243,237,.45);margin-bottom:10px}
@@ -537,7 +537,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 
 <!-- MAIN 2-COLUMN LAYOUT -->
 <!-- BREADCRUMB — outside page-outer, indent 72px (< content 96px) = nav register -->
-<nav class="bc-bar" aria-label="Breadcrumb" style="padding:64px 96px 40px;background:transparent;display:block">
+<nav class="bc-bar" aria-label="Breadcrumb">
   <ol class="bc-list">
     <li><a href="/">Home</a></li>
     <li><a href="/shore-excursions">Shore Excursions</a></li>
