@@ -39,8 +39,8 @@
 html{scroll-behavior:smooth;cursor:none}
 body{background:#F8F3ED;color:var(--slate);font-family:var(--body);font-weight:500;font-size:16px;line-height:1.7;cursor:none;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none;cursor:none}img{max-width:100%;height:auto;display:block}
-.cursor{position:fixed;width:6px;height:6px;border-radius:50%;background:var(--terra);pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-#cursorRing{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(168,101,67,.3);pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+.cursor{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--warm);mix-blend-mode:multiply;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cursorRing{position:fixed;width:36px;height:36px;border-radius:50%;border:.5px solid var(--warm);opacity:.5;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
 .progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--terra);z-index:10001;width:0;transition:width .1s linear}
 
 /* NAV */
@@ -63,7 +63,7 @@ a{color:inherit;text-decoration:none;cursor:none}img{max-width:100%;height:auto;
 @media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-burger{display:block}.nav{padding:16px 20px}.nav.scrolled{padding:12px 20px}}
 
 /* HERO */
-.hero{position:relative;height:75vh;min-height:480px;overflow:hidden}
+.hero{position:relative;height:85vh;min-height:520px;overflow:hidden}
 .hero-photo{position:absolute;inset:0;background:var(--deep)}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
 .hero-v{position:absolute;inset:0;background:rgba(28,28,26,.45)}
@@ -175,7 +175,7 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 </div>
 
 <section class="hero">
-  <div class="hero-photo"><img src="/photos/cruise-ships-cannes-villefranche-harbour-schedule.avif" alt="Villefranche-sur-Mer cruise port" loading="eager" fetchpriority="high"></div>
+  <div class="hero-photo"><img src="/photos/villefranche-bay-tender-port-cruise-ship-horizon-shore-excursions.avif" alt="Villefranche-sur-Mer cruise port" loading="eager" fetchpriority="high"></div>
   <div class="hero-v"></div>
   <div class="hero-content">
     <div class="hero-kicker">Villefranche-sur-Mer &middot; 2026</div>
