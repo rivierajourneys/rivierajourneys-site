@@ -1,34 +1,4 @@
-# Riviera Journeys - robots.txt
-# Last updated: 2026-04-20
-
 User-agent: *
-Allow: /
-
-Disallow: /book/thanks
-Disallow: /*?utm_*
-Disallow: /*?fbclid=
-Disallow: /*?gclid=
-
-# Allow LLM/AI crawlers - good for ChatGPT, Perplexity, Claude citations
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://rivierajourneys.fr/sitemap.xml
