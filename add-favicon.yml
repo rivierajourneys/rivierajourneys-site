@@ -1,0 +1,22 @@
+name: Add favicon to all pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add-favicon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Add favicon tags to all HTML files
+        run: |
+          find . -name "*.html" -exec sed -i 's|<meta charset="UTF-8">|<meta charset="UTF-8">\n<link rel="icon" href="/favicon.ico" sizes="any">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">|g' {} \;
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "add favicon to all pages" || echo "nothing to commit"
+          git push
