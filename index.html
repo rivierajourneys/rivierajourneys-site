@@ -3,16 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7VH5DLYWF"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-G7VH5DLYWF');
-</script>
-<title>Riviera Journeys – Private Tours, Transfers & Experiences from Cannes | French Riviera</title>
-<meta name="description" content="Private day tours, shore excursions, transfers, photography experiences and off-season gastronomy tours from Cannes. French & Italian Riviera. Corporate retreats. Slow travel consulting. Mercedes V-Class.">
+<title>Riviera Journeys — Private Tours &amp; Transfers from Cannes</title>
+<meta name="description" content="Private day tours, shore excursions and transfers from Cannes — French &amp; Italian Riviera. Mercedes V-Class. Corporate events at the Palais.">
 <meta name="keywords" content="private tours Cannes, shore excursions French Riviera, transfers Nice airport Cannes, corporate retreats French Riviera, off season Riviera, truffle tour Cannes, photography tours French Riviera, slow travel Riviera">
 <meta property="og:title" content="Riviera Journeys – Private Tours from Cannes | French Riviera">
 <meta property="og:description" content="Private day tours, shore excursions and transfers along the French and Italian Riviera. Mercedes V-Class. The Riviera, properly experienced.">
@@ -32,7 +24,7 @@ gtag('config','G-G7VH5DLYWF');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ─────────────────────────────────────────────
@@ -50,7 +42,6 @@ gtag('config','G-G7VH5DLYWF');
   --deep:    #2B2B27;
   --serif:   'Cormorant Garamond', Georgia, serif;
   --sc:      'Cormorant SC', Georgia, serif;
-  --body:    'Newsreader', Georgia, serif;
   --sans:    'Jost', sans-serif;
   --ease:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --slow:    cubic-bezier(0.16, 1, 0.3, 1);
@@ -128,2005 +119,6 @@ a { text-decoration: none; color: inherit; }
 .d5 { transition-delay: .5s; }
 .d6 { transition-delay: .6s; }
 
-/* ─────────────────────────────────────────────
-   NAVIGATION
-───────────────────────────────────────────── */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 0 48px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background .5s var(--ease), border-color .5s;
-  border-bottom: .5px solid transparent;
-}
-
-.nav.scrolled {
-  background: rgba(253,250,246,.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom-color: var(--parch);
-}
-.nav-logo {
-  font-family: var(--sc);
-  font-size: 17px;
-  font-weight: 300;
-  letter-spacing: .14em;
-  color: var(--bone);
-  transition: color .5s;
-}
-.nav.scrolled .nav-logo { color: var(--warm); }
-.nav-links {
-  display: flex;
-  gap: 0;
-  align-items: center;
-  list-style: none;
-}
-.nav-links > li {
-  position: static;
-}
-.nav-links > li > a {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(253,250,246,.85);
-  transition: color .35s;
-  display: block;
-  padding: 0 18px;
-  height: 68px;
-  line-height: 68px;
-  white-space: nowrap;
-  position: relative;
-}
-/* Underline — animates immediately on hover, before mega panel opens */
-.nav-links > li > a::after {
-  content: '';
-  position: absolute;
-  bottom: 26px;
-  left: 18px;
-  right: 18px;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .28s ease;
-}
-.nav-links > li:hover > a::after,
-.nav-links > li.mega-open > a::after { transform: scaleX(1); }
-.nav-links > li > a.nav-cta::after { display: none; }
-.nav-links > li:hover > a,
-.nav-links > li.mega-open > a { color: #fff; }
-.nav.scrolled .nav-links > li > a { color: var(--stone); }
-.nav.scrolled .nav-links > li:hover > a,
-.nav.scrolled .nav-links > li.mega-open > a { color: var(--warm); }
-
-/* ═══════════════════════════════════════
-   MEGA MENU — Ralph Lauren style
-   Full-width white panel
-═══════════════════════════════════════ */
-.mega-panel {
-  position: fixed;
-  top: 68px;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border-top: 1px solid #e8e3dc;
-  border-bottom: 1px solid #e8e3dc;
-  z-index: 500;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: opacity .42s cubic-bezier(0.16,1,0.3,1), transform .42s cubic-bezier(0.16,1,0.3,1);
-  box-shadow: 0 16px 64px rgba(28,28,26,.06);
-}
-.nav-links > li.mega-open .mega-panel {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-/* Nav bar turns white when mega menu is open */
-.nav.mega-active {
-  background: #fff !important;
-  border-bottom-color: #e8e3dc !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-.nav.mega-active .nav-logo { color: var(--warm) !important; }
-.nav.mega-active .nav-links > li > a { color: rgba(28,28,26,.55) !important; }
-.nav.mega-active .nav-links > li.mega-open > a,
-.nav.mega-active .nav-links > li > a:hover { color: var(--warm) !important; }
-.nav.mega-active .nav-cta span { color: var(--terra) !important; }
-.nav.mega-active .burger-line { background: var(--warm) !important; }
-/* Inner layout */
-.mega-inner {
-  display: flex;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 64px 44px;
-  gap: 0;
-  min-height: 320px;
-}
-/* Left column — subcategory links */
-.mega-nav-col {
-  width: 220px;
-  flex-shrink: 0;
-  border-right: 1px solid #e8e3dc;
-  padding-right: 32px;
-  margin-right: 40px;
-}
-.mega-nav-col-title {
-  font-family: var(--sc);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: #8C8880;
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: .5px solid #e8e3dc;
-}
-.mega-sub-link {
-  display: block;
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 300;
-  letter-spacing: .08em;
-  color: #1C1C1A;
-  padding: 8px 0;
-  border-bottom: .5px solid rgba(232,227,220,.5);
-  cursor: pointer;
-  transition: padding-left .3s ease, color .3s ease;
-  background: none;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  width: 100%;
-  text-align: left;
-}
-.mega-sub-link:last-child { border-bottom: none; }
-.mega-sub-link:hover,
-.mega-sub-link.active { color: var(--terra); padding-left: 5px; }
-.mega-sub-link.active { font-weight: 400; }
-
-/* Second sub-level title (e.g. "By boat") */
-.mega-sub-section-title {
-  font-family: var(--sc);
-  font-size: 8px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #8C8880;
-  margin-top: 18px;
-  margin-bottom: 6px;
-  display: block;
-}
-
-/* Right area — cards */
-.mega-cards-area {
-  flex: 1;
-  overflow: hidden;
-}
-.mega-cards-header {
-  margin-bottom: 20px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #e8e3dc;
-}
-.mega-cards-header-title {
-  font-family: var(--sc);
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: #1C1C1A;
-}
-.mega-cards-pane {
-  display: none;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.mega-cards-pane.active { display: flex; }
-.mega-card {
-  width: 220px;
-  cursor: pointer;
-  transition: opacity .35s;
-  text-decoration: none;
-}
-.mega-card:hover { opacity: .72; }
-.mega-card-img {
-  width: 220px;
-  height: 280px;
-  background: #EAE3D7;
-  overflow: hidden;
-  margin-bottom: 10px;
-  position: relative;
-}
-.mega-card-img img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
-}
-.mega-card:hover .mega-card-img img { transform: scale(1.04); }
-.mega-card-img-placeholder {
-  width: 100%; height: 100%;
-  background: linear-gradient(160deg,#EAE3D7,#C4AA82 120%);
-  display: flex; align-items: flex-end; padding: 10px;
-}
-.mega-card-img-placeholder span {
-  font-family: var(--sc);
-  font-size: 8px;
-  letter-spacing: .16em;
-  color: rgba(28,28,26,.45);
-  text-transform: uppercase;
-  line-height: 1.5;
-}
-.mega-card-name {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: .1em;
-  color: #1C1C1A;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-.mega-card-detail {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  color: #8C8880;
-  letter-spacing: .04em;
-}
-
-/* Featured card (wider) */
-.mega-card.featured .mega-card-img {
-  width: 240px;
-  height: 300px;
-}
-.mega-card.featured { width: 240px; }
-
-.nav-cta {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--sand) !important;
-  border: .5px solid rgba(196,170,130,.55);
-  padding: 11px 28px !important;
-  height: auto !important;
-  line-height: normal !important;
-  transition: background .45s cubic-bezier(0.16,1,0.3,1), color .45s, border-color .45s !important;
-  margin-left: 14px;
-  position: relative;
-  overflow: hidden;
-}
-.nav-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--terra);
-  transform: translateX(-101%);
-  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
-  z-index: 0;
-}
-.nav-cta span { position: relative; z-index: 1; }
-.nav-cta:hover::before { transform: translateX(0); }
-.nav-cta:hover {
-  border-color: var(--terra) !important;
-  color: var(--bone) !important;
-}
-.nav-cta::after { display: none !important; }
-.nav.scrolled .nav-cta { color: var(--terra) !important; border-color: rgba(168,101,67,.4) !important; }
-
-/* ─────────────────────────────────────────────
-   HERO
-───────────────────────────────────────────── */
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 700px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-.hero-photo {
-  position: absolute;
-  inset: 0;
-  background: var(--deep);
-  overflow: hidden;
-}
-.hero-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transform: scale(1.06);
-  transition: transform 12s cubic-bezier(0.16,1,0.3,1);
-  filter: brightness(.75);
-}
-.hero-photo img.loaded { transform: scale(1); }
-.hero-photo-placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #2B2B27 0%, #3D3D38 40%, #4A4540 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-.placeholder-text {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(196,170,130,.5);
-}
-.placeholder-icon {
-  width: 56px; height: 56px;
-  border: .5px solid rgba(196,170,130,.25);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.placeholder-icon svg { width: 22px; height: 22px; stroke: rgba(196,170,130,.4); fill: none; }
-
-/* Grain overlay */
-/* Guard: hide placeholder spans if they escape hero-photo */
-.hero > span, .hero > .placeholder-text { display: none !important; }
-/* Guard: prevent leaked placeholder spans from affecting layout */
-.hero > span { display: none !important; }
-.hero-grain {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
-  background-size: 200px;
-  pointer-events: none;
-  z-index: 2;
-}
-.hero-vignette {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(28,28,26,.88) 0%, rgba(28,28,26,.3) 40%, transparent 70%);
-  z-index: 3;
-}
-.hero-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  padding: 0 72px 80px;
-}
-.hero-overline {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--sand);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-  opacity: 0;
-  animation: fadeUp .8s var(--slow) .4s forwards;
-}
-.hero-overline::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: .5px;
-  background: var(--sand);
-}
-.hero-h1 {
-  font-family: var(--serif);
-  font-size: clamp(42px, 6vw, 74px);
-  font-weight: 300;
-  line-height: 1.07;
-  color: var(--bone);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp .9s var(--slow) .55s forwards;
-}
-.hero-h1 em { font-style: italic; color: rgba(247,243,237,.7); }
-.hero-sub {
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.75;
-  color: rgba(247,243,237,.65);
-  max-width: 480px;
-  margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeUp .9s var(--slow) .7s forwards;
-}
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  opacity: 0;
-  animation: fadeUp .9s var(--slow) .85s forwards;
-}
-.btn-primary {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  background: var(--bone);
-  padding: 16px 36px;
-  position: relative;
-  overflow: hidden;
-  transition: color .4s;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--terra);
-  transform: translateX(-101%);
-  transition: transform .6s cubic-bezier(0.16,1,0.3,1);
-}
-.btn-primary:hover::before { transform: translateX(0); }
-.btn-primary:hover { color: var(--bone); }
-.btn-primary span { position: relative; z-index: 1; }
-.btn-primary .arrow {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  transition: transform .45s var(--ease);
-}
-.btn-primary:hover .arrow { transform: translateX(6px); }
-
-.btn-sand {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  background: var(--sand);
-  padding: 16px 36px;
-  position: relative;
-  overflow: hidden;
-  transition: color .45s;
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  gap: 12px;
-  text-decoration: none;
-  width: auto;
-}
-.btn-sand::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--terra);
-  transform: translateX(-101%);
-  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
-}
-.btn-sand:hover::before { transform: translateX(0); }
-.btn-sand:hover { color: var(--bone); }
-.btn-sand span { position: relative; z-index: 1; }
-.btn-sand .arrow { position: relative; z-index: 1; transition: transform .45s var(--ease); }
-.btn-sand:hover .arrow { transform: translateX(4px); }
-.section-text-link {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: .5px solid var(--parch);
-  padding-bottom: 4px;
-  text-decoration: none;
-  transition: border-color .4s, gap .4s, color .3s;
-}
-.section-text-link:hover { border-bottom-color: var(--warm); gap: 18px; color: var(--terra); }
-.section-text-link svg { transition: transform .45s var(--ease); }
-.section-text-link:hover svg { transform: translateX(4px); }
-.btn-ghost {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(247,243,237,.7);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: color .3s, gap .3s;
-}
-.btn-ghost:hover { color: var(--bone); gap: 16px; }
-.btn-ghost svg { transition: transform .45s var(--ease); }
-.btn-ghost:hover svg { transform: translateX(4px); }
-
-.hero-scroll {
-  position: absolute;
-  bottom: 32px;
-  right: 72px;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  animation: fadeIn 1s var(--slow) 1.4s forwards;
-}
-.hero-scroll span {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(196,170,130,.6);
-  writing-mode: vertical-rl;
-}
-.scroll-line {
-  width: .5px;
-  height: 48px;
-  background: rgba(196,170,130,.3);
-  position: relative;
-  overflow: hidden;
-}
-.scroll-line::after {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: 0; right: 0;
-  height: 100%;
-  background: var(--sand);
-  animation: scrollLine 2s var(--ease) 1.5s infinite;
-}
-
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-  from { opacity: 0; transform: translateY(28px); }
-}
-@keyframes fadeIn {
-  to { opacity: 1; }
-  from { opacity: 0; }
-}
-@keyframes scrollLine {
-  0% { top: -100%; }
-  100% { top: 100%; }
-}
-
-/* Photo credit */
-.hero-photo-credit {
-  position: absolute;
-  bottom: 28px;
-  left: 72px;
-  z-index: 4;
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: .12em;
-  color: rgba(196,170,130,.5);
-  opacity: 0;
-  animation: fadeIn 1s var(--slow) 1.6s forwards;
-}
-
-/* ─────────────────────────────────────────────
-   TICKER / SERVICES BAR
-───────────────────────────────────────────── */
-.ticker-bar {
-  background: var(--warm);
-  border-bottom: .5px solid rgba(196,170,130,.15);
-  overflow: hidden;
-  height: 44px;
-  display: flex;
-  align-items: center;
-}
-.ticker-track {
-  display: flex;
-  gap: 0;
-  animation: ticker 30s linear infinite;
-  white-space: nowrap;
-}
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 28px;
-  padding: 0 40px;
-  font-family: var(--sans);
-  font-size: 9.5px;
-  font-weight: 300;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(196,170,130,.7);
-}
-.ticker-dot {
-  width: 3px; height: 3px;
-  background: rgba(196,170,130,.4);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ─────────────────────────────────────────────
-   INTRO / EDITORIAL STATEMENT
-───────────────────────────────────────────── */
-.intro {
-  padding: 112px 72px 96px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
-  align-items: start;
-  border-bottom: .5px solid var(--parch);
-}
-.intro-label {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 8px;
-}
-.section-label {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--sand);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: .5px;
-  background: var(--sand);
-}
-.intro-issue {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: .14em;
-  color: var(--stone);
-  line-height: 1.8;
-}
-.intro-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.intro-h2 {
-  font-family: var(--serif);
-  font-size: clamp(32px, 3.5vw, 50px);
-  font-weight: 300;
-  line-height: 1.15;
-  color: var(--warm);
-  margin-bottom: 32px;
-}
-.intro-h2 em { font-style: italic; }
-.intro-rule {
-  width: 40px;
-  height: .5px;
-  background: var(--sand);
-  margin-bottom: 28px;
-}
-.intro-text {
-  font-family: var(--sans);
-  font-size: 16.5px;
-  font-weight: 400;
-  line-height: 1.9;
-  color: var(--slate);
-  max-width: 620px;
-  margin-bottom: 40px;
-  column-count: 2;
-  column-gap: 48px;
-}
-.intro-link {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: .5px solid var(--parch);
-  padding-bottom: 4px;
-  transition: border-color .3s, gap .3s;
-}
-.intro-link:hover { border-color: var(--sand); gap: 20px; }
-
-/* ─────────────────────────────────────────────
-   FEATURED TOURS
-───────────────────────────────────────────── */
-.tours {
-  padding: 128px 0 0;
-  border-bottom: .5px solid var(--parch);
-}
-.tours-header {
-  padding: 0 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 24px;
-}
-@media (max-width: 1024px) {
-  .tours-header { padding: 0 40px; }
-}
-@media (max-width: 768px) {
-  .tours-header { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 16px; }
-}
-
-.tours-header-left { display: flex; flex-direction: column; gap: 16px; }
-.tours-lead {
-  padding: 48px 72px 8px;
-  max-width: 860px;
-}
-.tours-lead p {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-style: normal;
-  font-size: clamp(18px, 1.8vw, 22px);
-  line-height: 1.65;
-  color: var(--slate);
-  letter-spacing: .003em;
-}
-.tours-lead p em {
-  font-style: italic;
-  color: var(--warm);
-}
-@media (max-width: 1024px) {
-  .tours-lead { padding: 32px 40px 0; }
-}
-@media (max-width: 768px) {
-  .tours-lead { padding: 24px 24px 0; max-width: none; }
-  .tours-lead p { font-size: 17px; line-height: 1.6; }
-}
-
-
-.tours-h2 {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 44px);
-  font-weight: 300;
-  color: var(--warm);
-  line-height: 1.1;
-}
-.tours-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 1px;
-  background: var(--parch);
-  margin-top: 64px;
-}
-.tour-card {
-  background: var(--bone);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-.tour-card:first-child {
-  grid-row: 1 / 3;
-}
-.tour-card-photo {
-  position: relative;
-  overflow: hidden;
-  background: var(--deep);
-}
-.tour-card:first-child .tour-card-photo { height: 520px; }
-.tour-card:not(:first-child) .tour-card-photo { height: 280px; }
-.tour-card-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform .8s var(--slow), filter .8s;
-  filter: brightness(.85);
-}
-.tour-card:hover .tour-card-photo img {
-  transform: scale(1.05);
-  filter: brightness(.75);
-}
-.tour-photo-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-}
-.tour-card:first-child .tour-photo-placeholder { background: linear-gradient(150deg, #2B2B27, #3D3D38); }
-.tour-card:nth-child(2) .tour-photo-placeholder { background: linear-gradient(150deg, #3a3530, #4a453e); }
-.tour-card:nth-child(3) .tour-photo-placeholder { background: linear-gradient(150deg, #323028, #3d3a30); }
-.tour-card:nth-child(4) .tour-photo-placeholder { background: linear-gradient(150deg, #2e2d2a, #3a3835); }
-.tour-card:nth-child(5) .tour-photo-placeholder { background: linear-gradient(150deg, #333028, #403d33); }
-.ph-label {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(196,170,130,.45);
-  text-align: center;
-}
-.ph-frame {
-  width: 48px; height: 48px;
-  border: .5px solid rgba(196,170,130,.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ph-frame svg { width: 20px; height: 20px; stroke: rgba(196,170,130,.35); fill: none; }
-.tour-card-tag {
-  position: absolute;
-  top: 20px; left: 20px;
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--sand);
-  background: rgba(28,28,26,.7);
-  padding: 5px 12px;
-  z-index: 2;
-}
-.tour-card-body {
-  padding: 24px 24px 28px;
-  border-top: .5px solid var(--parch);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.tour-card:first-child .tour-card-body { padding: 28px 32px 36px; }
-.tour-card-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  color: var(--warm);
-  line-height: 1.25;
-}
-.tour-card:first-child .tour-card-title { font-size: 26px; }
-.tour-card:not(:first-child) .tour-card-title { font-size: 19px; }
-.tour-card-meta {
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--stone);
-  line-height: 1.8;
-}
-.tour-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: .5px solid var(--parch);
-}
-.tour-card-price {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 300;
-  color: var(--warm);
-}
-.tour-card:not(:first-child) .tour-card-price { font-size: 18px; }
-.tour-card-price-label {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  color: var(--stone);
-}
-.tour-card-arrow {
-  width: 36px; height: 36px;
-  border: .5px solid var(--parch);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .3s, border-color .3s;
-  flex-shrink: 0;
-}
-.tour-card:hover .tour-card-arrow {
-  background: var(--terra);
-  border-color: var(--terra);
-}
-.tour-card:hover .tour-card-arrow svg { stroke: var(--bone); }
-.tour-card-arrow svg { width: 14px; height: 14px; stroke: var(--stone); fill: none; transition: stroke .3s; }
-
-/* Progress bar on hover */
-.tour-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  height: 2px;
-  width: 0;
-  background: var(--terra);
-  transition: width .6s var(--slow);
-}
-.tour-card:hover::after { width: 100%; }
-
-.tours-footer {
-  padding: 40px 72px;
-  display: flex;
-  justify-content: center;
-  border-top: .5px solid var(--parch);
-}
-
-/* ─────────────────────────────────────────────
-   SERVICES / TRANSFERS
-───────────────────────────────────────────── */
-.services {
-  padding: 128px 72px;
-  border-bottom: .5px solid var(--parch);
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--parch);
-  margin-top: 56px;
-}
-.service-card {
-  background: var(--bone2);
-  padding: 40px 36px;
-  position: relative;
-  overflow: hidden;
-  transition: background .4s;
-}
-.service-card:hover { background: var(--warm); }
-.service-number {
-  font-family: var(--serif);
-  font-size: 64px;
-  font-weight: 300;
-  color: var(--parch);
-  line-height: 1;
-  margin-bottom: 24px;
-  transition: color .4s;
-}
-.service-card:hover .service-number { color: rgba(196,170,130,.2); }
-.service-icon {
-  width: 44px; height: 44px;
-  margin-bottom: 20px;
-}
-.service-icon svg { width: 100%; height: 100%; stroke: var(--sand); fill: none; stroke-width: 1; transition: stroke .4s; }
-.service-card:hover .service-icon svg { stroke: rgba(196,170,130,.6); }
-.service-title {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 300;
-  color: var(--warm);
-  margin-bottom: 12px;
-  transition: color .4s;
-}
-.service-card:hover .service-title { color: var(--bone); }
-.service-desc {
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--stone);
-  line-height: 1.8;
-  transition: color .4s;
-}
-.service-card:hover .service-desc { color: rgba(196,170,130,.65); }
-.service-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--sand);
-  transition: gap .3s;
-}
-.service-link svg { width: 14px; height: 14px; stroke: var(--sand); fill: none; transition: transform .45s var(--ease); }
-.service-card:hover .service-link { gap: 14px; }
-.service-card:hover .service-link svg { transform: translateX(4px); }
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 2px;
-  height: 0;
-  background: var(--terra);
-  transition: height .5s var(--slow);
-}
-.service-card:hover::before { height: 100%; }
-
-/* ─────────────────────────────────────────────
-   FULL-BLEED EDITORIAL PHOTO
-───────────────────────────────────────────── */
-.editorial-photo {
-  position: relative;
-  height: 70vh;
-  min-height: 500px;
-  overflow: hidden;
-}
-.editorial-photo-inner {
-  position: absolute;
-  inset: 0;
-  background: var(--deep);
-}
-.ep-placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1C1C1A 0%, #2B2B27 50%, #3D3D38 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 16px;
-}
-.ep-vignette {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(28,28,26,.85) 0%, rgba(28,28,26,.3) 50%, transparent 100%);
-  z-index: 2;
-}
-.ep-content {
-  position: absolute;
-  left: 72px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  max-width: 500px;
-}
-.ep-overline {
-  font-family: var(--sans);
-  font-size: 9.5px;
-  font-weight: 400;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--sand);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.ep-overline::before { content: ''; display: block; width: 28px; height: .5px; background: var(--sand); }
-.ep-h2 {
-  font-family: var(--serif);
-  font-size: clamp(30px, 3.5vw, 52px);
-  font-weight: 300;
-  line-height: 1.12;
-  color: var(--bone);
-  margin-bottom: 24px;
-  font-style: italic;
-}
-.ep-body {
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(247,243,237,.65);
-  margin-bottom: 36px;
-}
-.ep-stat-row {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 36px;
-  padding-top: 28px;
-  border-top: .5px solid rgba(196,170,130,.2);
-}
-.ep-stat-num {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
-  color: var(--bone);
-  line-height: 1;
-  display: block;
-}
-.ep-stat-label {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--sand);
-  display: block;
-  margin-top: 4px;
-}
-
-/* Parallax wrapper */
-.editorial-photo .ep-parallax {
-  position: absolute;
-  inset: -15%;
-  will-change: transform;
-}
-
-/* ─────────────────────────────────────────────
-   EDITORIAL / ROADBOOK
-───────────────────────────────────────────── */
-.editorial {
-  padding: 96px 72px;
-  border-bottom: .5px solid var(--parch);
-}
-.editorial-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 56px;
-}
-.editorial-grid {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr;
-  gap: 1px;
-  background: var(--parch);
-}
-.article-card {
-  background: var(--bone);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: background .3s;
-}
-.article-card:first-child { background: var(--warm); }
-.article-photo {
-  position: relative;
-  overflow: hidden;
-  background: var(--deep);
-}
-.article-card:first-child .article-photo { height: 360px; }
-.article-card:not(:first-child) .article-photo { height: 200px; }
-.article-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform .8s var(--slow);
-}
-.article-card:hover .article-photo img { transform: scale(1.05); }
-.art-ph-1 { background: linear-gradient(150deg, #2e2c28, #3e3a32); }
-.art-ph-2 { background: linear-gradient(150deg, #302e2a, #403c34); }
-.art-ph-3 { background: linear-gradient(150deg, #2c2b28, #3a3830); }
-.article-category {
-  position: absolute;
-  bottom: 16px; left: 20px;
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--sand);
-  z-index: 2;
-}
-.article-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.article-card:first-child .article-body { padding: 28px 32px 32px; }
-.article-date {
-  font-family: var(--sans);
-  font-size: 9.5px;
-  font-weight: 300;
-  letter-spacing: .1em;
-  color: var(--sand);
-  text-transform: uppercase;
-}
-.article-card:first-child .article-date { color: rgba(196,170,130,.7); }
-.article-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  color: var(--warm);
-  line-height: 1.25;
-}
-.article-card:first-child .article-title { font-size: 26px; color: var(--bone); }
-.article-card:not(:first-child) .article-title { font-size: 18px; }
-.article-excerpt {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 300;
-  color: var(--stone);
-  line-height: 1.75;
-}
-.article-card:first-child .article-excerpt { color: rgba(196,170,130,.65); font-size: 13.5px; }
-.article-footer {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: .5px solid rgba(196,170,130,.15);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.article-card:not(:first-child) .article-footer { border-top-color: var(--parch); }
-.read-more {
-  font-family: var(--sans);
-  font-size: 9.5px;
-  font-weight: 400;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--sand);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: gap .3s;
-}
-.article-card:not(:first-child) .read-more { color: var(--stone); }
-.read-more svg { width: 12px; height: 12px; stroke: currentColor; fill: none; }
-.article-card:hover .read-more { gap: 14px; }
-.read-time {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  color: rgba(196,170,130,.5);
-}
-.article-card:not(:first-child) .read-time { color: var(--stone); opacity: .6; }
-
-/* ─────────────────────────────────────────────
-   TESTIMONIAL / SOCIAL PROOF
-───────────────────────────────────────────── */
-.testimonials {
-  background: var(--warm);
-  padding: 96px 72px;
-  position: relative;
-  overflow: hidden;
-}
-.testimonials-bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-family: var(--sc);
-  font-size: 180px;
-  font-weight: 300;
-  color: rgba(196,170,130,.04);
-  letter-spacing: .1em;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
-.testimonials-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.testi-left { display: flex; flex-direction: column; gap: 24px; }
-.testi-overline {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--sand);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.testi-overline::before { content: ''; display: block; width: 24px; height: .5px; background: var(--sand); }
-.testi-h3 {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
-  line-height: 1.15;
-  color: var(--bone);
-}
-.testi-stars {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-.testi-stars span {
-  font-size: 14px;
-  color: var(--sand);
-}
-.testi-rating {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 300;
-  color: var(--bone);
-  line-height: 1;
-}
-.testi-platform {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: .1em;
-  color: rgba(196,170,130,.5);
-}
-.testi-center {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
-}
-.testi-quote-icon {
-  font-family: var(--serif);
-  font-size: 80px;
-  font-weight: 300;
-  color: rgba(196,170,130,.25);
-  line-height: .6;
-  align-self: flex-start;
-}
-.testi-quote {
-  font-family: var(--serif);
-  font-size: clamp(18px, 2.2vw, 28px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.55;
-  color: var(--bone2);
-  text-align: center;
-}
-.testi-author {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-.testi-author-name {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: .1em;
-  color: var(--sand);
-}
-.testi-author-origin {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  color: rgba(196,170,130,.5);
-}
-.testi-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-end;
-}
-.testi-btn {
-  width: 44px; height: 44px;
-  border: .5px solid rgba(196,170,130,.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background .3s, border-color .3s;
-}
-.testi-btn:hover { background: rgba(196,170,130,.1); border-color: rgba(196,170,130,.5); }
-.testi-btn svg { width: 16px; height: 16px; stroke: rgba(196,170,130,.6); fill: none; }
-.testi-dots {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.testi-dot {
-  width: .5px; height: 24px;
-  background: rgba(196,170,130,.25);
-  transition: background .3s, height .3s var(--ease);
-}
-.testi-dot.active { height: 40px; background: var(--sand); }
-
-/* ─────────────────────────────────────────────
-   RIVIERA MAP / DESTINATIONS
-───────────────────────────────────────────── */
-.destinations {
-  padding: 96px 72px;
-  border-bottom: .5px solid var(--parch);
-}
-.dest-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: var(--parch);
-  margin-top: 56px;
-}
-.dest-card {
-  background: var(--bone2);
-  padding: 28px 20px;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: background .4s;
-}
-.dest-card:hover { background: var(--warm); }
-.dest-number {
-  font-family: var(--serif);
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--sand);
-  display: block;
-  margin-bottom: 12px;
-}
-.dest-name {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--warm);
-  margin-bottom: 6px;
-  transition: color .4s;
-}
-.dest-card:hover .dest-name { color: var(--bone); }
-.dest-country {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--stone);
-  transition: color .4s;
-}
-.dest-card:hover .dest-country { color: var(--sand); }
-.dest-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 50%; right: 50%;
-  height: 1px;
-  background: var(--terra);
-  transition: left .4s var(--slow), right .4s var(--slow);
-}
-.dest-card:hover::after { left: 0; right: 0; }
-
-/* ─────────────────────────────────────────────
-   NEWSLETTER / EDITORIAL SIGNUP
-───────────────────────────────────────────── */
-.newsletter {
-  padding: 128px 72px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 96px;
-  align-items: center;
-  border-bottom: .5px solid var(--parch);
-  background: var(--bone2);
-}
-.nl-left { display: flex; flex-direction: column; gap: 20px; }
-.nl-h2 {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 44px);
-  font-weight: 300;
-  line-height: 1.15;
-  color: var(--warm);
-}
-.nl-body {
-  font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--stone);
-  line-height: 1.9;
-}
-.nl-meta {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: .1em;
-  color: var(--stone);
-  opacity: .7;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.nl-meta::before { content: ''; display: block; width: 16px; height: .5px; background: var(--sand); }
-.nl-right { display: flex; flex-direction: column; gap: 16px; }
-.nl-form { display: flex; flex-direction: column; gap: 0; }
-.nl-input-wrap { position: relative; }
-.nl-input {
-  width: 100%;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--warm);
-  background: transparent;
-  border: none;
-  border-bottom: .5px solid var(--parch);
-  padding: 16px 0;
-  outline: none;
-  transition: border-color .3s;
-}
-.nl-input::placeholder { color: var(--stone); }
-.nl-input:focus { border-bottom-color: var(--sand); }
-.nl-input-line {
-  position: absolute;
-  bottom: 0; left: 0;
-  height: .5px;
-  width: 0;
-  background: var(--terra);
-  transition: width .4s var(--slow);
-}
-.nl-input:focus + .nl-input-line { width: 100%; }
-.nl-submit {
-  margin-top: 32px;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--bone);
-  background: var(--warm);
-  border: none;
-  padding: 16px 40px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: color .4s;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  align-self: flex-start;
-}
-.nl-submit::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--terra);
-  transform: translateX(-101%);
-  transition: transform .5s var(--slow);
-}
-.nl-submit:hover::before { transform: translateX(0); }
-.nl-submit span, .nl-submit svg { position: relative; z-index: 1; }
-.nl-submit svg { width: 14px; height: 14px; stroke: currentColor; fill: none; transition: transform .45s var(--ease); }
-.nl-submit:hover svg { transform: translateX(6px); }
-.nl-promise {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  color: var(--stone);
-  margin-top: 8px;
-  line-height: 1.6;
-}
-
-/* ─────────────────────────────────────────────
-   INSTAGRAM STRIP
-───────────────────────────────────────────── */
-/* ═══════════════════════════════════════════════════════
-   FROM THE FIELD — Photography strip
-   6 vertical 3:4 photos, editorial captions on hover
-═══════════════════════════════════════════════════════ */
-.instagram {
-  padding: 112px 0 96px;
-  background: var(--bone2);
-  border-bottom: .5px solid var(--parch);
-  overflow: hidden;
-}
-.instagram-header {
-  padding: 0 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 48px;
-  margin-bottom: 56px;
-}
-.instagram-header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.instagram-h3 {
-  font-family: var(--serif);
-  font-size: clamp(30px, 2.8vw, 40px);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--warm);
-  letter-spacing: -.005em;
-}
-.instagram-h3 em {
-  font-style: italic;
-  color: var(--stone);
-}
-.instagram-handle {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 6px;
-  border-bottom: .5px solid var(--parch);
-  transition: letter-spacing .4s, border-color .3s, gap .3s;
-  flex-shrink: 0;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.instagram-handle:hover { letter-spacing: .28em; border-bottom-color: var(--warm); gap: 14px; }
-.instagram-handle svg { width: 12px; height: 12px; stroke: currentColor; fill: none; transition: transform .4s; }
-.instagram-handle:hover svg { transform: translateX(4px); }
-
-.ig-strip {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 2px;
-  padding: 0 72px;
-}
-.ig-post {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  margin: 0;
-  background: var(--parch);
-}
-.ig-post img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 1.2s var(--slow), filter .6s;
-}
-.ig-post:hover img { transform: scale(1.04); filter: brightness(.5); }
-
-.ig-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(28,28,26,.78) 100%);
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 24px 20px;
-  transition: opacity .45s var(--slow);
-  margin: 0;
-}
-.ig-post:hover .ig-overlay { opacity: 1; }
-.ig-overlay-caption {
-  font-family: var(--serif);
-  font-size: 14px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--bone);
-  text-align: left;
-  line-height: 1.45;
-  letter-spacing: .003em;
-}
-.ig-overlay-place {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--sand);
-  padding-top: 4px;
-  border-top: .5px solid rgba(196,170,130,.4);
-  align-self: stretch;
-}
-
-@media (max-width: 1200px) {
-  .ig-strip { grid-template-columns: repeat(3, 1fr); }
-  .ig-post:nth-child(n+7) { display: none; }
-}
-@media (max-width: 1024px) {
-  .instagram { padding: 96px 0 72px; }
-  .instagram-header { padding: 0 40px; margin-bottom: 40px; }
-  .ig-strip { padding: 0 40px; }
-}
-@media (max-width: 768px) {
-  .instagram { padding: 72px 0 56px; }
-  .instagram-header { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
-  .ig-strip { grid-template-columns: repeat(2, 1fr); padding: 0 24px; gap: 1px; }
-  .ig-overlay { opacity: 1; background: linear-gradient(180deg, transparent 50%, rgba(28,28,26,.8) 100%); padding: 16px 14px; }
-  .ig-overlay-caption { font-size: 12px; }
-  .ig-overlay-place { font-size: 9px; }
-}
-
-/* ─────────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────────── */
-footer {
-  background: var(--warm);
-  padding: 72px 72px 48px;
-  border-top: .5px solid rgba(196,170,130,.1);
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 64px;
-  margin-bottom: 64px;
-}
-.footer-brand { display: flex; flex-direction: column; gap: 20px; }
-.footer-logo {
-  font-family: var(--sc);
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: .14em;
-  color: var(--bone2);
-}
-.footer-rule {
-  width: 32px; height: .5px;
-  background: var(--sand);
-}
-.footer-tagline {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(247,243,237,.55);
-  line-height: 1.5;
-}
-.footer-desc {
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(196,170,130,.5);
-  line-height: 1.8;
-  max-width: 280px;
-}
-.footer-col-title {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--sand);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: .5px solid rgba(196,170,130,.15);
-}
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.footer-links a {
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(247,243,237,.45);
-  letter-spacing: .04em;
-  transition: color .3s, padding-left .3s;
-  display: block;
-}
-.footer-links a:hover { color: rgba(247,243,237,.8); padding-left: 6px; }
-.footer-contact {
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(247,243,237,.45);
-  line-height: 1.9;
-}
-.footer-contact a { color: rgba(196,170,130,.6); transition: color .3s; }
-.footer-contact a:hover { color: var(--sand); }
-.footer-bottom {
-  border-top: .5px solid rgba(196,170,130,.1);
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-copy {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  color: rgba(196,170,130,.3);
-  letter-spacing: .06em;
-}
-.footer-legal {
-  display: flex;
-  gap: 24px;
-}
-.footer-legal a {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 300;
-  color: rgba(196,170,130,.3);
-  letter-spacing: .06em;
-  transition: color .3s;
-}
-.footer-legal a:hover { color: rgba(196,170,130,.6); }
-
-/* ─────────────────────────────────────────────
-   PROGRESS BAR
-───────────────────────────────────────────── */
-.progress-bar {
-  position: fixed;
-  top: 0; left: 0;
-  height: 1px;
-  background: var(--terra);
-  z-index: 200;
-  transition: width .1s linear;
-  transform-origin: left;
-}
-
-/* ─────────────────────────────────────────────
-   RESPONSIVE
-───────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .nav { padding: 0 32px; }
-  .intro { padding: 80px 40px; grid-template-columns: 1fr; gap: 40px; }
-  .intro-text { column-count: 1; }
-  .tours-header, .editorial, .services, .destinations, .newsletter, .editorial-photo .ep-content { padding-left: 40px; padding-right: 40px; }
-  .testimonials { padding: 72px 40px; }
-  .testimonials-inner { grid-template-columns: 1fr; gap: 40px; }
-  .testi-nav { flex-direction: row; }
-  .tours-grid { grid-template-columns: 1fr 1fr; }
-  .tour-card:first-child { grid-column: 1 / -1; grid-row: 1; }
-  .tour-card:first-child .tour-card-photo { height: 380px; }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .dest-grid { grid-template-columns: repeat(3, 1fr); }
-  .newsletter { grid-template-columns: 1fr; gap: 48px; padding: 72px 40px; }
-  .instagram-header { padding: 0 40px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  footer { padding: 56px 40px 40px; }
-  .hero-content { padding: 0 40px 64px; }
-  .hero-scroll { right: 40px; }
-  .hero-photo-credit { left: 40px; }
-  .ep-content { left: 40px; }
-}
-
-@media (max-width: 768px) {
-  .nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .hero-content { padding: 0 24px 56px; }
-  .intro { padding: 64px 24px; }
-  .tours-header { padding: 0 24px; }
-  .tours-h2 { font-size: 26px; }
-  .tours-grid { grid-template-columns: 1fr; }
-  .tour-card:first-child { grid-column: 1; }
-  .editorial { padding: 64px 24px; }
-  .editorial-grid { grid-template-columns: 1fr; }
-  .services { padding: 64px 24px; }
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-    background: transparent;
-    margin-top: 36px;
-    border-top: .5px solid var(--parch);
-  }
-  .service-card {
-    padding: 22px 0;
-    background: transparent !important;
-    border-bottom: .5px solid var(--parch);
-    display: grid;
-    grid-template-columns: 1fr 32px;
-    grid-template-rows: auto auto;
-    column-gap: 16px;
-    row-gap: 0;
-    align-items: center;
-  }
-  .service-card::before { display: none; }
-  .service-card:hover { background: transparent !important; }
-  .service-number { display: none; }
-  .service-icon { display: none; }
-  .service-title {
-    grid-column: 1;
-    grid-row: 1;
-    font-size: 18px !important;
-    font-weight: 300 !important;
-    color: var(--warm) !important;
-    margin-bottom: 0;
-    line-height: 1.25;
-    align-self: end;
-  }
-  .service-card:hover .service-title { color: var(--warm) !important; }
-  .service-desc {
-    grid-column: 1;
-    grid-row: 2;
-    font-size: 12px !important;
-    color: var(--stone) !important;
-    line-height: 1.6 !important;
-    margin-top: 5px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .service-card:hover .service-desc { color: var(--stone) !important; }
-  .service-link {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    align-self: center;
-    justify-self: end;
-    margin-top: 0 !important;
-    gap: 0;
-    font-size: 0 !important;
-    line-height: 0;
-    letter-spacing: 0;
-    display: flex;
-    align-items: center;
-  }
-  .service-link svg { stroke: var(--sand) !important; width: 18px; height: 18px; flex-shrink: 0; }
-  .ep-content { left: 24px; max-width: 85vw; }
-  .ep-stat-row { display: none; }
-  .testimonials { padding: 64px 24px; }
-  .dest-grid { grid-template-columns: repeat(2, 1fr); }
-  .destinations { padding: 64px 24px; }
-  .newsletter { padding: 64px 24px; }
-  .ig-strip { grid-template-columns: repeat(3, 1fr); }
-  .instagram-header { padding: 0 24px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  footer { padding: 48px 24px 32px; }
-  .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
-  .cursor, .cursor-ring { display: none; }
-  body { cursor: auto; }
-}
-
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;z-index:300}
-.burger-line{display:block;height:1px;background:var(--bone);transition:transform .45s cubic-bezier(0.16,1,0.3,1),opacity .3s,background .4s;transform-origin:center}
-.burger-line:nth-child(1){width:26px}.burger-line:nth-child(2){width:18px}.burger-line:nth-child(3){width:22px}
-.nav.scrolled .burger-line{background:var(--warm)}
-.nav-burger.open .burger-line:nth-child(1){transform:translateY(7px) rotate(45deg);width:26px;background:var(--bone)!important}
-.nav-burger.open .burger-line:nth-child(2){opacity:0}
-.nav-burger.open .burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:26px;background:var(--bone)!important}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:250;background:var(--warm);flex-direction:column;justify-content:flex-start;padding:104px 48px 56px;opacity:0;transition:opacity .4s;overflow-y:auto}
-.mobile-menu.open{display:flex;opacity:1}
-.mobile-nav{list-style:none;display:flex;flex-direction:column;gap:0}
-.mobile-nav li{border-bottom:.5px solid rgba(196,170,130,.12)}
-.mobile-nav a{font-family:var(--sans);font-size:clamp(22px,5.5vw,32px);font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);display:block;padding:16px 0;transition:color .3s,padding-left .3s}
-.mobile-nav a:hover{color:var(--sand);padding-left:8px}
-.mobile-menu-cta{margin-top:36px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:14px 32px;display:inline-block;align-self:flex-start;transition:background .3s}
-.mobile-menu-cta:hover{background:var(--terra)}
-.mobile-menu-logo{position:absolute;top:28px;left:48px;font-family:'Cormorant SC',Georgia,serif;font-size:14px;font-weight:300;letter-spacing:.14em;color:var(--sand)}
-.mobile-menu-close{position:absolute;top:24px;right:32px;background:none;border:.5px solid rgba(196,170,130,.3);color:var(--sand);font-size:18px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s}
-.mobile-menu-close:hover{background:rgba(196,170,130,.1)}
-/* Mobile accordion */
-.mob-parent { border-bottom: .5px solid rgba(196,170,130,.12); }
-.mob-toggle {
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: left;
-  font-family: var(--sans);
-  font-size: clamp(18px,4.5vw,24px);
-  font-weight: 300;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--bone);
-  padding: 12px 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: color .3s;
-}
-.mob-toggle:hover { color: var(--sand); }
-.mob-arrow {
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--sand);
-  transition: transform .3s;
-  line-height: 1;
-}
-.mob-parent.open .mob-arrow { transform: rotate(45deg); }
-.mob-sub {
-  list-style: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .4s cubic-bezier(0.16,1,0.3,1);
-  padding-left: 4px;
-}
-.mob-parent.open .mob-sub { max-height: 700px; }
-.mob-sub li a {
-  display: block;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: .1em;
-  color: rgba(247,243,237,.7);
-  padding: 8px 0;
-  border-bottom: .5px solid rgba(196,170,130,.06);
-  transition: color .2s, padding-left .2s;
-}
-.mob-sub li:last-child a { border-bottom: none; padding-bottom: 14px; }
-.mob-sub li a:hover { color: var(--sand); padding-left: 6px; }
-.mob-sub-label {
-  display: block;
-  font-family: var(--sc);
-  font-size: 8px;
-  font-weight: 300;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--sand);
-  opacity: .35;
-  padding: 14px 0 4px;
-  border-bottom: none !important;
-  pointer-events: none;
-  line-height: 1;
-}
-.mob-sub li:first-child .mob-sub-label { padding-top: 6px; }
-@media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
 /* ── MOBILE TYPOGRAPHY FIX ── */
 @media(max-width:480px){
   .hero-h1 { font-size: clamp(30px,8vw,46px) !important; }
@@ -2152,7 +144,7 @@ footer {
 .faq-item.open .faq-icon svg { stroke: var(--sand); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s var(--slow); }
 .faq-item.open .faq-answer { max-height: 300px; }
-.faq-answer-inner { padding: 0 32px 28px; font-family: var(--sans); font-size: 15.5px; font-weight: 400; color: var(--slate); line-height: 1.9; border-top: .5px solid var(--parch); padding-top: 22px; }
+.faq-answer-inner { padding: 0 32px 28px; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--slate); line-height: 1.85; border-top: .5px solid var(--parch); padding-top: 20px; }
 @media(max-width:1024px){ .faq-section { padding: 72px 40px; } }
 @media(max-width:768px){ .faq-section { padding: 64px 24px; } .faq-q-text { font-size: 17px; } .faq-question { padding: 20px 24px; } .faq-answer-inner { padding: 0 24px 24px; padding-top: 16px; } }
 
@@ -2227,905 +219,13 @@ footer {
     padding: 24px 20px !important;
   }
 }
-
-
-
-/* ═══════════════════════════════════════════════════════
-   DAY JOURNEYS — Magazine-index layout
-   Feature spread + 4-entry vertical index
-═══════════════════════════════════════════════════════ */
-.dj {
-  padding: 128px 0 96px;
-  background: var(--bone2);
-  border-bottom: .5px solid var(--parch);
-}
-.dj-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 72px;
-}
-.dj-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 48px;
-  margin-bottom: 32px;
-}
-.dj-header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 680px;
-}
-.dj-label {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--stone);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.dj-label::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: .5px;
-  background: var(--stone);
-  opacity: .6;
-}
-.dj-h2 {
-  font-family: var(--serif);
-  font-size: clamp(36px, 3.6vw, 54px);
-  font-weight: 300;
-  line-height: 1.08;
-  color: var(--warm);
-  letter-spacing: -.005em;
-}
-.dj-h2 em {
-  font-style: italic;
-  color: var(--stone);
-}
-.dj-top-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 6px;
-  border-bottom: .5px solid var(--parch);
-  transition: letter-spacing .4s, border-color .3s;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-.dj-top-link:hover { letter-spacing: .28em; border-bottom-color: var(--warm); }
-.dj-top-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; transition: transform .4s; }
-.dj-top-link:hover svg { transform: translateX(4px); }
-
-.dj-lead {
-  max-width: 760px;
-  margin-bottom: 96px;
-}
-.dj-lead p {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(19px, 1.85vw, 23px);
-  line-height: 1.65;
-  color: var(--slate);
-  letter-spacing: .003em;
-}
-.dj-lead p em {
-  font-style: italic;
-  color: var(--warm);
-}
-
-/* ── FEATURE spread (I.) ── */
-.dj-feature {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-bottom: 112px;
-  padding-bottom: 112px;
-  border-bottom: .5px solid var(--parch);
-}
-.dj-feature-photo {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  background: var(--parch);
-}
-.dj-feature-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 1.2s var(--slow);
-}
-.dj-feature:hover .dj-feature-photo img { transform: scale(1.03); }
-.dj-feature-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 520px;
-}
-.dj-numeral {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 44px;
-  color: var(--stone);
-  opacity: .55;
-  line-height: 1;
-  margin-bottom: 24px;
-}
-.dj-tag {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--terra);
-  margin-bottom: 20px;
-}
-.dj-feature-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(32px, 3.2vw, 46px);
-  line-height: 1.08;
-  color: var(--warm);
-  letter-spacing: -.005em;
-  margin-bottom: 20px;
-}
-.dj-feature-title em {
-  font-style: italic;
-  color: var(--stone);
-}
-.dj-feature-sub {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 1.4;
-  color: var(--stone);
-  margin-bottom: 28px;
-}
-.dj-feature-body-p {
-  font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.9;
-  color: var(--slate);
-  margin-bottom: 36px;
-}
-.dj-meta-rule {
-  width: 48px;
-  height: .5px;
-  background: var(--stone);
-  opacity: .4;
-  margin-bottom: 28px;
-}
-.dj-feature-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-}
-.dj-price {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 32px;
-  color: var(--warm);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.dj-price-label {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--stone);
-  display: block;
-}
-.dj-feature-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding-bottom: 4px;
-  border-bottom: .5px solid var(--warm);
-  transition: letter-spacing .4s, gap .4s;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.dj-feature-link:hover { letter-spacing: .3em; gap: 18px; }
-.dj-feature-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; transition: transform .4s; }
-.dj-feature-link:hover svg { transform: translateX(4px); }
-
-/* ── INDEX entries (II–V) ── */
-.dj-index {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin-bottom: 88px;
-}
-.dj-entry {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-}
-.dj-entry-photo {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  background: var(--parch);
-  margin-bottom: 24px;
-}
-.dj-entry-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 1.2s var(--slow);
-}
-.dj-entry:hover .dj-entry-photo img { transform: scale(1.04); }
-.dj-entry-meta {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.dj-entry-num {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 20px;
-  color: var(--stone);
-  opacity: .6;
-  line-height: 1;
-}
-.dj-entry-tag {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-.dj-entry-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 1.2;
-  color: var(--warm);
-  margin-bottom: 10px;
-  letter-spacing: -.003em;
-}
-.dj-entry-caption {
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.7;
-  color: var(--slate);
-  margin-bottom: 18px;
-  flex: 1;
-}
-.dj-entry-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
-  padding-top: 14px;
-  border-top: .5px solid var(--parch);
-}
-.dj-entry-price {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 20px;
-  color: var(--warm);
-  line-height: 1;
-}
-.dj-entry-price-small {
-  font-size: 14px;
-  font-style: italic;
-  color: var(--stone);
-}
-.dj-entry-arrow {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--warm);
-  transition: transform .4s;
-}
-.dj-entry:hover .dj-entry-arrow { transform: translateX(4px); }
-
-/* ── Footer link ── */
-.dj-foot {
-  display: flex;
-  justify-content: center;
-  padding-top: 24px;
-}
-.dj-foot-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 0;
-  border-top: .5px solid var(--warm);
-  border-bottom: .5px solid var(--warm);
-  padding-left: 24px;
-  padding-right: 24px;
-  transition: letter-spacing .4s;
-  text-decoration: none;
-}
-.dj-foot-link:hover { letter-spacing: .32em; }
-.dj-foot-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; transition: transform .4s; }
-.dj-foot-link:hover svg { transform: translateX(5px); }
-
-/* ── Responsive ── */
-@media (max-width: 1200px) {
-  .dj-index { grid-template-columns: repeat(2, 1fr); gap: 56px 40px; }
-}
-@media (max-width: 1024px) {
-  .dj { padding: 96px 0 72px; }
-  .dj-container { padding: 0 40px; }
-  .dj-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .dj-feature { grid-template-columns: 1fr; gap: 48px; margin-bottom: 80px; padding-bottom: 80px; }
-  .dj-feature-body { max-width: none; }
-  .dj-lead { margin-bottom: 72px; }
-}
-@media (max-width: 768px) {
-  .dj { padding: 72px 0 56px; }
-  .dj-container { padding: 0 24px; }
-  .dj-index { grid-template-columns: 1fr; gap: 48px; }
-  .dj-lead p { font-size: 18px; }
-  .dj-feature-title { font-size: 30px; }
-  .dj-feature-sub { font-size: 19px; }
-  .dj-feature-foot { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .dj-entry-photo { margin-bottom: 20px; }
-  .dj-entry-title { font-size: 20px; }
-}
-
-
-/* ═══════════════════════════════════════════════════════
-   CANONICAL EDITORIAL TYPE SYSTEM
-   Applied across all home sections for consistency.
-═══════════════════════════════════════════════════════ */
-
-/* Editorial section — canonical container */
-.ed-section {
-  padding: 128px 72px;
-  border-bottom: .5px solid var(--parch);
-  background: var(--bone2);
-}
-.ed-section--muted { background: var(--bone); }
-
-/* Section header — label + h2 + small link */
-.ed-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 48px;
-  margin-bottom: 72px;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.ed-header-left { display: flex; flex-direction: column; gap: 20px; max-width: 640px; }
-
-.ed-label {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--stone);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.ed-label::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: .5px;
-  background: var(--stone);
-  opacity: .6;
-}
-
-.ed-h2 {
-  font-family: var(--serif);
-  font-size: clamp(34px, 3.4vw, 50px);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--warm);
-  letter-spacing: -.005em;
-}
-.ed-h2 em {
-  font-style: italic;
-  color: var(--stone);
-}
-.ed-h2 em.accent { color: var(--terra); }
-
-.ed-lead {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(18px, 1.75vw, 22px);
-  line-height: 1.6;
-  color: var(--slate);
-  max-width: 640px;
-  font-style: italic;
-}
-
-.ed-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 6px;
-  border-bottom: .5px solid var(--parch);
-  transition: letter-spacing .4s, border-color .3s;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-.ed-link:hover { letter-spacing: .28em; border-bottom-color: var(--warm); }
-.ed-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; transition: transform .4s; }
-.ed-link:hover svg { transform: translateX(4px); }
-
-/* Canonical card grid — 3 cards with hairline dividers */
-.ed-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--parch);
-  max-width: 1440px;
-  margin: 0 auto;
-}
-.ed-grid--2-3 { grid-template-columns: 1fr 2fr; gap: 64px; background: transparent; }
-
-/* Canonical card */
-.ed-card {
-  background: var(--bone2);
-  padding: 40px 36px 44px;
-  display: flex;
-  flex-direction: column;
-}
-.ed-card-number {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 40px;
-  color: var(--stone);
-  opacity: .55;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-.ed-card-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 1.2;
-  color: var(--warm);
-  margin-bottom: 14px;
-}
-.ed-card-body {
-  font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--slate);
-  margin-bottom: 24px;
-  flex: 1;
-}
-.ed-card-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 4px;
-  border-bottom: .5px solid var(--parch);
-  transition: letter-spacing .4s, border-color .3s;
-  text-decoration: none;
-  align-self: flex-start;
-}
-.ed-card-link:hover { letter-spacing: .28em; border-bottom-color: var(--warm); }
-.ed-card-link svg { width: 11px; height: 11px; stroke: currentColor; fill: none; transition: transform .4s; }
-.ed-card-link:hover svg { transform: translateX(3px); }
-
-/* Off-season list items */
-.ed-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--parch);
-  margin: 40px 0 48px;
-}
-.ed-list-item {
-  background: var(--bone2);
-  padding: 28px 24px;
-}
-.ed-list-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 20px;
-  color: var(--warm);
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-.ed-list-body {
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--stone);
-  line-height: 1.7;
-}
-
-/* Side-meta column (small facts stack) */
-.ed-meta-col {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 400;
-  letter-spacing: .08em;
-  color: var(--stone);
-  line-height: 1.95;
-  padding-top: 4px;
-}
-.ed-meta-col strong {
-  display: block;
-  color: var(--warm);
-  font-weight: 500;
-  margin-bottom: 6px;
-  font-size: 13px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 1024px) {
-  .ed-section { padding: 96px 40px; }
-  .ed-grid--2-3 { grid-template-columns: 1fr; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .ed-section { padding: 72px 24px; }
-  .ed-header { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 48px; }
-  .ed-grid { grid-template-columns: 1fr; }
-  .ed-list { grid-template-columns: 1fr; }
-  .ed-card { padding: 32px 24px; }
-  .ed-card-number { font-size: 34px; }
-  .ed-card-title { font-size: 22px; }
-}
-
-/* ═══════════════════════════════════════════════════════
-   PAPER GRAIN — subtle noise texture on whole page
-═══════════════════════════════════════════════════════ */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 .11  0 0 0 0 .11  0 0 0 0 .1  0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg)'/%3E%3C/svg%3E");
-  background-size: 260px;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 1;
-  opacity: .35;
-}
-
-/* ═══════════════════════════════════════════════════════
-   THE ROADBOOK — Editorial section
-   Paper feel. Warm bone background. Subtle grain.
-   No terracotta. Magazine masthead.
-═══════════════════════════════════════════════════════ */
-.slowcoach {
-  position: relative;
-  background: var(--bone);
-  padding: 128px 72px 112px;
-  border-top: .5px solid var(--parch);
-  border-bottom: .5px solid var(--parch);
-  overflow: hidden;
-}
-.sc-grain {
-  position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .11  0 0 0 0 .11  0 0 0 0 .1  0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
-  background-size: 220px;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 1;
-}
-.slowcoach > * { position: relative; z-index: 2; }
-
-.sc-masthead {
-  text-align: center;
-  margin-bottom: 88px;
-  padding-bottom: 48px;
-  border-bottom: .5px solid var(--parch);
-}
-.sc-publisher {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-bottom: 32px;
-}
-.sc-publisher-rule {
-  display: block;
-  width: 32px;
-  height: .5px;
-  background: var(--stone);
-  opacity: .55;
-}
-.sc-wordmark {
-  font-family: var(--sc);
-  font-weight: 300;
-  font-size: clamp(52px, 11vw, 120px);
-  letter-spacing: .22em;
-  color: var(--warm);
-  line-height: 1;
-  margin-bottom: 28px;
-  text-indent: .22em;
-}
-.sc-issue {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 17px;
-  color: var(--stone);
-  letter-spacing: .02em;
-}
-
-.sc-lede-wrap {
-  max-width: 780px;
-  margin: 0 auto 96px;
-  text-align: center;
-}
-.sc-lede {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(22px, 2.5vw, 30px);
-  line-height: 1.5;
-  color: var(--warm);
-  letter-spacing: .005em;
-}
-.sc-lede em {
-  font-style: italic;
-  color: var(--terra);
-}
-
-/* Articles grid — Kinfolk-style 3:4 vertical */
-.sc-articles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 72px 40px;
-  max-width: 1280px;
-  margin: 0 auto 96px;
-}
-.sc-article { background: transparent; }
-.sc-article.sc-feature {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: center;
-  margin-bottom: 16px;
-  padding-bottom: 88px;
-  border-bottom: .5px solid var(--parch);
-}
-.sc-article-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
-}
-.sc-article.sc-feature .sc-article-link {
-  display: contents;
-}
-.sc-article-photo {
-  position: relative;
-  overflow: hidden;
-  background: var(--parch);
-  aspect-ratio: 3/4;
-  margin-bottom: 28px;
-}
-.sc-article.sc-feature .sc-article-photo { aspect-ratio: 4/5; margin-bottom: 0; }
-.sc-article-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 1.1s var(--slow);
-}
-.sc-article:hover .sc-article-photo img {
-  transform: scale(1.04);
-}
-.sc-article-cat {
-  position: absolute;
-  top: 22px; left: 22px;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--bone);
-  z-index: 2;
-  padding: 6px 12px;
-  background: rgba(28,28,26,.5);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.sc-article-body {
-  padding: 0;
-}
-.sc-article.sc-feature .sc-article-body {
-  padding: 0;
-}
-.sc-article-meta {
-  display: block;
-  font-family: var(--sans);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-bottom: 18px;
-}
-.sc-article-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  color: var(--warm);
-  line-height: 1.22;
-  font-size: 22px;
-  margin-bottom: 16px;
-  letter-spacing: -.005em;
-}
-.sc-article.sc-feature .sc-article-title {
-  font-size: clamp(28px, 3vw, 42px);
-  font-style: italic;
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-.sc-article-excerpt {
-  font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--slate);
-  margin-bottom: 24px;
-}
-.sc-article.sc-feature .sc-article-excerpt {
-  font-size: 16px;
-  color: var(--slate);
-}
-.sc-article-more {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-block;
-  padding-bottom: 4px;
-  border-bottom: .5px solid var(--parch);
-  transition: letter-spacing .4s, border-color .3s;
-}
-.sc-article:hover .sc-article-more {
-  letter-spacing: .28em;
-  border-bottom-color: var(--warm);
-}
-
-/* Three ways to read */
-.sc-ways {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: .5px solid var(--parch);
-  border-bottom: .5px solid var(--parch);
-}
-.sc-way {
-  padding: 56px 44px;
-  border-right: .5px solid var(--parch);
-  display: flex;
-  gap: 26px;
-  align-items: flex-start;
-}
-.sc-way:last-child { border-right: none; }
-.sc-way-no {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 38px;
-  color: var(--stone);
-  line-height: 1;
-  flex-shrink: 0;
-  padding-top: 2px;
-}
-.sc-way-body { flex: 1; }
-.sc-way-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 26px;
-  color: var(--warm);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.sc-way-copy {
-  font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--slate);
-  margin-bottom: 24px;
-}
-.sc-way-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--warm);
-  display: inline-block;
-  padding-bottom: 4px;
-  border-bottom: .5px solid var(--parch);
-  transition: letter-spacing .4s, border-color .3s;
-  text-decoration: none;
-}
-.sc-way-link:hover {
-  letter-spacing: .3em;
-  border-bottom-color: var(--warm);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .slowcoach { padding: 96px 40px; }
-  .sc-articles { grid-template-columns: repeat(2, 1fr); gap: 56px 32px; }
-  .sc-article.sc-feature { grid-column: 1 / -1; grid-template-columns: 1fr; gap: 32px; padding-bottom: 64px; }
-  .sc-article.sc-feature .sc-article-photo { aspect-ratio: 3/4; }
-  .sc-ways { grid-template-columns: 1fr; }
-  .sc-way { border-right: none; border-bottom: .5px solid var(--parch); }
-  .sc-way:last-child { border-bottom: none; }
-}
-@media (max-width: 768px) {
-  .sc-articles { grid-template-columns: 1fr; gap: 56px; }
-}
-@media (max-width: 768px) {
-  .slowcoach { padding: 80px 24px 72px; }
-  .sc-masthead { margin-bottom: 56px; padding-bottom: 32px; }
-  .sc-wordmark { font-size: 56px; letter-spacing: .16em; text-indent: .16em; }
-  .sc-issue { font-size: 15px; }
-  .sc-lede-wrap { margin-bottom: 56px; }
-  .sc-lede { font-size: 20px; }
-  .sc-article-body { padding: 32px 24px 36px; }
-  .sc-article.sc-feature .sc-article-body { padding: 36px 24px 40px; }
-  .sc-way { padding: 40px 24px; flex-direction: column; gap: 10px; }
-  .sc-way-no { font-size: 32px; }
-  .sc-publisher { gap: 12px; font-size: 9.5px; letter-spacing: .22em; }
-  .sc-publisher-rule { width: 18px; }
-}
-
 </style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 
@@ -3137,22 +237,8 @@ body::before {
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- ── NAVIGATION ── -->
-<!-- NAV — minimal placeholder, nav.js replaces this with full mega menu -->
-<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
-  <a href="/" class="nav-logo" aria-label="Riviera Journeys home">Riviera Journeys</a>
-  <ul class="nav-links">
-    <li><a href="/tours">Tours</a></li>
-    <li><a href="/shore-excursions">Shore Excursions</a></li>
-    <li><a href="/transfers">Transfers</a></li>
-    <li><a href="/multi-day">Multi-Day</a></li>
-    <li><a href="/corporate">Corporate</a></li>
-    <li><a href="/editorial">Roadbook</a></li>
-    <li><a href="/book" class="nav-cta"><span>Enquire</span></a></li>
-  </ul>
-  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
-    <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
-  </button>
-</nav>
+<nav id="mainNav" role="navigation" aria-label="Main navigation" data-nav-skeleton></nav>
+
 
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
@@ -3160,7 +246,7 @@ body::before {
     <!-- PHOTO PLACEHOLDER: Replace src with your hero photograph -->
     <!-- Recommended: Wide landscape, golden hour, preferably the Grande Corniche or Cap Ferrat coastline -->
     <!-- Ideal dimensions: 2400 × 1600px minimum, 16:10 ratio -->
-    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" loading="eager" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
+    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" loading="eager" fetchpriority="high" width="2880" height="1620" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
     <div class="hero-photo-placeholder" id="heroFallback" style="display:none">
       <span class="placeholder-text">Villefranche-sur-Mer · July 2025</span>
     </div>
@@ -3168,16 +254,16 @@ body::before {
   <div class="hero-grain"></div>
   <div class="hero-vignette"></div>
   <div class="hero-content">
-    <div class="hero-overline">Private tours & transfers · French & Italian Riviera</div>
-    <h1 class="hero-h1">The Riviera, <em>as it is<br>actually lived.</em></h1>
-    <p class="hero-sub">Private day tours, shore excursions and transfers from Cannes. In a Mercedes V-Class, driven by someone who lives here. For travellers who prefer one considered day to a dozen listed sights.</p>
+    <div class="hero-overline">The Riviera, properly experienced</div>
+    <h1 class="hero-h1">Private Day Tours from Cannes —<br><em>French &amp; Italian Riviera</em></h1>
+    <p class="hero-sub">Private day tours, shore excursions and transfers along the French and Italian Riviera. In a Mercedes V-Class. Driven by someone who actually lives here.</p>
     <div class="hero-actions">
       <a href="/tours" class="btn-primary">
-        <span>View the Tours</span>
+        <span>Explore Tours</span>
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="/editorial" class="btn-ghost">
-        Read the Roadbook
+      <a href="/transfers" class="btn-ghost">
+        View Transfers
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -3225,13 +311,13 @@ body::before {
     <h2 class="intro-h2 reveal d1">
       Not a guided tour.<br>
       <em>An introduction to a place</em><br>
-      worth understanding properly.
+      worth understanding.
     </h2>
     <div class="intro-rule reveal d2"></div>
     <p class="intro-text reveal d3">
-      The French and Italian Riviera has been visited by millions and genuinely understood by very few. Most people arrive, photograph the postcard, and leave with a collection of images that look exactly like everyone else's. We do something different: we show you the Riviera as it is actually lived — the roads that do not appear on tour maps, the villages that reward patience, the light at a particular hour on a particular stretch of coastline that no scheduled excursion will get you to on time.
+      The French and Italian Riviera has been visited by millions and genuinely understood by very few. Most people arrive, photograph the postcard, and leave with a collection of images that look exactly like everyone else's. We do something different: we show you the Riviera as it is actually lived — the roads that don't appear on tour maps, the villages that reward patience, the light at a particular hour on a particular stretch of coastline that no organised excursion will get you to on time.
       <br><br>
-      Riviera Journeys is a private touring service based in Cannes. Day tours, multi-day itineraries, shore excursions for cruise guests and airport transfers — all in a premium Mercedes V-Class, up to seven passengers. The difference is not the vehicle. It is the knowledge of place that comes from living here.
+      Riviera Journeys is a private touring service based in Cannes. We run day tours from &euro;800, multi-day itineraries, and shore excursions for cruise guests arriving at the quais of Villefranche and Cannes across the French and Italian Riviera &mdash; plus fourteen transfer routes from Nice Airport, twenty-seven kilometres east. The Corniche roads, the Cap d'Antibes peninsula, the medieval villages perched four hundred metres above the sea &mdash; all in a premium Mercedes V-Class. The difference is not the vehicle. It is the knowledge of place that comes from living here.
     </p>
     <a href="/about" class="intro-link reveal d4">
       The philosophy behind Riviera Journeys
@@ -3241,132 +327,130 @@ body::before {
 </section>
 
 <!-- ── FEATURED TOURS ── -->
-<section class="dj" aria-label="Day Journeys from Cannes">
-  <div class="dj-container">
-
-    <!-- HEADER -->
-    <div class="dj-header">
-      <div class="dj-header-left">
-        <span class="dj-label reveal">Day Journeys</span>
-        <h2 class="dj-h2 reveal d1">The routes are familiar.<br><em>The day is not.</em></h2>
-      </div>
-      <a href="/tours" class="dj-top-link reveal d2">
-        View all journeys
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<section class="tours" aria-label="Tours and excursions">
+  <div class="tours-header">
+    <div class="tours-header-left">
+      <span class="section-label reveal">Our Tours</span>
+      <h2 class="tours-h2 reveal d1">Private full-day tours from Cannes.<br>The road, driven correctly.</h2>
     </div>
+    <a href="/tours" class="intro-link reveal d2">
+      View all tours
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 
-    <!-- LEAD -->
-    <div class="dj-lead reveal d2">
-      <p>Every operator on the Riviera runs these five routes. What differs is the substance — which café in Eze opens at nine, the hour at which Monaco's old town holds its quiet, the viewpoint above La Turbie that most tours pass at speed, which market in Menton only runs on a Friday. We do not sell the route. <em>We design the day.</em></p>
-    </div>
-
-    <!-- FEATURE — I. -->
-    <a href="/tours/cannes/nice-eze-monaco" class="dj-feature reveal-scale">
-      <div class="dj-feature-photo">
-        <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif" alt="Nice old port and Promenade des Anglais coastline — Nice Eze Monaco private day tour French Riviera" loading="eager">
+  <div class="tours-grid">
+    <!-- FEATURED TOUR 1 — Large card -->
+    <a href="/tours/cannes/nice-eze-monaco" class="tour-card reveal-scale" style="text-decoration:none;color:inherit">
+      <div class="tour-card-photo">
+        <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif" alt="Nice old port and Promenade des Anglais coastline from above — Nice Eze Monaco private day tour French Riviera" width="1300" height="1100" loading="eager">
+        <span class="tour-card-tag">Featured &middot; Full Day</span>
       </div>
-      <div class="dj-feature-body">
-        <span class="dj-numeral">I.</span>
-        <span class="dj-tag">The Classic Day</span>
-        <h3 class="dj-feature-title">Nice, Eze, Monaco <em>&amp; the Corniche</em></h3>
-        <p class="dj-feature-sub">The route every guidebook names. The day, rather less so.</p>
-        <p class="dj-feature-body-p">Nice old town before the coaches arrive — the cours Saleya market at half past eight, the flower stands still quiet, coffee in the Place Saint-François. Eze at an hour that lets the village breathe. The Grande Corniche driven the way it was meant to be driven, with the one viewpoint above La Turbie that most tours pass at speed. Monaco with enough time to find the part that is not on the postcard, returning along the low corniche when the light turns.</p>
-        <div class="dj-meta-rule"></div>
-        <div class="dj-feature-foot">
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Nice, Eze, Monaco &amp; the Corniche</h3>
+        <p class="tour-card-meta">The classic Riviera route, done at the right pace. Nice old town before the crowds, the medieval village of Eze at the hour it deserves, the Grande Corniche, and Monaco with enough time to find the part that isn't on the postcard.</p>
+        <div class="tour-card-footer">
           <div>
-            <div class="dj-price">€ 800</div>
-            <span class="dj-price-label">Full day · Private · Up to 7</span>
+            <span class="tour-card-price">&euro; 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day &middot; Private &middot; Up to 7 guests</span>
           </div>
-          <span class="dj-feature-link">
-            Read the day
+          <div class="tour-card-arrow">
             <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
+          </div>
         </div>
       </div>
     </a>
 
-    <!-- INDEX — II–V -->
-    <div class="dj-index">
+   <!-- TOUR 2 -->
+    <a href="/tours/cannes/cannes-antibes-stpaul" class="tour-card reveal d1" style="text-decoration:none;color:inherit">
+      <div class="tour-card-photo">
+        <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif" alt="Cannes bay with Carlton and Martinez hotels on the Croisette — Cannes Antibes Saint-Paul-de-Vence private day tour" width="900" height="600" loading="lazy">
+        <span class="tour-card-tag">Full Day</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Cannes, Antibes &amp; Saint-Paul-de-Vence</h3>
+        <p class="tour-card-meta">Cannes beyond the Croisette, the ramparts of Antibes and the Cap &mdash; Picasso's city, properly &mdash; then the afternoon light in Saint-Paul-de-Vence, where the lanes hold their quiet.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">&euro; 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day &middot; Private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
 
-      <!-- II -->
-      <a href="/tours/cannes/cannes-antibes-stpaul" class="dj-entry reveal d1">
-        <div class="dj-entry-photo">
-          <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif" alt="Cannes bay with Carlton and Martinez hotels on the Croisette — Cannes Antibes Saint-Paul-de-Vence private day tour" loading="lazy">
+    <!-- TOUR 3 -->
+    <a href="/tours/cannes/grasse-gourdon" class="tour-card reveal d2" style="text-decoration:none;color:inherit">
+      <div class="tour-card-photo">
+        <img src="/photos/grasse-panorama-esterel-mountains-sea-view-provence-tour.avif" alt="Grasse panorama with Esterel mountains and Mediterranean sea view — private Provence day tour from Cannes" width="900" height="600" loading="lazy">
+        <span class="tour-card-tag">Cultural &middot; Full Day</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Grasse, Gourdon &amp; the Arri&egrave;re-Pays</h3>
+        <p class="tour-card-meta">Twenty minutes inland, the coast disappears and the real Provence begins. Grasse &mdash; world capital of perfume &mdash; then Gourdon above the gorge, and Tourrettes-sur-Loup where the violets grow in the streets.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">&euro; 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day &middot; Private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
         </div>
-        <div class="dj-entry-meta">
-          <span class="dj-entry-num">II.</span>
-          <span class="dj-entry-tag">Full Day</span>
-        </div>
-        <h3 class="dj-entry-title">Cannes, Antibes &amp; Saint-Paul-de-Vence</h3>
-        <p class="dj-entry-caption">Cannes beyond the Croisette, the ramparts of Antibes and Picasso&rsquo;s castle, then afternoon light in Saint-Paul where the lanes hold their quiet.</p>
-        <div class="dj-entry-foot">
-          <span class="dj-entry-price">€ 800</span>
-          <span class="dj-entry-arrow">→</span>
-        </div>
-      </a>
+      </div>
+    </a>
 
-      <!-- III -->
-      <a href="/tours/cannes/menton-sanremo-dolceacqua" class="dj-entry reveal d2">
-        <div class="dj-entry-photo">
-          <img src="/photos/dolceacqua-medieval-bridge-village-menton-sanremo-dolceacqua-tour-italian-riviera.avif" alt="Dolceacqua medieval bridge and village — Menton Sanremo Dolceacqua private day tour Italian Riviera" loading="lazy">
+    <!-- TOUR 4 — transfers feature -->
+    <a href="/transfers" class="tour-card reveal d1" style="text-decoration:none;color:inherit">
+      <div class="tour-card-photo">
+        <img src="/photos/cannes-croisette-hotels-martinez-carlton-sunset-cannes-nice-airport-transfer.avif" alt="Cannes Croisette at sunset — private transfers between Nice Airport, Cannes, Monaco and Saint-Tropez" width="900" height="600" loading="lazy">
+        <span class="tour-card-tag">Transfers &middot; 14 routes</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Airport transfers &amp; inter-city routes</h3>
+        <p class="tour-card-meta">From Nice Airport to Cannes, Monaco, Antibes, Saint-Tropez &mdash; and back. Plus inter-city routes, day or night. Flight tracking, name board at arrivals, luggage handled. Mercedes V-Class, up to seven passengers.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">from &euro;140</span>
+            <span class="tour-card-price-label" style="display:block">Per vehicle &middot; 14 routes</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
         </div>
-        <div class="dj-entry-meta">
-          <span class="dj-entry-num">III.</span>
-          <span class="dj-entry-tag">France &amp; Italy</span>
-        </div>
-        <h3 class="dj-entry-title">Menton, Sanremo &amp; the Italian Border</h3>
-        <p class="dj-entry-caption">Menton lemon trees and Belle Époque gardens, then Italy — Sanremo&rsquo;s flower market, a different tempo. The return along the coast is the best part.</p>
-        <div class="dj-entry-foot">
-          <span class="dj-entry-price">€ 800</span>
-          <span class="dj-entry-arrow">→</span>
-        </div>
-      </a>
+      </div>
+    </a>
 
-      <!-- IV -->
-      <a href="/tours/cannes/grasse-gourdon" class="dj-entry reveal d3">
-        <div class="dj-entry-photo">
-          <img src="/photos/grasse-panorama-esterel-mountains-sea-view-provence-tour.avif" alt="Grasse panorama with Esterel mountains and sea view — private Provence day tour from Cannes" loading="lazy">
+    <!-- TOUR 5 -->
+    <a href="/multi-day/italy/cannes-cinque-terre-florence" class="tour-card reveal d2" style="text-decoration:none;color:inherit">
+      <div class="tour-card-photo">
+        <img src="/photos/florence-rooftops-view-from-uffizi-gallery-italy-tour.avif" alt="Florence rooftops and Duomo viewed from the Uffizi Gallery terrace — Cannes to Florence private multi-day tour Italy" width="900" height="600" loading="lazy">
+        <span class="tour-card-tag">Multi-Day &middot; France &amp; Italy</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Cannes to Florence via Genova &amp; Cinque Terre</h3>
+        <p class="tour-card-meta">A few days east along the coast: Genova's medieval streets, overnight in Cinque Terre with a proper evening, then Florence. The trip that people talk about for years.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">Price on enquiry</span>
+            <span class="tour-card-price-label" style="display:block">from 7 days &middot; Fully private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
         </div>
-        <div class="dj-entry-meta">
-          <span class="dj-entry-num">IV.</span>
-          <span class="dj-entry-tag">Arrière-Pays</span>
-        </div>
-        <h3 class="dj-entry-title">Grasse, Gourdon &amp; Tourrettes</h3>
-        <p class="dj-entry-caption">Twenty minutes inland, the coast disappears and real Provence begins — Grasse, world capital of perfume, Gourdon above the gorge, Tourrettes-sur-Loup where violets grow in the streets.</p>
-        <div class="dj-entry-foot">
-          <span class="dj-entry-price">€ 800</span>
-          <span class="dj-entry-arrow">→</span>
-        </div>
-      </a>
+      </div>
+    </a>
+  </div>
 
-      <!-- V -->
-      <a href="/multi-day/italy/cannes-cinque-terre-florence" class="dj-entry reveal d4">
-        <div class="dj-entry-photo">
-          <img src="/photos/florence-rooftops-view-from-uffizi-gallery-italy-tour.avif" alt="Florence rooftops and Duomo from the Uffizi Gallery terrace — Cannes to Florence private multi-day tour Italy" loading="lazy">
-        </div>
-        <div class="dj-entry-meta">
-          <span class="dj-entry-num">V.</span>
-          <span class="dj-entry-tag">Multi-Day</span>
-        </div>
-        <h3 class="dj-entry-title">Cannes to Florence <em style="font-style:italic;color:var(--stone)">via Genova &amp; Cinque Terre</em></h3>
-        <p class="dj-entry-caption">A few days east along the coast — Genova&rsquo;s medieval streets, a proper evening in Cinque Terre, then Florence. The trip that people talk about for years.</p>
-        <div class="dj-entry-foot">
-          <span class="dj-entry-price-small">On enquiry</span>
-          <span class="dj-entry-arrow">→</span>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- FOOTER -->
-    <div class="dj-foot">
-      <a href="/tours" class="dj-foot-link">
-        All journeys from Cannes
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
+  <div class="tours-footer">
+    <a href="/tours" class="btn-primary">
+      <span>All Tours & Excursions</span>
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </section>
 
@@ -3403,17 +487,17 @@ body::before {
         <svg viewBox="0 0 44 44" stroke-width="1"><rect x="6" y="20" width="32" height="14" rx="2"/><path d="M14 20V14a8 8 0 0 1 16 0v6"/><circle cx="22" cy="27" r="2" fill="var(--sand)"/></svg>
       </div>
       <h3 class="service-title">Transfers</h3>
-      <p class="service-desc">Nice Côte d'Azur Airport to Cannes, Monaco, Antibes, Saint-Tropez and anywhere on the Riviera worth going. Mercedes V-Class. On time, always. From €150.</p>
+      <p class="service-desc">Nice Côte d'Azur Airport to Cannes, Monaco, Antibes, Saint-Tropez and anywhere on the Riviera worth going. Mercedes V-Class. On time, always. From €140.</p>
       <a href="/transfers" class="service-link">Book a transfer <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="service-card reveal d1">
       <div class="service-number">04</div>
       <div class="service-icon">
-        <svg viewBox="0 0 44 44" stroke-width="1"><rect x="8" y="14" width="28" height="20" rx="3"/><circle cx="22" cy="24" r="6"/><circle cx="22" cy="24" r="3" fill="var(--sand)"/><rect x="17" y="10" width="10" height="5" rx="2"/></svg>
+        <svg viewBox="0 0 44 44" stroke-width="1"><path d="M4 32 C12 28 22 36 30 30 C34 27 38 28 40 30"/><path d="M4 36 C12 32 22 40 30 34 C34 31 38 32 40 34"/><path d="M18 12 L22 20 L26 12" /><circle cx="22" cy="10" r="2"/></svg>
       </div>
-      <h3 class="service-title">Off-Season & Experiences</h3>
-      <p class="service-desc">Truffle markets at dawn in the hills above Nice. Ski runs an hour from the coast. Winter gastronomy. Photography at first light. The Riviera that crowds never see.</p>
-      <a href="/tours/off-season/gastronomy" class="service-link">Discover off-season <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <h3 class="service-title">Shore Excursions</h3>
+      <p class="service-desc">Cruise ship day in port. We pick you up at Cannes or Villefranche, show you the Riviera that afternoon calls wait for, and get you back to the tender pier before the last call. No missed ship, no stress.</p>
+      <a href="/shore-excursions" class="service-link">Shore excursions <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="service-card reveal d2">
       <div class="service-number">05</div>
@@ -3438,90 +522,52 @@ body::before {
 
 
 <!-- ── OFF-SEASON ── -->
-<section class="ed-section ed-section--muted" aria-label="Off-season Riviera experiences">
-  <div class="ed-grid--2-3" style="display:grid;max-width:1440px;margin:0 auto;align-items:start">
-    <aside class="reveal-left">
-      <span class="ed-label">Off-Season</span>
-      <div class="ed-meta-col" style="margin-top:28px">
-        <strong>October — April</strong>
-        No crowds<br>
-        Different light<br>
-        The real Riviera
-      </div>
-    </aside>
-    <div>
-      <h2 class="ed-h2 reveal d1" style="margin-bottom:32px">The Riviera in winter <em>is the one worth seeing.</em></h2>
-      <p class="reveal d2" style="font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.9;color:var(--slate);max-width:640px;margin-bottom:0">November through March, the Riviera empties of visitors and fills with everything else — truffle markets at dawn in the hills above Nice, the first almond blossoms in Menton, ski runs in the Alps an hour from the coast, gastronomy that the summer restaurants never have time for. The light is different. The conversations are better. The roads are yours.</p>
-      <div class="ed-list">
-        <div class="ed-list-item">
-          <div class="ed-list-title">Gastronomy</div>
-          <div class="ed-list-body">Truffle markets · Olive oil harvest · Winter menus · Market mornings</div>
-        </div>
-        <div class="ed-list-item">
-          <div class="ed-list-title">Snow &amp; Sea</div>
-          <div class="ed-list-body">Ski Isola 2000 · Valberg · Coast the same afternoon · One hour from Cannes</div>
-        </div>
-        <div class="ed-list-item">
-          <div class="ed-list-title">Art &amp; Culture</div>
-          <div class="ed-list-body">Fondation Maeght · Musée Picasso Antibes · Private gallery visits · Studio tours</div>
-        </div>
-      </div>
-      <a href="/experiences/off-season" class="btn-primary reveal d3">
-        <span>Explore Off-Season</span>
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 
 <!-- ── CORPORATE ── -->
-<section class="ed-section" aria-label="Corporate retreats and events Cannes French Riviera">
-  <div class="ed-header">
-    <div class="ed-header-left">
-      <span class="ed-label reveal">Corporate & Events</span>
-      <h2 class="ed-h2 reveal d1">MIPIM, Festival de Cannes,<br>Cannes Lions. <em>We know the week.</em></h2>
+<section style="padding:96px 72px;border-bottom:.5px solid var(--parch)" aria-label="Corporate retreats and events Cannes French Riviera">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px">
+    <div>
+      <span class="section-label reveal">Corporate & Events</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(26px,3vw,40px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">MIPIM, Festival de Cannes,<br>Cannes Lions. We know the week.</h2>
     </div>
-    <a href="/corporate" class="ed-link reveal d2">
+    <a href="/corporate" class="section-text-link reveal d2">
       Plan your event
-      <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg style="width:14px;height:14px;stroke:currentColor;fill:none;transition:transform .45s var(--ease)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
-  <div class="ed-grid reveal d2">
-    <article class="ed-card">
-      <span class="ed-card-number">I.</span>
-      <h3 class="ed-card-title">Event Transfers</h3>
-      <p class="ed-card-body">VIP airport arrivals, hotel-to-venue, evening transfers. We handle dozens of delegates across a week so you handle none of it. Fixed rates, confirmed in advance.</p>
-      <a href="/corporate#transfers" class="ed-card-link">
-        Learn more
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--parch)">
+    <div style="background:var(--bone2);padding:36px 32px">
+      <div style="font-family:var(--serif);font-size:48px;font-weight:300;color:var(--parch);margin-bottom:16px;line-height:1">01</div>
+      <h3 style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm);margin-bottom:12px">Event Transfers</h3>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.75;margin-bottom:20px">VIP airport arrivals, hotel-to-venue, evening transfers. We handle dozens of delegates across a week so you handle none of it. Fixed rates, confirmed in advance.</p>
+      <a href="/corporate" style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        Learn more <svg style="width:12px;height:12px;stroke:currentColor;fill:none" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-    </article>
-    <article class="ed-card">
-      <span class="ed-card-number">II.</span>
-      <h3 class="ed-card-title">Executive Retreats</h3>
-      <p class="ed-card-body">Off-site strategy sessions, team dinners, partner excursions. We suggest the venue, book the restaurant, organise the day. You focus on the conversations that matter.</p>
-      <a href="/corporate#retreats" class="ed-card-link">
-        Learn more
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+    <div style="background:var(--bone2);padding:36px 32px">
+      <div style="font-family:var(--serif);font-size:48px;font-weight:300;color:var(--parch);margin-bottom:16px;line-height:1">02</div>
+      <h3 style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm);margin-bottom:12px">Executive Retreats</h3>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.75;margin-bottom:20px">Off-site strategy sessions, team dinners, partner excursions. We suggest the venue, book the restaurant, organise the day. You focus on the conversations that matter.</p>
+      <a href="/book?service=partner-programme" style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        Learn more <svg style="width:12px;height:12px;stroke:currentColor;fill:none" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-    </article>
-    <article class="ed-card">
-      <span class="ed-card-number">III.</span>
-      <h3 class="ed-card-title">Partner Experiences</h3>
-      <p class="ed-card-body">While you are in meetings, your guests see the Riviera — properly. Private tours, coastal lunch, aperitif at the right hour. The kind of day they will mention for years.</p>
-      <a href="/corporate#experiences" class="ed-card-link">
-        Learn more
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+    <div style="background:var(--warm);padding:36px 32px">
+      <div style="font-family:var(--serif);font-size:48px;font-weight:300;color:rgba(196,170,130,.15);margin-bottom:16px;line-height:1">03</div>
+      <h3 style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--bone);margin-bottom:12px">Partner Experiences</h3>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(196,170,130,.6);line-height:1.75;margin-bottom:20px">While you are in meetings, your guests see the Riviera — properly. Private tours, coastal lunch, aperitif at the right hour. The kind of day they will mention for years.</p>
+      <a href="/book?service=partner-programme" style="font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        Learn more <svg style="width:12px;height:12px;stroke:currentColor;fill:none" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-    </article>
+    </div>
   </div>
 </section>
 
 <!-- ── EDITORIAL PHOTO ── -->
 <div class="editorial-photo" aria-hidden="true">
   <div class="editorial-photo-inner ep-parallax" id="epParallax">
-    <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif" alt="Mercedes V-Class private transfer on the French Riviera" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+    <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif" alt="Mercedes V-Class private transfer on the French Riviera" loading="lazy" width="3200" height="1200" style="width:100%;height:100%;object-fit:cover;display:block">
   </div>
   <div class="ep-vignette"></div>
   <div class="ep-content">
@@ -3538,7 +584,7 @@ body::before {
         <span class="ep-stat-label">Routes covered</span>
       </div>
       <div>
-        <span class="ep-stat-num">€ 120</span>
+        <span class="ep-stat-num">€ 140</span>
         <span class="ep-stat-label">Starting price</span>
       </div>
     </div>
@@ -3660,7 +706,7 @@ body::before {
   <span class="section-label reveal">Before You Book</span>
   <h2 class="faq-section-h2 reveal d1">Questions &amp; answers.</h2>
   <div class="faq-list">
-    <div class="faq-answer"><p class="faq-answer-inner">Our full-day private tours are priced at €800 per vehicle — not per person — for up to seven guests. Transfers from Nice Côte d'Azur Airport begin at €120. Shore excursions from Villefranche start from €240. There are no hidden costs: fuel, parking, and waiting time are included.</p></div>
+    <div class="faq-answer"><p class="faq-answer-inner">Our full-day private tours are priced at €800 per vehicle — not per person — for up to seven guests. Transfers from Nice Côte d'Azur Airport begin at €140. Shore excursions from Villefranche start from €240. There are no hidden costs: fuel, parking, and waiting time are included.</p></div>
     </div>
 
     <div class="faq-item">
@@ -3744,168 +790,49 @@ body::before {
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════════
-     THE ROADBOOK — Editorial of Riviera Journeys
-     The considered voice. No terracotta. No hurry.
-═══════════════════════════════════════════════════════ -->
-<section class="slowcoach" id="roadbook" aria-label="The Roadbook — editorial of Riviera Journeys">
-  <div class="sc-grain" aria-hidden="true"></div>
-
-  <!-- MASTHEAD -->
-  <header class="sc-masthead">
-    <div class="sc-publisher">
-      <span class="sc-publisher-rule"></span>
-      <span>An editorial of Riviera Journeys</span>
-      <span class="sc-publisher-rule"></span>
-    </div>
-    <h2 class="sc-wordmark">The Roadbook</h2>
-    <div class="sc-issue">Issue No. 07 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Written from Cannes</div>
-  </header>
-
-  <!-- LEDE -->
-  <div class="sc-lede-wrap reveal">
-    <p class="sc-lede">The Riviera rewards those who read about it <em>before</em> they arrive. The Roadbook is the written side of Riviera Journeys — essays, practical guides, a monthly letter, and a one-to-one consultation. For travellers who prefer to understand a place rather than simply visit it.</p>
-  </div>
-
-  <!-- 3 ARTICLES -->
-  <div class="sc-articles">
-    <article class="sc-article sc-feature reveal-scale">
-      <a href="/editorial/grande-corniche" class="sc-article-link">
-        <div class="sc-article-photo">
-          <img src="/photos/la-turbie-village-hills-mediterranean-view-grande-corniche-nice-menton.avif" alt="La Turbie village with hills and Mediterranean view on the Grande Corniche between Nice and Menton" loading="lazy">
-          <span class="sc-article-cat">Roads & Routes</span>
-        </div>
-        <div class="sc-article-body">
-          <span class="sc-article-meta">Feature essay · 8 min read</span>
-          <h3 class="sc-article-title">The Road from Nice to Menton Was Designed, It Seems, for Late September</h3>
-          <p class="sc-article-excerpt">The Grande Corniche sticks close to the coast at this point — not because it has to, but because it seems unwilling to leave. We drove it in both directions on a Tuesday in early autumn to find out which was better. The answer is neither obvious nor definitive.</p>
-          <span class="sc-article-more">Read the essay&nbsp;&nbsp;→</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="sc-article reveal d1">
-      <a href="/editorial/monaco" class="sc-article-link">
-        <div class="sc-article-photo">
-          <img src="/photos/monaco-prince-palace-sunset-le-rocher.avif" alt="Monaco Prince's Palace at sunset on Le Rocher — private day tour French Riviera" loading="lazy">
-          <span class="sc-article-cat">Places</span>
-        </div>
-        <div class="sc-article-body">
-          <span class="sc-article-meta">Essay · 5 min</span>
-          <h3 class="sc-article-title">Monaco: What Everyone Misses, and the Forty Minutes That Fix It</h3>
-          <p class="sc-article-excerpt">Most shore excursions spend forty minutes in Monaco and tell you everything there is to say. That forty minutes, used correctly, can change your impression of the place.</p>
-          <span class="sc-article-more">Read&nbsp;&nbsp;→</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="sc-article reveal d2">
-      <a href="/editorial/markets" class="sc-article-link">
-        <div class="sc-article-photo">
-          <img src="/photos/riviera-market-sun-dried-tomatoes-stall-italian-french-coast.avif" alt="Sun-dried tomatoes at a Riviera market stall — Provençal market guide French and Italian coast" loading="lazy">
-          <span class="sc-article-cat">Local Knowledge</span>
-        </div>
-        <div class="sc-article-body">
-          <span class="sc-article-meta">Guide · 4 min</span>
-          <h3 class="sc-article-title">Which Market, Which Day, Which Village — A Practical Guide</h3>
-          <p class="sc-article-excerpt">The Riviera has a market every morning somewhere nearby. Most are worth going to. A few are worth building a day around. Here is the list.</p>
-          <span class="sc-article-more">Read&nbsp;&nbsp;→</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="sc-article reveal d3">
-      <a href="/editorial/dolceacqua" class="sc-article-link">
-        <div class="sc-article-photo">
-          <img src="/photos/dolceacqua-medieval-bridge-village-menton-sanremo-dolceacqua-tour-italian-riviera.avif" alt="Dolceacqua medieval bridge at morning — Italian border dispatch from Riviera Journeys" loading="lazy">
-          <span class="sc-article-cat">Dispatch</span>
-        </div>
-        <div class="sc-article-body">
-          <span class="sc-article-meta">Dispatch · 3 min</span>
-          <h3 class="sc-article-title">A Morning in Dolceacqua, and What They Do With the Olives</h3>
-          <p class="sc-article-excerpt">Eight miles past the French border, a village built around a castle and a mill. On Thursdays the baker opens at six. This is not a detour — it is a different country entirely, thirty minutes from Menton.</p>
-          <span class="sc-article-more">Read&nbsp;&nbsp;→</span>
-        </div>
-      </a>
-    </article>
-  </div>
-
-  <!-- THREE WAYS TO READ -->
-  <div class="sc-ways">
-    <div class="sc-way">
-      <span class="sc-way-no">I.</span>
-      <div class="sc-way-body">
-        <h3 class="sc-way-title">The Essays</h3>
-        <p class="sc-way-copy">Long-form writing on roads, villages, light and particular hours. New pieces, irregularly — published when there is something worth saying.</p>
-        <a href="/editorial" class="sc-way-link">Read the Roadbook&nbsp;&nbsp;→</a>
-      </div>
-    </div>
-    <div class="sc-way">
-      <span class="sc-way-no">II.</span>
-      <div class="sc-way-body">
-        <h3 class="sc-way-title">The Letter</h3>
-        <p class="sc-way-copy">Once a month, by email. About twelve hundred words, a photograph or two, no advertising. The first issue arrives within the week.</p>
-        <a href="#letter" class="sc-way-link">Subscribe to the Letter&nbsp;&nbsp;→</a>
-      </div>
-    </div>
-    <div class="sc-way">
-      <span class="sc-way-no">III.</span>
-      <div class="sc-way-body">
-        <h3 class="sc-way-title">The Consultation</h3>
-        <p class="sc-way-copy">Ninety minutes by video or in person in Cannes. We design a fortnight from the ground up. A personalised itinerary PDF follows. €250.</p>
-        <a href="/slow-travel" class="sc-way-link">Book the consultation&nbsp;&nbsp;→</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ── SLOW TRAVEL CONSULTING ── -->
-<section style="padding:128px 72px;border-bottom:.5px solid var(--parch);background:var(--bone);position:relative;overflow:hidden" aria-label="The Consultation">
-<div aria-hidden="true" style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .11  0 0 0 0 .11  0 0 0 0 .1  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p2)'/%3E%3C/svg%3E&quot;);background-size:220px;mix-blend-mode:multiply;pointer-events:none;z-index:1"></div>
-<div style="position:relative;z-index:2">
+<section style="padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--warm)" aria-label="Slow travel consulting">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
     <div>
-      <span style="font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:14px;margin-bottom:18px">
-        <span style="display:block;width:24px;height:.5px;background:var(--stone)"></span>
-        The Consultation
+      <span style="font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px;margin-bottom:16px">
+        <span style="display:block;width:24px;height:.5px;background:var(--sand)"></span>
+        Slow Travel
       </span>
-      <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,42px);font-weight:300;color:var(--warm);line-height:1.15;margin-bottom:24px">A fortnight on the Riviera,<br><em style="font-style:italic;color:var(--stone)">done properly.</em></h2>
-      <p style="font-family:var(--sans);font-size:16px;font-weight:400;color:var(--slate);line-height:1.85;margin-bottom:36px">Most people plan a trip. A few plan a stay. If you are one of the latter — two weeks, a real base, time to understand a place rather than photograph it — then one conversation with someone who has lived here is worth more than any guidebook.</p>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:40px;padding:28px 0;border-top:.5px solid var(--parch);border-bottom:.5px solid var(--parch)">
-        <div style="font-family:var(--sans);font-size:14.5px;font-weight:400;color:var(--slate)">— Where to base yourself and why</div>
-        <div style="font-family:var(--sans);font-size:14.5px;font-weight:400;color:var(--slate)">— What to do on each day, in what order</div>
-        <div style="font-family:var(--sans);font-size:14.5px;font-weight:400;color:var(--slate)">— What to avoid entirely</div>
-        <div style="font-family:var(--sans);font-size:14.5px;font-weight:400;color:var(--slate)">— Restaurants, markets, roads, timing — the version without the caveats</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,42px);font-weight:300;color:var(--bone);line-height:1.15;margin-bottom:20px">Two weeks on the Riviera.<br><em style="font-style:italic;color:rgba(247,243,237,.6)">Done properly.</em></h2>
+      <p style="font-family:var(--sans);font-size:14px;font-weight:300;color:rgba(196,170,130,.65);line-height:1.85;margin-bottom:32px">Most people plan a trip. A few plan a stay. If you are one of the latter — two weeks, a real base, time to understand a place rather than photograph it — then one conversation with someone who has lived here is worth more than any guidebook.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px;padding:24px 0;border-top:.5px solid rgba(196,170,130,.15);border-bottom:.5px solid rgba(196,170,130,.15)">
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— Where to base yourself and why</div>
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— What to do on each day, in what order</div>
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— What to avoid entirely</div>
+        <div style="font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(196,170,130,.65)">— Restaurants, markets, roads, timing — the version without the caveats</div>
       </div>
       <div style="display:flex;align-items:baseline;gap:16px">
-        <span style="font-family:var(--serif);font-size:46px;font-weight:300;color:var(--warm)">€ 250</span>
-        <span style="font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.14em;color:var(--stone);text-transform:uppercase">90-minute consultation &nbsp;·&nbsp; Video or in person</span>
+        <span style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--bone)">€ 250</span>
+        <span style="font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--sand)">60-minute consultation · Video or in person</span>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
-      <div style="font-family:var(--serif);font-size:21px;font-weight:300;font-style:italic;color:var(--warm);line-height:1.55;padding-bottom:24px;border-bottom:.5px solid var(--parch)">"We spent 16 days on the Riviera and genuinely felt like we lived there for a week. That is exactly what we wanted."<br><span style="font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);font-style:normal;display:inline-block;margin-top:16px">— Private client · Consultation · Autumn 2025</span></div>
+      <div style="font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:rgba(247,243,237,.55);line-height:1.6;padding-bottom:20px;border-bottom:.5px solid rgba(196,170,130,.12)">"We spent 16 days on the Riviera and genuinely felt like we lived there for a week. That is exactly what we wanted."</div>
       <a href="/slow-travel" class="btn-sand reveal">
         <span>Book a Consultation</span>
         <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p style="font-family:var(--sans);font-size:13px;font-weight:400;color:var(--stone);line-height:1.7">A personalised itinerary PDF follows within 48 hours of the consultation.</p>
+      <p style="font-family:var(--sans);font-size:11px;font-weight:300;color:rgba(196,170,130,.35);line-height:1.6">Personalized itinerary PDF sent within 48 hours of consultation.</p>
     </div>
   </div>
-</div>
 </section>
 
-<!-- ── THE LETTER ── -->
-<section class="newsletter" id="letter" aria-label="The Letter — newsletter signup">
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter" aria-label="Newsletter signup">
   <div class="nl-left">
-    <span class="section-label reveal">The Letter</span>
-    <h2 class="nl-h2 reveal d1">A letter from Cannes,<br><em>once a month.</em></h2>
-    <p class="nl-body reveal d2">Places, roads and people that do not appear in travel supplements. New routes, overlooked villages, the best time of year to visit somewhere you thought you knew. One considered letter a month — no advertising, no partners, no filler. About twelve hundred words and a photograph or two.</p>
+    <span class="section-label reveal">The Roadbook Newsletter</span>
+    <h2 class="nl-h2 reveal d1">The Riviera, once<br>a month. Worth reading.</h2>
+    <p class="nl-body reveal d2">We write about the places, roads and people that do not appear in travel supplements. New routes, overlooked villages, the best time of year to visit somewhere you thought you knew. Irregular enough to feel considered rather than scheduled.</p>
     <div class="nl-meta reveal d3">No advertising. No partners. Unsubscribe anytime.</div>
   </div>
   <div class="nl-right reveal d2">
     <div style="font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--stone);margin-bottom:28px;padding-bottom:20px;border-bottom:.5px solid var(--parch)">
-      "The kind of letter one actually looks forward to opening."<br><span style="font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-style:normal;display:block;margin-top:14px">Subscriber · London</span>
+      "For people who want to understand a place, not simply visit it."
     </div>
     <form class="nl-form" onsubmit="return false;">
       <div class="nl-input-wrap" style="margin-bottom:24px">
@@ -3917,7 +844,7 @@ body::before {
         <div class="nl-input-line"></div>
       </div>
       <button type="submit" class="nl-submit">
-        <span>Subscribe to the Letter</span>
+        <span>Subscribe to the Roadbook</span>
         <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
     </form>
@@ -3926,119 +853,63 @@ body::before {
 </section>
 
 <!-- ── INSTAGRAM ── -->
-<section class="instagram" aria-label="From the field — photography by André Bondarenko">
+<section class="instagram" aria-label="Instagram feed">
   <div class="instagram-header">
-    <div class="instagram-header-left">
-      <span class="ed-label reveal">From the field</span>
-      <h3 class="instagram-h3 reveal d1">Photographs <em>by André.</em></h3>
-    </div>
+    <h3 class="instagram-h3 reveal">From the field.</h3>
     <a href="https://instagram.com/rivierajourneys" class="instagram-handle reveal d1" target="_blank" rel="noopener">
       @rivierajourneys
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
   <div class="ig-strip">
-
-    <figure class="ig-post reveal">
-      <img src="/photos/cannes-villa-rothschild-ginkgo-winter-garden-french-riviera.avif" alt="Ginkgo tree in yellow leaves at Villa Rothschild winter garden — Cannes French Riviera" loading="lazy">
-      <figcaption class="ig-overlay">
-        <span class="ig-overlay-caption">"The ginkgo at Villa Rothschild turns in the first week of December. It holds for three days."</span>
-        <span class="ig-overlay-place">Cannes · December</span>
-      </figcaption>
-    </figure>
-
-    <figure class="ig-post reveal d1">
-      <img src="/photos/menton-main-square-basilica-walking-couple-french-riviera.avif" alt="Menton main square with Basilica Saint-Michel and walking couple in late afternoon light" loading="lazy">
-      <figcaption class="ig-overlay">
-        <span class="ig-overlay-caption">"Menton, just after four. The light holds like this for twenty minutes, give or take."</span>
-        <span class="ig-overlay-place">Menton · Late afternoon</span>
-      </figcaption>
-    </figure>
-
-    <figure class="ig-post reveal d2">
-      <img src="/photos/nice-promenade-des-anglais-bench-seaside-life-french-riviera.avif" alt="Lone figure on a bench under the Promenade des Anglais pergola with striped shadows and sea view — Nice French Riviera" loading="lazy">
-      <figcaption class="ig-overlay">
-        <span class="ig-overlay-caption">"A Tuesday on the Promenade. The regulars know which bench faces east."</span>
-        <span class="ig-overlay-place">Nice · Morning</span>
-      </figcaption>
-    </figure>
-
-    <figure class="ig-post reveal d3">
-      <img src="/photos/gourdon-village-courtyard-chapel-bell-tower-provence.avif" alt="Gourdon medieval village courtyard with chapel bell tower and stone steps — off-season Provence" loading="lazy">
-      <figcaption class="ig-overlay">
-        <span class="ig-overlay-caption">"Gourdon in March. Half the village closes for lunch. The other half closes for the winter."</span>
-        <span class="ig-overlay-place">Gourdon · Off-season</span>
-      </figcaption>
-    </figure>
-
-    <figure class="ig-post reveal d2">
-      <img src="/photos/monaco-fontvieille-harbour-rescue-fire-boat.avif" alt="Monaco Fontvieille harbour with a rescue fire boat seen from above through pine branches" loading="lazy">
-      <figcaption class="ig-overlay">
-        <span class="ig-overlay-caption">"Monaco has one fireboat. Most guests never see it. We photograph it every time."</span>
-        <span class="ig-overlay-place">Monaco · Fontvieille</span>
-      </figcaption>
-    </figure>
-
-    <figure class="ig-post reveal d3">
-      <img src="/photos/nice-saint-francois-de-paule-church-interior-cours-saleya.avif" alt="Interior of Saint-François-de-Paule church near cours Saleya with Baroque statue and altar — Nice old town" loading="lazy">
-      <figcaption class="ig-overlay">
-        <span class="ig-overlay-caption">"Nine minutes from the cours Saleya. The church is always open, and usually empty."</span>
-        <span class="ig-overlay-place">Nice · Cours Saleya</span>
-      </figcaption>
-    </figure>
-
+    <!-- INSTAGRAM PLACEHOLDERS: Replace with actual Instagram post photos -->
+    <!-- Each cell should be a square photograph: 600×600px minimum -->
+    <div class="ig-post ig-ph-1 reveal">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"The light at Antibes, 07:40."</span>
+        <span class="ig-overlay-place">Antibes · France</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-2 reveal d1">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"Eze. Twelve centuries. One excellent aperitif."</span>
+        <span class="ig-overlay-place">Eze · France</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-3 reveal d2">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"The corniche road refuses to leave the coast."</span>
+        <span class="ig-overlay-place">Grande Corniche</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-4 reveal d3">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"Sanremo. Two hours from Cannes, another country."</span>
+        <span class="ig-overlay-place">Sanremo · Italy</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-5 reveal d2">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"The market at Mougins is worth the detour."</span>
+        <span class="ig-overlay-place">Mougins · France</span>
+      </div>
+    </div>
+    <div class="ig-post ig-ph-6 reveal d3">
+      <div class="ig-ph-text"><span>Photograph placeholder<br>600×600px square</span></div>
+      <div class="ig-overlay">
+        <span class="ig-overlay-caption">"Monaco at seven in the morning. Before the yachts."</span>
+        <span class="ig-overlay-place">Monaco</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ── FOOTER ── -->
-<footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">Riviera Journeys</div>
-      <div class="footer-rule"></div>
-      <div class="footer-tagline">Know Where You Are.</div>
-      <p class="footer-desc">Private day tours, shore excursions, multi-day itineraries and transfers along the French and Italian Riviera from Cannes. In a premium Mercedes V-Class. Since 2024.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="/tours">Day Tours</a></li>
-        <li><a href="/shore-excursions">Shore Excursions</a></li>
-        <li><a href="/multi-day">Multi-Day Journeys</a></li>
-        <li><a href="/transfers">Airport Transfers</a></li>
-        <li><a href="/book">Book a Tour</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Destinations</div>
-      <ul class="footer-links">
-        <li><a href="/destinations/monaco">Monaco</a></li>
-        <li><a href="/destinations/eze">Eze & the Corniche</a></li>
-        <li><a href="/destinations/antibes">Antibes</a></li>
-        <li><a href="/destinations/sanremo">Sanremo, Italy</a></li>
-        <li><a href="/destinations/cinque-terre">Cinque Terre</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <div class="footer-contact">
-        <a href="/cdn-cgi/l/email-protection#167e737a7a7956647f607f7364777c79636478736f65387064"><span class="__cf_email__" data-cfemail="2048454c4c4f60524956494552414a4f55524e4559530e4652">[email&#160;protected]</span></a><br>
-        <a href="tel:+33669962272">+33 66 99 6 22 72</a><br><br>
-        Based in Cannes,<br>
-        Alpes-Maritimes, France<br><br>
-        <a href="https://instagram.com/rivierajourneys" target="_blank">@rivierajourneys</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2025 Riviera Journeys · rivierajourneys.fr</span>
-    <div class="footer-legal">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <a href="/sitemap.xml">Sitemap</a>
-    </div>
-  </div>
-</footer>
 
 <!-- ─────────────────────────────────────────────
      JAVASCRIPT
@@ -4064,17 +935,6 @@ body::before {
   });
 })();
 
-// ── NAV SCROLL ──────────────────────────────
-(function(){
-  const nav = document.getElementById('mainNav');
-  const pb = document.getElementById('progressBar');
-  function onScroll(){
-    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-    if(pb) pb.style.width = pct + '%';
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-})();
 
 // ── SCROLL REVEAL ───────────────────────────
 (function(){
@@ -4170,153 +1030,7 @@ body::before {
   setInterval(() => setQuote(idx+1), 7000);
 })();
 
-// ── STRUCTURED DATA (JSON-LD) ────────────────
-(function(){
-  const ld = {
-    "@context":"https://schema.org",
-    "@type":"TouristInformationCenter",
-    "name":"Riviera Journeys",
-    "url":"https://rivierajourneys.fr",
-    "description":"Private day tours from Cannes and Nice, shore excursions from Villefranche and Cannes, multi-day journeys through France and Italy, airport transfers and corporate services on the French Riviera.",
-    "address":{"@type":"PostalAddress","addressLocality":"Cannes","addressRegion":"Alpes-Maritimes","addressCountry":"FR"},
-    "telephone":"+33669962272",
-    "email":"hello@rivierajourneys.fr",
-    "priceRange":"€€€",
-    "touristType":"Culture, History, Scenic",
-    "sameAs":["https://instagram.com/rivierajourneys"]
-  };
-  const s = document.createElement('script');
-  s.type='application/ld+json';
-  s.text = JSON.stringify(ld);
-  document.head.appendChild(s);
-})();
-
-// ═══════════════════════════════════════════════════════
-// MEGA MENU — Ralph Lauren style: delay open, instant underline
-// ═══════════════════════════════════════════════════════
-(function(){
-  var OPEN_DELAY  = 260;  // ms before panel appears (matches RL ~250ms)
-  var CLOSE_DELAY = 160;  // ms before panel hides (prevents flicker on gaps)
-  var nav = document.getElementById('mainNav');
-  var openTimer, closeTimer, currentLi;
-
-  function openMega(li) {
-    clearTimeout(closeTimer);
-    if(currentLi && currentLi !== li) {
-      // Switch instantly if already open elsewhere — no double delay
-      currentLi.classList.remove('mega-open');
-    }
-    currentLi = li;
-    clearTimeout(openTimer);
-    openTimer = setTimeout(function(){
-      li.classList.add('mega-open');
-      if(nav) nav.classList.add('mega-active');
-    }, currentLi === li ? OPEN_DELAY : 0);
-  }
-
-  function closeMega() {
-    clearTimeout(openTimer);
-    closeTimer = setTimeout(function(){
-      if(currentLi) currentLi.classList.remove('mega-open');
-      if(nav) nav.classList.remove('mega-active');
-      currentLi = null;
-    }, CLOSE_DELAY);
-  }
-
-  // Attach to each nav item that has a mega panel
-  document.querySelectorAll('.nav-links > li').forEach(function(li){
-    var panel = li.querySelector('.mega-panel');
-    if(!panel) return;
-
-    li.addEventListener('mouseenter', function(){ openMega(li); });
-    li.addEventListener('mouseleave', function(){
-      // Only close if not entering the panel itself
-      closeMega();
-    });
-
-    // Keep open when cursor moves into panel
-    panel.addEventListener('mouseenter', function(){ clearTimeout(closeTimer); });
-    panel.addEventListener('mouseleave', function(){ closeMega(); });
-  });
-
-  // Close on nav mouseleave (belt and suspenders)
-  if(nav) {
-    nav.addEventListener('mouseleave', function(){
-      clearTimeout(openTimer);
-      closeTimer = setTimeout(function(){
-        document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){
-          li.classList.remove('mega-open');
-        });
-        nav.classList.remove('mega-active');
-        currentLi = null;
-      }, CLOSE_DELAY);
-    });
-  }
-
-  // Close on Escape
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') {
-      clearTimeout(openTimer);
-      document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){
-        li.classList.remove('mega-open');
-      });
-      if(nav) nav.classList.remove('mega-active');
-      currentLi = null;
-    }
-  });
-
-  // ── Card pane switching on left-link hover ──
-  document.querySelectorAll('.mega-sub-link[data-pane]').forEach(function(btn){
-    btn.addEventListener('mouseenter', function(){
-      var mega = btn.getAttribute('data-mega');
-      var pane = btn.getAttribute('data-pane');
-      document.querySelectorAll('.mega-sub-link[data-mega="'+mega+'"]').forEach(function(b){
-        b.classList.remove('active');
-      });
-      btn.classList.add('active');
-      document.querySelectorAll('[id^="pane-'+mega+'-"]').forEach(function(p){
-        p.classList.remove('active');
-      });
-      var target = document.getElementById('pane-'+mega+'-'+pane);
-      if(target) target.classList.add('active');
-      // Update header title
-      var area = document.getElementById('cards-area-'+mega);
-      if(area){
-        var hdr = area.querySelector('.mega-cards-header-title');
-        if(hdr) hdr.textContent = btn.textContent.trim();
-      }
-    });
-  });
-})();
-
-(function(){
-  var b=document.getElementById('navBurger'),m=document.getElementById('mobileMenu'),x=document.getElementById('mobileClose');
-  if(!b||!m)return;
-  var open=false;
-  function toggle(){
-    open=!open;
-    b.classList.toggle('open',open);
-    b.setAttribute('aria-expanded',open);
-    m.setAttribute('aria-hidden',!open);
-    if(open){m.style.display='flex';setTimeout(function(){m.style.opacity='1';},10);document.body.style.overflow='hidden';}
-    else{m.style.opacity='0';setTimeout(function(){m.style.display='none';},400);document.body.style.overflow='';}
-  }
-  b.addEventListener('click',toggle);
-  if(x)x.addEventListener('click',function(){if(open)toggle();});
-  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(open)toggle();});});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle();});
-
-  // Mobile accordion
-  m.querySelectorAll('.mob-toggle').forEach(function(btn){
-    btn.addEventListener('click',function(e){
-      e.stopPropagation();
-      var li=btn.closest('.mob-parent');
-      var isOpen=li.classList.contains('open');
-      m.querySelectorAll('.mob-parent.open').forEach(function(el){el.classList.remove('open');});
-      if(!isOpen)li.classList.add('open');
-    });
-  });
-})();
+// ── STRUCTURED DATA — теперь inline в HTML (в конце body) ────
 
 // ── FAQ ─────────────────────────────────────────────
 function toggleFaq(el){
@@ -4325,29 +1039,38 @@ function toggleFaq(el){
   document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
   if(!wasOpen) item.classList.add('open');
 }
-
-// ── FAQ SCHEMA ───────────────────────────────────────
-(function(){
-  var faq = {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How much does a private day tour from Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"Full-day private tours are €800 per vehicle for up to 7 guests. Transfers from Nice airport from €120. Shore excursions from Villefranche from €240. All inclusive of fuel, parking and waiting time."}},
-      {"@type":"Question","name":"Can we change the itinerary?","acceptedAnswer":{"@type":"Answer","text":"Entirely. Every route is a suggestion. We adjust to your interests — longer in Eze, a particular village, or simply following the Corniche until the light is right."}},
-      {"@type":"Question","name":"How long is a full day tour from Cannes?","acceptedAnswer":{"@type":"Answer","text":"Seven to eight hours. Departure at 09:00–09:30, return by late afternoon. Schedule agreed at booking."}},
-      {"@type":"Question","name":"We are more than 7 people — can you accommodate us?","acceptedAnswer":{"@type":"Answer","text":"Yes. For parties over 7 we arrange two vehicles on the same route. The price per person remains identical."}},
-      {"@type":"Question","name":"What is the best shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"For a half day: Eze and Monaco. For a full day: Nice in the morning, Eze and Monaco in the afternoon. We guarantee return to the tender pier before departure."}},
-      {"@type":"Question","name":"Can I get a private transfer from Nice airport to Cannes?","acceptedAnswer":{"@type":"Answer","text":"Yes. We meet you in arrivals with a name board. Cannes in 40 minutes. Fixed rate regardless of traffic or flight delays."}}
-    ]
-  };
-  var s=document.createElement('script');s.type='application/ld+json';s.text=JSON.stringify(faq);
-  document.head.appendChild(s);
-})();
 </script>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service",
+"name":"Riviera Journeys — Private Tours, Shore Excursions &amp; Transfers from Cannes",
+"description":"Private day tours from Cannes, shore excursions from Villefranche and Cannes, multi-day journeys through France and Italy, 14 transfer routes around Nice Airport, and chauffeur services for corporate events at the Palais des Festivals. Mercedes V-Class, up to seven passengers.",
+"url":"https://rivierajourneys.fr",
+"provider":{"@type":"LocalBusiness","name":"Riviera Journeys","url":"https://rivierajourneys.fr","telephone":"+33669962272","email":"hello@rivierajourneys.fr","priceRange":"€€€","address":{"@type":"PostalAddress","streetAddress":"Cannes","addressLocality":"Cannes","postalCode":"06400","addressRegion":"Provence-Alpes-Côte d'Azur","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":43.5528,"longitude":7.0174},"openingHours":"Mo-Su 07:00-21:00","sameAs":["https://www.instagram.com/rivierajourneys/","https://g.co/kgs/rivierajourneys"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"48","bestRating":"5"}},
+"areaServed":"Cannes, Nice, Monaco, Villefranche, Saint-Tropez, Antibes, French Riviera, Italian Riviera",
+"serviceType":"Private tours, shore excursions, airport transfers, chauffeur services",
+"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","name":"Private day tour","price":"800","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"800","priceCurrency":"EUR","unitText":"day"},"description":"Full-day private tour from Cannes, up to 7 passengers","availability":"https://schema.org/InStock"},
+{"@type":"Offer","name":"Airport transfer — Nice to Cannes","price":"140","priceCurrency":"EUR","description":"Point-to-point private transfer, Mercedes V-Class","availability":"https://schema.org/InStock"},
+{"@type":"Offer","name":"Corporate chauffeur — hourly","price":"90","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"90","priceCurrency":"EUR","unitText":"hour"},"description":"Private chauffeur for corporate events, minimum 3 hours","availability":"https://schema.org/InStock"}
+]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://rivierajourneys.fr"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much does a private day tour from Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"Full-day private tours are €800 per vehicle for up to 7 guests. Transfers from Nice airport from €140. Shore excursions from Villefranche from €240. All inclusive of fuel, parking and waiting time."}},
+{"@type":"Question","name":"Can we change the itinerary?","acceptedAnswer":{"@type":"Answer","text":"Entirely. Every route is a suggestion. We adjust to your interests — longer in Eze, a particular village, or simply following the Corniche until the light is right."}},
+{"@type":"Question","name":"How long is a full day tour from Cannes?","acceptedAnswer":{"@type":"Answer","text":"Seven to eight hours. Departure at 09:00–09:30, return by late afternoon. Schedule agreed at booking."}},
+{"@type":"Question","name":"We are more than 7 people — can you accommodate us?","acceptedAnswer":{"@type":"Answer","text":"Yes. For parties over 7 we arrange two vehicles on the same route. The price per person remains identical."}},
+{"@type":"Question","name":"What is the best shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"For a half day: Eze and Monaco. For a full day: Nice in the morning, Eze and Monaco in the afternoon. We guarantee return to the tender pier before departure."}},
+{"@type":"Question","name":"Can I get a private transfer from Nice airport to Cannes?","acceptedAnswer":{"@type":"Answer","text":"Yes. We meet you in arrivals with a name board. Cannes in 40 minutes. Fixed rate regardless of traffic or flight delays."}}
+]}
+</script>
 
-<!-- nav.js — injects full mega menu, nav CSS, and mobile menu -->
 <script src="/nav.js" defer></script>
-
 </body>
 </html>
