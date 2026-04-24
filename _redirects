@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  RIVIERA JOURNEYS — _redirects  (Cloudflare Pages)
+#  April 24, 2026
+#
+#  WHAT THIS FILE CLOSES IN GSC:
+#    • 34 × "Not found (404)" from old WordPress migration         → 410 Gone
+#    •  4 × "Not found (404)" from dead internal links             → 410 Gone
+#    •  1 × /tours/cannes/menton-sanremo-dolceacqua (not offered)  → 410 Gone
+#    • 19 × "Page with redirect" (trailing slash)                  → 301 to canonical no-slash
+#    • 15 × "Alternate page with proper canonical" (auto)          → resolves after above
+#
+#  NOTE: /transfers/cannes-nice-airport is a REAL page in the repo
+#  (reverse route), NOT a duplicate — no redirect applied.
+# ═══════════════════════════════════════════════════════════════════════
+
+
+# ─── 1. OLD WORDPRESS CRUMBS — 410 Gone ────────────────────────────────
+
+/tag/*                  /  410
+/category/*             /  410
+/author/*               /  410
+/tour/                  /  410
+/tour/*                 /  410
+/excursion/*            /  410
+/search/*               /  410
+/home/                  /  410
+/ru/                    /  410
+/ru/tag/*               /  410
+/ru/tour/*              /  410
+/ru/search/*            /  410
+/ru/жан-поль/           /  410
+
+
+# ─── 2. OLD WORDPRESS ASSETS & PLUGINS — 410 Gone ──────────────────────
+
+/wp-content/*           /  410
+/wp-admin/*             /  410
+/wp-json/*              /  410
+/wp-includes/*          /  410
+/e-floating-buttons/*   /  410
+
+
+# ─── 3. OLD WORDPRESS LANDING PAGES — 410 Gone ─────────────────────────
+
+/french-riviera-cruise-stop-tours         /  410
+/french-riviera-day-tours                 /  410
+/french-riviera-private-transfers         /  410
+/private-day-tours-french-riviera         /  410
+/private-french-riviera-shore-excursions  /  410
+/cruise-stop-day-tours-from-cannes-villefranche  /  410
+/what-is-the-riviera-really-about         /  410
+/a-clearer-state-of-mind                  /  410
+/where-energy-returns-quietly             /  410
+/jean-paul                                /  410
+
+
+# ─── 4. GHOST URLS FROM DEAD INTERNAL LINKS — 410 Gone ─────────────────
+
+/editorial/getting-around-the-riviera        /  410
+/shore-excursions/cannes/menton-dolceacqua-apricale  /  410
+/tours/nice/saint-tropez                     /  410
+/transfers/nice-airport-private-jet-acam     /  410
+
+
+# ─── 5. TOUR NOT CURRENTLY OFFERED — 410 Gone ──────────────────────────
+
+/tours/cannes/menton-sanremo-dolceacqua   /  410
+
+
+# ─── 6. TRAILING SLASH NORMALISATION — 301 Permanent Redirect ──────────
+
+/tours/                           /tours                           301
+/shore-excursions/                /shore-excursions                301
+/transfers/                       /transfers                       301
+/multi-day/                       /multi-day                       301
+/corporate/                       /corporate                       301
+/editorial/                       /editorial                       301
+/destinations/:slug/              /destinations/:slug              301
+/tours/:origin/:slug/             /tours/:origin/:slug             301
+/shore-excursions/:origin/:slug/  /shore-excursions/:origin/:slug  301
+/transfers/:slug/                 /transfers/:slug                 301
+/multi-day/:region/:slug/         /multi-day/:region/:slug         301
+/corporate/:slug/                 /corporate/:slug                 301
+/editorial/:slug/                 /editorial/:slug                 301
+/experiences/:slug/               /experiences/:slug               301
+/about/                           /about                           301
+/book/                            /book                            301
+/slow-travel/                     /slow-travel                     301
+/villefranche-cruise-schedule/    /villefranche-cruise-schedule    301
+/cannes-cruise-schedule/          /cannes-cruise-schedule          301
