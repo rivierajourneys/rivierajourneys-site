@@ -26,200 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 
-<style>
-/* ─────────────────────────────────────────────
-   TOKENS
-───────────────────────────────────────────── */
-:root {
-  --bone:    #FDFAF6;
-  --bone2:   #F7F3ED;
-  --parch:   #EAE3D7;
-  --sand:    #C4AA82;
-  --stone:   #8C8880;
-  --slate:   #3D3D38;
-  --warm:    #1C1C1A;
-  --terra:   #A86543;
-  --deep:    #2B2B27;
-  --serif:   'Cormorant Garamond', Georgia, serif;
-  --sc:      'Cormorant SC', Georgia, serif;
-  --sans:    'Jost', sans-serif;
-  --ease:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --slow:    cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ─────────────────────────────────────────────
-   RESET & BASE
-───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: var(--sans);
-  background: var(--bone);
-  color: var(--warm);
-  overflow-x: hidden;
-  cursor: none;
-}
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-a { text-decoration: none; color: inherit; }
-::selection { background: var(--sand); color: var(--warm); }
-
-/* ─────────────────────────────────────────────
-   CUSTOM CURSOR
-───────────────────────────────────────────── */
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--warm);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width .3s var(--slow), height .3s var(--slow), background .3s;
-  mix-blend-mode: multiply;
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: .5px solid var(--warm);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%,-50%);
-  transition: width .5s var(--slow), height .5s var(--slow), border-color .3s;
-  opacity: .5;
-}
-.cursor.hover { width: 6px; height: 6px; }
-.cursor-ring.hover { width: 56px; height: 56px; opacity: .2; }
-
-/* ─────────────────────────────────────────────
-   SCROLL ANIMATION SYSTEM
-───────────────────────────────────────────── */
-.reveal {
-  transition: opacity .9s var(--slow), transform .9s var(--slow);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-left {
-  transition: opacity .9s var(--slow), transform .9s var(--slow);
-}
-.reveal-left.visible { opacity: 1; transform: translateX(0); }
-.reveal-right {
-  transition: opacity .9s var(--slow), transform .9s var(--slow);
-}
-.reveal-right.visible { opacity: 1; transform: translateX(0); }
-.reveal-scale {
-  transition: opacity 1s var(--slow), transform 1s var(--slow);
-}
-.reveal-scale.visible { opacity: 1; transform: scale(1); }
-
-/* Stagger delays */
-.d1 { transition-delay: .1s; }
-.d2 { transition-delay: .2s; }
-.d3 { transition-delay: .3s; }
-.d4 { transition-delay: .4s; }
-.d5 { transition-delay: .5s; }
-.d6 { transition-delay: .6s; }
-
-/* ── MOBILE TYPOGRAPHY FIX ── */
-@media(max-width:480px){
-  .hero-h1 { font-size: clamp(30px,8vw,46px) !important; }
-  .hero-sub { font-size: 14px !important; line-height: 1.7 !important; }
-  .section-label { font-size: 10px !important; letter-spacing: .2em !important; }
-  .tour-name { font-size: 16px !important; font-weight: 500 !important; color: var(--warm) !important; }
-  .tour-desc { font-size: 13px !important; line-height: 1.7 !important; }
-  .tour-detail { font-size: 11px !important; }
-  h2 { font-size: clamp(24px,6vw,36px) !important; }
-}
-
-/* ── FAQ ── */
-.faq-section { padding: 96px 72px; border-bottom: .5px solid var(--parch); background: var(--bone2); }
-.faq-section-h2 { font-family: var(--serif); font-size: clamp(28px,3vw,44px); font-weight: 300; color: var(--warm); line-height: 1.1; margin-top: 16px; margin-bottom: 56px; }
-.faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--parch); }
-.faq-item { background: var(--bone); overflow: hidden; }
-.faq-question { display: flex; align-items: center; justify-content: space-between; padding: 24px 32px; cursor: pointer; gap: 24px; transition: background .2s; }
-.faq-question:hover { background: var(--bone2); }
-.faq-q-text { font-family: var(--serif); font-size: 20px; font-weight: 300; color: var(--warm); line-height: 1.25; }
-.faq-icon { width: 28px; height: 28px; flex-shrink: 0; border: .5px solid var(--parch); display: flex; align-items: center; justify-content: center; transition: transform .4s var(--slow), border-color .3s; }
-.faq-icon svg { width: 12px; height: 12px; stroke: var(--stone); fill: none; transition: stroke .3s; }
-.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--sand); }
-.faq-item.open .faq-icon svg { stroke: var(--sand); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s var(--slow); }
-.faq-item.open .faq-answer { max-height: 300px; }
-.faq-answer-inner { padding: 0 32px 28px; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--slate); line-height: 1.85; border-top: .5px solid var(--parch); padding-top: 20px; }
-@media(max-width:1024px){ .faq-section { padding: 72px 40px; } }
-@media(max-width:768px){ .faq-section { padding: 64px 24px; } .faq-q-text { font-size: 17px; } .faq-question { padding: 20px 24px; } .faq-answer-inner { padding: 0 24px 24px; padding-top: 16px; } }
-
-/* ═══════════════════════════════════════════════════════
-   MOBILE FIXES — new sections with inline padding/grids
-═══════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  /* Off-season */
-  section[aria-label="Off-season Riviera experiences"] {
-    padding: 64px 24px !important;
-  }
-  section[aria-label="Off-season Riviera experiences"] > div {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
-  }
-  section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
-    background: transparent !important;
-  }
-  section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"] > div {
-    border-bottom: .5px solid var(--parch);
-  }
-  section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"] > div:last-child {
-    border-bottom: none;
-  }
-  /* Corporate */
-  section[aria-label^="Corporate retreats"] {
-    padding: 64px 24px !important;
-  }
-  section[aria-label^="Corporate retreats"] > div:first-child {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 20px !important;
-    margin-bottom: 32px !important;
-  }
-  section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
-    background: transparent !important;
-  }
-  section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"] > div {
-    border-bottom: .5px solid var(--parch);
-  }
-  section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"] > div:last-child {
-    border-bottom: none;
-  }
-  /* Slow travel */
-  section[aria-label="Slow travel consulting"] {
-    padding: 64px 24px !important;
-  }
-  section[aria-label="Slow travel consulting"] > div {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Prevent btn-primary overflow */
-  .btn-primary { padding: 14px 24px !important; }
-  .btn-sand    { padding: 14px 24px !important; }
-  /* Slow travel price row */
-  section[aria-label="Slow travel consulting"] div[style*="align-items:baseline"] {
-    flex-wrap: wrap !important;
-  }
-  /* Off-season detail boxes */
-  section[aria-label="Off-season Riviera experiences"] div[style*="padding:20px 18px"] {
-    padding: 16px !important;
-  }
-  /* Corporate inner cards */
-  section[aria-label^="Corporate retreats"] div[style*="padding:36px 32px"] {
-    padding: 24px 20px !important;
-  }
-}
-</style>
+<style>:root{--bone:#FDFAF6;--bone2:#F7F3ED;--parch:#EAE3D7;--sand:#C4AA82;--stone:#8C8880;--slate:#3D3D38;--warm:#1C1C1A;--terra:#A86543;--deep:#2B2B27;--serif:'Cormorant Garamond',Georgia,serif;--sc:'Cormorant SC',Georgia,serif;--sans:'Jost',sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);--slow:cubic-bezier(0.16,1,0.3,1)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--sans);background:var(--bone);color:var(--warm);overflow-x:hidden;cursor:none}img{display:block;width:100%;height:100%;object-fit:cover}a{text-decoration:none;color:inherit}::selection{background:var(--sand);color:var(--warm)}.cursor{width:10px;height:10px;background:var(--warm);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s var(--slow),height .3s var(--slow),background .3s;mix-blend-mode:multiply}.cursor-ring{width:36px;height:36px;border:.5px solid var(--warm);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .5s var(--slow),height .5s var(--slow),border-color .3s;opacity:.5}.cursor.hover{width:6px;height:6px}.cursor-ring.hover{width:56px;height:56px;opacity:.2}.reveal{transition:opacity .9s var(--slow),transform .9s var(--slow)}.reveal.visible{opacity:1;transform:translateY(0)}.reveal-left{transition:opacity .9s var(--slow),transform .9s var(--slow)}.reveal-left.visible{opacity:1;transform:translateX(0)}.reveal-right{transition:opacity .9s var(--slow),transform .9s var(--slow)}.reveal-right.visible{opacity:1;transform:translateX(0)}.reveal-scale{transition:opacity 1s var(--slow),transform 1s var(--slow)}.reveal-scale.visible{opacity:1;transform:scale(1)}.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}.hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:flex-end}.hero-photo{position:absolute;inset:0;background:var(--deep);overflow:hidden}.hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 12s cubic-bezier(0.16,1,0.3,1);filter:brightness(.75)}.hero-photo img.loaded{transform:scale(1)}.hero-photo-placeholder{position:absolute;inset:0;background:linear-gradient(160deg,#2B2B27 0%,#3D3D38 40%,#4A4540 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}.placeholder-text{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(196,170,130,.5)}.placeholder-icon{width:56px;height:56px;border:.5px solid rgba(196,170,130,.25);border-radius:50%;display:flex;align-items:center;justify-content:center}.placeholder-icon svg{width:22px;height:22px;stroke:rgba(196,170,130,.4);fill:none}.hero>span,.hero>.placeholder-text{display:none !important}.hero>span{display:none !important}.hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:2}.hero-vignette{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.88) 0%,rgba(28,28,26,.3) 40%,transparent 70%);z-index:3}.hero-content{position:absolute;bottom:0;left:0;right:0;z-index:4;padding:0 72px 80px}.hero-overline{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:16px;margin-bottom:24px;opacity:0;animation:fadeUp .8s var(--slow) .4s forwards}.hero-overline::before{content:'';display:block;width:40px;height:.5px;background:var(--sand)}.hero-h1{font-family:var(--serif);font-size:clamp(42px,6vw,74px);font-weight:300;line-height:1.07;color:var(--bone);margin-bottom:28px;opacity:0;animation:fadeUp .9s var(--slow) .55s forwards}.hero-h1 em{font-style:italic;color:rgba(247,243,237,.7)}.hero-sub{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.75;color:rgba(247,243,237,.65);max-width:480px;margin-bottom:48px;opacity:0;animation:fadeUp .9s var(--slow) .7s forwards}.hero-actions{display:flex;align-items:center;gap:32px;opacity:0;animation:fadeUp .9s var(--slow) .85s forwards}.btn-primary{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--bone);padding:16px 36px;position:relative;overflow:hidden;transition:color .4s;display:inline-flex;align-items:center;gap:12px}.btn-primary::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .6s cubic-bezier(0.16,1,0.3,1)}.btn-primary:hover::before{transform:translateX(0)}.btn-primary:hover{color:var(--bone)}.btn-primary span{position:relative;z-index:1}.btn-primary .arrow{position:relative;z-index:1;display:inline-flex;transition:transform .45s var(--ease)}.btn-primary:hover .arrow{transform:translateX(6px)}.btn-sand{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);background:var(--sand);padding:16px 36px;position:relative;overflow:hidden;transition:color .45s;display:inline-flex;align-items:center;align-self:flex-start;gap:12px;text-decoration:none;width:auto}.btn-sand::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s cubic-bezier(0.16,1,0.3,1)}.btn-sand:hover::before{transform:translateX(0)}.btn-sand:hover{color:var(--bone)}.btn-sand span{position:relative;z-index:1}.btn-sand .arrow{position:relative;z-index:1;transition:transform .45s var(--ease)}.btn-sand:hover .arrow{transform:translateX(4px)}.section-text-link{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);display:inline-flex;align-items:center;gap:12px;border-bottom:.5px solid var(--parch);padding-bottom:4px;text-decoration:none;transition:border-color .4s,gap .4s,color .3s}.section-text-link:hover{border-bottom-color:var(--warm);gap:18px;color:var(--terra)}.section-text-link svg{transition:transform .45s var(--ease)}.section-text-link:hover svg{transform:translateX(4px)}.btn-ghost{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,237,.7);display:inline-flex;align-items:center;gap:10px;transition:color .3s,gap .3s}.btn-ghost:hover{color:var(--bone);gap:16px}.btn-ghost svg{transition:transform .45s var(--ease)}.btn-ghost:hover svg{transform:translateX(4px)}.hero-scroll{position:absolute;bottom:32px;right:72px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s var(--slow) 1.4s forwards}.hero-scroll span{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.6);writing-mode:vertical-rl}.scroll-line{width:.5px;height:48px;background:rgba(196,170,130,.3);position:relative;overflow:hidden}.scroll-line::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--sand);animation:scrollLine 2s var(--ease) 1.5s infinite}@keyframes fadeUp{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(28px)}}@keyframes fadeIn{to{opacity:1}from{opacity:0}}@keyframes scrollLine{0%{top:-100%}100%{top:100%}}.hero-photo-credit{position:absolute;bottom:28px;left:72px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5);opacity:0;animation:fadeIn 1s var(--slow) 1.6s forwards}.ticker-bar{background:var(--warm);border-bottom:.5px solid rgba(196,170,130,.15);overflow:hidden;height:44px;display:flex;align-items:center}.ticker-track{display:flex;gap:0;animation:ticker 30s linear infinite;white-space:nowrap}.ticker-item{display:inline-flex;align-items:center;gap:28px;padding:0 40px;font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.7)}.ticker-dot{width:3px;height:3px;background:rgba(196,170,130,.4);border-radius:50%;flex-shrink:0}@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}.intro{padding:112px 72px 96px;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;border-bottom:.5px solid var(--parch)}.intro-label{display:flex;flex-direction:column;gap:20px;padding-top:8px}.section-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px}.section-label::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}.intro-issue{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.14em;color:var(--stone);line-height:1.8}.intro-body{display:flex;flex-direction:column;gap:0}.intro-h2{font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:300;line-height:1.15;color:var(--warm);margin-bottom:32px}.intro-h2 em{font-style:italic}.intro-rule{width:40px;height:.5px;background:var(--sand);margin-bottom:28px}.intro-text{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.85;color:var(--slate);max-width:620px;margin-bottom:40px;column-count:2;column-gap:48px}.intro-link{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);display:inline-flex;align-items:center;gap:12px;border-bottom:.5px solid var(--parch);padding-bottom:4px;transition:border-color .3s,gap .3s}.intro-link:hover{border-color:var(--sand);gap:20px}.tours{padding:96px 0 0;border-bottom:.5px solid var(--parch)}.tours-header{padding:0 72px;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}.tours-header-left{display:flex;flex-direction:column;gap:16px}.tours-h2{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1}.tours-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:auto auto;gap:1px;background:var(--parch)}.tour-card{background:var(--bone);position:relative;overflow:hidden;cursor:pointer}.tour-card:first-child{grid-row:1 / 3}.tour-card-photo{position:relative;overflow:hidden;background:var(--deep)}.tour-card:first-child .tour-card-photo{height:520px}.tour-card:not(:first-child) .tour-card-photo{height:280px}.tour-card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--slow),filter .8s;filter:brightness(.85)}.tour-card:hover .tour-card-photo img{transform:scale(1.05);filter:brightness(.75)}.tour-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}.tour-card:first-child .tour-photo-placeholder{background:linear-gradient(150deg,#2B2B27,#3D3D38)}.tour-card:nth-child(2) .tour-photo-placeholder{background:linear-gradient(150deg,#3a3530,#4a453e)}.tour-card:nth-child(3) .tour-photo-placeholder{background:linear-gradient(150deg,#323028,#3d3a30)}.tour-card:nth-child(4) .tour-photo-placeholder{background:linear-gradient(150deg,#2e2d2a,#3a3835)}.tour-card:nth-child(5) .tour-photo-placeholder{background:linear-gradient(150deg,#333028,#403d33)}.ph-label{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,170,130,.45);text-align:center}.ph-frame{width:48px;height:48px;border:.5px solid rgba(196,170,130,.2);display:flex;align-items:center;justify-content:center}.ph-frame svg{width:20px;height:20px;stroke:rgba(196,170,130,.35);fill:none}.tour-card-tag{position:absolute;top:20px;left:20px;font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);background:rgba(28,28,26,.7);padding:5px 12px;z-index:2}.tour-card-body{padding:24px 24px 28px;border-top:.5px solid var(--parch);display:flex;flex-direction:column;gap:8px}.tour-card:first-child .tour-card-body{padding:28px 32px 36px}.tour-card-title{font-family:var(--serif);font-weight:300;color:var(--warm);line-height:1.25}.tour-card:first-child .tour-card-title{font-size:26px}.tour-card:not(:first-child) .tour-card-title{font-size:19px}.tour-card-meta{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.8}.tour-card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:.5px solid var(--parch)}.tour-card-price{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm)}.tour-card:not(:first-child) .tour-card-price{font-size:18px}.tour-card-price-label{font-family:var(--sans);font-size:9px;font-weight:300;color:var(--stone)}.tour-card-arrow{width:36px;height:36px;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s;flex-shrink:0}.tour-card:hover .tour-card-arrow{background:var(--terra);border-color:var(--terra)}.tour-card:hover .tour-card-arrow svg{stroke:var(--bone)}.tour-card-arrow svg{width:14px;height:14px;stroke:var(--stone);fill:none;transition:stroke .3s}.tour-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0;background:var(--terra);transition:width .6s var(--slow)}.tour-card:hover::after{width:100%}.tours-footer{padding:40px 72px;display:flex;justify-content:center;border-top:.5px solid var(--parch)}.services{padding:96px 72px;border-bottom:.5px solid var(--parch)}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--parch);margin-top:56px}.service-card{background:var(--bone2);padding:40px 36px;position:relative;overflow:hidden;transition:background .4s}.service-card:hover{background:var(--warm)}.service-number{font-family:var(--serif);font-size:64px;font-weight:300;color:var(--parch);line-height:1;margin-bottom:24px;transition:color .4s}.service-card:hover .service-number{color:rgba(196,170,130,.2)}.service-icon{width:44px;height:44px;margin-bottom:20px}.service-icon svg{width:100%;height:100%;stroke:var(--sand);fill:none;stroke-width:1;transition:stroke .4s}.service-card:hover .service-icon svg{stroke:rgba(196,170,130,.6)}.service-title{font-family:var(--serif);font-size:24px;font-weight:300;color:var(--warm);margin-bottom:12px;transition:color .4s}.service-card:hover .service-title{color:var(--bone)}.service-desc{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--stone);line-height:1.8;transition:color .4s}.service-card:hover .service-desc{color:rgba(196,170,130,.65)}.service-link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);transition:gap .3s}.service-link svg{width:14px;height:14px;stroke:var(--sand);fill:none;transition:transform .45s var(--ease)}.service-card:hover .service-link{gap:14px}.service-card:hover .service-link svg{transform:translateX(4px)}.service-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--terra);transition:height .5s var(--slow)}.service-card:hover::before{height:100%}.editorial-photo{position:relative;height:70vh;min-height:500px;overflow:hidden}.editorial-photo-inner{position:absolute;inset:0;background:var(--deep)}.ep-placeholder{position:absolute;inset:0;background:linear-gradient(135deg,#1C1C1A 0%,#2B2B27 50%,#3D3D38 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}.ep-vignette{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,26,.85) 0%,rgba(28,28,26,.3) 50%,transparent 100%);z-index:2}.ep-content{position:absolute;left:72px;top:50%;transform:translateY(-50%);z-index:3;max-width:500px}.ep-overline{font-family:var(--sans);font-size:9.5px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;display:flex;align-items:center;gap:14px}.ep-overline::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}.ep-h2{font-family:var(--serif);font-size:clamp(30px,3.5vw,52px);font-weight:300;line-height:1.12;color:var(--bone);margin-bottom:24px;font-style:italic}.ep-body{font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.8;color:rgba(247,243,237,.65);margin-bottom:36px}.ep-stat-row{display:flex;gap:40px;margin-bottom:36px;padding-top:28px;border-top:.5px solid rgba(196,170,130,.2)}.ep-stat-num{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--bone);line-height:1;display:block}.ep-stat-label{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:block;margin-top:4px}.editorial-photo .ep-parallax{position:absolute;inset:-15%;will-change:transform}.editorial{padding:96px 72px;border-bottom:.5px solid var(--parch)}.editorial-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}.editorial-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:1px;background:var(--parch)}.article-card{background:var(--bone);position:relative;overflow:hidden;cursor:pointer;transition:background .3s}.article-card:first-child{background:var(--warm)}.article-photo{position:relative;overflow:hidden;background:var(--deep)}.article-card:first-child .article-photo{height:360px}.article-card:not(:first-child) .article-photo{height:200px}.article-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--slow)}.article-card:hover .article-photo img{transform:scale(1.05)}.art-ph-1{background:linear-gradient(150deg,#2e2c28,#3e3a32)}.art-ph-2{background:linear-gradient(150deg,#302e2a,#403c34)}.art-ph-3{background:linear-gradient(150deg,#2c2b28,#3a3830)}.article-category{position:absolute;bottom:16px;left:20px;font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);z-index:2}.article-body{padding:24px;display:flex;flex-direction:column;gap:10px}.article-card:first-child .article-body{padding:28px 32px 32px}.article-date{font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.1em;color:var(--sand);text-transform:uppercase}.article-card:first-child .article-date{color:rgba(196,170,130,.7)}.article-title{font-family:var(--serif);font-weight:300;color:var(--warm);line-height:1.25}.article-card:first-child .article-title{font-size:26px;color:var(--bone)}.article-card:not(:first-child) .article-title{font-size:18px}.article-excerpt{font-family:var(--sans);font-size:12.5px;font-weight:300;color:var(--stone);line-height:1.75}.article-card:first-child .article-excerpt{color:rgba(196,170,130,.65);font-size:13.5px}.article-footer{margin-top:12px;padding-top:12px;border-top:.5px solid rgba(196,170,130,.15);display:flex;justify-content:space-between;align-items:center}.article-card:not(:first-child) .article-footer{border-top-color:var(--parch)}.read-more{font-family:var(--sans);font-size:9.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:8px;transition:gap .3s}.article-card:not(:first-child) .read-more{color:var(--stone)}.read-more svg{width:12px;height:12px;stroke:currentColor;fill:none}.article-card:hover .read-more{gap:14px}.read-time{font-family:var(--sans);font-size:9px;font-weight:300;color:rgba(196,170,130,.5)}.article-card:not(:first-child) .read-time{color:var(--stone);opacity:.6}.testimonials{background:var(--warm);padding:96px 72px;position:relative;overflow:hidden}.testimonials-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--sc);font-size:180px;font-weight:300;color:rgba(196,170,130,.04);letter-spacing:.1em;white-space:nowrap;pointer-events:none;user-select:none}.testimonials-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 2fr 1fr;gap:64px;align-items:center}.testi-left{display:flex;flex-direction:column;gap:24px}.testi-overline{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:12px}.testi-overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}.testi-h3{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1.15;color:var(--bone)}.testi-stars{display:flex;gap:4px;align-items:center}.testi-stars span{font-size:14px;color:var(--sand)}.testi-rating{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--bone);line-height:1}.testi-platform{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(196,170,130,.5)}.testi-center{display:flex;flex-direction:column;gap:24px;align-items:center}.testi-quote-icon{font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(196,170,130,.25);line-height:.6;align-self:flex-start}.testi-quote{font-family:var(--serif);font-size:clamp(18px,2.2vw,28px);font-weight:300;font-style:italic;line-height:1.55;color:var(--bone2);text-align:center}.testi-author{display:flex;flex-direction:column;align-items:center;gap:4px}.testi-author-name{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.1em;color:var(--sand)}.testi-author-origin{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(196,170,130,.5)}.testi-nav{display:flex;flex-direction:column;gap:16px;align-items:flex-end}.testi-btn{width:44px;height:44px;border:.5px solid rgba(196,170,130,.25);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s,border-color .3s}.testi-btn:hover{background:rgba(196,170,130,.1);border-color:rgba(196,170,130,.5)}.testi-btn svg{width:16px;height:16px;stroke:rgba(196,170,130,.6);fill:none}.testi-dots{display:flex;flex-direction:column;gap:8px}.testi-dot{width:.5px;height:24px;background:rgba(196,170,130,.25);transition:background .3s,height .3s var(--ease)}.testi-dot.active{height:40px;background:var(--sand)}.destinations{padding:96px 72px;border-bottom:.5px solid var(--parch)}.dest-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--parch);margin-top:56px}.dest-card{background:var(--bone2);padding:28px 20px;text-align:center;cursor:pointer;position:relative;overflow:hidden;transition:background .4s}.dest-card:hover{background:var(--warm)}.dest-number{font-family:var(--serif);font-size:11px;font-weight:300;color:var(--sand);display:block;margin-bottom:12px}.dest-name{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--warm);margin-bottom:6px;transition:color .4s}.dest-card:hover .dest-name{color:var(--bone)}.dest-country{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);transition:color .4s}.dest-card:hover .dest-country{color:var(--sand)}.dest-card::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:1px;background:var(--terra);transition:left .4s var(--slow),right .4s var(--slow)}.dest-card:hover::after{left:0;right:0}.newsletter{padding:96px 72px;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;border-bottom:.5px solid var(--parch);background:var(--bone2)}.nl-left{display:flex;flex-direction:column;gap:20px}.nl-h2{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;line-height:1.15;color:var(--warm)}.nl-body{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--stone);line-height:1.8}.nl-meta{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:var(--stone);opacity:.7;display:flex;align-items:center;gap:8px}.nl-meta::before{content:'';display:block;width:16px;height:.5px;background:var(--sand)}.nl-right{display:flex;flex-direction:column;gap:16px}.nl-form{display:flex;flex-direction:column;gap:0}.nl-input-wrap{position:relative}.nl-input{width:100%;font-family:var(--sans);font-size:14px;font-weight:300;color:var(--warm);background:transparent;border:none;border-bottom:.5px solid var(--parch);padding:16px 0;outline:none;transition:border-color .3s}.nl-input::placeholder{color:var(--stone)}.nl-input:focus{border-bottom-color:var(--sand)}.nl-input-line{position:absolute;bottom:0;left:0;height:.5px;width:0;background:var(--terra);transition:width .4s var(--slow)}.nl-input:focus + .nl-input-line{width:100%}.nl-submit{margin-top:32px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--bone);background:var(--warm);border:none;padding:16px 40px;cursor:pointer;position:relative;overflow:hidden;transition:color .4s;display:inline-flex;align-items:center;gap:14px;align-self:flex-start}.nl-submit::before{content:'';position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .5s var(--slow)}.nl-submit:hover::before{transform:translateX(0)}.nl-submit span,.nl-submit svg{position:relative;z-index:1}.nl-submit svg{width:14px;height:14px;stroke:currentColor;fill:none;transition:transform .45s var(--ease)}.nl-submit:hover svg{transform:translateX(6px)}.nl-promise{font-family:var(--sans);font-size:10px;font-weight:300;color:var(--stone);margin-top:8px;line-height:1.6}.instagram{padding:72px 0;border-bottom:.5px solid var(--parch);overflow:hidden}.instagram-header{padding:0 72px;display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}.instagram-h3{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--warm)}.instagram-handle{font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--stone);display:flex;align-items:center;gap:8px;transition:color .3s,gap .3s}.instagram-handle:hover{color:var(--warm);gap:14px}.instagram-handle svg{width:14px;height:14px;stroke:var(--stone);fill:none}.ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}.ig-post{aspect-ratio:3/4;overflow:hidden;position:relative;cursor:pointer}.ig-ph-1{background:linear-gradient(135deg,#2B2B27,#3D3D38)}.ig-ph-2{background:linear-gradient(135deg,#3a3530,#4a453e)}.ig-ph-3{background:linear-gradient(135deg,#252522,#35352e)}.ig-ph-4{background:linear-gradient(135deg,#A86543,#8b5236)}.ig-ph-5{background:linear-gradient(135deg,#3D3D38,#2B2B27)}.ig-ph-6{background:linear-gradient(135deg,#4a453e,#3a3530)}.ig-overlay{position:absolute;inset:0;background:rgba(28,28,26,.7);opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:opacity .4s}.ig-post:hover .ig-overlay{opacity:1}.ig-overlay-caption{font-family:var(--serif);font-size:12px;font-weight:300;font-style:italic;color:var(--bone2);text-align:center;padding:0 12px;line-height:1.4}.ig-overlay-place{font-family:var(--sans);font-size:8.5px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--sand)}.ig-ph-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}.ig-ph-text span{font-family:var(--serif);font-size:10px;font-weight:300;font-style:italic;color:rgba(196,170,130,.35);text-align:center;padding:8px}.progress-bar{position:fixed;top:0;left:0;height:1px;background:var(--terra);z-index:200;transition:width .1s linear;transform-origin:left}@media (max-width:1024px){.nav{padding:0 32px}.intro{padding:80px 40px;grid-template-columns:1fr;gap:40px}.intro-text{column-count:1}.tours-header,.editorial,.services,.destinations,.newsletter,.editorial-photo .ep-content{padding-left:40px;padding-right:40px}.testimonials{padding:72px 40px}.testimonials-inner{grid-template-columns:1fr;gap:40px}.testi-nav{flex-direction:row}.tours-grid{grid-template-columns:1fr 1fr}.tour-card:first-child{grid-column:1 / -1;grid-row:1}.tour-card:first-child .tour-card-photo{height:380px}.services-grid{grid-template-columns:repeat(2,1fr)}.dest-grid{grid-template-columns:repeat(3,1fr)}.newsletter{grid-template-columns:1fr;gap:48px;padding:72px 40px}.instagram-header{padding:0 40px}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}footer{padding:56px 40px 40px}.hero-content{padding:0 40px 64px}.hero-scroll{right:40px}.hero-photo-credit{left:40px}.ep-content{left:40px}}@media (max-width:768px){.nav{padding:0 24px}.nav-links{display:none}.hero-content{padding:0 24px 56px}.intro{padding:64px 24px}.tours-header{padding:0 24px}.tours-h2{font-size:26px}.tours-grid{grid-template-columns:1fr}.tour-card:first-child{grid-column:1}.editorial{padding:64px 24px}.editorial-grid{grid-template-columns:1fr}.services{padding:64px 24px}.services-grid{grid-template-columns:1fr;gap:0;background:transparent;margin-top:36px;border-top:.5px solid var(--parch)}.service-card{padding:22px 0;background:transparent !important;border-bottom:.5px solid var(--parch);display:grid;grid-template-columns:1fr 32px;grid-template-rows:auto auto;column-gap:16px;row-gap:0;align-items:center}.service-card::before{display:none}.service-card:hover{background:transparent !important}.service-number{display:none}.service-icon{display:none}.service-title{grid-column:1;grid-row:1;font-size:18px !important;font-weight:300 !important;color:var(--warm) !important;margin-bottom:0;line-height:1.25;align-self:end}.service-card:hover .service-title{color:var(--warm) !important}.service-desc{grid-column:1;grid-row:2;font-size:12px !important;color:var(--stone) !important;line-height:1.6 !important;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.service-card:hover .service-desc{color:var(--stone) !important}.service-link{grid-column:2;grid-row:1 / 3;align-self:center;justify-self:end;margin-top:0 !important;gap:0;font-size:0 !important;line-height:0;letter-spacing:0;display:flex;align-items:center}.service-link svg{stroke:var(--sand) !important;width:18px;height:18px;flex-shrink:0}.ep-content{left:24px;max-width:85vw}.ep-stat-row{display:none}.testimonials{padding:64px 24px}.dest-grid{grid-template-columns:repeat(2,1fr)}.destinations{padding:64px 24px}.newsletter{padding:64px 24px}.ig-strip{grid-template-columns:repeat(3,1fr)}.instagram-header{padding:0 24px}.footer-grid{grid-template-columns:1fr;gap:32px}footer{padding:48px 24px 32px}.footer-bottom{flex-direction:column;gap:16px;align-items:flex-start}.cursor,.cursor-ring{display:none}body{cursor:auto}}@media(max-width:480px){.hero-h1{font-size:clamp(30px,8vw,46px) !important}.hero-sub{font-size:14px !important;line-height:1.7 !important}.section-label{font-size:10px !important;letter-spacing:.2em !important}.tour-name{font-size:16px !important;font-weight:500 !important;color:var(--warm) !important}.tour-desc{font-size:13px !important;line-height:1.7 !important}.tour-detail{font-size:11px !important}h2{font-size:clamp(24px,6vw,36px) !important}}.faq-section{padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--bone2)}.faq-section-h2{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px;margin-bottom:56px}.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--parch)}.faq-item{background:var(--bone);overflow:hidden}.faq-question{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;cursor:pointer;gap:24px;transition:background .2s}.faq-question:hover{background:var(--bone2)}.faq-q-text{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--warm);line-height:1.25}.faq-icon{width:28px;height:28px;flex-shrink:0;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--slow),border-color .3s}.faq-icon svg{width:12px;height:12px;stroke:var(--stone);fill:none;transition:stroke .3s}.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--sand)}.faq-item.open .faq-icon svg{stroke:var(--sand)}.faq-answer{max-height:0;overflow:hidden;transition:max-height .5s var(--slow)}.faq-item.open .faq-answer{max-height:300px}.faq-answer-inner{padding:0 32px 28px;font-family:var(--sans);font-size:14px;font-weight:300;color:var(--slate);line-height:1.85;border-top:.5px solid var(--parch);padding-top:20px}@media(max-width:1024px){.faq-section{padding:72px 40px}}@media(max-width:768px){.faq-section{padding:64px 24px}.faq-q-text{font-size:17px}.faq-question{padding:20px 24px}.faq-answer-inner{padding:0 24px 24px;padding-top:16px}}@media (max-width:768px){section[aria-label="Off-season Riviera experiences"]{padding:64px 24px !important}section[aria-label="Off-season Riviera experiences"]>div{grid-template-columns:1fr !important;gap:36px !important}section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"]{grid-template-columns:1fr !important;gap:0 !important;background:transparent !important}section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"]>div{border-bottom:.5px solid var(--parch)}section[aria-label="Off-season Riviera experiences"] div[style*="1fr 1fr 1fr"]>div:last-child{border-bottom:none}section[aria-label^="Corporate retreats"]{padding:64px 24px !important}section[aria-label^="Corporate retreats"]>div:first-child{flex-direction:column !important;align-items:flex-start !important;gap:20px !important;margin-bottom:32px !important}section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"]{grid-template-columns:1fr !important;gap:0 !important;background:transparent !important}section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"]>div{border-bottom:.5px solid var(--parch)}section[aria-label^="Corporate retreats"] div[style*="1fr 1fr 1fr"]>div:last-child{border-bottom:none}section[aria-label="Slow travel consulting"]{padding:64px 24px !important}section[aria-label="Slow travel consulting"]>div{grid-template-columns:1fr !important;gap:40px !important}}@media (max-width:480px){.btn-primary{padding:14px 24px !important}.btn-sand{padding:14px 24px !important}section[aria-label="Slow travel consulting"] div[style*="align-items:baseline"]{flex-wrap:wrap !important}section[aria-label="Off-season Riviera experiences"] div[style*="padding:20px 18px"]{padding:16px !important}section[aria-label^="Corporate retreats"] div[style*="padding:36px 32px"]{padding:24px 20px !important}}</style>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -246,7 +53,7 @@ a { text-decoration: none; color: inherit; }
     <!-- PHOTO PLACEHOLDER: Replace src with your hero photograph -->
     <!-- Recommended: Wide landscape, golden hour, preferably the Grande Corniche or Cap Ferrat coastline -->
     <!-- Ideal dimensions: 2400 × 1600px minimum, 16:10 ratio -->
-    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" loading="eager" fetchpriority="high" width="2880" height="1620" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
+    <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif" alt="Villefranche-sur-Mer bay — French Riviera shore excursion from Cannes" fetchpriority="high" width="2880" height="1620" loading="eager" id="heroImg" onload="this.classList.add('loaded')" onerror="document.getElementById('heroFallback').style.display='flex';this.style.display='none'">
     <div class="hero-photo-placeholder" id="heroFallback" style="display:none">
       <span class="placeholder-text">Villefranche-sur-Mer · July 2025</span>
     </div>
@@ -317,7 +124,7 @@ a { text-decoration: none; color: inherit; }
     <p class="intro-text reveal d3">
       The French and Italian Riviera has been visited by millions and genuinely understood by very few. Most people arrive, photograph the postcard, and leave with a collection of images that look exactly like everyone else's. We do something different: we show you the Riviera as it is actually lived — the roads that don't appear on tour maps, the villages that reward patience, the light at a particular hour on a particular stretch of coastline that no organised excursion will get you to on time.
       <br><br>
-      Riviera Journeys is a private touring service based in Cannes. We run day tours from &euro;800, multi-day itineraries, and shore excursions for cruise guests arriving at the quais of Villefranche and Cannes across the French and Italian Riviera &mdash; plus fourteen transfer routes from Nice Airport, twenty-seven kilometres east. The Corniche roads, the Cap d'Antibes peninsula, the medieval villages perched four hundred metres above the sea &mdash; all in a premium Mercedes V-Class. The difference is not the vehicle. It is the knowledge of place that comes from living here.
+      Riviera Journeys is a private touring service based in Cannes. We run day tours from €800, multi-day itineraries, and shore excursions for cruise guests arriving at the quais of Villefranche and Cannes across the French and Italian Riviera &mdash; plus fourteen transfer routes from Nice Airport, twenty-seven kilometres east. The Corniche roads, the Cap d'Antibes peninsula, the medieval villages perched four hundred metres above the sea &mdash; all in a premium Mercedes V-Class. The difference is not the vehicle. It is the knowledge of place that comes from living here.
     </p>
     <a href="/about" class="intro-link reveal d4">
       The philosophy behind Riviera Journeys
@@ -341,94 +148,96 @@ a { text-decoration: none; color: inherit; }
 
   <div class="tours-grid">
     <!-- FEATURED TOUR 1 — Large card -->
-    <a href="/tours/cannes/nice-eze-monaco" class="tour-card reveal-scale" style="text-decoration:none;color:inherit">
+    <article class="tour-card reveal-scale">
       <div class="tour-card-photo">
+        <!-- PHOTO PLACEHOLDER: Eze village at golden hour, looking out over the sea -->
+        <!-- Recommended: Portrait crop 800×520px, available light -->
         <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif" alt="Nice old port and Promenade des Anglais coastline from above — Nice Eze Monaco private day tour French Riviera" width="1300" height="1100" loading="eager">
-        <span class="tour-card-tag">Featured &middot; Full Day</span>
+        <span class="tour-card-tag">Featured · Full Day</span>
       </div>
       <div class="tour-card-body">
-        <h3 class="tour-card-title">Nice, Eze, Monaco &amp; the Corniche</h3>
+        <h3 class="tour-card-title">Nice, Eze, Monaco & the Corniche</h3>
         <p class="tour-card-meta">The classic Riviera route, done at the right pace. Nice old town before the crowds, the medieval village of Eze at the hour it deserves, the Grande Corniche, and Monaco with enough time to find the part that isn't on the postcard.</p>
         <div class="tour-card-footer">
           <div>
-            <span class="tour-card-price">&euro; 800</span>
-            <span class="tour-card-price-label" style="display:block">Full day &middot; Private &middot; Up to 7 guests</span>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private · Up to 7 guests</span>
           </div>
           <div class="tour-card-arrow">
             <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
       </div>
-    </a>
+    </article>
 
    <!-- TOUR 2 -->
-    <a href="/tours/cannes/cannes-antibes-stpaul" class="tour-card reveal d1" style="text-decoration:none;color:inherit">
+    <article class="tour-card reveal d1">
       <div class="tour-card-photo">
         <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif" alt="Cannes bay with Carlton and Martinez hotels on the Croisette — Cannes Antibes Saint-Paul-de-Vence private day tour" width="900" height="600" loading="lazy">
-        <span class="tour-card-tag">Full Day</span>
+        <span class="tour-card-tag">Shore Excursions</span>
       </div>
       <div class="tour-card-body">
-        <h3 class="tour-card-title">Cannes, Antibes &amp; Saint-Paul-de-Vence</h3>
-        <p class="tour-card-meta">Cannes beyond the Croisette, the ramparts of Antibes and the Cap &mdash; Picasso's city, properly &mdash; then the afternoon light in Saint-Paul-de-Vence, where the lanes hold their quiet.</p>
+        <h3 class="tour-card-title">Cannes, Antibes & Saint-Paul-de-Vence</h3>
+        <p class="tour-card-meta">Cannes beyond the Croisette, the ramparts of Antibes and the Cap — Picasso's city, properly — then the afternoon light in Saint-Paul-de-Vence, where the lanes hold their quiet.</p>
         <div class="tour-card-footer">
           <div>
-            <span class="tour-card-price">&euro; 800</span>
-            <span class="tour-card-price-label" style="display:block">Full day &middot; Private</span>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private</span>
           </div>
           <div class="tour-card-arrow">
             <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
       </div>
-    </a>
+    </article>
 
     <!-- TOUR 3 -->
-    <a href="/tours/cannes/grasse-gourdon" class="tour-card reveal d2" style="text-decoration:none;color:inherit">
+    <article class="tour-card reveal d2">
+      <div class="tour-card-photo">
+        <img src="/photos/dolceacqua-medieval-bridge-village-menton-sanremo-dolceacqua-tour-italian-riviera.avif" alt="Dolceacqua medieval bridge and village — Menton Sanremo Dolceacqua private day tour Italian Riviera" width="900" height="600" loading="lazy">
+        <span class="tour-card-tag">Full Day · France &amp; Italy</span>
+      </div>
+      <div class="tour-card-body">
+        <h3 class="tour-card-title">Menton, Sanremo & the Italian Border</h3>
+        <p class="tour-card-meta">Menton — lemon trees, Belle Époque gardens, the last French city — then Italy: Sanremo's old town, the flower market, a different tempo. The return along the coast is the best part.</p>
+        <div class="tour-card-footer">
+          <div>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private</span>
+          </div>
+          <div class="tour-card-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOUR 4 -->
+    <article class="tour-card reveal d1">
       <div class="tour-card-photo">
         <img src="/photos/grasse-panorama-esterel-mountains-sea-view-provence-tour.avif" alt="Grasse panorama with Esterel mountains and Mediterranean sea view — private Provence day tour from Cannes" width="900" height="600" loading="lazy">
-        <span class="tour-card-tag">Cultural &middot; Full Day</span>
+        <span class="tour-card-tag">Cultural · Full Day</span>
       </div>
       <div class="tour-card-body">
-        <h3 class="tour-card-title">Grasse, Gourdon &amp; the Arri&egrave;re-Pays</h3>
-        <p class="tour-card-meta">Twenty minutes inland, the coast disappears and the real Provence begins. Grasse &mdash; world capital of perfume &mdash; then Gourdon above the gorge, and Tourrettes-sur-Loup where the violets grow in the streets.</p>
+        <h3 class="tour-card-title">Grasse, Gourdon &amp; the Arrière-Pays</h3>
+        <p class="tour-card-meta">Twenty minutes inland, the coast disappears and the real Provence begins. Grasse — world capital of perfume — then Gourdon above the gorge, and Tourrettes-sur-Loup where the violets grow in the streets.</p>
         <div class="tour-card-footer">
           <div>
-            <span class="tour-card-price">&euro; 800</span>
-            <span class="tour-card-price-label" style="display:block">Full day &middot; Private</span>
+            <span class="tour-card-price">€ 800</span>
+            <span class="tour-card-price-label" style="display:block">Full day · Private</span>
           </div>
           <div class="tour-card-arrow">
             <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
       </div>
-    </a>
-
-    <!-- TOUR 4 — transfers feature -->
-    <a href="/transfers" class="tour-card reveal d1" style="text-decoration:none;color:inherit">
-      <div class="tour-card-photo">
-        <img src="/photos/cannes-croisette-hotels-martinez-carlton-sunset-cannes-nice-airport-transfer.avif" alt="Cannes Croisette at sunset — private transfers between Nice Airport, Cannes, Monaco and Saint-Tropez" width="900" height="600" loading="lazy">
-        <span class="tour-card-tag">Transfers &middot; 14 routes</span>
-      </div>
-      <div class="tour-card-body">
-        <h3 class="tour-card-title">Airport transfers &amp; inter-city routes</h3>
-        <p class="tour-card-meta">From Nice Airport to Cannes, Monaco, Antibes, Saint-Tropez &mdash; and back. Plus inter-city routes, day or night. Flight tracking, name board at arrivals, luggage handled. Mercedes V-Class, up to seven passengers.</p>
-        <div class="tour-card-footer">
-          <div>
-            <span class="tour-card-price">from &euro;140</span>
-            <span class="tour-card-price-label" style="display:block">Per vehicle &middot; 14 routes</span>
-          </div>
-          <div class="tour-card-arrow">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
-      </div>
-    </a>
+    </article>
 
     <!-- TOUR 5 -->
-    <a href="/multi-day/italy/cannes-cinque-terre-florence" class="tour-card reveal d2" style="text-decoration:none;color:inherit">
+    <article class="tour-card reveal d2">
       <div class="tour-card-photo">
         <img src="/photos/florence-rooftops-view-from-uffizi-gallery-italy-tour.avif" alt="Florence rooftops and Duomo viewed from the Uffizi Gallery terrace — Cannes to Florence private multi-day tour Italy" width="900" height="600" loading="lazy">
-        <span class="tour-card-tag">Multi-Day &middot; France &amp; Italy</span>
+        <span class="tour-card-tag">Multi-Day · France &amp; Italy</span>
       </div>
       <div class="tour-card-body">
         <h3 class="tour-card-title">Cannes to Florence via Genova &amp; Cinque Terre</h3>
@@ -436,14 +245,14 @@ a { text-decoration: none; color: inherit; }
         <div class="tour-card-footer">
           <div>
             <span class="tour-card-price">Price on enquiry</span>
-            <span class="tour-card-price-label" style="display:block">from 7 days &middot; Fully private</span>
+            <span class="tour-card-price-label" style="display:block">from 7 days · Fully private</span>
           </div>
           <div class="tour-card-arrow">
             <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
       </div>
-    </a>
+    </article>
   </div>
 
   <div class="tours-footer">
@@ -522,6 +331,42 @@ a { text-decoration: none; color: inherit; }
 
 
 <!-- ── OFF-SEASON ── -->
+<section style="padding:96px 72px;border-bottom:.5px solid var(--parch);background:var(--bone2)" aria-label="Off-season Riviera experiences">
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start">
+    <div>
+      <span class="section-label reveal">Off-Season</span>
+      <div style="font-size:10px;font-weight:300;letter-spacing:.12em;color:var(--stone);line-height:1.9;margin-top:20px">
+        <strong style="display:block;color:var(--warm);font-weight:400;margin-bottom:4px">October — April</strong>
+        No crowds<br>
+        Different light<br>
+        The real Riviera
+      </div>
+    </div>
+    <div>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,42px);font-weight:300;line-height:1.15;color:var(--warm);margin-bottom:28px">The Riviera in winter<br><em style="font-style:italic;color:var(--stone)">is the one worth seeing.</em></h2>
+      <div style="width:40px;height:.5px;background:var(--sand);margin-bottom:24px"></div>
+      <p class="reveal d2" style="font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.85;color:var(--slate);max-width:600px;margin-bottom:40px">November through March, the Riviera empties of visitors and fills with everything else: truffle markets at dawn in the hills above Nice, the first almond blossoms in Menton, ski runs in the Alps an hour from the coast, gastronomy that the summer restaurants never have time for. The light is different. The conversations are better. The roads are yours.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--parch);margin-bottom:32px">
+        <div style="background:var(--bone);padding:20px 18px">
+          <div style="font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);margin-bottom:6px">Gastronomy</div>
+          <div style="font-size:11px;font-weight:300;color:var(--stone);line-height:1.65">Truffle markets · Olive oil harvest · Winter menus · Market mornings</div>
+        </div>
+        <div style="background:var(--bone);padding:20px 18px">
+          <div style="font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);margin-bottom:6px">Snow & Sea</div>
+          <div style="font-size:11px;font-weight:300;color:var(--stone);line-height:1.65">Ski Isola 2000 · Ski Valberg · Coast the same afternoon · One hour from Cannes</div>
+        </div>
+        <div style="background:var(--bone);padding:20px 18px">
+          <div style="font-family:var(--serif);font-size:18px;font-weight:300;color:var(--warm);margin-bottom:6px">Art & Culture</div>
+          <div style="font-size:11px;font-weight:300;color:var(--stone);line-height:1.65">Fondation Maeght · Musée Picasso Antibes · Private gallery visits · Studio tours</div>
+        </div>
+      </div>
+      <a href="/experiences/off-season" class="btn-primary reveal d3">
+        <span>Explore Off-Season</span>
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <!-- ── CORPORATE ── -->
@@ -567,7 +412,7 @@ a { text-decoration: none; color: inherit; }
 <!-- ── EDITORIAL PHOTO ── -->
 <div class="editorial-photo" aria-hidden="true">
   <div class="editorial-photo-inner ep-parallax" id="epParallax">
-    <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif" alt="Mercedes V-Class private transfer on the French Riviera" loading="lazy" width="3200" height="1200" style="width:100%;height:100%;object-fit:cover;display:block">
+    <img src="/photos/mercedes-vclass-private-transfer-cannes-riviera.avif" alt="Mercedes V-Class private transfer on the French Riviera" width="3200" height="1200" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
   </div>
   <div class="ep-vignette"></div>
   <div class="ep-content">
@@ -595,6 +440,81 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div>
 
+<!-- ── EDITORIAL / ROADBOOK ── -->
+<section class="editorial" aria-label="Editorial — The Roadbook">
+  <div class="editorial-header">
+    <div>
+      <span class="section-label reveal">The Roadbook</span>
+      <h2 class="reveal d1" style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--warm);line-height:1.1;margin-top:16px">Writing about the Riviera<br>as it is actually lived.</h2>
+    </div>
+    <a href="/editorial" class="intro-link reveal d2">
+      All articles
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="editorial-grid">
+    <!-- FEATURED ARTICLE — Large card (dark) -->
+    <article class="article-card reveal-scale">
+      <div class="article-photo art-ph-1">
+        <img src="/photos/la-turbie-village-hills-mediterranean-view-grande-corniche-nice-menton.avif" alt="La Turbie village with hills and Mediterranean view on the Grande Corniche between Nice and Menton" width="1300" height="760" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="article-category">Roads & Routes</span>
+      </div>
+      <div class="article-body">
+        <span class="article-date">Feature · 8 min read</span>
+        <h3 class="article-title">The Road from Nice to Menton Was Designed, It Seems, for Late September</h3>
+        <p class="article-excerpt">The Grande Corniche sticks close to the coast at this point — not because it has to, but because it seems unwilling to leave. We drove it in both directions on a Tuesday in early autumn to find out which was better. The answer is neither obvious nor definitive.</p>
+        <div class="article-footer">
+          <a href="/editorial/grande-corniche" class="read-more">
+            Read the story
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="read-time">8 min</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 2 -->
+    <article class="article-card reveal d1">
+      <div class="article-photo art-ph-2">
+        <img src="/photos/monaco-prince-palace-sunset-le-rocher.avif" alt="Monaco Prince's Palace at sunset on Le Rocher — private day tour French Riviera" width="900" height="600" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="article-category">Places</span>
+      </div>
+      <div class="article-body">
+        <span class="article-date">Essay · 5 min read</span>
+        <h3 class="article-title">Monaco: What Everyone Misses, and the Forty Minutes That Fix It</h3>
+        <p class="article-excerpt">Most shore excursions spend forty minutes in Monaco and tell you everything there is to say. That forty minutes, used correctly, can actually change your impression of the place.</p>
+        <div class="article-footer">
+          <a href="/editorial/monaco" class="read-more">
+            Read
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="read-time">5 min</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 3 -->
+    <article class="article-card reveal d2">
+      <div class="article-photo art-ph-3">
+        <img src="/photos/riviera-market-sun-dried-tomatoes-stall-italian-french-coast.avif" alt="Sun-dried tomatoes at a Riviera market stall — Provençal market guide French and Italian coast" width="900" height="600" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="article-category">Local Knowledge</span>
+      </div>
+      <div class="article-body">
+        <span class="article-date">Guide · 4 min read</span>
+        <h3 class="article-title">Which Market, Which Day, Which Village — A Practical Guide</h3>
+        <p class="article-excerpt">The Riviera has a market every morning somewhere nearby. Most of them are worth going to. A few of them are worth building a day around. Here is the list.</p>
+        <div class="article-footer">
+          <a href="/editorial/markets" class="read-more">
+            Read
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="read-time">4 min</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
 <!-- ── TESTIMONIALS ── -->
 <section class="testimonials" aria-label="Client testimonials">
@@ -935,7 +855,6 @@ a { text-decoration: none; color: inherit; }
   });
 })();
 
-
 // ── SCROLL REVEAL ───────────────────────────
 (function(){
   const els = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
@@ -1030,8 +949,6 @@ a { text-decoration: none; color: inherit; }
   setInterval(() => setQuote(idx+1), 7000);
 })();
 
-// ── STRUCTURED DATA — теперь inline в HTML (в конце body) ────
-
 // ── FAQ ─────────────────────────────────────────────
 function toggleFaq(el){
   var item = el.parentElement;
@@ -1041,6 +958,7 @@ function toggleFaq(el){
 }
 </script>
 
+<!-- ── STRUCTURED DATA ── inline JSON-LD ── -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service",
 "name":"Riviera Journeys — Private Tours, Shore Excursions &amp; Transfers from Cannes",
