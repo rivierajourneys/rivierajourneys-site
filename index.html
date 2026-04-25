@@ -152,7 +152,7 @@ a { text-decoration: none; color: inherit; }
 .hero-kicker {
   font-family: var(--sans);
   font-size: 10px; font-weight: 500;
-  letter-spacing: .3em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--terra);
   display: flex; align-items: center; gap: 14px;
   margin-bottom: 28px;
@@ -164,12 +164,12 @@ a { text-decoration: none; color: inherit; }
 }
 .hero h1 {
   font-family: var(--serif); font-weight: 300;
-  font-size: clamp(34px, 4.4vw, 64px);
-  letter-spacing: -.02em;
+  font-size: clamp(48px, 5.5vw, 96px);
+  letter-spacing: -.022em;
   color: rgba(247,243,237,.55);
-  line-height: 1.08;
+  line-height: 1.02;
   margin-bottom: 0;
-  max-width: 1100px;
+  max-width: 1280px;
   opacity: 0; animation: fadeUp .8s var(--slow) .4s forwards;
 }
 .hero h1 .h1-sub { display: block; margin-bottom: 4px; }
@@ -201,7 +201,7 @@ a { text-decoration: none; color: inherit; }
 }
 .btn-sand {
   font-family: var(--sans); font-size: 11px; font-weight: 500;
-  letter-spacing: .24em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--warm); background: var(--sand);
   padding: 16px 32px;
   display: inline-flex; align-items: center; gap: 12px;
@@ -221,7 +221,7 @@ a { text-decoration: none; color: inherit; }
 .btn-sand:hover svg { transform: translateX(4px); }
 .btn-bone {
   font-family: var(--sans); font-size: 11px; font-weight: 500;
-  letter-spacing: .24em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--warm); background: var(--bone);
   padding: 16px 32px;
   display: inline-flex; align-items: center; gap: 12px;
@@ -242,7 +242,7 @@ a { text-decoration: none; color: inherit; }
 .btn-bone:hover svg { transform: translateX(4px); }
 .btn-ghost {
   font-family: var(--sans); font-size: 11px; font-weight: 500;
-  letter-spacing: .24em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: rgba(247,243,237,.7);
   display: inline-flex; align-items: center; gap: 10px;
   padding: 16px 0;
@@ -274,11 +274,11 @@ a { text-decoration: none; color: inherit; }
 }
 .lede-main {
   grid-column: 3 / span 8;
-  font-family: var(--sans);
+  font-family: var(--body);
   font-weight: 400;
-  font-size: clamp(16px, 1.4vw, 20px);
-  line-height: 1.55;
-  letter-spacing: 0;
+  font-size: clamp(15px, 1.3vw, 19px);
+  line-height: 1.5;
+  letter-spacing: -.003em;
   color: var(--warm);
   text-align: left;
   margin: 0;
@@ -301,7 +301,7 @@ a { text-decoration: none; color: inherit; }
 .lede-side-link {
   font-family: var(--sans);
   font-size: 10.5px; font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .26em;
   text-transform: uppercase;
   color: var(--terra);
   display: inline-flex; align-items: center; gap: 12px;
@@ -405,7 +405,7 @@ a { text-decoration: none; color: inherit; }
   position: absolute; inset: 0;
   z-index: 2;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   padding: 56px 64px;
 }
 .featured-content > .featured-rubric { justify-self: end; align-self: start; margin: 0; }
@@ -418,23 +418,23 @@ a { text-decoration: none; color: inherit; }
   text-align: center;
   margin: 0;
 }
-.featured-content > .featured-dek    { justify-self: start; align-self: end; max-width: 520px; text-align: left; margin: 0 0 18px 0; }
-.featured-content > .featured-meta   { justify-self: start; align-self: end; margin: 0; }
+.featured-content > .featured-dek    { grid-row: 3; justify-self: start; align-self: end; max-width: 520px; text-align: left; margin: 0; }
+.featured-content > .featured-meta   { grid-row: 4; justify-self: start; align-self: end; margin: 18px 0 0 0; }
 .featured-bl { display: flex; flex-direction: column; gap: 16px; justify-self: start; align-self: end; max-width: 540px; }
 .featured-rubric {
   font-family: var(--sans);
   font-size: 10.5px; font-weight: 500;
-  letter-spacing: .3em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--terra);
   text-align: right;
 }
 .featured-rubric .sep { margin: 0 12px; color: rgba(168,101,67,.5); }
 .featured-h2 {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(30px, 3.2vw, 46px);
-  line-height: 1.08;
-  letter-spacing: -.014em;
+  font-weight: 300;
+  font-size: clamp(34px, 3.6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -.018em;
   color: var(--paper);
   margin-bottom: 22px;
 }
@@ -506,17 +506,17 @@ a { text-decoration: none; color: inherit; }
 }
 .tour-index-h2 {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(26px, 2.5vw, 34px);
-  line-height: 1.15;
-  letter-spacing: -.008em;
+  font-weight: 300;
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -.012em;
   color: var(--warm);
 }
 .tour-index-h2 em { font-style: italic; color: var(--stone); }
 .tour-index-link {
   font-family: var(--sans);
   font-size: 11px; font-weight: 500;
-  letter-spacing: .26em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--terra);
   display: inline-flex; align-items: center; gap: 12px;
   transition: gap .35s;
@@ -570,8 +570,8 @@ a { text-decoration: none; color: inherit; }
 .tour-card-dek {
   font-family: var(--body);
   font-weight: 400;
-  font-size: 15.5px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--slate);
   margin-bottom: 18px;
   max-width: 380px;
@@ -591,7 +591,7 @@ a { text-decoration: none; color: inherit; }
 .tour-card-action {
   font-family: var(--sans);
   font-size: 10px; font-weight: 500;
-  letter-spacing: .24em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--terra);
   display: inline-flex; align-items: center; gap: 8px;
   transition: gap .35s;
@@ -617,16 +617,16 @@ a { text-decoration: none; color: inherit; }
 .services-rubric {
   font-family: var(--sans);
   font-size: 11px; font-weight: 500;
-  letter-spacing: .32em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--terra);
   margin-bottom: 28px;
 }
 .services-h2 {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 300;
   font-size: clamp(28px, 2.8vw, 38px);
-  line-height: 1.15;
-  letter-spacing: -.01em;
+  line-height: 1.1;
+  letter-spacing: -.012em;
   color: var(--warm);
   max-width: 640px;
   margin: 0 auto;
@@ -660,13 +660,13 @@ a { text-decoration: none; color: inherit; }
   color: var(--warm);
   transition: color .3s;
 }
-.service-headline em { font-family: var(--sans); font-style: normal; font-weight: 400; font-size: .8em; color: var(--stone); letter-spacing: .02em; }
+/* .service-headline em — removed: no em in headlines anymore */
 .service-row:hover .service-headline { color: var(--terra); }
 .service-note {
   font-family: var(--sans);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--slate);
   margin-top: 4px;
@@ -688,7 +688,7 @@ a { text-decoration: none; color: inherit; }
 .service-detail {
   font-family: var(--sans);
   font-size: 10px; font-weight: 500;
-  letter-spacing: .2em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--terra);
 }
 
@@ -712,17 +712,17 @@ a { text-decoration: none; color: inherit; }
 }
 .field-h2 {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(26px, 2.5vw, 34px);
-  line-height: 1.15;
-  letter-spacing: -.008em;
+  font-weight: 300;
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -.012em;
   color: var(--warm);
 }
 .field-h2 em { font-style: italic; color: var(--stone); }
 .field-handle {
   font-family: var(--sans);
   font-size: 11px; font-weight: 500;
-  letter-spacing: .26em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--stone);
   display: inline-flex; align-items: center; gap: 12px;
   transition: color .3s, gap .3s;
@@ -751,7 +751,7 @@ a { text-decoration: none; color: inherit; }
 .field-plate:hover .field-plate-img img { transform: scale(1.04); }
 .field-plate-cap {
   font-family: var(--body); font-style: italic;
-  font-weight: 400; font-size: 12.5px;
+  font-weight: 400; font-size: 13px;
   line-height: 1.5;
   color: var(--slate);
   margin-bottom: 4px;
@@ -759,7 +759,7 @@ a { text-decoration: none; color: inherit; }
 .field-plate-loc {
   font-family: var(--sans);
   font-size: 9.5px; font-weight: 500;
-  letter-spacing: .22em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--stone);
 }
 
@@ -776,7 +776,7 @@ a { text-decoration: none; color: inherit; }
 .quote-rubric {
   font-family: var(--sans);
   font-size: 10.5px; font-weight: 500;
-  letter-spacing: .32em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--terra);
   margin-bottom: 32px;
 }
@@ -796,12 +796,12 @@ a { text-decoration: none; color: inherit; }
 }
 .quote-body {
   font-family: var(--body);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.7;
-  letter-spacing: 0;
-  color: var(--slate);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.65;
+  letter-spacing: -.003em;
+  color: var(--warm);
   margin-bottom: 32px;
   max-width: 640px;
   margin-left: auto;
@@ -809,7 +809,7 @@ a { text-decoration: none; color: inherit; }
 }
 .quote-attrib {
   font-family: var(--body); font-style: italic;
-  font-weight: 400; font-size: 14.5px;
+  font-weight: 400; font-size: 13px;
   color: var(--stone);
 }
 
@@ -826,16 +826,16 @@ a { text-decoration: none; color: inherit; }
 .faq-rubric {
   font-family: var(--sans);
   font-size: 11px; font-weight: 500;
-  letter-spacing: .32em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--terra);
   margin-bottom: 28px;
 }
 .faq-h2 {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(26px, 2.5vw, 34px);
-  line-height: 1.15;
-  letter-spacing: -.008em;
+  font-weight: 300;
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -.012em;
   color: var(--warm);
 }
 .faq-h2 em { font-style: italic; }
@@ -897,16 +897,16 @@ a { text-decoration: none; color: inherit; }
 .nl-rubric {
   font-family: var(--sans);
   font-size: 10.5px; font-weight: 500;
-  letter-spacing: .32em; text-transform: uppercase;
+  letter-spacing: .26em; text-transform: uppercase;
   color: var(--terra);
   margin-bottom: 24px;
 }
 .nl-h2 {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(24px, 2.4vw, 32px);
-  line-height: 1.2;
-  letter-spacing: -.008em;
+  font-weight: 300;
+  font-size: clamp(26px, 2.5vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -.01em;
   color: var(--warm);
   margin-bottom: 32px;
 }
@@ -934,7 +934,7 @@ a { text-decoration: none; color: inherit; }
 .nl-submit {
   font-family: var(--sans);
   font-size: 11px; font-weight: 500;
-  letter-spacing: .26em; text-transform: uppercase;
+  letter-spacing: .22em; text-transform: uppercase;
   color: var(--terra);
   background: transparent; border: none;
   cursor: pointer;
@@ -944,7 +944,7 @@ a { text-decoration: none; color: inherit; }
 .nl-submit:hover { color: var(--warm); letter-spacing: .3em; }
 .nl-promise {
   font-family: var(--body); font-style: italic;
-  font-weight: 400; font-size: 12.5px;
+  font-weight: 400; font-size: 13px;
   color: var(--stone);
   line-height: 1.6;
   max-width: 480px;
@@ -984,7 +984,7 @@ a { text-decoration: none; color: inherit; }
 }
 .colophon-desc {
   font-family: var(--body); font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
   color: rgba(245,241,232,.5);
   max-width: 360px;
@@ -999,7 +999,7 @@ a { text-decoration: none; color: inherit; }
 .colophon-col a, .colophon-col p {
   display: block;
   font-family: var(--body); font-weight: 400;
-  font-size: 14.5px;
+  font-size: 15px;
   line-height: 1.85;
   color: rgba(245,241,232,.78);
   transition: color .3s;
@@ -1025,7 +1025,7 @@ a { text-decoration: none; color: inherit; }
   .lede-grid { column-gap: 24px; row-gap: 24px; margin-bottom: 56px; }
   .lede-main { grid-column: 1 / span 12; font-size: clamp(17px, 1.8vw, 20px); }
   .lede-side { grid-column: 6 / span 7; gap: 20px; }
-  .lede-side-text { font-size: 13.5px; }
+  .lede-side-text { font-size: 13px; }
   .lede-photos { gap: 24px; }
   .lede-photo-title { font-size: 17px; }
   .featured-content { padding-left: 40px; padding-right: 40px; }
@@ -1047,7 +1047,7 @@ a { text-decoration: none; color: inherit; }
   .hero-title-block, .hero-actions-block { padding: 0 24px; }
   .hero-title-block { bottom: 38vh; }
   .hero-actions-block { padding-bottom: 36px; }
-  .hero h1 { font-size: clamp(28px, 7vw, 44px); }
+  .hero h1 { font-size: clamp(36px, 8.5vw, 64px); }
   .hero-price { font-size: 26px; }
   .hero-pill { font-size: 11.5px; }
   .hero-meta { gap: 6px 14px; margin-bottom: 24px; }
@@ -1204,7 +1204,7 @@ a { text-decoration: none; color: inherit; }
              alt="Cannes bay with Carlton and Martinez hotels &mdash; private day tour"
              loading="lazy" width="1300" height="975">
       </div>
-      <h3 class="lede-photo-title">Cannes, Antibes &amp; <em>Saint-Paul-de-Vence.</em></h3>
+      <h3 class="lede-photo-title">Cannes, Antibes &amp; Saint-Paul-de-Vence</h3>
       <p class="lede-photo-sub">
         <span class="lede-photo-sub-text">The coast and the perched village in one afternoon.</span>
         <span class="lede-photo-sub-price">&euro; 800</span>
@@ -1216,7 +1216,7 @@ a { text-decoration: none; color: inherit; }
              alt="Grasse panorama with Esterel mountains &mdash; private Provence day tour"
              loading="lazy" width="1300" height="867">
       </div>
-      <h3 class="lede-photo-title">Grasse, Gourdon &amp; <em>the Arri&egrave;re-Pays.</em></h3>
+      <h3 class="lede-photo-title">Grasse, Gourdon &amp; the Arri&egrave;re-Pays</h3>
       <p class="lede-photo-sub">
         <span class="lede-photo-sub-text">Twenty minutes inland, the coast disappears.</span>
         <span class="lede-photo-sub-price">&euro; 800</span>
@@ -1229,18 +1229,14 @@ a { text-decoration: none; color: inherit; }
      FEATURED — the headline journey of the moment
      ═══════════════════════════════════════════════════════════ -->
 <section class="featured" aria-label="Featured journey: Nice, Eze and Monaco">
-  <div class="featured-img-wrap reveal">
+  <div class="featured-img-wrap">
     <img class="featured-img"
          src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"
          alt="Nice old port and Promenade des Anglais coastline &mdash; private day tour from Cannes"
-         loading="lazy" width="2880" height="1620">
+         loading="eager" decoding="async" width="2880" height="1620">
     <div class="featured-vignette" aria-hidden="true"></div>
     <div class="featured-content">
-      <div class="featured-rubric">
-        The Featured Journey
-        <span class="sep">&mdash;</span>
-        Day Tour from Cannes
-      </div>
+      <div class="featured-rubric">The Featured Journey</div>
       <h2 class="featured-h2">Nice, Eze &amp; Monaco<br><em>on the right Corniche.</em></h2>
       <p class="featured-dek">The Promenade des Anglais at the hour after the cleaners and before the tour buses. Nice old town is fifteen minutes east on foot, the flower market on cours Saleya is opening, the cafes around place Rossetti are still quiet. Photographed from the eastern end, looking west toward Cap d&rsquo;Antibes on the horizon. The route continues from here through Eze and on to Monaco, climbing the Moyenne Corniche in the late morning.</p>
       <div class="featured-meta">
@@ -1262,14 +1258,14 @@ a { text-decoration: none; color: inherit; }
 <section class="services" aria-label="What we offer">
   <div class="services-head">
     <div class="services-rubric reveal">What we offer</div>
-    <h2 class="services-h2 reveal d1">Everything we offer.<br><em>Done well, not very much.</em></h2>
+    <h2 class="services-h2 reveal d1">Everything we offer. Done well, not very much.</h2>
   </div>
 
   <div class="services-list">
     <a class="service-row reveal" href="/tours">
       <div class="service-main">
         <div class="service-rubric">I &middot; Day Tours</div>
-        <div class="service-headline">Private full-day tours <em>from Cannes &amp; Nice.</em></div>
+        <div class="service-headline">Private full-day tours from Cannes &amp; Nice</div>
         <div class="service-note">Nice, Eze, Monaco, Cap d&rsquo;Antibes, Menton, Sanremo, Grasse, Gourdon &mdash; designed around your schedule, not a group tour&rsquo;s. Eight hours typical, more if you want more, less if you want less. We adjust to the light, to the season, and to what you actually want to see.</div>
       </div>
       <div class="service-aside">
@@ -1280,7 +1276,7 @@ a { text-decoration: none; color: inherit; }
     <a class="service-row reveal d1" href="/shore-excursions">
       <div class="service-main">
         <div class="service-rubric">II &middot; Shore Excursions</div>
-        <div class="service-headline">For cruise guests at <em>Cannes &amp; Villefranche.</em></div>
+        <div class="service-headline">For cruise guests at Cannes &amp; Villefranche</div>
         <div class="service-note">We meet you at the tender pier or quai, show you the Riviera, return you before the last call. The route is shaped around your ship&rsquo;s departure time, never the other way around.</div>
       </div>
       <div class="service-aside">
@@ -1291,7 +1287,7 @@ a { text-decoration: none; color: inherit; }
     <a class="service-row reveal d2" href="/transfers">
       <div class="service-main">
         <div class="service-rubric">III &middot; Transfers</div>
-        <div class="service-headline">Nice C&ocirc;te d&rsquo;Azur Airport <em>to anywhere on the coast.</em></div>
+        <div class="service-headline">Nice C&ocirc;te d&rsquo;Azur Airport to anywhere on the coast</div>
         <div class="service-note">Fourteen routes. Mercedes V-Class. Fixed price regardless of traffic or flight delays. We meet you in arrivals with a name board and have you in Cannes within forty minutes under normal conditions.</div>
       </div>
       <div class="service-aside">
@@ -1302,7 +1298,7 @@ a { text-decoration: none; color: inherit; }
     <a class="service-row reveal" href="/multi-day">
       <div class="service-main">
         <div class="service-rubric">IV &middot; Multi-Day Journeys</div>
-        <div class="service-headline">Cannes to Florence <em>via Cinque Terre.</em></div>
+        <div class="service-headline">Cannes to Florence via Cinque Terre</div>
         <div class="service-note">Five to seven days east along the coast. Overnight in places worth sleeping in. Routes adapt to season and party. The most established is Cannes to Florence over a week, with stops in Genova and the Cinque Terre.</div>
       </div>
       <div class="service-aside">
@@ -1313,7 +1309,7 @@ a { text-decoration: none; color: inherit; }
     <a class="service-row reveal d1" href="/corporate">
       <div class="service-main">
         <div class="service-rubric">V &middot; Corporate &amp; Events</div>
-        <div class="service-headline">MIPIM, Festival, Cannes Lions, <em>ILTM.</em></div>
+        <div class="service-headline">MIPIM, Festival, Cannes Lions, ILTM</div>
         <div class="service-note">VIP transfers, executive retreats, partner programmes during MIPIM in March, the Festival in May, Cannes Lions in June, ILTM in December. We know which side of which boulevard saves you twenty minutes during a traffic-locked Festival week.</div>
       </div>
       <div class="service-aside">
@@ -1324,7 +1320,7 @@ a { text-decoration: none; color: inherit; }
     <a class="service-row reveal d2" href="/slow-travel">
       <div class="service-main">
         <div class="service-rubric">VI &middot; Slow Travel Consulting</div>
-        <div class="service-headline">Two weeks on the Riviera, <em>done properly.</em></div>
+        <div class="service-headline">Two weeks on the Riviera, done properly</div>
         <div class="service-note">A 60-minute consultation: where to base yourself, what to do, what to avoid. PDF itinerary follows.</div>
       </div>
       <div class="service-aside">
@@ -1341,7 +1337,7 @@ a { text-decoration: none; color: inherit; }
      ═══════════════════════════════════════════════════════════ -->
 <section class="tour-index" aria-label="Latest journeys from Cannes">
   <div class="tour-index-head">
-    <h2 class="tour-index-h2 reveal">Day Tours <em>from Cannes.</em></h2>
+    <h2 class="tour-index-h2 reveal">Day Tours from Cannes</h2>
     <a href="/tours" class="tour-index-link reveal d1">
       View all tours
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1360,7 +1356,7 @@ a { text-decoration: none; color: inherit; }
         <span class="sep">&middot;</span>
         Coast &amp; Art
       </div>
-      <h3 class="tour-card-title">Cannes, Antibes &amp; <em>Saint-Paul-de-Vence.</em></h3>
+      <h3 class="tour-card-title">Cannes, Antibes &amp; Saint-Paul-de-Vence</h3>
       <p class="tour-card-dek">Cannes beyond the Croisette: the old town behind the Suquet hill. The ramparts of Antibes and the Picasso museum that occupies its medieval chateau. Then Saint-Paul-de-Vence in the afternoon, when the day-trip groups have descended back to the coast and the village belongs again to the gallerists who live there.</p>
       <div class="tour-card-foot">
         <span class="tour-card-price">&euro; 800 <em>full day</em></span>
@@ -1382,7 +1378,7 @@ a { text-decoration: none; color: inherit; }
         <span class="sep">&middot;</span>
         Provence
       </div>
-      <h3 class="tour-card-title">Grasse, Gourdon &amp; <em>the Arri&egrave;re-Pays.</em></h3>
+      <h3 class="tour-card-title">Grasse, Gourdon &amp; the Arri&egrave;re-Pays</h3>
       <p class="tour-card-dek">Twenty minutes inland from Cannes the coast disappears and the real Provence begins. Grasse for the perfumeries and the old town that smells of jasmine in May. Gourdon at four hundred and sixty metres for the view across the Loup gorge to the Mediterranean.</p>
       <div class="tour-card-foot">
         <span class="tour-card-price">&euro; 800 <em>full day</em></span>
@@ -1404,7 +1400,7 @@ a { text-decoration: none; color: inherit; }
         <span class="sep">&middot;</span>
         France &amp; Italy
       </div>
-      <h3 class="tour-card-title">Cannes to Florence <em>via Cinque Terre.</em></h3>
+      <h3 class="tour-card-title">Cannes to Florence via Cinque Terre</h3>
       <p class="tour-card-dek">Five to seven days east along the coast. Genova&rsquo;s medieval streets and a port that has been working for nine hundred years. Overnight in Cinque Terre, where the only way between villages is the train or the coastal path. Then Tuscany, with arrival in Florence in time for the early evening light on the Duomo.</p>
       <div class="tour-card-foot">
         <span class="tour-card-price">On enquiry <em>from 7 days</em></span>
@@ -1505,7 +1501,7 @@ a { text-decoration: none; color: inherit; }
 <section class="faq" aria-label="Before you book">
   <div class="faq-head">
     <div class="faq-rubric">Before You Book</div>
-    <h2 class="faq-h2">Questions, <em>and answers.</em></h2>
+    <h2 class="faq-h2">Questions and answers</h2>
   </div>
   <div class="faq-list">
     <div class="faq-item">
@@ -1565,7 +1561,7 @@ a { text-decoration: none; color: inherit; }
      ═══════════════════════════════════════════════════════════ -->
 <section class="newsletter" aria-label="Subscribe">
   <div class="nl-rubric">The Roadbook Newsletter</div>
-  <h2 class="nl-h2">Once a month, <em>worth reading.</em></h2>
+  <h2 class="nl-h2">Once a month, worth reading.</h2>
   <form class="nl-form" onsubmit="return false;">
     <input type="email" class="nl-input" placeholder="Email address" autocomplete="email">
     <button type="submit" class="nl-submit">Subscribe</button>
