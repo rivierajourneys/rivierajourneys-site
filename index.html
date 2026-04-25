@@ -525,18 +525,21 @@ a { text-decoration: none; color: inherit; }
 .tour-index-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
 
 .tour-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 64px 40px;
+  column-count: 2;
+  column-gap: 40px;
 }
 .tour-card {
   display: block;
   text-decoration: none;
   color: inherit;
+  break-inside: avoid;
+  margin-bottom: 80px;
 }
+/* Left column: square / Right column: landscape 3:2 */
+.tour-card.square .tour-card-img-wrap { aspect-ratio: 1/1; }
+.tour-card.landscape .tour-card-img-wrap { aspect-ratio: 3/2; }
 .tour-card-img-wrap {
   position: relative;
-  aspect-ratio: 29/39;  /* Kinfolk's signature ratio */
   overflow: hidden;
   background: var(--paper-2);
   margin-bottom: 24px;
@@ -568,9 +571,9 @@ a { text-decoration: none; color: inherit; }
 .tour-card-title em { font-style: italic; color: var(--stone); }
 .tour-card:hover .tour-card-title { color: var(--terra); }
 .tour-card-dek {
-  font-family: var(--body);
+  font-family: var(--sans);
   font-weight: 400;
-  font-size: 15px;
+  font-size: 13.5px;
   line-height: 1.6;
   color: var(--slate);
   margin-bottom: 18px;
@@ -1030,7 +1033,7 @@ a { text-decoration: none; color: inherit; }
   .lede-photo-title { font-size: 17px; }
   .featured-content { padding-left: 40px; padding-right: 40px; }
   .tour-index { padding: 64px 40px 96px; }
-  .tour-grid { grid-template-columns: repeat(2, 1fr); gap: 56px 32px; }
+  .tour-grid { gap: 56px 32px; }
   .services { padding: 80px 40px 96px; }
   .field { padding: 64px 40px 96px; }
   .field-strip { grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -1077,6 +1080,7 @@ a { text-decoration: none; color: inherit; }
   .tour-index { padding: 56px 24px 80px; }
   .tour-index-head { margin-bottom: 56px; padding-top: 40px; }
   .tour-grid { grid-template-columns: 1fr; gap: 56px; }
+  .tour-card.square .tour-card-img-wrap, .tour-card.landscape .tour-card-img-wrap { aspect-ratio: 4/3; }
   .tour-card-title { font-size: 22px; }
   
   .services { padding: 64px 24px 80px; }
@@ -1335,53 +1339,74 @@ a { text-decoration: none; color: inherit; }
      TOUR INDEX — Kinfolk's "Latest Stories" pattern
      3 vertical cards. Each is a real bookable tour.
      ═══════════════════════════════════════════════════════════ -->
-<section class="tour-index" aria-label="Latest journeys from Cannes">
+<section class="tour-index" aria-label="Shore excursions from Cannes and Villefranche">
   <div class="tour-index-head">
-    <h2 class="tour-index-h2 reveal">Day Tours from Cannes</h2>
-    <a href="/tours" class="tour-index-link reveal d1">
-      View all tours
+    <h2 class="tour-index-h2 reveal">Shore Excursions from Cannes &amp; Villefranche</h2>
+    <a href="/shore-excursions" class="tour-index-link reveal d1">
+      View all excursions
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 
   <div class="tour-grid">
-    <a class="tour-card reveal" href="/tours/cannes/cannes-antibes-stpaul">
+    <a class="tour-card square reveal" href="/shore-excursions/cannes/nice-eze-monaco">
+      <div class="tour-card-img-wrap">
+        <img src="/photos/nice-old-port-promenade-des-anglais-coastline-nice-eze-monaco-tour.avif"
+             alt="Nice old port and Promenade des Anglais &mdash; shore excursion from Cannes"
+             width="900" height="900" loading="lazy">
+      </div>
+      <div class="tour-card-rubric">
+        From Cannes
+        <span class="sep">&middot;</span>
+        Shore Excursion
+      </div>
+      <h3 class="tour-card-title">Nice, Eze &amp; Monaco</h3>
+      <p class="tour-card-dek">The classic three-stop Riviera day, arranged around your ship&rsquo;s departure from Cannes. Nice old town in the morning, Eze at the right hour, Monaco beyond the Casino forecourt &mdash; back at the tender pier with time to spare.</p>
+      <div class="tour-card-foot">
+        <span class="tour-card-price">&euro; 800 <em>per vehicle</em></span>
+        <span class="tour-card-action">
+          Read more
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="tour-card landscape reveal d1" href="/shore-excursions/villefranche/cannes-antibes-stpaul">
       <div class="tour-card-img-wrap">
         <img src="/photos/cannes-bay-carlton-martinez-croisette-cannes-antibes-saint-paul-de-vence-tour.avif"
-             alt="Cannes bay with Carlton and Martinez hotels &mdash; private day tour" 
-             width="500" height="673" loading="lazy">
+             alt="Cannes bay with Carlton and Martinez hotels &mdash; shore excursion from Villefranche"
+             width="1300" height="867" loading="lazy">
       </div>
       <div class="tour-card-rubric">
-        Day Tour
+        From Villefranche
         <span class="sep">&middot;</span>
-        Coast &amp; Art
+        Shore Excursion
       </div>
       <h3 class="tour-card-title">Cannes, Antibes &amp; Saint-Paul-de-Vence</h3>
-      <p class="tour-card-dek">Cannes beyond the Croisette: the old town behind the Suquet hill. The ramparts of Antibes and the Picasso museum that occupies its medieval chateau. Then Saint-Paul-de-Vence in the afternoon, when the day-trip groups have descended back to the coast and the village belongs again to the gallerists who live there.</p>
+      <p class="tour-card-dek">West along the Riviera. Cannes beyond the Croisette, the ramparts of Antibes and the Picasso museum, then Saint-Paul-de-Vence in the afternoon when the day-trip groups have descended back to the coast.</p>
       <div class="tour-card-foot">
-        <span class="tour-card-price">&euro; 800 <em>full day</em></span>
+        <span class="tour-card-price">&euro; 800 <em>per vehicle</em></span>
         <span class="tour-card-action">
           Read more
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </span>
       </div>
     </a>
-
-    <a class="tour-card reveal d1" href="/tours/cannes/grasse-gourdon">
+  <a class="tour-card landscape reveal d1" href="/shore-excursions/cannes/grasse-gourdon">
       <div class="tour-card-img-wrap">
         <img src="/photos/grasse-panorama-esterel-mountains-sea-view-provence-tour.avif"
-             alt="Grasse panorama with Esterel mountains &mdash; private day tour"
-             width="500" height="673" loading="lazy">
+             alt="Grasse panorama with Esterel mountains &mdash; shore excursion from Cannes"
+             width="1300" height="867" loading="lazy">
       </div>
       <div class="tour-card-rubric">
-        Day Tour
+        From Cannes
         <span class="sep">&middot;</span>
-        Provence
+        Shore Excursion
       </div>
       <h3 class="tour-card-title">Grasse, Gourdon &amp; the Arri&egrave;re-Pays</h3>
-      <p class="tour-card-dek">Twenty minutes inland from Cannes the coast disappears and the real Provence begins. Grasse for the perfumeries and the old town that smells of jasmine in May. Gourdon at four hundred and sixty metres for the view across the Loup gorge to the Mediterranean.</p>
+      <p class="tour-card-dek">Twenty minutes inland from the port, the coast disappears and the real Provence begins. Grasse for the perfumeries and the old town that smells of jasmine in May, then Gourdon at four hundred and sixty metres for the view back to the Mediterranean.</p>
       <div class="tour-card-foot">
-        <span class="tour-card-price">&euro; 800 <em>full day</em></span>
+        <span class="tour-card-price">&euro; 800 <em>per vehicle</em></span>
         <span class="tour-card-action">
           Read more
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1389,27 +1414,29 @@ a { text-decoration: none; color: inherit; }
       </div>
     </a>
 
-    <a class="tour-card reveal d2" href="/multi-day/italy/cannes-cinque-terre-florence">
+    <a class="tour-card square reveal" href="/shore-excursions/villefranche/nice-eze-monaco">
       <div class="tour-card-img-wrap">
-        <img src="/photos/florence-rooftops-view-from-uffizi-gallery-italy-tour.avif"
-             alt="Florence rooftops &mdash; multi-day journey from Cannes to Florence"
-             width="500" height="673" loading="lazy">
+        <img src="/photos/villefranche-sur-mer-bay-french-riviera-shore-excursion.avif"
+             alt="Villefranche-sur-Mer harbour from above &mdash; shore excursion from Villefranche"
+             width="900" height="900" loading="lazy">
       </div>
       <div class="tour-card-rubric">
-        Multi-Day
+        From Villefranche
         <span class="sep">&middot;</span>
-        France &amp; Italy
+        Shore Excursion
       </div>
-      <h3 class="tour-card-title">Cannes to Florence via Cinque Terre</h3>
-      <p class="tour-card-dek">Five to seven days east along the coast. Genova&rsquo;s medieval streets and a port that has been working for nine hundred years. Overnight in Cinque Terre, where the only way between villages is the train or the coastal path. Then Tuscany, with arrival in Florence in time for the early evening light on the Duomo.</p>
+      <h3 class="tour-card-title">Nice, Eze &amp; Monaco</h3>
+      <p class="tour-card-dek">Villefranche&rsquo;s tender pier is six kilometres from Nice and ten minutes from the Moyenne Corniche. The compact geography works in your favour: less time in transit, more time at each stop. Back at quai de l&rsquo;Amiral Courbet before the last call.</p>
       <div class="tour-card-foot">
-        <span class="tour-card-price">On enquiry <em>from 7 days</em></span>
+        <span class="tour-card-price">&euro; 800 <em>per vehicle</em></span>
         <span class="tour-card-action">
           Read more
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </span>
       </div>
     </a>
+
+    
   </div>
 </section>
 
