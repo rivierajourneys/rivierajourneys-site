@@ -1,6 +1,6 @@
 # MIGRATION 2026-04-26 — GH Pages → Cloudflare Worker
 
-**Status:** ✅ Complete
+**Status:** ✅ Complete (Sprint 0 + initial sitemap policy)
 **Production URL:** https://rivierajourneys.fr
 **Worker name:** rivierajourneys
 **Cloudflare account:** Rivierajourneys@gmail.com (id: e0c27b298447c61e9d0c85572ec92df2)
@@ -10,26 +10,28 @@
 ## What changed
 
 The site moved from GitHub Pages to Cloudflare Workers Static Assets in a single
-session. DNS authority for `rivierajourneys.fr` was already on Cloudflare
-(`dante.ns.cloudflare.com`, `kia.ns.cloudflare.com`); the only remaining cutover
-step was replacing 3× A records (185.199.108-111.153 → GitHub Pages) with a
-Worker custom-domain binding. The Worker was already deployed and tested at
-`rivierajourneys.rivierajourneys.workers.dev` before cutover.
+session on 26 April 2026. DNS authority for `rivierajourneys.fr` was already on
+Cloudflare (`dante.ns.cloudflare.com`, `kia.ns.cloudflare.com`); the only
+remaining cutover step was replacing 3× A records (185.199.108-111.153 → GitHub
+Pages) with a Worker custom-domain binding. The Worker was deployed and tested
+at `rivierajourneys.rivierajourneys.workers.dev` before cutover.
 
-Sprint 0 audit findings closed in this session:
+Sprint 0 audit findings closed:
 
 - BLD-001 build pipeline restored
-- TS-001 workers.dev preview now `noindex`
+- TS-001 workers.dev preview now `noindex, nofollow`
 - TS-002 preview homepage serves correctly (was serving stale shore-excursion)
 - TS-003 trailing-slash 301 handled natively by `wrangler.html_handling`
 - SEC-001 5 security headers applied (HSTS, X-Content-Type-Options,
   Referrer-Policy, Permissions-Policy, X-Frame-Options)
 - GSC-410 ~30 legacy WordPress URLs return HTTP 410 Gone (was 200/404)
 - LEG-002 Mentions Légales verified at /legal/ with SIREN/SIRET/APE/hosting
-- LEAK-001 internal `*.md` and template files verified absent from repo
-- CO-002 hardcoded `48 reviews` replaced with placeholders (substitution via
-  Worker env vars; schema and visible copy both correct)
+- LEAK-001 internal `*.md` and template files verified absent from public assets
+- CO-002 hardcoded `48 reviews` replaced with placeholders, substitution via
+  Worker env vars (schema and visible copy both correct on production)
 - MIGR-001 GH Pages → Cloudflare Worker
+- TS-005 (initial pass) noindex,follow applied to all stub / WIP pages via
+  Worker; production sitemap.xml lists only 29 v6-quality URLs
 
 ---
 
@@ -43,7 +45,9 @@ User → Cloudflare DNS (dante/kia.ns.cloudflare.com)
         ├─ env.ASSETS.fetch(request) → static asset from repo
         ├─ if HTML: substitute {{REVIEWS_*}} placeholders
         ├─ add 5 security headers
-        ├─ noindex on *.workers.dev
+        ├─ add X-Robots-Tag noindex,follow if path is in
+        │   NOINDEX_EXACT or matches NOINDEX_PREFIX
+        ├─ noindex,nofollow on *.workers.dev
         └─ return Response
 ```
 
@@ -56,12 +60,34 @@ do not disable it without reason.
 ## Files that drive production
 
 ```
-/_worker.js          — request handler (410, headers, substitution)
+/_worker.js          — request handler (410, headers, substitution, noindex)
 /wrangler.jsonc      — config + env vars (REVIEWS_COUNT, REVIEWS_RATING, REVIEWS_BEST)
+/sitemap.xml         — 29 indexed URLs only; rolling promotion
 /.assetsignore       — excludes *.md, templates, _worker.js from public assets
+/docs/SITEMAP_ROADMAP.md — promotion timeline
 ```
 
 Cloudflare auto-deploys on every git push to `main`. Build takes ~30 seconds.
+
+---
+
+## Sitemap and noindex — rolling policy
+
+**The sitemap and the Worker noindex list are coupled.** Promotion of a page
+to organic search means TWO edits in the SAME commit:
+
+1. Remove the URL from `NOINDEX_EXACT` (or its prefix from `NOINDEX_PREFIX`)
+   in `_worker.js`.
+2. Add a `<url>` entry to `sitemap.xml`.
+
+This guarantees the two views of the site stay consistent: nothing in sitemap
+that's also blocked, nothing fully indexed without being declared in sitemap.
+
+See `/docs/SITEMAP_ROADMAP.md` for the full timeline of what gets promoted when.
+
+The principle is **quality first, slower OK**. We add only production-grade
+v6 pages to sitemap. Stubs, work-in-progress, and intentionally deferred
+pages live behind `noindex, follow` until the page is genuinely ready.
 
 ---
 
@@ -79,36 +105,25 @@ Edit `wrangler.jsonc`:
 }
 ```
 
-Commit, push. All 69+ pages reflect new value within ~30 seconds.
+Commit, push. All indexed pages reflect new value within ~30 seconds.
 Do **not** edit env vars in the Cloudflare dashboard — they will be overwritten
 on the next deploy. The source of truth is `wrangler.jsonc` in git.
 
+### Promote a page from noindex to indexed
+
+See `/docs/SITEMAP_ROADMAP.md` § "Promotion procedure".
+
 ### Add a new 410 Gone path
 
-Edit `_worker.js`. For an exact path:
+Edit `_worker.js`. For an exact path, append to `GONE_EXACT`. For all paths
+starting with a prefix, append to `GONE_PREFIX`. Commit, push.
 
-```js
-const GONE_EXACT = new Set([
-  // ...existing entries...
-  "/some-old-page",
-]);
-```
-
-For all paths starting with a prefix:
-
-```js
-const GONE_PREFIX = [
-  // ...existing entries...
-  "/old-section/",
-];
-```
-
-Commit, push.
-
-### Add a new page
+### Add a new page (still WIP)
 
 Drop the HTML at the appropriate path under `/`, push. Cloudflare serves it
-within 30 seconds. The Worker's substitution and headers apply automatically.
+within 30 seconds. By default it returns `200 OK`, but if the path is in
+`NOINDEX_EXACT` or matches `NOINDEX_PREFIX`, it gets `X-Robots-Tag: noindex,
+follow` and stays out of Google's index until promoted.
 
 ### Roll back a bad deploy
 
@@ -127,7 +142,7 @@ needed for emergency rollback.
 | CNAME | autodiscover | adsredir.ionos.info | IONOS auto-discover (mail) |
 | CNAME | _domainconnect | _domainconnect.ionos.com | IONOS auto-config |
 | MX | rivierajourneys.fr | mx00.ionos.fr (10) | Mail — but no mailbox exists yet |
-| MX | rivierajourneys.fr | mx01.ionos.fr (10) | See LEG-001 below |
+| MX | rivierajourneys.fr | mx01.ionos.fr (10) | See CO-007 below |
 | TXT | _github-pages-c... | (verify token) | Safe to keep |
 | TXT | rivierajourneys.fr | google-site-verification=... | Search Console |
 | TXT | rivierajourneys.fr | v=spf1 include:_spf-... | Mail SPF |
@@ -144,12 +159,15 @@ forward `hello@` to `rivierajourneys@gmail.com`.
    (`ASSETS`), update both files in the same commit.
 2. `.assetsignore` must contain `_worker.js` itself, otherwise Cloudflare
    will try to serve it as an asset and the build fails.
-3. `run_worker_first: ["/*"]` is required for substitution to run on paths
-   where a static HTML file exists. Removing it breaks the review-count
-   substitution silently (placeholders remain in HTML).
+3. `run_worker_first: ["/*"]` is required for substitution and noindex headers
+   to apply on paths where a static HTML file exists. Removing it silently
+   breaks both — placeholders remain in HTML, stubs become indexable.
 4. The 4× IONOS NS records inside the zone (`ns1077.ui-dns.biz`, etc.) are
    non-authoritative artifacts — actual authority is `dante` / `kia`
    `.ns.cloudflare.com`. Don't waste time "fixing" them.
+5. **Never add a URL to sitemap.xml without also removing it from
+   `NOINDEX_EXACT` / `NOINDEX_PREFIX` in `_worker.js`.** Sitemap+noindex
+   conflict is a Search Console error and signals quality issues to Google.
 
 ---
 
@@ -160,27 +178,20 @@ forward `hello@` to `rivierajourneys@gmail.com`.
 - **LEG-004** APE code 4932Z is "taxi", business is VTC. Flag for accountant.
 - **CO-007** Email mismatch: copy mentions `hello@rivierajourneys.fr`, mailbox
   doesn't exist. Set up Cloudflare Email Routing.
-- **TS-004** Verify `sitemap.xml` and `robots.txt` are correct; submit sitemap
-  to Google Search Console.
-- **TS-005** ~58 thin stubs are indexable; either flesh them out per the
-  keyword research priority order, or `noindex` them until ready.
 - **TS-006/007** Schema gaps on stub pages; no global Organization schema.
 - **FE-001/002** Typography and palette inconsistency across templates;
   three different "white" values (`--bone`, `--bone2`, `#FFFFFF` literals).
 - **FE-005 / LEG-001** Google Fonts hot-link is a GDPR + perf issue;
   self-host Cormorant Garamond, Cormorant SC, Newsreader, and Jost.
-- **GEO-001** No `llms.txt` or AI bot policy in `robots.txt`.
 - **GEO-002** No Wikidata entity for Riviera Journeys.
 - **A11Y-001** No focus indicators; no `prefers-reduced-motion` handling.
 - **A11Y-003** `--stone:#8C8880` fails 4.5:1 contrast on bone background.
-- **CO-001** Build queue should follow keyword research priorities; current
-  queue is ad-hoc.
-- **CO-008** `menton-sanremo-dolceacqua` marked 410 in worker but is P1 in
-  keyword research. Resolve this conflict before next deploy.
-- **CO-009** `nice-airport-private-jet-acam` marked 410 but is P1
-  zero-competition gap. Same conflict to resolve.
 - **FE-006** `/site.webmanifest` returns 404.
 - **LOC-003** Google Business Profile optimization checklist not done.
+
+GEO-001 partially closed: Cloudflare manages robots.txt with AI bot policy
+(blocks Bytespider, GPTBot, ClaudeBot, Google-Extended, etc.) and includes
+Sitemap reference. Custom llms.txt still TBD if we want stronger AEO control.
 
 ---
 
