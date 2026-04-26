@@ -12,5 +12,10 @@
     "binding": "ASSETS",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
+  },
+  "vars": {
+    "REVIEWS_COUNT": "10",
+    "REVIEWS_RATING": "5.0",
+    "REVIEWS_BEST": "5"
   }
 }
