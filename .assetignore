@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────
+# .assetsignore  —  files in the repo that must NOT be
+# served as public static assets by Cloudflare Workers.
+#
+# Patterns follow the same rules as .gitignore.
+# Anything matched here is excluded from the public asset
+# bundle, even though it remains in the GitHub repo.
+# ─────────────────────────────────────────────────────────
+
+# Worker code — must not be served as a downloadable file
+_worker.js
+
+# Wrangler / repo / build configuration
+wrangler.jsonc
+wrangler.toml
+.assetsignore
+.gitignore
+.git/
+.github/
+.dev.vars
+package.json
+package-lock.json
+node_modules/
+
+# Internal documentation & briefs — DO NOT publish
+*.md
+*.docx
+*.log
+
+# Page templates — only meant as scaffolds, not live URLs
+PAGE_TEMPLATE.html
+RJ_Commerce_Page_Template_v5.html
+RJ_Commerce_Page_Template_v6.html
+RJ_Corporate_Page_Template_v1.html
+RJ_Corporate_Page_Template.html
+
+# Mock-up / draft files (uncomment if/when these exist in repo)
+# mock_*.html
+# preview_*.png
+# riviera_journeys_homepage_*.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
