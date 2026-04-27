@@ -11,6 +11,9 @@
  *   CO-002  → review count / rating substitution from env vars
  *   GSC-410 → 410 Gone responses for legacy WordPress URLs
  *   TS-005  → noindex,follow on stub / WIP / thin-content pages
+ *   GSC-REDIRECT → www → apex canonicalization handled in Worker so legacy
+ *                  URLs on www return direct 410, not 301-then-410 chains
+ *                  (which Google's GSC flags as "Redirect error")
  *
  * Sitemap-noindex policy (rolling):
  *   - The sitemap.xml lists only production-quality v6 pages.
@@ -25,9 +28,9 @@
  *   wrangler.jsonc is the source of truth.
  */
 
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 // 410 Gone — legacy WordPress URLs that should never come back
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 const GONE_EXACT = new Set([
   // Old WordPress landing pages
   "/french-riviera-cruise-stop-tours",
@@ -66,18 +69,14 @@ const GONE_PREFIX = [
   "/trackback/",
 ];
 
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 // Noindex policy — paths NOT yet ready for organic search
-// ─────────────────────────────────────────────────────────────
-//
-// Exact path matches (path equals one of these strings).
-// When promoting a page, remove it here AND add to sitemap.xml.
+// ──────────────────────────────────────────────────────────────────────────
 const NOINDEX_EXACT = new Set([
   // ── Sprint 1 — promoting in May/Jun 2026 ──
-  "/about",                     // André writing this week
-  "/book",                      // expanding to v6 spec, ~1-2 weeks
-  "/slow-travel",               // ~4 weeks
-  // Provence wine pages (~3 weeks)
+  "/about",
+  "/book",
+  "/slow-travel",
   "/shore-excursions/cannes/provence-wine",
   "/shore-excursions/villefranche/provence-wine",
 
@@ -89,12 +88,12 @@ const NOINDEX_EXACT = new Set([
   "/tours/nice/nice-cannes-antibes",
 
   // ── Sprint 3 — Jun/Jul ──
-  "/tours/cannes/menton-dolceacqua-apricale",     // new URL, replaces old menton-sanremo
-  "/transfers/nice-airport-private-jet",          // new URL
-  "/transfers/cannes-mandelieu-airport",          // new URL
+  "/tours/cannes/menton-dolceaqua-apricale",
+  "/transfers/nice-airport-private-jet",
+  "/transfers/cannes-mandelieu-airport",
 
   // ── Q3 — Jul-Sep ──
-  "/multi-day",                                   // single hub page replacing 6 stubs
+  "/multi-day",
 
   // ── Q4 — Oct-Dec, off-season ──
   "/tours/off-season/gastronomy",
@@ -102,25 +101,22 @@ const NOINDEX_EXACT = new Set([
   "/tours/off-season/art-architecture",
   "/experiences/off-season",
 
-  // ── Year 2 — boat tours, partner negotiations needed ──
+  // ── Year 2 — boat tours ──
   "/tours/boat/iles-de-lerins",
   "/tours/boat/saint-tropez",
   "/tours/boat/monaco-by-sea",
 ]);
 
-// Prefix matches (path starts with one of these strings).
-// Anything under these directories is noindex until individually
-// promoted by being added to sitemap and removed from this list.
 const NOINDEX_PREFIX = [
-  "/editorial/",            // 16 stubs, content begins after commercial section complete
-  "/destinations/",         // 5 stubs, Year 2 (built from accumulated editorial)
-  "/multi-day/france/",     // stubs, replaced by single /multi-day hub
-  "/multi-day/italy/",      // stubs (incl cinque-terre-florence which is not built yet)
+  "/editorial/",
+  "/destinations/",
+  "/multi-day/france/",
+  "/multi-day/italy/",
 ];
 
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 // Security headers applied to every response
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 const SECURITY_HEADERS = {
   "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
   "X-Content-Type-Options": "nosniff",
@@ -129,16 +125,24 @@ const SECURITY_HEADERS = {
   "X-Frame-Options": "DENY",
 };
 
-// ─────────────────────────────────────────────────────────────
+const CANONICAL_HOST = "rivierajourneys.fr";
+
+// ──────────────────────────────────────────────────────────────────────────
 // Worker entry point
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const pathname = url.pathname;
     const hostname = url.hostname;
+    const search = url.search;
 
-    // 1. Security: block legacy paths with HTTP 410 Gone
+    // ──────────────────────────────────────────────────────────────────
+    // STEP 1. 410 Gone — legacy URLs.
+    // Done BEFORE the www→apex redirect so legacy URLs on www return a
+    // direct 410, not a 301-to-410 chain (which GSC flags as
+    // "Redirect error").
+    // ──────────────────────────────────────────────────────────────────
     if (GONE_EXACT.has(pathname) || GONE_PREFIX.some(p => pathname.startsWith(p))) {
       return new Response(buildGonePage(pathname), {
         status: 410,
@@ -151,16 +155,35 @@ export default {
       });
     }
 
-    // 2. Fetch the static asset
+    // ──────────────────────────────────────────────────────────────────
+    // STEP 2. Canonicalization: www.rivierajourneys.fr → apex.
+    // Only valid (non-legacy) URLs reach here, so the 301 always points
+    // at a 200 destination — clean for SEO.
+    // ──────────────────────────────────────────────────────────────────
+    if (hostname === "www." + CANONICAL_HOST) {
+      const target = `https://${CANONICAL_HOST}${pathname}${search}`;
+      return new Response(null, {
+        status: 301,
+        headers: {
+          "Location": target,
+          "Cache-Control": "public, max-age=3600",
+          ...SECURITY_HEADERS,
+        },
+      });
+    }
+
+    // ──────────────────────────────────────────────────────────────────
+    // STEP 3. Fetch the static asset.
+    // ──────────────────────────────────────────────────────────────────
     const response = await env.ASSETS.fetch(request);
 
-    // 3. Build response headers — copy original, layer in our additions
+    // STEP 4. Build response headers — copy original, layer in our additions.
     const newHeaders = new Headers(response.headers);
 
     // Apply security headers
     Object.entries(SECURITY_HEADERS).forEach(([k, v]) => newHeaders.set(k, v));
 
-    // Force noindex on workers.dev preview URLs (TS-001)
+    // Force noindex on workers.dev / pages.dev preview URLs (TS-001)
     if (hostname.endsWith(".workers.dev") || hostname.endsWith(".pages.dev")) {
       newHeaders.set("X-Robots-Tag", "noindex, nofollow");
     }
@@ -172,7 +195,7 @@ export default {
       newHeaders.set("X-Robots-Tag", "noindex, follow");
     }
 
-    // 4. If HTML, substitute review placeholders from env vars (CO-002)
+    // STEP 5. If HTML, substitute review placeholders from env vars (CO-002)
     const contentType = response.headers.get("content-type") || "";
     if (contentType.includes("text/html")) {
       const text = await response.text();
@@ -188,7 +211,7 @@ export default {
       });
     }
 
-    // 5. Non-HTML: return as-is with security headers
+    // STEP 6. Non-HTML: return as-is with security headers
     return new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
@@ -197,9 +220,9 @@ export default {
   },
 };
 
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 // 410 Gone HTML page (minimal, on-brand)
-// ─────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────
 function buildGonePage(pathname) {
   return `<!DOCTYPE html>
 <html lang="en">
