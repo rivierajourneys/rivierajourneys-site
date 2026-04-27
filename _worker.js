@@ -14,18 +14,9 @@
  *   GSC-REDIRECT → www → apex canonicalization handled in Worker so legacy
  *                  URLs on www return direct 410, not 301-then-410 chains
  *                  (which Google's GSC flags as "Redirect error")
- *
- * Sitemap-noindex policy (rolling):
- *   - The sitemap.xml lists only production-quality v6 pages.
- *   - Everything in NOINDEX_EXACT or NOINDEX_PREFIX gets
- *     X-Robots-Tag: noindex, follow until the page is promoted.
- *   - Promotion = remove from this list + add to sitemap.xml in the
- *     SAME commit. See /docs/SITEMAP_ROADMAP.md for schedule.
- *
- * To update reviews values without code changes:
- *   Edit wrangler.jsonc → "vars" block → commit → push.
- *   The Cloudflare dashboard variables get overwritten on each deploy;
- *   wrangler.jsonc is the source of truth.
+ *   GSC-FEED-SUFFIX → WordPress puts /feed/ at the END of paths
+ *                     (e.g. /some-post/feed/). prefix-based matching missed
+ *                     these. Added GONE_SUFFIX (endsWith) to cover them.
  */
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -55,6 +46,7 @@ const GONE_EXACT = new Set([
   "/tours/cannes/menton-sanremo-dolceacqua",
 ]);
 
+// Path STARTS with one of these → 410
 const GONE_PREFIX = [
   "/wp-admin/",
   "/wp-content/",
@@ -67,6 +59,20 @@ const GONE_PREFIX = [
   "/feed/",
   "/comments/",
   "/trackback/",
+];
+
+// Path ENDS with one of these → 410.
+// WordPress puts feed / trackback / embed / amp suffixes at the end of paths
+// like /post-name/feed/ — these cannot be caught by GONE_PREFIX startsWith.
+const GONE_SUFFIX = [
+  "/feed/",
+  "/feed",
+  "/trackback/",
+  "/trackback",
+  "/embed/",
+  "/embed",
+  "/amp/",
+  "/amp",
 ];
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -140,10 +146,13 @@ export default {
     // ──────────────────────────────────────────────────────────────────
     // STEP 1. 410 Gone — legacy URLs.
     // Done BEFORE the www→apex redirect so legacy URLs on www return a
-    // direct 410, not a 301-to-410 chain (which GSC flags as
-    // "Redirect error").
+    // direct 410, not a 301-to-410 chain.
     // ──────────────────────────────────────────────────────────────────
-    if (GONE_EXACT.has(pathname) || GONE_PREFIX.some(p => pathname.startsWith(p))) {
+    if (
+      GONE_EXACT.has(pathname) ||
+      GONE_PREFIX.some(p => pathname.startsWith(p)) ||
+      GONE_SUFFIX.some(s => pathname.endsWith(s))
+    ) {
       return new Response(buildGonePage(pathname), {
         status: 410,
         headers: {
@@ -157,8 +166,6 @@ export default {
 
     // ──────────────────────────────────────────────────────────────────
     // STEP 2. Canonicalization: www.rivierajourneys.fr → apex.
-    // Only valid (non-legacy) URLs reach here, so the 301 always points
-    // at a 200 destination — clean for SEO.
     // ──────────────────────────────────────────────────────────────────
     if (hostname === "www." + CANONICAL_HOST) {
       const target = `https://${CANONICAL_HOST}${pathname}${search}`;
@@ -180,14 +187,11 @@ export default {
     // STEP 4. Build response headers — copy original, layer in our additions.
     const newHeaders = new Headers(response.headers);
 
-    // Apply security headers
     Object.entries(SECURITY_HEADERS).forEach(([k, v]) => newHeaders.set(k, v));
 
-    // Force noindex on workers.dev / pages.dev preview URLs (TS-001)
     if (hostname.endsWith(".workers.dev") || hostname.endsWith(".pages.dev")) {
       newHeaders.set("X-Robots-Tag", "noindex, nofollow");
     }
-    // Apply noindex policy on production for stub / WIP pages (TS-005)
     else if (
       NOINDEX_EXACT.has(pathname) ||
       NOINDEX_PREFIX.some(p => pathname.startsWith(p))
@@ -195,7 +199,7 @@ export default {
       newHeaders.set("X-Robots-Tag", "noindex, follow");
     }
 
-    // STEP 5. If HTML, substitute review placeholders from env vars (CO-002)
+    // STEP 5. If HTML, substitute review placeholders.
     const contentType = response.headers.get("content-type") || "";
     if (contentType.includes("text/html")) {
       const text = await response.text();
