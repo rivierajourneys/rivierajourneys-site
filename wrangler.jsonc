@@ -12,13 +12,21 @@
     "binding": "ASSETS",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page",
-    "run_worker_first": [
-      "/*"
-    ]
+    "run_worker_first": ["/*"]
   },
+  "routes": [
+    {
+      "pattern": "rivierajourneys.fr",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.rivierajourneys.fr",
+      "custom_domain": true
+    }
+  ],
   "vars": {
-    "REVIEWS_COUNT": "10",
+    "REVIEWS_COUNT":  "10",
     "REVIEWS_RATING": "5.0",
-    "REVIEWS_BEST": "5"
+    "REVIEWS_BEST":   "5"
   }
 }
