@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cookie Consent Banner — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Newsreader:wght@400&family=Jost:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E8; --bone:#FDFAF6; --rule:#D4CDBA;
+    --warm:#1C1C1A; --slate:#3D3D38; --stone:#8C8880;
+    --terra:#A86543; --terra-deep:#8E5234;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);
+    min-height:100vh;
+    font-family:'Newsreader',Georgia,serif;
+    padding:0 0 200px;
+  }
+  .preview-frame{
+    max-width:760px;
+    margin:0 auto;
+    padding:64px 32px;
+  }
+  .preview-rubric{
+    font-family:'Jost',sans-serif;
+    font-size:9px;font-weight:500;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--terra);
+    margin-bottom:14px;
+  }
+  .preview-h1{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;font-size:42px;line-height:1.15;
+    color:var(--warm);letter-spacing:-.015em;
+    margin-bottom:24px;
+  }
+  .preview-lede{
+    font-size:17px;line-height:1.7;color:var(--slate);
+    max-width:540px;margin-bottom:48px;
+  }
+  .preview-note{
+    font-size:13px;color:var(--stone);
+    border-top:.5px solid var(--rule);
+    padding-top:24px;line-height:1.7;
+  }
+  .preview-note code{
+    font-family:'SF Mono',Menlo,monospace;
+    font-size:11.5px;
+    background:var(--bone);
+    padding:2px 6px;border:.5px solid var(--rule);
+  }
+  .reset-btn{
+    margin-top:16px;
+    font-family:'Jost',sans-serif;font-size:10.5px;
+    letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+    color:var(--terra);background:transparent;border:none;
+    border-bottom:.5px solid var(--terra);
+    cursor:pointer;padding:0 0 2px 0;
+  }
+  .reset-btn:hover{color:var(--terra-deep);border-bottom-color:var(--terra-deep)}
+
+  /* ─── BANNER STYLES — copied byte-for-byte from cookie-consent.js ─── */
+  #rj-consent{
+    position:fixed;left:24px;right:24px;bottom:24px;z-index:9000;
+    max-width:560px;margin:0 auto;background:#FDFAF6;color:#1C1C1A;
+    border:.5px solid #D4CDBA;
+    box-shadow:0 12px 48px -12px rgba(28,28,26,.18);
+    padding:28px 32px;
+    transform:translateY(140%);
+    transition:transform .55s cubic-bezier(.16,1,.3,1);
+    cursor:auto;
+  }
+  #rj-consent.is-visible{transform:translateY(0)}
+  #rj-consent .rj-c-rubric{
+    font-family:'Jost',sans-serif;
+    font-size:9px;font-weight:500;letter-spacing:.28em;
+    text-transform:uppercase;color:#A86543;margin-bottom:14px;
+  }
+  #rj-consent .rj-c-headline{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;font-size:22px;line-height:1.25;
+    color:#1C1C1A;margin-bottom:10px;letter-spacing:-.01em;
+  }
+  #rj-consent .rj-c-body{
+    font-family:'Newsreader',Georgia,serif;
+    font-weight:400;font-size:14px;line-height:1.65;
+    color:#3D3D38;margin-bottom:20px;
+  }
+  #rj-consent .rj-c-body a{
+    color:#A86543;border-bottom:.5px solid #A86543;
+    padding-bottom:1px;text-decoration:none;
+  }
+  #rj-consent .rj-c-body a:hover{opacity:.7}
+  #rj-consent .rj-c-actions{
+    display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  }
+  #rj-consent .rj-c-btn{
+    font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
+    transition:opacity .3s,background .3s,color .3s;
+  }
+  #rj-consent .rj-c-btn--accept{
+    background:#A86543;color:#FDFAF6;border:none;
+    padding:13px 26px;display:inline-flex;align-items:center;gap:10px;
+  }
+  #rj-consent .rj-c-btn--accept:hover{background:#8E5234}
+  #rj-consent .rj-c-btn--accept svg{
+    width:12px;height:12px;stroke:currentColor;
+    fill:none;stroke-width:1.5;transition:transform .3s;
+  }
+  #rj-consent .rj-c-btn--accept:hover svg{transform:translateX(3px)}
+  #rj-consent .rj-c-btn--decline{
+    background:transparent;border:none;
+    color:#8C8880;border-bottom:.5px solid transparent;
+    padding:0 0 2px 0;
+  }
+  #rj-consent .rj-c-btn--decline:hover{
+    color:#1C1C1A;border-bottom-color:#1C1C1A;
+  }
+  @media (max-width:560px){
+    #rj-consent{left:16px;right:16px;bottom:16px;padding:24px 22px}
+    #rj-consent .rj-c-headline{font-size:19px}
+    #rj-consent .rj-c-body{font-size:13px}
+    #rj-consent .rj-c-actions{gap:18px}
+    #rj-consent .rj-c-btn--accept{padding:12px 22px;font-size:10px}
+  }
+</style>
+</head>
+<body>
+  <div class="preview-frame">
+    <div class="preview-rubric">Preview · Cookie consent strip</div>
+    <h1 class="preview-h1">This is what visitors will see on their first visit.</h1>
+    <p class="preview-lede">A demonstration of the consent strip in its real fonts and colours, against the page background. Click either button to dismiss; click "Show banner again" to bring it back.</p>
+    <div class="preview-note">
+      Tested in Chrome, Safari, Firefox. Bottom-fixed strip, max-width 560px, animates up from below on first visit only. Stored decision: <code>localStorage.rj_consent_v1</code>, expires after 180 days. Clear it via <code>rjResetConsent()</code> in console — or click below to re-trigger here.
+      <br><button class="reset-btn" onclick="reShow()">↺ Show banner again</button>
+    </div>
+  </div>
+
+  <aside id="rj-consent" role="dialog" aria-label="Privacy preferences">
+    <div class="rj-c-rubric">A note on measurement</div>
+    <div class="rj-c-headline">We measure which essays are read. Nothing more.</div>
+    <div class="rj-c-body">Google Analytics tells us which pages travellers actually finish — so we know what to write next. No advertising, no profiling, no resale. Read the <a href="#">full notice</a>.</div>
+    <div class="rj-c-actions">
+      <button type="button" class="rj-c-btn rj-c-btn--accept">
+        <span>Allow measurement</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button type="button" class="rj-c-btn rj-c-btn--decline">Decline</button>
+    </div>
+  </aside>
+
+<script>
+  var el = document.getElementById('rj-consent');
+  function show(){
+    el.style.display = 'block';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ el.classList.add('is-visible'); });
+    });
+  }
+  function hide(){
+    el.classList.remove('is-visible');
+    setTimeout(function(){ el.style.display='none'; }, 600);
+  }
+  function reShow(){ show(); }
+  document.querySelector('.rj-c-btn--accept').addEventListener('click', hide);
+  document.querySelector('.rj-c-btn--decline').addEventListener('click', hide);
+  // Auto-show on load
+  show();
+</script>
+</body>
+</html>
