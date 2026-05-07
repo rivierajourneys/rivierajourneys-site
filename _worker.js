@@ -6,7 +6,7 @@
  *
  * Closes from audit register:
  *   TS-001  → noindex header on *.workers.dev preview URLs
- *   TS-003  → 301 redirect /path/ → /path  (via wrangler html_handling)
+ *   TS-003  → 301 redirect /path/ → /path  (now explicit in Worker, not via wrangler)
  *   SEC-001 → standard security headers on every response
  *   CO-002  → review count / rating substitution from env vars
  *   GSC-410 → 410 Gone responses for legacy WordPress URLs
@@ -17,6 +17,14 @@
  *   GSC-FEED-SUFFIX → WordPress puts /feed/ at the END of paths
  *                     (e.g. /some-post/feed/). prefix-based matching missed
  *                     these. Added GONE_SUFFIX (endsWith) to cover them.
+ *   CONTENT-001 (2026-05-07) → /tours/boat/lerins-islands and /tours/boat/monaco
+ *                              were 200 OK indexable because NOINDEX_EXACT
+ *                              had wrong slugs (iles-de-lerins, monaco-by-sea).
+ *                              Both old and new slugs now in NOINDEX_EXACT.
+ *   CONTENT-002 (2026-05-07) → wrangler html_handling="drop-trailing-slash"
+ *                              returns HTTP 307 by default — Google treated
+ *                              /path/ as canonical instead of /path. Now
+ *                              handled explicitly with 301 in STEP 2 below.
  */
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -108,8 +116,13 @@ const NOINDEX_EXACT = new Set([
   "/experiences/off-season",
 
   // ── Year 2 — boat tours ──
+  // CONTENT-001 (2026-05-07): file slugs are /lerins-islands and /monaco
+  // (not /iles-de-lerins or /monaco-by-sea). The old slugs are kept as
+  // safety net in case files are renamed later.
+  "/tours/boat/lerins-islands",
   "/tours/boat/iles-de-lerins",
   "/tours/boat/saint-tropez",
+  "/tours/boat/monaco",
   "/tours/boat/monaco-by-sea",
 ]);
 
@@ -165,7 +178,27 @@ export default {
     }
 
     // ──────────────────────────────────────────────────────────────────
-    // STEP 2. Canonicalization: www.rivierajourneys.fr → apex.
+    // STEP 2. Trailing-slash drop — explicit 301 (not 307).
+    // CONTENT-002 (2026-05-07): wrangler html_handling="drop-trailing-slash"
+    // returns HTTP 307 by default. Google treats 307 as "keep original URL
+    // canonical" — so /path/ stayed in the index as canonical instead of
+    // /path. We override: handle the redirect here ourselves with 301
+    // BEFORE env.ASSETS.fetch() is reached. Root path "/" is preserved.
+    // ──────────────────────────────────────────────────────────────────
+    if (pathname.length > 1 && pathname.endsWith("/")) {
+      const target = `https://${CANONICAL_HOST}${pathname.slice(0, -1)}${search}`;
+      return new Response(null, {
+        status: 301,
+        headers: {
+          "Location": target,
+          "Cache-Control": "public, max-age=86400",
+          ...SECURITY_HEADERS,
+        },
+      });
+    }
+
+    // ──────────────────────────────────────────────────────────────────
+    // STEP 3. Canonicalization: www.rivierajourneys.fr → apex.
     // ──────────────────────────────────────────────────────────────────
     if (hostname === "www." + CANONICAL_HOST) {
       const target = `https://${CANONICAL_HOST}${pathname}${search}`;
@@ -180,11 +213,11 @@ export default {
     }
 
     // ──────────────────────────────────────────────────────────────────
-    // STEP 3. Fetch the static asset.
+    // STEP 4. Fetch the static asset.
     // ──────────────────────────────────────────────────────────────────
     const response = await env.ASSETS.fetch(request);
 
-    // STEP 4. Build response headers — copy original, layer in our additions.
+    // STEP 5. Build response headers — copy original, layer in our additions.
     const newHeaders = new Headers(response.headers);
 
     Object.entries(SECURITY_HEADERS).forEach(([k, v]) => newHeaders.set(k, v));
@@ -199,7 +232,7 @@ export default {
       newHeaders.set("X-Robots-Tag", "noindex, follow");
     }
 
-    // STEP 5. If HTML, substitute review placeholders.
+    // STEP 6. If HTML, substitute review placeholders.
     const contentType = response.headers.get("content-type") || "";
     if (contentType.includes("text/html")) {
       const text = await response.text();
@@ -215,7 +248,7 @@ export default {
       });
     }
 
-    // STEP 6. Non-HTML: return as-is with security headers
+    // STEP 7. Non-HTML: return as-is with security headers
     return new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
