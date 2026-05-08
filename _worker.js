@@ -6,7 +6,7 @@
  *
  * Closes from audit register:
  *   TS-001  → noindex header on *.workers.dev preview URLs
- *   TS-003  → 301 redirect /path/ → /path  (now explicit in Worker, not via wrangler)
+ *   TS-003  → 301 redirect /path/ → /path  (now explicit in Worker, see STEP 2)
  *   SEC-001 → standard security headers on every response
  *   CO-002  → review count / rating substitution from env vars
  *   GSC-410 → 410 Gone responses for legacy WordPress URLs
@@ -17,14 +17,35 @@
  *   GSC-FEED-SUFFIX → WordPress puts /feed/ at the END of paths
  *                     (e.g. /some-post/feed/). prefix-based matching missed
  *                     these. Added GONE_SUFFIX (endsWith) to cover them.
- *   CONTENT-001 (2026-05-07) → /tours/boat/lerins-islands and /tours/boat/monaco
- *                              were 200 OK indexable because NOINDEX_EXACT
- *                              had wrong slugs (iles-de-lerins, monaco-by-sea).
- *                              Both old and new slugs now in NOINDEX_EXACT.
- *   CONTENT-002 (2026-05-07) → wrangler html_handling="drop-trailing-slash"
- *                              returns HTTP 307 by default — Google treated
- *                              /path/ as canonical instead of /path. Now
- *                              handled explicitly with 301 in STEP 2 below.
+ *
+ *   v2 PATCH (2026-05-07) — QA-reviewed before deploy:
+ *
+ *   CONTENT-001 → /tours/boat/iles-de-lerins and /tours/boat/monaco-by-sea
+ *                 are 404 orphans (file slugs differ). Moved from NOINDEX_EXACT
+ *                 to GONE_EXACT for direct 410 (permanent-gone signal).
+ *                 The actual file slugs /tours/boat/lerins-islands and
+ *                 /tours/boat/monaco are added to NOINDEX_EXACT.
+ *   CONTENT-002 → wrangler html_handling="drop-trailing-slash" returned
+ *                 HTTP 307 — Google treated /path/ as canonical. Now explicit
+ *                 301 in STEP 2 below.
+ *   REG-001 → v1-of-this-patch introduced 301-then-410 chain for /home/, /tour/
+ *             etc. Fixed: STEP 1 now matches GONE_EXACT against both raw and
+ *             slash-stripped pathname → /home/ returns 410 directly.
+ *   REG-002 → v1 only stripped one trailing slash. Fixed: STEP 2 now uses
+ *             /\/+$/ regex to strip ALL trailing slashes → /path// → /path
+ *             in single 301, no chain.
+ *   NEW-GONE → Added /excursion/, /e-floating-buttons/, /search/ to
+ *              GONE_PREFIX (found in GSC NotFound drilldown — old WP plugin
+ *              and excursion permalinks).
+ *
+ *   KNOWN LIMITATIONS (intentional, not fixes):
+ *   - Query strings like /?feed=rss2 are NOT in GONE — pathname doesn't
+ *     include search. Existing GONE_PREFIX entries /?p= and /?feed= would
+ *     never match. Separate ticket if needed.
+ *   - Editorial 404s (/editorial/menton, /editorial/grasse etc.) left as
+ *     404 (not 410) since these slugs MIGHT eventually become real pages.
+ *     410 would signal "permanently gone" which is wrong for a page that
+ *     could be created in the future.
  */
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -52,6 +73,9 @@ const GONE_EXACT = new Set([
   "/tours/nice/saint-tropez",
   // Tours / routes intentionally retired
   "/tours/cannes/menton-sanremo-dolceacqua",
+  // Boat tour orphan slugs — file slugs differ (see CONTENT-001 in NOINDEX_EXACT)
+  "/tours/boat/iles-de-lerins",
+  "/tours/boat/monaco-by-sea",
 ]);
 
 // Path STARTS with one of these → 410
@@ -67,6 +91,10 @@ const GONE_PREFIX = [
   "/feed/",
   "/comments/",
   "/trackback/",
+  // v2 PATCH (2026-05-07) — additions from GSC NotFound drilldown:
+  "/excursion/",            // old WP excursion permalinks (6 URLs in 404 list)
+  "/e-floating-buttons/",   // WP plugin paths (3 URLs)
+  "/search/",               // WP search results (e.g. /search/{term}/feed/rss2/)
 ];
 
 // Path ENDS with one of these → 410.
@@ -117,13 +145,10 @@ const NOINDEX_EXACT = new Set([
 
   // ── Year 2 — boat tours ──
   // CONTENT-001 (2026-05-07): file slugs are /lerins-islands and /monaco
-  // (not /iles-de-lerins or /monaco-by-sea). The old slugs are kept as
-  // safety net in case files are renamed later.
+  // (not /iles-de-lerins or /monaco-by-sea — those are now in GONE_EXACT).
   "/tours/boat/lerins-islands",
-  "/tours/boat/iles-de-lerins",
   "/tours/boat/saint-tropez",
   "/tours/boat/monaco",
-  "/tours/boat/monaco-by-sea",
 ]);
 
 const NOINDEX_PREFIX = [
@@ -158,11 +183,20 @@ export default {
 
     // ──────────────────────────────────────────────────────────────────
     // STEP 1. 410 Gone — legacy URLs.
-    // Done BEFORE the www→apex redirect so legacy URLs on www return a
-    // direct 410, not a 301-to-410 chain.
+    // Done BEFORE any redirect so legacy URLs (with or without trailing slash,
+    // on www or apex) return a direct 410, NOT a 301-then-410 chain.
+    //
+    // REG-001 fix (v2): match GONE_EXACT against BOTH the raw pathname and
+    // a slash-stripped variant — so /home/ matches the existing /home entry
+    // and returns 410 directly.
     // ──────────────────────────────────────────────────────────────────
+    const pathStripped = (pathname.length > 1 && pathname.endsWith("/"))
+      ? pathname.replace(/\/+$/, "") || "/"
+      : pathname;
+
     if (
       GONE_EXACT.has(pathname) ||
+      GONE_EXACT.has(pathStripped) ||
       GONE_PREFIX.some(p => pathname.startsWith(p)) ||
       GONE_SUFFIX.some(s => pathname.endsWith(s))
     ) {
@@ -179,14 +213,23 @@ export default {
 
     // ──────────────────────────────────────────────────────────────────
     // STEP 2. Trailing-slash drop — explicit 301 (not 307).
-    // CONTENT-002 (2026-05-07): wrangler html_handling="drop-trailing-slash"
+    // CONTENT-002 fix (v2): wrangler html_handling="drop-trailing-slash"
     // returns HTTP 307 by default. Google treats 307 as "keep original URL
-    // canonical" — so /path/ stayed in the index as canonical instead of
-    // /path. We override: handle the redirect here ourselves with 301
-    // BEFORE env.ASSETS.fetch() is reached. Root path "/" is preserved.
+    // canonical" — so /path/ stayed in the index instead of /path.
+    // We override: explicit 301 here, BEFORE Static Assets is reached.
+    //
+    // REG-002 fix (v2): /\/+$/ regex strips ALL trailing slashes in one
+    // pass — /path// → /path in single 301, no chain.
+    //
+    // Bonus: target uses CANONICAL_HOST so this single redirect ALSO does
+    // www → apex canonicalization for any path with a trailing slash.
+    // (Ordinary www → apex for no-slash paths is still STEP 3.)
+    //
+    // Root path "/" is preserved (length === 1).
     // ──────────────────────────────────────────────────────────────────
     if (pathname.length > 1 && pathname.endsWith("/")) {
-      const target = `https://${CANONICAL_HOST}${pathname.slice(0, -1)}${search}`;
+      const cleanPath = pathname.replace(/\/+$/, "") || "/";
+      const target = `https://${CANONICAL_HOST}${cleanPath}${search}`;
       return new Response(null, {
         status: 301,
         headers: {
@@ -199,6 +242,7 @@ export default {
 
     // ──────────────────────────────────────────────────────────────────
     // STEP 3. Canonicalization: www.rivierajourneys.fr → apex.
+    // (Only fires for no-slash paths; slash paths handled in STEP 2.)
     // ──────────────────────────────────────────────────────────────────
     if (hostname === "www." + CANONICAL_HOST) {
       const target = `https://${CANONICAL_HOST}${pathname}${search}`;
