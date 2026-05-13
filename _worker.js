@@ -47,6 +47,12 @@
  *                index.html is preserved if KV is empty/stale (>14 days).
  *                See injectCruiseSchedule() at bottom of file.
  *
+ *   v4 PATCH (2026-05-13) — added Cannes:
+ *
+ *   CRUISE-002 → /cannes-cruise-schedule joins /villefranche-cruise-schedule
+ *                using the same injector. KV key for Cannes is "cannes".
+ *                Cron worker now refreshes both ports in parallel.
+ *
  *   KNOWN LIMITATIONS (intentional, not fixes):
  *   - Query strings like /?feed=rss2 are NOT in GONE — pathname doesn't
  *     include search. Existing GONE_PREFIX entries /?p= and /?feed= would
@@ -195,7 +201,7 @@ const CANONICAL_HOST = "rivierajourneys.fr";
 // ──────────────────────────────────────────────────────────────────────────
 const CRUISE_SCHEDULE_PATHS = new Set([
   "/villefranche-cruise-schedule",
-  // Future: "/cannes-cruise-schedule" — when its KV key exists.
+  "/cannes-cruise-schedule",
 ]);
 const CRUISE_SCHEDULE_STALE_DAYS = 14;
 
@@ -432,9 +438,10 @@ const MONTH_LABELS = [
 ];
 
 async function injectCruiseSchedule(html, pathname, env) {
-  // Map pathname → KV key. Only one supported for now; pattern lets us
-  // add Cannes etc. later without touching this function.
-  const key = pathname === "/villefranche-cruise-schedule" ? "villefranche" : null;
+  // Map pathname → KV key.
+  let key = null;
+  if (pathname === "/villefranche-cruise-schedule") key = "villefranche";
+  else if (pathname === "/cannes-cruise-schedule") key = "cannes";
   if (!key) return html;
 
   let payload = null;
