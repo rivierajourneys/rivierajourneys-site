@@ -6,10 +6,10 @@
 <!-- Analytics + Cookie Consent (Consent Mode v2) -->
 <script src="/cookie-consent.js" defer></script>
 <title>Cannes Cruise Schedule 2026 — Every Ship | Riviera Journeys</title>
-<meta name="description" content="Complete 2026 cruise schedule for Cannes. 68 port calls, 24 ships. Book a private shore excursion from Cannes.">
+<meta name="description" content="Live cruise schedule for Cannes — every ship, every date, with arrival and departure times. Book a private shore excursion direct.">
 <link rel="canonical" href="https://rivierajourneys.fr/cannes-cruise-schedule">
 <meta property="og:title" content="Cannes Cruise Schedule 2026 — Every Ship | Riviera Journeys">
-<meta property="og:description" content="Complete 2026 cruise schedule for Cannes. 68 port calls, 24 ships. Book a private shore excursion from Cannes.">
+<meta property="og:description" content="Live cruise schedule for Cannes — every ship, every date, with arrival and departure times. Book a private shore excursion direct.">
 <meta property="og:url" content="https://rivierajourneys.fr/cannes-cruise-schedule">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Riviera Journeys">
@@ -22,12 +22,12 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is Cannes a tender port?","acceptedAnswer":{"@type":"Answer","text":"Yes. The old port is too small for large ships. They anchor in the Bay of Cannes and tender passengers ashore to the old port. Tenders dock near Quai Max Laubeuf (currently under renovation, completion expected 2027)."}},
-{"@type":"Question","name":"Where do you meet us?","acceptedAnswer":{"@type":"Answer","text":"At the tender landing near the old port, on boulevard Jean Hibert. We are there with a name board before your tender docks. The car is within a minute."}},
-{"@type":"Question","name":"How long do we have ashore?","acceptedAnswer":{"@type":"Answer","text":"Most Cannes calls give 8 to 10 hours. Tell us your ship name and departure time — we plan an itinerary that gets you back before the last tender."}},
-{"@type":"Question","name":"What can we see from Cannes?","acceptedAnswer":{"@type":"Answer","text":"Antibes and Saint-Paul-de-Vence are 20 minutes east. Nice is 30 minutes. Eze and Monaco are 45 minutes. Grasse is 30 minutes into the hills. Provence wine country about an hour."}},
-{"@type":"Question","name":"How busy is Cannes as a cruise port?","acceptedAnswer":{"@type":"Answer","text":"About 68 arrivals in 2026. MSC Grandiosa calls weekly in summer. Busiest months: May, July, August."}},
-{"@type":"Question","name":"Is there a limit on ship size?","acceptedAnswer":{"@type":"Answer","text":"Since January 2026, Cannes restricts cruise ships carrying more than 1,000 passengers from the old port. Larger ships anchor in the bay and tender ashore."}}
+{"@type":"Question","name":"Is Cannes a tender port?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cannes is too small to dock large cruise ships, so vessels anchor in the bay and tender boats bring passengers ashore to Quai Laubeuf in the Old Port. The tender ride takes 10 to 15 minutes. We meet you at the tender landing with a name board."}},
+{"@type":"Question","name":"Where do you meet us?","acceptedAnswer":{"@type":"Answer","text":"At Quai Laubeuf \u2014 the tender landing pier in Cannes Old Port, at the western end of the Croisette. We are there before your tender docks. The car is a minute&#8217;s walk from the pier."}},
+{"@type":"Question","name":"How long do we have ashore?","acceptedAnswer":{"@type":"Answer","text":"It depends on your ship. Most Cannes calls give 7 to 10 hours ashore. Tell us your ship name and we confirm the shore window and recommend an itinerary."}},
+{"@type":"Question","name":"What can we see from Cannes?","acceptedAnswer":{"@type":"Answer","text":"Antibes is 15 minutes east. Saint-Paul-de-Vence and Grasse are 30 minutes north. Nice is 30 minutes east. Monaco and Eze are 50 minutes east. Saint-Tropez is around an hour and a quarter west when traffic allows."}},
+{"@type":"Question","name":"Can the tender be delayed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tender delays at Cannes happen, especially during the Film Festival or when MSC Grandiosa calls. We wait at no extra charge. If your shore time is reduced, we shorten the itinerary."}},
+{"@type":"Question","name":"How often is the schedule updated?","acceptedAnswer":{"@type":"Answer","text":"Once a week. The schedule is pulled automatically from publicly available cruise line itineraries every Sunday. If your ship is not listed, send us the name on WhatsApp and we will check directly."}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,11 +108,12 @@ a{color:inherit;text-decoration:none;cursor:none}img{max-width:100%;height:auto;
 .td-date{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--warm);white-space:nowrap;width:80px}
 .td-ship{font-family:var(--body);font-size:15px;font-weight:500;color:var(--slate)}
 .td-line{font-family:var(--body);font-size:14px;font-weight:400;color:var(--stone)}
-.td-pax{text-align:right;font-family:var(--sans);font-size:13px;color:var(--stone)}
+.td-time{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--stone);font-variant-numeric:tabular-nums;letter-spacing:.04em;width:64px;white-space:nowrap}
+.td-time-r{text-align:right}
 
 .schedule-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-top:16px;transition:gap .3s}
 .schedule-link:hover{gap:12px}
-@media(max-width:768px){.month-row td{padding:8px 10px;font-size:13px}.td-date{font-size:12px}.td-ship{font-size:14px}.td-line{font-size:13px}}
+@media(max-width:768px){.month-row td{padding:8px 10px;font-size:13px}.td-date{font-size:12px}.td-ship{font-size:14px}.td-line{font-size:13px}.td-time{font-size:11px;width:auto}.schedule-table .td-line{display:none}.schedule-table thead th.col-line{display:none}}
 
 /* FAQ */
 .s-faq{margin-top:48px}.faq-rule{height:.5px;background:var(--parch)}.faq-item{border-bottom:.5px solid var(--parch)}.faq-q{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 0;cursor:pointer;gap:20px;user-select:none}.faq-qt{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--warm);line-height:1.3}.faq-ico{width:24px;height:24px;flex-shrink:0;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--slow),border-color .3s;margin-top:2px}.faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--sand)}.faq-ico svg{width:12px;height:12px;stroke:var(--stone);fill:none}.faq-item.open .faq-ico svg{stroke:var(--sand)}.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--slow)}.faq-item.open .faq-a{max-height:400px}.faq-ai{padding:4px 0 18px;font-family:var(--body);font-size:15.5px;font-weight:500;color:var(--slate);line-height:1.85}
@@ -178,7 +179,7 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 </div>
 
 <section class="hero">
-  <div class="hero-photo"><img src="/photos/cannes-old-port-yachts-le-suquet-sunrise-shore-excursions-from-cannes.avif" alt="Cannes cruise port" loading="eager" fetchpriority="high"></div>
+  <div class="hero-photo"><img src="/photos/cannes-old-port-vieux-port-cruise-tender-shore-excursions.avif" alt="Cannes Old Port and the tender landing at Quai Laubeuf" loading="eager" fetchpriority="high"></div>
   <div class="hero-v"></div>
   <div class="hero-content">
     <div class="hero-kicker">Cannes &middot; 2026</div>
@@ -194,121 +195,47 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
   <div class="cols">
     <article class="content">
       <div class="section-lbl reveal" >Schedule</div>
-      <p class="intro reveal">Cannes is a tender port on the western French Riviera. Ships anchor in the Bay of Cannes and tender passengers ashore to the old port, near the Palais des Festivals. From Cannes, Antibes and Saint-Paul-de-Vence are twenty minutes east. Nice is thirty minutes by motorway. Eze and Monaco are forty-five minutes along the coast. Grasse, the perfume capital, is thirty minutes into the hills above. In 2026, 68 ships are scheduled to call at Cannes, from SeaDream yachts with 112 guests to MSC Grandiosa with nearly six thousand. This is the complete schedule.</p>
+      <p class="intro reveal">Cannes is a tender port. Cruise ships anchor in the bay of La Croisette and tender boats bring passengers ashore to Quai Laubeuf, at the western end of the Old Port. From the pier you can walk to the Palais des Festivals in two minutes, or step into our car for the rest of the Riviera. Antibes is fifteen minutes east. Saint-Paul-de-Vence and Grasse are thirty minutes north. Nice is thirty minutes east. Monaco and Eze are fifty minutes east. Saint-Tropez is around an hour and a quarter west. Below is the rolling schedule of every scheduled call &mdash; from luxury yachts to the largest ships permitted under the 1,000-passenger landing cap introduced in January 2026. Times are local, subject to change, and refreshed weekly from cruise line itineraries. Last refreshed <span data-last-updated>13 May 2026</span>.</p>
 
-      <h2 class="section-h reveal">2026 arrivals.<br><em>Every ship, every date.</em></h2>
+      <h2 class="section-h reveal">Upcoming arrivals.<br><em>Every ship, every date.</em></h2>
       <div class="schedule-wrap">
         <table class="schedule-table">
-          <thead><tr><th>Date</th><th>Ship</th><th>Line</th><th>Pax</th></tr></thead>
-          <tbody>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">April</span> <span class="mh-count">3 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">19 Apr</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">23 Apr</td><td class="td-ship">Norwegian Gem</td><td class="td-line">Norwegian</td><td class="td-pax">2,873</td></tr>
-        <tr class="month-row"><td class="td-date">23 Apr</td><td class="td-ship">MSC Divina</td><td class="td-line">MSC</td><td class="td-pax">4,202</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">May</span> <span class="mh-count">16 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">1 May</td><td class="td-ship">Wind Surf</td><td class="td-line">Windstar</td><td class="td-pax">404</td></tr>
-        <tr class="month-row"><td class="td-date">1 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">3 May</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">8 May</td><td class="td-ship">Oceania Sirena</td><td class="td-line">Oceania</td><td class="td-pax">803</td></tr>
-        <tr class="month-row"><td class="td-date">10 May</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">12 May</td><td class="td-ship">Norwegian Gem</td><td class="td-line">Norwegian</td><td class="td-pax">2,873</td></tr>
-        <tr class="month-row"><td class="td-date">15 May</td><td class="td-ship">SeaDream I</td><td class="td-line">SeaDream</td><td class="td-pax">112</td></tr>
-        <tr class="month-row"><td class="td-date">17 May</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">17 May</td><td class="td-ship">ms Europa</td><td class="td-line">Hapag-Lloyd</td><td class="td-pax">408</td></tr>
-        <tr class="month-row"><td class="td-date">24 May</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">25 May</td><td class="td-ship">Azura</td><td class="td-line">P&O</td><td class="td-pax">3,737</td></tr>
-        <tr class="month-row"><td class="td-date">28 May</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">29 May</td><td class="td-ship">SeaDream I</td><td class="td-line">SeaDream</td><td class="td-pax">112</td></tr>
-        <tr class="month-row"><td class="td-date">30 May</td><td class="td-ship">Mein Schiff 1</td><td class="td-line">TUI</td><td class="td-pax">2,894</td></tr>
-        <tr class="month-row"><td class="td-date">30 May</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">31 May</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">June</span> <span class="mh-count">9 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">4 Jun</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">14 Jun</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">18 Jun</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">21 Jun</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">24 Jun</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">24 Jun</td><td class="td-ship">AIDAstella</td><td class="td-line">AIDA</td><td class="td-pax">2,700</td></tr>
-        <tr class="month-row"><td class="td-date">25 Jun</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">28 Jun</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">July</span> <span class="mh-count">10 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">4 Jul</td><td class="td-ship">Wind Surf</td><td class="td-line">Windstar</td><td class="td-pax">404</td></tr>
-        <tr class="month-row"><td class="td-date">5 Jul</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">8 Jul</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">11 Jul</td><td class="td-ship">Oceania Nautica</td><td class="td-line">Oceania</td><td class="td-pax">803</td></tr>
-        <tr class="month-row"><td class="td-date">12 Jul</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">17 Jul</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">19 Jul</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">22 Jul</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">26 Jul</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">27 Jul</td><td class="td-ship">Scarlet Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">August</span> <span class="mh-count">15 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">2 Aug</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">5 Aug</td><td class="td-ship">AIDAstella</td><td class="td-line">AIDA</td><td class="td-pax">2,700</td></tr>
-        <tr class="month-row"><td class="td-date">6 Aug</td><td class="td-ship">Scarlet Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">6 Aug</td><td class="td-ship">ms Europa 2</td><td class="td-line">Hapag-Lloyd</td><td class="td-pax">516</td></tr>
-        <tr class="month-row"><td class="td-date">9 Aug</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">10 Aug</td><td class="td-ship">Azura</td><td class="td-line">P&O</td><td class="td-pax">3,737</td></tr>
-        <tr class="month-row"><td class="td-date">15 Aug</td><td class="td-ship">Scarlet Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">16 Aug</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">17 Aug</td><td class="td-ship">Seven Seas Splendor</td><td class="td-line">Regent</td><td class="td-pax">829</td></tr>
-        <tr class="month-row"><td class="td-date">17 Aug</td><td class="td-ship">AIDAstella</td><td class="td-line">AIDA</td><td class="td-pax">2,700</td></tr>
-        <tr class="month-row"><td class="td-date">19 Aug</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">23 Aug</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">28 Aug</td><td class="td-ship">Scarlet Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">28 Aug</td><td class="td-ship">Wind Surf</td><td class="td-line">Windstar</td><td class="td-pax">404</td></tr>
-        <tr class="month-row"><td class="td-date">30 Aug</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">September</span> <span class="mh-count">9 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">6 Sep</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">10 Sep</td><td class="td-ship">Brilliance Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-pax">2,580</td></tr>
-        <tr class="month-row"><td class="td-date">13 Sep</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">15 Sep</td><td class="td-ship">Star Legend</td><td class="td-line">Windstar</td><td class="td-pax">312</td></tr>
-        <tr class="month-row"><td class="td-date">16 Sep</td><td class="td-ship">AIDAstella</td><td class="td-line">AIDA</td><td class="td-pax">2,700</td></tr>
-        <tr class="month-row"><td class="td-date">18 Sep</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">20 Sep</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">23 Sep</td><td class="td-ship">Mein Schiff 6</td><td class="td-line">TUI</td><td class="td-pax">2,700</td></tr>
-        <tr class="month-row"><td class="td-date">27 Sep</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">October</span> <span class="mh-count">6 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">2 Oct</td><td class="td-ship">SeaDream II</td><td class="td-line">SeaDream</td><td class="td-pax">112</td></tr>
-        <tr class="month-row"><td class="td-date">4 Oct</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">11 Oct</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">18 Oct</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">25 Oct</td><td class="td-ship">MSC Grandiosa</td><td class="td-line">MSC</td><td class="td-pax">5,772</td></tr>
-        <tr class="month-row"><td class="td-date">31 Oct</td><td class="td-ship">AIDAmar</td><td class="td-line">AIDA</td><td class="td-pax">2,686</td></tr>
+          <thead><tr><th>Date</th><th>Ship</th><th class="col-line">Line</th><th>Arrive</th><th class="td-time-r">Depart</th></tr></thead>
+          <tbody data-cruise-schedule>
+        <tr class="month-row"><td colspan="5" style="padding:24px;text-align:center;color:var(--stone);font-style:italic">Loading schedule&hellip;</td></tr>
           </tbody>
         </table>
-        <a href="/villefranche-cruise-schedule" class="schedule-link">Villefranche cruise schedule 2026 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/cannes-cruise-schedule" class="schedule-link">Cannes cruise schedule 2026 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="s-faq reveal">
         <h2 class="section-h">Port guide.<br><em>What you need to know.</em></h2>
         <div class="faq-rule"></div>
-        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">Is Cannes a tender port?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Yes. The old port is too small for large ships. They anchor in the Bay of Cannes and tender passengers ashore to the old port. Tenders dock near Quai Max Laubeuf (currently under renovation, completion expected 2027).</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">Where do you meet us?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">At the tender landing near the old port, on boulevard Jean Hibert. We are there with a name board before your tender docks. The car is within a minute.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">How long do we have ashore?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Most Cannes calls give 8 to 10 hours. Tell us your ship name and departure time — we plan an itinerary that gets you back before the last tender.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">What can we see from Cannes?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Antibes and Saint-Paul-de-Vence are 20 minutes east. Nice is 30 minutes. Eze and Monaco are 45 minutes. Grasse is 30 minutes into the hills. Provence wine country about an hour.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">How busy is Cannes as a cruise port?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">About 68 arrivals in 2026. MSC Grandiosa calls weekly in summer. Busiest months: May, July, August.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">Is there a limit on ship size?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Since January 2026, Cannes restricts cruise ships carrying more than 1,000 passengers from the old port. Larger ships anchor in the bay and tender ashore.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">Is Cannes a tender port?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Yes. Cannes is too small to dock large cruise ships, so vessels anchor in the bay and tender boats bring passengers ashore to Quai Laubeuf in the Old Port. The tender ride takes 10 to 15 minutes. We meet you at the tender landing with a name board.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">Where do you meet us?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">At Quai Laubeuf &mdash; the tender landing pier in Cannes Old Port, at the western end of the Croisette. We are there before your tender docks. The car is a minute&#8217;s walk from the pier.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">How long do we have ashore?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">It depends on your ship. Most Cannes calls give 7 to 10 hours ashore. Tell us your ship name and we confirm the shore window and recommend an itinerary.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">What can we see from Cannes?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Antibes is 15 minutes east. Saint-Paul-de-Vence and Grasse are 30 minutes north. Nice is 30 minutes east. Monaco and Eze are 50 minutes east. Saint-Tropez is around an hour and a quarter west when traffic allows.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">Can the tender be delayed?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Yes. Tender delays at Cannes happen, especially during the Film Festival or when MSC Grandiosa calls. We wait at no extra charge. If your shore time is reduced, we shorten the itinerary.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-qt">How often is the schedule updated?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div><div class="faq-a"><p class="faq-ai">Once a week. The schedule is pulled automatically from publicly available cruise line itineraries every Sunday. If your ship is not listed, send us the name on WhatsApp and we will check directly.</p></div></div>
       </div>
 
       <div class="s-related reveal">
         <h2 class="section-h" style="margin-bottom:20px">Shore excursions from Cannes</h2>
         <div class="related-grid">
-          <a href="/shore-excursions/cannes/nice-eze-monaco" class="related-card"><div class="related-card-photo"><img src="/photos/monaco-palais-princier-port-hercule-private-tour-cannes-hero.avif" alt="Nice · Eze · Monaco" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Nice · Eze · Monaco</div><div class="related-detail">from 5.5 hrs · €800</div></div></a>
-          <a href="/shore-excursions/cannes/cannes-antibes-stpaul" class="related-card"><div class="related-card-photo"><img src="/photos/saint-paul-de-vence-medieval-village-ramparts-golden-hour-shore-excursion-cannes.avif" alt="Antibes · Saint-Paul" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Antibes · Saint-Paul</div><div class="related-detail">from 5 hrs · €800</div></div></a>
-          <a href="/shore-excursions/cannes/grasse-gourdon" class="related-card"><div class="related-card-photo"><img src="/photos/grasse-old-town-pink-umbrellas-perfume-capital-shore-excursion-cannes-card.avif" alt="Grasse · Gourdon · Tourrettes" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Grasse · Gourdon · Tourrettes</div><div class="related-detail">from 4.5 hrs · €800</div></div></a>
-          <a href="/shore-excursions/cannes/provence-wine-tour" class="related-card"><div class="related-card-photo"><img src="/photos/chateau-desclans-provence-rose-wine-garrus-estate-shore-excursion-cannes.avif" alt="Château d'Esclans — Provence wine tour from Cannes" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Provence Wine Tour</div><div class="related-detail">from 6 hrs · €800</div></div></a>
+          <a href="/shore-excursions/cannes/nice-eze-monaco" class="related-card"><div class="related-card-photo"><img src="/photos/monaco-monte-carlo-casino-place-du-casino-shore-excursion-cannes.avif" alt="Nice · Eze · Monaco" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Nice · Eze · Monaco</div><div class="related-detail">from 7 hrs · €800</div></div></a>
+          <a href="/shore-excursions/cannes/saint-paul-grasse" class="related-card"><div class="related-card-photo"><img src="/photos/saint-paul-de-vence-medieval-village-ramparts-golden-hour-shore-excursion-cannes.avif" alt="Saint-Paul-de-Vence · Grasse" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Saint-Paul · Grasse</div><div class="related-detail">from 5 hrs · €800</div></div></a>
+          <a href="/shore-excursions/cannes/grasse-gourdon-tourrettes" class="related-card"><div class="related-card-photo"><img src="/photos/grasse-old-town-pink-umbrellas-perfume-capital-shore-excursion-cannes-card.avif" alt="Grasse · Gourdon · Tourrettes" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Grasse · Gourdon · Tourrettes</div><div class="related-detail">from 5 hrs · €800</div></div></a>
+          <a href="/shore-excursions/cannes/saint-tropez" class="related-card"><div class="related-card-photo"><img src="/photos/saint-tropez-old-port-fishing-boats-pastel-facades-shore-excursion-cannes.avif" alt="Saint-Tropez old port — shore excursion from Cannes" loading="lazy"></div><div class="related-card-body"><div class="related-lbl">Shore Excursion · Cannes</div><div class="related-name">Saint-Tropez</div><div class="related-detail">from 7 hrs · €950</div></div></a>
         </div>
       </div>
 
       <div class="s-roadbook reveal">
         <h2 class="section-h" style="margin-bottom:24px">From the Roadbook</h2>
         <div class="roadbook-grid">
-          <a href="/editorial/cannes-cruise-port-guide" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Cannes Cruise Port: A Local&#8217;s Guide</div><div class="rb-excerpt">Tender to old port, Quai Laubeuf renovation, walking distances, La Croisette, day trip options with honest times.</div></div></a>
-          <a href="/editorial/nice-eze-monaco-one-day" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Nice, Eze and Monaco in One Day</div><div class="rb-excerpt">Three itineraries by time. The train option vs private car. Why Eze should not be shortened.</div></div></a>
-          <a href="/editorial/book-direct" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Cruise Line, Viator or Direct — What You Pay</div><div class="rb-excerpt">The economics of shore excursions. Three options compared with real numbers.</div></div></a>
-          <a href="/editorial/eze-village-walk" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Eze Village: The Walk and the Climb</div><div class="rb-excerpt">427 metres, medieval cobblestone, no handrails. Honest assessment for every fitness level.</div></div></a>
+          <a href="/editorial/cannes-cruise-port-guide" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Cannes Cruise Port: What You Need to Know</div><div class="rb-excerpt">Quai Laubeuf logistics, walking distances, the Film Festival weeks, and an honest taxi-vs-private-tour comparison.</div></div></a>
+          <a href="/editorial/grasse-saint-paul-one-day" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Grasse and Saint-Paul-de-Vence in One Day</div><div class="rb-excerpt">The perfume capital and the medieval hilltop village — both inland, both 30 minutes from the pier, both worth more time than a cruise day allows.</div></div></a>
+          <a href="/editorial/book-direct" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Cruise Line, Viator or Direct — What You Pay</div><div class="rb-excerpt">The economics of shore excursions. Cruise line, platform, or direct booking — three options compared.</div></div></a>
+          <a href="/editorial/eze-village-walk" class="rb-card"><div class="rb-body"><div class="rb-lbl">Roadbook &middot; Coming soon</div><div class="rb-title">Eze Village: The Walk and the Climb</div><div class="rb-excerpt">427 metres altitude, medieval cobblestone, no handrails. Who should go, who should think twice, and why.</div></div></a>
         </div>
       </div>
 
@@ -316,14 +243,14 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 
     <aside class="sidebar">
       <div class="sb-title">Cannes</div>
-      <div class="sb-sub">2026 Cruise Schedule</div>
+      <div class="sb-sub">Live cruise schedule</div>
       <div class="bk-facts">
-        <div class="bk-fact"><div class="bk-fact-lbl">Port calls 2026</div><div class="bk-fact-val">68</div></div>
-        <div class="bk-fact"><div class="bk-fact-lbl">Unique ships</div><div class="bk-fact-val">24</div></div>
-        <div class="bk-fact"><div class="bk-fact-lbl">Cruise lines</div><div class="bk-fact-val">15</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Upcoming calls</div><div class="bk-fact-val" data-stat="calls">&mdash;</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Unique ships</div><div class="bk-fact-val" data-stat="ships">&mdash;</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Cruise lines</div><div class="bk-fact-val" data-stat="lines">&mdash;</div></div>
         <div class="bk-fact"><div class="bk-fact-lbl">Port type</div><div class="bk-fact-val">Tender port</div></div>
         <div class="bk-fact"><div class="bk-fact-lbl">Season</div><div class="bk-fact-val">Mar&ndash;Nov</div></div>
-        <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val">Old port</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val">Quai Laubeuf</div></div>
       </div>
       <div class="sb-cta">
         <a href="/book">Book a shore excursion</a>
