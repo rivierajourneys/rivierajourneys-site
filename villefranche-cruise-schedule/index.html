@@ -6,10 +6,10 @@
 <!-- Analytics + Cookie Consent (Consent Mode v2) -->
 <script src="/cookie-consent.js" defer></script>
 <title>Villefranche Cruise Schedule 2026 — Every Ship | Riviera Journeys</title>
-<meta name="description" content="Complete 2026 cruise schedule for Villefranche-sur-Mer. 144 port calls, 38 ships. Book a private shore excursion.">
+<meta name="description" content="Live cruise schedule for Villefranche-sur-Mer — every ship, every date, with arrival and departure times. Book a private shore excursion direct.">
 <link rel="canonical" href="https://rivierajourneys.fr/villefranche-cruise-schedule">
 <meta property="og:title" content="Villefranche Cruise Schedule 2026 — Every Ship | Riviera Journeys">
-<meta property="og:description" content="Complete 2026 cruise schedule for Villefranche-sur-Mer. 144 port calls, 38 ships. Book a private shore excursion.">
+<meta property="og:description" content="Live cruise schedule for Villefranche-sur-Mer — every ship, every date, with arrival and departure times. Book a private shore excursion direct.">
 <meta property="og:url" content="https://rivierajourneys.fr/villefranche-cruise-schedule">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Riviera Journeys">
@@ -27,7 +27,7 @@
 {"@type":"Question","name":"How long do we have ashore?","acceptedAnswer":{"@type":"Answer","text":"It depends on your ship. Most Villefranche calls give 7 to 10 hours ashore. Tell us your ship name and we confirm the shore window and recommend an itinerary."}},
 {"@type":"Question","name":"What can we see from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"Nice is 15 minutes away. Monaco and Eze are 20 minutes east. Cannes, Antibes and Saint-Paul-de-Vence are 45 minutes west. Grasse and the Provence hills are about an hour."}},
 {"@type":"Question","name":"Can the tender be delayed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tender delays at Villefranche are common, especially when multiple ships are in port. We wait at no extra charge. If your shore time is reduced, we shorten the itinerary."}},
-{"@type":"Question","name":"How many ships call at Villefranche in 2026?","acceptedAnswer":{"@type":"Answer","text":"There are 144 scheduled port calls in 2026, from 38 different ships operated by 20 cruise lines. The busiest months are May, June and September."}}
+{"@type":"Question","name":"How often is the schedule updated?","acceptedAnswer":{"@type":"Answer","text":"Once a week. The schedule is pulled automatically from publicly available cruise line itineraries every Sunday. If your ship is not listed, send us the name on WhatsApp and we will check directly."}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,11 +108,12 @@ a{color:inherit;text-decoration:none;cursor:none}img{max-width:100%;height:auto;
 .td-date{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--warm);white-space:nowrap;width:80px}
 .td-ship{font-family:var(--body);font-size:15px;font-weight:500;color:var(--slate)}
 .td-line{font-family:var(--body);font-size:14px;font-weight:400;color:var(--stone)}
-.td-pax{text-align:right;font-family:var(--sans);font-size:13px;color:var(--stone)}
+.td-time{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--stone);font-variant-numeric:tabular-nums;letter-spacing:.04em;width:64px;white-space:nowrap}
+.td-time-r{text-align:right}
 
 .schedule-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-top:16px;transition:gap .3s}
 .schedule-link:hover{gap:12px}
-@media(max-width:768px){.month-row td{padding:8px 10px;font-size:13px}.td-date{font-size:12px}.td-ship{font-size:14px}.td-line{font-size:13px}}
+@media(max-width:768px){.month-row td{padding:8px 10px;font-size:13px}.td-date{font-size:12px}.td-ship{font-size:14px}.td-line{font-size:13px}.td-time{font-size:11px;width:auto}.schedule-table .td-line{display:none}.schedule-table thead th.col-line{display:none}}
 
 /* FAQ */
 .s-faq{margin-top:48px}.faq-rule{height:.5px;background:var(--parch)}.faq-item{border-bottom:.5px solid var(--parch)}.faq-q{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 0;cursor:pointer;gap:20px;user-select:none}.faq-qt{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--warm);line-height:1.3}.faq-ico{width:24px;height:24px;flex-shrink:0;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--slow),border-color .3s;margin-top:2px}.faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--sand)}.faq-ico svg{width:12px;height:12px;stroke:var(--stone);fill:none}.faq-item.open .faq-ico svg{stroke:var(--sand)}.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--slow)}.faq-item.open .faq-a{max-height:400px}.faq-ai{padding:4px 0 18px;font-family:var(--body);font-size:15.5px;font-weight:500;color:var(--slate);line-height:1.85}
@@ -194,166 +195,138 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
   <div class="cols">
     <article class="content">
       <div class="section-lbl reveal" >Schedule</div>
-      <p class="intro reveal">Villefranche-sur-Mer is the main cruise tender port for Nice and one of the busiest on the French Riviera. Ships anchor in one of the deepest natural harbours in the Mediterranean, and tenders bring passengers ashore to quai de l&#8217;Amiral Courbet, in the old village itself. From there, Nice is fifteen minutes by car. Monaco and Eze are twenty minutes east. Cannes, Antibes and Saint-Paul-de-Vence are forty-five minutes west. In 2026, 144 ships are scheduled to call at Villefranche, from luxury yachts carrying 112 guests to Norwegian Epic with over five thousand passengers. This is the complete schedule.</p>
+      <p class="intro reveal">Villefranche-sur-Mer is the main cruise tender port for Nice and one of the busiest on the French Riviera. Ships anchor in one of the deepest natural harbours in the Mediterranean, and tenders bring passengers ashore to quai de l&#8217;Amiral Courbet, in the old village itself. From there, Nice is fifteen minutes by car. Monaco and Eze are twenty minutes east. Cannes, Antibes and Saint-Paul-de-Vence are forty-five minutes west. Below is the rolling schedule of every scheduled call &mdash; from luxury yachts of a hundred guests to the largest ships in the Mediterranean. Times are local, subject to change, and refreshed weekly from cruise line itineraries. Last refreshed <span data-last-updated>8 May 2026</span>.</p>
 
-      <h2 class="section-h reveal">2026 arrivals.<br><em>Every ship, every date.</em></h2>
+      <h2 class="section-h reveal">Upcoming arrivals.<br><em>Every ship, every date.</em></h2>
       <div class="schedule-wrap">
         <table class="schedule-table">
-          <thead><tr><th>Date</th><th>Ship</th><th>Line</th><th>Pax</th></tr></thead>
-          <tbody>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">March</span> <span class="mh-count">5 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">25 Mar</td><td class="td-ship">Viking Star</td><td class="td-line">Viking Ocean</td><td class="td-pax">930</td></tr>
-        <tr class="month-row"><td class="td-date">25 Mar</td><td class="td-ship">Viking Saturn</td><td class="td-line">Viking Ocean</td><td class="td-pax">930</td></tr>
-        <tr class="month-row"><td class="td-date">27 Mar</td><td class="td-ship">ms Europa</td><td class="td-line">Hapag-Lloyd</td><td class="td-pax">408</td></tr>
-        <tr class="month-row"><td class="td-date">27 Mar</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">31 Mar</td><td class="td-ship">Viking Star</td><td class="td-line">Viking Ocean</td><td class="td-pax">930</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">April</span> <span class="mh-count">16 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">8 Apr</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">10 Apr</td><td class="td-ship">Marella Explorer 2</td><td class="td-line">Marella</td><td class="td-pax">2,177</td></tr>
-        <tr class="month-row"><td class="td-date">11 Apr</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">19 Apr</td><td class="td-ship">Odyssey Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-pax">4,819</td></tr>
-        <tr class="month-row"><td class="td-date">20 Apr</td><td class="td-ship">Seven Seas Voyager</td><td class="td-line">Regent</td><td class="td-pax">777</td></tr>
-        <tr class="month-row"><td class="td-date">20 Apr</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">23 Apr</td><td class="td-ship">ms Oosterdam</td><td class="td-line">Holland America</td><td class="td-pax">2,429</td></tr>
-        <tr class="month-row"><td class="td-date">24 Apr</td><td class="td-ship">Marella Explorer 2</td><td class="td-line">Marella</td><td class="td-pax">2,177</td></tr>
-        <tr class="month-row"><td class="td-date">25 Apr</td><td class="td-ship">Star Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">170</td></tr>
-        <tr class="month-row"><td class="td-date">25 Apr</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">27 Apr</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">28 Apr</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-pax">3,950</td></tr>
-        <tr class="month-row"><td class="td-date">28 Apr</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">28 Apr</td><td class="td-ship">Star Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">170</td></tr>
-        <tr class="month-row"><td class="td-date">29 Apr</td><td class="td-ship">Seabourn Venture</td><td class="td-line">Seabourn</td><td class="td-pax">264</td></tr>
-        <tr class="month-row"><td class="td-date">30 Apr</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-pax">3,950</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">May</span> <span class="mh-count">26 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">1 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">2 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">2 May</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">2 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">5 May</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">9 May</td><td class="td-ship">Explorer Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-pax">3,938</td></tr>
-        <tr class="month-row"><td class="td-date">9 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">11 May</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">12 May</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">14 May</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">15 May</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">16 May</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-pax">2,198</td></tr>
-        <tr class="month-row"><td class="td-date">16 May</td><td class="td-ship">SeaDream I</td><td class="td-line">SeaDream</td><td class="td-pax">112</td></tr>
-        <tr class="month-row"><td class="td-date">16 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">18 May</td><td class="td-ship">ms Europa</td><td class="td-line">Hapag-Lloyd</td><td class="td-pax">408</td></tr>
-        <tr class="month-row"><td class="td-date">18 May</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">19 May</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">22 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">22 May</td><td class="td-ship">Viking Vesta</td><td class="td-line">Viking Ocean</td><td class="td-pax">998</td></tr>
-        <tr class="month-row"><td class="td-date">23 May</td><td class="td-ship">Crystal Serenity</td><td class="td-line">Crystal</td><td class="td-pax">1,254</td></tr>
-        <tr class="month-row"><td class="td-date">23 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">24 May</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">24 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">25 May</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">26 May</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">26 May</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">June</span> <span class="mh-count">23 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">1 Jun</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">2 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">2 Jun</td><td class="td-ship">Oceania Nautica</td><td class="td-line">Oceania</td><td class="td-pax">803</td></tr>
-        <tr class="month-row"><td class="td-date">6 Jun</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-pax">2,198</td></tr>
-        <tr class="month-row"><td class="td-date">6 Jun</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Crystal Serenity</td><td class="td-line">Crystal</td><td class="td-pax">1,254</td></tr>
-        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">8 Jun</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">12 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">16 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">16 Jun</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">17 Jun</td><td class="td-ship">Crystal Serenity</td><td class="td-line">Crystal</td><td class="td-pax">1,254</td></tr>
-        <tr class="month-row"><td class="td-date">18 Jun</td><td class="td-ship">Brilliance Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-pax">2,580</td></tr>
-        <tr class="month-row"><td class="td-date">19 Jun</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">22 Jun</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-pax">3,950</td></tr>
-        <tr class="month-row"><td class="td-date">23 Jun</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">25 Jun</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-pax">3,950</td></tr>
-        <tr class="month-row"><td class="td-date">26 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">28 Jun</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-pax">3,373</td></tr>
-        <tr class="month-row"><td class="td-date">29 Jun</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">30 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">July</span> <span class="mh-count">17 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">1 Jul</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">3 Jul</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">6 Jul</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">10 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">11 Jul</td><td class="td-ship">SeaDream I</td><td class="td-line">SeaDream</td><td class="td-pax">112</td></tr>
-        <tr class="month-row"><td class="td-date">13 Jul</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-pax">2,860</td></tr>
-        <tr class="month-row"><td class="td-date">13 Jul</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">14 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">16 Jul</td><td class="td-ship">Queen Victoria</td><td class="td-line">Cunard</td><td class="td-pax">2,489</td></tr>
-        <tr class="month-row"><td class="td-date">18 Jul</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-pax">2,198</td></tr>
-        <tr class="month-row"><td class="td-date">21 Jul</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">24 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">25 Jul</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">26 Jul</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-pax">3,373</td></tr>
-        <tr class="month-row"><td class="td-date">28 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">30 Jul</td><td class="td-ship">Brilliance Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-pax">2,580</td></tr>
-        <tr class="month-row"><td class="td-date">31 Jul</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">August</span> <span class="mh-count">17 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">3 Aug</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">4 Aug</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">6 Aug</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">7 Aug</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">10 Aug</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">11 Aug</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">15 Aug</td><td class="td-ship">Queen Victoria</td><td class="td-line">Cunard</td><td class="td-pax">2,489</td></tr>
-        <tr class="month-row"><td class="td-date">17 Aug</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-pax">3,950</td></tr>
-        <tr class="month-row"><td class="td-date">18 Aug</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">23 Aug</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-pax">3,373</td></tr>
-        <tr class="month-row"><td class="td-date">25 Aug</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">25 Aug</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">28 Aug</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">29 Aug</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-pax">2,198</td></tr>
-        <tr class="month-row"><td class="td-date">30 Aug</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-pax">3,373</td></tr>
-        <tr class="month-row"><td class="td-date">30 Aug</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-pax">466</td></tr>
-        <tr class="month-row"><td class="td-date">31 Aug</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">September</span> <span class="mh-count">19 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">1 Sep</td><td class="td-ship">Norwegian Sky</td><td class="td-line">Norwegian</td><td class="td-pax">2,405</td></tr>
-        <tr class="month-row"><td class="td-date">4 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">8 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">8 Sep</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">9 Sep</td><td class="td-ship">Celebrity Eclipse</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">10 Sep</td><td class="td-ship">ms Oosterdam</td><td class="td-line">Holland America</td><td class="td-pax">2,429</td></tr>
-        <tr class="month-row"><td class="td-date">11 Sep</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-pax">2,198</td></tr>
-        <tr class="month-row"><td class="td-date">13 Sep</td><td class="td-ship">Oceania Sirena</td><td class="td-line">Oceania</td><td class="td-pax">803</td></tr>
-        <tr class="month-row"><td class="td-date">17 Sep</td><td class="td-ship">Queen Victoria</td><td class="td-line">Cunard</td><td class="td-pax">2,489</td></tr>
-        <tr class="month-row"><td class="td-date">18 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">19 Sep</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">20 Sep</td><td class="td-ship">Celebrity Apex</td><td class="td-line">Celebrity</td><td class="td-pax">3,373</td></tr>
-        <tr class="month-row"><td class="td-date">22 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">25 Sep</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">25 Sep</td><td class="td-ship">Viking Sea</td><td class="td-line">Viking Ocean</td><td class="td-pax">930</td></tr>
-        <tr class="month-row"><td class="td-date">26 Sep</td><td class="td-ship">Oceania Sirena</td><td class="td-line">Oceania</td><td class="td-pax">803</td></tr>
-        <tr class="month-row"><td class="td-date">26 Sep</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">28 Sep</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">30 Sep</td><td class="td-ship">Bolette</td><td class="td-line">Fred Olsen</td><td class="td-pax">1,656</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">October</span> <span class="mh-count">15 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">2 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">3 Oct</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-pax">227</td></tr>
-        <tr class="month-row"><td class="td-date">3 Oct</td><td class="td-ship">SeaDream II</td><td class="td-line">SeaDream</td><td class="td-pax">112</td></tr>
-        <tr class="month-row"><td class="td-date">6 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">10 Oct</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-pax">3,373</td></tr>
-        <tr class="month-row"><td class="td-date">12 Oct</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-pax">3,950</td></tr>
-        <tr class="month-row"><td class="td-date">13 Oct</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">14 Oct</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-pax">1,473</td></tr>
-        <tr class="month-row"><td class="td-date">16 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">18 Oct</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">20 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-row"><td class="td-date">21 Oct</td><td class="td-ship">ms Volendam</td><td class="td-line">Holland America</td><td class="td-pax">1,718</td></tr>
-        <tr class="month-row"><td class="td-date">21 Oct</td><td class="td-ship">Viking Star</td><td class="td-line">Viking Ocean</td><td class="td-pax">930</td></tr>
-        <tr class="month-row"><td class="td-date">27 Oct</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-pax">2,681</td></tr>
-        <tr class="month-row"><td class="td-date">30 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-pax">5,074</td></tr>
-        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="4"><span class="mh-name">November</span> <span class="mh-count">6 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
-        <tr class="month-row"><td class="td-date">2 Nov</td><td class="td-ship">ms Europa</td><td class="td-line">Hapag-Lloyd</td><td class="td-pax">408</td></tr>
-        <tr class="month-row"><td class="td-date">2 Nov</td><td class="td-ship">ms Oosterdam</td><td class="td-line">Holland America</td><td class="td-pax">2,429</td></tr>
-        <tr class="month-row"><td class="td-date">4 Nov</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
-        <tr class="month-row"><td class="td-date">7 Nov</td><td class="td-ship">Celebrity Eclipse</td><td class="td-line">Celebrity</td><td class="td-pax">3,420</td></tr>
-        <tr class="month-row"><td class="td-date">12 Nov</td><td class="td-ship">Celebrity Infinity</td><td class="td-line">Celebrity</td><td class="td-pax">2,604</td></tr>
-        <tr class="month-row"><td class="td-date">30 Nov</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-pax">781</td></tr>
+          <thead><tr><th>Date</th><th>Ship</th><th class="col-line">Line</th><th>Arrive</th><th class="td-time-r">Depart</th></tr></thead>
+          <tbody data-cruise-schedule>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">May 2026</span> <span class="mh-count">21 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">9 May</td><td class="td-ship">Explorer Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">9 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">11 May</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">12 May</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">14 May</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">15 May</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 May</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 May</td><td class="td-ship">SeaDream I</td><td class="td-line">SeaDream</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 May</td><td class="td-ship">ms Europa</td><td class="td-line">Hapag-Lloyd</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 May</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">19 May</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">22 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">22 May</td><td class="td-ship">Viking Vesta</td><td class="td-line">Viking Ocean</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">23 May</td><td class="td-ship">Crystal Serenity</td><td class="td-line">Crystal</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">23 May</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">24 May</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">24 May</td><td class="td-ship">Azamara Quest</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 May</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">26 May</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">26 May</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">June 2026</span> <span class="mh-count">23 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">1 Jun</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">2 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">2 Jun</td><td class="td-ship">Oceania Nautica</td><td class="td-line">Oceania</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">6 Jun</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">6 Jun</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Crystal Serenity</td><td class="td-line">Crystal</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Azamara Journey</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">7 Jun</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">8 Jun</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">12 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 Jun</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">17 Jun</td><td class="td-ship">Crystal Serenity</td><td class="td-line">Crystal</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 Jun</td><td class="td-ship">Brilliance Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">19 Jun</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">22 Jun</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">23 Jun</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 Jun</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">26 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">28 Jun</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">29 Jun</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Jun</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">July 2026</span> <span class="mh-count">17 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">1 Jul</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">3 Jul</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">6 Jul</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">10 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">11 Jul</td><td class="td-ship">SeaDream I</td><td class="td-line">SeaDream</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">13 Jul</td><td class="td-ship">Valiant Lady</td><td class="td-line">Virgin Voyages</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">13 Jul</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">14 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 Jul</td><td class="td-ship">Queen Victoria</td><td class="td-line">Cunard</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 Jul</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">21 Jul</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">24 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 Jul</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">26 Jul</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">28 Jul</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Jul</td><td class="td-ship">Brilliance Of The Seas</td><td class="td-line">Royal Caribbean</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">31 Jul</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">August 2026</span> <span class="mh-count">17 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">3 Aug</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">4 Aug</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">6 Aug</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">7 Aug</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">10 Aug</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">11 Aug</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">15 Aug</td><td class="td-ship">Queen Victoria</td><td class="td-line">Cunard</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">17 Aug</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 Aug</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">23 Aug</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 Aug</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 Aug</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">28 Aug</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">29 Aug</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Aug</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Aug</td><td class="td-ship">Silver Shadow</td><td class="td-line">Silversea</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">31 Aug</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">September 2026</span> <span class="mh-count">19 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">1 Sep</td><td class="td-ship">Norwegian Sky</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">4 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">8 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">8 Sep</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">9 Sep</td><td class="td-ship">Celebrity Eclipse</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">10 Sep</td><td class="td-ship">ms Oosterdam</td><td class="td-line">Holland America</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">11 Sep</td><td class="td-ship">Marella Discovery 2</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">13 Sep</td><td class="td-ship">Oceania Sirena</td><td class="td-line">Oceania</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">17 Sep</td><td class="td-ship">Queen Victoria</td><td class="td-line">Cunard</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">19 Sep</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">20 Sep</td><td class="td-ship">Celebrity Apex</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">22 Sep</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 Sep</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">25 Sep</td><td class="td-ship">Viking Sea</td><td class="td-line">Viking Ocean</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">26 Sep</td><td class="td-ship">Oceania Sirena</td><td class="td-line">Oceania</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">26 Sep</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">28 Sep</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Sep</td><td class="td-ship">Bolette</td><td class="td-line">Fred Olsen</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">October 2026</span> <span class="mh-count">15 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">2 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">3 Oct</td><td class="td-ship">Royal Clipper</td><td class="td-line">Star Clippers</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">3 Oct</td><td class="td-ship">SeaDream II</td><td class="td-line">SeaDream</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">6 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">10 Oct</td><td class="td-ship">Celebrity Xcel</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">12 Oct</td><td class="td-ship">Norwegian Viva</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">13 Oct</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">14 Oct</td><td class="td-ship">Explora I</td><td class="td-line">Explora Journeys</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">16 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">18 Oct</td><td class="td-ship">Celebrity Equinox</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">20 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">21 Oct</td><td class="td-ship">ms Volendam</td><td class="td-line">Holland America</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">21 Oct</td><td class="td-ship">Viking Star</td><td class="td-line">Viking Ocean</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">27 Oct</td><td class="td-ship">Marella Explorer</td><td class="td-line">Marella</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Oct</td><td class="td-ship">Norwegian Epic</td><td class="td-line">Norwegian</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-header" onclick="toggleMonth(this)"><td colspan="5"><span class="mh-name">November 2026</span> <span class="mh-count">6 ships</span><span class="mh-arrow">&#9662;</span></td></tr>
+        <tr class="month-row"><td class="td-date">2 Nov</td><td class="td-ship">ms Europa</td><td class="td-line">Hapag-Lloyd</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">2 Nov</td><td class="td-ship">ms Oosterdam</td><td class="td-line">Holland America</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">4 Nov</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">7 Nov</td><td class="td-ship">Celebrity Eclipse</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">12 Nov</td><td class="td-ship">Celebrity Infinity</td><td class="td-line">Celebrity</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
+        <tr class="month-row"><td class="td-date">30 Nov</td><td class="td-ship">Azamara Onward</td><td class="td-line">Azamara</td><td class="td-time">&mdash;</td><td class="td-time td-time-r">&mdash;</td></tr>
           </tbody>
         </table>
         <a href="/cannes-cruise-schedule" class="schedule-link">Cannes cruise schedule 2026 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -394,11 +367,11 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 
     <aside class="sidebar">
       <div class="sb-title">Villefranche-sur-Mer</div>
-      <div class="sb-sub">2026 Cruise Schedule</div>
+      <div class="sb-sub">Live cruise schedule</div>
       <div class="bk-facts">
-        <div class="bk-fact"><div class="bk-fact-lbl">Port calls 2026</div><div class="bk-fact-val">144</div></div>
-        <div class="bk-fact"><div class="bk-fact-lbl">Unique ships</div><div class="bk-fact-val">38</div></div>
-        <div class="bk-fact"><div class="bk-fact-lbl">Cruise lines</div><div class="bk-fact-val">19</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Upcoming calls</div><div class="bk-fact-val" data-stat="calls">118</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Unique ships</div><div class="bk-fact-val" data-stat="ships">35</div></div>
+        <div class="bk-fact"><div class="bk-fact-lbl">Cruise lines</div><div class="bk-fact-val" data-stat="lines">19</div></div>
         <div class="bk-fact"><div class="bk-fact-lbl">Port type</div><div class="bk-fact-val">Tender port</div></div>
         <div class="bk-fact"><div class="bk-fact-lbl">Season</div><div class="bk-fact-val">Mar&ndash;Nov</div></div>
         <div class="bk-fact"><div class="bk-fact-lbl">Meeting point</div><div class="bk-fact-val">Tender pier</div></div>
