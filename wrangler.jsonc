@@ -30,5 +30,11 @@
     "REVIEWS_COUNT":  "18",
     "REVIEWS_RATING": "5.0",
     "REVIEWS_BEST":   "5"
-  }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SCHEDULES",
+      "id": "697d458fd6c042698f0ee12d7d8d8b25"
+    }
+  ]
 }
