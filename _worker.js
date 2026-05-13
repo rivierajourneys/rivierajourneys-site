@@ -38,6 +38,15 @@
  *              GONE_PREFIX (found in GSC NotFound drilldown — old WP plugin
  *              and excursion permalinks).
  *
+ *   v3 PATCH (2026-05-08) — cruise schedule auto-refresh:
+ *
+ *   CRUISE-001 → /villefranche-cruise-schedule rewrites <tbody>, sidebar
+ *                stats and last-updated date from SCHEDULES KV (binding in
+ *                wrangler.jsonc). KV is filled weekly by a separate cron
+ *                Worker (cruise-schedule-fetcher repo). Static fallback in
+ *                index.html is preserved if KV is empty/stale (>14 days).
+ *                See injectCruiseSchedule() at bottom of file.
+ *
  *   KNOWN LIMITATIONS (intentional, not fixes):
  *   - Query strings like /?feed=rss2 are NOT in GONE — pathname doesn't
  *     include search. Existing GONE_PREFIX entries /?p= and /?feed= would
@@ -172,6 +181,25 @@ const SECURITY_HEADERS = {
 const CANONICAL_HOST = "rivierajourneys.fr";
 
 // ──────────────────────────────────────────────────────────────────────────
+// Cruise schedule auto-refresh
+//
+// /villefranche-cruise-schedule is a static fallback page with markers:
+//   <tbody data-cruise-schedule>...</tbody>      → replaced with fresh rows
+//   <span data-last-updated>...</span>           → replaced with fresh date
+//   data-stat="calls|ships|lines" inside divs    → replaced with fresh totals
+//
+// A separate cron Worker (cruise-schedule-fetcher) writes fresh JSON into
+// SCHEDULES KV every Sunday under key "villefranche". If KV is empty,
+// missing, or older than CRUISE_SCHEDULE_STALE_DAYS, we leave the static
+// fallback in place — the page never breaks.
+// ──────────────────────────────────────────────────────────────────────────
+const CRUISE_SCHEDULE_PATHS = new Set([
+  "/villefranche-cruise-schedule",
+  // Future: "/cannes-cruise-schedule" — when its KV key exists.
+]);
+const CRUISE_SCHEDULE_STALE_DAYS = 14;
+
+// ──────────────────────────────────────────────────────────────────────────
 // Worker entry point
 // ──────────────────────────────────────────────────────────────────────────
 export default {
@@ -279,11 +307,19 @@ export default {
     // STEP 6. If HTML, substitute review placeholders.
     const contentType = response.headers.get("content-type") || "";
     if (contentType.includes("text/html")) {
-      const text = await response.text();
-      const transformed = text
+      let transformed = await response.text();
+
+      transformed = transformed
         .replaceAll("{{REVIEWS_COUNT}}", env.REVIEWS_COUNT || "0")
         .replaceAll("{{REVIEWS_RATING}}", env.REVIEWS_RATING || "5.0")
         .replaceAll("{{REVIEWS_BEST}}", env.REVIEWS_BEST || "5");
+
+      // Cruise schedule pages — inject fresh data from SCHEDULES KV
+      // (binding set in wrangler.jsonc). Falls through silently to the
+      // static fallback if KV is unavailable, empty, or stale.
+      if (CRUISE_SCHEDULE_PATHS.has(pathname) && env.SCHEDULES) {
+        transformed = await injectCruiseSchedule(transformed, pathname, env);
+      }
 
       return new Response(transformed, {
         status: response.status,
@@ -385,4 +421,111 @@ function escapeHtml(s) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Cruise schedule — read from KV and rewrite tbody + sidebar stats + date
+// ──────────────────────────────────────────────────────────────────────────
+const MONTH_LABELS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+async function injectCruiseSchedule(html, pathname, env) {
+  // Map pathname → KV key. Only one supported for now; pattern lets us
+  // add Cannes etc. later without touching this function.
+  const key = pathname === "/villefranche-cruise-schedule" ? "villefranche" : null;
+  if (!key) return html;
+
+  let payload = null;
+  try {
+    const raw = await env.SCHEDULES.get(key);
+    if (raw) payload = JSON.parse(raw);
+  } catch (_) {
+    return html;
+  }
+  if (!payload || !Array.isArray(payload.calls)) return html;
+
+  const ageMs = Date.now() - new Date(payload.lastUpdated).getTime();
+  if (ageMs > CRUISE_SCHEDULE_STALE_DAYS * 86400000) return html;
+
+  // Filter to today onward.
+  const today = new Date().toISOString().slice(0, 10);
+  const future = payload.calls.filter(c => c.date >= today);
+  if (future.length === 0) return html;
+
+  // Build the fresh tbody.
+  const tbodyInner = buildCruiseTbody(future);
+
+  // Replace tbody content. Marker is unique enough that a non-greedy regex
+  // is safe — we only match the cruise schedule one, never the fallback
+  // tbody used elsewhere.
+  html = html.replace(
+    /(<tbody data-cruise-schedule[^>]*>)[\s\S]*?(<\/tbody>)/,
+    (_, open, close) => `${open}\n${tbodyInner}\n${close}`
+  );
+
+  // Replace sidebar totals.
+  const ships = new Set(future.map(c => c.ship));
+  const lines = new Set(future.map(c => c.line));
+  html = replaceStat(html, "calls", String(future.length));
+  html = replaceStat(html, "ships", String(ships.size));
+  html = replaceStat(html, "lines", String(lines.size));
+
+  // Replace last-updated date.
+  html = html.replace(
+    /(<span data-last-updated[^>]*>)[\s\S]*?(<\/span>)/,
+    (_, open, close) => `${open}${formatUpdated(payload.lastUpdated)}${close}`
+  );
+
+  return html;
+}
+
+function replaceStat(html, name, value) {
+  // Match: <... data-stat="name">CONTENT</...>  (any tag, any attrs)
+  const re = new RegExp(
+    `(<[^>]+data-stat=["']${name}["'][^>]*>)[\\s\\S]*?(<\\/[^>]+>)`
+  );
+  return html.replace(re, (_, open, close) => `${open}${escapeHtml(value)}${close}`);
+}
+
+function buildCruiseTbody(calls) {
+  // Group by year-month.
+  const byMonth = new Map();
+  for (const c of calls) {
+    const ym = c.date.slice(0, 7);
+    if (!byMonth.has(ym)) byMonth.set(ym, []);
+    byMonth.get(ym).push(c);
+  }
+
+  const rows = [];
+  for (const [ym, monthCalls] of byMonth) {
+    const [y, m] = ym.split("-").map(Number);
+    const label = `${MONTH_LABELS[m - 1]} ${y}`;
+    rows.push(
+      `        <tr class="month-header" onclick="toggleMonth(this)">` +
+      `<td colspan="5"><span class="mh-name">${escapeHtml(label)}</span> ` +
+      `<span class="mh-count">${monthCalls.length} ship${monthCalls.length === 1 ? "" : "s"}</span>` +
+      `<span class="mh-arrow">&#9662;</span></td></tr>`
+    );
+    for (const c of monthCalls) {
+      const day = parseInt(c.date.slice(8, 10), 10);
+      const monthShort = MONTH_LABELS[m - 1].slice(0, 3);
+      rows.push(
+        `        <tr class="month-row">` +
+        `<td class="td-date">${day} ${monthShort}</td>` +
+        `<td class="td-ship">${escapeHtml(c.ship)}</td>` +
+        `<td class="td-line">${escapeHtml(c.line)}</td>` +
+        `<td class="td-time">${c.arrival ? escapeHtml(c.arrival) : "&mdash;"}</td>` +
+        `<td class="td-time td-time-r">${c.departure ? escapeHtml(c.departure) : "&mdash;"}</td>` +
+        `</tr>`
+      );
+    }
+  }
+  return rows.join("\n");
+}
+
+function formatUpdated(iso) {
+  const d = new Date(iso);
+  return `${d.getUTCDate()} ${MONTH_LABELS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
