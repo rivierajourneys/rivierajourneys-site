@@ -53,6 +53,16 @@
  *                using the same injector. KV key for Cannes is "cannes".
  *                Cron worker now refreshes both ports in parallel.
  *
+ *   v5 PATCH (2026-05-13) — exact-match 301 redirects:
+ *
+ *   SITE-001 → /corporate/mipim was in sitemap but the file is named
+ *              /corporate/mipim-transfers — Google logged it as 404 for
+ *              weeks. Sitemap fixed in separate commit. This patch adds a
+ *              new STEP 2 (between GONE and trailing-slash) that handles
+ *              an extensible REDIRECTS_EXACT map: old-URL → new-URL with
+ *              explicit 301. Future renames go into REDIRECTS_EXACT, not
+ *              into ad-hoc if blocks.
+ *
  *   KNOWN LIMITATIONS (intentional, not fixes):
  *   - Query strings like /?feed=rss2 are NOT in GONE — pathname doesn't
  *     include search. Existing GONE_PREFIX entries /?p= and /?feed= would
@@ -187,6 +197,15 @@ const SECURITY_HEADERS = {
 const CANONICAL_HOST = "rivierajourneys.fr";
 
 // ──────────────────────────────────────────────────────────────────────────
+// Exact-match 301 redirects — old-URL → new-URL.
+// v5 PATCH (2026-05-13): added for SITE-001 (/corporate/mipim renamed).
+// Place future single-URL renames here, not in ad-hoc if blocks.
+// ──────────────────────────────────────────────────────────────────────────
+const REDIRECTS_EXACT = {
+  "/corporate/mipim": "/corporate/mipim-transfers",
+};
+
+// ──────────────────────────────────────────────────────────────────────────
 // Cruise schedule auto-refresh
 //
 // /villefranche-cruise-schedule is a static fallback page with markers:
@@ -246,7 +265,34 @@ export default {
     }
 
     // ──────────────────────────────────────────────────────────────────
-    // STEP 2. Trailing-slash drop — explicit 301 (not 307).
+    // STEP 2. Exact-match 301 redirects (v5 PATCH).
+    // SITE-001 — /corporate/mipim → /corporate/mipim-transfers and any
+    // future single-URL renames in REDIRECTS_EXACT.
+    //
+    // Done AFTER GONE (so legacy URLs win) and BEFORE trailing-slash
+    // (so /corporate/mipim AND /corporate/mipim/ both 301 to the new URL).
+    //
+    // For pathname /foo/ where /foo is in REDIRECTS_EXACT, we strip the
+    // trailing slash first so /foo/ → /foo/new in a single 301 hop, not
+    // /foo/ → /foo → /foo/new (chain).
+    // ──────────────────────────────────────────────────────────────────
+    const pathNoSlash = (pathname.length > 1 && pathname.endsWith("/"))
+      ? pathname.replace(/\/+$/, "")
+      : pathname;
+    if (REDIRECTS_EXACT[pathNoSlash]) {
+      const target = `https://${CANONICAL_HOST}${REDIRECTS_EXACT[pathNoSlash]}${search}`;
+      return new Response(null, {
+        status: 301,
+        headers: {
+          "Location": target,
+          "Cache-Control": "public, max-age=86400",
+          ...SECURITY_HEADERS,
+        },
+      });
+    }
+
+    // ──────────────────────────────────────────────────────────────────
+    // STEP 3. Trailing-slash drop — explicit 301 (not 307).
     // CONTENT-002 fix (v2): wrangler html_handling="drop-trailing-slash"
     // returns HTTP 307 by default. Google treats 307 as "keep original URL
     // canonical" — so /path/ stayed in the index instead of /path.
@@ -257,7 +303,7 @@ export default {
     //
     // Bonus: target uses CANONICAL_HOST so this single redirect ALSO does
     // www → apex canonicalization for any path with a trailing slash.
-    // (Ordinary www → apex for no-slash paths is still STEP 3.)
+    // (Ordinary www → apex for no-slash paths is still STEP 4.)
     //
     // Root path "/" is preserved (length === 1).
     // ──────────────────────────────────────────────────────────────────
@@ -275,8 +321,8 @@ export default {
     }
 
     // ──────────────────────────────────────────────────────────────────
-    // STEP 3. Canonicalization: www.rivierajourneys.fr → apex.
-    // (Only fires for no-slash paths; slash paths handled in STEP 2.)
+    // STEP 4. Canonicalization: www.rivierajourneys.fr → apex.
+    // (Only fires for no-slash paths; slash paths handled in STEP 3.)
     // ──────────────────────────────────────────────────────────────────
     if (hostname === "www." + CANONICAL_HOST) {
       const target = `https://${CANONICAL_HOST}${pathname}${search}`;
@@ -291,11 +337,11 @@ export default {
     }
 
     // ──────────────────────────────────────────────────────────────────
-    // STEP 4. Fetch the static asset.
+    // STEP 5. Fetch the static asset.
     // ──────────────────────────────────────────────────────────────────
     const response = await env.ASSETS.fetch(request);
 
-    // STEP 5. Build response headers — copy original, layer in our additions.
+    // STEP 6. Build response headers — copy original, layer in our additions.
     const newHeaders = new Headers(response.headers);
 
     Object.entries(SECURITY_HEADERS).forEach(([k, v]) => newHeaders.set(k, v));
@@ -310,7 +356,7 @@ export default {
       newHeaders.set("X-Robots-Tag", "noindex, follow");
     }
 
-    // STEP 6. If HTML, substitute review placeholders.
+    // STEP 7. If HTML, substitute review placeholders.
     const contentType = response.headers.get("content-type") || "";
     if (contentType.includes("text/html")) {
       let transformed = await response.text();
@@ -334,7 +380,7 @@ export default {
       });
     }
 
-    // STEP 7. Non-HTML: return as-is with security headers
+    // STEP 8. Non-HTML: return as-is with security headers
     return new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
