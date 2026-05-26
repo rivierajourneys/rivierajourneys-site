@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Analytics + Cookie Consent (Consent Mode v2) -->
-<script src="/cookie-consent.js" defer></script>
 <title>Villefranche Shore Excursion — Nice, Eze, Monaco | €800</title>
 <meta name="description" content="Private shore excursion from Villefranche-sur-Mer: Nice, Eze at 427m, Monaco. Mercedes V-Class, up to 7 guests. €800 per vehicle. Back before the tender.">
 <link rel="canonical" href="https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco">
@@ -26,17 +24,17 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristTrip",
 "name":"Shore Excursion from Villefranche: Nice, Eze and Monaco",
-"description":"Private shore excursion from Villefranche-sur-Mer: Nice old port, Moyenne Corniche, Eze at 427 metres, Monaco. From 4.5 hours. Fixed price 800 EUR.",
+"description":"Private shore excursion from Villefranche-sur-Mer: Nice old port, Moyenne Corniche, Eze at 427 metres, Monaco. From 5 hours. Fixed price 800 EUR.",
 "url":"https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco",
 "touristType":"Cruise passengers",
-"provider":{"@type":"LocalBusiness","name":"Riviera Journeys","url":"https://rivierajourneys.fr","telephone":"+33669962272","address":{"@type":"PostalAddress","addressLocality":"Cannes","postalCode":"06400","addressRegion":"Provence-Alpes-Côte d'Azur","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":43.5528,"longitude":7.0174},"openingHours":"Mo-Su 07:00-21:00","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"21:00"},"sameAs":["https://www.instagram.com/rivierajourneys/","https://g.co/kgs/rivierajourneys"]},
+"provider":{"@type":"LocalBusiness","name":"Riviera Journeys","url":"https://rivierajourneys.fr","telephone":"+33669962272","address":{"@type":"PostalAddress","streetAddress":"Cannes","addressLocality":"Cannes","postalCode":"06400","addressRegion":"Provence-Alpes-Côte d'Azur","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":43.5528,"longitude":7.0174},"openingHours":"Mo-Su 07:00-21:00","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"21:00"},"sameAs":["https://www.instagram.com/rivierajourneys/","https://g.co/kgs/rivierajourneys"]},
 "offers":{"@type":"Offer","price":"800","priceCurrency":"EUR","availability":"https://schema.org/InStock"},
-"aggregateRating":{"@type":"AggregateRating","ratingValue":"{{REVIEWS_RATING}}","reviewCount":"{{REVIEWS_COUNT}}","bestRating":"5"}}
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"{{REVIEWS_RATING}}","reviewCount":"{{REVIEWS_COUNT}}","bestRating":"{{REVIEWS_BEST}}"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Where do you meet us in Villefranche?","acceptedAnswer":{"@type":"Answer","text":"At quai de l'Amiral Courbet in Villefranche-sur-Mer — the tender landing pier, in the village itself. We are there with a name board before your tender docks. Villefranche ships anchor in the bay; the tender lands you in the old village, thirty seconds from the car."}},
-{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 4.5 hours. Nice is only 6 kilometres west of Villefranche — about ten minutes by road. The compact geography means more time at each stop, less time in transit."}},
+{"@type":"Question","name":"How long is the Nice Eze Monaco excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"From 5 hours. Nice is only 6 kilometres west of Villefranche — about ten minutes by road. The compact geography means more time at each stop, less time in transit."}},
 {"@type":"Question","name":"What is the price for a shore excursion from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"800 EUR per vehicle, up to 7 passengers. Fixed price regardless of group size. Entrance fees and meals not included."}},
 {"@type":"Question","name":"Do you accompany guests in Eze village?","acceptedAnswer":{"@type":"Answer","text":"No. We drop you at the entrance and wait with the car. We recommend the Chevre d'Or terrace for coffee or champagne with the view."}},
 {"@type":"Question","name":"Which Corniche road do you take?","acceptedAnswer":{"@type":"Answer","text":"The Moyenne Corniche, departing east from Nice. Two stops: the belvedere above Mont Boron, then the panorama above Villefranche — the same harbour where your ship is anchored, seen from 400 metres above."}},
@@ -128,6 +126,8 @@ img{display:block;max-width:100%;height:auto}
 .hero-price{font-family:var(--serif);font-size:32px;font-weight:400;color:var(--bone)}
 .hero-pill{font-family:var(--sans);font-size:12.5px;font-weight:500;color:rgba(247,243,237,.65);display:flex;align-items:center;gap:8px}
 .hero-pill::before{content:'';display:block;width:3px;height:3px;border-radius:50%;background:rgba(196,170,130,.5)}
+.hero-pill-stars{color:rgba(247,243,237,.92);font-weight:500}
+.hero-pill-stars::before{background:var(--terra);width:4px;height:4px}
 .hero-acts{display:flex;align-items:center;gap:20px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s var(--slow) .8s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){
@@ -326,6 +326,23 @@ to{transform:translateX(-50%)}}
 .faq-item.open .faq-a{max-height:400px}
 .faq-ai{padding:4px 0 18px;font-family:var(--body);font-size:15.5px;font-weight:500;color:var(--slate);line-height:1.85}
 
+/* REVIEWS */
+.s-reviews{padding:60px 0 40px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px}
+.rev-card{background:var(--bone);border:.5px solid var(--parch);padding:28px 26px;display:flex;flex-direction:column;gap:14px}
+.rev-stars{display:flex;gap:3px}
+.rev-stars svg{width:13px;height:13px;fill:var(--sand)}
+.rev-text{font-family:var(--body);font-size:15px;font-weight:500;color:var(--slate);line-height:1.75;font-style:italic;border:none;padding:0;margin:0;flex:1}
+.rev-text::before{content:'\201C';font-family:var(--serif);font-size:36px;color:var(--sand);line-height:0;vertical-align:-12px;margin-right:4px;font-style:normal}
+.rev-meta{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--stone);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}
+.rev-name{color:var(--warm);font-weight:500}
+.rev-sep{color:var(--parch)}
+.rev-all{display:inline-flex;align-items:center;gap:10px;margin-top:32px;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);padding:14px 22px;border:.5px solid rgba(168,101,67,.35);transition:background .3s,color .3s,gap .3s}
+.rev-all:hover{background:var(--terra);color:var(--bone);gap:14px}
+.rev-all svg{stroke:currentColor}
+@media(max-width:900px){.rev-grid{grid-template-columns:1fr;gap:18px}.s-reviews{padding:40px 0 30px}}
+@media(max-width:600px){.rev-card{padding:22px 20px}.rev-text{font-size:15.5px;font-weight:500}}
+
 /* RELATED */
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .related-card{background:var(--bone2);border:.5px solid var(--parch);transition:border-color .3s,transform .3s;display:block;overflow:hidden}
@@ -520,8 +537,9 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <span class="hero-price">&#8364;800</span>
         <span class="hero-pill">per vehicle</span>
         <span class="hero-pill">up to 7 guests</span>
-        <span class="hero-pill">from 4.5 hours</span>
-        <span class="hero-pill">back before the tender</span>
+        <span class="hero-pill">from 5 hours</span>
+        <span class="hero-pill">timed to your tender</span>
+        <span class="hero-pill hero-pill-stars">&#9733; {{REVIEWS_RATING}} &middot; {{REVIEWS_COUNT}} reviews on Google</span>
       </div>
       <div class="hero-acts">
         <a href="/book/shore-excursion/?excursion=villefranche-nice-eze-monaco" class="btn-sand">
@@ -667,13 +685,13 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         <table class="pricing-table"><colgroup><col><col><col><col></colgroup>
           <thead><tr><th>Route</th><th>Duration</th><th>Group size</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Nice &middot; Eze &middot; Monaco</td><td>From 4.5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
+            <tr><td>Nice &middot; Eze &middot; Monaco</td><td>From 5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Eze &middot; Monaco only</td><td>From 3.5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Nice &middot; Eze only</td><td>From 3 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
             <tr><td>Custom itinerary</td><td>Your schedule</td><td>Up to 7</td><td>&#8364;800</td></tr>
           </tbody>
         </table>
-        <p class="pricing-note">Per person: 2 guests = &euro;400 &middot; 4 guests = &euro;200 &middot; 7 guests = &euro;114. Payment by bank transfer or cash (EUR).</p>
+        <p class="pricing-note">Private &mdash; your group only. The price is the same whether you are two, four, or seven. Invoice paid by bank transfer in advance, or cash on the day. Card payments by request.</p>
       </div>
 
       <!-- FAQ -->
@@ -686,7 +704,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">How long is the excursion, and will it fit my ship&apos;s schedule?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
-          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 4.5 to 5.5 hours from Villefranche &mdash; Nice is only 6 kilometres, ten minutes each way. The shorter transit means more time at each stop. We can trim the itinerary further if your ship has an early departure. Eze is never cut short.</p></div>
+          <div class="faq-a"><p class="faq-ai">The full Nice&ndash;Eze&ndash;Monaco route typically runs 5 to 7.5 hours from Villefranche, depending on your tender time and how long you wish to linger at each stop. Nice is only 6 kilometres &mdash; ten minutes each way &mdash; so the compact geography means more time at each stop, less in transit. We can trim or extend the itinerary to your ship&apos;s schedule. Eze is never cut short.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Do you accompany us inside Eze village?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
@@ -716,6 +734,73 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           <div class="faq-q" onclick="faq(this)"><span class="faq-qt">Is Villefranche a tender port?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div></div>
           <div class="faq-a"><p class="faq-ai">Yes. Villefranche-sur-Mer is a tender port &mdash; cruise ships anchor in the bay and passengers reach shore by tender boat. The tender ride takes about five minutes to quai de l&apos;Amiral Courbet. We meet you directly at the tender dock with a private Mercedes V-Class. Tender delays are common; we always wait at no extra charge.</p></div>
         </div>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="s-reviews reveal">
+        <h2 class="section-h">Reviews.<br><em>Five stars, every time.</em></h2>
+        <div class="faq-rule"></div>
+        <div class="rev-grid">
+
+          <figure class="rev-card">
+            <div class="rev-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="rev-text">Great tour, well organised and easy from start to finish. The guide was knowledgeable and kept things engaging. Would definitely recommend.</blockquote>
+            <figcaption class="rev-meta">
+              <span class="rev-name">Kate G.</span>
+              <span class="rev-sep">&middot;</span>
+              <span class="rev-where">Da Nang</span>
+              <span class="rev-sep">&middot;</span>
+              <span class="rev-when">February 2026</span>
+            </figcaption>
+          </figure>
+
+          <figure class="rev-card">
+            <div class="rev-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="rev-text">The best C&ocirc;te d&apos;Azur experience ever. I loved the customised and thoughtful attitude, amazing spots with no crowds, beautiful and optimal routes.</blockquote>
+            <figcaption class="rev-meta">
+              <span class="rev-name">Dalida V.</span>
+              <span class="rev-sep">&middot;</span>
+              <span class="rev-where">14 Google reviews</span>
+              <span class="rev-sep">&middot;</span>
+              <span class="rev-when">April 2025</span>
+            </figcaption>
+          </figure>
+
+          <figure class="rev-card">
+            <div class="rev-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="rev-text">Well organised and guided trips. Perfect service. Very informative and personalised. We would love to come back.</blockquote>
+            <figcaption class="rev-meta">
+              <span class="rev-name">Maria W.</span>
+              <span class="rev-sep">&middot;</span>
+              <span class="rev-where">Germany</span>
+              <span class="rev-sep">&middot;</span>
+              <span class="rev-when">April 2025</span>
+            </figcaption>
+          </figure>
+
+        </div>
+        <a href="https://g.co/kgs/rivierajourneys" class="rev-all" target="_blank" rel="noopener">
+          Read all {{REVIEWS_COUNT}} reviews on Google
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <!-- RELATED -->
@@ -781,8 +866,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
           <div class="bk-price-unit">Per vehicle &middot; up to 7 passengers</div>
         </div>
         <div class="bk-facts">
-          <div class="bk-fact"><div class="bk-fact-lbl">Pick-up</div><div class="bk-fact-val">Tender Dock</div></div>
-          <div class="bk-fact"><div class="bk-fact-lbl">Duration</div><div class="bk-fact-val">From 4.5 hrs</div></div>
+          <div class="bk-fact"><div class="bk-fact-lbl">Pick-up</div><div class="bk-fact-val">Quai Courbet</div></div>
+          <div class="bk-fact"><div class="bk-fact-lbl">Duration</div><div class="bk-fact-val">From 5 hrs</div></div>
           <div class="bk-fact"><div class="bk-fact-lbl">Vehicle</div><div class="bk-fact-val">Mercedes V-Class</div></div>
           <div class="bk-fact"><div class="bk-fact-lbl">Group</div><div class="bk-fact-val">Up to 7 guests</div></div>
           <div class="bk-fact"><div class="bk-fact-lbl">Return</div><div class="bk-fact-val">Before tender</div></div>
@@ -795,7 +880,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <span class="bk-stars-txt"><strong>5.0</strong> &middot; {{REVIEWS_COUNT}} reviews</span>
+          <span class="bk-stars-txt"><strong>{{REVIEWS_RATING}}</strong> &middot; {{REVIEWS_COUNT}} reviews</span>
         </div>
       </div>
 
