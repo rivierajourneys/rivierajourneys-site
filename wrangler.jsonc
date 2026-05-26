@@ -26,6 +26,11 @@
       "custom_domain": true
     }
   ],
+"vars": {
+    "REVIEWS_COUNT": "12",
+    "REVIEWS_RATING": "5.0",
+    "REVIEWS_BEST": "5"
+  },
   "kv_namespaces": [
     {
       "binding": "SCHEDULES",
