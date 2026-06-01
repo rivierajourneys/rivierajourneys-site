@@ -109,29 +109,41 @@
   function setupContactTracking() {
     var pageId = window.location.pathname.replace(/\//g, '-').replace(/^-|-$/g, '') || 'home';
 
-    document.querySelectorAll('a[href^="https://wa.me/"], a[href^="mailto:"], a[href^="tel:"]').forEach(function (a) {
+    // UTM-tag WhatsApp links so attribution survives the redirect.
+    // Re-runs as nav.js injects the nav/footer, so dynamically added links are covered.
+    function utmTag(a) {
       var href = a.getAttribute('href');
+      if (href && href.indexOf('https://wa.me/') === 0 && href.indexOf('utm_') === -1) {
+        var sep = href.indexOf('?') !== -1 ? '&' : '?';
+        a.setAttribute('href', href + sep + 'utm_source=site&utm_medium=whatsapp&utm_campaign=' + pageId);
+      }
+    }
+    function tagAll() { document.querySelectorAll('a[href^="https://wa.me/"]').forEach(utmTag); }
+    tagAll();
+    if (window.MutationObserver) {
+      try {
+        new MutationObserver(tagAll).observe(document.body, { childList: true, subtree: true });
+      } catch (e) { /* noop */ }
+    }
+
+    // Delegated click tracking — catches current AND future contact links
+    // (header/footer are injected by nav.js after this script boots).
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href^="https://wa.me/"], a[href^="mailto:"], a[href^="tel:"]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
       var linkType = href.indexOf('https://wa.me/') === 0 ? 'whatsapp'
                    : href.indexOf('mailto:') === 0 ? 'email'
                    : 'phone';
-
-      // UTM tag WhatsApp links so attribution survives the redirect
-      if (linkType === 'whatsapp' && href.indexOf('utm_') === -1) {
-        var sep = href.indexOf('?') !== -1 ? '&' : '?';
-        a.setAttribute('href', href + sep + 'utm_source=site&utm_medium=' + linkType + '&utm_campaign=' + pageId);
-      }
-
-      a.addEventListener('click', function () {
-        gtag('event', 'contact_click', {
-          'contact_method': linkType,
-          'page_path': window.location.pathname
-        });
+      gtag('event', 'contact_click', {
+        'contact_method': linkType,
+        'page_path': window.location.pathname
       });
-    });
+    }, true);
   }
 
   function setupFormTracking() {
-    var bookForm = document.querySelector('form[action*="book"], form#book, form#enquiry, form#bookForm');
+    var bookForm = document.querySelector('form#form, form[action*="formspree"], form[action*="book"], form#book, form#enquiry, form#bookForm');
     if (bookForm) {
       bookForm.addEventListener('submit', function () {
         gtag('event', 'enquiry_submitted', {
