@@ -203,6 +203,11 @@ const CANONICAL_HOST = "rivierajourneys.fr";
 // ──────────────────────────────────────────────────────────────────────────
 const REDIRECTS_EXACT = {
   "/corporate/mipim": "/corporate/mipim-transfers",
+  // 2026-06-09 — wrong-slug internal links found in repo/GSC 404 audit.
+  // Target pages exist; 301 clears already-crawled 404s and any external links.
+  "/shore-excursions/cannes/grasse-gourdon-tourrettes": "/shore-excursions/cannes/grasse-gourdon",
+  "/tours/cannes/provence-wine": "/tours/cannes/provence-rose-wine",
+  "/tours/cannes": "/tours",
 };
 
 // ──────────────────────────────────────────────────────────────────────────
