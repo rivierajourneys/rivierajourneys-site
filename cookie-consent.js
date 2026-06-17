@@ -1,7 +1,7 @@
 /* ============================================================
  * RIVIERA JOURNEYS — cookie-consent.js
  *
- * Last updated: 2026-04-27
+ * Last updated: 2026-06-17
  *
  * Single source of truth for analytics + consent:
  *   1. Implements Google Consent Mode v2 (default: denied — CNIL safe)
@@ -10,6 +10,7 @@
  *   4. Loads GA4 (G-G7VH5DLYWF) ONLY after explicit consent
  *   5. Auto-tags WhatsApp / mailto / tel links and tracks contact_click
  *   6. Tracks enquiry_submitted on /book forms
+ *   7. Stamps each enquiry with its origin page ("Source page" hidden field)
  *
  * Replaces:
  *   - inline GA4 snippet in <head> of all pages
@@ -145,6 +146,17 @@
   function setupFormTracking() {
     var bookForm = document.querySelector('form#form, form[action*="formspree"], form[action*="book"], form#book, form#enquiry, form#bookForm');
     if (bookForm) {
+      // Capture the page a form was submitted from — Playbook v1.1 §8.4.
+      // Hidden field rides along in the Formspree submission so each enquiry
+      // shows its origin page (sharpens triage + which-page-converts insight).
+      if (!bookForm.querySelector('input[name="Source page"]')) {
+        var srcField = document.createElement('input');
+        srcField.type = 'hidden';
+        srcField.name = 'Source page';
+        srcField.value = window.location.href;
+        bookForm.appendChild(srcField);
+      }
+
       bookForm.addEventListener('submit', function () {
         gtag('event', 'enquiry_submitted', {
           'page_path': window.location.pathname,
