@@ -27,7 +27,7 @@
     }
   ],
 "vars": {
-    "REVIEWS_COUNT": "15",
+    "REVIEWS_COUNT": "13",
     "REVIEWS_RATING": "5.0",
     "REVIEWS_BEST": "5"
   },
