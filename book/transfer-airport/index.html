@@ -25,6 +25,10 @@ body{
   display:flex;align-items:center;justify-content:center;
   min-height:100vh;padding:60px 40px 72px;
 }
+.close-btn{position:fixed;top:28px;right:32px;width:44px;height:44px;border:.5px solid var(--parch);background:var(--bone);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s,background .3s;z-index:100;text-decoration:none}
+.close-btn:hover{border-color:var(--sand)}
+.close-btn svg{width:14px;height:14px;stroke:var(--stone);stroke-width:1.5;transition:stroke .3s;fill:none}
+.close-btn:hover svg{stroke:var(--warm)}
 .card{width:100%;max-width:760px}
 
 /* ── HEADER ── */
@@ -127,12 +131,16 @@ body{
 
 @media(max-width:600px){
   body{padding:44px 24px 56px}
+  .close-btn{top:16px;right:16px}
   .row-2,.row-3{grid-template-columns:1fr}
   .cta-row{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+<a href="javascript:history.back()" class="close-btn" aria-label="Close and return">
+  <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+</a>
 <div class="card">
 
   <div class="card-header">
@@ -146,6 +154,7 @@ body{
   <form id="form" action="https://formspree.io/f/mjgpnaoz" method="POST" novalidate>
     <input type="hidden" name="_subject" value="Airport Transfer Request — Riviera Journeys">
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="Source page">
 
     <div class="field">
       <label for="name">Your name *</label>
@@ -215,6 +224,7 @@ body{
 </div>
 <script>
 var form=document.getElementById('form'),btn=document.getElementById('submitBtn');
+var srcEl=form&&form.querySelector('input[name="Source page"]');if(srcEl)srcEl.value=location.href;
 if(form){form.addEventListener('submit',function(e){e.preventDefault();var req=form.querySelectorAll('[required]'),ok=true;req.forEach(function(el){el.classList.remove('error');if(!el.value.trim()){el.classList.add('error');ok=false;}});if(!ok)return;btn.querySelector('span').textContent='Sending\u2026';btn.disabled=true;fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';document.getElementById('success').style.display='flex';}else{btn.querySelector('span').textContent='Request Transfer';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');}}).catch(function(){btn.querySelector('span').textContent='Request Transfer';btn.disabled=false;alert('Please WhatsApp us: +33 6 69 96 22 72');});})}
 </script>
 <script src="/nav.js" defer></script>
