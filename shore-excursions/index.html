@@ -457,9 +457,11 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 .d1{transition-delay:.1s}
 
 /* ═══ HUB PAGE LAYOUT ═══ */
-.hub-hero{position:relative;height:85vh;min-height:520px;overflow:hidden}
-.hub-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hub-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.85) 0%,rgba(28,28,26,.3) 50%,rgba(28,28,26,.15) 100%)}
+.hub-hero{position:relative;height:92vh;min-height:620px;overflow:hidden;background:var(--deep)}
+.hub-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:1;animation:heroZoomOut 8s var(--ease) forwards}
+@keyframes heroZoomOut{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hub-hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.88) 0%,rgba(28,28,26,.32) 55%,transparent 100%)}
+.hub-hero::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
 .hub-hero-content{position:absolute;bottom:0;left:0;right:0;z-index:4;padding:0 96px 72px}
 .hub-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px;margin-bottom:20px}
 .hub-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
@@ -468,11 +470,10 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 .hub-hero-sub{font-family:var(--body);font-size:17px;font-weight:500;color:rgba(247,243,237,.5);margin-top:16px;max-width:560px;line-height:1.6}
 
 .hub-outer{max-width:1360px;margin:0 auto;padding:0 96px}
-.hub-bc{padding:48px 96px 0;background:transparent}
-.hub-bc ol{display:flex;align-items:center;gap:6px;list-style:none;flex-wrap:wrap}
-.hub-bc li{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.hub-bc li a{color:var(--terra);transition:color .3s}
-.hub-bc li+li::before{content:'·';margin-right:6px;color:var(--stone)}
+.hub-bc{padding:32px 96px 0;background:transparent;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.08em;color:var(--stone)}
+.hub-bc a{color:var(--stone);transition:color .2s}
+.hub-bc a:hover{color:var(--warm)}
+.hub-bc span{color:var(--terra)}
 
 .hub-intro{padding:64px 0 0;max-width:720px}
 .hub-intro p{font-family:var(--body);font-size:18px;font-weight:500;color:var(--slate);line-height:1.85}
@@ -520,16 +521,16 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 @media(max-width:1100px){
   .hub-hero-content{padding:0 56px 56px}
   .hub-outer{padding:0 56px}
-  .hub-bc{padding:40px 56px 0}
+  .hub-bc{padding:28px 56px 0}
   .route-grid{grid-template-columns:repeat(2,1fr);gap:28px}
   .schedule-card{flex-direction:column;text-align:center}
   .schedule-card-photo{flex:none;width:100%;height:200px}
 }
 @media(max-width:768px){
-  .hub-hero{height:60vh;min-height:400px}
+  .hub-hero{height:66vh;min-height:440px}
   .hub-hero-content{padding:0 28px 48px}
   .hub-outer{padding:0 28px}
-  .hub-bc{padding:32px 28px 0}
+  .hub-bc{padding:24px 28px 0}
   .route-grid{grid-template-columns:1fr}
   .hub-cta{padding:64px 0}
 }
@@ -574,12 +575,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 </section>
 
 <!-- BREADCRUMB -->
-<nav class="hub-bc" aria-label="Breadcrumb" style="padding:48px 96px 0">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li>Shore Excursions</li>
-  </ol>
-</nav>
+<nav class="hub-bc" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <span>Shore Excursions</span></nav>
 
 <div class="hub-outer">
 
