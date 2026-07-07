@@ -177,7 +177,8 @@ const NOINDEX_EXACT = new Set([
 ]);
 
 const NOINDEX_PREFIX = [
-  "/editorial/",
+  // "/editorial/" removed 2026-07-07 — all five editorial pages are built
+  // and in sitemap.xml; section promoted to organic search (WORKER-002).
   "/destinations/",
   "/multi-day/france/",
   "/multi-day/italy/",
