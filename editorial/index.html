@@ -26,12 +26,6 @@
 {"@context": "https://schema.org", "@type": "CollectionPage", "name": "The Roadbook — French Riviera Guides", "url": "https://rivierajourneys.fr/editorial", "description": "Practical guides to the French Riviera by Riviera Journeys. Cruise ports, day-trip itineraries, and what things actually cost.", "publisher": {"@type": "Organization", "name": "Riviera Journeys", "url": "https://rivierajourneys.fr/"}, "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Cannes Cruise Port: What You Need to Know", "url": "https://rivierajourneys.fr/editorial/cannes-cruise-port-guide"}, {"@type": "ListItem", "position": 2, "name": "Villefranche Cruise Port: What You Need to Know", "url": "https://rivierajourneys.fr/editorial/villefranche-cruise-port-guide"}, {"@type": "ListItem", "position": 3, "name": "Nice, Eze and Monaco in One Day", "url": "https://rivierajourneys.fr/editorial/nice-eze-monaco-one-day"}, {"@type": "ListItem", "position": 4, "name": "Cruise Line, Viator or Direct — What You Pay", "url": "https://rivierajourneys.fr/editorial/book-direct"}]}}
 </script>
 <style>
-body.hub-solid .nav{background:rgba(46,43,39,.55)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;border-bottom-color:rgba(196,170,130,.2)!important}
-body.hub-solid .nav .nav-logo,body.hub-solid .nav .nav-links>li>a{color:rgba(253,250,246,.85)!important}
-body.hub-solid .nav .nav-links>li>a:hover{color:#fff!important}
-body.hub-solid .nav.scrolled{background:rgba(253,250,246,.96)!important;border-bottom-color:var(--parch)!important}
-body.hub-solid .nav.scrolled .nav-logo,body.hub-solid .nav.scrolled .nav-links>li>a{color:var(--stone)!important}
-body.hub-solid .nav.scrolled .nav-links>li>a:hover{color:var(--warm)!important}
 :root{--bone:#FDFAF6;--bone2:#F7F3ED;--parch:#EAE3D7;--sand:#C4AA82;--stone:#8C8880;--slate:#3D3D38;--warm:#1C1C1A;--terra:#A86543;--serif:'Cormorant Garamond',Georgia,serif;--sc:'Cormorant SC',Georgia,serif;--body:'Newsreader',Georgia,serif;--sans:'Jost',sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -52,6 +46,26 @@ img{display:block;max-width:100%}
 .breadcrumb a{color:var(--stone);transition:color .2s}.breadcrumb a:hover{color:var(--warm)}
 .breadcrumb span{color:var(--warm)}
 /* ── Dark-field inset hero ── */
+/* ── Hero: full-bleed photo background (site gold pattern) ── */
+.hero{position:relative;height:92vh;min-height:600px;overflow:hidden;background:var(--warm)}
+.hero-photo{position:absolute;inset:0;background:var(--deep)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%;animation:heroZoomOut 8s var(--ease) forwards}
+@keyframes heroZoomOut{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-v{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.86) 0%,rgba(28,28,26,.30) 55%,rgba(28,28,26,.15) 100%)}
+.hero-g{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
+.hero-title-block{position:absolute;left:0;right:0;bottom:22vh;z-index:4;padding:0 clamp(32px,6vw,96px)}
+.masthead{max-width:760px}
+.masthead-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.masthead-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--terra)}
+.masthead h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,80px);font-weight:300;line-height:1.02;color:var(--bone);margin-bottom:24px;letter-spacing:-.018em}
+.standfirst{font-family:var(--body);font-size:16.5px;font-weight:300;line-height:1.8;color:rgba(247,243,237,.82);max-width:520px;margin-bottom:26px}
+.hero-credit{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,237,.55);display:flex;align-items:center;gap:12px}
+.hero-credit::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
+.page-wrap{max-width:1080px;margin:0 auto;padding:88px 48px 0}
+.breadcrumb{font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.08em;color:var(--stone);margin-bottom:48px}
+.breadcrumb a{color:var(--stone);transition:color .2s}.breadcrumb a:hover{color:var(--warm)}
+.breadcrumb span{color:var(--warm)}
+/* ── Dark-field inset hero ── */
 .hero{position:relative;background:#6E5847;padding:calc(68px + clamp(48px,7vw,88px)) clamp(32px,6vw,96px) clamp(48px,7vw,88px);display:grid;grid-template-columns:minmax(300px,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(40px,5vw,72px);min-height:90vh}
 .hero-g{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");background-size:180px}
 .hero-text{position:relative;z-index:2}
@@ -61,7 +75,6 @@ img{display:block;max-width:100%}
 .standfirst{font-family:var(--body);font-size:16.5px;font-weight:300;line-height:1.8;color:rgba(253,250,246,.82);max-width:430px;margin-bottom:32px}
 .hero-credit{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,250,246,.6);display:flex;align-items:center;gap:12px}
 .hero-credit::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
-.hero-photo{position:relative;z-index:2;overflow:hidden;aspect-ratio:4/3;box-shadow:0 2px 40px rgba(0,0,0,.22);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' preserveAspectRatio='none' viewBox='0 0 1200 900'%3E%3Cpath d='M14,0 L1200,0 L1200,900 L14,900 C10,860 24,820 12,780 C2,740 20,700 10,660 C2,620 24,580 14,540 C6,500 20,460 10,420 C2,380 24,340 14,300 C6,260 20,220 10,180 C2,140 24,100 14,60 C9,38 18,18 14,0 Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center/100% 100%;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' preserveAspectRatio='none' viewBox='0 0 1200 900'%3E%3Cpath d='M14,0 L1200,0 L1200,900 L14,900 C10,860 24,820 12,780 C2,740 20,700 10,660 C2,620 24,580 14,540 C6,500 20,460 10,420 C2,380 24,340 14,300 C6,260 20,220 10,180 C2,140 24,100 14,60 C9,38 18,18 14,0 Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center/100% 100%}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 50%;animation:heroZoomOut 9s var(--ease) forwards}
 @keyframes heroZoomOut{from{transform:scale(1.05)}to{transform:scale(1)}}
 /* ── Meta line (shared) ── */
@@ -85,7 +98,6 @@ img{display:block;max-width:100%}
 .story:last-child{padding-right:0}
 .story+.story{border-left:.5px solid var(--parch)}
 .story-photo{overflow:hidden;aspect-ratio:5/3;margin-bottom:20px}
-.story-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .story-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .story:hover .story-photo img{transform:scale(1.04)}
 .story-title{font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.24;color:var(--warm);margin-bottom:10px;transition:color .3s}
@@ -108,8 +120,8 @@ img{display:block;max-width:100%}
 .hub-note a{color:var(--terra);border-bottom:.5px solid rgba(168,101,67,.3);transition:border-color .2s}
 .hub-note a:hover{border-bottom-color:var(--terra)}
 @media(max-width:900px){
-.hero{gap:44px}
-.masthead h1{font-size:clamp(48px,7vw,68px)}
+.masthead h1{font-size:clamp(42px,7vw,60px)}
+.hero-title-block{bottom:18vh}
 .featured{grid-template-columns:1fr}
 .featured-photo{aspect-ratio:1.7/1}
 .featured-body{padding:28px 0 0}
@@ -118,10 +130,10 @@ img{display:block;max-width:100%}
 .story+.story{border-left:none}
 .story:first-child{padding-top:32px}
 }
-@media(max-width:768px){.nav{padding:0 24px}.nav-links{display:none}.page-wrap{padding:56px 24px 0}.hero{grid-template-columns:1fr;min-height:0;padding:110px 24px 48px;gap:36px}.masthead h1{font-size:54px}.standfirst{font-size:15px}.hero-photo{aspect-ratio:4/3;max-height:56vh}.featured{margin-bottom:40px}.story-grid{margin-bottom:64px}.pano-caption{padding:32px 24px 14px;font-size:12px}.prep{padding:64px 24px 0}.prep-row{grid-template-columns:1fr;margin-bottom:64px}.hub-note{padding:0 24px 72px}}
+@media(max-width:768px){.nav{padding:0 24px}.nav-links{display:none}.page-wrap{padding:56px 24px 0}.hero{height:80vh;min-height:460px}.hero-title-block{bottom:16vh;padding:0 24px}.masthead h1{font-size:46px}.standfirst{font-size:15px}.featured{margin-bottom:40px}.story-grid{margin-bottom:64px}.pano-caption{padding:32px 24px 14px;font-size:12px}.prep{padding:64px 24px 0}.prep-row{grid-template-columns:1fr;margin-bottom:64px}.hub-note{padding:0 24px 72px}}
 </style>
 </head>
-<body class="hub-solid">
+<body>
 
 <nav class="nav" id="mainNav">
   <a href="/" class="nav-logo" aria-label="Riviera Journeys home">Riviera Journeys</a>
@@ -138,14 +150,17 @@ img{display:block;max-width:100%}
 
 <main>
   <div class="hero">
-    <div class="hero-g" aria-hidden="true"></div>
-    <header class="hero-text masthead">
-      <div class="masthead-kicker">Riviera Journeys &middot; Editorial</div>
-      <h1>The Roadbook</h1>
-      <p class="standfirst">Practical guides to the French Riviera, written by the people who drive these roads and photograph them. Itineraries that fit the hours you have, and what things cost when nobody is selling you anything.</p>
-      <div class="hero-credit">Every photograph taken by us, on these roads</div>
-    </header>
     <div class="hero-photo"><img src="/photos/mediterranean-bay-yachts-esterel-mountains-riviera-journeys-editorial.avif" alt="Mediterranean bay with yachts below the Esterel mountains — French Riviera Roadbook guides" loading="eager" fetchpriority="high"></div>
+    <div class="hero-v" aria-hidden="true"></div>
+    <div class="hero-g" aria-hidden="true"></div>
+    <div class="hero-title-block">
+      <header class="masthead">
+        <div class="masthead-kicker">Riviera Journeys &middot; Editorial</div>
+        <h1>The Roadbook</h1>
+        <p class="standfirst">Practical guides to the French Riviera, written by the people who drive these roads and photograph them. Itineraries that fit the hours you have, and what things cost when nobody is selling you anything.</p>
+        <div class="hero-credit">Every photograph taken by us, on these roads</div>
+      </header>
+    </div>
   </div>
 
   <div class="page-wrap">
