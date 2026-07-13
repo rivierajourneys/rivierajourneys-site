@@ -115,6 +115,17 @@ a{color:inherit;text-decoration:none;cursor:none}img{max-width:100%;height:auto;
 .schedule-link:hover{gap:12px}
 @media(max-width:768px){.month-row td{padding:8px 10px;font-size:13px}.td-date{font-size:12px}.td-ship{font-size:14px}.td-line{font-size:13px}.td-time{font-size:11px;width:auto}.schedule-table .td-line{display:none}.schedule-table thead th.col-line{display:none}}
 
+/* SHORE BRIDGE */
+.shore-bridge{background:var(--bone);border-left:2px solid var(--terra);padding:24px 28px;margin-bottom:48px}
+.shore-bridge .brg-lbl{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+.shore-bridge h3{font-family:var(--serif);font-size:clamp(20px,2.2vw,25px);font-weight:300;color:var(--warm);line-height:1.2;margin-bottom:12px}
+.shore-bridge h3 em{font-style:italic;color:var(--stone)}
+.shore-bridge p{font-family:var(--body);font-size:15px;font-weight:500;color:var(--slate);line-height:1.8;margin-bottom:16px}
+.shore-bridge p a{color:var(--terra);border-bottom:.5px solid rgba(168,101,67,.35);transition:border-color .3s}
+.shore-bridge p a:hover{border-color:var(--terra)}
+.shore-bridge .brg-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);transition:gap .3s}
+.shore-bridge .brg-cta:hover{gap:12px}
+
 /* FAQ */
 .s-faq{margin-top:48px}.faq-rule{height:.5px;background:var(--parch)}.faq-item{border-bottom:.5px solid var(--parch)}.faq-q{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 0;cursor:pointer;gap:20px;user-select:none}.faq-qt{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--warm);line-height:1.3}.faq-ico{width:24px;height:24px;flex-shrink:0;border:.5px solid var(--parch);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--slow),border-color .3s;margin-top:2px}.faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--sand)}.faq-ico svg{width:12px;height:12px;stroke:var(--stone);fill:none}.faq-item.open .faq-ico svg{stroke:var(--sand)}.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--slow)}.faq-item.open .faq-a{max-height:400px}.faq-ai{padding:4px 0 18px;font-family:var(--body);font-size:15.5px;font-weight:500;color:var(--slate);line-height:1.85}
 
@@ -332,6 +343,13 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
         <a href="/cannes-cruise-schedule" class="schedule-link">Cannes cruise schedule 2026 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
+      <div class="shore-bridge reveal">
+        <div class="brg-lbl">Your day ashore</div>
+        <h3>The earlier your tender, <em>the more the Riviera opens up.</em></h3>
+        <p>Villefranche tenders land right in the old town. A morning landing leaves time to follow the coast to <a href="/shore-excursions/villefranche/nice-eze-monaco">Nice, Eze and Monaco</a>, or head inland to <a href="/shore-excursions/villefranche/grasse-gourdon">Grasse and Gourdon</a>. By midday the longer routes fall away &mdash; they no longer fit before the last tender. Tell us your ship and we match a private excursion to the hours you have.</p>
+        <a href="/shore-excursions/villefranche" class="brg-cta">See our shore excursions from Villefranche <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
       <div class="s-faq reveal">
         <h2 class="section-h">Port guide.<br><em>What you need to know.</em></h2>
         <div class="faq-rule"></div>
@@ -414,6 +432,7 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 function faq(q){var item=q.closest('.faq-item'),isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});if(!isOpen)item.classList.add('open');}
 function toggleMonth(el){el.classList.toggle('collapsed');var next=el.nextElementSibling;while(next&&next.classList.contains('month-row')){next.style.display=el.classList.contains('collapsed')?'none':'';next=next.nextElementSibling;}}
 (function(){if(!window.IntersectionObserver)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});})();
+(function(){var tb=document.querySelector('[data-cruise-schedule]');if(!tb)return;function apply(){var headers=document.querySelectorAll('.schedule-table .month-header');if(!headers.length)return;var cur=new Date().toLocaleString('en-GB',{month:'long'}).toLowerCase();var open=-1;headers.forEach(function(h,i){var t=(h.querySelector('.mh-name')||h).textContent.toLowerCase();if(open===-1&&t.indexOf(cur)!==-1)open=i;});if(open===-1)open=0;headers.forEach(function(h,i){var c=i!==open;h.classList.toggle('collapsed',c);var n=h.nextElementSibling;while(n&&n.classList.contains('month-row')){n.style.display=c?'none':'';n=n.nextElementSibling;}});}apply();var t;var obs=new MutationObserver(function(){clearTimeout(t);t=setTimeout(apply,80);});obs.observe(tb,{childList:true,subtree:true});setTimeout(function(){obs.disconnect();},8000);})();
 </script>
 </body>
 </html>
