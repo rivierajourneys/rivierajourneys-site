@@ -6,10 +6,10 @@
 <!-- Analytics + Cookie Consent (Consent Mode v2) -->
 <script src="/cookie-consent.js" defer></script>
 <title>Shore Excursion from Cannes: Antibes, Saint-Paul & the Riviera | Riviera Journeys</title>
-<meta name="description" content="Private shore excursion from Cannes: Antibes old town, Cap d'Antibes, Saint-Paul-de-Vence. Mercedes V-Class, up to 7 guests. Fixed price €800. Back before the tender.">
+<meta name="description" content="Private shore excursion from Cannes: Antibes old town, Cap d'Antibes, Saint-Paul-de-Vence. Mercedes V-Class, up to 7 guests. From €550 per vehicle. Back before the tender.">
 <link rel="canonical" href="https://rivierajourneys.fr/shore-excursions/cannes/cannes-antibes-stpaul">
 <meta property="og:title" content="Shore Excursion from Cannes: Antibes, Saint-Paul &amp; the Riviera | Riviera Journeys">
-<meta property="og:description" content="Private shore excursion from Cannes. Antibes old town, Cap d'Antibes, Saint-Paul-de-Vence. Mercedes V-Class. Fixed price €800 per vehicle.">
+<meta property="og:description" content="Private shore excursion from Cannes. Antibes old town, Cap d'Antibes, Saint-Paul-de-Vence. Mercedes V-Class. From €550 per vehicle. per vehicle.">
 <meta property="og:image" content="https://rivierajourneys.fr/photos/saint-paul-de-vence-medieval-village-ramparts-golden-hour-shore-excursion-cannes.avif">
 <meta property="og:url" content="https://rivierajourneys.fr/shore-excursions/cannes/cannes-antibes-stpaul">
 <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristTrip",
 "name":"Shore Excursion from Cannes: Antibes and Saint-Paul-de-Vence",
-"description":"Private shore excursion from Cannes: Antibes old town, Cap d'Antibes coastline, Saint-Paul-de-Vence medieval village. From 5 hours. Fixed price 800 EUR.",
+"description":"Private shore excursion from Cannes: Antibes old town, Cap d'Antibes coastline, Saint-Paul-de-Vence medieval village. From 5 hours. Per vehicle: 550 EUR up to 4 guests, 800 EUR up to 7 guests.",
 "url":"https://rivierajourneys.fr/shore-excursions/cannes/cannes-antibes-stpaul",
 "touristType":"Cruise passengers",
 "itinerary":{"@type":"ItemList","itemListElement":[
@@ -35,14 +35,14 @@
   {"@type":"ListItem","position":3,"name":"Saint-Paul-de-Vence","description":"Medieval walled village, Fondation Maeght, Chagall's cemetery."}
 ]},
 "provider":{"@type":"LocalBusiness","name":"Riviera Journeys","url":"https://rivierajourneys.fr","telephone":"+33669962272","address":{"@type":"PostalAddress","addressLocality":"Cannes","postalCode":"06400","addressRegion":"Provence-Alpes-Côte d'Azur","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":43.5528,"longitude":7.0174},"openingHours":"Mo-Su 07:00-21:00","sameAs":["https://www.instagram.com/rivierajourneys/","https://g.co/kgs/rivierajourneys"]},
-"offers":{"@type":"Offer","price":"800","priceCurrency":"EUR","availability":"https://schema.org/InStock"}
+"offers":{"@type":"AggregateOffer","lowPrice":"550","highPrice":"800","priceCurrency":"EUR","offerCount":"2","availability":"https://schema.org/InStock"}
 }
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Where do you meet us in Cannes?","acceptedAnswer":{"@type":"Answer","text":"At boulevard Jean Hibert, on the lower harbour — the tender landing pier. We are there with a name board before your tender docks."}},
 {"@type":"Question","name":"How long is the Antibes Saint-Paul excursion from Cannes?","acceptedAnswer":{"@type":"Answer","text":"From 5 hours. Antibes is 12 kilometres east of Cannes, about 20 minutes. Saint-Paul-de-Vence is another 20 minutes inland. We adapt the return to your ship's departure time."}},
-{"@type":"Question","name":"What is the price for a shore excursion from Cannes?","acceptedAnswer":{"@type":"Answer","text":"800 EUR per vehicle, up to 7 passengers. Fixed price regardless of group size. Entrance fees and meals not included."}},
+{"@type":"Question","name":"What is the price for a shore excursion from Cannes?","acceptedAnswer":{"@type":"Answer","text":"Per vehicle by group size: 550 EUR up to 4 guests, 800 EUR up to 7 guests. Entrance fees and meals not included."}},
 {"@type":"Question","name":"Can we visit the Picasso Museum in Antibes?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Musée Picasso is inside the Château Grimaldi in the old town, directly above the sea. Entry is around €8. We allow time for it if you want — mention it when you book."}},
 {"@type":"Question","name":"Is Saint-Paul-de-Vence suitable for people with limited mobility?","acceptedAnswer":{"@type":"Answer","text":"Partially. The main street is cobbled but manageable. The upper lanes are steeper. The Fondation Maeght is fully accessible and is the better choice if walking is difficult."}}
 ]}
@@ -187,7 +187,13 @@ img{display:block;max-width:100%;height:auto}
 .bk-price-lbl{font-family:var(--sans);font-size:10px;letter-spacing:.3em;font-weight:500;text-transform:uppercase;color:var(--terra);margin-bottom:16px;display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
 .bk-price-lbl::before{content:'';display:block;width:20px;height:.5px;background:var(--terra)}
 .bk-price-num{font-family:var(--serif);font-size:42px;color:var(--warm);line-height:1;font-weight:400}
-.bk-price-unit{font-family:var(--sans);font-size:10.5px;font-weight:500;color:var(--stone);margin-top:10px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5}
+.bk-price-unit{font-family:var(--sans);font-size:10.5px;font-weight:500;color:var(--stone);margin-top:18px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;text-align:left}
+.bk-tiers{display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:8px;align-items:baseline;margin:2px 0}
+.bk-tier{display:contents}
+.bk-tier-price{font-family:var(--serif);color:var(--warm);line-height:1;font-weight:400;text-align:right}
+.bk-tier-main .bk-tier-price{font-size:42px}
+.bk-tier-sub .bk-tier-price{font-size:26px;color:var(--stone)}
+.bk-tier-unit{font-family:var(--sans);font-size:9.5px;font-weight:500;color:var(--stone);letter-spacing:.12em;text-transform:uppercase}
 .bk-facts{padding:0 0 20px;border-bottom:.5px solid var(--rule-dark);margin-bottom:4px}
 .bk-fact{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;font-size:14px;gap:12px}
 .bk-fact-lbl{font-family:var(--sans);font-size:10px;letter-spacing:.2em;font-weight:500;text-transform:uppercase;color:var(--stone);flex-shrink:0}
@@ -295,7 +301,7 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
   <div class="hero-actions-block">
     <div class="hero-inner">
       <div class="hero-meta">
-        <span class="hero-price">&#8364;800</span>
+        <span class="hero-price">&#8364;550 &ndash; &#8364;800</span>
         <span class="hero-pill">per vehicle</span>
         <span class="hero-pill">up to 7 guests</span>
         <span class="hero-pill">from 5 hours</span>
@@ -414,8 +420,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 
       <!-- Mobile CTA -->
       <div class="mobile-cta">
-        <div class="mobile-cta-price">&#8364;800</div>
-        <div class="mobile-cta-sub">Per vehicle &middot; up to 7 passengers</div>
+        <div class="mobile-cta-price">from &#8364;550</div>
+        <div class="mobile-cta-sub">&#8364;550 up to 4 &middot; &#8364;800 up to 7 guests</div>
         <div class="mobile-cta-btns">
           <a href="/book/shore-excursion/?excursion=cannes-antibes-stpaul" class="btn-sand" style="justify-content:center"><span>Book Your Excursion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="https://wa.me/33669962272?text=Shore+excursion+Cannes+Antibes+Saint-Paul" style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);border:.5px solid rgba(168,101,67,.3);padding:12px" target="_blank" rel="noopener">WhatsApp us</a>
@@ -435,17 +441,17 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 
       <!-- PRICING -->
       <div class="s-pricing reveal">
-        <h2 class="section-h">Pricing.<br><em>One price. Per vehicle.</em></h2>
+        <h2 class="section-h">Pricing.<br><em>Per vehicle, by group size.</em></h2>
         <table class="pricing-table"><colgroup><col><col><col><col></colgroup>
-          <thead><tr><th>Route</th><th>Duration</th><th>Group size</th><th>Price</th></tr></thead>
+          <thead><tr><th>Route</th><th>Duration</th><th>Up to 4</th><th>Up to 7</th></tr></thead>
           <tbody>
-            <tr><td>Cannes &middot; Antibes &middot; Saint-Paul</td><td>From 5 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
-            <tr><td>Antibes &amp; Saint-Paul only</td><td>From 4 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
-            <tr><td>Antibes only</td><td>From 3 hrs</td><td>Up to 7</td><td>&#8364;800</td></tr>
-            <tr><td>Custom itinerary</td><td>Your schedule</td><td>Up to 7</td><td>&#8364;800</td></tr>
+            <tr><td>Cannes &middot; Antibes &middot; Saint-Paul</td><td>From 5 hrs</td><td>&#8364;550</td><td>&#8364;800</td></tr>
+            <tr><td>Antibes &amp; Saint-Paul only</td><td>From 4 hrs</td><td>&#8364;550</td><td>&#8364;800</td></tr>
+            <tr><td>Antibes only</td><td>From 3 hrs</td><td>&#8364;550</td><td>&#8364;800</td></tr>
+            <tr><td>Custom itinerary</td><td>Your schedule</td><td>&#8364;550</td><td>&#8364;800</td></tr>
           </tbody>
         </table>
-        <p class="pricing-note">Per person: 2 guests = &euro;400 &middot; 4 guests = &euro;200 &middot; 7 guests = &euro;114. Payment by bank transfer or cash (EUR).</p>
+        <p class="pricing-note">Up to 4 guests (&euro;550): 2 = &euro;275, 4 = &euro;137 per person. Up to 7 guests (&euro;800): 5 = &euro;160, 7 = &euro;114 per person. Payment by bank transfer or cash (EUR).</p>
       </div>
 
       <!-- FAQ -->
@@ -535,8 +541,8 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
       <div class="sidebar-scroll">
         <div class="bk-price-hd">
           <div class="bk-price-lbl">Shore excursion</div>
-          <div class="bk-price-num">&#8364;800</div>
-          <div class="bk-price-unit">Per vehicle &middot; up to 7 passengers</div>
+          <div class="bk-tiers"><div class="bk-tier bk-tier-main"><span class="bk-tier-price">&#8364;800</span><span class="bk-tier-unit">up to 7 guests</span></div><div class="bk-tier bk-tier-sub"><span class="bk-tier-price">&#8364;550</span><span class="bk-tier-unit">up to 4 guests</span></div></div>
+          <div class="bk-price-unit">Per vehicle &middot; fixed price</div>
         </div>
         <div class="bk-facts">
           <div class="bk-fact"><div class="bk-fact-lbl">Pick-up</div><div class="bk-fact-val">Cannes Old Port</div></div>

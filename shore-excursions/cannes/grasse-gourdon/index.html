@@ -188,13 +188,13 @@ img{display:block;max-width:100%;height:auto}
 .bk-price-lbl{font-family:var(--sans);font-size:10px;letter-spacing:.3em;font-weight:500;text-transform:uppercase;color:var(--terra);margin-bottom:16px;display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
 .bk-price-lbl::before{content:'';display:block;width:20px;height:.5px;background:var(--terra)}
 .bk-price-num{font-family:var(--serif);font-size:42px;color:var(--warm);line-height:1;font-weight:400}
-.bk-price-unit{font-family:var(--sans);font-size:10.5px;font-weight:500;color:var(--stone);margin-top:10px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5}
-.bk-tiers{display:flex;flex-direction:column;gap:14px;margin:2px 0}
-.bk-tier{display:flex;flex-direction:column}
-.bk-tier-price{font-family:var(--serif);color:var(--warm);line-height:1;font-weight:400}
+.bk-price-unit{font-family:var(--sans);font-size:10.5px;font-weight:500;color:var(--stone);margin-top:18px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;text-align:left}
+.bk-tiers{display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:8px;align-items:baseline;margin:2px 0}
+.bk-tier{display:contents}
+.bk-tier-price{font-family:var(--serif);color:var(--warm);line-height:1;font-weight:400;text-align:right}
 .bk-tier-main .bk-tier-price{font-size:42px}
 .bk-tier-sub .bk-tier-price{font-size:26px;color:var(--stone)}
-.bk-tier-unit{font-family:var(--sans);font-size:9.5px;font-weight:500;color:var(--stone);margin-top:7px;letter-spacing:.12em;text-transform:uppercase}
+.bk-tier-unit{font-family:var(--sans);font-size:9.5px;font-weight:500;color:var(--stone);letter-spacing:.12em;text-transform:uppercase}
 .bk-facts{padding:0 0 20px;border-bottom:.5px solid var(--rule-dark);margin-bottom:4px}
 .bk-fact{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;font-size:14px;gap:12px}
 .bk-fact-lbl{font-family:var(--sans);font-size:10px;letter-spacing:.2em;font-weight:500;text-transform:uppercase;color:var(--stone);flex-shrink:0}
