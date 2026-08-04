@@ -148,7 +148,7 @@ const NOINDEX_EXACT = new Set([
   "/shore-excursions/villefranche/provence-wine",
 
   // ── Sprint 2 — May/Jun ──
-  "/tours/nice/eze-monaco-menton",
+  // /tours/nice/eze-monaco-menton released 2026-08-04 (page complete, added to sitemap)
   "/tours/nice/cannes-antibes-saint-paul",
   "/tours/nice/grasse-gourdon-tourrettes",
   "/tours/nice/nice-eze-monaco",

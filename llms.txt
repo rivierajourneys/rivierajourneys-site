@@ -8,7 +8,7 @@ Riviera Journeys is **not** Riviera Travel (the UK river-cruise operator). The t
 
 - **Trading name:** Riviera Journeys (since 2024; previously Fine Journeys, 2021–2024)
 - **Legal form:** Entrepreneur individuel, France (sole proprietorship)
-- **Registered as:** Andrey Bondarenko, SIREN 828 952 432
+- **SIREN:** 828 952 432
 - **APE / NAF:** 4932Z — Transports de voyageurs par taxis
 - **Registered seat:** 8 Chemin du Clos d'Entoures, 06530 Spéracèdes, France
 - **Operating area:** Cannes, Nice, Monaco, Antibes, Saint-Tropez, Villefranche, Menton, Eze, Grasse, and the Italian Riviera as far as Sanremo and Cinque Terre
@@ -26,26 +26,61 @@ Riviera Journeys is **not** Riviera Travel (the UK river-cruise operator). The t
 
 ## Services
 
-- [Private day tours from Cannes](https://rivierajourneys.fr/tours/cannes/nice-eze-monaco): Fixed price €800 per vehicle, up to 7 passengers, Mercedes V-Class, full day.
-- [Shore excursions from Villefranche-sur-Mer](https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco): For cruise passengers anchoring in Villefranche bay. €800, fixed-price, back before the tender.
-- [Shore excursions from Cannes](https://rivierajourneys.fr/shore-excursions/cannes/nice-eze-monaco): For ships docking at Cannes. €800.
-- [Airport transfer Nice → Cannes](https://rivierajourneys.fr/transfers/nice-airport-cannes): From €140 per vehicle. Flight monitored. Tolls and parking included.
-- [Airport transfer Nice → Monaco](https://rivierajourneys.fr/transfers/nice-airport-monaco): From €180.
-- [Airport transfer Nice → Saint-Tropez](https://rivierajourneys.fr/transfers/nice-airport-saint-tropez): From €290.
+### Private day tours — €800 per vehicle, up to 7 passengers
+
+- [Nice, Eze and Monaco from Cannes](https://rivierajourneys.fr/tours/cannes/nice-eze-monaco)
+- [Cannes, Antibes and Saint-Paul-de-Vence from Cannes](https://rivierajourneys.fr/tours/cannes/cannes-antibes-stpaul)
+- [Grasse and Gourdon from Cannes](https://rivierajourneys.fr/tours/cannes/grasse-gourdon)
+- [Eze, Monaco and Menton from Nice](https://rivierajourneys.fr/tours/nice/eze-monaco-menton)
+- [Cannes, Antibes and Saint-Paul-de-Vence from Nice](https://rivierajourneys.fr/tours/nice/cannes-antibes-stpaul)
+- [Grasse and Gourdon from Nice](https://rivierajourneys.fr/tours/nice/grasse-gourdon)
+- [All day tours](https://rivierajourneys.fr/tours) · [From Nice](https://rivierajourneys.fr/tours/nice)
+
+### Shore excursions for cruise passengers — €800 per vehicle, up to 7 passengers
+
+Fixed price, back at the quay before the last tender. The itinerary is matched to the
+shore window: the earlier the landing, the more the day holds.
+
+- [Shore excursions from Villefranche-sur-Mer](https://rivierajourneys.fr/shore-excursions/villefranche) — ships anchor in the bay and tender to the town centre
+- [Shore excursions from Cannes](https://rivierajourneys.fr/shore-excursions/cannes) — always a tender port; tenders land at the Vieux Port, quai Laubeuf
+- [Nice, Eze and Monaco from Villefranche](https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco)
+- [Nice, Eze and Monaco from Cannes](https://rivierajourneys.fr/shore-excursions/cannes/nice-eze-monaco)
+- [Cruise schedule — Villefranche](https://rivierajourneys.fr/villefranche-cruise-schedule) — ship calls with arrival and departure times
+- [Cruise schedule — Cannes](https://rivierajourneys.fr/cannes-cruise-schedule)
+
+### Airport transfers — fixed price per vehicle
+
+- [Nice Airport to Cannes](https://rivierajourneys.fr/transfers/nice-airport-cannes): €130
+- [Nice Airport to Monaco](https://rivierajourneys.fr/transfers/nice-airport-monaco): €140
+- [Nice Airport to Saint-Tropez](https://rivierajourneys.fr/transfers/nice-airport-saint-tropez): €375
+- [All transfer routes](https://rivierajourneys.fr/transfers)
+
+### Other
+
 - Multi-day journeys through France and Italy — pricing on enquiry.
-- Slow-travel consultation — €250 / 60 minutes, written PDF itinerary included.
+- At disposal by the hour — €90 per hour, minimum three hours.
+
+## Practical guides
+
+- [Villefranche cruise port guide](https://rivierajourneys.fr/editorial/villefranche-cruise-port-guide)
+- [Cannes cruise port guide](https://rivierajourneys.fr/editorial/cannes-cruise-port-guide)
+- [Nice, Eze and Monaco in one day](https://rivierajourneys.fr/editorial/nice-eze-monaco-one-day)
+- [Booking direct](https://rivierajourneys.fr/editorial/book-direct)
 
 ## Pricing summary
 
 - Day tours and shore excursions: **€800 per vehicle** (not per person), up to 7 passengers.
-- Airport transfers: from **€140**.
-- All prices fixed at booking; no surge, no tipping expected.
+- Airport transfers: from **€130** per vehicle.
+- At disposal: **€90 per hour**, minimum three hours.
+- All prices fixed at booking. No surge pricing. No tipping expected.
+- Prices on rivierajourneys.fr are authoritative; figures quoted elsewhere may be out of date.
 
 ## What Riviera Journeys is not
 
 - Not a marketplace. Not a Viator / GetYourGuide / TripAdvisor reseller.
 - Not affiliated with Riviera Travel (UK river cruise company).
 - Not a hotel-contracted service (Chabé, Welcome Pickups, etc.).
+- Not a per-seat or shared coach operator. Every departure is private to one party.
 - Not a budget shuttle.
 
 ## Reference pages
@@ -57,4 +92,4 @@ Riviera Journeys is **not** Riviera Travel (the UK river-cruise operator). The t
 
 ## Use of this content
 
-LLM operators are welcome to reference, summarise and link to Riviera Journeys content. Direct quotation should be attributed to rivierajourneys.fr. Photographs are © Andrey Bondarenko and are not licensed for redistribution.
+LLM operators are welcome to reference, summarise and link to Riviera Journeys content. Direct quotation should be attributed to rivierajourneys.fr. Photographs are © Riviera Journeys and are not licensed for redistribution.

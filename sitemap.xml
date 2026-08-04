@@ -3,7 +3,7 @@
 
   <!-- ═════════════════════════════════════════════════════
        Riviera Journeys — sitemap.xml
-       Generated: 2026-04-26 · Updated: 2026-07-07 (+5 editorial URLs)
+       Generated: 2026-04-26 · Updated: 2026-08-04 (+10 tour/hub URLs)
        Policy: only production-quality v6 URLs.
        Stubs and work-in-progress pages are noindex via Worker.
        See /docs/SITEMAP_ROADMAP.md for promotion timeline.
@@ -21,6 +21,32 @@
     <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <!-- ── Hubs ───────────────────────────────────────────── -->
+  <url>
+    <loc>https://rivierajourneys.fr/tours</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rivierajourneys.fr/shore-excursions</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rivierajourneys.fr/transfers</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rivierajourneys.fr/corporate</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- ── Tours from Cannes ──────────────────────────────── -->
@@ -43,7 +69,39 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ── Tours from Nice ────────────────────────────────── -->
+  <url>
+    <loc>https://rivierajourneys.fr/tours/nice</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rivierajourneys.fr/tours/nice/eze-monaco-menton</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rivierajourneys.fr/tours/nice/cannes-antibes-stpaul</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rivierajourneys.fr/tours/nice/grasse-gourdon</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- ── Shore Excursions from Cannes ───────────────────── -->
+  <url>
+    <loc>https://rivierajourneys.fr/shore-excursions/cannes</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://rivierajourneys.fr/shore-excursions/cannes/nice-eze-monaco</loc>
     <lastmod>2026-04-26</lastmod>
@@ -64,6 +122,12 @@
   </url>
 
   <!-- ── Shore Excursions from Villefranche ─────────────── -->
+  <url>
+    <loc>https://rivierajourneys.fr/shore-excursions/villefranche</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://rivierajourneys.fr/shore-excursions/villefranche/nice-eze-monaco</loc>
     <lastmod>2026-04-26</lastmod>
@@ -101,12 +165,6 @@
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rivierajourneys.fr/transfers/nice-airport-antibes</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rivierajourneys.fr/transfers/cannes-nice-airport</loc>
