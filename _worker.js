@@ -159,12 +159,13 @@ const NOINDEX_EXACT = new Set([
   "/transfers/nice-airport-private-jet",
   "/transfers/cannes-mandelieu-airport",
 
-  // ── Q3 — Jul-Sep ──
-  "/multi-day",
+  // /multi-day released 2026-08-04 (hub built, added to sitemap)
 
   // ── Q4 — Oct-Dec, off-season ──
   "/tours/off-season/gastronomy",
-  "/tours/off-season/snow-and-sea",
+  "/tours/off-season",
+  "/tours/off-season/snow-sea",
+  "/tours/boat/esterel",
   "/tours/off-season/art-architecture",
   "/experiences/off-season",
 
