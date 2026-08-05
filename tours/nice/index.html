@@ -32,13 +32,7 @@
 }
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Where do you pick up in Nice?","acceptedAnswer":{"@type":"Answer","text":"We collect you from your hotel, residence or any address in Nice. Most pick-ups are along the Promenade des Anglais, in the old town near Cours Saleya, or at the port. We also meet arrivals at Nice Airport. If you prefer, we can collect from Villefranche, Beaulieu or Cap Ferrat."}},
-{"@type":"Question","name":"How long is a day tour from Cannes?","acceptedAnswer":{"@type":"Answer","text":"A full day tour is typically 8 to 9 hours, departing between 8:30 and 9:30 and returning by 17:00 to 18:00. Half-day tours — Grasse and the hilltop villages, for example — run 4 to 5 hours. We adjust timing to your preferences."}},
-{"@type":"Question","name":"How much does a private tour from Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"€800 per vehicle for standard routes, up to 7 passengers. The price covers fuel, tolls, parking and the vehicle for the entire day. No hidden costs."}},
-{"@type":"Question","name":"Can we change the route during the tour?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every route is a framework, not a fixed schedule. If you want to skip a stop and spend longer somewhere else, or add a detour to a village market, we adjust on the day. The best days are the ones that follow what interests you."}},
-{"@type":"Question","name":"What vehicle do you use?","acceptedAnswer":{"@type":"Answer","text":"A Mercedes V-Class — seven seats, air-conditioned, tinted windows, ample luggage space. Comfortable for a full day on Riviera roads. One vehicle, one party — no strangers, no group tours."}}
-]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do you pick up in Nice?","acceptedAnswer":{"@type":"Answer","text":"From your hotel, residence or any address in Nice. Most pick-ups are along the Promenade des Anglais, in the old town near Cours Saleya, or at the port. We also meet arrivals at Nice Airport, and collect from Villefranche, Beaulieu and Cap Ferrat."}},{"@type":"Question","name":"How long is a day tour?","acceptedAnswer":{"@type":"Answer","text":"A full day is typically eight to nine hours, departing between 8:30 and 9:30. Half-day tours — Grasse and the hilltop villages, for example — run four to five hours. We adjust to your preferences."}},{"@type":"Question","name":"How much does a private tour cost?","acceptedAnswer":{"@type":"Answer","text":"€800 per vehicle for standard routes — up to seven passengers. Fuel, tolls, parking and the vehicle for the entire day are included. No hidden costs."}},{"@type":"Question","name":"Can we change the route during the tour?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every route is a framework, not a fixed schedule. Skip a stop and spend longer somewhere else. Add a detour to a village market. Stop for a longer lunch. The best days are the ones that follow what interests you."}},{"@type":"Question","name":"What vehicle do you use?","acceptedAnswer":{"@type":"Answer","text":"A Mercedes V-Class — seven seats, air-conditioned, tinted windows, ample luggage space. Comfortable for a full day on Riviera roads. One vehicle, one party — no strangers, no group tours."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,17 +90,17 @@ img{display:block;max-width:100%;height:auto}
 .nav-burger.open .burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:900px){.nav{padding:0 24px}.nav-links{display:none!important}.nav-burger{display:flex}}
 
-.hub-hero{position:relative;height:92vh;min-height:620px;overflow:hidden;background:var(--deep)}
+.hub-hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;background:var(--deep)}
 .hub-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:1;animation:heroZoomOut 8s var(--ease) forwards}
 @keyframes heroZoomOut{from{transform:scale(1.12)}to{transform:scale(1)}}
 .hub-hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.88) 0%,rgba(28,28,26,.32) 55%,transparent 100%)}
 .hub-hero::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
 .hub-hero-content{position:absolute;bottom:0;left:0;right:0;z-index:4;padding:0 96px 72px}
-.hub-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.hub-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#D89873;display:flex;align-items:center;gap:14px;margin-bottom:20px}
 .hub-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
-.hub-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.5vw,64px);color:var(--bone);line-height:1.08;letter-spacing:-.02em}
-.hub-hero h1 em{font-style:italic;font-weight:400;color:rgba(247,243,237,.6)}
-.hub-hero-sub{font-family:var(--body);font-size:17px;font-weight:500;color:rgba(247,243,237,.5);margin-top:16px;max-width:560px;line-height:1.6}
+.hub-hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,72px);color:rgba(247,243,237,.55);line-height:1.08;letter-spacing:-.02em}
+.hub-hero h1 em{font-style:italic;font-weight:300;color:var(--bone)}
+.hub-hero-sub{font-family:var(--sans);font-size:15px;font-weight:400;letter-spacing:.015em;color:rgba(247,243,237,.6);margin-top:16px;max-width:560px;line-height:1.7}
 
 .hub-outer{max-width:1360px;margin:0 auto;padding:0 96px}
 .hub-bc{padding:32px 96px 0;background:transparent;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.08em;color:var(--stone)}
@@ -198,7 +192,7 @@ footer{background:var(--warm);padding:72px 96px 48px}
   .schedule-card-photo{flex:none;width:100%;height:200px}
 }
 @media(max-width:768px){
-  .hub-hero{height:66vh;min-height:440px}
+  .hub-hero{height:100vh;height:100svh;min-height:560px}
   .hub-hero-content{padding:0 28px 48px}
   .hub-outer{padding:0 28px}
   .hub-bc{padding:24px 28px 0}
@@ -208,6 +202,13 @@ footer{background:var(--warm);padding:72px 96px 48px}
   .faq-ai{font-size:16px;line-height:1.85}
   .hub-intro p{font-size:17px}
 }
+.hub-scroll{position:absolute;right:48px;bottom:60px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:16px;opacity:0;animation:fadeUp .9s ease .9s forwards}
+.hub-scroll-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(247,243,237,.45);writing-mode:vertical-rl}
+.hub-scroll-track{position:relative;width:1px;height:72px;background:rgba(247,243,237,.16);overflow:hidden}
+.hub-scroll-dot{position:absolute;left:0;top:0;width:1px;height:30px;background:linear-gradient(to bottom,transparent,var(--terra));animation:hubScrollSweep 2.4s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes hubScrollSweep{0%{transform:translateY(-30px)}65%,100%{transform:translateY(72px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:768px){.hub-scroll{right:20px;bottom:44px}.hub-scroll-track{height:56px}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -242,6 +243,10 @@ footer{background:var(--warm);padding:72px 96px 48px}
     <div class="hub-kicker">Private · From Nice</div>
     <h1>Day Tours<br><em>French &amp; Italian Riviera</em></h1>
     <p class="hub-hero-sub">Three routes from Nice — Eze, Monaco and Menton east along the corniches; Antibes, Cannes and Saint-Paul-de-Vence to the west; Grasse and the perched villages inland. In a Mercedes V-Class, driven by someone who lives here.</p>
+  </div>
+  <div class="hub-scroll" aria-hidden="true">
+    <span class="hub-scroll-label">Scroll</span>
+    <span class="hub-scroll-track"><span class="hub-scroll-dot"></span></span>
   </div>
 </section>
 
