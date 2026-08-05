@@ -146,6 +146,13 @@ const NOINDEX_EXACT = new Set([
   "/slow-travel",
   "/shore-excursions/cannes/provence-wine",
   "/shore-excursions/villefranche/provence-wine",
+  // Stub tour pages awaiting build (slug targets of live redirects)
+  "/tours/cannes/provence-rose-wine",
+  "/tours/nice/provence-rose-wine",
+  "/tours/cannes/menton-sanremo",
+  "/tours/nice/menton-sanremo",
+  // Utility pages
+  "/video",
 
   // ── Sprint 2 — May/Jun ──
   // /tours/nice/eze-monaco-menton released 2026-08-04 (page complete, added to sitemap)
@@ -178,6 +185,7 @@ const NOINDEX_EXACT = new Set([
 ]);
 
 const NOINDEX_PREFIX = [
+  "/book/",
   // "/editorial/" removed 2026-07-07 — all five editorial pages are built
   // and in sitemap.xml; section promoted to organic search (WORKER-002).
   "/destinations/",
