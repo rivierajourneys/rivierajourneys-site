@@ -58,15 +58,16 @@ a{color:inherit;text-decoration:none;cursor:none}img{max-width:100%;height:auto;
 @media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-burger{display:block}.nav{padding:16px 20px}.nav.scrolled{padding:12px 20px}}
 
 /* HERO */
-.hero{position:relative;height:85vh;min-height:520px;overflow:hidden}
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden}
 .hero-photo{position:absolute;inset:0;background:var(--deep)}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
 .hero-v{position:absolute;inset:0;background:rgba(28,28,26,.45)}
 .hero-content{position:absolute;bottom:48px;left:96px;right:40%;z-index:3}
-.hero-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.hero-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#D89873;display:flex;align-items:center;gap:14px;margin-bottom:20px}
 .hero-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--terra)}
-.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(28px,4vw,48px);color:var(--bone);line-height:1.1}
-.hero h1 em{font-style:italic;color:rgba(247,243,237,.6)}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,72px);color:rgba(247,243,237,.55);line-height:1.08;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--bone)}
+.hero-sub{font-family:var(--sans);font-size:15px;font-weight:400;letter-spacing:.015em;color:rgba(247,243,237,.6);margin-top:16px;max-width:560px;line-height:1.7}
 @media(max-width:768px){.hero-content{left:28px;right:28px;bottom:36px}}
 
 /* BREADCRUMB */
@@ -161,6 +162,12 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 .brg-what a{color:var(--terra);border-bottom:.5px solid rgba(168,101,67,.35);transition:border-color .3s}
 .brg-what a:hover{border-color:var(--terra)}
 @media(max-width:640px){.brg-row{grid-template-columns:1fr;gap:6px}}
+.hub-scroll{position:absolute;right:48px;bottom:60px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hub-scroll-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(247,243,237,.45);writing-mode:vertical-rl}
+.hub-scroll-track{position:relative;width:1px;height:72px;background:rgba(247,243,237,.16);overflow:hidden}
+.hub-scroll-dot{position:absolute;left:0;top:0;width:1px;height:30px;background:linear-gradient(to bottom,transparent,var(--terra));animation:hubScrollSweep 2.4s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes hubScrollSweep{0%{transform:translateY(-30px)}65%,100%{transform:translateY(72px)}}
+@media(max-width:768px){.hub-scroll{right:20px;bottom:44px}.hub-scroll-track{height:56px}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -196,6 +203,11 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
   <div class="hero-content">
     <div class="hero-kicker">Villefranche-sur-Mer &middot; 2026</div>
     <h1>Cruise Schedule<br><em>Villefranche-sur-Mer</em></h1>
+    <p class="hero-sub">Every ship calling at Villefranche in 2026, with arrival and departure times &mdash; and what fits ashore once you land.</p>
+  </div>
+  <div class="hub-scroll" aria-hidden="true">
+    <span class="hub-scroll-label">Scroll</span>
+    <span class="hub-scroll-track"><span class="hub-scroll-dot"></span></span>
   </div>
 </section>
 
