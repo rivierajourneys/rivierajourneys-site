@@ -14,10 +14,16 @@
 <meta property="og:url" content="https://rivierajourneys.fr/transfers">
 <meta property="og:type" content="website">
 <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://rivierajourneys.fr/"},
+{"@type":"ListItem","position":2,"name":"Transfers","item":"https://rivierajourneys.fr/transfers"}
+]}
+</script>
+<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Private Airport Transfers — French and Italian Riviera","provider":{"@type":"LocalBusiness","name":"Riviera Journeys","address":{"@type":"PostalAddress","addressLocality":"Cannes","addressCountry":"FR"},"telephone":"+33669962272"},"areaServed":["French Riviera","Italian Riviera","Provence"],"description":"Private transfers from Nice Côte d'Azur Airport to Cannes, Monaco, Antibes and Saint-Tropez. From Cannes to the Italian Riviera, Milan, Provence. Mercedes V-Class, up to 7 passengers. Fixed price.","offers":[{"@type":"Offer","name":"Nice Airport to Cannes","price":"130","priceCurrency":"EUR"},{"@type":"Offer","name":"Nice Airport to Monaco","price":"140","priceCurrency":"EUR"},{"@type":"Offer","name":"Nice Airport to Saint-Tropez","price":"375","priceCurrency":"EUR"},{"@type":"Offer","name":"Cannes to Monaco","price":"240","priceCurrency":"EUR"},{"@type":"Offer","name":"Cannes to Milan","price":"1350","priceCurrency":"EUR"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a private transfer from Nice Airport to Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"A private Mercedes V-Class transfer from Nice NCE to Cannes costs from €130 per vehicle for up to 7 passengers. This is a fixed price including tolls and airport parking."}},{"@type":"Question","name":"Is a private transfer more expensive than a taxi from Nice Airport?","acceptedAnswer":{"@type":"Answer","text":"A private transfer is a different service from a taxi. The vehicle is a Mercedes V-Class for up to 7 passengers. The price is confirmed in writing before the journey and does not change with traffic or time of day. For groups travelling together, for airport pickups where timing matters, and for journeys where the price needs to be known before departure, the two are not directly comparable."}},{"@type":"Question","name":"How long does the transfer from Nice Airport to Cannes take?","acceptedAnswer":{"@type":"Answer","text":"Approximately 45 minutes by the A8 motorway. In peak summer, allow 60–75 minutes. We plan pickup times accordingly."}},{"@type":"Question","name":"Do you monitor flight arrivals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every transfer includes real-time flight tracking. If your flight is delayed, the pickup time adjusts automatically."}},{"@type":"Question","name":"Can you transfer from Cannes to Nice Airport for a departure flight?","acceptedAnswer":{"@type":"Answer","text":"Yes. Departure transfers from Cannes, Monaco, Antibes and Saint-Tropez to Nice NCE are available at the same rates."}},{"@type":"Question","name":"Do you cover the Italian Riviera and Milan?","acceptedAnswer":{"@type":"Answer","text":"Yes. We cover intercity transfers to Sanremo, Portofino, and Milan from Cannes or Nice. Milan is 4–5 hours from Cannes and priced from €1,350 per vehicle. Sanremo and the Italian Riviera are available on enquiry."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a private transfer from Nice Airport to Cannes cost?","acceptedAnswer":{"@type":"Answer","text":"From €130 per vehicle to Cannes, €140 to Monaco, €375 to Saint-Tropez. All prices are fixed, per vehicle, for up to 7 passengers — tolls and airport parking included. A night surcharge applies from 22:00 to 06:00. The figure confirmed at booking is the figure paid at the door."}},{"@type":"Question","name":"Is a private transfer more expensive than a taxi from Nice Airport?","acceptedAnswer":{"@type":"Answer","text":"A private transfer is a different service from a taxi. The vehicle is a Mercedes V-Class with space for 7 passengers and all their luggage. The driver is English-speaking and pre-booked. The price is confirmed in writing before the journey — it does not change with traffic, time of day, or the number of people in the vehicle. A taxi can be hailed in the moment; a private transfer is arranged in advance, with a named driver and a fixed figure. For groups travelling together, for airport pickups where timing matters, and for journeys where the price needs to be known before departure, the two are not really comparable."}},{"@type":"Question","name":"Do you monitor flight arrivals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every airport transfer includes real-time flight tracking from the moment the flight departs. If it is delayed, the pickup time adjusts automatically. You do not need to call or message — the driver is already tracking the board. This is standard on all bookings, not an extra service."}},{"@type":"Question","name":"Can I book a return transfer from Cannes to Nice Airport?","acceptedAnswer":{"@type":"Answer","text":"Yes. Return and departure transfers from Cannes, Monaco, Antibes, and Saint-Tropez to Nice NCE are available at the same rates. We recommend booking both directions together so the departure leg is confirmed before you arrive."}},{"@type":"Question","name":"What is included in the transfer price?","acceptedAnswer":{"@type":"Answer","text":"The Mercedes V-Class, up to 7 passengers, all luggage, motorway tolls, airport parking, and a professional English-speaking driver. Child seats on request at no charge. The figure quoted is the figure paid — no additions at the door, no waiting-time surcharge within reason."}},{"@type":"Question","name":"Do you cover the Cannes Film Festival, MIPIM, and Monaco Grand Prix?","acceptedAnswer":{"@type":"Answer","text":"Yes. Standard rates apply during all events. Traffic during Film Festival, MIPIM, and Grand Prix week can be severe — pickup times are planned with this in mind. Availability is limited during these periods; book early. For corporate groups needing multiple vehicles across an event week, see our Corporate & Events section."}},{"@type":"Question","name":"Do you cover the Italian Riviera, Milan and Provence?","acceptedAnswer":{"@type":"Answer","text":"Yes. From Cannes or Nice we cover intercity transfers across the Italian Riviera — Sanremo, Bordighera, Portofino — and long-distance transfers to Milan (4–5 hr · from €1,350), Florence (5 hr · from €1,800), Aix-en-Provence, Avignon, and Courchevel (4 hr · from €2,100). All long-distance transfers are priced per vehicle for up to 7 passengers and arranged on enquiry."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,21 +142,22 @@ a{text-decoration:none}
 .section-label::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
 
 /* PAGE HERO — photo full-bleed */
-.page-hero{position:relative;height:85vh;min-height:540px;overflow:hidden;display:flex;align-items:flex-end}
+.page-hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;display:flex;align-items:flex-end}
 .page-hero-img{position:absolute;inset:0;background:var(--deep)}
 .page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
 .page-hero-vignette{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,26,.82) 0%,rgba(28,28,26,.45) 55%,rgba(28,28,26,.15) 100%);z-index:2}
 .page-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");z-index:3;pointer-events:none;opacity:.4}
 .page-hero-content{position:relative;z-index:4;padding:0 72px 72px;max-width:660px}
-.page-hero-overline{font-family:var(--sc);font-size:10px;font-weight:300;letter-spacing:.22em;color:var(--sand);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.page-hero-overline{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;color:#D89873;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
 .page-hero-overline::before{content:'';display:block;width:24px;height:.5px;background:var(--sand)}
-.page-hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,72px);color:var(--bone);line-height:1.05;margin-bottom:24px}
+.page-hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,72px);color:rgba(247,243,237,.55);line-height:1.05;margin-bottom:24px}
+.page-hero h1 em{font-style:italic;font-weight:300;color:var(--bone)}
 .page-hero h1 em{font-style:italic}
-.page-hero p{font-size:15px;color:rgba(247,243,237,.7);line-height:1.85;max-width:520px;margin-bottom:36px}
+.page-hero p{font-family:var(--sans);font-size:15px;font-weight:400;letter-spacing:.015em;color:rgba(247,243,237,.6);line-height:1.7;max-width:560px;margin-bottom:36px}
 .page-hero-actions{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
 .page-hero-credit{position:absolute;bottom:28px;right:72px;z-index:4;font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(196,170,130,.5)}
 @media(max-width:1024px){.page-hero-content{padding:0 40px 64px}}
-@media(max-width:768px){.page-hero{height:60vh;min-height:480px}.page-hero-content{padding:0 24px 56px}.page-hero-actions{flex-direction:column;align-items:flex-start;gap:20px}.page-hero-vignette{background:rgba(28,28,26,.6)}}
+@media(max-width:768px){.page-hero{height:100vh;height:100svh;min-height:560px}.page-hero-content{padding:0 24px 56px}.page-hero-actions{flex-direction:column;align-items:flex-start;gap:20px}.page-hero-vignette{background:rgba(28,28,26,.6)}}
 
 /* TICKER */
 .ticker-bar{background:var(--warm);border-bottom:.5px solid rgba(196,170,130,.15);overflow:hidden;height:44px;display:flex;align-items:center}
@@ -340,6 +347,12 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
 .footer-copy{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(196,170,130,.3);letter-spacing:.06em}
 @media(max-width:1024px){footer{padding:56px 40px 40px}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
 @media(max-width:768px){footer{padding:48px 24px 32px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:16px;align-items:flex-start}}
+.hub-scroll{position:absolute;right:48px;bottom:60px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hub-scroll-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(247,243,237,.45);writing-mode:vertical-rl}
+.hub-scroll-track{position:relative;width:1px;height:72px;background:rgba(247,243,237,.16);overflow:hidden}
+.hub-scroll-dot{position:absolute;left:0;top:0;width:1px;height:30px;background:linear-gradient(to bottom,transparent,var(--terra));animation:hubScrollSweep 2.4s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes hubScrollSweep{0%{transform:translateY(-30px)}65%,100%{transform:translateY(72px)}}
+@media(max-width:768px){.hub-scroll{right:20px;bottom:44px}.hub-scroll-track{height:56px}}
 </style>
 </head>
 <body>
@@ -407,6 +420,10 @@ footer{background:var(--warm);padding:72px 72px 48px;border-top:.5px solid rgba(
     </div>
   </div>
   <span class="page-hero-credit">Photograph by Riviera Journeys · Cannes</span>
+  <div class="hub-scroll" aria-hidden="true">
+    <span class="hub-scroll-label">Scroll</span>
+    <span class="hub-scroll-track"><span class="hub-scroll-dot"></span></span>
+  </div>
 </div>
 
 <!-- TICKER -->
