@@ -15,6 +15,12 @@
 <meta property="og:site_name" content="Riviera Journeys">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://rivierajourneys.fr/"},
+{"@type":"ListItem","position":2,"name":"Villefranche Cruise Schedule 2026","item":"https://rivierajourneys.fr/villefranche-cruise-schedule"}
+]}
+</script>
+<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Villefranche a tender port?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ships anchor in the bay and tender boats bring passengers ashore to quai de l’Amiral Courbet, in the old village. The tender ride takes 10 to 15 minutes. We meet you at the tender landing with a name board."}},{"@type":"Question","name":"Where do you meet us?","acceptedAnswer":{"@type":"Answer","text":"At quai de l’Amiral Courbet — the tender landing pier in Villefranche. We are there before your tender docks. The car is thirty seconds from the pier."}},{"@type":"Question","name":"How long do we have ashore?","acceptedAnswer":{"@type":"Answer","text":"It depends on your ship. Most Villefranche calls give 7 to 10 hours ashore. Tell us your ship name and we confirm the shore window and recommend an itinerary."}},{"@type":"Question","name":"What can we see from Villefranche?","acceptedAnswer":{"@type":"Answer","text":"Nice is 15 minutes away. Monaco and Eze are 20 minutes east. Cannes, Antibes and Saint-Paul-de-Vence are 45 minutes west. Grasse and the Provence hills are about an hour."}},{"@type":"Question","name":"Can the tender be delayed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tender delays at Villefranche are common, especially when multiple ships are in port. We wait at no extra charge. If your shore time is reduced, we shorten the itinerary."}},{"@type":"Question","name":"How many ships call at Villefranche in 2026?","acceptedAnswer":{"@type":"Answer","text":"There are 144 scheduled port calls in 2026, from 38 different ships operated by 20 cruise lines. The busiest months are May, June and September."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -147,6 +153,14 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
 
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--slow),transform .6s var(--slow)}.reveal.visible{opacity:1;transform:none}
 @media(max-width:768px){.cursor,#cursorRing{display:none}body{cursor:auto}a{cursor:auto}}
+.brg-rows{margin:4px 0 18px}
+.brg-row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 0;border-top:.5px solid var(--parch)}
+.brg-row:last-child{border-bottom:.5px solid var(--parch)}
+.brg-when{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);padding-top:3px}
+.brg-what{font-family:var(--body);font-size:15px;font-weight:500;color:var(--slate);line-height:1.75}
+.brg-what a{color:var(--terra);border-bottom:.5px solid rgba(168,101,67,.35);transition:border-color .3s}
+.brg-what a:hover{border-color:var(--terra)}
+@media(max-width:640px){.brg-row{grid-template-columns:1fr;gap:6px}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -333,7 +347,21 @@ footer{background:var(--warm);padding:64px 96px 40px;color:var(--sand)}.footer-g
       <div class="shore-bridge reveal">
         <div class="brg-lbl">Your day ashore</div>
         <h3>The earlier your tender, <em>the more the Riviera opens up.</em></h3>
-        <p>Villefranche tenders land right in the old town. A morning landing leaves time to follow the coast to <a href="/shore-excursions/villefranche/nice-eze-monaco">Nice, Eze and Monaco</a>, or head inland to <a href="/shore-excursions/villefranche/grasse-gourdon">Grasse and Gourdon</a>. By midday the longer routes fall away &mdash; they no longer fit before the last tender. Tell us your ship and we match a private excursion to the hours you have.</p>
+        <p>Villefranche tenders land at quai de l&rsquo;Amiral Courbet, right in the old town, where we meet you with a name board. A private excursion is &euro;800 per vehicle for up to seven guests, built around your tender window. The geography here is the most compact on the coast, and what fits depends on when you land:</p>
+        <div class="brg-rows">
+          <div class="brg-row">
+            <div class="brg-when">Ashore by 10:00</div>
+            <div class="brg-what">All three routes fit at full length &mdash; <a href="/shore-excursions/villefranche/nice-eze-monaco">Nice, Eze and Monaco</a> along the Corniches, west to <a href="/shore-excursions/villefranche/cannes-antibes-stpaul">Cannes, Antibes and Saint-Paul-de-Vence</a>, or inland to <a href="/shore-excursions/villefranche/grasse-gourdon">Grasse and Gourdon</a>.</div>
+          </div>
+          <div class="brg-row">
+            <div class="brg-when">Ashore from 11:00</div>
+            <div class="brg-what">The eastern route still works, because almost none of the day is spent in transit &mdash; Nice is fifteen minutes away and Monaco about twenty-five. The westward route to Cannes, Antibes and Saint-Paul is the one that begins to run short.</div>
+          </div>
+          <div class="brg-row">
+            <div class="brg-when">The return</div>
+            <div class="brg-what">We plan to have you back at the quay thirty to forty-five minutes before the last tender. Tell us your ship and we match the route to the hours you have.</div>
+          </div>
+        </div>
         <a href="/shore-excursions/villefranche" class="brg-cta">See our shore excursions from Villefranche <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
