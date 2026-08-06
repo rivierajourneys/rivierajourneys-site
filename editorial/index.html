@@ -47,18 +47,19 @@ img{display:block;max-width:100%}
 .breadcrumb span{color:var(--warm)}
 /* ── Dark-field inset hero ── */
 /* ── Hero: full-bleed photo background (site gold pattern) ── */
-.hero{position:relative;height:130vh;min-height:640px;overflow:hidden;background:var(--warm)}
+.hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;background:var(--warm)}
 .hero-photo{position:absolute;inset:0;background:var(--deep)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%;animation:heroZoomOut 8s var(--ease) forwards}
 @keyframes heroZoomOut{from{transform:scale(1.08)}to{transform:scale(1)}}
 .hero-v{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(28,28,26,.88) 0%,rgba(28,28,26,.30) 55%,transparent 100%)}
 .hero-g{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px}
-.hero-title-block{position:absolute;left:0;right:0;bottom:35vh;z-index:4;padding:0 clamp(32px,6vw,96px)}
+.hero-title-block{position:absolute;left:0;right:0;bottom:96px;z-index:4;padding:0 clamp(32px,6vw,96px)}
 .masthead{max-width:760px}
-.masthead-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.masthead-kicker{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#D89873;display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .masthead-kicker::before{content:'';display:block;width:28px;height:.5px;background:var(--terra)}
-.masthead h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,80px);font-weight:300;line-height:1.02;color:var(--bone);margin-bottom:24px;letter-spacing:-.018em}
-.standfirst{font-family:var(--body);font-size:16.5px;font-weight:300;line-height:1.8;color:rgba(247,243,237,.82);max-width:520px;margin-bottom:26px}
+.masthead h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,80px);font-weight:300;line-height:1.02;color:rgba(247,243,237,.55);margin-bottom:24px;letter-spacing:-.018em}
+.masthead h1 em{font-style:italic;font-weight:300;color:var(--bone)}
+.standfirst{font-family:var(--sans);font-size:15px;font-weight:400;letter-spacing:.015em;line-height:1.7;color:rgba(247,243,237,.6);max-width:560px;margin-bottom:26px}
 .hero-credit{font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,237,.55);display:flex;align-items:center;gap:12px}
 .hero-credit::before{content:'';display:block;width:28px;height:.5px;background:var(--sand)}
 .page-wrap{max-width:1080px;margin:0 auto;padding:88px 48px 0}
@@ -118,7 +119,7 @@ img{display:block;max-width:100%}
 .hub-note a:hover{border-bottom-color:var(--terra)}
 @media(max-width:900px){
 .masthead h1{font-size:clamp(42px,7vw,60px)}
-.hero-title-block{bottom:18vh}
+.hero-title-block{bottom:88px}
 .featured{grid-template-columns:1fr}
 .featured-photo{aspect-ratio:1.7/1}
 .featured-body{padding:28px 0 0}
@@ -127,7 +128,13 @@ img{display:block;max-width:100%}
 .story+.story{border-left:none}
 .story:first-child{padding-top:32px}
 }
-@media(max-width:768px){.nav{padding:0 24px}.nav-links{display:none}.page-wrap{padding:56px 24px 0}.hero{height:80vh;min-height:460px}.hero-title-block{bottom:16vh;padding:0 24px}.masthead h1{font-size:46px}.standfirst{font-size:15px}.featured{margin-bottom:40px}.story-grid{margin-bottom:64px}.pano-caption{padding:32px 24px 14px;font-size:12px}.prep{padding:64px 24px 0}.prep-row{grid-template-columns:1fr;margin-bottom:64px}.hub-note{padding:0 24px 72px}}
+@media(max-width:768px){.nav{padding:0 24px}.nav-links{display:none}.page-wrap{padding:56px 24px 0}.hero{height:100vh;height:100svh;min-height:560px}.hero-title-block{bottom:76px;padding:0 24px}.masthead h1{font-size:46px}.standfirst{font-size:15px}.featured{margin-bottom:40px}.story-grid{margin-bottom:64px}.pano-caption{padding:32px 24px 14px;font-size:12px}.prep{padding:64px 24px 0}.prep-row{grid-template-columns:1fr;margin-bottom:64px}.hub-note{padding:0 24px 72px}}
+.hub-scroll{position:absolute;right:48px;bottom:60px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hub-scroll-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(247,243,237,.45);writing-mode:vertical-rl}
+.hub-scroll-track{position:relative;width:1px;height:72px;background:rgba(247,243,237,.16);overflow:hidden}
+.hub-scroll-dot{position:absolute;left:0;top:0;width:1px;height:30px;background:linear-gradient(to bottom,transparent,var(--terra));animation:hubScrollSweep 2.4s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes hubScrollSweep{0%{transform:translateY(-30px)}65%,100%{transform:translateY(72px)}}
+@media(max-width:768px){.hub-scroll{right:20px;bottom:44px}.hub-scroll-track{height:56px}}
 </style>
 </head>
 <body>
@@ -153,12 +160,16 @@ img{display:block;max-width:100%}
     <div class="hero-title-block">
       <header class="masthead">
         <div class="masthead-kicker">Riviera Journeys &middot; Editorial</div>
-        <h1>The Roadbook</h1>
+        <h1>The <em>Roadbook</em></h1>
         <p class="standfirst">Practical guides to the French Riviera, written by the people who drive these roads and photograph them. Itineraries that fit the hours you have, and what things cost when nobody is selling you anything.</p>
         <div class="hero-credit">Every photograph taken by us, on these roads</div>
       </header>
     </div>
+    <div class="hub-scroll" aria-hidden="true">
+    <span class="hub-scroll-label">Scroll</span>
+    <span class="hub-scroll-track"><span class="hub-scroll-dot"></span></span>
   </div>
+</div>
 
   <div class="page-wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <span>Roadbook</span></nav>
