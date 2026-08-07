@@ -377,7 +377,7 @@ export default {
       let transformed = await response.text();
 
       transformed = transformed
-        .replaceAll("{{REVIEWS_COUNT}}", env.REVIEWS_COUNT || "15")
+        .replaceAll("{{REVIEWS_COUNT}}", env.REVIEWS_COUNT || "0")
         .replaceAll("{{REVIEWS_RATING}}", env.REVIEWS_RATING || "5.0")
         .replaceAll("{{REVIEWS_BEST}}", env.REVIEWS_BEST || "5");
 
