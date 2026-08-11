@@ -1,0 +1,5 @@
+FAVICON FIX — how to apply
+1. Extract favicon-fix.zip at the repo root (overwrites the 79 index.html pages).
+2. Delete the now-redundant workflow:  git rm add-favicon.yml
+3. git add -A && git commit -m "favicon: single canonical block on all pages; drop add-favicon.yml workflow" && git push
+Auto-deploy runs in 15-30s.
