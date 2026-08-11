@@ -1,14 +1,30 @@
-FAVICON FIX v2 — how to apply
-Contents: 79 updated *.html pages + new icon assets (favicon.ico, favicon-32x32.png, favicon-16x16.png).
+RIVIERA JOURNEYS — FAVICON (brand-built)
+========================================
+The "RJ" monogram — Cormorant SC, weight 300, Warm Black #1C1C1A on Warm White #FDFAF6 —
+rebuilt as true vector outlines (from the brand font) and rendered to every icon size.
+No embedded @font-face (that was why the old SVG favicon showed blank in tabs).
 
-1. Extract this zip at the repo root (overwrites the 79 pages AND the three icon files).
-2. Delete the now-redundant workflow:   git rm add-favicon.yml
-3. git add -A
-   git commit -m "favicon: legible raster icons (ico+32+16), drop font-based svg link; remove add-favicon.yml"
-   git push
-Auto-deploy runs in 15-30s. Hard-refresh a tab (favicons cache aggressively): open the page, then Cmd+Shift+R, or visit /favicon.ico directly once.
+Files in this zip (extract at repo ROOT — overwrites):
+  favicon.svg                 self-contained vector, crisp at any size (retina tabs use this)
+  favicon.ico                 multi-size 16/32/48
+  favicon-16x16.png
+  favicon-32x32.png
+  apple-touch-icon.png        180x180 (iOS home screen)
+  android-chrome-192x192.png
+  android-chrome-512x512.png
+  site.webmanifest            name + brand colours + Android icons
+  79x index.html              identical 6-line favicon block in <head>
 
-What changed and why:
-- favicon.svg rendered its "RJ" monogram via an embedded @font-face; browsers don't load that font in the tab context, so the SVG favicon came out blank. Chrome prefers SVG when offered, so once every page listed it, the icon vanished everywhere.
-- The old favicon.ico was a soft, near-white 16x16 downscale, barely visible on a light tab.
-- New icons are regenerated from the clean apple-touch master, margins trimmed for legibility at 16/32 px, and favicon.ico is now multi-size (16+32).
+Apply:
+  1. Extract zip at repo root.
+  2. git rm add-favicon.yml        (redundant workflow — would re-diverge the pages)
+  3. git add -A && git commit -m "favicon: brand RJ monogram, vector + full icon set + manifest" && git push
+  Auto-deploy 15-30s. Favicons cache hard: after deploy hard-refresh (Cmd+Shift+R) or open /favicon.ico once.
+
+Head block now on every page:
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
