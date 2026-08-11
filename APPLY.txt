@@ -1,5 +1,14 @@
-FAVICON FIX — how to apply
-1. Extract favicon-fix.zip at the repo root (overwrites the 79 index.html pages).
-2. Delete the now-redundant workflow:  git rm add-favicon.yml
-3. git add -A && git commit -m "favicon: single canonical block on all pages; drop add-favicon.yml workflow" && git push
-Auto-deploy runs in 15-30s.
+FAVICON FIX v2 — how to apply
+Contents: 79 updated *.html pages + new icon assets (favicon.ico, favicon-32x32.png, favicon-16x16.png).
+
+1. Extract this zip at the repo root (overwrites the 79 pages AND the three icon files).
+2. Delete the now-redundant workflow:   git rm add-favicon.yml
+3. git add -A
+   git commit -m "favicon: legible raster icons (ico+32+16), drop font-based svg link; remove add-favicon.yml"
+   git push
+Auto-deploy runs in 15-30s. Hard-refresh a tab (favicons cache aggressively): open the page, then Cmd+Shift+R, or visit /favicon.ico directly once.
+
+What changed and why:
+- favicon.svg rendered its "RJ" monogram via an embedded @font-face; browsers don't load that font in the tab context, so the SVG favicon came out blank. Chrome prefers SVG when offered, so once every page listed it, the icon vanished everywhere.
+- The old favicon.ico was a soft, near-white 16x16 downscale, barely visible on a light tab.
+- New icons are regenerated from the clean apple-touch master, margins trimmed for legibility at 16/32 px, and favicon.ico is now multi-size (16+32).
