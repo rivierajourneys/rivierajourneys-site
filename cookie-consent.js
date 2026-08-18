@@ -1,7 +1,16 @@
 /* ============================================================
  * RIVIERA JOURNEYS — cookie-consent.js
  *
- * Last updated: 2026-06-17
+ * Last updated: 2026-08-18
+ *
+ * 2026-08-18 changes (Week-0, site workplan):
+ *   8. "Came from" hidden field — document.referrer rides along with
+ *      each enquiry, so /book submissions show the page (or search
+ *      engine) that led to the form, not only /book itself.
+ *   9. Cloudflare Web Analytics beacon — cookieless, consent-exempt,
+ *      loads for every visitor regardless of the GA4 consent choice.
+ *      Fills the traffic blind spot left by consent-gated GA4.
+ *      Requires CF_BEACON_TOKEN below (Dashboard -> Web Analytics).
  *
  * Single source of truth for analytics + consent:
  *   1. Implements Google Consent Mode v2 (default: denied — CNIL safe)
@@ -21,6 +30,11 @@
 
 (function () {
   var GA4_ID = 'G-G7VH5DLYWF';
+  // Cloudflare Web Analytics site token. Create the site under
+  // Cloudflare Dashboard -> Analytics & Logs -> Web Analytics, copy the
+  // token from the JS snippet and paste it here. Loader below is inert
+  // until the placeholder is replaced, so deploying first is safe.
+  var CF_BEACON_TOKEN = 'REPLACE_WITH_CF_BEACON_TOKEN';
   var STORAGE_KEY = 'rj_consent_v1';
   var STORAGE_TTL_DAYS = 180;
 
@@ -107,6 +121,19 @@
   // 5. Contact-link tracking — works regardless of consent
   //    (gtag calls are queued; only sent if consent granted)
   // ─────────────────────────────────────────────────────────────────
+  // Cloudflare Web Analytics — cookieless beacon, no consent required
+  // (no cookies, no localStorage, no fingerprinting). Loads always, so
+  // traffic is measured even for the majority who never accept GA4.
+  function loadCfBeacon() {
+    if (CF_BEACON_TOKEN.indexOf('REPLACE') === 0) return; // token not set yet
+    if (document.querySelector('script[data-cf-beacon]')) return;
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.setAttribute('data-cf-beacon', '{"token": "' + CF_BEACON_TOKEN + '"}');
+    document.head.appendChild(s);
+  }
+
   function setupContactTracking() {
     var pageId = window.location.pathname.replace(/\//g, '-').replace(/^-|-$/g, '') || 'home';
 
@@ -155,6 +182,17 @@
         srcField.name = 'Source page';
         srcField.value = window.location.href;
         bookForm.appendChild(srcField);
+      }
+
+      // Referrer capture — Week-0 workplan, 2026-08-18. On /book the
+      // "Source page" field only shows /book?service=..., which loses
+      // the content page (or search engine) the visitor came from.
+      if (!bookForm.querySelector('input[name="Came from"]')) {
+        var refField = document.createElement('input');
+        refField.type = 'hidden';
+        refField.name = 'Came from';
+        refField.value = document.referrer || 'direct / none';
+        bookForm.appendChild(refField);
       }
 
       bookForm.addEventListener('submit', function () {
@@ -272,6 +310,7 @@
     } else {
       renderConsentUI();
     }
+    loadCfBeacon();
     setupContactTracking();
     setupFormTracking();
   }
