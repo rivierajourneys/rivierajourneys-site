@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<rect width="100" height="100" fill="#FDFAF6"/>
-<g transform="scale(0.045872)" fill="#1C1C1A">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="17.353 19.102 65.259 65.259">
+<style>.ink{fill:#1C1C1A}@media (prefers-color-scheme:dark){.ink{fill:#FDFAF6}}</style>
+<g class="ink" transform="scale(0.045872)">
 <g transform="translate(0.000000,2180.000000) scale(0.100000,-0.100000)">
 <path d="M11861 17627 c-16 -16 -15 -162 2 -174 7 -6 122 -13 262 -16 867 -21
 1186 -158 1294 -557 12 -41 28 -118 38 -170 16 -88 17 -381 20 -4010 l3 -3915
