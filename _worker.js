@@ -546,6 +546,19 @@ async function injectCruiseSchedule(html, pathname, env) {
     (_, open, close) => `${open}${formatUpdated(payload.lastUpdated)}${close}`
   );
 
+  // AEO-001 (2026-09-01) — the machine-readable twin of the visible date.
+  // Answer engines weigh article:modified_time; these two pages are the only
+  // ones on the site that genuinely change every week, so they should say so.
+  const isoUpdated = new Date(payload.lastUpdated).toISOString();
+  html = html.replace(
+    /<meta property="article:modified_time" content="[^"]*">/,
+    `<meta property="article:modified_time" content="${isoUpdated}">`
+  );
+  html = html.replace(
+    /("dateModified"\s*:\s*")[^"]*(")/,
+    (_, open, close) => `${open}${isoUpdated}${close}`
+  );
+
   return html;
 }
 
