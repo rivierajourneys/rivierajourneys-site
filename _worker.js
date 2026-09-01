@@ -250,6 +250,55 @@ export default {
     const search = url.search;
 
     // ──────────────────────────────────────────────────────────────────
+    // STEP 0. AEO-002 (2026-09-01) — one-click IndexNow batch ping.
+    // GET /__ping?paths=/a,/b — the Worker submits one JSON batch to
+    // api.indexnow.org server-side (browser fetch is blocked by CORS/CSP
+    // in the tools we tried; the Worker has no such limits). The key is
+    // public by design — the key file sits in the site root.
+    // ──────────────────────────────────────────────────────────────────
+    if (pathname === "/__ping") {
+      const PING_KEY = "36e0fbdc4824505bb2aae30a90d5da31";
+      const rawPaths = url.searchParams.get("paths") || "";
+      const pingPaths = rawPaths.split(",")
+        .map(p => p.trim())
+        .filter(p => p.startsWith("/"))
+        .slice(0, 500);
+      const noIndexHdr = {
+        "content-type": "text/plain; charset=utf-8",
+        "X-Robots-Tag": "noindex, nofollow",
+        "cache-control": "no-store",
+      };
+      if (pingPaths.length === 0) {
+        return new Response("Usage: /__ping?paths=/page-one,/page-two,/", {
+          status: 400, headers: noIndexHdr,
+        });
+      }
+      const urlList = pingPaths.map(p => {
+        const clean = p.replace(/\/+$/, "");
+        return "https://" + CANONICAL_HOST + (clean === "" ? "/" : clean);
+      });
+      let inStatus = 0, inBody = "";
+      try {
+        const inRes = await fetch("https://api.indexnow.org/indexnow", {
+          method: "POST",
+          headers: { "content-type": "application/json; charset=utf-8" },
+          body: JSON.stringify({ host: CANONICAL_HOST, key: PING_KEY, urlList: urlList }),
+        });
+        inStatus = inRes.status;
+        inBody = await inRes.text();
+      } catch (e) {
+        return new Response("IndexNow unreachable: " + e, { status: 502, headers: noIndexHdr });
+      }
+      const accepted = inStatus === 200 || inStatus === 202;
+      const report = (accepted
+        ? "OK - IndexNow accepted the batch (HTTP " + inStatus + ")."
+        : "IndexNow answered HTTP " + inStatus + ".")
+        + "\nSubmitted " + urlList.length + " URL(s):\n" + urlList.join("\n")
+        + (inBody ? "\n\n" + inBody : "");
+      return new Response(report, { status: accepted ? 200 : 502, headers: noIndexHdr });
+    }
+
+    // ──────────────────────────────────────────────────────────────────
     // STEP 1. 410 Gone — legacy URLs.
     // Done BEFORE any redirect so legacy URLs (with or without trailing slash,
     // on www or apex) return a direct 410, NOT a 301-then-410 chain.
